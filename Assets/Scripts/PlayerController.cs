@@ -6,7 +6,6 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public int offset = 0; // Optional manual offset if needed
     public MainPlayerController parent;
-    private Color originalColor;
 
     void Awake() 
     {
@@ -15,7 +14,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-       originalColor = spriteRenderer.color;
     }
 
     void Update()
@@ -31,12 +29,12 @@ public class PlayerController : MonoBehaviour
 
     void OnMouseEnter()
     {   
-        parent.OnChildMouseEnter(gameObject, originalColor);
+        parent.OnChildMouseEnter(gameObject);
     }
 
     void OnMouseExit()
     {
-        parent.OnChildMouseExit(gameObject, originalColor);
+        parent.OnChildMouseExit(gameObject);
     }
 
 }

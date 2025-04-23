@@ -7,17 +7,18 @@ public class MainPlayerController : MonoBehaviour
     private GameObject moveRange;
     private SpriteRenderer moveRangeSR;
     private EdgeCollider2D moveRangeCollider;
-    //private Animator animator;
     private Camera mainCam;
-    private bool othersLocked = false;
-    private bool isSelected = false;
     private PlayerController reporter;
     private Vector3 originalPosition;
     private GameObject characterSelected;
-    private Color originalColor;
     private float moveSpeed = 8.0f;
+    private GameObject endTurnObj;
+    private bool endTurnUIActive = false;
+    private List<GameObject> disabledCharacters;
+
     void Awake() 
     {
+        disabledCharacters = new List<GameObject>();
     }
     void Start()
     {
@@ -26,6 +27,7 @@ public class MainPlayerController : MonoBehaviour
         moveRangeSR = moveRange.GetComponent<SpriteRenderer>();
         moveRangeCollider = moveRange.GetComponent<EdgeCollider2D>();
         mainCam = Camera.main;
+        endTurnObj = GameObject.Find("End_Turn");
         
     }
     void Update()
@@ -35,67 +37,61 @@ public class MainPlayerController : MonoBehaviour
     }
     void HandleSelection() {
         
+        //On left click, check character select
         if (Input.GetMouseButtonDown(0)) {
             Vector2 mouseWorld = mainCam.ScreenToWorldPoint(Input.mousePosition);
             Collider2D hit = Physics2D.OverlapPoint(mouseWorld);
 
-            //No character selected yet
-            if (hit != null && hit.gameObject.tag == "character" && !isSelected) {
-                isSelected = true;
+            //EndTurnUI is active and clicked YES/NO
+            if (hit != null && endTurnUIActive && (hit.gameObject.tag == "end_turn_yes" || hit.gameObject.tag == "end_turn_no")) {
+                if (hit.gameObject.tag == "end_turn_yes") {
+                    endTurn();
+                }
+                else {
+                    disableAttackRange();
+                    disableMoveRange();
+                    unhighlightSprite();
+                    unlockOtherCharacterMovement();
+                    disableEndTurnUI();
+                    characterSelected.GetComponent<Animator>().SetBool("isWalking", false);
+                    characterSelected.transform.position = originalPosition;
+                    characterSelected = null;
+                }
+            }
+
+            //EndTurnUI is active and clicked something else
+            else if (endTurnUIActive) {
+                StartCoroutine(FlashCoroutine());
+            }  
+
+            //No character selected yet and character isn't disabled
+            else if (hit != null && hit.gameObject.tag == "character" && characterSelected == null && !disabledCharacters.Contains(hit.gameObject)) {
                 characterSelected = GameObject.Find(hit.gameObject.name);
-
-                SpriteRenderer sr = characterSelected.GetComponent<SpriteRenderer>();
-                originalColor = sr.color;
-                sr.color = Color.yellow;
-                
                 originalPosition = characterSelected.transform.position;
-
-                //Lock position of all other characters
-                if (!othersLocked) {lockOtherCharacterMovement();}
-
-                //Move Range stuff
-                moveRange.transform.position = characterSelected.transform.position;
-                //TODO moveRange.transform.scale. Scale with character stats.
-                moveRangeSR.enabled = true;
-                moveRangeCollider.enabled = true;
-
-                //Attack Range stuff
-                //TODO attackRange.transform.scale. Scale with character stats.
-                SpriteRenderer attackRangeSR = characterSelected.transform.Find("AttackRange").GetComponent<SpriteRenderer>();
-                attackRangeSR.enabled = true;
+                highLightSprite();
+                lockOtherCharacterMovement();
+                enableMoveRange();
+                enableAttackRange();
             }
             
             //Same character is selected again
-            else if (hit != null && hit.gameObject.tag == "character" && isSelected && hit.gameObject.name == characterSelected.name){
-                //Do nothing
+            else if (hit != null && hit.gameObject.tag == "character" && characterSelected != null && hit.gameObject.name == characterSelected.name){
+                enableEndTurnUI();
             }
 
-            //Existing character selection but clicked a different character
-            else if (hit != null && hit.gameObject.tag == "character" && isSelected && hit.gameObject.name != characterSelected.name){
-                isSelected = true;
-                
-                //Disable existing character select Attack Range and unlock others
-                SpriteRenderer attackRangeSR = characterSelected.transform.Find("AttackRange").GetComponent<SpriteRenderer>();
-                attackRangeSR.enabled = false;
-                if (othersLocked) {
-                    unlockOtherCharacterMovement();
-                }
-
-                //Reassign character selected
+            //Existing character selection but clicked a different character that is not disabled
+            else if (hit != null && hit.gameObject.tag == "character" && characterSelected != null && hit.gameObject.name != characterSelected.name && !disabledCharacters.Contains(hit.gameObject)){
+                disableAttackRange();
+                disableMoveRange();
+                unhighlightSprite();
+                unlockOtherCharacterMovement();
+                disableEndTurnUI();
+                characterSelected.transform.position = originalPosition;
                 characterSelected = GameObject.Find(hit.gameObject.name);
-
-                if (!othersLocked) {lockOtherCharacterMovement();}
-
-                //Move Range stuff
-                moveRange.transform.position = characterSelected.transform.position;
-                //TODO moveRange.transform.scale. Scale with character stats.
-                moveRangeSR.enabled = true;
-                moveRangeCollider.enabled = true;
-
-                //Attack Range stuff
-                //TODO attackRange.transform.scale. Scale with character stats.
-                attackRangeSR = characterSelected.transform.Find("AttackRange").GetComponent<SpriteRenderer>();
-                attackRangeSR.enabled = true;
+                originalPosition = characterSelected.transform.position;
+                lockOtherCharacterMovement();
+                enableMoveRange();
+                enableAttackRange();
 
             }
 
@@ -109,35 +105,42 @@ public class MainPlayerController : MonoBehaviour
             
             //Existing character selection, clicked anything else
             else {
-                //If character was selected then should deselect character etc.
-                if (isSelected) {
-                    if (othersLocked) {
-                        unlockOtherCharacterMovement();
-                    }
-                    
-                    SpriteRenderer sr = characterSelected.GetComponent<SpriteRenderer>();
-                    sr.color = Color.white;
-
-                    Animator animator = characterSelected.GetComponent<Animator>();
-                    animator.SetBool("isWalking", false);
-                    
-                    //Move Range stuff
-                    moveRangeSR.enabled = false;
-                    moveRangeCollider.enabled = false;
-
-                    //Attack Range stuff
-                    SpriteRenderer attackRangeSR = characterSelected.transform.Find("AttackRange").GetComponent<SpriteRenderer>();
-                    attackRangeSR.enabled = false;
-                    
-                    isSelected = false;
+                //Character was selected but hasn't moved then can click away
+                if (characterSelected != null && characterSelected.transform.position == originalPosition) {
+                    characterSelected.transform.position = originalPosition;    
+                    disableMoveRange();
+                    disableAttackRange();               
+                    unlockOtherCharacterMovement();
+                    unhighlightSprite();
+                    characterSelected = null;
                 }
+            
+                //Character was selected and has moved
+                if (characterSelected != null && characterSelected.transform.position != originalPosition) {
+                    enableEndTurnUI();
+                }
+             
+            }
+        }
+
+        //On right click, if a character was selected then reset the selected character's position, untoggle attack range, move range and UI
+        else if (Input.GetMouseButtonDown(1)) {
+            if (characterSelected != null) {
+                unhighlightSprite();
+                disableAttackRange();
+                disableMoveRange();
+                unlockOtherCharacterMovement();
+                disableEndTurnUI();
+                characterSelected.transform.position = originalPosition;
+                characterSelected = null;
+
             }
         }
 
     }
     void HandleMovement()
     {
-        if (!isSelected) {
+        if (characterSelected == null || endTurnUIActive) {
             return;
         }
 
@@ -160,17 +163,15 @@ public class MainPlayerController : MonoBehaviour
             }
         }
     }
-    void lockOtherCharacterMovement() {
+    private void lockOtherCharacterMovement() {
         foreach (Transform obj in this.transform) {
             if (obj.name != characterSelected.name) {
                 Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
             }
         }
-        othersLocked = true;
-
     }
-    void unlockOtherCharacterMovement() {
+    private void unlockOtherCharacterMovement() {
         foreach (Transform obj in transform) {
             if (obj.name != characterSelected.name) {
                 Rigidbody2D rb = obj.GetComponent<Rigidbody2D>();
@@ -178,19 +179,103 @@ public class MainPlayerController : MonoBehaviour
                 rb.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
             }
         }
-        othersLocked = false;
     }
-    public void OnChildMouseEnter(GameObject child, Color originalColor) {
-        if (!isSelected) {
+    public void OnChildMouseEnter(GameObject child) {
+        //Highlight character on mouse enter if they are not disabled
+        if (!disabledCharacters.Contains(child)) {
             SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
             sr.color = Color.yellow;
         }
+    }
+    public void OnChildMouseExit(GameObject child) {
+        //Unhighlight character if they're not disabled and not selected
+        if (!disabledCharacters.Contains(child)) {
+            if (characterSelected == null) {
+                SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+                sr.color = Color.white;
+            }
+            else if (characterSelected != null && characterSelected != child) {
+                SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+                sr.color = Color.white;
+            } 
+        }
+    }
+    private void enableEndTurnUI() {
+        if (characterSelected.transform.position.y > -4.5f) {
+            endTurnObj.transform.position = new Vector3(characterSelected.transform.position.x - 0.3f, characterSelected.transform.position.y - 3.2f, characterSelected.transform.position.z);  
+            endTurnUIActive = true;
+        }
+        else {        
+            endTurnObj.transform.position = new Vector3(characterSelected.transform.position.x- 0.3f, characterSelected.transform.position.y + 2.6f, characterSelected.transform.position.z);  
+            endTurnUIActive = true; 
+        }
 
     }
-    public void OnChildMouseExit(GameObject child, Color originalColor) {
-        if (!isSelected) {
-            SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
-            sr.color = originalColor;
+    private void disableEndTurnUI() {
+        endTurnObj.transform.position = new Vector3(characterSelected.transform.position.x + 100f, characterSelected.transform.position.y + 100f, characterSelected.transform.position.z);
+        endTurnUIActive = false;
+    }
+    private void enableMoveRange() {
+        moveRange.transform.position = characterSelected.transform.position;
+        //TODO moveRange.transform.scale. Scale with character stats.
+        moveRangeSR.enabled = true;
+        moveRangeCollider.enabled = true;
+
+    }
+    private void disableMoveRange() {
+        moveRange.transform.position = characterSelected.transform.position;
+        moveRangeSR.enabled = false;
+        moveRangeCollider.enabled = false;
+
+    }
+    private void enableAttackRange() {
+        //TODO attackRange.transform.scale. Scale with character stats.
+        SpriteRenderer attackRangeSR = characterSelected.transform.Find("AttackRange").GetComponent<SpriteRenderer>();
+        attackRangeSR.enabled = true;
+    }
+    private void disableAttackRange() {
+        //TODO attackRange.transform.scale. Scale with character stats.
+        SpriteRenderer attackRangeSR = characterSelected.transform.Find("AttackRange").GetComponent<SpriteRenderer>();
+        attackRangeSR.enabled = false;
+    }
+    private void highLightSprite() {
+        SpriteRenderer sr = characterSelected.GetComponent<SpriteRenderer>();
+        sr.color = Color.yellow;
+    }
+    private void unhighlightSprite() {
+        SpriteRenderer sr = characterSelected.GetComponent<SpriteRenderer>();
+        sr.color = Color.white;   
+    }
+    private System.Collections.IEnumerator FlashCoroutine() {
+        SpriteRenderer endTurnSR = endTurnObj.GetComponent<SpriteRenderer>();
+        float flashDuration = 0.1f;
+        int flashCount = 3;
+        float transparentAlpha = 0.35f;
+
+        for (int i = 0; i < flashCount; i++)
+        {
+            // Fade out (transparent)
+            endTurnSR.color = new Color(1, 1, 1, transparentAlpha);
+            yield return new WaitForSeconds(flashDuration);
+
+            // Fade in (opaque)
+            endTurnSR.color = new Color(1, 1, 1, 1);
+            yield return new WaitForSeconds(flashDuration);
         }
+    }
+    private void graySpriteAndFreeze() {
+        SpriteRenderer sr = characterSelected.GetComponent<SpriteRenderer>();
+        sr.color = Color.gray;                
+        characterSelected.GetComponent<Animator>().SetBool("isFrozen", true);
+    }
+    private void endTurn() {
+        disableAttackRange();
+        disableMoveRange();
+        graySpriteAndFreeze();
+        disableEndTurnUI();
+        unlockOtherCharacterMovement();                
+        characterSelected.GetComponent<Animator>().SetBool("isFrozen", true);
+        disabledCharacters.Add(characterSelected);
+        characterSelected = null;
     }
 }
