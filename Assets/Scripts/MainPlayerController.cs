@@ -16,9 +16,14 @@ public class MainPlayerController : MonoBehaviour
     private bool endTurnUIActive = false;
     private List<GameObject> disabledCharacters;
 
+    private int partySize;
+
     void Awake() 
     {
         disabledCharacters = new List<GameObject>();
+
+        //TODO: partySize should read from the database
+        partySize = 4;
     }
     void Start()
     {
@@ -32,10 +37,27 @@ public class MainPlayerController : MonoBehaviour
     }
     void Update()
     {
-        HandleSelection();
+        HandleGameLoop();
         HandleMovement();
+        HandleSelection();
+
     }
-    void HandleSelection() {
+    private void HandleGameLoop() {
+        if (disabledCharacters.Count == partySize) {
+            //Play animation for enemy phase
+            //Enemy turn
+
+            foreach (var obj in disabledCharacters) {
+                characterSelected = obj;
+                characterSelected.GetComponent<Animator>().SetBool("isFrozen", false);
+                characterSelected.GetComponent<Animator>().SetBool("isWalking", false);
+                unhighlightSprite();
+            }
+            characterSelected = null;
+            disabledCharacters.Clear();
+        }
+    }
+    private void HandleSelection() {
         
         //On left click, check character select
         if (Input.GetMouseButtonDown(0)) {
@@ -138,7 +160,7 @@ public class MainPlayerController : MonoBehaviour
         }
 
     }
-    void HandleMovement()
+    private void HandleMovement()
     {
         if (characterSelected == null || endTurnUIActive) {
             return;
