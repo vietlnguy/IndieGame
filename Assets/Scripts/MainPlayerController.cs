@@ -11,16 +11,20 @@ public class MainPlayerController : MonoBehaviour
     private PlayerController reporter;
     private Vector3 originalPosition;
     private GameObject characterSelected;
+    private GameObject enemySelected;
     private float moveSpeed = 8.0f;
     private GameObject endTurnObj;
     private bool endTurnUIActive = false;
     private List<GameObject> disabledCharacters;
-
+    private List<GameObject> disabledEnemies;
+    private bool allowMovement = false;
     private int partySize;
+    private bool enemyInRange = false;
 
     void Awake() 
     {
         disabledCharacters = new List<GameObject>();
+        disabledEnemies = new List<GameObject>();
 
         //TODO: partySize should read from the database
         partySize = 4;
@@ -51,7 +55,7 @@ public class MainPlayerController : MonoBehaviour
                 characterSelected = obj;
                 characterSelected.GetComponent<Animator>().SetBool("isFrozen", false);
                 characterSelected.GetComponent<Animator>().SetBool("isWalking", false);
-                unhighlightSprite();
+                unhighlightSprite(characterSelected);
             }
             characterSelected = null;
             disabledCharacters.Clear();
@@ -64,15 +68,21 @@ public class MainPlayerController : MonoBehaviour
             Vector2 mouseWorld = mainCam.ScreenToWorldPoint(Input.mousePosition);
             Collider2D hit = Physics2D.OverlapPoint(mouseWorld);
 
-            //EndTurnUI is active and clicked YES/NO
-            if (hit != null && endTurnUIActive && (hit.gameObject.tag == "end_turn_yes" || hit.gameObject.tag == "end_turn_no")) {
-                if (hit.gameObject.tag == "end_turn_yes") {
+            //If endTurnUI is active then cannot click anything else
+            if (endTurnUIActive) {
+                //Didn't click yes or no
+                if (hit == null || hit.gameObject.tag != "end_turn_yes" || hit.gameObject.tag != "end_turn_yes") {
+                    StartCoroutine(FlashCoroutine());             
+                }
+                //End turn if yes
+                else if (hit.gameObject.tag == "end_turn_yes") {
                     endTurn();
                 }
-                else {
-                    disableAttackRange();
+                //Reset character if no
+                else if (hit.gameObject.tag == "end_turn_no") {
+                    disableAttackRange(characterSelected);
                     disableMoveRange();
-                    unhighlightSprite();
+                    unhighlightSprite(characterSelected);
                     unlockOtherCharacterMovement();
                     disableEndTurnUI();
                     characterSelected.GetComponent<Animator>().SetBool("isWalking", false);
@@ -80,89 +90,142 @@ public class MainPlayerController : MonoBehaviour
                     characterSelected = null;
                 }
             }
-
-            //EndTurnUI is active and clicked something else
-            else if (endTurnUIActive) {
-                StartCoroutine(FlashCoroutine());
-            }  
-
-            //No character selected yet and character isn't disabled
-            else if (hit != null && hit.gameObject.tag == "character" && characterSelected == null && !disabledCharacters.Contains(hit.gameObject)) {
-                characterSelected = GameObject.Find(hit.gameObject.name);
-                originalPosition = characterSelected.transform.position;
-                highLightSprite();
-                lockOtherCharacterMovement();
-                enableMoveRange();
-                enableAttackRange();
-            }
             
-            //Same character is selected again
-            else if (hit != null && hit.gameObject.tag == "character" && characterSelected != null && hit.gameObject.name == characterSelected.name){
-                enableEndTurnUI();
-            }
-
-            //Existing character selection but clicked a different character that is not disabled
-            else if (hit != null && hit.gameObject.tag == "character" && characterSelected != null && hit.gameObject.name != characterSelected.name && !disabledCharacters.Contains(hit.gameObject)){
-                disableAttackRange();
-                disableMoveRange();
-                unhighlightSprite();
-                unlockOtherCharacterMovement();
-                disableEndTurnUI();
-                characterSelected.transform.position = originalPosition;
-                characterSelected = GameObject.Find(hit.gameObject.name);
-                originalPosition = characterSelected.transform.position;
-                lockOtherCharacterMovement();
-                enableMoveRange();
-                enableAttackRange();
-
-            }
-
-            /*
-            //Existing character selection and clicked enemy or interactable
-            else if (hit != null && hit.gameObject == enemyGameObj && isSelected){
-                - show combat UI
-                - start combat
-            }
-            */
-            
-            //Existing character selection, clicked anything else
+            //Clicked something else
             else {
-                //Character was selected but hasn't moved then can click away
-                if (characterSelected != null && characterSelected.transform.position == originalPosition) {
-                    characterSelected.transform.position = originalPosition;    
-                    disableMoveRange();
-                    disableAttackRange();               
-                    unlockOtherCharacterMovement();
-                    unhighlightSprite();
-                    characterSelected = null;
+                //Clicked a character/enemy
+                if (hit != null && (hit.gameObject.tag == "character" || hit.gameObject.tag == "enemy")) {
+                    //Clicked a player character
+                    if (hit.gameObject.tag == "character") {
+                        if (enemySelected != null) {
+                            unhighlightSprite(enemySelected);
+                            disableAttackRange(enemySelected);
+                            enemySelected = null;
+                        }
+                        //No character selected yet
+                        if (characterSelected == null) {
+                            characterSelected = hit.gameObject;
+                            originalPosition = characterSelected.transform.position;
+                            highLightSprite(characterSelected);
+                            lockOtherCharacterMovement();
+                            enableMoveRange();
+                            enableAttackRange(characterSelected);
+                            showCharacterInfo(characterSelected);
+                            if (!disabledCharacters.Contains(characterSelected)) { allowMovement = true; }
+                            else { allowMovement = false; }
+                        }
+                        //Character selected already and clicked again
+                        else if (hit.gameObject == characterSelected) {
+                            enableEndTurnUI();
+                        }
+                        //Character selected, but clicked a different character
+                        else if (hit.gameObject != characterSelected) {
+                            disableAttackRange(characterSelected);
+                            disableMoveRange();
+                            unhighlightSprite(characterSelected);
+                            unlockOtherCharacterMovement();
+                            characterSelected.transform.position = originalPosition;
+                            characterSelected = hit.gameObject;
+                            originalPosition = characterSelected.transform.position;
+                            lockOtherCharacterMovement();
+                            enableMoveRange();
+                            enableAttackRange(characterSelected);
+                            showCharacterInfo(characterSelected);
+                            if (!disabledCharacters.Contains(characterSelected)) { allowMovement = true; }
+                            else { allowMovement = false; }
+                        }
+                    }
+                    //Clicked an enemy
+                    else if (hit.gameObject.tag == "enemy") {
+                        //Character already selected
+                        if (characterSelected) {
+                            if (!enemyInRange) {
+                                characterSelected.transform.position = originalPosition;    
+                                disableMoveRange();
+                                disableAttackRange(characterSelected);               
+                                unlockOtherCharacterMovement();
+                                unhighlightSprite(characterSelected);
+                                characterSelected = null;
+                                enemySelected = hit.gameObject;
+                                enableAttackRange(enemySelected);
+                                highLightSprite(enemySelected);
+                                showCharacterInfo(enemySelected);
+                            }
+                            else {
+                                //show attack UI
+                            }                    
+                        }
+                        //Enemy already selected
+                        else if (enemySelected) {
+                            allowMovement = false;
+                            unhighlightSprite(enemySelected);
+                            disableAttackRange(enemySelected);
+                            enemySelected = hit.gameObject;
+                            highLightSprite(enemySelected);
+                            enableAttackRange(enemySelected);
+                            showCharacterInfo(enemySelected);    
+                        }
+                        //Neither character or enemy selected
+                        else {
+                            allowMovement = false;
+                            enemySelected = hit.gameObject;
+                            highLightSprite(enemySelected);
+                            enableAttackRange(enemySelected);
+                            showCharacterInfo(enemySelected);
+                        }
+                    }
                 }
-            
-                //Character was selected and has moved
-                if (characterSelected != null && characterSelected.transform.position != originalPosition) {
-                    enableEndTurnUI();
+                //Clicked an interactable
+                else if (hit != null && hit.gameObject.tag == "interactable") {
+
                 }
-             
+                //Didn't click character, enemy, or interactable
+                else {
+                    //Character previously selected but hasn't moved
+                    if (characterSelected != null && characterSelected.transform.position == originalPosition) {
+                        characterSelected.transform.position = originalPosition;    
+                        disableMoveRange();
+                        disableAttackRange(characterSelected);               
+                        unlockOtherCharacterMovement();
+                        unhighlightSprite(characterSelected);
+                        characterSelected = null;
+                    }
+                    //Character was selected and has moved
+                    else if (characterSelected != null && characterSelected.transform.position != originalPosition) {
+                        enableEndTurnUI();
+                    }
+                    //Enemy previously selected
+                    else if (enemySelected != null) {
+                        unhighlightSprite(enemySelected);
+                        disableAttackRange(enemySelected);
+                        enemySelected = null;
+                    }
+                    
+                }
             }
         }
-
         //On right click, if a character was selected then reset the selected character's position, untoggle attack range, move range and UI
         else if (Input.GetMouseButtonDown(1)) {
             if (characterSelected != null) {
-                unhighlightSprite();
-                disableAttackRange();
+                unhighlightSprite(characterSelected);
+                disableAttackRange(characterSelected);
                 disableMoveRange();
                 unlockOtherCharacterMovement();
                 disableEndTurnUI();
                 characterSelected.transform.position = originalPosition;
                 characterSelected = null;
-
+            }
+            else if (enemySelected != null) {
+                disableAttackRange(enemySelected);  
+                unhighlightSprite(enemySelected);
+                enemySelected = null;
             }
         }
 
     }
     private void HandleMovement()
     {
-        if (characterSelected == null || endTurnUIActive) {
+        if (characterSelected == null || endTurnUIActive || !allowMovement) {
             return;
         }
 
@@ -203,15 +266,32 @@ public class MainPlayerController : MonoBehaviour
         }
     }
     public void OnChildMouseEnter(GameObject child) {
-        //Highlight character on mouse enter if they are not disabled
-        if (!disabledCharacters.Contains(child)) {
+        //Highlight enemy and enemy isn't disabled
+        if (child.tag == "enemy" && !disabledEnemies.Contains(child)) {
             SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
-            sr.color = Color.yellow;
+            sr.color = new Color32(255,50,50,255);
+        }
+
+        //Highlight character on mouse enter if they are not disabled
+        else if (child.tag == "character" && !disabledCharacters.Contains(child)) {
+            SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+            sr.color = new Color32(100, 100, 255, 255);
         }
     }
     public void OnChildMouseExit(GameObject child) {
         //Unhighlight character if they're not disabled and not selected
-        if (!disabledCharacters.Contains(child)) {
+        if (child.tag == "enemy" && !disabledEnemies.Contains(child)) {
+            if (enemySelected == null) {
+                SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+                sr.color = Color.white;
+            }
+            else if (enemySelected != null && enemySelected != child) {
+                SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+                sr.color = Color.white;
+            } 
+        }
+
+        else if (child.tag == "character" && !disabledCharacters.Contains(child)) {
             if (characterSelected == null) {
                 SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
                 sr.color = Color.white;
@@ -250,22 +330,27 @@ public class MainPlayerController : MonoBehaviour
         moveRangeCollider.enabled = false;
 
     }
-    private void enableAttackRange() {
+    private void enableAttackRange(GameObject obj) {
         //TODO attackRange.transform.scale. Scale with character stats.
-        SpriteRenderer attackRangeSR = characterSelected.transform.Find("AttackRange").GetComponent<SpriteRenderer>();
+        SpriteRenderer attackRangeSR = obj.transform.Find("AttackRange").GetComponent<SpriteRenderer>();
         attackRangeSR.enabled = true;
     }
-    private void disableAttackRange() {
+    private void disableAttackRange(GameObject obj) {
         //TODO attackRange.transform.scale. Scale with character stats.
-        SpriteRenderer attackRangeSR = characterSelected.transform.Find("AttackRange").GetComponent<SpriteRenderer>();
+        SpriteRenderer attackRangeSR = obj.transform.Find("AttackRange").GetComponent<SpriteRenderer>();
         attackRangeSR.enabled = false;
     }
-    private void highLightSprite() {
-        SpriteRenderer sr = characterSelected.GetComponent<SpriteRenderer>();
-        sr.color = Color.yellow;
+    private void highLightSprite(GameObject obj) {
+        SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
+        if (obj.tag == "enemy") {
+            sr.color = new Color32(255,50,50,255);
+        }
+        else {
+            sr.color = new Color32(100, 100, 255, 255);
+        }
     }
-    private void unhighlightSprite() {
-        SpriteRenderer sr = characterSelected.GetComponent<SpriteRenderer>();
+    private void unhighlightSprite(GameObject obj) {
+        SpriteRenderer sr = obj.GetComponent<SpriteRenderer>();
         sr.color = Color.white;   
     }
     private System.Collections.IEnumerator FlashCoroutine() {
@@ -291,7 +376,7 @@ public class MainPlayerController : MonoBehaviour
         characterSelected.GetComponent<Animator>().SetBool("isFrozen", true);
     }
     private void endTurn() {
-        disableAttackRange();
+        disableAttackRange(characterSelected);
         disableMoveRange();
         graySpriteAndFreeze();
         disableEndTurnUI();
@@ -299,5 +384,8 @@ public class MainPlayerController : MonoBehaviour
         characterSelected.GetComponent<Animator>().SetBool("isFrozen", true);
         disabledCharacters.Add(characterSelected);
         characterSelected = null;
+    }
+    private void showCharacterInfo(GameObject obj) {
+        Debug.Log("show charcter info");
     }
 }
