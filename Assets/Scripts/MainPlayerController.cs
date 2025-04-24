@@ -19,7 +19,6 @@ public class MainPlayerController : MonoBehaviour
     private List<GameObject> disabledEnemies;
     private bool allowMovement = false;
     private int partySize;
-    private bool enemyInRange = false;
 
     void Awake() 
     {
@@ -139,7 +138,8 @@ public class MainPlayerController : MonoBehaviour
                     else if (hit.gameObject.tag == "enemy") {
                         //Character already selected
                         if (characterSelected) {
-                            if (!enemyInRange) {
+                            List<GameObject> enemiesInRange = transform.Find(characterSelected.name + "/AttackRange").GetComponent<AttackRange>().enemiesInRange;
+                            if (!enemiesInRange.Contains(hit.gameObject)) {
                                 characterSelected.transform.position = originalPosition;    
                                 disableMoveRange();
                                 disableAttackRange(characterSelected);               
@@ -152,7 +152,7 @@ public class MainPlayerController : MonoBehaviour
                                 showCharacterInfo(enemySelected);
                             }
                             else {
-                                //show attack UI
+                                Debug.Log("can attack");
                             }                    
                         }
                         //Enemy already selected
@@ -213,6 +213,7 @@ public class MainPlayerController : MonoBehaviour
                 unlockOtherCharacterMovement();
                 disableEndTurnUI();
                 characterSelected.transform.position = originalPosition;
+                characterSelected.GetComponent<Animator>().SetBool("isWalking", false);
                 characterSelected = null;
             }
             else if (enemySelected != null) {
@@ -388,4 +389,10 @@ public class MainPlayerController : MonoBehaviour
     private void showCharacterInfo(GameObject obj) {
         Debug.Log("show charcter info");
     }
+
+
+
+
+
+
 }
