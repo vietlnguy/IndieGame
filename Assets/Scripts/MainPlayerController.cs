@@ -20,6 +20,8 @@ public class MainPlayerController : MonoBehaviour
     private bool allowMovement = false;
     private int partySize;
 
+    public bool introFinished = false;
+
     void Awake() 
     {
         disabledCharacters = new List<GameObject>();
@@ -40,10 +42,11 @@ public class MainPlayerController : MonoBehaviour
     }
     void Update()
     {
-        HandleGameLoop();
-        HandleMovement();
-        HandleSelection();
-
+        if (introFinished) {
+            HandleGameLoop();
+            HandleMovement();
+            HandleSelection();
+        }
     }
     private void HandleGameLoop() {
         if (disabledCharacters.Count == partySize) {
@@ -267,40 +270,44 @@ public class MainPlayerController : MonoBehaviour
         }
     }
     public void OnChildMouseEnter(GameObject child) {
-        //Highlight enemy and enemy isn't disabled
-        if (child.tag == "enemy" && !disabledEnemies.Contains(child)) {
-            SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
-            sr.color = new Color32(255,50,50,255);
-        }
+        if (introFinished) {
+            //Highlight enemy and enemy isn't disabled
+            if (child.tag == "enemy" && !disabledEnemies.Contains(child)) {
+                SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+                sr.color = new Color32(255,50,50,255);
+            }
 
-        //Highlight character on mouse enter if they are not disabled
-        else if (child.tag == "character" && !disabledCharacters.Contains(child)) {
-            SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
-            sr.color = new Color32(100, 100, 255, 255);
+            //Highlight character on mouse enter if they are not disabled
+            else if (child.tag == "character" && !disabledCharacters.Contains(child)) {
+                SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+                sr.color = new Color32(100, 100, 255, 255);
+            }
         }
     }
     public void OnChildMouseExit(GameObject child) {
-        //Unhighlight character if they're not disabled and not selected
-        if (child.tag == "enemy" && !disabledEnemies.Contains(child)) {
-            if (enemySelected == null) {
-                SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
-                sr.color = Color.white;
+        if (introFinished) {
+            //Unhighlight character if they're not disabled and not selected
+            if (child.tag == "enemy" && !disabledEnemies.Contains(child)) {
+                if (enemySelected == null) {
+                    SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+                    sr.color = Color.white;
+                }
+                else if (enemySelected != null && enemySelected != child) {
+                    SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+                    sr.color = Color.white;
+                } 
             }
-            else if (enemySelected != null && enemySelected != child) {
-                SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
-                sr.color = Color.white;
-            } 
-        }
 
-        else if (child.tag == "character" && !disabledCharacters.Contains(child)) {
-            if (characterSelected == null) {
-                SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
-                sr.color = Color.white;
+            else if (child.tag == "character" && !disabledCharacters.Contains(child)) {
+                if (characterSelected == null) {
+                    SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+                    sr.color = Color.white;
+                }
+                else if (characterSelected != null && characterSelected != child) {
+                    SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
+                    sr.color = Color.white;
+                } 
             }
-            else if (characterSelected != null && characterSelected != child) {
-                SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
-                sr.color = Color.white;
-            } 
         }
     }
     private void enableEndTurnUI() {
