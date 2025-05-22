@@ -3,13 +3,13 @@ using System.Collections;
 
 public class ArrowToggle : MonoBehaviour
 {
-    public float toggleInterval = 0.5f;
-    public int blinkCount = 4;
+    private float toggleInterval = 0.2f;
+    private int blinkCount = 3;
     public AudioClip soundClip;       // Drag your audio file here in the Inspector
     private AudioSource audioSource;
-
     private SpriteRenderer sr;
     private Coroutine blinkRoutine;
+    public GameObject controller;
 
     void Awake()
     {
@@ -35,13 +35,14 @@ public class ArrowToggle : MonoBehaviour
             Play();
             yield return new WaitForSeconds(toggleInterval);
         }
+        controller.GetComponent<Controller>().arrowFinished = true;
     }
-        private void ToggleOff()
+    public void ToggleOff()
     {
             sr.enabled = false;
     }
 
-            private void ToggleOn()
+    public void ToggleOn()
     {
             sr.enabled = true;
     }
