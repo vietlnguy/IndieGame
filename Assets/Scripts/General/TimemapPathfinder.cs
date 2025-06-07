@@ -1,0 +1,170 @@
+// Grid-Based A* Pathfinding for Unity 2D using Physics2D and obstacleLayer
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Tilemaps;
+
+public class TilemapPathfinder : MonoBehaviour
+{
+    public Tilemap tilemap;
+    public LayerMask obstacleLayer;
+    
+    [Tooltip("The 'radius' of padding around the unit. 0 means no padding. 1 means it needs 1 clear cell around it.")]
+    public int padding = 0; // New variable for padding
+
+    public List<Vector3> GetWorldPath(Vector3 worldStart, Vector3 worldEnd)
+    {
+        Vector3Int startCell = tilemap.WorldToCell(worldStart);
+        Vector3Int endCell = tilemap.WorldToCell(worldEnd);
+
+        // Optional: Ensure start/end are not *directly* blocked (without padding for goal)
+        // If the start cell itself is an obstacle, we can't start there.
+        if (IsCellDirectlyBlocked(startCell))
+        {
+            Debug.LogWarning("Start cell is directly blocked. Path might not be found.");
+            return new List<Vector3>(); 
+        }
+        // If the end cell itself is an obstacle, we can't end there.
+        if (IsCellDirectlyBlocked(endCell))
+        {
+            Debug.LogWarning("End cell is directly blocked. Path might not be found.");
+            return new List<Vector3>(); 
+        }
+
+
+        // Pass the goal cell to FindPath
+        List<Vector3Int> cellPath = FindPath(startCell, endCell);
+        List<Vector3> worldPath = new List<Vector3>();
+
+        foreach (var cell in cellPath)
+        {
+            worldPath.Add(tilemap.GetCellCenterWorld(cell));
+        }
+
+        return worldPath;
+    }
+
+    // Modified to accept the goal cell
+    List<Vector3Int> FindPath(Vector3Int start, Vector3Int goal)
+    {
+        var openSet = new List<Vector3Int> { start };
+        var cameFrom = new Dictionary<Vector3Int, Vector3Int>();
+        var gScore = new Dictionary<Vector3Int, float> { [start] = 0 };
+        var fScore = new Dictionary<Vector3Int, float> { [start] = Heuristic(start, goal) };
+
+        while (openSet.Count > 0)
+        {
+            Vector3Int current = openSet[0];
+            foreach (var node in openSet)
+            {
+                if (fScore.ContainsKey(node) && fScore[node] < fScore[current])
+                    current = node;
+            }
+
+            if (current == goal)
+                return ReconstructPath(cameFrom, current);
+
+            openSet.Remove(current);
+
+            foreach (Vector3Int neighbor in GetNeighbors(current))
+            {
+                // Pass the goal cell to IsBlockedWithPadding
+                if (IsBlockedWithPadding(neighbor, goal)) continue;
+
+                float tentativeG = gScore[current] + 1; // Assuming cardinal movement cost of 1
+                if (!gScore.ContainsKey(neighbor) || tentativeG < gScore[neighbor])
+                {
+                    cameFrom[neighbor] = current;
+                    gScore[neighbor] = tentativeG;
+                    fScore[neighbor] = tentativeG + Heuristic(neighbor, goal);
+                    if (!openSet.Contains(neighbor))
+                        openSet.Add(neighbor);
+                }
+            }
+        }
+
+        return new List<Vector3Int>(); // No path found
+    }
+
+    // New method to check if a cell is blocked, considering padding, and respecting the goal
+    bool IsBlockedWithPadding(Vector3Int cell, Vector3Int goalCell)
+    {
+        // If the current cell being checked is the GOAL CELL,
+        // we only care if it's directly blocked. We don't apply padding.
+        if (cell == goalCell)
+        {
+            return IsCellDirectlyBlocked(cell);
+        }
+
+        // Otherwise (it's not the goal cell), apply full padding logic
+        if (IsCellDirectlyBlocked(cell))
+        {
+            return true;
+        }
+
+        // Then, check surrounding cells based on padding
+        for (int xOffset = -padding; xOffset <= padding; xOffset++)
+        {
+            for (int yOffset = -padding; yOffset <= padding; yOffset++)
+            {
+                // Skip the center cell as it's already checked
+                if (xOffset == 0 && yOffset == 0) continue; 
+
+                Vector3Int paddedCell = new Vector3Int(cell.x + xOffset, cell.y + yOffset, cell.z);
+                
+                // CRITICAL: Ensure we don't accidentally block the goal if it's within the padding radius
+                // of a non-goal cell being checked. This ensures the path can always reach the goal.
+                if (paddedCell == goalCell) continue; 
+
+                if (IsCellDirectlyBlocked(paddedCell))
+                {
+                    return true; // A cell within the padding area (and not the goal) is blocked
+                }
+            }
+        }
+        return false; // No cells within padding (or the cell itself) are blocked for non-goal cells
+    }
+
+    // Original IsBlocked, renamed to be specific to a single cell
+    bool IsCellDirectlyBlocked(Vector3Int cell)
+    {
+        // Physics2D.OverlapPoint checks if *any* collider on the obstacleLayer overlaps the center of the cell.
+        // This implicitly assumes obstacles are aligned with cell centers or are small enough.
+        Vector3 worldPos = tilemap.GetCellCenterWorld(cell);
+        return Physics2D.OverlapPoint(worldPos, obstacleLayer);
+    }
+
+    List<Vector3Int> ReconstructPath(Dictionary<Vector3Int, Vector3Int> cameFrom, Vector3Int current)
+    {
+        var totalPath = new List<Vector3Int> { current };
+        while (cameFrom.ContainsKey(current))
+        {
+            current = cameFrom[current];
+            totalPath.Insert(0, current);
+        }
+        return totalPath;
+    }
+
+    float Heuristic(Vector3Int a, Vector3Int b)
+    {
+        // Manhattan distance heuristic for 4-directional movement
+        return Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y);
+    }
+
+    List<Vector3Int> GetNeighbors(Vector3Int pos)
+    {
+        var neighbors = new List<Vector3Int>
+        {
+            new Vector3Int(pos.x + 1, pos.y, 0), // Right
+            new Vector3Int(pos.x - 1, pos.y, 0), // Left
+            new Vector3Int(pos.x, pos.y + 1, 0), // Up
+            new Vector3Int(pos.x, pos.y - 1, 0)  // Down
+            // Add diagonal neighbors if you want 8-directional movement:
+            // new Vector3Int(pos.x + 1, pos.y + 1, 0),
+            // new Vector3Int(pos.x + 1, pos.y - 1, 0),
+            // new Vector3Int(pos.x - 1, pos.y + 1, 0),
+            // new Vector3Int(pos.x - 1, pos.y - 1, 0)
+        };
+
+        return neighbors;
+    }
+}
