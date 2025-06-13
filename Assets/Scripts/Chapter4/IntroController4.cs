@@ -192,13 +192,13 @@ public class IntroController4: MonoBehaviour
     private IEnumerator introSequence() {
         yield return StartCoroutine(MoveAllCharacters());
         yield return new WaitForSeconds(1f);
-        textBoxController.GetComponent<DialogueSystem>().NextDialogue();
+        textBoxController.GetComponent<SmallDialogue4>().NextDialogue();
         while (!dialogueFinished) {
             yield return new WaitForSeconds(1f);
         }
         yield return StartCoroutine(moveCamera(-1f, -12f, -10f));
         yield return StartCoroutine(arrow.Blink());
-        textBoxController.GetComponent<DialogueSystem>().NextDialogue();
+        textBoxController.GetComponent<SmallDialogue4>().NextDialogue();
         while (!secondDialogueFinished) {
             yield return new WaitForSeconds(1f);
         }
@@ -206,7 +206,7 @@ public class IntroController4: MonoBehaviour
         yield return StartCoroutine(characterAppear(amara));
         yield return StartCoroutine(FollowPath(amara, new Vector3(-0.1f, -1.6f, 0f)));
         yield return StartCoroutine(characterDisappear(amara));
-        textBoxController.GetComponent<DialogueSystem>().NextDialogue();
+        textBoxController.GetComponent<SmallDialogue4>().NextDialogue();
         while (!thirdDialogueFinished) {
             yield return new WaitForSeconds(1f);
         }
@@ -220,7 +220,7 @@ public class IntroController4: MonoBehaviour
         GameObject.Find("Main Camera").GetComponent<Transform>().position = new Vector3(-6f, -5f, -10f);
         GameObject.Find("Main Camera").GetComponent<Camera>().orthographicSize = 11f;
         yield return StartCoroutine(UndoFadeToBlack(blackScreen));
-        textBoxController.GetComponent<DialogueSystem>().NextDialogue();
+        textBoxController.GetComponent<SmallDialogue4>().NextDialogue();
         while (!fourthDialogueFinished) {
             yield return new WaitForSeconds(1f);
         }

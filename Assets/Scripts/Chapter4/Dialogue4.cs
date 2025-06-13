@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro; // Important: use TMPro, not UnityEngine.UI
 
-public class DialogueSystem4 : MonoBehaviour
+public class SmallDialogue4 : MonoBehaviour
 {
     
     public TextMeshProUGUI textComponent;

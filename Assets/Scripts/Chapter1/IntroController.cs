@@ -6,7 +6,7 @@ public class IntroController: MonoBehaviour
 
     public GameObject mainChar;
     public GameObject astrid;
-    public GameObject textBoxController;
+    public GameObject DialogueController;
     public float moveSpeed = 4f;
     public bool dialogueFinished = false;
     public bool secondDialogueFinished = false;
@@ -14,6 +14,7 @@ public class IntroController: MonoBehaviour
     public GameObject whiteScreen;
     public GameObject blackScreen;
     public GameObject sexScreen;
+    public GameObject houseScreen;
     public GameObject enemies;
     public GameObject fightScreen;
     public GameObject characters;
@@ -134,18 +135,22 @@ public class IntroController: MonoBehaviour
         yield return new WaitForSeconds(.5f);
         doorAudio.Play();
         yield return StartCoroutine(characterDisappear(mainChar));
-        textBoxController.GetComponent<DialogueSystem>().NextDialogue();
+        DialogueController.GetComponent<SmallDialogue>().NextDialogue();
         while (!dialogueFinished)
         {
             yield return new WaitForSeconds(1f);
         }
         yield return StartCoroutine(FadeScreen(blackScreen, 1f));
         yield return StartCoroutine(FadeScreen(sexScreen, 1f));
-        textBoxController.GetComponent<DialogueSystem>().NextDialogue();
+        DialogueController.GetComponent<SmallDialogue>().NextDialogue();
         while (!secondDialogueFinished)
         {
             yield return new WaitForSeconds(1f);
         }
+        yield return StartCoroutine(UndoFade(sexScreen, 2f));
+        yield return StartCoroutine(FadeScreen(houseScreen, 1f));
+        DialogueController.GetComponent<FullBodyDialogue>().NextDialogue();
+
     }
     
     
