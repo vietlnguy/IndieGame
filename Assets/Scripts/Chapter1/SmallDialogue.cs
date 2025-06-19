@@ -42,23 +42,17 @@ public class SmallDialogue : MonoBehaviour
             new CharacterDialogue(false, mainCharacterSprite, "Liam", new string[] {"It's hard to relax when there is still so much to do...", "I'm the one that said we should move out here.", "I'm starting to wonder if that was a dumb decision..."}),
             new CharacterDialogue(false, astridSprite, "Astrid", new string[] {"I've never regretted a second being here.", "It doesn't matter where we are, as long as we're together, I'm happy."}),
             new CharacterDialogue(false, mainCharacterSprite, "Liam", new string[] {"I don't deserve you."}),
-            new CharacterDialogue(false, astridSprite, "Astrid", new string[] {"Hehe, that's what they all say.", "Now why don't I help you relax a little more?", "You must be so tense."}),
+            new CharacterDialogue(false, astridSprite, "Astrid", new string[] {"Hehe, that's what they all say.", "Now why don't I help you relax a little more?", "You must be so tense. Let me give you a hand."}),
             new CharacterDialogue(false, mainCharacterSprite, "Liam", new string[] {"Actually, I don't feel as sore as-- uughh--"}),
             new CharacterDialogue(true, astridSprite, "Astrid", new string[] {"Hehe, maybe you are just a dumb farmer.", "Working out in the sun all day must've turned your brain to mush."}),
             new CharacterDialogue(false, mainCharacterSprite, "Liam", new string[] {"Haah... maybe you're right.. Ahh...", "It doesn't help that you're draining all of the blood from my head now, too."}),
             new CharacterDialogue(false, astridSprite, "Astrid", new string[] {"It's okay, it's looks like it's going to a different head, hehe.", "Looks like I better give it some special attention."}),
-            new CharacterDialogue(false, mainCharacterSprite, "Liam", new string[] {"Ooo... that's good... just like that..."}),
+            new CharacterDialogue(false, mainCharacterSprite, "Liam", new string[] {"Ungh..."}),
             new CharacterDialogue(false, astridSprite, "Astrid", new string[] {"Mwgh, mwgh, mwgh..."}),
-            new CharacterDialogue(false, mainCharacterSprite, "Liam", new string[] {"Uughh--", "It feels too good!", "I can't hold it in any longer!"}),
-            new CharacterDialogue(false, astridSprite, "Astrid", new string[] {"Mhhmmmm--"}),
+            new CharacterDialogue(false, mainCharacterSprite, "Liam", new string[] {"Ahh-- it feels too good!", "I don't think I can hold it in any longer!"}),
+            new CharacterDialogue(false, astridSprite, "Astrid", new string[] {"Mmmmm--"}),
 
-            //FullBodyDialogue
-            new CharacterDialogue(true, astridSprite, "Astrid", new string[] {"Hehe, feeling better?"}),
-            new CharacterDialogue(false, mainCharacterSprite, "Liam", new string[] {"I feel like a new man!", "Like I've got the strength to plow ten fields!"}),
-            new CharacterDialogue(false, astridSprite, "Astrid", new string[] {"I hope I'm one of them!"}),
-            new CharacterDialogue(false, mainCharacterSprite, "Liam", new string[] {"Of course! *wink*", "Honestly though... I couldn't have done this without you.", "Having you here gives me the strength to perservere."}),
-           
-
+            new CharacterDialogue(true, mainCharacterSprite, "Liam", new string[] {"End dialogue."})
         };
 
         textComponent.text = string.Empty;
