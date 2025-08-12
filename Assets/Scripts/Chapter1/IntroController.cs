@@ -1,15 +1,21 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
+
 public class IntroController: MonoBehaviour
 {
 
     public GameObject mainChar;
     public GameObject astrid;
     public GameObject DialogueController;
+    public GameObject fullBodyCharacterParent;
     public float moveSpeed = 4f;
     public bool dialogueFinished = false;
     public bool secondDialogueFinished = false;
+    public bool thirdDialogueFinished = false;
+    public bool fourthDialogueFinished = false;
+    public bool fifthDialogueFinished = false;
     public ArrowToggle arrow;
     public GameObject whiteScreen;
     public GameObject blackScreen;
@@ -24,6 +30,7 @@ public class IntroController: MonoBehaviour
     public TilemapPathfinder pathfinder;
     public AudioSource footstepAudio;
     public AudioSource doorAudio;
+    public AudioSource artifactShineAudio;
     void Start() {
         StartCoroutine(introSequence());
     }
@@ -127,8 +134,45 @@ public class IntroController: MonoBehaviour
         }
         footstepAudio.Stop();
     }
+    private void disableCharacterImages()
+    {
+        for (int i = 0; i < fullBodyCharacterParent.transform.childCount; i++)
+        {
+            Transform childTransform = fullBodyCharacterParent.transform.GetChild(i);
+            GameObject childGameObject = childTransform.gameObject;
+            Image childImage = childGameObject.GetComponent<Image>();
+            if (childImage != null)
+            {
+                childImage.enabled = false;
+            }
+        }
+    }
+    private void enableEnemySprites()
+    {
+        for (int i = 0; i < enemies.transform.childCount; i++)
+        {
+            Transform childTransform = enemies.transform.GetChild(i);
+            GameObject childGameObject = childTransform.gameObject;
+            SpriteRenderer child = childGameObject.GetComponent<SpriteRenderer>();
+            child.enabled = true;
+        }
+    }
+    private void enableCharacterImages()
+    {
+        for (int i = 0; i < fullBodyCharacterParent.transform.childCount; i++)
+        {
+            Transform childTransform = fullBodyCharacterParent.transform.GetChild(i);
+            GameObject childGameObject = childTransform.gameObject;
+            Image childImage = childGameObject.GetComponent<Image>();
+            if (childImage != null)
+            {
+                childImage.enabled = true;
+            }
+        }
+    }
     private IEnumerator introSequence()
     {
+        //Overworld movement and dialogue
         yield return StartCoroutine(UndoFade(whiteScreen, 1f));
         yield return new WaitForSeconds(1f);
         yield return StartCoroutine(FollowPath(mainChar, new Vector3(-6.57f, -11.28f, 0f)));
@@ -140,16 +184,62 @@ public class IntroController: MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
         }
+
+        //Sex scene
         yield return StartCoroutine(FadeScreen(blackScreen, 1f));
-        yield return StartCoroutine(FadeScreen(sexScreen, 1f));
+        sexScreen.GetComponent<CanvasGroup>().alpha = 1f;
+        yield return StartCoroutine(UndoFade(blackScreen, 1f));
         DialogueController.GetComponent<SmallDialogue>().NextDialogue();
         while (!secondDialogueFinished)
         {
             yield return new WaitForSeconds(1f);
         }
-        yield return StartCoroutine(UndoFade(sexScreen, 2f));
-        yield return StartCoroutine(FadeScreen(houseScreen, 1f));
+
+        //In house dialogue
+        yield return StartCoroutine(FadeScreen(blackScreen, 2f));
+        sexScreen.GetComponent<CanvasGroup>().alpha = 0f;
+        houseScreen.GetComponent<CanvasGroup>().alpha = 1f;
+        yield return StartCoroutine(UndoFade(blackScreen, 1f));
         DialogueController.GetComponent<FullBodyDialogue>().NextDialogue();
+        while (!thirdDialogueFinished)
+        {
+            yield return new WaitForSeconds(1f);
+        }
+
+        //Overworld artifact scene and dialogue
+        yield return StartCoroutine(FadeScreen(blackScreen, 2f));
+        houseScreen.GetComponent<CanvasGroup>().alpha = 0f;
+        disableCharacterImages();
+        yield return StartCoroutine(UndoFade(blackScreen, 2f));
+        artifactShineAudio.Play();
+        yield return new WaitForSeconds(4f);
+        DialogueController.GetComponent<SmallDialogue>().NextDialogue();
+        while (!fourthDialogueFinished)
+        {
+            yield return new WaitForSeconds(1f);
+        }
+
+        //In house dialogue 2
+        yield return StartCoroutine(FadeScreen(blackScreen, 2f));
+        houseScreen.GetComponent<CanvasGroup>().alpha = 1f;
+        enableCharacterImages();
+        yield return StartCoroutine(UndoFade(blackScreen, 1f));
+        DialogueController.GetComponent<FullBodyDialogue>().NextDialogue();
+        while (!fifthDialogueFinished)
+        {
+            yield return new WaitForSeconds(1f);
+        }
+
+        //Overworld
+        yield return StartCoroutine(FadeScreen(blackScreen, 2f));
+
+        houseScreen.GetComponent<CanvasGroup>().alpha = 0f;
+        disableCharacterImages();
+        yield return StartCoroutine(UndoFade(blackScreen, 2f));
+
+
+
+
 
     }
     

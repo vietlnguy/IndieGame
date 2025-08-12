@@ -26,6 +26,7 @@ public class SmallDialogue : MonoBehaviour
     private CharacterDialogue[] dialogues;
     public AudioClip soundClip;
     private AudioSource audioSource;
+    private bool autoPlayStarted = false;
     void Start()
     {
         rectTransform = canvas.GetComponent<RectTransform>();
@@ -35,31 +36,33 @@ public class SmallDialogue : MonoBehaviour
         
         dialogues = new CharacterDialogue[] {
             //SmallDialogue
-            new CharacterDialogue(false, mainCharacterSprite, "Liam", new string[] {"Honey, I'm back!"}),
-            new CharacterDialogue(false, astridSprite, "Astrid", new string[] {"Oh! Back so soon?", "I've hardly started dinner!"}),
-            new CharacterDialogue(false, mainCharacterSprite, "Liam", new string[] {"I had an early start this morning.", "Need an extra hand?"}),
-            new CharacterDialogue(false, astridSprite, "Astrid", new string[] {"No thank you, dear.", "You've already done so much around the farm, I can handle dinner.", "You should relax!"}),
-            new CharacterDialogue(false, mainCharacterSprite, "Liam", new string[] {"It's hard to relax when there is still so much to do...", "I'm the one that said we should move out here.", "I'm starting to wonder if that was a dumb decision..."}),
-            new CharacterDialogue(false, astridSprite, "Astrid", new string[] {"I've never regretted a second being here.", "It doesn't matter where we are, as long as we're together, I'm happy."}),
-            new CharacterDialogue(false, mainCharacterSprite, "Liam", new string[] {"I don't deserve you."}),
-            new CharacterDialogue(false, astridSprite, "Astrid", new string[] {"Hehe, that's what they all say.", "Now why don't I help you relax a little more?", "You must be so tense. Let me give you a hand."}),
-            new CharacterDialogue(false, mainCharacterSprite, "Liam", new string[] {"Actually, I don't feel as sore as-- uughh--"}),
-            new CharacterDialogue(true, astridSprite, "Astrid", new string[] {"Hehe, maybe you are just a dumb farmer.", "Working out in the sun all day must've turned your brain to mush."}),
-            new CharacterDialogue(false, mainCharacterSprite, "Liam", new string[] {"Haah... maybe you're right.. Ahh...", "It doesn't help that you're draining all of the blood from my head now, too."}),
-            new CharacterDialogue(false, astridSprite, "Astrid", new string[] {"It's okay, it's looks like it's going to a different head, hehe.", "Looks like I better give it some special attention."}),
-            new CharacterDialogue(false, mainCharacterSprite, "Liam", new string[] {"Ungh..."}),
-            new CharacterDialogue(false, astridSprite, "Astrid", new string[] {"Mwgh, mwgh, mwgh..."}),
-            new CharacterDialogue(false, mainCharacterSprite, "Liam", new string[] {"Ahh-- it feels too good!", "I don't think I can hold it in any longer!"}),
-            new CharacterDialogue(false, astridSprite, "Astrid", new string[] {"Mmmmm--"}),
-
-            new CharacterDialogue(true, mainCharacterSprite, "Liam", new string[] {"End dialogue."})
+            new CharacterDialogue(false, false, mainCharacterSprite, "Liam", new string[] {"Honey, I'm back!"}),
+            new CharacterDialogue(false, false, astridSprite, "Astrid", new string[] {"Oh! Back so soon?", "I've hardly started dinner!"}),
+            new CharacterDialogue(false, false, mainCharacterSprite, "Liam", new string[] {"I had an early start this morning.", "Need an extra hand?"}),
+            new CharacterDialogue(false, false, astridSprite, "Astrid", new string[] {"No thank you, dear.", "You've already done so much around the farm, I can handle dinner.", "You should relax!"}),
+            new CharacterDialogue(false, false, mainCharacterSprite, "Liam", new string[] {"It's hard to relax when there is still so much to do...", "I'm the one that said we should move out here.", "I'm starting to wonder if that was a dumb decision..."}),
+            new CharacterDialogue(false, false, astridSprite, "Astrid", new string[] {"I've never regretted a second being here.", "It doesn't matter where we are, as long as we're together, I'm happy."}),
+            new CharacterDialogue(false, false, mainCharacterSprite, "Liam", new string[] {"I don't deserve you."}),
+            new CharacterDialogue(false, false, astridSprite, "Astrid", new string[] {"Hehe, that's what they all say.", "Now why don't I help you relax a little more?", "You must be so tense. Let me give you a hand."}),
+            new CharacterDialogue(false, true, mainCharacterSprite, "Liam", new string[] {"Actually, I don't feel as sore as-- uughh--"}),
+            new CharacterDialogue(false, false, astridSprite, "Astrid", new string[] {"Hehe, maybe you are just a dumb farmer.", "Working out in the sun all day must've turned your brain to mush."}),
+            new CharacterDialogue(false, false, mainCharacterSprite, "Liam", new string[] {"Haah... maybe you're right.. Ahh...", "It doesn't help that you're draining all of the blood from my head now, too."}),
+            new CharacterDialogue(false, false, astridSprite, "Astrid", new string[] {"It's okay, it's looks like it's going to a different head, hehe.", "Looks like I better give it some special attention."}),
+            new CharacterDialogue(false, false, mainCharacterSprite, "Liam", new string[] {"Ungh..."}),
+            new CharacterDialogue(false, false, astridSprite, "Astrid", new string[] {"Mwgh, mwgh, mwgh..."}),
+            new CharacterDialogue(false, false, mainCharacterSprite, "Liam", new string[] {"Ahh-- it feels too good!", "I don't think I can hold it in any longer!"}),
+            new CharacterDialogue(false, true, astridSprite, "Astrid", new string[] {"Mmmmm--"}),
+            new CharacterDialogue(true, false, astridSprite, "Soldier", new string[] {"What the--"}),
+            new CharacterDialogue(true, true, astridSprite, "Soldier", new string[] {"Ack!"}),            
+            new CharacterDialogue(false, true, mainCharacterSprite, "Liam", new string[] {"End dialogue."})
         };
 
         textComponent.text = string.Empty;
     }
     void Update()
     {
-        if (startedDialogue) {
+        if (startedDialogue && !dialogues[dialoguesIndex].autoPlay)
+        {
             if (Input.GetMouseButtonDown(0)) // Left click
             {
                 if (textComponent.text == lines[linesIndex])
@@ -74,11 +77,15 @@ public class SmallDialogue : MonoBehaviour
                 }
             }
         }
+        else if (startedDialogue && dialogues[dialoguesIndex].autoPlay)
+        {
+            StartCoroutine(AutoPlay());
+            autoPlayStarted = true;
+        }
     }
     public void NextDialogue() {
         lines = dialogues[dialoguesIndex].lines;
         StartCoroutine(FadeBoxInAndStartDialogue(dialogues[dialoguesIndex].sprite, dialogues[dialoguesIndex].title));
-        dialoguesIndex++;
     }
     public void NextLine() {
         if (linesIndex < lines.Length - 1) {
@@ -89,33 +96,46 @@ public class SmallDialogue : MonoBehaviour
         }
         else {
             //No more dialogue left
-            if (dialoguesIndex >= dialogues.Length) {
+            if (dialoguesIndex >= dialogues.Length)
+            {
                 StartCoroutine(FadeOutAndMove());
                 startedDialogue = false;
+                autoPlayStarted = false;
             }
-            else if (dialogues[dialoguesIndex].pauseExecutionBefore){
-                if (!controllerScript.dialogueFinished) {
+            else if (dialogues[dialoguesIndex].pauseExecutionAfter)
+            {
+                if (!controllerScript.dialogueFinished)
+                {
                     controllerScript.dialogueFinished = true;
                 }
-                else if (controllerScript.dialogueFinished && !controllerScript.secondDialogueFinished) {
+                else if (controllerScript.dialogueFinished && !controllerScript.secondDialogueFinished)
+                {
                     controllerScript.secondDialogueFinished = true;
                 }
+                else if (controllerScript.thirdDialogueFinished && !controllerScript.fourthDialogueFinished)
+                {
+                    controllerScript.fourthDialogueFinished = true;
+                }
                 startedDialogue = false;
+                dialoguesIndex++;
                 StartCoroutine(FadeOutAndMove());
                 textComponent.text = string.Empty;
                 linesIndex = 0;
             }
             //Start next character's dialogue
-            else {
+            else
+            {
+                dialoguesIndex++;
+                autoPlayStarted = false;
                 textComponent.text = string.Empty;
                 linesIndex = 0;
                 StartCoroutine(FadeOutAndMove());
                 startedDialogue = false;
-                NextDialogue(); 
+                NextDialogue();
             }
         }
     }
-    IEnumerator FadeBoxInAndStartDialogue(Sprite sprite, string name) {
+    public IEnumerator FadeBoxInAndStartDialogue(Sprite sprite, string name) {
         yield return new WaitForSeconds(.25f);
         portraitImage.sprite = sprite;
         title.text = name;
@@ -141,7 +161,7 @@ public class SmallDialogue : MonoBehaviour
         StartCoroutine(TypeLine());
 
     }
-    IEnumerator FadeOutAndMove() {
+    public IEnumerator FadeOutAndMove() {
         Vector2 targetPos = new Vector2(0f, -10f);
         Vector2 startPos = new Vector2(0f, 0f);
 
@@ -159,8 +179,16 @@ public class SmallDialogue : MonoBehaviour
         group.alpha = 0f;
         rectTransform.anchoredPosition = targetPos;
     }
+    public IEnumerator AutoPlay()
+    {
+        if (!autoPlayStarted)
+        {
+            yield return new WaitForSeconds(3f);
+            NextLine(); 
+        }
+    }
     IEnumerator TypeLine() {
-        audioSource.pitch = dialogues[dialoguesIndex - 1].dialoguePitch;
+        audioSource.pitch = dialogues[dialoguesIndex].dialoguePitch;
         audioSource.PlayOneShot(soundClip);
         foreach (char c in lines[linesIndex].ToCharArray()) {
             textComponent.text += c;
@@ -172,31 +200,40 @@ public class SmallDialogue : MonoBehaviour
         public string[] lines;
         public string title;
         public Sprite sprite;
-        public bool pauseExecutionBefore;
+        public bool pauseExecutionAfter;
         public float dialoguePitch;
+        public bool autoPlay;
 
-        public CharacterDialogue(bool pauseExecutionBefore, Sprite sprite, string title, string[] lines) {
+        public CharacterDialogue(bool autoPlay, bool pauseExecutionAfter, Sprite sprite, string title, string[] lines)
+        {
             this.lines = lines;
             this.title = title;
             this.sprite = sprite;
-            this.pauseExecutionBefore = pauseExecutionBefore;
+            this.pauseExecutionAfter = pauseExecutionAfter;
+            this.autoPlay = autoPlay;
 
-            if (title == "Liam") {
+            if (title == "Liam")
+            {
                 this.dialoguePitch = 0.75f;
             }
-            else if (title == "Penelope") {
+            else if (title == "Penelope")
+            {
                 this.dialoguePitch = 0.95f;
             }
-            else if (title == "???") {
+            else if (title == "???")
+            {
                 this.dialoguePitch = 0.9f;
             }
-            else if (title == "Gerard") {
+            else if (title == "Gerard")
+            {
                 this.dialoguePitch = 0.7f;
             }
-            else if (title == "NPC") {
+            else if (title == "NPC")
+            {
                 this.dialoguePitch = 0.8f;
             }
-            else {
+            else
+            {
                 this.dialoguePitch = 1f;
             }
         }
