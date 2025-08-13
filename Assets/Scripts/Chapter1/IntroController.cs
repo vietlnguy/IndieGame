@@ -16,6 +16,7 @@ public class IntroController: MonoBehaviour
     public bool thirdDialogueFinished = false;
     public bool fourthDialogueFinished = false;
     public bool fifthDialogueFinished = false;
+    public bool sixthDialogueFinished = false;
     public ArrowToggle arrow;
     public GameObject whiteScreen;
     public GameObject blackScreen;
@@ -31,6 +32,8 @@ public class IntroController: MonoBehaviour
     public AudioSource footstepAudio;
     public AudioSource doorAudio;
     public AudioSource artifactShineAudio;
+    public AudioSource forestBattleTheme;
+    public MainPlayerController mainPlayerController;
     void Start() {
         StartCoroutine(introSequence());
     }
@@ -172,6 +175,7 @@ public class IntroController: MonoBehaviour
     }
     private IEnumerator introSequence()
     {
+        /*
         //Overworld movement and dialogue
         yield return StartCoroutine(UndoFade(whiteScreen, 1f));
         yield return new WaitForSeconds(1f);
@@ -185,7 +189,7 @@ public class IntroController: MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
 
-        //Sex scene
+        //scene
         yield return StartCoroutine(FadeScreen(blackScreen, 1f));
         sexScreen.GetComponent<CanvasGroup>().alpha = 1f;
         yield return StartCoroutine(UndoFade(blackScreen, 1f));
@@ -229,20 +233,41 @@ public class IntroController: MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
         }
+        */
 
         //Overworld
         yield return StartCoroutine(FadeScreen(blackScreen, 2f));
-
         houseScreen.GetComponent<CanvasGroup>().alpha = 0f;
+        enableEnemySprites();
         disableCharacterImages();
         yield return StartCoroutine(UndoFade(blackScreen, 2f));
+        doorAudio.Play();
+        yield return StartCoroutine(characterAppear(mainChar));
+        yield return new WaitForSeconds(.5f);
+        yield return StartCoroutine(FollowPath(mainChar, new Vector3(-7.53f, -12f, 0f)));
 
+        astrid.transform.position = new Vector3(-6.57f, -11.28f, 0f);
+        astrid.GetComponent<SpriteRenderer>().enabled = true;
+        yield return StartCoroutine(characterAppear(astrid));
+        yield return StartCoroutine(FollowPath(astrid, new Vector3(-5.66f, -12f, 0f)));
+        yield return new WaitForSeconds(.5f);
 
+        fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
+        swordClash.Play();
+        yield return new WaitForSeconds(2f);
+        forestBattleTheme.Play();
+        fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
+        yield return new WaitForSeconds(2f);
+        DialogueController.GetComponent<SmallDialogue>().NextDialogue();   
+        while (!sixthDialogueFinished)
+        {
+            yield return new WaitForSeconds(1f);
+        }
 
+        mainPlayerController.introFinished = true;
 
 
     }
-    
     
 }
 

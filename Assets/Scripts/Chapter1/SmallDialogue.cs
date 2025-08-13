@@ -53,8 +53,11 @@ public class SmallDialogue : MonoBehaviour
             new CharacterDialogue(false, false, mainCharacterSprite, "Liam", new string[] {"Ahh-- it feels too good!", "I don't think I can hold it in any longer!"}),
             new CharacterDialogue(false, true, astridSprite, "Astrid", new string[] {"Mmmmm--"}),
             new CharacterDialogue(true, false, astridSprite, "Soldier", new string[] {"What the--"}),
-            new CharacterDialogue(true, true, astridSprite, "Soldier", new string[] {"Ack!"}),            
-            new CharacterDialogue(false, true, mainCharacterSprite, "Liam", new string[] {"End dialogue."})
+            new CharacterDialogue(true, true, astridSprite, "Soldier", new string[] {"Ack!"}),
+            new CharacterDialogue(false, false, mainCharacterSprite, "Liam", new string[] {"It's been a while since we've been in battle.", "Let's take this slowly.", "I'll charge the enemy, you support me from behind."}),
+            new CharacterDialogue(false, true, astridSprite, "Astrid", new string[] {"Let's do this!"}),
+            new CharacterDialogue(false, false, astridSprite, "Astrid", new string[] {"Holding text"}),
+
         };
 
         textComponent.text = string.Empty;
@@ -115,6 +118,10 @@ public class SmallDialogue : MonoBehaviour
                 else if (controllerScript.thirdDialogueFinished && !controllerScript.fourthDialogueFinished)
                 {
                     controllerScript.fourthDialogueFinished = true;
+                }
+                else if (controllerScript.fifthDialogueFinished && !controllerScript.sixthDialogueFinished)
+                {
+                    controllerScript.sixthDialogueFinished = true;
                 }
                 startedDialogue = false;
                 dialoguesIndex++;
