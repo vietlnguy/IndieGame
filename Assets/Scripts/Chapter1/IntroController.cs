@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using TMPro;
 
 public class IntroController: MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class IntroController: MonoBehaviour
     public GameObject houseScreen;
     public GameObject enemies;
     public GameObject fightScreen;
+    public TextMeshProUGUI fightScreenText;
     public GameObject characters;
     public AudioSource swordClash;
     public AudioSource timpani;
@@ -33,6 +35,7 @@ public class IntroController: MonoBehaviour
     public AudioSource doorAudio;
     public AudioSource artifactShineAudio;
     public AudioSource forestBattleTheme;
+    public AudioSource playerPhaseAudio;
     public MainPlayerController mainPlayerController;
     void Start() {
         StartCoroutine(introSequence());
@@ -233,8 +236,8 @@ public class IntroController: MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
         }
+        
         */
-
         //Overworld
         yield return StartCoroutine(FadeScreen(blackScreen, 2f));
         houseScreen.GetComponent<CanvasGroup>().alpha = 0f;
@@ -245,7 +248,6 @@ public class IntroController: MonoBehaviour
         yield return StartCoroutine(characterAppear(mainChar));
         yield return new WaitForSeconds(.5f);
         yield return StartCoroutine(FollowPath(mainChar, new Vector3(-7.53f, -12f, 0f)));
-
         astrid.transform.position = new Vector3(-6.57f, -11.28f, 0f);
         astrid.GetComponent<SpriteRenderer>().enabled = true;
         yield return StartCoroutine(characterAppear(astrid));
@@ -254,15 +256,26 @@ public class IntroController: MonoBehaviour
 
         fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
         swordClash.Play();
-        yield return new WaitForSeconds(2f);
         forestBattleTheme.Play();
+        yield return new WaitForSeconds(1.5f);
         fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
-        yield return new WaitForSeconds(2f);
+
+        /*
         DialogueController.GetComponent<SmallDialogue>().NextDialogue();   
         while (!sixthDialogueFinished)
         {
             yield return new WaitForSeconds(1f);
         }
+        */
+
+        //TODO: Tutorial steps
+
+        yield return new WaitForSeconds(2f);
+        playerPhaseAudio.Play();
+        fightScreenText.text = "Player Phase";
+        fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
+        yield return new WaitForSeconds(2.5f);
+        fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
 
         mainPlayerController.introFinished = true;
 
