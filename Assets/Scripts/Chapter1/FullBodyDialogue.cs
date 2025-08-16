@@ -22,8 +22,7 @@ public class FullBodyDialogue : MonoBehaviour
     private RectTransform rectTransform;
     private CanvasGroup group;
     private float time = .15f;
-    public GameObject controller;
-    private IntroController controllerScript;
+    public IntroController introController;
     private CharacterDialogue[] dialogues;
     public AudioClip soundClip;
     private AudioSource audioSource;
@@ -34,11 +33,11 @@ public class FullBodyDialogue : MonoBehaviour
     public AudioSource rummagingAudio;
     public AudioSource hitSound;
     public AudioSource doorOpen;
+    public MainPlayerController mpc;
     void Start()
     {
         rectTransform = canvas.GetComponent<RectTransform>();
         group = canvas.GetComponent<CanvasGroup>();
-        controllerScript = controller.GetComponent<IntroController>();
         audioSource = GetComponent<AudioSource>();
         
         dialogues = new CharacterDialogue[] {
@@ -114,18 +113,22 @@ public class FullBodyDialogue : MonoBehaviour
     }
     void Update()
     {
-        if (startedDialogue) {
-            if (Input.GetMouseButtonDown(0)) // Left click
+        if (!mpc.isPaused)
+        {
+            if (startedDialogue)
             {
-                if (textComponent.text == lines[linesIndex])
+                if (Input.GetMouseButtonDown(0)) // Left click
                 {
-                    StartCoroutine(NextLine());
-                }
-                else
-                {
-                    StopAllCoroutines();
-                    textComponent.text = lines[linesIndex];
-                    audioSource.Stop();
+                    if (textComponent.text == lines[linesIndex])
+                    {
+                        StartCoroutine(NextLine());
+                    }
+                    else
+                    {
+                        StopAllCoroutines();
+                        textComponent.text = lines[linesIndex];
+                        audioSource.Stop();
+                    }
                 }
             }
         }
@@ -146,14 +149,14 @@ public class FullBodyDialogue : MonoBehaviour
             if (dialoguesIndex == dialogues.Length - 1)
             {
                 yield return StartCoroutine(FadeOutAndMove());
-                controllerScript.fifthDialogueFinished = true;
+                introController.fifthDialogueFinished = true;
                 startedDialogue = false;
             }
             else if (dialogues[dialoguesIndex].pauseExecutionAfter)
             {
-                if (controllerScript.secondDialogueFinished && !controllerScript.thirdDialogueFinished)
+                if (introController.secondDialogueFinished && !introController.thirdDialogueFinished)
                 {
-                    controllerScript.thirdDialogueFinished = true;
+                    introController.thirdDialogueFinished = true;
                     StartCoroutine(FadeOutAudio(hegsethThemeAudio, 3f));
                 }
                 startedDialogue = false;

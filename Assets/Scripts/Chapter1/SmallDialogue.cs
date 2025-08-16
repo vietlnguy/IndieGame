@@ -21,17 +21,16 @@ public class SmallDialogue : MonoBehaviour
     private RectTransform rectTransform;
     private CanvasGroup group;
     private float time = .15f;
-    public GameObject controller;
-    private IntroController controllerScript;
+    public IntroController introController;
     private CharacterDialogue[] dialogues;
     public AudioClip soundClip;
     private AudioSource audioSource;
     private bool autoPlayStarted = false;
+    public MainPlayerController mpc;
     void Start()
     {
         rectTransform = canvas.GetComponent<RectTransform>();
         group = canvas.GetComponent<CanvasGroup>();
-        controllerScript = controller.GetComponent<IntroController>();
         audioSource = GetComponent<AudioSource>();
         
         dialogues = new CharacterDialogue[] {
@@ -64,26 +63,29 @@ public class SmallDialogue : MonoBehaviour
     }
     void Update()
     {
-        if (startedDialogue && !dialogues[dialoguesIndex].autoPlay)
+        if (!mpc.isPaused)
         {
-            if (Input.GetMouseButtonDown(0)) // Left click
+            if (startedDialogue && !dialogues[dialoguesIndex].autoPlay)
             {
-                if (textComponent.text == lines[linesIndex])
+                if (Input.GetMouseButtonDown(0)) // Left click
                 {
-                    NextLine();
-                }
-                else
-                {
-                    StopAllCoroutines();
-                    textComponent.text = lines[linesIndex];
-                    audioSource.Stop();
+                    if (textComponent.text == lines[linesIndex])
+                    {
+                        NextLine();
+                    }
+                    else
+                    {
+                        StopAllCoroutines();
+                        textComponent.text = lines[linesIndex];
+                        audioSource.Stop();
+                    }
                 }
             }
-        }
-        else if (startedDialogue && dialogues[dialoguesIndex].autoPlay)
-        {
-            StartCoroutine(AutoPlay());
-            autoPlayStarted = true;
+            else if (startedDialogue && dialogues[dialoguesIndex].autoPlay)
+            {
+                StartCoroutine(AutoPlay());
+                autoPlayStarted = true;
+            }
         }
     }
     public void NextDialogue() {
@@ -107,21 +109,21 @@ public class SmallDialogue : MonoBehaviour
             }
             else if (dialogues[dialoguesIndex].pauseExecutionAfter)
             {
-                if (!controllerScript.dialogueFinished)
+                if (!introController.dialogueFinished)
                 {
-                    controllerScript.dialogueFinished = true;
+                    introController.dialogueFinished = true;
                 }
-                else if (controllerScript.dialogueFinished && !controllerScript.secondDialogueFinished)
+                else if (introController.dialogueFinished && !introController.secondDialogueFinished)
                 {
-                    controllerScript.secondDialogueFinished = true;
+                    introController.secondDialogueFinished = true;
                 }
-                else if (controllerScript.thirdDialogueFinished && !controllerScript.fourthDialogueFinished)
+                else if (introController.thirdDialogueFinished && !introController.fourthDialogueFinished)
                 {
-                    controllerScript.fourthDialogueFinished = true;
+                    introController.fourthDialogueFinished = true;
                 }
-                else if (controllerScript.fifthDialogueFinished && !controllerScript.sixthDialogueFinished)
+                else if (introController.fifthDialogueFinished && !introController.sixthDialogueFinished)
                 {
-                    controllerScript.sixthDialogueFinished = true;
+                    introController.sixthDialogueFinished = true;
                 }
                 startedDialogue = false;
                 dialoguesIndex++;

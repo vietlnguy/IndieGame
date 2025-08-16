@@ -6,7 +6,6 @@ using TMPro;
 public class MainPlayerController : MonoBehaviour
 {
     public GameObject moveRange;
-    public Camera mainCam;
     private Vector3 originalPosition;
     private GameObject characterSelected;
     private GameObject enemySelected;
@@ -26,6 +25,8 @@ public class MainPlayerController : MonoBehaviour
     public bool astridDefeated = false;
     public GameObject enemies;
     private int enemiesRemaining = 4;
+    public GameObject pauseMenu;
+    public bool isPaused = false;
     void Awake()
     {
         disabledCharacters = new List<GameObject>();
@@ -36,12 +37,24 @@ public class MainPlayerController : MonoBehaviour
     }
     void Start()
     {
-        mainCam = Camera.main;
-        
     }
     void Update()
     {
-        if (introFinished) {
+        //On ESC press
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                pauseMenu.SetActive(false);
+                isPaused = false;
+            }
+            else
+            {
+                pauseMenu.SetActive(true);
+                isPaused = true;
+            }
+        }
+        if (introFinished && !isPaused) {
             HandleGameLoop();
             HandleMovement();
             HandleSelection();
@@ -92,7 +105,7 @@ public class MainPlayerController : MonoBehaviour
         
         //On left click, check character select
         if (Input.GetMouseButtonDown(0)) {
-            Vector2 mouseWorld = mainCam.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Collider2D hit = Physics2D.OverlapPoint(mouseWorld);
 
             //If endTurnUI is active then cannot click anything else

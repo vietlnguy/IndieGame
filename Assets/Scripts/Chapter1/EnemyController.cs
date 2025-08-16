@@ -11,7 +11,11 @@ public class EnemyController : MonoBehaviour
     public int mana;
     public int attack;
     public int defense;
+    public int skill;
     public int speed;
+    public int attackRange;
+    public int moveRange;
+
 
     void Awake() 
     {

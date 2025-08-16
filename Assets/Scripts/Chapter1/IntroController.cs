@@ -178,7 +178,7 @@ public class IntroController: MonoBehaviour
     }
     private IEnumerator introSequence()
     {
-        /*
+        
         //Overworld movement and dialogue
         yield return StartCoroutine(UndoFade(whiteScreen, 1f));
         yield return new WaitForSeconds(1f);
@@ -237,7 +237,7 @@ public class IntroController: MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
         
-        */
+        
         //Overworld
         yield return StartCoroutine(FadeScreen(blackScreen, 2f));
         houseScreen.GetComponent<CanvasGroup>().alpha = 0f;
@@ -260,13 +260,13 @@ public class IntroController: MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
 
-        /*
+        
         DialogueController.GetComponent<SmallDialogue>().NextDialogue();   
         while (!sixthDialogueFinished)
         {
             yield return new WaitForSeconds(1f);
         }
-        */
+        
 
         //TODO: Tutorial steps
 
