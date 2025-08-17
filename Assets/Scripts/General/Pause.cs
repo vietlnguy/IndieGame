@@ -10,10 +10,12 @@ public class Pause : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
     public Image blackScreen;
     public GameObject pauseMenu;
     public MainPlayerController mpc;
+    public SaveManager saveManager;
 
     void Awake()
     {
         image = GetComponent<Image>();
+        saveManager = FindFirstObjectByType<SaveManager>();
     }
 
     void Start()
@@ -48,6 +50,7 @@ public class Pause : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
         }
         else if (tag == "save and menu")
         {
+            saveManager.SaveGame();
             StartCoroutine(FadeScreen(blackScreen, 2f));
             SceneManager.LoadScene("MainMenu");
         }

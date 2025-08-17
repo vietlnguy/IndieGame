@@ -37,8 +37,16 @@ public class IntroController: MonoBehaviour
     public AudioSource forestBattleTheme;
     public AudioSource playerPhaseAudio;
     public MainPlayerController mainPlayerController;
-    void Start() {
-        StartCoroutine(introSequence());
+    public SaveManager saveManager;
+
+    void Awake()
+    {
+        saveManager = FindFirstObjectByType<SaveManager>();
+    }
+    void Start()
+    {
+        saveManager.introBattleOutro = "intro";
+        StartCoroutine(introSequence());  
     }
     void Update() {
  
@@ -237,7 +245,6 @@ public class IntroController: MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
         
-        
         //Overworld
         yield return StartCoroutine(FadeScreen(blackScreen, 2f));
         houseScreen.GetComponent<CanvasGroup>().alpha = 0f;
@@ -278,8 +285,7 @@ public class IntroController: MonoBehaviour
         fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
 
         mainPlayerController.introFinished = true;
-
-
+        saveManager.introBattleOutro = "battle";
     }
     
 }
