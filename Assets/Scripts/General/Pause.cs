@@ -9,8 +9,9 @@ public class Pause : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
     private Image image;
     public Image blackScreen;
     public GameObject pauseMenu;
-    public MainPlayerController mpc;
+    public BattleController battleController;
     public SaveManager saveManager;
+    public GameObject saveMenu;
 
     void Awake()
     {
@@ -42,7 +43,7 @@ public class Pause : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
         if (tag == "return")
         {
             pauseMenu.SetActive(false);
-            mpc.isPaused = false;
+            battleController.isPaused = false;
         }
         else if (tag == "settings")
         {
@@ -50,13 +51,16 @@ public class Pause : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, I
         }
         else if (tag == "save and menu")
         {
-            saveManager.SaveGame();
-            StartCoroutine(FadeScreen(blackScreen, 2f));
-            SceneManager.LoadScene("MainMenu");
+            saveMenu.SetActive(true);
+            //saveManager.SaveGame();
+            //StartCoroutine(FadeScreen(blackScreen, 2f));
+            //SceneManager.LoadScene("MainMenu");
         }
         else if (tag == "save and close")
         {
-            Application.Quit();
+            saveMenu.SetActive(true);
+            //saveManager.SaveGame();
+            //Application.Quit();
         }
 
     }

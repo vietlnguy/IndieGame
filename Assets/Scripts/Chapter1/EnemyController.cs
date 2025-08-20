@@ -4,7 +4,6 @@ public class EnemyController : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     public int offset = 0; // Optional manual offset if needed
-    public MainPlayerController parent;
 
     //Enemy stats
     public int hp;
@@ -39,12 +38,12 @@ public class EnemyController : MonoBehaviour
 
     void OnMouseEnter()
     {
-        parent.OnChildMouseEnter(gameObject);
+
     }
 
     void OnMouseExit()
     {
-        parent.OnChildMouseExit(gameObject);
+
     }
 
 }

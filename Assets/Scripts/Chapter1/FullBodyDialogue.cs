@@ -33,7 +33,7 @@ public class FullBodyDialogue : MonoBehaviour
     public AudioSource rummagingAudio;
     public AudioSource hitSound;
     public AudioSource doorOpen;
-    public MainPlayerController mpc;
+    public BattleController battleController;
     void Start()
     {
         rectTransform = canvas.GetComponent<RectTransform>();
@@ -113,7 +113,7 @@ public class FullBodyDialogue : MonoBehaviour
     }
     void Update()
     {
-        if (!mpc.isPaused)
+        if (!battleController.isPaused)
         {
             if (startedDialogue)
             {

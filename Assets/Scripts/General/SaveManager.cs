@@ -7,6 +7,7 @@ public class SaveManager : MonoBehaviour
     public static SaveManager Instance;
     private string saveFilePath;
     public string introBattleOutro;
+    public GameSaveData loadedData;
 
     private void Awake()
     {
@@ -31,11 +32,10 @@ public class SaveManager : MonoBehaviour
         dataToSave.introBattleOutro = this.introBattleOutro;
 
         //Get character data
-        MainPlayerController mpc = FindFirstObjectByType<MainPlayerController>();
-
-        for (int i = 0; i < mpc.transform.childCount; i++)
+        GameObject characters = GameObject.FindWithTag("charactersParentObject");
+        for (int i = 0; i < characters.transform.childCount; i++)
         {
-            Transform childTransform = mpc.transform.GetChild(i);
+            Transform childTransform = characters.transform.GetChild(i);
             PlayerController child = childTransform.gameObject.GetComponent<PlayerController>();
             
             if (child.owned)

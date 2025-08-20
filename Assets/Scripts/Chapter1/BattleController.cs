@@ -1,58 +1,87 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
-
-public class MainPlayerController4 : MonoBehaviour
+public class BattleController : MonoBehaviour
 {
-    private GameObject moveRange;
-    private SpriteRenderer moveRangeSR;
-    private EdgeCollider2D moveRangeCollider;
-    private Camera mainCam;
-    private PlayerController reporter;
+    public GameObject moveRange;
+    public GameObject attackRange;
     private Vector3 originalPosition;
     private GameObject characterSelected;
     private GameObject enemySelected;
-    private float moveSpeed = 8.0f;
-    private GameObject endTurnObj;
+    public float moveSpeed = 8.0f;
+    public GameObject endTurnObj;
     private bool endTurnUIActive = false;
     private List<GameObject> disabledCharacters;
     private List<GameObject> disabledEnemies;
     private bool allowMovement = false;
     private int partySize;
-    public bool introFinished = false;
-
-    void Awake() 
+    public bool introFinished = true;
+    public GameObject fightScreen;
+    public TextMeshProUGUI fightScreenText;
+    public AudioSource playerPhaseAudio;
+    public AudioSource enemyPhaseAudio;
+    public bool liamDefeated = false;
+    public bool astridDefeated = false;
+    public GameObject enemies;
+    private int enemiesRemaining = 4;
+    public GameObject pauseMenu;
+    public bool isPaused = false;
+    void Awake()
     {
         disabledCharacters = new List<GameObject>();
         disabledEnemies = new List<GameObject>();
 
         //TODO: partySize should read from the database
-        partySize = 7;
+        partySize = 2;
     }
     void Start()
     {
-
-        moveRange = GameObject.Find("MoveRange");
-        moveRangeSR = moveRange.GetComponent<SpriteRenderer>();
-        moveRangeCollider = moveRange.GetComponent<EdgeCollider2D>();
-        mainCam = Camera.main;
-        endTurnObj = GameObject.Find("End_Turn");
-        
     }
     void Update()
     {
-        if (introFinished) {
+        //On ESC press
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                pauseMenu.SetActive(false);
+                isPaused = false;
+            }
+            else
+            {
+                pauseMenu.SetActive(true);
+                isPaused = true;
+            }
+        }
+        if (introFinished && !isPaused) {
             HandleGameLoop();
             HandleMovement();
             HandleSelection();
         }
     }
     private void HandleGameLoop() {
-        if (disabledCharacters.Count == partySize) {
-            //Play animation for enemy phase
-            //Enemy turn
 
-            foreach (var obj in disabledCharacters) {
+        //Win condition
+        if (enemiesRemaining == 0)
+        {
+            //start outro
+        }
+
+        //Lose condition
+        else if (liamDefeated || astridDefeated)
+        {
+            //death dialogue
+            //retry menu
+            //restart fight
+        }
+
+        //Start enemy phase
+        else if (disabledCharacters.Count == partySize)
+        {
+            foreach (var obj in disabledCharacters)
+            {
                 characterSelected = obj;
                 characterSelected.GetComponent<Animator>().SetBool("isFrozen", false);
                 characterSelected.GetComponent<Animator>().SetBool("isWalking", false);
@@ -60,28 +89,39 @@ public class MainPlayerController4 : MonoBehaviour
             }
             characterSelected = null;
             disabledCharacters.Clear();
+
+            StartCoroutine(phaseTransition("Enemy"));
+            StartCoroutine(enemyTurn());
+        }
+
+        //Start player phase
+        else if (disabledEnemies.Count == enemiesRemaining)
+        {
+
+            disabledEnemies.Clear();
+            StartCoroutine(phaseTransition("Player"));
         }
     }
     private void HandleSelection() {
         
         //On left click, check character select
         if (Input.GetMouseButtonDown(0)) {
-            Vector2 mouseWorld = mainCam.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Collider2D hit = Physics2D.OverlapPoint(mouseWorld);
 
             //If endTurnUI is active then cannot click anything else
-            if (endTurnUIActive) {
-                //Didn't click yes or no
-                if (hit == null && hit.gameObject.tag != "end_turn_yes" && hit.gameObject.tag != "end_turn_no") {
-                    StartCoroutine(FlashCoroutine());             
+            if (endTurnUIActive)
+            {
+                if (hit == null)
+                {
+                    StartCoroutine(FlashCoroutine());
                 }
-                //End turn if yes
-                else if (hit.gameObject.tag == "end_turn_yes") {
+                else if (hit.gameObject.tag == "end_turn_yes")
+                {
                     endTurn();
                 }
-                //Reset character if no
-                else if (hit.gameObject.tag == "end_turn_no") {
-                    Debug.Log("no clicked");
+                else if (hit.gameObject.tag == "end_turn_no")
+                {
                     disableAttackRange(characterSelected);
                     disableMoveRange();
                     unhighlightSprite(characterSelected);
@@ -91,21 +131,29 @@ public class MainPlayerController4 : MonoBehaviour
                     characterSelected.transform.position = originalPosition;
                     characterSelected = null;
                 }
+                else
+                {
+                    StartCoroutine(FlashCoroutine());
+                }
             }
-            
-            //Clicked something else
-            else {
+
+            else
+            {
                 //Clicked a character/enemy
-                if (hit != null && (hit.gameObject.tag == "character" || hit.gameObject.tag == "enemy")) {
+                if (hit != null && (hit.gameObject.tag == "character" || hit.gameObject.tag == "enemy"))
+                {
                     //Clicked a player character
-                    if (hit.gameObject.tag == "character") {
-                        if (enemySelected != null) {
+                    if (hit.gameObject.tag == "character")
+                    {
+                        if (enemySelected != null)
+                        {
                             unhighlightSprite(enemySelected);
                             disableAttackRange(enemySelected);
                             enemySelected = null;
                         }
                         //No character selected yet
-                        if (characterSelected == null) {
+                        if (characterSelected == null)
+                        {
                             characterSelected = hit.gameObject;
                             originalPosition = characterSelected.transform.position;
                             highLightSprite(characterSelected);
@@ -117,11 +165,13 @@ public class MainPlayerController4 : MonoBehaviour
                             else { allowMovement = false; }
                         }
                         //Character selected already and clicked again
-                        else if (hit.gameObject == characterSelected) {
+                        else if (hit.gameObject == characterSelected)
+                        {
                             enableEndTurnUI();
                         }
                         //Character selected, but clicked a different character
-                        else if (hit.gameObject != characterSelected) {
+                        else if (hit.gameObject != characterSelected)
+                        {
                             disableAttackRange(characterSelected);
                             disableMoveRange();
                             unhighlightSprite(characterSelected);
@@ -138,14 +188,17 @@ public class MainPlayerController4 : MonoBehaviour
                         }
                     }
                     //Clicked an enemy
-                    else if (hit.gameObject.tag == "enemy") {
+                    else if (hit.gameObject.tag == "enemy")
+                    {
                         //Character already selected
-                        if (characterSelected) {
+                        if (characterSelected)
+                        {
                             List<GameObject> enemiesInRange = transform.Find(characterSelected.name + "/AttackRange").GetComponent<AttackRange>().enemiesInRange;
-                            if (!enemiesInRange.Contains(hit.gameObject)) {
-                                characterSelected.transform.position = originalPosition;    
+                            if (!enemiesInRange.Contains(hit.gameObject))
+                            {
+                                characterSelected.transform.position = originalPosition;
                                 disableMoveRange();
-                                disableAttackRange(characterSelected);               
+                                disableAttackRange(characterSelected);
                                 unlockOtherCharacterMovement();
                                 unhighlightSprite(characterSelected);
                                 characterSelected = null;
@@ -154,22 +207,25 @@ public class MainPlayerController4 : MonoBehaviour
                                 highLightSprite(enemySelected);
                                 showCharacterInfo(enemySelected);
                             }
-                            else {
+                            else
+                            {
                                 Debug.Log("can attack");
-                            }                    
+                            }
                         }
                         //Enemy already selected
-                        else if (enemySelected) {
+                        else if (enemySelected)
+                        {
                             allowMovement = false;
                             unhighlightSprite(enemySelected);
                             disableAttackRange(enemySelected);
                             enemySelected = hit.gameObject;
                             highLightSprite(enemySelected);
                             enableAttackRange(enemySelected);
-                            showCharacterInfo(enemySelected);    
+                            showCharacterInfo(enemySelected);
                         }
                         //Neither character or enemy selected
-                        else {
+                        else
+                        {
                             allowMovement = false;
                             enemySelected = hit.gameObject;
                             highLightSprite(enemySelected);
@@ -179,31 +235,36 @@ public class MainPlayerController4 : MonoBehaviour
                     }
                 }
                 //Clicked an interactable
-                else if (hit != null && hit.gameObject.tag == "interactable") {
+                else if (hit != null && hit.gameObject.tag == "interactable")
+                {
 
                 }
                 //Didn't click character, enemy, or interactable
-                else {
+                else
+                {
                     //Character previously selected but hasn't moved
-                    if (characterSelected != null && characterSelected.transform.position == originalPosition) {
-                        characterSelected.transform.position = originalPosition;    
+                    if (characterSelected != null && characterSelected.transform.position == originalPosition)
+                    {
+                        characterSelected.transform.position = originalPosition;
                         disableMoveRange();
-                        disableAttackRange(characterSelected);               
+                        disableAttackRange(characterSelected);
                         unlockOtherCharacterMovement();
                         unhighlightSprite(characterSelected);
                         characterSelected = null;
                     }
                     //Character was selected and has moved
-                    else if (characterSelected != null && characterSelected.transform.position != originalPosition) {
+                    else if (characterSelected != null && characterSelected.transform.position != originalPosition)
+                    {
                         enableEndTurnUI();
                     }
                     //Enemy previously selected
-                    else if (enemySelected != null) {
+                    else if (enemySelected != null)
+                    {
                         unhighlightSprite(enemySelected);
                         disableAttackRange(enemySelected);
                         enemySelected = null;
                     }
-                    
+
                 }
             }
         }
@@ -272,13 +333,15 @@ public class MainPlayerController4 : MonoBehaviour
     public void OnChildMouseEnter(GameObject child) {
         if (introFinished) {
             //Highlight enemy and enemy isn't disabled
-            if (child.tag == "enemy" && !disabledEnemies.Contains(child)) {
+            if (child.tag == "enemy" && !disabledEnemies.Contains(child))
+            {
                 SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
-                sr.color = new Color32(255,50,50,255);
+                sr.color = new Color32(255, 50, 50, 255);
             }
 
             //Highlight character on mouse enter if they are not disabled
-            else if (child.tag == "character" && !disabledCharacters.Contains(child)) {
+            else if (child.tag == "character" && !disabledCharacters.Contains(child))
+            {
                 SpriteRenderer sr = child.GetComponent<SpriteRenderer>();
                 sr.color = new Color32(100, 100, 255, 255);
             }
@@ -328,14 +391,14 @@ public class MainPlayerController4 : MonoBehaviour
     private void enableMoveRange() {
         moveRange.transform.position = characterSelected.transform.position;
         //TODO moveRange.transform.scale. Scale with character stats.
-        moveRangeSR.enabled = true;
-        moveRangeCollider.enabled = true;
+        moveRange.GetComponent<SpriteRenderer>().enabled = true;
+        moveRange.GetComponent<EdgeCollider2D>().enabled = true;
 
     }
     private void disableMoveRange() {
         moveRange.transform.position = characterSelected.transform.position;
-        moveRangeSR.enabled = false;
-        moveRangeCollider.enabled = false;
+        moveRange.GetComponent<SpriteRenderer>().enabled = false;
+        moveRange.GetComponent<EdgeCollider2D>().enabled = false;
 
     }
     private void enableAttackRange(GameObject obj) {
@@ -362,6 +425,7 @@ public class MainPlayerController4 : MonoBehaviour
         sr.color = Color.white;   
     }
     private System.Collections.IEnumerator FlashCoroutine() {
+        Debug.Log("flash called");
         SpriteRenderer endTurnSR = endTurnObj.GetComponent<SpriteRenderer>();
         float flashDuration = 0.1f;
         int flashCount = 3;
@@ -396,8 +460,84 @@ public class MainPlayerController4 : MonoBehaviour
     private void showCharacterInfo(GameObject obj) {
         Debug.Log("show charcter info");
     }
+    private void freezePositions(string s)
+    {
+        if (s == "Enemies")
+        {
+            for (int i = 0; i < enemies.transform.childCount; i++)
+            {
+                Transform childTransform = enemies.transform.GetChild(i);
+                GameObject childGameObject = childTransform.gameObject;
+                childGameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            }
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                Transform childTransform = transform.GetChild(i);
+                GameObject childGameObject = childTransform.gameObject;
+                childGameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+                childGameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                Transform childTransform = transform.GetChild(i);
+                GameObject childGameObject = childTransform.gameObject;
+                childGameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+            }
+            for (int i = 0; i < enemies.transform.childCount; i++)
+            {
+                Transform childTransform = transform.GetChild(i);
+                GameObject childGameObject = childTransform.gameObject;
+                childGameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+                childGameObject.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            }
+        }
+    }
+    private IEnumerator phaseTransition(string s)
+    {
+        if (s == "Player")
+        {
+            playerPhaseAudio.Play();
+            fightScreenText.text = "Player Phase";
+            fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
+            yield return new WaitForSeconds(2.5f);
+            fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
+            freezePositions("Enemies");
+        }
+        else
+        {
+            enemyPhaseAudio.Play();
+            fightScreenText.text = "Enemy Phase";
+            fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
+            yield return new WaitForSeconds(2.5f);
+            fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
+            freezePositions("Characters");
+        }
+        yield return null;
+    }
+    private IEnumerator enemyTurn()
+    {
+        yield return new WaitForSeconds(4f); //remove later
+        for (int i = 0; i < enemies.transform.childCount; i++)
+        {
+            Transform childTransform = enemies.transform.GetChild(i);
+            GameObject childGameObject = childTransform.gameObject;
 
+            //TODO: move and attack
 
+            disabledEnemies.Add(childGameObject);
+        }
+
+        yield return null;
+
+    }
+    private struct GameInfo
+    {
+        public int totalEnemies;
+
+    }
 
 
 

@@ -26,7 +26,7 @@ public class SmallDialogue : MonoBehaviour
     public AudioClip soundClip;
     private AudioSource audioSource;
     private bool autoPlayStarted = false;
-    public MainPlayerController mpc;
+    public BattleController battleController;
     void Start()
     {
         rectTransform = canvas.GetComponent<RectTransform>();
@@ -63,7 +63,7 @@ public class SmallDialogue : MonoBehaviour
     }
     void Update()
     {
-        if (!mpc.isPaused)
+        if (!battleController.isPaused)
         {
             if (startedDialogue && !dialogues[dialoguesIndex].autoPlay)
             {

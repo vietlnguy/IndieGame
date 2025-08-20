@@ -18,7 +18,6 @@ public class IntroController: MonoBehaviour
     public bool fourthDialogueFinished = false;
     public bool fifthDialogueFinished = false;
     public bool sixthDialogueFinished = false;
-    public ArrowToggle arrow;
     public GameObject whiteScreen;
     public GameObject blackScreen;
     public GameObject sexScreen;
@@ -28,15 +27,13 @@ public class IntroController: MonoBehaviour
     public TextMeshProUGUI fightScreenText;
     public GameObject characters;
     public AudioSource swordClash;
-    public AudioSource timpani;
-    public MainPlayerController mpc;
     public TilemapPathfinder pathfinder;
     public AudioSource footstepAudio;
     public AudioSource doorAudio;
     public AudioSource artifactShineAudio;
     public AudioSource forestBattleTheme;
     public AudioSource playerPhaseAudio;
-    public MainPlayerController mainPlayerController;
+    public BattleController battleController;
     public SaveManager saveManager;
 
     void Awake()
@@ -129,7 +126,7 @@ public class IntroController: MonoBehaviour
         {
             child.gameObject.GetComponent<Rigidbody2D>().simulated = true;
         }
-        foreach (Transform child in mpc.transform)
+        foreach (Transform child in characters.transform)
         {
             child.gameObject.GetComponent<Rigidbody2D>().simulated = true;
         }
@@ -284,7 +281,7 @@ public class IntroController: MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
 
-        mainPlayerController.introFinished = true;
+        battleController.introFinished = true;
         saveManager.introBattleOutro = "battle";
     }
     

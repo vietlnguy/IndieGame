@@ -1,11 +1,10 @@
 using UnityEngine;
 
-[RequireComponent(typeof(SpriteRenderer), typeof(Collider2D), typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
-    public int offset = 0; // Optional manual offset if needed
-    public MainPlayerController parent;
+    public int offset = 0;
+    public BattleController battleController; 
     public int hp;
     public int maxHp;
     public int mana;
@@ -44,12 +43,12 @@ public class PlayerController : MonoBehaviour
 
     void OnMouseEnter()
     {
-        parent.OnChildMouseEnter(gameObject);
+
     }
 
     void OnMouseExit()
     {
-        parent.OnChildMouseExit(gameObject);
+
     }
 
 }
