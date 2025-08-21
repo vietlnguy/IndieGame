@@ -37,7 +37,7 @@ public class SaveManager : MonoBehaviour
         {
             Transform childTransform = characters.transform.GetChild(i);
             PlayerController child = childTransform.gameObject.GetComponent<PlayerController>();
-            
+
             if (child.owned)
             {
                 CharacterData characterData = new CharacterData
@@ -64,8 +64,6 @@ public class SaveManager : MonoBehaviour
         File.WriteAllText(saveFilePath, jsonData);
         Debug.Log("Game saved to: " + saveFilePath);
     }
-    
-    // You would also have a public LoadGame() method
     public GameSaveData LoadGame()
     {
         if (File.Exists(saveFilePath))
@@ -75,4 +73,19 @@ public class SaveManager : MonoBehaviour
         }
         return null;
     }
+    public List<string> GetAllSaveFiles()
+    {
+        List<string> fileNames = new List<string>();
+        if (Directory.Exists(Application.persistentDataPath))
+        {
+            string[] files = Directory.GetFiles(Application.persistentDataPath, "*.json");
+            foreach (string filePath in files)
+            {
+                
+                fileNames.Add(Path.GetFileName(filePath));
+            }
+        }
+        return fileNames;
+    }
+
 }
