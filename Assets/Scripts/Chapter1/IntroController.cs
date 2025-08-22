@@ -43,6 +43,7 @@ public class IntroController: MonoBehaviour
     void Start()
     {
         saveManager.introBattleOutro = "intro";
+        saveManager.chapter = "Chapter1";
         StartCoroutine(introSequence());  
     }
     void Update() {

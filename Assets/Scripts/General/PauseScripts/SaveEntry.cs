@@ -35,13 +35,16 @@ public class SaveEntry : MonoBehaviour, IPointerClickHandler
 
     void Update()
     {
-
     }
+    
     public void OnPointerClick(PointerEventData eventData)
     {
         image.color = new Color(.2f, .24f, .52f, 1f);
-        scm.unselectOtherEntry();
-        scm.saveSelected = gameObject;
+        if (scm.saveSelected != gameObject)
+        {
+            scm.unselectOtherEntry();
+            scm.saveSelected = gameObject;
+        }
     }
 
 }

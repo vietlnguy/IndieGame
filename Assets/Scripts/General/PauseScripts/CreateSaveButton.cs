@@ -4,11 +4,11 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
-public class SaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class CreateSaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     private Image image;
     public SaveManager saveManager;
-    public GameObject saveMenu;
+    public SaveContentManager scm;
 
     void Awake()
     {
@@ -34,7 +34,8 @@ public class SaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        saveMenu.SetActive(true);
+        saveManager.SaveGame();
+        scm.PopulateSaveList();
     }
 
 }

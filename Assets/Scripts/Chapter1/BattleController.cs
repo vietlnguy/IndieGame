@@ -27,6 +27,7 @@ public class BattleController : MonoBehaviour
     public GameObject enemies;
     private int enemiesRemaining = 4;
     public GameObject pauseMenu;
+    public GameObject saveMenu;
     public bool isPaused = false;
     void Awake()
     {
@@ -47,6 +48,7 @@ public class BattleController : MonoBehaviour
             if (isPaused)
             {
                 pauseMenu.SetActive(false);
+                saveMenu.SetActive(false);
                 isPaused = false;
             }
             else

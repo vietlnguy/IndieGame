@@ -1,12 +1,14 @@
 using UnityEngine;
 using System.IO;
 using System.Collections.Generic;
+using System;
 
 public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance;
-    private string saveFilePath;
     public string introBattleOutro;
+    public string mainCharacterName = "MainCharacterName";
+    public string chapter;
     public GameSaveData loadedData;
 
     private void Awake()
@@ -15,21 +17,19 @@ public class SaveManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            saveFilePath = Path.Combine(Application.persistentDataPath, "game_save.json");
         }
         else
         {
             Destroy(gameObject);
         }
     }
-
     public void SaveGame()
     {
         GameSaveData dataToSave = new GameSaveData();
 
         //Get scene data
         dataToSave.currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-        dataToSave.introBattleOutro = this.introBattleOutro;
+        dataToSave.introBattleOutro = introBattleOutro;
 
         //Get character data
         GameObject characters = GameObject.FindWithTag("charactersParentObject");
@@ -57,22 +57,23 @@ public class SaveManager : MonoBehaviour
             }
         }
 
-        // 3. Serialize the GameData object to a JSON string
+        //Create save file name
+        string time = DateTime.Now.ToString("F");
+        time = time.Replace(":", "-");
         string jsonData = JsonUtility.ToJson(dataToSave, true);
-
-        // 4. Write the JSON string to a file
-        File.WriteAllText(saveFilePath, jsonData);
-        Debug.Log("Game saved to: " + saveFilePath);
+        string filename = mainCharacterName + "_" + chapter + "_" + introBattleOutro + "_" + time + ".json";
+        string fullFilePath = Path.Combine(Application.persistentDataPath, filename);
+        File.WriteAllText(fullFilePath, jsonData);
     }
-    public GameSaveData LoadGame()
-    {
-        if (File.Exists(saveFilePath))
-        {
-            string jsonData = File.ReadAllText(saveFilePath);
-            return JsonUtility.FromJson<GameSaveData>(jsonData);
-        }
-        return null;
-    }
+    //public GameSaveData LoadGame()
+    //{
+    //    if (File.Exists(saveFilePath))
+    //    {
+    //        string jsonData = File.ReadAllText(saveFilePath);
+    //        return JsonUtility.FromJson<GameSaveData>(jsonData);
+    //    }
+    //    return null;
+    //}
     public List<string> GetAllSaveFiles()
     {
         List<string> fileNames = new List<string>();
@@ -81,7 +82,7 @@ public class SaveManager : MonoBehaviour
             string[] files = Directory.GetFiles(Application.persistentDataPath, "*.json");
             foreach (string filePath in files)
             {
-                
+
                 fileNames.Add(Path.GetFileName(filePath));
             }
         }
