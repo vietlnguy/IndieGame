@@ -9,7 +9,7 @@ public class SaveEntry : MonoBehaviour, IPointerClickHandler
 
 {
     private Image image;
-    public SaveContentManager scm;
+    public SaveManager scm;
     public string characterName;
     public string chapter;
     public string scene;
@@ -26,7 +26,7 @@ public class SaveEntry : MonoBehaviour, IPointerClickHandler
 
     void Start()
     {
-        scm = FindFirstObjectByType<SaveContentManager>();
+        scm = FindFirstObjectByType<SaveManager>();
         characterText.GetComponent<TextMeshProUGUI>().text = characterName;
         chapterText.GetComponent<TextMeshProUGUI>().text = chapter;
         sceneText.GetComponent<TextMeshProUGUI>().text = scene;
@@ -36,13 +36,13 @@ public class SaveEntry : MonoBehaviour, IPointerClickHandler
     void Update()
     {
     }
-    
+
     public void OnPointerClick(PointerEventData eventData)
     {
         image.color = new Color(.2f, .24f, .52f, 1f);
         if (scm.saveSelected != gameObject)
         {
-            scm.unselectOtherEntry();
+            scm.UnselectOtherEntry();
             scm.saveSelected = gameObject;
         }
     }

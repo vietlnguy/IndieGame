@@ -2,6 +2,8 @@ using UnityEngine;
 using System.IO;
 using System.Collections.Generic;
 using System;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SaveManager : MonoBehaviour
 {
@@ -10,6 +12,9 @@ public class SaveManager : MonoBehaviour
     public string mainCharacterName = "MainCharacterName";
     public string chapter;
     public GameSaveData loadedData;
+    public GameObject saveSelected;
+    public GameObject saveEntryPrefab;
+    public GameObject content;
 
     private void Awake()
     {
@@ -17,11 +22,17 @@ public class SaveManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
             Destroy(gameObject);
         }
+
+    }
+    void Start()
+    {
+        PopulateSaveList();
     }
     public void SaveGame()
     {
@@ -65,15 +76,18 @@ public class SaveManager : MonoBehaviour
         string fullFilePath = Path.Combine(Application.persistentDataPath, filename);
         File.WriteAllText(fullFilePath, jsonData);
     }
-    //public GameSaveData LoadGame()
-    //{
-    //    if (File.Exists(saveFilePath))
-    //    {
-    //        string jsonData = File.ReadAllText(saveFilePath);
-    //        return JsonUtility.FromJson<GameSaveData>(jsonData);
-    //    }
-    //    return null;
-    //}
+    public void LoadGame()
+    {
+        SaveEntry saveEntry = saveSelected.GetComponent<SaveEntry>();
+        string saveFilePath = Application.persistentDataPath + "/" + saveEntry.characterName + "_" + saveEntry.chapter + "_" + saveEntry.scene + "_" + saveEntry.timestamp;
+        if (File.Exists(saveFilePath))
+        {
+            string jsonData = File.ReadAllText(saveFilePath);
+            loadedData = JsonUtility.FromJson<GameSaveData>(jsonData);
+        }
+
+        SceneManager.LoadScene(loadedData.currentChapter);
+    }
     public List<string> GetAllSaveFiles()
     {
         List<string> fileNames = new List<string>();
@@ -88,5 +102,63 @@ public class SaveManager : MonoBehaviour
         }
         return fileNames;
     }
+    public void PopulateSaveList()
+    {
+        //Clear the existing list
+        foreach (Transform child in content.transform)
+        {
+            Destroy(child.gameObject);
+        }
 
+        //Get all of the save files and create saveEntrys for each
+        List<string> saveFiles = GetAllSaveFiles();
+        for (int i = saveFiles.Count - 1; i >= 0; i--)
+        {
+            string filename = saveFiles[i];
+            GameObject newSaveEntry = Instantiate(saveEntryPrefab, content.transform, false);
+            SaveEntry script = newSaveEntry.GetComponent<SaveEntry>();
+            string[] split = filename.Split('_');
+            script.characterName = split[0];
+            script.chapter = split[1];
+            script.scene = split[2];
+            script.timestamp = split[3];
+        }
+    }
+    public void UnselectOtherEntry()
+    {
+        if (saveSelected)
+        {
+            saveSelected.GetComponent<Image>().color = new Color(.2f, .24f, .52f, 0f);
+        }
+    }
+    public void DeleteSelectedSave()
+    {
+        if (saveSelected != null)
+        {
+            SaveEntry se = saveSelected.GetComponent<SaveEntry>();
+            string filename = se.characterName + "_" + se.chapter + "_" + se.scene + "_" + se.timestamp;
+            string fullFilePath = Path.Combine(Application.persistentDataPath, filename);
+            saveSelected = null;
+            File.Delete(fullFilePath);
+            PopulateSaveList();
+        }
+    }
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+
+        foreach (GameObject obj in allObjects)
+        {
+            if (obj.CompareTag("save_menu_content"))
+            {
+                content = obj;
+                break;
+            }
+        }
+    }
+    private void OnDestroy()
+    {
+        // Always unsubscribe to avoid memory leaks
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
 }

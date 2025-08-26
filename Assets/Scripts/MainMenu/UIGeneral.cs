@@ -8,6 +8,7 @@ public class UIGeneral : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 {
     private Image image;
     public Image blackScreen;
+    public GameObject saveMenu;
 
     void Awake()
     {
@@ -38,7 +39,7 @@ public class UIGeneral : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
         if (tag == "continue")
         {
-            
+            saveMenu.SetActive(true);
         }
         else if (tag == "new game")
         {

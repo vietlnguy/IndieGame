@@ -7,13 +7,12 @@ using System.Collections.Generic;
 public class CreateSaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     private Image image;
-    public SaveManager saveManager;
-    public SaveContentManager scm;
+    public SaveManager scm;
 
     void Awake()
     {
         image = GetComponent<Image>();
-        saveManager = FindFirstObjectByType<SaveManager>();
+        scm = FindFirstObjectByType<SaveManager>();
     }
 
     void Start()
@@ -34,7 +33,7 @@ public class CreateSaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        saveManager.SaveGame();
+        scm.SaveGame();
         scm.PopulateSaveList();
     }
 

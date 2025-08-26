@@ -4,19 +4,15 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
-public class LoadButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class LoadSaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     private Image image;
-    public Image blackScreen;
-    public GameObject pauseMenu;
-    public BattleController battleController;
-    public SaveManager saveManager;
-    public GameObject saveMenu;
+    public SaveManager scm;
 
     void Awake()
     {
         image = GetComponent<Image>();
-        saveManager = FindFirstObjectByType<SaveManager>();
+        scm = FindFirstObjectByType<SaveManager>();
     }
 
     void Start()
@@ -25,7 +21,6 @@ public class LoadButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     void Update()
     {
-
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -38,13 +33,10 @@ public class LoadButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-
-        //saveMenu.SetActive(true);
-        //saveManager.SaveGame();
-        //StartCoroutine(FadeScreen(blackScreen, 2f));
-        //SceneManager.LoadScene("MainMenu");
-    
-
+        if (scm.saveSelected)
+        {
+            scm.LoadGame();
+        }
     }
 
 }
