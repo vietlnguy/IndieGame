@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public Equipment weaponEquiped;
     public Equipment armorEquiped;
     public Equipment accessoryEquiped;
+    public GameObject attackRangeObj;
 
     void Awake()
     {
@@ -32,7 +33,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-
     }
 
     void LateUpdate()
@@ -59,8 +59,11 @@ public class PlayerController : MonoBehaviour
     }
     void OnMouseDown()
     {
-        battleController.characterSelected = gameObject;
-        battleController.originalPosition = gameObject.transform.position;
+        if (battleController.introFinished)
+        {
+            battleController.selectCharacter(gameObject); 
+        }
+
     }
 
 }

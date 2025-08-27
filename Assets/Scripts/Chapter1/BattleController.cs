@@ -103,9 +103,23 @@ public class BattleController : MonoBehaviour
             StartCoroutine(phaseTransition("Player"));
         }
     }
-    private void HandleSelection() {
-        
-   
+    public void selectCharacter(GameObject character)
+    {
+        //check if another character is already selected
+        if (characterSelected != null && characterSelected != character)
+        {
+            //reset position and freeze
+            characterSelected.transform.position = originalPosition;
+            characterSelected.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+        }
+
+        characterSelected = character;
+        originalPosition = character.transform.position;
+        characterSelected.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        characterSelected.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+        float moveRangeScale = character.GetComponent<PlayerController>().moveRange;
+        moveRange.transform.localScale = new Vector3(moveRangeScale, moveRangeScale, moveRangeScale);
+        moveRange.transform.position = character.transform.position;
     }
     private void HandleMovement()
     {
@@ -125,7 +139,7 @@ public class BattleController : MonoBehaviour
         {
             characterSelected.GetComponent<Animator>().SetBool("isWalking", false);
         }
-        
+
     }
     private void lockOtherCharacterMovement() {
         foreach (Transform obj in this.transform) {

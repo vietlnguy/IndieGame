@@ -6387,7 +6387,7 @@ MonoBehaviour:
   skill: 0
   speed: 0
   attackRange: 0
-  moveRange: 0
+  moveRange: 15
   relationship: 0
   owned: 0
   weaponEquiped:
@@ -6420,6 +6420,7 @@ MonoBehaviour:
     speedMod: 0
     attackRangeMod: 0
     moveRangeMod: 0
+  attackRangeObj: {fileID: 0}
 --- !u!50 &310813883
 Rigidbody2D:
   serializedVersion: 5
@@ -6446,7 +6447,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!61 &310813884
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41608,8 +41609,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -49, y: -6.37, z: 0}
-  m_LocalScale: {x: 15, y: 15, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 10.88, y: 10.88, z: 0.72533333}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -48720,7 +48721,7 @@ MonoBehaviour:
   skill: 0
   speed: 0
   attackRange: 0
-  moveRange: 0
+  moveRange: 10
   relationship: 0
   owned: 0
   weaponEquiped:
@@ -48753,6 +48754,7 @@ MonoBehaviour:
     speedMod: 0
     attackRangeMod: 0
     moveRangeMod: 0
+  attackRangeObj: {fileID: 0}
 --- !u!50 &1559506903
 Rigidbody2D:
   serializedVersion: 5
@@ -48779,7 +48781,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!61 &1559506904
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -56675,6 +56677,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveRange: {fileID: 1080458576}
   attackRange: {fileID: 588344970}
+  originalPosition: {x: 0, y: 0, z: 0}
   characterSelected: {fileID: 0}
   moveSpeed: 8
   endTurnObj: {fileID: 2045657004}
