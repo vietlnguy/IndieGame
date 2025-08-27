@@ -30,6 +30,7 @@ public class IntroController: MonoBehaviour
     public TilemapPathfinder pathfinder;
     public AudioSource footstepAudio;
     public AudioSource doorAudio;
+    public AudioSource fluteAudio;
     public AudioSource artifactShineAudio;
     public AudioSource forestBattleTheme;
     public AudioSource playerPhaseAudio;
@@ -42,9 +43,17 @@ public class IntroController: MonoBehaviour
     }
     void Start()
     {
-        saveManager.introBattleOutro = "intro";
-        saveManager.chapter = "Chapter1";
-        StartCoroutine(introSequence());  
+        if (saveManager.loadedData.introBattleOutro == "intro")
+        {
+            saveManager.introBattleOutro = "intro";
+            StartCoroutine(introSequence());
+        }
+        else if (saveManager.loadedData.introBattleOutro == "battle")
+        {
+            saveManager.introBattleOutro = "battle";
+            StartCoroutine(shortSequence());
+        }
+ 
     }
     void Update() {
  
@@ -184,7 +193,7 @@ public class IntroController: MonoBehaviour
     }
     private IEnumerator introSequence()
     {
-        
+        fluteAudio.Play();
         //Overworld movement and dialogue
         yield return StartCoroutine(UndoFade(whiteScreen, 1f));
         yield return new WaitForSeconds(1f);
@@ -272,7 +281,6 @@ public class IntroController: MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
         
-
         //TODO: Tutorial steps
 
         yield return new WaitForSeconds(2f);
@@ -285,7 +293,51 @@ public class IntroController: MonoBehaviour
         battleController.introFinished = true;
         saveManager.introBattleOutro = "battle";
     }
-    
+    private IEnumerator shortSequence()
+    {
+        enableEnemySprites();
+        mainChar.transform.position = new Vector3(-6.57f, -11.28f, 0f);
+        doorAudio.Play();
+        yield return StartCoroutine(characterAppear(mainChar));
+        yield return new WaitForSeconds(.5f);
+        yield return StartCoroutine(FollowPath(mainChar, new Vector3(-7.53f, -12f, 0f)));
+        astrid.transform.position = new Vector3(-6.57f, -11.28f, 0f);
+        astrid.GetComponent<SpriteRenderer>().enabled = true;
+        yield return StartCoroutine(characterAppear(astrid));
+        yield return StartCoroutine(FollowPath(astrid, new Vector3(-5.66f, -12f, 0f)));
+        yield return new WaitForSeconds(.5f);
+
+        fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
+        swordClash.Play();
+        forestBattleTheme.Play();
+        yield return new WaitForSeconds(1.5f);
+        fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
+
+        DialogueController.GetComponent<SmallDialogue>().dialoguesIndex = 18;
+        DialogueController.GetComponent<SmallDialogue>().NextDialogue();
+        dialogueFinished = true;
+        secondDialogueFinished = true;
+        thirdDialogueFinished = true;
+        fourthDialogueFinished = true;
+        fifthDialogueFinished = true;
+
+        while (!sixthDialogueFinished)
+        {
+            yield return new WaitForSeconds(1f);
+        }
+        
+        //TODO: Tutorial steps
+
+        yield return new WaitForSeconds(2f);
+        playerPhaseAudio.Play();
+        fightScreenText.text = "Player Phase";
+        fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
+        yield return new WaitForSeconds(2.5f);
+        fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
+
+        battleController.introFinished = true;
+        saveManager.introBattleOutro = "battle";
+    }
 }
 
 

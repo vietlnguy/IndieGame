@@ -9,6 +9,7 @@ public class UIGeneral : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     private Image image;
     public Image blackScreen;
     public GameObject saveMenu;
+    public SaveManager scm;
 
     void Awake()
     {
@@ -43,8 +44,9 @@ public class UIGeneral : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         }
         else if (tag == "new game")
         {
-            StartCoroutine(FadeScreen(blackScreen, 2f));
+            scm.NewSave();
             SceneManager.LoadScene("Chapter1");
+
         }
         else if (tag == "settings")
         {

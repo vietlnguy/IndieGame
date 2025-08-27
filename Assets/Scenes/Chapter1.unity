@@ -3625,6 +3625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1051489685}
+  dialoguesIndex: 0
   portraitImage: {fileID: 467852052}
   mainCharacterSprite: {fileID: 21300000, guid: fa678202a4290a145b0411a8b3985bc1, type: 3}
   astridSprite: {fileID: 21300000, guid: 6b0fd872a8395f344b653330a06c9063, type: 3}
@@ -5019,8 +5020,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 19.1651, y: -16.0329}
-  m_SizeDelta: {x: 113.2763, y: 113.869}
+  m_AnchoredPosition: {x: 21.8583, y: 1.4721}
+  m_SizeDelta: {x: 126.6088, y: 130.5574}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &244992874
 MonoBehaviour:
@@ -6376,7 +6377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: 0
-  battleController: {fileID: 0}
+  battleController: {fileID: 1859551252}
   hp: 0
   maxHp: 0
   mana: 0
@@ -9442,7 +9443,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449460378}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -12751,6 +12752,7 @@ GameObject:
   - component: {fileID: 606876717}
   - component: {fileID: 606876716}
   - component: {fileID: 606876715}
+  - component: {fileID: 606876718}
   m_Layer: 5
   m_Name: LoadSaveButton
   m_TagString: Untagged
@@ -12860,6 +12862,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 606876713}
   m_CullTransparentMesh: 1
+--- !u!114 &606876718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606876713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aec5db826ee68db49a21aa9e9e34dc6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scm: {fileID: 0}
 --- !u!1 &607854431
 GameObject:
   m_ObjectHideFlags: 0
@@ -13264,7 +13279,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6b47be1d160f3b5409154eba11141227, type: 3}
   m_Resource: {fileID: 8300000, guid: 6b47be1d160f3b5409154eba11141227, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 0.203
   m_Pitch: 1
   Loop: 1
@@ -17592,6 +17607,7 @@ MonoBehaviour:
   pathfinder: {fileID: 231026216}
   footstepAudio: {fileID: 1000868934}
   doorAudio: {fileID: 389434526}
+  fluteAudio: {fileID: 620618713}
   artifactShineAudio: {fileID: 1623136417}
   forestBattleTheme: {fileID: 1892489003}
   playerPhaseAudio: {fileID: 570491768}
@@ -48694,7 +48710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: 0
-  battleController: {fileID: 0}
+  battleController: {fileID: 1859551252}
   hp: 0
   maxHp: 0
   mana: 0
@@ -56659,6 +56675,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveRange: {fileID: 1080458576}
   attackRange: {fileID: 588344970}
+  characterSelected: {fileID: 0}
   moveSpeed: 8
   endTurnObj: {fileID: 2045657004}
   introFinished: 0
@@ -58365,7 +58382,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1934849217
 MonoBehaviour:
   m_ObjectHideFlags: 0

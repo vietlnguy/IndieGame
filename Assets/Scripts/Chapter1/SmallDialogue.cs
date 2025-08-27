@@ -11,7 +11,7 @@ public class SmallDialogue : MonoBehaviour
     private string[] lines;
     private float textSpeed = .02f;
     private int linesIndex = 0;
-    private int dialoguesIndex = 0;
+    public int dialoguesIndex = 0;
     public Image portraitImage;
     public Sprite mainCharacterSprite;
     public Sprite astridSprite;

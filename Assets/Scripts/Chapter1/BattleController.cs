@@ -7,8 +7,8 @@ public class BattleController : MonoBehaviour
 {
     public GameObject moveRange;
     public GameObject attackRange;
-    private Vector3 originalPosition;
-    private GameObject characterSelected;
+    public Vector3 originalPosition;
+    public GameObject characterSelected;
     private GameObject enemySelected;
     public float moveSpeed = 8.0f;
     public GameObject endTurnObj;
@@ -58,9 +58,8 @@ public class BattleController : MonoBehaviour
             }
         }
         if (introFinished && !isPaused) {
-            HandleGameLoop();
+            //HandleGameLoop();
             HandleMovement();
-            HandleSelection();
         }
     }
     private void HandleGameLoop() {
@@ -106,214 +105,27 @@ public class BattleController : MonoBehaviour
     }
     private void HandleSelection() {
         
-        //On left click, check character select
-        if (Input.GetMouseButtonDown(0)) {
-            Vector2 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Collider2D hit = Physics2D.OverlapPoint(mouseWorld);
-
-            //If endTurnUI is active then cannot click anything else
-            if (endTurnUIActive)
-            {
-                if (hit == null)
-                {
-                    StartCoroutine(FlashCoroutine());
-                }
-                else if (hit.gameObject.tag == "end_turn_yes")
-                {
-                    endTurn();
-                }
-                else if (hit.gameObject.tag == "end_turn_no")
-                {
-                    disableAttackRange(characterSelected);
-                    disableMoveRange();
-                    unhighlightSprite(characterSelected);
-                    unlockOtherCharacterMovement();
-                    disableEndTurnUI();
-                    characterSelected.GetComponent<Animator>().SetBool("isWalking", false);
-                    characterSelected.transform.position = originalPosition;
-                    characterSelected = null;
-                }
-                else
-                {
-                    StartCoroutine(FlashCoroutine());
-                }
-            }
-
-            else
-            {
-                //Clicked a character/enemy
-                if (hit != null && (hit.gameObject.tag == "character" || hit.gameObject.tag == "enemy"))
-                {
-                    //Clicked a player character
-                    if (hit.gameObject.tag == "character")
-                    {
-                        if (enemySelected != null)
-                        {
-                            unhighlightSprite(enemySelected);
-                            disableAttackRange(enemySelected);
-                            enemySelected = null;
-                        }
-                        //No character selected yet
-                        if (characterSelected == null)
-                        {
-                            characterSelected = hit.gameObject;
-                            originalPosition = characterSelected.transform.position;
-                            highLightSprite(characterSelected);
-                            lockOtherCharacterMovement();
-                            enableMoveRange();
-                            enableAttackRange(characterSelected);
-                            showCharacterInfo(characterSelected);
-                            if (!disabledCharacters.Contains(characterSelected)) { allowMovement = true; }
-                            else { allowMovement = false; }
-                        }
-                        //Character selected already and clicked again
-                        else if (hit.gameObject == characterSelected)
-                        {
-                            enableEndTurnUI();
-                        }
-                        //Character selected, but clicked a different character
-                        else if (hit.gameObject != characterSelected)
-                        {
-                            disableAttackRange(characterSelected);
-                            disableMoveRange();
-                            unhighlightSprite(characterSelected);
-                            unlockOtherCharacterMovement();
-                            characterSelected.transform.position = originalPosition;
-                            characterSelected = hit.gameObject;
-                            originalPosition = characterSelected.transform.position;
-                            lockOtherCharacterMovement();
-                            enableMoveRange();
-                            enableAttackRange(characterSelected);
-                            showCharacterInfo(characterSelected);
-                            if (!disabledCharacters.Contains(characterSelected)) { allowMovement = true; }
-                            else { allowMovement = false; }
-                        }
-                    }
-                    //Clicked an enemy
-                    else if (hit.gameObject.tag == "enemy")
-                    {
-                        //Character already selected
-                        if (characterSelected)
-                        {
-                            List<GameObject> enemiesInRange = transform.Find(characterSelected.name + "/AttackRange").GetComponent<AttackRange>().enemiesInRange;
-                            if (!enemiesInRange.Contains(hit.gameObject))
-                            {
-                                characterSelected.transform.position = originalPosition;
-                                disableMoveRange();
-                                disableAttackRange(characterSelected);
-                                unlockOtherCharacterMovement();
-                                unhighlightSprite(characterSelected);
-                                characterSelected = null;
-                                enemySelected = hit.gameObject;
-                                enableAttackRange(enemySelected);
-                                highLightSprite(enemySelected);
-                                showCharacterInfo(enemySelected);
-                            }
-                            else
-                            {
-                                Debug.Log("can attack");
-                            }
-                        }
-                        //Enemy already selected
-                        else if (enemySelected)
-                        {
-                            allowMovement = false;
-                            unhighlightSprite(enemySelected);
-                            disableAttackRange(enemySelected);
-                            enemySelected = hit.gameObject;
-                            highLightSprite(enemySelected);
-                            enableAttackRange(enemySelected);
-                            showCharacterInfo(enemySelected);
-                        }
-                        //Neither character or enemy selected
-                        else
-                        {
-                            allowMovement = false;
-                            enemySelected = hit.gameObject;
-                            highLightSprite(enemySelected);
-                            enableAttackRange(enemySelected);
-                            showCharacterInfo(enemySelected);
-                        }
-                    }
-                }
-                //Clicked an interactable
-                else if (hit != null && hit.gameObject.tag == "interactable")
-                {
-
-                }
-                //Didn't click character, enemy, or interactable
-                else
-                {
-                    //Character previously selected but hasn't moved
-                    if (characterSelected != null && characterSelected.transform.position == originalPosition)
-                    {
-                        characterSelected.transform.position = originalPosition;
-                        disableMoveRange();
-                        disableAttackRange(characterSelected);
-                        unlockOtherCharacterMovement();
-                        unhighlightSprite(characterSelected);
-                        characterSelected = null;
-                    }
-                    //Character was selected and has moved
-                    else if (characterSelected != null && characterSelected.transform.position != originalPosition)
-                    {
-                        enableEndTurnUI();
-                    }
-                    //Enemy previously selected
-                    else if (enemySelected != null)
-                    {
-                        unhighlightSprite(enemySelected);
-                        disableAttackRange(enemySelected);
-                        enemySelected = null;
-                    }
-
-                }
-            }
-        }
-        //On right click, if a character was selected then reset the selected character's position, untoggle attack range, move range and UI
-        else if (Input.GetMouseButtonDown(1)) {
-            if (characterSelected != null) {
-                unhighlightSprite(characterSelected);
-                disableAttackRange(characterSelected);
-                disableMoveRange();
-                unlockOtherCharacterMovement();
-                disableEndTurnUI();
-                characterSelected.transform.position = originalPosition;
-                characterSelected.GetComponent<Animator>().SetBool("isWalking", false);
-                characterSelected = null;
-            }
-            else if (enemySelected != null) {
-                disableAttackRange(enemySelected);  
-                unhighlightSprite(enemySelected);
-                enemySelected = null;
-            }
-        }
-
+   
     }
     private void HandleMovement()
     {
-        if (characterSelected == null || endTurnUIActive || !allowMovement) {
-            return;
+        Vector3 direction = Vector3.zero;
+
+        if (Input.GetKey(KeyCode.W)) direction.y += 1;
+        if (Input.GetKey(KeyCode.S)) direction.y -= 1;
+        if (Input.GetKey(KeyCode.A)) direction.x -= 1;
+        if (Input.GetKey(KeyCode.D)) direction.x += 1;
+
+        if (direction != Vector3.zero)
+        {
+            characterSelected.transform.position += direction.normalized * moveSpeed * Time.deltaTime;
+            characterSelected.GetComponent<Animator>().SetBool("isWalking", true);
         }
-
-        else {
-            Vector3 direction = Vector3.zero;
-
-            if (Input.GetKey(KeyCode.W)) direction.y += 1;
-            if (Input.GetKey(KeyCode.S)) direction.y -= 1;
-            if (Input.GetKey(KeyCode.A)) direction.x -= 1;
-            if (Input.GetKey(KeyCode.D)) direction.x += 1;
-
-            if (direction != Vector3.zero)
-            {
-                characterSelected.transform.position += direction.normalized * moveSpeed * Time.deltaTime;
-                characterSelected.GetComponent<Animator>().SetBool("isWalking", true);
-            }
-            else
-            {
-                characterSelected.GetComponent<Animator>().SetBool("isWalking", false);
-            }
+        else
+        {
+            characterSelected.GetComponent<Animator>().SetBool("isWalking", false);
         }
+        
     }
     private void lockOtherCharacterMovement() {
         foreach (Transform obj in this.transform) {
