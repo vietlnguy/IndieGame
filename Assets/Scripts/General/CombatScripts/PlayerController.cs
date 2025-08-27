@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
     {
         if (battleController.introFinished)
         {
-            battleController.selectCharacter(gameObject); 
+            battleController.selectCharacter(gameObject);
         }
 
     }

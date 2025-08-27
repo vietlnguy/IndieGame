@@ -6386,7 +6386,7 @@ MonoBehaviour:
   defense: 0
   skill: 0
   speed: 0
-  attackRange: 0
+  attackRange: 8
   moveRange: 15
   relationship: 0
   owned: 0
@@ -12413,6 +12413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 588344971}
   - component: {fileID: 588344972}
+  - component: {fileID: 588344973}
   m_Layer: 0
   m_Name: AttackRange
   m_TagString: Untagged
@@ -12429,7 +12430,7 @@ Transform:
   m_GameObject: {fileID: 588344970}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.4400005, y: -11.2, z: -0.044528753}
+  m_LocalPosition: {x: -40.09, y: -1.36, z: -0.044528753}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12442,7 +12443,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 588344970}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -12490,6 +12491,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &588344973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588344970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c3c0de7a4db2404d9574c8637261988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battleController: {fileID: 1859551252}
 --- !u!1 &591685083
 GameObject:
   m_ObjectHideFlags: 0
@@ -40412,7 +40426,7 @@ Transform:
   m_GameObject: {fileID: 1035526862}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.44, y: -11.71, z: 0}
+  m_LocalPosition: {x: -24.09, y: -9.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45439,8 +45453,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1350018410}
   - component: {fileID: 1350018411}
-  - component: {fileID: 1350018412}
   - component: {fileID: 1350018413}
+  - component: {fileID: 1350018414}
   m_Layer: 0
   m_Name: highlight-overlay_0
   m_TagString: end_turn_yes
@@ -45518,18 +45532,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1350018412
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1350018409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf69242ff1c1adf458b07ae8b5aaa8c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1350018413
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -45576,6 +45578,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.8, y: 0.35}
   m_EdgeRadius: 0
+--- !u!114 &1350018414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350018409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75830953e8915fe4ab5cc4448e5164fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battleController: {fileID: 1859551252}
 --- !u!1 &1359356676
 GameObject:
   m_ObjectHideFlags: 0
@@ -48720,7 +48735,7 @@ MonoBehaviour:
   defense: 0
   skill: 0
   speed: 0
-  attackRange: 0
+  attackRange: 3
   moveRange: 10
   relationship: 0
   owned: 0
@@ -49830,8 +49845,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1600009527}
   - component: {fileID: 1600009528}
-  - component: {fileID: 1600009529}
   - component: {fileID: 1600009530}
+  - component: {fileID: 1600009531}
   m_Layer: 0
   m_Name: highlight-overlay_0
   m_TagString: end_turn_no
@@ -49909,18 +49924,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1600009529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600009526}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf69242ff1c1adf458b07ae8b5aaa8c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1600009530
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -49967,6 +49970,19 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.8, y: 0.35}
   m_EdgeRadius: 0
+--- !u!114 &1600009531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1600009526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75830953e8915fe4ab5cc4448e5164fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  battleController: {fileID: 1859551252}
 --- !u!1 &1606797755
 GameObject:
   m_ObjectHideFlags: 0
@@ -56676,7 +56692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveRange: {fileID: 1080458576}
-  attackRange: {fileID: 588344970}
+  attackRange: {fileID: 588344973}
   originalPosition: {x: 0, y: 0, z: 0}
   characterSelected: {fileID: 0}
   moveSpeed: 8
