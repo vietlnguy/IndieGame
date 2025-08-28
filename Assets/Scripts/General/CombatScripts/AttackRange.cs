@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class AttackRange : MonoBehaviour
 {
-    private bool enabled = false;
+    public bool enabled = false;
     public BattleController battleController;
     void Awake()
     {

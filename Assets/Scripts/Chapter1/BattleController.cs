@@ -10,10 +10,10 @@ public class BattleController : MonoBehaviour
     public Vector3 originalPosition;
     public GameObject characterSelected;
     private GameObject enemySelected;
-    public float moveSpeed = 8.0f;
+    public float moveSpeed = 6.0f;
     public GameObject endTurnObj;
     private bool endTurnUIActive = false;
-    private List<GameObject> disabledCharacters;
+    public List<GameObject> disabledCharacters;
     private List<GameObject> disabledEnemies;
     private int partySize;
     public bool introFinished = true;
@@ -57,7 +57,6 @@ public class BattleController : MonoBehaviour
             }
         }
 
-
         if (introFinished && !isPaused)
         {
             if (characterSelected)
@@ -72,7 +71,11 @@ public class BattleController : MonoBehaviour
                     HandleMovement();
                 }
             }
+
+            HandleGameLoop();
         }
+
+
     }
     private void HandleGameLoop() {
 
@@ -110,7 +113,6 @@ public class BattleController : MonoBehaviour
         //Start player phase
         else if (disabledEnemies.Count == enemiesRemaining)
         {
-
             disabledEnemies.Clear();
             StartCoroutine(phaseTransition("Player"));
         }
@@ -171,7 +173,7 @@ public class BattleController : MonoBehaviour
     }
     private void enableEndTurnUI()
     {
-
+        endTurnObj.SetActive(true);
         if (characterSelected.transform.position.y > -4.5f)
         {
             endTurnObj.transform.position = new Vector3(characterSelected.transform.position.x - 0.3f, characterSelected.transform.position.y - 3.2f, characterSelected.transform.position.z);
@@ -224,6 +226,7 @@ public class BattleController : MonoBehaviour
     }
     public void endCharacterTurn() {
         disableMoveRange();
+        attackRange.disableAttackRange();
         graySpriteAndFreeze();
         disableEndTurnUI();             
         characterSelected.GetComponent<Animator>().SetBool("isFrozen", true);

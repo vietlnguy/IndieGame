@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if (battleController.introFinished)
+        if (battleController.introFinished && !battleController.disabledCharacters.Contains(gameObject))
         {
             spriteRenderer.color = Color.yellow;
         }
@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
 
     void OnMouseExit()
     {
-        if (battleController.introFinished)
+        if (battleController.introFinished && !battleController.disabledCharacters.Contains(gameObject))
         {
             spriteRenderer.color = Color.white;     
         }
