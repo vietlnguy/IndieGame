@@ -15,6 +15,7 @@ public class BattleController : MonoBehaviour
     private bool endTurnUIActive = false;
     public List<GameObject> disabledCharacters;
     private List<GameObject> disabledEnemies;
+    public List<GameObject> enemiesInRange;
     private int partySize;
     public bool introFinished = true;
     public GameObject fightScreen;
@@ -66,7 +67,7 @@ public class BattleController : MonoBehaviour
                     DeselectCharacter();
                     disableEndTurnUI();
                 }
-                else if (!endTurnUIActive)
+                else if (!endTurnUIActive && !disabledCharacters.Contains(characterSelected))
                 {
                     HandleMovement();
                 }
@@ -117,10 +118,25 @@ public class BattleController : MonoBehaviour
             StartCoroutine(phaseTransition("Player"));
         }
     }
+    public void selectEnemy(GameObject enemy)
+    {
+        if (characterSelected)
+        {
+            if (enemiesInRange.Contains(enemy))
+            {
+                Debug.Log("can attack");
+            }
+
+        }
+    }
     public void selectCharacter(GameObject character)
     {
+        if (disabledCharacters.Contains(character))
+        {
+            //should only bring up character info
+        }
         //Same character clicked again.
-        if (characterSelected == character)
+        else if (characterSelected == character)
         {
             enableEndTurnUI();
             return;
@@ -130,6 +146,7 @@ public class BattleController : MonoBehaviour
         {
             DeselectCharacter();
         }
+
         else
         {
             characterSelected = character;
@@ -219,10 +236,13 @@ public class BattleController : MonoBehaviour
             yield return new WaitForSeconds(flashDuration);
         }
     }
-    private void graySpriteAndFreeze() {
+    private void graySpriteAndFreeze()
+    {
         SpriteRenderer sr = characterSelected.GetComponent<SpriteRenderer>();
-        sr.color = Color.gray;                
+        sr.color = Color.gray;
         characterSelected.GetComponent<Animator>().SetBool("isFrozen", true);
+        characterSelected.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+
     }
     public void endCharacterTurn() {
         disableMoveRange();

@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 public class AttackRange : MonoBehaviour
 {
@@ -33,4 +35,21 @@ public class AttackRange : MonoBehaviour
         enabled = false;
         gameObject.SetActive(false);
     }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "enemy")
+        {
+            other.gameObject.GetComponent<EnemyController>().highlightAttackable();
+            battleController.enemiesInRange.Add(other.gameObject);
+        }
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "enemy")
+        {
+            other.gameObject.GetComponent<EnemyController>().unhighlightAttackable();
+            battleController.enemiesInRange.RemoveAll(item => item == other.gameObject);
+        }
+    }
+
 }

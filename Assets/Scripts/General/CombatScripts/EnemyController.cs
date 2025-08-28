@@ -3,9 +3,8 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
-    public int offset = 0; // Optional manual offset if needed
-
-    //Enemy stats
+    public int offset = 0;
+    public BattleController battleController;
     public int hp;
     public int mana;
     public int attack;
@@ -16,7 +15,7 @@ public class EnemyController : MonoBehaviour
     public int moveRange;
 
 
-    void Awake() 
+    void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -44,6 +43,22 @@ public class EnemyController : MonoBehaviour
     void OnMouseExit()
     {
 
+    }
+    void OnMouseDown()
+    {
+        if (battleController.introFinished)
+        {
+            battleController.selectEnemy(gameObject);
+        }
+
+    }
+    public void highlightAttackable()
+    {
+        spriteRenderer.color = Color.red;
+    }
+    public void unhighlightAttackable()
+    {
+        spriteRenderer.color = Color.white;
     }
 
 }

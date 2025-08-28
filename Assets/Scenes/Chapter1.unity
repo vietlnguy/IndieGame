@@ -2476,6 +2476,7 @@ GameObject:
   - component: {fileID: 97701436}
   - component: {fileID: 97701435}
   - component: {fileID: 97701434}
+  - component: {fileID: 97701439}
   m_Layer: 7
   m_Name: enemy (3)
   m_TagString: enemy
@@ -2694,6 +2695,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &97701439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97701431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d6d09947a088e0419a2ed35d43a231c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
+  battleController: {fileID: 1859551252}
+  hp: 0
+  mana: 0
+  attack: 0
+  defense: 0
+  skill: 0
+  speed: 0
+  attackRange: 0
+  moveRange: 0
 --- !u!1 &98648260
 GameObject:
   m_ObjectHideFlags: 0
@@ -5551,6 +5574,7 @@ GameObject:
   - component: {fileID: 288128961}
   - component: {fileID: 288128960}
   - component: {fileID: 288128959}
+  - component: {fileID: 288128964}
   m_Layer: 7
   m_Name: enemy (4)
   m_TagString: enemy
@@ -5769,6 +5793,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &288128964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288128956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d6d09947a088e0419a2ed35d43a231c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 0
+  battleController: {fileID: 1859551252}
+  hp: 0
+  mana: 0
+  attack: 0
+  defense: 0
+  skill: 0
+  speed: 0
+  attackRange: 0
+  moveRange: 0
 --- !u!1 &289557771
 GameObject:
   m_ObjectHideFlags: 0
@@ -9019,7 +9065,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449460378}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -9042,7 +9088,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -9194,6 +9240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: 0
+  battleController: {fileID: 1859551252}
   hp: 1
   mana: 0
   attack: 0
@@ -12012,7 +12059,8 @@ GameObject:
   - component: {fileID: 588344971}
   - component: {fileID: 588344972}
   - component: {fileID: 588344973}
-  m_Layer: 0
+  - component: {fileID: 588344974}
+  m_Layer: 2
   m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12028,7 +12076,7 @@ Transform:
   m_GameObject: {fileID: 588344970}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40.09, y: -1.36, z: -0.044528753}
+  m_LocalPosition: {x: -40.09, y: -1.36, z: -1}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12103,6 +12151,42 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enabled: 0
   battleController: {fileID: 1859551252}
+--- !u!58 &588344974
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588344970}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.0031402588, y: -0.0031339645}
+  m_Radius: 0.34513703
 --- !u!1 &591685083
 GameObject:
   m_ObjectHideFlags: 0
@@ -46325,7 +46409,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1470536275}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -46500,6 +46584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: 0
+  battleController: {fileID: 1859551252}
   hp: 2
   mana: 0
   attack: 0
@@ -55437,6 +55522,7 @@ MonoBehaviour:
   moveSpeed: 8
   endTurnObj: {fileID: 2045657004}
   disabledCharacters: []
+  enemiesInRange: []
   introFinished: 0
   fightScreen: {fileID: 2046485967}
   fightScreenText: {fileID: 668906954}
