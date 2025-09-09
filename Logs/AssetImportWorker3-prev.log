@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '6000.0/staging' branch; Version is '6000.0.36f1 (9fe3b5f71dbb) revision 10478517'; Using compiler version '193933523'; Build Type 'Release'
-OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'en' Physical Memory: 15776 MB
+OS: 'Windows 11  (10.0.26100) 64bit Core' Language: 'en' Physical Memory: 16328 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
@@ -11,19 +11,19 @@ C:\Program Files\Unity\Hub\Editor\6000.0.36f1\Editor\Unity.exe
 -name
 AssetImportWorker3
 -projectPath
-C:/Users/viet_/Unity Projects/My project
+C:/Users/viet_/projects/SecretProject
 -logFile
 Logs/AssetImportWorker3.log
 -srvPort
-64262
+52444
 -job-worker-count
 7
 -background-job-worker-count
 8
 -gc-helper-count
 1
-Successfully changed project path to: C:/Users/viet_/Unity Projects/My project
-C:/Users/viet_/Unity Projects/My project
+Successfully changed project path to: C:/Users/viet_/projects/SecretProject
+C:/Users/viet_/projects/SecretProject
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -59,12 +59,12 @@ C:/Users/viet_/Unity Projects/My project
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [40568]  Target information:
+Player connection [5624]  Target information:
 
-Player connection [40568]  * "[IP] 192.168.0.155 [Port] 0 [Flags] 2 [Guid] 3898348532 [EditorId] 3898348532 [Version] 1048832 [Id] WindowsEditor(7,LAPTOP-F45NKVQE) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [5624]  * "[IP] 192.168.0.158 [Port] 0 [Flags] 2 [Guid] 270254246 [EditorId] 270254246 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-31F4D3F) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [40568] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [40568] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [5624] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [5624] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -76,61 +76,59 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 226.24 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 3.82 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.36f1 (9fe3b5f71dbb)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/viet_/Unity Projects/My project/Assets
+[Subsystems] Discovering subsystems at path C:/Users/viet_/projects/SecretProject/Assets
 GfxDevice: creating device client; kGfxThreadingModeNonThreaded
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 3060 Laptop GPU (ID=0x2520)
+    Renderer: NVIDIA GeForce RTX 5060 (ID=0x2d05)
     Vendor:   NVIDIA
-    VRAM:     5996 MB
-    Driver:   32.0.15.6636
+    VRAM:     7807 MB
+    Driver:   32.0.15.7688
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56656
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56560
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.005720 seconds.
-- Loaded All Assemblies, in  1.418 seconds
+Registered in 0.003127 seconds.
+- Loaded All Assemblies, in  0.402 seconds
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.390 seconds
-Domain Reload Profiling: 1801ms
-	BeginReloadAssembly (162ms)
+- Finished resetting the current domain, in  0.321 seconds
+Domain Reload Profiling: 720ms
+	BeginReloadAssembly (151ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (247ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (61ms)
-	LoadAllAssembliesAndSetupDomain (931ms)
-		LoadAssemblies (161ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (48ms)
+	LoadAllAssembliesAndSetupDomain (156ms)
+		LoadAssemblies (146ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (918ms)
-			TypeCache.Refresh (917ms)
-				TypeCache.ScanAssembly (900ms)
+		AnalyzeDomain (153ms)
+			TypeCache.Refresh (152ms)
+				TypeCache.ScanAssembly (140ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (390ms)
+	FinalizeReload (321ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (341ms)
+		SetupLoadedEditorAssemblies (278ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (26ms)
-			SetLoadedEditorAssemblies (5ms)
-			BeforeProcessingInitializeOnLoad (66ms)
-			ProcessInitializeOnLoadAttributes (158ms)
-			ProcessInitializeOnLoadMethodAttributes (86ms)
+			InitializePlatformSupportModulesInManaged (23ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (51ms)
+			ProcessInitializeOnLoadAttributes (154ms)
+			ProcessInitializeOnLoadMethodAttributes (47ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -139,124 +137,179 @@ Domain Reload Profiling: 1801ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.988 seconds
-Refreshing native plugins compatible for Editor in 5.93 ms, found 4 plugins.
+- Loaded All Assemblies, in  1.308 seconds
+Refreshing native plugins compatible for Editor in 1.75 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.319 seconds
-Domain Reload Profiling: 2295ms
-	BeginReloadAssembly (198ms)
+- Finished resetting the current domain, in  0.761 seconds
+Domain Reload Profiling: 2060ms
+	BeginReloadAssembly (187ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (49ms)
-	RebuildCommonClasses (36ms)
+		CreateAndSetChildDomain (40ms)
+	RebuildCommonClasses (45ms)
 	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (45ms)
-	LoadAllAssembliesAndSetupDomain (685ms)
-		LoadAssemblies (445ms)
+	initialDomainReloadingComplete (47ms)
+	LoadAllAssembliesAndSetupDomain (1008ms)
+		LoadAssemblies (866ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (349ms)
-			TypeCache.Refresh (272ms)
-				TypeCache.ScanAssembly (198ms)
-			BuildScriptInfoCaches (60ms)
-			ResolveRequiredComponents (13ms)
-	FinalizeReload (1319ms)
+		AnalyzeDomain (250ms)
+			TypeCache.Refresh (178ms)
+				TypeCache.ScanAssembly (158ms)
+			BuildScriptInfoCaches (54ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (762ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (772ms)
+		SetupLoadedEditorAssemblies (622ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (4ms)
-			SetLoadedEditorAssemblies (3ms)
-			BeforeProcessingInitializeOnLoad (130ms)
-			ProcessInitializeOnLoadAttributes (471ms)
-			ProcessInitializeOnLoadMethodAttributes (155ms)
-			AfterProcessingInitializeOnLoad (8ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (116ms)
+			ProcessInitializeOnLoadAttributes (373ms)
+			ProcessInitializeOnLoadMethodAttributes (119ms)
+			AfterProcessingInitializeOnLoad (7ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (6ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 2.37 ms, found 4 plugins.
+		AwakeInstancesAfterBackupRestoration (8ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 4.71 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 221 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 6615 unused Assets / (4.9 MB). Loaded Objects now: 7331.
-Memory consumption went from 181.9 MB to 177.1 MB.
-Total: 13.957800 ms (FindLiveObjects: 1.010900 ms CreateObjectMapping: 1.170300 ms MarkObjects: 7.023200 ms  DeleteObjects: 4.751700 ms)
+Unloading 220 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6615 unused Assets / (4.9 MB). Loaded Objects now: 7327.
+Memory consumption went from 178.8 MB to 173.9 MB.
+Total: 85.197900 ms (FindLiveObjects: 4.321000 ms CreateObjectMapping: 2.464600 ms MarkObjects: 72.328400 ms  DeleteObjects: 6.080800 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 827805.801238 seconds.
-  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skill Cards- Flip Animations/Skills face flip/F_U_Card_Ability20_Flip02.png
-  artifactKey: Guid(2330022dade54294cb6fb9fdda708d10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skill Cards- Flip Animations/Skills face flip/F_U_Card_Ability20_Flip02.png using Guid(2330022dade54294cb6fb9fdda708d10) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '32b19561ffe6720c2fc0dafe3596ba36') in 0.1431169 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skill Cards- Flip Animations/Skills face flip/F_U_Card_Ability24_Flip03.png
-  artifactKey: Guid(dbfe0f11b8b21404ab3ef41b1d604bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skill Cards- Flip Animations/Skills face flip/F_U_Card_Ability24_Flip03.png using Guid(dbfe0f11b8b21404ab3ef41b1d604bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a116a71e9947a65cfb68774be5685943') in 0.0247896 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skill Cards- Flip Animations/Skills face flip/F_U_Card_Ability20_Flip04.png
-  artifactKey: Guid(b963c31590eb28b43b583d834aaac0f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skill Cards- Flip Animations/Skills face flip/F_U_Card_Ability20_Flip04.png using Guid(b963c31590eb28b43b583d834aaac0f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ba17f1807edcc4c0a87570587f1a65f9') in 0.0230002 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  Time since last request: 4014.361744 seconds.
+  path: Assets/astrid_again.png
+  artifactKey: Guid(6c8afe8ef50207e419dd6aff3d731a1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/astrid_again.png using Guid(6c8afe8ef50207e419dd6aff3d731a1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3713d29999c493efce2eff2358e811d8') in 0.2597103 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000033 seconds.
-  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skill Cards- Flip Animations/Skills face flip/F_U_Card_Ability23_Flip02.png
-  artifactKey: Guid(73a3e35df466c7c4eada04d6864ae522) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skill Cards- Flip Animations/Skills face flip/F_U_Card_Ability23_Flip02.png using Guid(73a3e35df466c7c4eada04d6864ae522) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ccb69e2eb935b9c5cda8c4e0e9043e0e') in 0.0219016 seconds
+  path: Assets/cutout 2.png
+  artifactKey: Guid(93eaeeb483b34d4419c22c9daad335c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/cutout 2.png using Guid(93eaeeb483b34d4419c22c9daad335c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fefd64897541027eae760653bac54463') in 0.0732071 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/cutout2.png
+  artifactKey: Guid(be4beb6b837027d41911fd0cd817de07) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/cutout2.png using Guid(be4beb6b837027d41911fd0cd817de07) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd6e480d41d63b21e852d164884889433') in 0.0353704 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/cutout 5.png
+  artifactKey: Guid(ad921d7e4ef169e4392e57957b7385f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/cutout 5.png using Guid(ad921d7e4ef169e4392e57957b7385f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9ceec11d00649979a81537f83d0744ec') in 0.0448655 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/cutout3 1.png
+  artifactKey: Guid(ef9af52cf7e83e14da506b3ee7598883) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/cutout3 1.png using Guid(ef9af52cf7e83e14da506b3ee7598883) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5258ce4226607bc70752bb24f9a3a4aa') in 0.0436208 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/cutout3.png
+  artifactKey: Guid(82af6ecaadaa7fb4ba41298169209b58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/cutout3.png using Guid(82af6ecaadaa7fb4ba41298169209b58) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ee8904a7c22c11dd0770ec2f3fff212d') in 0.0340947 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skill Cards- Flip Animations/Skills face flip/F_U_Card_Ability24_Flip02.png
-  artifactKey: Guid(601f2cec32a0f224781edd936f7ddca4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skill Cards- Flip Animations/Skills face flip/F_U_Card_Ability24_Flip02.png using Guid(601f2cec32a0f224781edd936f7ddca4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5ff06c3dfeb939caa8c822429c7d0dc4') in 0.0339935 seconds
+  Time since last request: 6.862507 seconds.
+  path: Assets/cutout4 1.png
+  artifactKey: Guid(8f347fdf443945543877ac3d4fc00d46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/cutout4 1.png using Guid(8f347fdf443945543877ac3d4fc00d46) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c4c1d999e038baf8253da395a9423d67') in 0.0370516 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000012 seconds.
+  path: Assets/cutout_2 1.png
+  artifactKey: Guid(30f7326a5cfa8fb40b8fdec72db5af43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/cutout_2 1.png using Guid(30f7326a5cfa8fb40b8fdec72db5af43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2c905b4b2be7a452bc0389cef7b9254c') in 0.0239058 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skill Cards- Flip Animations/Skills face flip/F_U_Card_Ability19_Flip02.png
-  artifactKey: Guid(4c82bce6a0276f84f8edfac7d76c3b79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skill Cards- Flip Animations/Skills face flip/F_U_Card_Ability19_Flip02.png using Guid(4c82bce6a0276f84f8edfac7d76c3b79) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '237ae2fc91c6e1da7c712ff2fd43c2ea') in 0.0251162 seconds
+  Time since last request: 0.000016 seconds.
+  path: Assets/cutout5 2.png
+  artifactKey: Guid(333c39c762b2a9f4d8dc35994afb70c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/cutout5 2.png using Guid(333c39c762b2a9f4d8dc35994afb70c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4b957e714a3fd9825b6dd4d7e8266f50') in 0.0210836 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skill Cards- Flip Animations/Skills face flip/F_U_Card_Ability18_Flip04.png
-  artifactKey: Guid(9e4807db800d21740995e16ea966d87f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skill Cards- Flip Animations/Skills face flip/F_U_Card_Ability18_Flip04.png using Guid(9e4807db800d21740995e16ea966d87f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f9ce582da17aa899fb6a66f4b05530e1') in 0.0236243 seconds
+  Time since last request: 0.057637 seconds.
+  path: Assets/ui_big.png
+  artifactKey: Guid(0d83e85d96fe4bc4b8b7e1647ceedcb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/ui_big.png using Guid(0d83e85d96fe4bc4b8b7e1647ceedcb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ca6ea62aca930454c1240d0c911f8ad3') in 0.0362541 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skill Cards- Flip Animations/Skills face flip/F_U_Card_Ability17_Flip03.png
-  artifactKey: Guid(ef65a608d8c53314e8c7357e0ae7226e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skill Cards- Flip Animations/Skills face flip/F_U_Card_Ability17_Flip03.png using Guid(ef65a608d8c53314e8c7357e0ae7226e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e6b4d3ac7a54bd87ac2f19428a61c5a0') in 0.0253334 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.770 seconds
+Refreshing native plugins compatible for Editor in 1.70 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.686 seconds
+Domain Reload Profiling: 1453ms
+	BeginReloadAssembly (213ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (12ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (57ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (29ms)
+	LoadAllAssembliesAndSetupDomain (482ms)
+		LoadAssemblies (396ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (188ms)
+			TypeCache.Refresh (11ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (163ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (687ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (512ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (110ms)
+			ProcessInitializeOnLoadAttributes (319ms)
+			ProcessInitializeOnLoadMethodAttributes (70ms)
+			AfterProcessingInitializeOnLoad (7ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (17ms)
+Refreshing native plugins compatible for Editor in 3.99 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6613 unused Assets / (4.5 MB). Loaded Objects now: 7367.
+Memory consumption went from 150.5 MB to 146.1 MB.
+Total: 49.775800 ms (FindLiveObjects: 1.925600 ms CreateObjectMapping: 1.690500 ms MarkObjects: 39.942100 ms  DeleteObjects: 6.215600 ms)
 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skill Cards- Flip Animations/Skills face flip/F_U_Card_Ability21_Flip03.png
-  artifactKey: Guid(bc66f8033ed04824f84e7b86a85466aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skill Cards- Flip Animations/Skills face flip/F_U_Card_Ability21_Flip03.png using Guid(bc66f8033ed04824f84e7b86a85466aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a01d5a1477a3112515e3abb2411e1c4e') in 0.0359765 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
+Prepare: number of updated asset objects reloaded= 0
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting

@@ -29,6 +29,7 @@ public class BattleController : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject saveMenu;
     public bool isPaused = false;
+    public AttackPreview attackPreviewScript;
     void Awake()
     {
         disabledCharacters = new List<GameObject>();
@@ -64,8 +65,16 @@ public class BattleController : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(1))
                 {
-                    DeselectCharacter();
-                    disableEndTurnUI();
+                    if (attackPreviewScript.enabled == true)
+                    {
+                        StartCoroutine(attackPreviewScript.disablePreview());
+                    }
+                    else
+                    {
+                        DeselectCharacter();
+                        disableEndTurnUI();
+                    }
+
                 }
                 else if (!endTurnUIActive && !disabledCharacters.Contains(characterSelected))
                 {
@@ -124,7 +133,7 @@ public class BattleController : MonoBehaviour
         {
             if (enemiesInRange.Contains(enemy))
             {
-                Debug.Log("can attack");
+                StartCoroutine(attackPreviewScript.enablePreview());
             }
 
         }
@@ -219,7 +228,6 @@ public class BattleController : MonoBehaviour
         moveRange.SetActive(false);
     }
     private System.Collections.IEnumerator FlashCoroutine() {
-        Debug.Log("flash called");
         SpriteRenderer endTurnSR = endTurnObj.GetComponent<SpriteRenderer>();
         float flashDuration = 0.1f;
         int flashCount = 3;
