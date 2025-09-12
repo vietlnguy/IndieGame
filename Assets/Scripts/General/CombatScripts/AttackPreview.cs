@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 public class AttackPreview : MonoBehaviour
 {
@@ -10,6 +11,14 @@ public class AttackPreview : MonoBehaviour
     public GameObject confirmButton;
     public GameObject vsText;
     public bool enabled = false;
+    public AudioSource attackWooshAudio;
+    public AudioSource attackClangAudio;
+    public TextMeshProUGUI characterTitle;
+    public TextMeshProUGUI enemyTitle;
+    public GameObject portraitBackground;
+    public GameObject liamPrefab;
+    public GameObject astridPrefab;
+    public GameObject attackPreviewSprites;
     void Awake()
     {
     }
@@ -22,9 +31,12 @@ public class AttackPreview : MonoBehaviour
     {
     }
 
-    public IEnumerator enablePreview()
+    public IEnumerator enablePreview(GameObject enemy)
     {
-        Debug.Log("called");
+        characterTitle.text = battleController.characterSelected.GetComponent<PlayerController>().title;
+        enemyTitle.text = enemy.GetComponent<EnemyController>().title;
+
+        attackClangAudio.Play();
         float duration = 0.05f;
         Vector2 attackerStartPos = attackerPreviewPanel.transform.localPosition;
         Vector2 defenderStartPos = defenderPreviewPanel.transform.localPosition;
@@ -41,13 +53,24 @@ public class AttackPreview : MonoBehaviour
         attackerPreviewPanel.transform.localPosition = new Vector2(-25, 22);
         defenderPreviewPanel.transform.localPosition = new Vector2(292, 19);
 
+        GameObject characterPrefab;
+        if (battleController.characterSelected.GetComponent<PlayerController>().title == "Liam") { characterPrefab = Instantiate(liamPrefab, portraitBackground.transform.position, Quaternion.identity); }
+        else if (battleController.characterSelected.GetComponent<PlayerController>().title == "Astrid") { characterPrefab = Instantiate(astridPrefab, portraitBackground.transform.position, Quaternion.identity); }
+
         confirmButton.SetActive(true);
         vsText.SetActive(true);
         enabled = true;
+        
+
 
     }
     public IEnumerator disablePreview()
     {
+        foreach (Transform child in attackPreviewSprites.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        attackWooshAudio.Play();
         float duration = 0.05f;
         Vector2 attackerStartPos = attackerPreviewPanel.transform.localPosition;
         Vector2 defenderStartPos = defenderPreviewPanel.transform.localPosition;
@@ -67,6 +90,7 @@ public class AttackPreview : MonoBehaviour
         confirmButton.SetActive(false);
         vsText.SetActive(false);
         enabled = false;
+
     }
 
 }

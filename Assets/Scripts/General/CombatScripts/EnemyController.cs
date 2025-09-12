@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour
     public int speed;
     public int attackRange;
     public int moveRange;
-
+    public string title;
 
     void Awake()
     {

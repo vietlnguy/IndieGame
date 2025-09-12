@@ -65,7 +65,7 @@ public class BattleController : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(1))
                 {
-                    if (attackPreviewScript.enabled == true)
+                    if (attackPreviewScript.enabled)
                     {
                         StartCoroutine(attackPreviewScript.disablePreview());
                     }
@@ -76,7 +76,7 @@ public class BattleController : MonoBehaviour
                     }
 
                 }
-                else if (!endTurnUIActive && !disabledCharacters.Contains(characterSelected))
+                else if (!endTurnUIActive && !disabledCharacters.Contains(characterSelected) && !attackPreviewScript.enabled)
                 {
                     HandleMovement();
                 }
@@ -131,9 +131,9 @@ public class BattleController : MonoBehaviour
     {
         if (characterSelected)
         {
-            if (enemiesInRange.Contains(enemy))
+            if (enemiesInRange.Contains(enemy) && !attackPreviewScript.enabled)
             {
-                StartCoroutine(attackPreviewScript.enablePreview());
+                StartCoroutine(attackPreviewScript.enablePreview(enemy));
             }
 
         }

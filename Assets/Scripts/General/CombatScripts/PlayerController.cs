@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public int moveRange;
     public int relationship;
     public bool owned;
+    public string title;
     public Equipment weaponEquiped;
     public Equipment armorEquiped;
     public Equipment accessoryEquiped;
