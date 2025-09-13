@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public int maxMana;
     public int attack;
     public int defense;
+    public int specialDefense;
     public int skill;
     public int speed;
     public int attackRange;
@@ -22,10 +23,12 @@ public class PlayerController : MonoBehaviour
     public Equipment armorEquiped;
     public Equipment accessoryEquiped;
     public GameObject attackRangeObj;
+    public Attack[] knownAttacks;
 
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+
     }
 
     void Start()

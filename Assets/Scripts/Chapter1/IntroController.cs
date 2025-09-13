@@ -43,9 +43,9 @@ public class IntroController: MonoBehaviour
     }
     void Start()
     {
-        if (saveManager.loadedData.introBattleOutro == "intro")
+        if (saveManager.loadedData.introBattleOutro == "Intro")
         {
-            saveManager.introBattleOutro = "intro";
+            saveManager.introBattleOutro = "Intro";
             StartCoroutine(introSequence());
         }
         else if (saveManager.loadedData.introBattleOutro == "battle")

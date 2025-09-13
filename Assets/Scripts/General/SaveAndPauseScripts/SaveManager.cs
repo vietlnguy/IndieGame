@@ -42,32 +42,8 @@ public class SaveManager : MonoBehaviour
         dataToSave.introBattleOutro = introBattleOutro;
         dataToSave.mainCharacterName = loadedData.mainCharacterName;
 
-        //Get character data
-        GameObject characters = GameObject.FindWithTag("charactersParentObject");
-        for (int i = 0; i < characters.transform.childCount; i++)
-        {
-            Transform childTransform = characters.transform.GetChild(i);
-            PlayerController child = childTransform.gameObject.GetComponent<PlayerController>();
-
-            if (child.owned)
-            {
-                CharacterData characterData = new CharacterData
-                {
-                    characterName = child.name,
-                    maxHp = child.maxHp,
-                    maxMana = child.maxMana,
-                    attack = child.attack,
-                    defense = child.defense,
-                    skill = child.skill,
-                    speed = child.speed,
-                    attackRange = child.attackRange,
-                    moveRange = child.moveRange,
-                    relationship = child.relationship,
-                };
-                dataToSave.characters.Add(characterData);
-            }
-        }
-
+        //TODO: Get character data to save
+        
         //Create save file name
         string time = DateTime.Now.ToString("F");
         time = time.Replace(":", "-");
@@ -82,15 +58,27 @@ public class SaveManager : MonoBehaviour
 
         //Get scene data
         dataToSave.currentChapter = "Chapter1";
-        dataToSave.introBattleOutro = "intro";
+        dataToSave.introBattleOutro = "Intro";
         dataToSave.mainCharacterName = "characterName";
+
+        //Populate character data
+        CharacterData mainCharacter = new CharacterData("MainCharacter", 15, 8, 7, 5, 6, 6, 3, 10);
+        mainCharacter.knownAttacks.Add(new Attack("Slash", "physical", 5, 90));
+
+        CharacterData astrid = new CharacterData("Astrid", 11, 6, 5, 6, 8, 7, 8, 6);
+        astrid.knownAttacks.Add(new Attack("Bow Shot", "physical", 4, 90));
+
+        dataToSave.characters.Add(mainCharacter);
+        dataToSave.characters.Add(astrid);
 
         //Create save file name
         string time = DateTime.Now.ToString("F");
         time = time.Replace(":", "-");
-        string jsonData = JsonUtility.ToJson(dataToSave, true);
         string filename = dataToSave.mainCharacterName + "_" + dataToSave.currentChapter + "_" + dataToSave.introBattleOutro + "_" + time + ".json";
         string fullFilePath = Path.Combine(Application.persistentDataPath, filename);
+        Debug.Log(fullFilePath);
+
+        string jsonData = JsonUtility.ToJson(dataToSave, true);
         File.WriteAllText(fullFilePath, jsonData);
 
         loadedData = dataToSave;

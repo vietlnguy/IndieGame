@@ -16,8 +16,10 @@ public class AttackPreview : MonoBehaviour
     public TextMeshProUGUI characterTitle;
     public TextMeshProUGUI enemyTitle;
     public GameObject portraitBackground;
+    public GameObject enemyPortraitBackground;
     public GameObject liamPrefab;
     public GameObject astridPrefab;
+    public GameObject soldierPrefab;
     public GameObject attackPreviewSprites;
     void Awake()
     {
@@ -54,8 +56,11 @@ public class AttackPreview : MonoBehaviour
         defenderPreviewPanel.transform.localPosition = new Vector2(292, 19);
 
         GameObject characterPrefab;
-        if (battleController.characterSelected.GetComponent<PlayerController>().title == "Liam") { characterPrefab = Instantiate(liamPrefab, portraitBackground.transform.position, Quaternion.identity); }
-        else if (battleController.characterSelected.GetComponent<PlayerController>().title == "Astrid") { characterPrefab = Instantiate(astridPrefab, portraitBackground.transform.position, Quaternion.identity); }
+        if (battleController.characterSelected.GetComponent<PlayerController>().title == "Liam") { characterPrefab = Instantiate(liamPrefab, portraitBackground.transform.position, Quaternion.identity, attackPreviewSprites.transform); }
+        else if (battleController.characterSelected.GetComponent<PlayerController>().title == "Astrid") { characterPrefab = Instantiate(astridPrefab, portraitBackground.transform.position, Quaternion.identity, attackPreviewSprites.transform); }
+
+        GameObject enemyPrefab;
+        if (enemy.GetComponent<EnemyController>().title == "Soldier") { enemyPrefab = Instantiate(soldierPrefab, enemyPortraitBackground.transform.position, Quaternion.identity, attackPreviewSprites.transform); }
 
         confirmButton.SetActive(true);
         vsText.SetActive(true);
