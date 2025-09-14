@@ -40,9 +40,13 @@ public class IntroController: MonoBehaviour
     void Awake()
     {
         saveManager = FindFirstObjectByType<SaveManager>();
+        mainChar = GameObject.Find("MainCharacterPrefab(Clone)");
+        astrid = GameObject.Find("AstridPrefab(Clone)");
+        astrid.GetComponent<SpriteRenderer>().enabled = false;
     }
     void Start()
     {
+
         if (saveManager.loadedData.introBattleOutro == "Intro")
         {
             saveManager.introBattleOutro = "Intro";

@@ -43,7 +43,17 @@ public class SaveManager : MonoBehaviour
         dataToSave.mainCharacterName = loadedData.mainCharacterName;
 
         //TODO: Get character data to save
-        
+        GameObject characters = GameObject.Find("Characters");
+        foreach (Transform child in characters.transform)
+        {
+            PlayerController pc = child.GetComponent<PlayerController>();
+            if (pc.owned)
+            {
+                Character temp = new Character(pc.title, pc.maxHp, pc.attack, pc.defense, pc.specialDefense, pc.skill, pc.speed, pc.attackRange, pc.moveRange, pc.owned);
+                dataToSave.characters.Add(temp);
+            }
+        }
+
         //Create save file name
         string time = DateTime.Now.ToString("F");
         time = time.Replace(":", "-");
@@ -59,13 +69,13 @@ public class SaveManager : MonoBehaviour
         //Get scene data
         dataToSave.currentChapter = "Chapter1";
         dataToSave.introBattleOutro = "Intro";
-        dataToSave.mainCharacterName = "characterName";
+        dataToSave.mainCharacterName = "MainCharacter";
 
         //Populate character data
-        CharacterData mainCharacter = new CharacterData("MainCharacter", 15, 8, 7, 5, 6, 6, 3, 10);
+        Character mainCharacter = new Character("MainCharacter", 15, 8, 7, 5, 6, 6, 3, 10, true);
         mainCharacter.knownAttacks.Add(new Attack("Slash", "physical", 5, 90));
 
-        CharacterData astrid = new CharacterData("Astrid", 11, 6, 5, 6, 8, 7, 8, 6);
+        Character astrid = new Character("Astrid", 11, 6, 5, 6, 8, 7, 8, 6, true);
         astrid.knownAttacks.Add(new Attack("Bow Shot", "physical", 4, 90));
 
         dataToSave.characters.Add(mainCharacter);
@@ -76,7 +86,6 @@ public class SaveManager : MonoBehaviour
         time = time.Replace(":", "-");
         string filename = dataToSave.mainCharacterName + "_" + dataToSave.currentChapter + "_" + dataToSave.introBattleOutro + "_" + time + ".json";
         string fullFilePath = Path.Combine(Application.persistentDataPath, filename);
-        Debug.Log(fullFilePath);
 
         string jsonData = JsonUtility.ToJson(dataToSave, true);
         File.WriteAllText(fullFilePath, jsonData);

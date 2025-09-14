@@ -7,18 +7,18 @@ public class GameSaveData
     public string currentChapter;
     public string introBattleOutro;
     public string mainCharacterName;
-    public List<CharacterData> characters;
+    public List<Character> characters;
     public List<Equipment> ownedEquipment;
 
     public GameSaveData()
     {
-        characters = new List<CharacterData>();
+        characters = new List<Character>();
         ownedEquipment = new List<Equipment>();
     }
 }
 
 [System.Serializable]
-public class CharacterData
+public class Character
 {
     public string characterName;
     public int maxHp;
@@ -31,12 +31,13 @@ public class CharacterData
     public int attackRange;
     public int moveRange;
     public int relationship;
+    public bool owned;
     public List<Attack> knownAttacks;
     public Equipment weaponEquiped;
     public Equipment armorEquiped;
     public Equipment accessoryEquiped;
 
-    public CharacterData(string characterName, int maxHp, int attack, int defense, int specialDefense, int skill, int speed, int attackRange, int moveRange)
+    public Character(string characterName, int maxHp, int attack, int defense, int specialDefense, int skill, int speed, int attackRange, int moveRange, bool owned)
     {
         this.characterName = characterName;
         this.maxHp = maxHp;
@@ -47,6 +48,7 @@ public class CharacterData
         this.speed = speed;
         this.attackRange = attackRange;
         this.moveRange = moveRange;
+        this.owned = owned;
         relationship = 0;
         knownAttacks = new List<Attack>();
 

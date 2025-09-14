@@ -22,17 +22,20 @@ public class PlayerController : MonoBehaviour
     public Equipment weaponEquiped;
     public Equipment armorEquiped;
     public Equipment accessoryEquiped;
-    public GameObject attackRangeObj;
     public Attack[] knownAttacks;
+    public SaveManager saveManager;
 
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-
+        battleController = GameObject.Find("BattleController").GetComponent<BattleController>();
+        saveManager = FindFirstObjectByType<SaveManager>();
+        populateCharacterData();
     }
 
     void Start()
     {
+
     }
 
     void Update()
@@ -69,5 +72,23 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-
+    void populateCharacterData()
+    {
+        string temp = gameObject.name.Substring(0, gameObject.name.IndexOf("Prefab"));
+        Character hero = saveManager.loadedData.characters.Find(c => c.characterName == temp);
+        hp = hero.maxHp;
+        maxHp = hero.maxHp;
+        mana = hero.maxMana;
+        maxMana = hero.maxMana;
+        attack = hero.attack;
+        defense = hero.defense;
+        specialDefense = hero.specialDefense;
+        skill = hero.skill;
+        speed = hero.speed;
+        attackRange = hero.attackRange;
+        moveRange = hero.moveRange;
+        relationship = hero.relationship;
+        owned = hero.owned;
+        title = hero.characterName;
+    }
 }
