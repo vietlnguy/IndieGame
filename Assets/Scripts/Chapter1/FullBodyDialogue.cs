@@ -34,8 +34,10 @@ public class FullBodyDialogue : MonoBehaviour
     public AudioSource hitSound;
     public AudioSource doorOpen;
     public BattleController battleController;
+    public SaveManager scm;
     void Start()
     {
+        scm = FindFirstObjectByType<SaveManager>();
         rectTransform = canvas.GetComponent<RectTransform>();
         group = canvas.GetComponent<CanvasGroup>();
         audioSource = GetComponent<AudioSource>();
@@ -43,24 +45,24 @@ public class FullBodyDialogue : MonoBehaviour
         dialogues = new CharacterDialogue[] {
             //Enter characters
             new CharacterDialogue(1,false, "Astrid", new string[] {"Hehe, feeling better?"}),
-            new CharacterDialogue(0,false, "Liam", new string[] {"I feel like a new man!", "Like I've got the strength to plow ten fields!"}),
+            new CharacterDialogue(0,false, scm.loadedData.mainCharacterName, new string[] {"I feel like a new man!", "Like I've got the strength to plow ten fields!"}),
             new CharacterDialogue(0,false, "Astrid", new string[] {"As long as you make time to plow mine."}),
-            new CharacterDialogue(0,false, "Liam", new string[] {"Of course!", "Truth be told... I was worried about moving to the countryside.", "Away from all of our friends and family, starting over.", "With all of that news about ancient Tah'Lo artifacts, the world seems to be spinning faster and faster.", "A quiet life with you is all I need."}),
+            new CharacterDialogue(0,false, scm.loadedData.mainCharacterName, new string[] {"Of course!", "Truth be told... I was worried about moving to the countryside.", "Away from all of our friends and family, starting over.", "With all of that news about ancient Tah'Lo artifacts, the world seems to be spinning faster and faster.", "A quiet life with you is all I need."}),
             new CharacterDialogue(0,false, "Astrid", new string[] {"I couldn't agree more.", "I am curious, though. They say the ancient Tah'Lo people were incredibly advanced.", "I wonder what kind of amazing things they could do..."}),
-            new CharacterDialogue(0,false, "Liam", new string[] {"Beats me.", "As long as it doesn't involve me, they can have all of the artifacts they want."}),
+            new CharacterDialogue(0,false, scm.loadedData.mainCharacterName, new string[] {"Beats me.", "As long as it doesn't involve me, they can have all of the artifacts they want."}),
 
             //Door Knock
-            new CharacterDialogue(2,false, "Liam", new string[] {"Huh? Someone's at the door?", "All the way out here?"}),
+            new CharacterDialogue(2,false, scm.loadedData.mainCharacterName, new string[] {"Huh? Someone's at the door?", "All the way out here?"}),
 
             //Answer the Door
             new CharacterDialogue(3,false, "Hegseth", new string[] {"Hello. Apologies for the intrusion.", "My name is Hegseth. I am a member of the Kings council.", "What a wonderful home you have."}),
-            new CharacterDialogue(0,false, "Liam", new string[] {"Thank you.", "Is there something I can help you with?"}),
+            new CharacterDialogue(0,false, scm.loadedData.mainCharacterName, new string[] {"Thank you.", "Is there something I can help you with?"}),
             new CharacterDialogue(0,false, "Hegseth", new string[] {"Yes, indeed.", "As I am sure you are aware, our great King Reiss (long may he reign), has declared that all Tah'Lo artifacts be relinquished to local authorities.", "It is for the safety and prosperity of the people that our king has decreed it."}),
-            new CharacterDialogue(0,false, "Liam", new string[] {"That's fine, but we don't have any Tah'Lo artifacts.", "I couldn't even tell you if I saw one."}),
+            new CharacterDialogue(0,false, scm.loadedData.mainCharacterName, new string[] {"That's fine, but we don't have any Tah'Lo artifacts.", "I couldn't even tell you if I saw one."}),
             new CharacterDialogue(0,false, "Hegseth", new string[] {"I see.", "Well then, you wouldn't mind if we inspected the area?", "It is typical for Tah'Lo artifacts to go unnoticed by ...commoners."}),
-            new CharacterDialogue(0,false, "Liam", new string[] {"Is that necessary? There is nothing here but wheat and pig crap."}),
+            new CharacterDialogue(0,false, scm.loadedData.mainCharacterName, new string[] {"Is that necessary? There is nothing here but wheat and pig crap."}),
             new CharacterDialogue(0,false, "Hegseth", new string[] {"I assure you it will not take long.", "We would hate to send word to the king that some folk have been uncooperative..."}),
-            new CharacterDialogue(0,false, "Liam", new string[] {"..."}),
+            new CharacterDialogue(0,false, scm.loadedData.mainCharacterName, new string[] {"..."}),
             new CharacterDialogue(0,false, "Hegseth", new string[] {"Good.", "Now then...", "Men!"}),
 
             //Enter soldiers
@@ -73,7 +75,7 @@ public class FullBodyDialogue : MonoBehaviour
             new CharacterDialogue(5,false, "Hegseth", new string[] {"Did you find anything?"}),
             new CharacterDialogue(0,false, "Soldier", new string[] {"Nothing, sir. Checked every nook and cranny."}),
             new CharacterDialogue(0,false, "Hegseth", new string[] {"Hmm. Perhaps you are telling the truth."}),
-            new CharacterDialogue(0,false, "Liam", new string[] {"I told you.", "Now if you're done, I'd like you to leave. I have work to do."}),
+            new CharacterDialogue(0,false, scm.loadedData.mainCharacterName, new string[] {"I told you.", "Now if you're done, I'd like you to leave. I have work to do."}),
             new CharacterDialogue(0,false, "Hegseth", new string[] {"Of course, of course!", "There's just one last thing...", "The lady's bracelets.", "Hand them over."}),
             new CharacterDialogue(0,false, "Astrid", new string[] {"What? My bracelets?", "These aren't Tah'Lo artifacts. These are just ordinary bracelets."}),
             new CharacterDialogue(0,false, "Hegseth", new string[] {"That will be for the king to decide."}),
@@ -81,32 +83,32 @@ public class FullBodyDialogue : MonoBehaviour
             new CharacterDialogue(0,false, "Hegseth", new string[] {"Such a shame.. But your mother will be proud of you for being a devout citizen of the kingdom.", "Now let me take those off your hands--"}),
 
             //Move Hegseth toward 
-            new CharacterDialogue(6,false, "Liam", new string[] {"Take another step towards her and you will regret it."}),
+            new CharacterDialogue(6,false, scm.loadedData.mainCharacterName, new string[] {"Take another step towards her and you will regret it."}),
 
             //Move Hegseth back
             new CharacterDialogue(7,false, "Hegseth", new string[] {"Oh ho ho.", "I would think very carefully about what you are doing, boy.", "Defying me is defying the king."}),
 
-            new CharacterDialogue(0,false, "Liam", new string[] {"Leave. I won't ask you again."}),
+            new CharacterDialogue(0,false, scm.loadedData.mainCharacterName, new string[] {"Leave. I won't ask you again."}),
             new CharacterDialogue(0,false, "Hegseth", new string[] {"Very well.", "Remember that you chose this...", "Men! Kill her and take the bracelet!"}),
             new CharacterDialogue(0,false, "Soldier", new string[] {"Yes, sir!"}),
 
             //Move soldier toward Astrid
             new CharacterDialogue(8,false, "Astrid", new string[] {"Ah! Liam!"}),
-            new CharacterDialogue(0,true, "Liam", new string[] {"Astrid!!!"}),
+            new CharacterDialogue(0,true, scm.loadedData.mainCharacterName, new string[] {"Astrid!!!"}),
 
             //Move soldier away from Astrid
             new CharacterDialogue(9,false, "Soldier", new string[] {"Ack!"}),
-            new CharacterDialogue(0,false, "Liam", new string[] {"Astrid?", "What's happening?"}),
+            new CharacterDialogue(0,false, scm.loadedData.mainCharacterName, new string[] {"Astrid?", "What's happening?"}),
             new CharacterDialogue(0,false, "Astrid", new string[] {"I don't know. I just felt a surge of power coming from my bracelets!"}),
             new CharacterDialogue(0,false, "Hegseth", new string[] {"What are you doing, soldier?? Kill her!"}),
             new CharacterDialogue(0,false, "Soldier", new string[] {"Uh...", "Yes, sir!"}),
             new CharacterDialogue(10,false, "Soldier", new string[] {"Urgh..."}),
             new CharacterDialogue(0,false, "Hegseth", new string[] {"Useless, peasant..", "Retreat! Gather the men outside! We'll take the artifact by sheer force!"}),
-            new CharacterDialogue(11,false, "Liam", new string[] {"Argh. That doesn't sound good.", "Astrid, are you okay?"}),
+            new CharacterDialogue(11,false, scm.loadedData.mainCharacterName, new string[] {"Argh. That doesn't sound good.", "Astrid, are you okay?"}),
             new CharacterDialogue(0,false, "Astrid", new string[] {"*huff huff*", "Yes, I'm okay.", "I just need to catch my breath then I'll be ready to fight."}),
-            new CharacterDialogue(0,false, "Liam", new string[] {"No, you should stay here. I can handle this."}),
+            new CharacterDialogue(0,false, scm.loadedData.mainCharacterName, new string[] {"No, you should stay here. I can handle this."}),
             new CharacterDialogue(0,false, "Astrid", new string[] {"No way.", "I am just as much a fighter as you.", "We will protect our home together."}),
-            new CharacterDialogue(0,false, "Liam", new string[] {"Okay, stay near me.", "Let's kill the bastard."}),
+            new CharacterDialogue(0,false, scm.loadedData.mainCharacterName, new string[] {"Okay, stay near me.", "Let's kill the bastard."}),
         };
 
         textComponent.text = string.Empty;
@@ -277,7 +279,7 @@ public class FullBodyDialogue : MonoBehaviour
         }
 
         //Move nameplate and bring character to the front
-        if (name == "Liam")
+        if (name == scm.loadedData.mainCharacterName)
         {
             namePlate.GetComponent<RectTransform>().anchoredPosition = new Vector2(mainCharacterObj.GetComponent<RectTransform>().anchoredPosition.x, mainCharacterObj.GetComponent<RectTransform>().anchoredPosition.y - 152.8f);
             mainCharacterObj.transform.SetSiblingIndex(mainCharacterObj.transform.parent.childCount - 2);
@@ -410,11 +412,7 @@ public class FullBodyDialogue : MonoBehaviour
             this.title = title;
             this.pauseExecutionAfter = pauseExecutionAfter;
 
-            if (title == "Liam")
-            {
-                this.dialoguePitch = 0.75f;
-            }
-            else if (title == "Hegseth")
+            if (title == "Hegseth")
             {
                 this.dialoguePitch = 0.7f;
             }

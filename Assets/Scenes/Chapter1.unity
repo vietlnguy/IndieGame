@@ -366,7 +366,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -46.3, y: -58.7}
+  m_AnchoredPosition: {x: -50, y: -58.7}
   m_SizeDelta: {x: 64.79, y: 26.03}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8682808
@@ -389,7 +389,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5
+  m_text: '-'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7e93cf950105fa1439cda190f5bd3eb2, type: 2}
   m_sharedMaterial: {fileID: -3650841308131034549, guid: 7e93cf950105fa1439cda190f5bd3eb2, type: 2}
@@ -4235,6 +4235,7 @@ MonoBehaviour:
   introController: {fileID: 880903605}
   soundClip: {fileID: 8300000, guid: 71609733d89aa2a45988debae86808fa, type: 3}
   battleController: {fileID: 1859551252}
+  scm: {fileID: 0}
 --- !u!4 &136889587
 Transform:
   m_ObjectHideFlags: 0
@@ -4378,6 +4379,7 @@ MonoBehaviour:
   hitSound: {fileID: 54549661}
   doorOpen: {fileID: 389434526}
   battleController: {fileID: 1859551252}
+  scm: {fileID: 0}
 --- !u!1 &143500105
 GameObject:
   m_ObjectHideFlags: 0
@@ -10669,7 +10671,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 100
+  m_text: '-'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7e93cf950105fa1439cda190f5bd3eb2, type: 2}
   m_sharedMaterial: {fileID: -3650841308131034549, guid: 7e93cf950105fa1439cda190f5bd3eb2, type: 2}
@@ -45993,7 +45995,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Slash
+  m_text: ---
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7e93cf950105fa1439cda190f5bd3eb2, type: 2}
   m_sharedMaterial: {fileID: -3650841308131034549, guid: 7e93cf950105fa1439cda190f5bd3eb2, type: 2}
@@ -47018,7 +47020,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 10
+  m_text: '-'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7e93cf950105fa1439cda190f5bd3eb2, type: 2}
   m_sharedMaterial: {fileID: -3650841308131034549, guid: 7e93cf950105fa1439cda190f5bd3eb2, type: 2}
@@ -49220,10 +49222,12 @@ MonoBehaviour:
   enemyTitle: {fileID: 882545709}
   portraitBackground: {fileID: 1537157787}
   enemyPortraitBackground: {fileID: 1399219022}
-  liamPrefab: {fileID: 526804311956499977, guid: 3f03f8b5ee169384cbb58daf58cf7456, type: 3}
+  mainCharacterPrefab: {fileID: 526804311956499977, guid: 3f03f8b5ee169384cbb58daf58cf7456, type: 3}
   astridPrefab: {fileID: 3268561162448218138, guid: 09810e88c8d220444a7660c093cc9947, type: 3}
   soldierPrefab: {fileID: 748482123334707658, guid: 6f8794f192ac31549a80909214bbecdd, type: 3}
   attackPreviewSprites: {fileID: 189593989}
+  attacks: {fileID: 801921120}
+  scm: {fileID: 0}
 --- !u!1 &1399219022
 GameObject:
   m_ObjectHideFlags: 0
@@ -62734,7 +62738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   saveManager: {fileID: 0}
-  liamPrefab: {fileID: 7365784556819137381, guid: 787a9e1dc54dd124ab88bc33e274ce67, type: 3}
+  mainCharacterPrefab: {fileID: 7365784556819137381, guid: 787a9e1dc54dd124ab88bc33e274ce67, type: 3}
   astridPrefab: {fileID: 3514692152733908472, guid: 0a24a05d13054d540b40f7ae10a7df7b, type: 3}
   characters: {fileID: 1111165540}
 --- !u!1 &1991275123
@@ -64562,7 +64566,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Liam
+  m_text: ---
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3ebf2da69aac207488ea1793100bd5e5, type: 2}
   m_sharedMaterial: {fileID: 8910708337553041166, guid: 3ebf2da69aac207488ea1793100bd5e5, type: 2}

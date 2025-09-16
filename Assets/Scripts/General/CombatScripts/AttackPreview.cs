@@ -17,12 +17,15 @@ public class AttackPreview : MonoBehaviour
     public TextMeshProUGUI enemyTitle;
     public GameObject portraitBackground;
     public GameObject enemyPortraitBackground;
-    public GameObject liamPrefab;
+    public GameObject mainCharacterPrefab;
     public GameObject astridPrefab;
     public GameObject soldierPrefab;
     public GameObject attackPreviewSprites;
+    public GameObject attacks;
+    public SaveManager scm;
     void Awake()
     {
+        scm = FindFirstObjectByType<SaveManager>();
     }
 
     void Start()
@@ -35,15 +38,38 @@ public class AttackPreview : MonoBehaviour
 
     public IEnumerator enablePreview(GameObject enemy)
     {
+        //Update titles
         characterTitle.text = battleController.characterSelected.GetComponent<PlayerController>().title;
         enemyTitle.text = enemy.GetComponent<EnemyController>().title;
 
+        //Update moveset
+        int index = 0;
+        foreach (Transform child in attacks.transform)
+        {
+            foreach (Transform child2 in child.transform)
+            {
+                try
+                {
+                    child2.GetComponent<TextMeshProUGUI>().text = battleController.characterSelected.GetComponent<PlayerController>().knownAttacks[index].name;
+                }
+                catch
+                {
+                    Debug.Log("error or empty");
+                }
+            }
+            index++;
+        }
+
+        //Update damage stats
+
+        //Update health/mana bars
+
+        //Move UI
         attackClangAudio.Play();
         float duration = 0.05f;
         Vector2 attackerStartPos = attackerPreviewPanel.transform.localPosition;
         Vector2 defenderStartPos = defenderPreviewPanel.transform.localPosition;
         float elapsedTime = 0f;
-
         while (elapsedTime < duration)
         {
             float t = elapsedTime / duration;
@@ -55,19 +81,21 @@ public class AttackPreview : MonoBehaviour
         attackerPreviewPanel.transform.localPosition = new Vector2(-25, 22);
         defenderPreviewPanel.transform.localPosition = new Vector2(292, 19);
 
+        //Instantiate potrait prefabs
         GameObject characterPrefab;
-        if (battleController.characterSelected.GetComponent<PlayerController>().title == "Liam") { characterPrefab = Instantiate(liamPrefab, portraitBackground.transform.position, Quaternion.identity, attackPreviewSprites.transform); }
+        if (battleController.characterSelected.GetComponent<PlayerController>().title == scm.loadedData.mainCharacterName) { characterPrefab = Instantiate(mainCharacterPrefab, portraitBackground.transform.position, Quaternion.identity, attackPreviewSprites.transform); }
         else if (battleController.characterSelected.GetComponent<PlayerController>().title == "Astrid") { characterPrefab = Instantiate(astridPrefab, portraitBackground.transform.position, Quaternion.identity, attackPreviewSprites.transform); }
+        //TODO: include more prefabs for characters
 
         GameObject enemyPrefab;
         if (enemy.GetComponent<EnemyController>().title == "Soldier") { enemyPrefab = Instantiate(soldierPrefab, enemyPortraitBackground.transform.position, Quaternion.identity, attackPreviewSprites.transform); }
+        //TODO: include more prefabs for enemies
 
+        //Enable buttons
         confirmButton.SetActive(true);
         vsText.SetActive(true);
         enabled = true;
         
-
-
     }
     public IEnumerator disablePreview()
     {

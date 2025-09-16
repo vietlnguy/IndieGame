@@ -1,15 +1,17 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 public class UIGeneral : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     private Image image;
     public Image blackScreen;
     public GameObject saveMenu;
     public SaveManager scm;
+    public GameObject EnterNameUI;
+    public TMP_InputField inputBox;
 
     void Awake()
     {
@@ -29,7 +31,6 @@ public class UIGeneral : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         image.color = new Color(.65f, .65f, .65f);
     }
-
     public void OnPointerExit(PointerEventData eventData)
     {
         image.color = new Color(1f, 1f, 1f);
@@ -44,9 +45,7 @@ public class UIGeneral : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         }
         else if (tag == "new game")
         {
-            scm.NewSave();
-            SceneManager.LoadScene("Chapter1");
-
+            EnterNameUI.SetActive(true);
         }
         else if (tag == "settings")
         {
@@ -55,6 +54,11 @@ public class UIGeneral : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         else if (tag == "exit")
         {
 
+        }
+        else if (tag == "exit_enter_name")
+        {
+            inputBox.text = "";
+            EnterNameUI.SetActive(false);
         }
 
     }

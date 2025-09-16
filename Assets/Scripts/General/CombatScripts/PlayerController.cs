@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class PlayerController : MonoBehaviour
     public Equipment weaponEquiped;
     public Equipment armorEquiped;
     public Equipment accessoryEquiped;
-    public Attack[] knownAttacks;
+    public List<Attack> knownAttacks;
     public SaveManager saveManager;
 
     void Awake()
@@ -74,8 +75,17 @@ public class PlayerController : MonoBehaviour
     }
     void populateCharacterData()
     {
+
         string temp = gameObject.name.Substring(0, gameObject.name.IndexOf("Prefab"));
-        Character hero = saveManager.loadedData.characters.Find(c => c.characterName == temp);
+        Character hero;
+        if (temp == "MainCharacter")
+        {
+            hero = saveManager.loadedData.characters.Find(c => c.characterName == saveManager.loadedData.mainCharacterName);
+        }
+        else
+        {
+            hero = saveManager.loadedData.characters.Find(c => c.characterName == temp);
+        }
         hp = hero.maxHp;
         maxHp = hero.maxHp;
         mana = hero.maxMana;
@@ -90,5 +100,6 @@ public class PlayerController : MonoBehaviour
         relationship = hero.relationship;
         owned = hero.owned;
         title = hero.characterName;
+        knownAttacks = hero.knownAttacks;
     }
 }

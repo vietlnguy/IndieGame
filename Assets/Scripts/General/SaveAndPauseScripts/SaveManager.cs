@@ -50,6 +50,7 @@ public class SaveManager : MonoBehaviour
             if (pc.owned)
             {
                 Character temp = new Character(pc.title, pc.maxHp, pc.attack, pc.defense, pc.specialDefense, pc.skill, pc.speed, pc.attackRange, pc.moveRange, pc.owned);
+                temp.knownAttacks = pc.knownAttacks;
                 dataToSave.characters.Add(temp);
             }
         }
@@ -62,17 +63,17 @@ public class SaveManager : MonoBehaviour
         string fullFilePath = Path.Combine(Application.persistentDataPath, filename);
         File.WriteAllText(fullFilePath, jsonData);
     }
-    public void NewSave()
+    public void NewSave(string mainCharacterName)
     {
         GameSaveData dataToSave = new GameSaveData();
 
         //Get scene data
         dataToSave.currentChapter = "Chapter1";
         dataToSave.introBattleOutro = "Intro";
-        dataToSave.mainCharacterName = "MainCharacter";
+        dataToSave.mainCharacterName = mainCharacterName;
 
         //Populate character data
-        Character mainCharacter = new Character("MainCharacter", 15, 8, 7, 5, 6, 6, 3, 10, true);
+        Character mainCharacter = new Character(mainCharacterName, 15, 8, 7, 5, 6, 6, 3, 10, true);
         mainCharacter.knownAttacks.Add(new Attack("Slash", "physical", 5, 90));
 
         Character astrid = new Character("Astrid", 11, 6, 5, 6, 8, 7, 8, 6, true);

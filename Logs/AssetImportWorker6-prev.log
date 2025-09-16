@@ -15,7 +15,7 @@ C:/Users/viet_/projects/SecretProject
 -logFile
 Logs/AssetImportWorker6.log
 -srvPort
-53837
+54974
 -job-worker-count
 7
 -background-job-worker-count
@@ -59,12 +59,12 @@ C:/Users/viet_/projects/SecretProject
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [20576]  Target information:
+Player connection [5804]  Target information:
 
-Player connection [20576]  * "[IP] 192.168.0.158 [Port] 0 [Flags] 2 [Guid] 2227706816 [EditorId] 2227706816 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-31F4D3F) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [5804]  * "[IP] 192.168.0.158 [Port] 0 [Flags] 2 [Guid] 2849528115 [EditorId] 2849528115 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-31F4D3F) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [20576] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [20576] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [5804] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [5804] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -76,7 +76,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 3.08 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 3.35 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.36f1 (9fe3b5f71dbb)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Resources/UnitySubsystems
@@ -92,42 +92,42 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56888
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56752
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Registered in 0.003316 seconds.
-- Loaded All Assemblies, in  0.321 seconds
+- Loaded All Assemblies, in  0.374 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.262 seconds
-Domain Reload Profiling: 581ms
-	BeginReloadAssembly (116ms)
+- Finished resetting the current domain, in  0.291 seconds
+Domain Reload Profiling: 661ms
+	BeginReloadAssembly (138ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (30ms)
+	RebuildCommonClasses (34ms)
 	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (44ms)
-	LoadAllAssembliesAndSetupDomain (120ms)
-		LoadAssemblies (112ms)
+	initialDomainReloadingComplete (48ms)
+	LoadAllAssembliesAndSetupDomain (141ms)
+		LoadAssemblies (133ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (117ms)
-			TypeCache.Refresh (116ms)
-				TypeCache.ScanAssembly (105ms)
+		AnalyzeDomain (138ms)
+			TypeCache.Refresh (136ms)
+				TypeCache.ScanAssembly (122ms)
 			BuildScriptInfoCaches (0ms)
-			ResolveRequiredComponents (0ms)
-	FinalizeReload (263ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (291ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (225ms)
+		SetupLoadedEditorAssemblies (247ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (19ms)
-			SetLoadedEditorAssemblies (3ms)
-			BeforeProcessingInitializeOnLoad (42ms)
-			ProcessInitializeOnLoadAttributes (115ms)
+			InitializePlatformSupportModulesInManaged (21ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (47ms)
+			ProcessInitializeOnLoadAttributes (131ms)
 			ProcessInitializeOnLoadMethodAttributes (45ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
@@ -137,113 +137,97 @@ Domain Reload Profiling: 581ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.704 seconds
-Refreshing native plugins compatible for Editor in 1.77 ms, found 4 plugins.
+- Loaded All Assemblies, in  0.716 seconds
+Refreshing native plugins compatible for Editor in 1.82 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.645 seconds
-Domain Reload Profiling: 1343ms
-	BeginReloadAssembly (143ms)
+- Finished resetting the current domain, in  0.684 seconds
+Domain Reload Profiling: 1394ms
+	BeginReloadAssembly (161ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (6ms)
+		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (28ms)
-	RebuildCommonClasses (29ms)
+		CreateAndSetChildDomain (32ms)
+	RebuildCommonClasses (36ms)
 	RebuildNativeTypeToScriptingClass (9ms)
 	initialDomainReloadingComplete (36ms)
-	LoadAllAssembliesAndSetupDomain (481ms)
+	LoadAllAssembliesAndSetupDomain (468ms)
 		LoadAssemblies (342ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (221ms)
-			TypeCache.Refresh (156ms)
-				TypeCache.ScanAssembly (141ms)
-			BuildScriptInfoCaches (53ms)
-			ResolveRequiredComponents (10ms)
-	FinalizeReload (645ms)
+		AnalyzeDomain (223ms)
+			TypeCache.Refresh (161ms)
+				TypeCache.ScanAssembly (144ms)
+			BuildScriptInfoCaches (50ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (684ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (527ms)
+		SetupLoadedEditorAssemblies (556ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (2ms)
 			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (99ms)
-			ProcessInitializeOnLoadAttributes (324ms)
-			ProcessInitializeOnLoadMethodAttributes (91ms)
+			BeforeProcessingInitializeOnLoad (106ms)
+			ProcessInitializeOnLoadAttributes (343ms)
+			ProcessInitializeOnLoadMethodAttributes (95ms)
 			AfterProcessingInitializeOnLoad (7ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (5ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-Refreshing native plugins compatible for Editor in 2.85 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Refreshing native plugins compatible for Editor in 3.40 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 220 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 6616 unused Assets / (4.6 MB). Loaded Objects now: 7329.
-Memory consumption went from 180.7 MB to 176.1 MB.
-Total: 17.419900 ms (FindLiveObjects: 1.485800 ms CreateObjectMapping: 1.341600 ms MarkObjects: 9.329900 ms  DeleteObjects: 5.261000 ms)
+Unloading 221 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6622 unused Assets / (4.6 MB). Loaded Objects now: 7337.
+Memory consumption went from 179.3 MB to 174.7 MB.
+Total: 17.801000 ms (FindLiveObjects: 1.779600 ms CreateObjectMapping: 1.807200 ms MarkObjects: 9.543000 ms  DeleteObjects: 4.667300 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 67648.837122 seconds.
-  path: Assets/Extras/blue_circle.png
-  artifactKey: Guid(8524dc19df93de949bbb2dc5f3fa3208) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extras/blue_circle.png using Guid(8524dc19df93de949bbb2dc5f3fa3208) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '30c22b197228de68f5ba2874224268ca') in 0.1011004 seconds
+  Time since last request: 222988.417142 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_GoldBar.png
+  artifactKey: Guid(c9c0b0102c41f1d42acf5e11b3156486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_GoldBar.png using Guid(c9c0b0102c41f1d42acf5e11b3156486) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ad2227097d79618050a74283b55713cb') in 0.0926422 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Extras/pointer.png
-  artifactKey: Guid(a7898a1332c65ab4fa5e6e91a6226c39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extras/pointer.png using Guid(a7898a1332c65ab4fa5e6e91a6226c39) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '45ca7ce67034bdd68cf17fd7b5b08442') in 0.0203656 seconds
+  Time since last request: 0.000023 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_SlideBar_B3.png
+  artifactKey: Guid(5af08a04c7ce21c4bb8d7dc67e4dae53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_SlideBar_B3.png using Guid(5af08a04c7ce21c4bb8d7dc67e4dae53) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6fa9d4cc43f230f23a68e7aa44de5321') in 0.0165599 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Extras/noun-down-arrow-3706757.png
-  artifactKey: Guid(0c984f4d9c106a14fa4417df6f34bdec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Extras/noun-down-arrow-3706757.png using Guid(0c984f4d9c106a14fa4417df6f34bdec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '02ca33ae63043d9ce2adca9d90de8ded') in 0.0817811 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 37
-
-========================================================================
-Received Import Request.
-  Time since last request: 60.525248 seconds.
-  path: Assets/Environments/RPGBuildings_HOUSES/houses_outside_shadows.png
-  artifactKey: Guid(2aac6e945cc245d4e8ef5a393fe615f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGBuildings_HOUSES/houses_outside_shadows.png using Guid(2aac6e945cc245d4e8ef5a393fe615f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1c09c5e6b56e118866c4100d5d01fc7b') in 0.1858311 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 117
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.480042 seconds.
-  path: Assets/Environments/RPGW Wetland/Dec_props2.png
-  artifactKey: Guid(4a225a3602e1ffe48aa967a777584074) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW Wetland/Dec_props2.png using Guid(4a225a3602e1ffe48aa967a777584074) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9bc463c1f36b30cf9f722ec10474232d') in 0.2779057 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 194
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.297650 seconds.
-  path: Assets/Environments/RPGW_AncientForest/MainLev.png
-  artifactKey: Guid(fd11cf9b81c1979438d237078c15d0e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_AncientForest/MainLev.png using Guid(fd11cf9b81c1979438d237078c15d0e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9dc23142855d6c25539dc276719381d4') in 0.048157 seconds
+  Time since last request: 0.000028 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_SlideBar_B6.png
+  artifactKey: Guid(3dd2e07b275fc104499582a75da3b063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_SlideBar_B6.png using Guid(3dd2e07b275fc104499582a75da3b063) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cedb9771e3faa46e9729d3070dc423d0') in 0.0171637 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.450544 seconds.
-  path: Assets/Environments/RPGW_Desert/decorative2.png
-  artifactKey: Guid(81d7d96496f8f464c99d07412a66c3d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/decorative2.png using Guid(81d7d96496f8f464c99d07412a66c3d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '132067e0b7bded30b4111967fd7ffa2e') in 0.0331329 seconds
+  Time since last request: 2.139745 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/Handles/F_U_SlidebarHandle_A1.png
+  artifactKey: Guid(cbd68466820f91940b406c2e57016851) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/Handles/F_U_SlidebarHandle_A1.png using Guid(cbd68466820f91940b406c2e57016851) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e7d3df547ddcdd87000d57c168cfecbf') in 0.0142435 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.580967 seconds.
-  path: Assets/Environments/RPGW_GL_v2.0/decorative_nograss.png
-  artifactKey: Guid(11f4db7d7ee8ce5489ca45b51983ff88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_GL_v2.0/decorative_nograss.png using Guid(11f4db7d7ee8ce5489ca45b51983ff88) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '69cc054ed7b0ae9cef9828f219e6af30') in 0.0244831 seconds
+  Time since last request: 0.000018 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/Handles/F_U_SlidebarHandle_A5.png
+  artifactKey: Guid(a428be4a3142641498e9b273fd33ca43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/Handles/F_U_SlidebarHandle_A5.png using Guid(a428be4a3142641498e9b273fd33ca43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4048a7fbcd9d03f96f4a415f11510366') in 0.0126351 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/Handles/F_U_SlidebarHandle_B4.png
+  artifactKey: Guid(7dadbc9dc7be47c41be43d7a0d2566a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/Handles/F_U_SlidebarHandle_B4.png using Guid(7dadbc9dc7be47c41be43d7a0d2566a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e0bd96a579fe321f032807bce15279a2') in 0.0336282 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout

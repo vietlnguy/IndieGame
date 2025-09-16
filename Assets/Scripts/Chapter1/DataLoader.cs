@@ -4,7 +4,7 @@ using UnityEngine;
 public class DataLoader : MonoBehaviour
 {
     public SaveManager saveManager;
-    public GameObject liamPrefab;
+    public GameObject mainCharacterPrefab;
     public GameObject astridPrefab;
     public GameObject characters;
     void Awake()
@@ -12,9 +12,9 @@ public class DataLoader : MonoBehaviour
         saveManager = FindFirstObjectByType<SaveManager>();
         foreach (Character character in saveManager.loadedData.characters)
         {
-            if (character.characterName == "MainCharacter")
+            if (character.characterName == saveManager.loadedData.mainCharacterName)
             {
-                Instantiate(liamPrefab, new Vector3(-20f, -9.35f), Quaternion.identity, characters.transform);
+                Instantiate(mainCharacterPrefab, new Vector3(-20f, -9.35f), Quaternion.identity, characters.transform);
             }
             else if (character.characterName == "Astrid")
             {
