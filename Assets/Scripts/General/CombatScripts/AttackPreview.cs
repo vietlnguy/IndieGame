@@ -23,9 +23,14 @@ public class AttackPreview : MonoBehaviour
     public GameObject attackPreviewSprites;
     public GameObject attacks;
     public SaveManager scm;
+    private bool selectorXPos = true;
+    private bool selectorYPos = true;
+    public GameObject attackSelector;
+    private Vector2 attackSelectorInitialPos;
     void Awake()
     {
         scm = FindFirstObjectByType<SaveManager>();
+        attackSelectorInitialPos = attackSelector.GetComponent<RectTransform>().anchoredPosition;
     }
 
     void Start()
@@ -34,6 +39,37 @@ public class AttackPreview : MonoBehaviour
 
     void Update()
     {
+        if (enabled)
+        { 
+            if (Input.GetKeyDown(KeyCode.W)){
+                if (!selectorYPos)
+                {
+                    attackSelector.GetComponent<RectTransform>().anchoredPosition = new Vector2(attackSelector.GetComponent<RectTransform>().anchoredPosition.x, attackSelector.GetComponent<RectTransform>().anchoredPosition.y + 37f);
+                    selectorYPos = true;
+                } 
+            }
+            if (Input.GetKeyDown(KeyCode.S)){
+                if (selectorYPos)
+                {
+                    attackSelector.GetComponent<RectTransform>().anchoredPosition = new Vector2(attackSelector.GetComponent<RectTransform>().anchoredPosition.x, attackSelector.GetComponent<RectTransform>().anchoredPosition.y - 37f);
+                    selectorYPos = false;
+                } 
+            }
+            if (Input.GetKeyDown(KeyCode.A)){
+                if (!selectorXPos)
+                {
+                    attackSelector.GetComponent<RectTransform>().anchoredPosition = new Vector2(attackSelector.GetComponent<RectTransform>().anchoredPosition.x - 161f, attackSelector.GetComponent<RectTransform>().anchoredPosition.y);
+                    selectorXPos = true;
+                } 
+            }
+            if (Input.GetKeyDown(KeyCode.D)){
+                if (selectorXPos)
+                {
+                    attackSelector.GetComponent<RectTransform>().anchoredPosition = new Vector2(attackSelector.GetComponent<RectTransform>().anchoredPosition.x + 161f, attackSelector.GetComponent<RectTransform>().anchoredPosition.y);
+                    selectorXPos = false;
+                } 
+            }
+        }
     }
 
     public IEnumerator enablePreview(GameObject enemy)
@@ -54,7 +90,7 @@ public class AttackPreview : MonoBehaviour
                 }
                 catch
                 {
-                    Debug.Log("error or empty");
+                    
                 }
             }
             index++;
@@ -83,12 +119,12 @@ public class AttackPreview : MonoBehaviour
 
         //Instantiate potrait prefabs
         GameObject characterPrefab;
-        if (battleController.characterSelected.GetComponent<PlayerController>().title == scm.loadedData.mainCharacterName) { characterPrefab = Instantiate(mainCharacterPrefab, portraitBackground.transform.position, Quaternion.identity, attackPreviewSprites.transform); }
-        else if (battleController.characterSelected.GetComponent<PlayerController>().title == "Astrid") { characterPrefab = Instantiate(astridPrefab, portraitBackground.transform.position, Quaternion.identity, attackPreviewSprites.transform); }
+        if (battleController.characterSelected.GetComponent<PlayerController>().title == scm.loadedData.mainCharacterName) { characterPrefab = Instantiate(mainCharacterPrefab, portraitBackground.GetComponent<RectTransform>().anchoredPosition, Quaternion.identity, attackPreviewSprites.transform); }
+        else if (battleController.characterSelected.GetComponent<PlayerController>().title == "Astrid") { characterPrefab = Instantiate(astridPrefab, portraitBackground.GetComponent<RectTransform>().anchoredPosition, Quaternion.identity, attackPreviewSprites.transform); }
         //TODO: include more prefabs for characters
 
         GameObject enemyPrefab;
-        if (enemy.GetComponent<EnemyController>().title == "Soldier") { enemyPrefab = Instantiate(soldierPrefab, enemyPortraitBackground.transform.position, Quaternion.identity, attackPreviewSprites.transform); }
+        if (enemy.GetComponent<EnemyController>().title == "Soldier") { enemyPrefab = Instantiate(soldierPrefab, enemyPortraitBackground.GetComponent<RectTransform>().anchoredPosition, Quaternion.identity, attackPreviewSprites.transform); }
         //TODO: include more prefabs for enemies
 
         //Enable buttons
@@ -99,16 +135,18 @@ public class AttackPreview : MonoBehaviour
     }
     public IEnumerator disablePreview()
     {
+        //Destroy attack preview prefabs
         foreach (Transform child in attackPreviewSprites.transform)
         {
             Destroy(child.gameObject);
         }
         attackWooshAudio.Play();
+
+        //Move off screen
         float duration = 0.05f;
         Vector2 attackerStartPos = attackerPreviewPanel.transform.localPosition;
         Vector2 defenderStartPos = defenderPreviewPanel.transform.localPosition;
         float elapsedTime = 0f;
-
         while (elapsedTime < duration)
         {
             float t = elapsedTime / duration;
@@ -120,6 +158,12 @@ public class AttackPreview : MonoBehaviour
         attackerPreviewPanel.transform.localPosition = new Vector2(-465, 22);
         defenderPreviewPanel.transform.localPosition = new Vector2(706, 19);
 
+        //Reset attackSelectorPos
+        attackSelector.GetComponent<RectTransform>().anchoredPosition = attackSelectorInitialPos;
+        selectorXPos = true;
+        selectorYPos = true;
+
+        //Disable vs and confirm button
         confirmButton.SetActive(false);
         vsText.SetActive(false);
         enabled = false;
