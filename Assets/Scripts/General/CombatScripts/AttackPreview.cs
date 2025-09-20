@@ -77,7 +77,7 @@ public class AttackPreview : MonoBehaviour
                 if (attackIndex == 2) { attackIndex = 0; }
                 else if (attackIndex == 3) { attackIndex = 1; }
             }
-            
+
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
@@ -106,6 +106,7 @@ public class AttackPreview : MonoBehaviour
                 else if (attackIndex == 2) { attackIndex = 3; }
             }
         }
+        calculateDamageBlock();
     }
     public void calculateDamageBlock()
     {
@@ -239,5 +240,20 @@ public class AttackPreview : MonoBehaviour
         enabled = false;
 
     }
+    public IEnumerator startAttackSequence()
+    {
+        //Instantiate player and enemy sprite
 
+        //Populate player name and enemy name
+
+        //Populate player and enemy health
+
+        //Populate player and enemy chosen Attacks
+
+        //Populate player and enemy damage block
+
+        //Enable the Battle screen and scale it from 0 to 1
+
+        yield return null;
+    }
 }
