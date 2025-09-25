@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class AttackRange : MonoBehaviour
 {
-    public bool enabled = false;
+    public bool active = false;
     public BattleController battleController;
     void Awake()
     {
@@ -16,7 +16,7 @@ public class AttackRange : MonoBehaviour
 
     void Update()
     {
-        if (enabled)
+        if (active)
         {
             gameObject.transform.position = battleController.characterSelected.transform.position;
         }
@@ -27,12 +27,12 @@ public class AttackRange : MonoBehaviour
         gameObject.SetActive(true);
         float scale = character.GetComponent<PlayerController>().attackRange;
         gameObject.transform.localScale = new Vector3(scale, scale, scale);
-        enabled = true;
+        active = true;
     }
 
     public void disableAttackRange()
     {
-        enabled = false;
+        active = false;
         gameObject.SetActive(false);
     }
     void OnTriggerEnter2D(Collider2D other)

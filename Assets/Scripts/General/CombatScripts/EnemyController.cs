@@ -29,7 +29,7 @@ public class EnemyController : MonoBehaviour
         //Crate moveset
         if (title == "Soldier")
         {
-            attackMove = new Attack("Slash", "physical", 10, 100, 0);
+            attackMove = new Attack("Slash", "physical", 10, 100, 0, 0, "Slash the enemy with your sword");
         }
     }
 

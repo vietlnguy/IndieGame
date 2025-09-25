@@ -10,7 +10,7 @@ public class AttackPreview : MonoBehaviour
     public GameObject defenderPreviewPanel;
     public GameObject confirmButton;
     public GameObject vsText;
-    public bool enabled = false;
+    public bool active = false;
     public AudioSource attackWooshAudio;
     public AudioSource attackClangAudio;
     public TextMeshProUGUI characterTitle;
@@ -29,6 +29,8 @@ public class AttackPreview : MonoBehaviour
     public TextMeshProUGUI atkBlock;
     public TextMeshProUGUI hitBlock;
     public TextMeshProUGUI critBlock;
+    public TextMeshProUGUI manaBlock;
+    public TextMeshProUGUI attackDescription;
     public GameObject attackPanel;
     public GameObject battleScreen;
     public TextMeshProUGUI battleScreenPlayerName;
@@ -52,8 +54,11 @@ public class AttackPreview : MonoBehaviour
     public TextMeshProUGUI previewEnemyMaxHp;
     public TextMeshProUGUI previewEnemyMana;
     public TextMeshProUGUI previewEnemyMaxMana;
+    public GameObject previewPlayerHpBar;
+    public GameObject previewPlayerManaBar;
     public ConfirmAttackButton confirmAttackButtonScript;
     public AudioSource selectBeepAudio;
+    private Vector2 originalHpManaBarSize;
     void Awake()
     {
         scm = FindFirstObjectByType<SaveManager>();
@@ -61,10 +66,11 @@ public class AttackPreview : MonoBehaviour
     }
     void Start()
     {
+        originalHpManaBarSize = previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta;
     }
     void Update()
     {
-        if (enabled)
+        if (active)
         {
             handleAttackSelection();
         }
@@ -145,6 +151,8 @@ public class AttackPreview : MonoBehaviour
             atkBlock.text = playerChosenAttack.baseDamage.ToString();
             hitBlock.text = playerChosenAttack.accuracy.ToString();
             critBlock.text = "10";
+            manaBlock.text = playerChosenAttack.manaCost.ToString();
+            attackDescription.text = playerChosenAttack.description;
             confirmAttackButtonScript.validAttack = true;
         }
         catch
@@ -152,6 +160,8 @@ public class AttackPreview : MonoBehaviour
             atkBlock.text = "-";
             hitBlock.text = "-";
             critBlock.text = "-";
+            manaBlock.text = "-";
+            attackDescription.text = "-";
             confirmAttackButtonScript.validAttack = false;
         }
 
@@ -171,6 +181,9 @@ public class AttackPreview : MonoBehaviour
         previewEnemyMaxHp.text = battleController.enemySelected.GetComponent<EnemyController>().maxHp.ToString();
         previewEnemyMana.text = battleController.enemySelected.GetComponent<EnemyController>().mana.ToString();
         previewEnemyMaxMana.text = battleController.enemySelected.GetComponent<EnemyController>().maxMana.ToString();
+
+        previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().hp / battleController.characterSelected.GetComponent<PlayerController>().maxHp, 1f);
+        previewPlayerManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().mana / battleController.characterSelected.GetComponent<PlayerController>().maxMana, 1f);
 
         //Update moveset
         int index = 0;
@@ -228,7 +241,7 @@ public class AttackPreview : MonoBehaviour
         //Enable buttons
         confirmButton.SetActive(true);
         vsText.SetActive(true);
-        enabled = true;
+        active = true;
 
     }
     public IEnumerator disablePreview()
@@ -276,10 +289,15 @@ public class AttackPreview : MonoBehaviour
         atkBlock.text = "-";
         hitBlock.text = "-";
         critBlock.text = "-";
+
+        //Reset health and mana bars
+        previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta = originalHpManaBarSize;
+        previewPlayerManaBar.GetComponent<RectTransform>().sizeDelta = originalHpManaBarSize;
+
         //Disable vs and confirm button
         confirmButton.SetActive(false);
         vsText.SetActive(false);
-        enabled = false;
+        active = false;
 
         yield return null;
     }

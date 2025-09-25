@@ -66,7 +66,7 @@ public class BattleController : MonoBehaviour
             {
                 if (Input.GetMouseButtonDown(1))
                 {
-                    if (attackPreviewScript.enabled)
+                    if (attackPreviewScript.active)
                     {
                         StartCoroutine(attackPreviewScript.disablePreview());
                     }
@@ -77,7 +77,7 @@ public class BattleController : MonoBehaviour
                     }
 
                 }
-                else if (!endTurnUIActive && !disabledCharacters.Contains(characterSelected) && !attackPreviewScript.enabled)
+                else if (!endTurnUIActive && !disabledCharacters.Contains(characterSelected) && !attackPreviewScript.active)
                 {
                     HandleMovement();
                 }
@@ -133,7 +133,7 @@ public class BattleController : MonoBehaviour
         //Starting an Attack
         if (characterSelected)
         {
-            if (enemiesInRange.Contains(enemy) && !attackPreviewScript.enabled)
+            if (enemiesInRange.Contains(enemy) && !attackPreviewScript.active)
             {
                 enemySelected = enemy;
                 StartCoroutine(attackPreviewScript.enablePreview(enemy));
@@ -187,10 +187,40 @@ public class BattleController : MonoBehaviour
         Vector3 direction = Vector3.zero;
 
         if (Input.GetKey(KeyCode.W)) { direction.y += 1; if (!walkingAudio.isPlaying) { walkingAudio.Play(); } }
-        else if (Input.GetKey(KeyCode.S)) { direction.y -= 1; if (!walkingAudio.isPlaying) { walkingAudio.Play(); } }
-        else if (Input.GetKey(KeyCode.A)) { direction.x -= 1; if (!walkingAudio.isPlaying) { walkingAudio.Play(); } }
-        else if (Input.GetKey(KeyCode.D)) { direction.x += 1; if (!walkingAudio.isPlaying) { walkingAudio.Play(); } }
-        else { walkingAudio.Stop(); }
+        if (Input.GetKey(KeyCode.S)) {
+            direction.y -= 1;
+            if (!walkingAudio.isPlaying) {
+                walkingAudio.Play();
+            }
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            direction.x -= 1;
+            if (!walkingAudio.isPlaying)
+            {
+                walkingAudio.Play();
+            }
+            Vector3 localScale = characterSelected.transform.localScale;
+            localScale.x = -Mathf.Abs(localScale.x);
+            characterSelected.transform.localScale = localScale;
+            
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            direction.x += 1;
+            if (!walkingAudio.isPlaying)
+            {
+                walkingAudio.Play();
+            }
+            Vector3 localScale = characterSelected.transform.localScale;
+            localScale.x = Mathf.Abs(localScale.x);
+            characterSelected.transform.localScale = localScale;
+        }
+
+        if (Input.GetKeyUp(KeyCode.W)) { walkingAudio.Stop(); }
+        if (Input.GetKeyUp(KeyCode.S)) { walkingAudio.Stop(); }
+        if (Input.GetKeyUp(KeyCode.A)) { walkingAudio.Stop(); }
+        if (Input.GetKeyUp(KeyCode.D)) { walkingAudio.Stop(); }
 
         if (direction != Vector3.zero)
         {
