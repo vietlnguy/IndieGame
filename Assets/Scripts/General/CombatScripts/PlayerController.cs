@@ -33,22 +33,18 @@ public class PlayerController : MonoBehaviour
         saveManager = FindFirstObjectByType<SaveManager>();
         populateCharacterData();
     }
-
     void Start()
     {
 
     }
-
     void Update()
     {
     }
-
     void LateUpdate()
     {
         // Multiply by -100 to invert Y (lower on screen = higher order)
         spriteRenderer.sortingOrder = -(int)(transform.position.y * 100) + offset;
     }
-
     void OnMouseEnter()
     {
         if (battleController.introFinished && !battleController.disabledCharacters.Contains(gameObject))
@@ -56,7 +52,6 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.color = Color.yellow;
         }
     }
-
     void OnMouseExit()
     {
         if (battleController.introFinished && !battleController.disabledCharacters.Contains(gameObject))
@@ -67,7 +62,7 @@ public class PlayerController : MonoBehaviour
     }
     void OnMouseDown()
     {
-        if (battleController.introFinished)
+        if (battleController.introFinished && !battleController.isPaused)
         {
             battleController.selectCharacter(gameObject);
         }

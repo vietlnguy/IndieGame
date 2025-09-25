@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class EnemyController : MonoBehaviour
 {
@@ -6,7 +7,9 @@ public class EnemyController : MonoBehaviour
     public int offset = 0;
     public BattleController battleController;
     public int hp;
+    public int maxHp;
     public int mana;
+    public int maxMana;
     public int attack;
     public int defense;
     public int skill;
@@ -14,6 +17,7 @@ public class EnemyController : MonoBehaviour
     public int attackRange;
     public int moveRange;
     public string title;
+    public Attack attackMove;
 
     void Awake()
     {
@@ -22,6 +26,11 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        //Crate moveset
+        if (title == "Soldier")
+        {
+            attackMove = new Attack("Slash", "physical", 10, 100, 0);
+        }
     }
 
     void Update()

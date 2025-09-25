@@ -74,10 +74,10 @@ public class SaveManager : MonoBehaviour
 
         //Populate character data
         Character mainCharacter = new Character(mainCharacterName, 15, 8, 7, 5, 6, 6, 3, 10, true);
-        mainCharacter.knownAttacks.Add(new Attack("Slash", "physical", 5, 90));
+        mainCharacter.knownAttacks.Add(new Attack("Slash", "physical", 5, 90, 0));
 
         Character astrid = new Character("Astrid", 11, 6, 5, 6, 8, 7, 8, 6, true);
-        astrid.knownAttacks.Add(new Attack("Bow Shot", "physical", 4, 90));
+        astrid.knownAttacks.Add(new Attack("Bow Shot", "physical", 4, 90, 0));
 
         dataToSave.characters.Add(mainCharacter);
         dataToSave.characters.Add(astrid);

@@ -78,12 +78,14 @@ public class Attack
     public string damageType;
     public int baseDamage;
     public int accuracy;
+    public int baseCrit;
 
-    public Attack(string name, string damageType, int baseDamage, int accuracy)
+    public Attack(string name, string damageType, int baseDamage, int accuracy, int baseCrit)
     {
         this.name = name;
         this.damageType = damageType;
         this.baseDamage = baseDamage;
         this.accuracy = accuracy;
+        this.baseCrit = baseCrit;
     }
 }

@@ -9,7 +9,7 @@ public class BattleController : MonoBehaviour
     public AttackRange attackRange;
     public Vector3 originalPosition;
     public GameObject characterSelected;
-    private GameObject enemySelected;
+    public GameObject enemySelected;
     public float moveSpeed = 6.0f;
     public GameObject endTurnObj;
     private bool endTurnUIActive = false;
@@ -30,6 +30,7 @@ public class BattleController : MonoBehaviour
     public GameObject saveMenu;
     public bool isPaused = false;
     public AttackPreview attackPreviewScript;
+    public AudioSource walkingAudio;
     void Awake()
     {
         disabledCharacters = new List<GameObject>();
@@ -129,14 +130,18 @@ public class BattleController : MonoBehaviour
     }
     public void selectEnemy(GameObject enemy)
     {
+        //Starting an Attack
         if (characterSelected)
         {
             if (enemiesInRange.Contains(enemy) && !attackPreviewScript.enabled)
             {
+                enemySelected = enemy;
                 StartCoroutine(attackPreviewScript.enablePreview(enemy));
             }
 
         }
+
+        //TODO: Display enemy info
     }
     public void selectCharacter(GameObject character)
     {
@@ -181,10 +186,11 @@ public class BattleController : MonoBehaviour
     {
         Vector3 direction = Vector3.zero;
 
-        if (Input.GetKey(KeyCode.W)) direction.y += 1;
-        if (Input.GetKey(KeyCode.S)) direction.y -= 1;
-        if (Input.GetKey(KeyCode.A)) direction.x -= 1;
-        if (Input.GetKey(KeyCode.D)) direction.x += 1;
+        if (Input.GetKey(KeyCode.W)) { direction.y += 1; if (!walkingAudio.isPlaying) { walkingAudio.Play(); } }
+        else if (Input.GetKey(KeyCode.S)) { direction.y -= 1; if (!walkingAudio.isPlaying) { walkingAudio.Play(); } }
+        else if (Input.GetKey(KeyCode.A)) { direction.x -= 1; if (!walkingAudio.isPlaying) { walkingAudio.Play(); } }
+        else if (Input.GetKey(KeyCode.D)) { direction.x += 1; if (!walkingAudio.isPlaying) { walkingAudio.Play(); } }
+        else { walkingAudio.Stop(); }
 
         if (direction != Vector3.zero)
         {
@@ -195,7 +201,6 @@ public class BattleController : MonoBehaviour
         {
             characterSelected.GetComponent<Animator>().SetBool("isWalking", false);
         }
-
     }
     private void enableEndTurnUI()
     {

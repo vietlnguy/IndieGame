@@ -29,6 +29,31 @@ public class AttackPreview : MonoBehaviour
     public TextMeshProUGUI atkBlock;
     public TextMeshProUGUI hitBlock;
     public TextMeshProUGUI critBlock;
+    public GameObject attackPanel;
+    public GameObject battleScreen;
+    public TextMeshProUGUI battleScreenPlayerName;
+    public TextMeshProUGUI battleScreenEnemyName;
+    public TextMeshProUGUI battleScreenPlayerAttack;
+    public TextMeshProUGUI battleScreenEnemyAttack;
+    private Attack playerChosenAttack;
+    public TextMeshProUGUI battleScreenPlayerATK;
+    public TextMeshProUGUI battleScreenPlayerHIT;
+    public TextMeshProUGUI battleScreenPlayerCRIT;
+    public TextMeshProUGUI battleScreenEnemyATK;
+    public TextMeshProUGUI battleScreenEnemyHIT;
+    public TextMeshProUGUI battleScreenEnemyCRIT;
+    public TextMeshProUGUI battleScreenPlayerHealth;
+    public TextMeshProUGUI battleScreenEnemyHealth;
+    public TextMeshProUGUI previewPlayerHp;
+    public TextMeshProUGUI previewPlayerMaxHp;
+    public TextMeshProUGUI previewPlayerMana;
+    public TextMeshProUGUI previewPlayerMaxMana;
+    public TextMeshProUGUI previewEnemyHp;
+    public TextMeshProUGUI previewEnemyMaxHp;
+    public TextMeshProUGUI previewEnemyMana;
+    public TextMeshProUGUI previewEnemyMaxMana;
+    public ConfirmAttackButton confirmAttackButtonScript;
+    public AudioSource selectBeepAudio;
     void Awake()
     {
         scm = FindFirstObjectByType<SaveManager>();
@@ -47,6 +72,7 @@ public class AttackPreview : MonoBehaviour
     }
     public void chooseAttack(int index)
     {
+        selectBeepAudio.Play();
         attackIndex = index;
         if (attackIndex == 0)
         {
@@ -64,7 +90,6 @@ public class AttackPreview : MonoBehaviour
         {
             attackSelector.GetComponent<RectTransform>().anchoredPosition = new Vector2(attackSelectorInitialPos.x + 161f, attackSelectorInitialPos.y - 37f);
         }
-
         calculateDamageBlock();
     }
     public void handleAttackSelection()
@@ -73,6 +98,7 @@ public class AttackPreview : MonoBehaviour
         {
             if (attackIndex > 1)
             {
+                selectBeepAudio.Play();
                 attackSelector.GetComponent<RectTransform>().anchoredPosition = new Vector2(attackSelector.GetComponent<RectTransform>().anchoredPosition.x, attackSelector.GetComponent<RectTransform>().anchoredPosition.y + 37f);
                 if (attackIndex == 2) { attackIndex = 0; }
                 else if (attackIndex == 3) { attackIndex = 1; }
@@ -83,6 +109,7 @@ public class AttackPreview : MonoBehaviour
         {
             if (attackIndex <= 1)
             {
+                selectBeepAudio.Play();
                 attackSelector.GetComponent<RectTransform>().anchoredPosition = new Vector2(attackSelector.GetComponent<RectTransform>().anchoredPosition.x, attackSelector.GetComponent<RectTransform>().anchoredPosition.y - 37f);
                 if (attackIndex == 0) { attackIndex = 2; }
                 else if (attackIndex == 1) { attackIndex = 3; }
@@ -92,6 +119,7 @@ public class AttackPreview : MonoBehaviour
         {
             if (attackIndex == 1 || attackIndex == 3)
             {
+                selectBeepAudio.Play();
                 attackSelector.GetComponent<RectTransform>().anchoredPosition = new Vector2(attackSelector.GetComponent<RectTransform>().anchoredPosition.x - 161f, attackSelector.GetComponent<RectTransform>().anchoredPosition.y);
                 if (attackIndex == 1) { attackIndex = 0; }
                 else if (attackIndex == 3) { attackIndex = 2; }
@@ -101,6 +129,7 @@ public class AttackPreview : MonoBehaviour
         {
             if (attackIndex == 0 || attackIndex == 2)
             {
+                selectBeepAudio.Play();
                 attackSelector.GetComponent<RectTransform>().anchoredPosition = new Vector2(attackSelector.GetComponent<RectTransform>().anchoredPosition.x + 161f, attackSelector.GetComponent<RectTransform>().anchoredPosition.y);
                 if (attackIndex == 0) { attackIndex = 1; }
                 else if (attackIndex == 2) { attackIndex = 3; }
@@ -112,16 +141,18 @@ public class AttackPreview : MonoBehaviour
     {
         try
         {
-            Attack selectedAttack = battleController.characterSelected.GetComponent<PlayerController>().knownAttacks[attackIndex];
-            atkBlock.text = selectedAttack.baseDamage.ToString();
-            hitBlock.text = selectedAttack.accuracy.ToString();
+            playerChosenAttack = battleController.characterSelected.GetComponent<PlayerController>().knownAttacks[attackIndex];
+            atkBlock.text = playerChosenAttack.baseDamage.ToString();
+            hitBlock.text = playerChosenAttack.accuracy.ToString();
             critBlock.text = "10";
+            confirmAttackButtonScript.validAttack = true;
         }
         catch
         {
             atkBlock.text = "-";
             hitBlock.text = "-";
             critBlock.text = "-";
+            confirmAttackButtonScript.validAttack = false;
         }
 
     }
@@ -130,6 +161,16 @@ public class AttackPreview : MonoBehaviour
         //Update titles
         characterTitle.text = battleController.characterSelected.GetComponent<PlayerController>().title;
         enemyTitle.text = enemy.GetComponent<EnemyController>().title;
+
+        //Update health bars and values
+        previewPlayerHp.text = battleController.characterSelected.GetComponent<PlayerController>().hp.ToString();
+        previewPlayerMaxHp.text = battleController.characterSelected.GetComponent<PlayerController>().maxHp.ToString();
+        previewPlayerMana.text = battleController.characterSelected.GetComponent<PlayerController>().mana.ToString();
+        previewPlayerMaxMana.text = battleController.characterSelected.GetComponent<PlayerController>().maxMana.ToString();
+        previewEnemyHp.text = battleController.enemySelected.GetComponent<EnemyController>().hp.ToString();
+        previewEnemyMaxHp.text = battleController.enemySelected.GetComponent<EnemyController>().maxHp.ToString();
+        previewEnemyMana.text = battleController.enemySelected.GetComponent<EnemyController>().mana.ToString();
+        previewEnemyMaxMana.text = battleController.enemySelected.GetComponent<EnemyController>().maxMana.ToString();
 
         //Update moveset
         int index = 0;
@@ -149,12 +190,13 @@ public class AttackPreview : MonoBehaviour
             index++;
         }
 
+        //Choose enemy Attack
+
+
         //Update damage stats
         calculateDamageBlock();
 
-        //Update health/mana bars
-
-        //Move UI
+        //Move UI to visible area
         attackClangAudio.Play();
         float duration = 0.05f;
         Vector2 attackerStartPos = attackerPreviewPanel.transform.localPosition;
@@ -239,21 +281,72 @@ public class AttackPreview : MonoBehaviour
         vsText.SetActive(false);
         enabled = false;
 
+        yield return null;
     }
     public IEnumerator startAttackSequence()
     {
+        battleScreen.SetActive(true);
+
         //Instantiate player and enemy sprite
 
         //Populate player name and enemy name
+        battleScreenPlayerName.text = battleController.characterSelected.GetComponent<PlayerController>().title;
+        battleScreenEnemyName.text = battleController.enemySelected.GetComponent<EnemyController>().title;
 
         //Populate player and enemy health
+        battleScreenPlayerHealth.text = battleController.characterSelected.GetComponent<PlayerController>().hp.ToString();
+        battleScreenEnemyHealth.text = battleController.enemySelected.GetComponent<EnemyController>().hp.ToString();
 
         //Populate player and enemy chosen Attacks
+        battleScreenPlayerAttack.text = playerChosenAttack.name;
+        battleScreenEnemyAttack.text = battleController.enemySelected.GetComponent<EnemyController>().attackMove.name;
 
         //Populate player and enemy damage block
+        battleScreenPlayerATK.text = playerChosenAttack.baseDamage.ToString();
+        battleScreenPlayerHIT.text = playerChosenAttack.accuracy.ToString();
+        battleScreenPlayerCRIT.text = playerChosenAttack.baseCrit.ToString();
+        battleScreenEnemyATK.text = battleController.enemySelected.GetComponent<EnemyController>().attackMove.baseDamage.ToString();
+        battleScreenEnemyHIT.text = battleController.enemySelected.GetComponent<EnemyController>().attackMove.accuracy.ToString();
+        battleScreenEnemyCRIT.text = battleController.enemySelected.GetComponent<EnemyController>().attackMove.baseCrit.ToString();
 
         //Enable the Battle screen and scale it from 0 to 1
+        Vector3 startScale = Vector3.zero;
+        Vector3 endScale = Vector3.one;
+        float elapsed = 0f;
+        float duration = .2f;
+        attackPanel.GetComponent<RectTransform>().localScale = startScale;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
 
-        yield return null;
+            attackPanel.GetComponent<RectTransform>().localScale = Vector3.Lerp(startScale, endScale, t);
+
+            yield return null;
+        }
+        attackPanel.GetComponent<RectTransform>().localScale = endScale; // snap to final value
+
+        //Play attack animation
+        yield return new WaitForSeconds(3f);
+
+        //Scale Panel from 1 to 0
+        elapsed = 0f;
+        duration = .2f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+
+            attackPanel.GetComponent<RectTransform>().localScale = Vector3.Lerp(endScale, startScale, t);
+
+            yield return null;
+        }
+        attackPanel.GetComponent<RectTransform>().localScale = startScale; // snap to final value
+
+        //Diasble Attack preview and end character turn
+        StartCoroutine(disablePreview());
+        battleController.endCharacterTurn();
     }
+    
 }
+
