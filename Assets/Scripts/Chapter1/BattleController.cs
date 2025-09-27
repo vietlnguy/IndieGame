@@ -25,16 +25,27 @@ public class BattleController : MonoBehaviour
     public bool liamDefeated = false;
     public bool astridDefeated = false;
     public GameObject enemies;
+    public GameObject characters;
     private int enemiesRemaining = 4;
     public GameObject pauseMenu;
     public GameObject saveMenu;
     public bool isPaused = false;
     public AttackPreview attackPreviewScript;
     public AudioSource walkingAudio;
+    public Camera worldCamera;
+    public RectTransform characterToolTipCanvasRect;
+    public GameObject characterToolTip;
+    public TextMeshProUGUI characterToolTipHp;
+    public TextMeshProUGUI characterToolTipMaxHp;
+    public TextMeshProUGUI characterToolTipMana;
+    public TextMeshProUGUI characterToolTipMaxMana;
+    public TilemapPathfinder pathfinder;
+
     void Awake()
     {
         disabledCharacters = new List<GameObject>();
         disabledEnemies = new List<GameObject>();
+        worldCamera = Camera.main;
 
         //TODO: partySize should read from the database
         partySize = 2;
@@ -82,13 +93,22 @@ public class BattleController : MonoBehaviour
                     HandleMovement();
                 }
             }
+            if (enemySelected && !attackPreviewScript.active)
+            {
+                if (Input.GetMouseButtonDown(1))
+                {
+                    disableMoveRange();
+                    attackRange.disableAttackRange();
+                }
+            }
 
             HandleGameLoop();
         }
 
 
     }
-    private void HandleGameLoop() {
+    private void HandleGameLoop()
+    {
 
         //Win condition
         if (enemiesRemaining == 0)
@@ -130,18 +150,29 @@ public class BattleController : MonoBehaviour
     }
     public void selectEnemy(GameObject enemy)
     {
+        enemySelected = enemy;
         //Starting an Attack
         if (characterSelected)
         {
             if (enemiesInRange.Contains(enemy) && !attackPreviewScript.active)
             {
-                enemySelected = enemy;
                 StartCoroutine(attackPreviewScript.enablePreview(enemy));
             }
 
+            //reset character and show enemy range
+            else if (!enemiesInRange.Contains(enemy) && !attackPreviewScript.active)
+            {
+                DeselectCharacter();
+                enableEnemyMoveRange();
+                attackRange.enableAttackRange(enemy);
+            }
         }
-
-        //TODO: Display enemy info
+        else
+        {
+            //show enemy range
+            enableEnemyMoveRange();
+            attackRange.enableAttackRange(enemy);
+        }
     }
     public void selectCharacter(GameObject character)
     {
@@ -180,16 +211,18 @@ public class BattleController : MonoBehaviour
         attackRange.disableAttackRange();
         disableMoveRange();
         characterSelected = null;
-        
+
     }
     private void HandleMovement()
     {
         Vector3 direction = Vector3.zero;
 
         if (Input.GetKey(KeyCode.W)) { direction.y += 1; if (!walkingAudio.isPlaying) { walkingAudio.Play(); } }
-        if (Input.GetKey(KeyCode.S)) {
+        if (Input.GetKey(KeyCode.S))
+        {
             direction.y -= 1;
-            if (!walkingAudio.isPlaying) {
+            if (!walkingAudio.isPlaying)
+            {
                 walkingAudio.Play();
             }
         }
@@ -203,7 +236,7 @@ public class BattleController : MonoBehaviour
             Vector3 localScale = characterSelected.transform.localScale;
             localScale.x = -Mathf.Abs(localScale.x);
             characterSelected.transform.localScale = localScale;
-            
+
         }
         if (Input.GetKey(KeyCode.D))
         {
@@ -245,24 +278,39 @@ public class BattleController : MonoBehaviour
             endTurnObj.transform.position = new Vector3(characterSelected.transform.position.x - 0.3f, characterSelected.transform.position.y + 2.6f, characterSelected.transform.position.z);
             endTurnUIActive = true;
         }
-        
+
     }
-    public void disableEndTurnUI() {
+    public void disableEndTurnUI()
+    {
         endTurnObj.SetActive(false);
         endTurnUIActive = false;
     }
-    private void enableMoveRange() {
+    private void enableMoveRange()
+    {
 
         moveRange.SetActive(true);
         float moveRangeScale = characterSelected.GetComponent<PlayerController>().moveRange;
         moveRange.transform.localScale = new Vector3(moveRangeScale, moveRangeScale, moveRangeScale);
         moveRange.transform.position = characterSelected.transform.position;
+        moveRange.GetComponent<EdgeCollider2D>().enabled = true;
 
     }
-    private void disableMoveRange() {
+    private void disableMoveRange()
+    {
         moveRange.SetActive(false);
     }
-    private System.Collections.IEnumerator FlashCoroutine() {
+    private void enableEnemyMoveRange()
+    {
+
+        moveRange.SetActive(true);
+        float moveRangeScale = enemySelected.GetComponent<EnemyController>().moveRange;
+        moveRange.transform.localScale = new Vector3(moveRangeScale, moveRangeScale, moveRangeScale);
+        moveRange.transform.position = enemySelected.transform.position;
+        moveRange.GetComponent<EdgeCollider2D>().enabled = false;
+
+    }
+    private System.Collections.IEnumerator FlashCoroutine()
+    {
         SpriteRenderer endTurnSR = endTurnObj.GetComponent<SpriteRenderer>();
         float flashDuration = 0.1f;
         int flashCount = 3;
@@ -287,11 +335,12 @@ public class BattleController : MonoBehaviour
         characterSelected.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
 
     }
-    public void endCharacterTurn() {
+    public void endCharacterTurn()
+    {
         disableMoveRange();
         attackRange.disableAttackRange();
         graySpriteAndFreeze();
-        disableEndTurnUI();             
+        disableEndTurnUI();
         characterSelected.GetComponent<Animator>().SetBool("isFrozen", true);
         disabledCharacters.Add(characterSelected);
         characterSelected = null;
@@ -318,22 +367,114 @@ public class BattleController : MonoBehaviour
     }
     private IEnumerator enemyTurn()
     {
-        yield return new WaitForSeconds(4f); //remove later
-        for (int i = 0; i < enemies.transform.childCount; i++)
+        yield return new WaitForSeconds(2f);
+
+        foreach (Transform enemy in enemies.transform)
         {
-            Transform childTransform = enemies.transform.GetChild(i);
-            GameObject childGameObject = childTransform.gameObject;
+            selectEnemy(enemy.gameObject);
 
-            //TODO: move and attack
+            yield return new WaitForSeconds(2f);
+            //If enemy roams
+            if (enemy.gameObject.GetComponent<EnemyController>().roams)
+            {
+                GameObject target = GetClosest(enemy.gameObject, characters);
+                yield return StartCoroutine(EnemyFollowPath(enemy.gameObject, target.transform.position));
+            }
 
-            disabledEnemies.Add(childGameObject);
+            disabledEnemies.Add(enemy.gameObject);
+            yield return new WaitForSeconds(1.5f);
         }
 
         yield return null;
 
     }
+    public void enableCharacterToolTip(GameObject character)
+    {
+        if (!attackPreviewScript.active)
+        {
+            characterToolTip.SetActive(true);
+            try
+            {
+                characterToolTipHp.text = character.GetComponent<PlayerController>().hp.ToString();
+                characterToolTipMaxHp.text = character.GetComponent<PlayerController>().maxHp.ToString();
+                characterToolTipMana.text = character.GetComponent<PlayerController>().mana.ToString();
+                characterToolTipMaxMana.text = character.GetComponent<PlayerController>().maxMana.ToString();
+            }
+            catch
+            {
+                characterToolTipHp.text = character.GetComponent<EnemyController>().hp.ToString();
+                characterToolTipMaxHp.text = character.GetComponent<EnemyController>().maxHp.ToString();
+                characterToolTipMana.text = character.GetComponent<EnemyController>().mana.ToString();
+                characterToolTipMaxMana.text = character.GetComponent<EnemyController>().maxMana.ToString();
+            }
+            Vector3 screenPos = RectTransformUtility.WorldToScreenPoint(worldCamera, character.transform.position);
 
+            Vector2 localPos;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(characterToolTipCanvasRect, screenPos, worldCamera, out localPos);
 
+            characterToolTip.GetComponent<RectTransform>().localPosition = localPos + new Vector2(-90f, 200f);
+        }
+    }
+    public void disableCharacterToolTip()
+    {
+        characterToolTip.SetActive(false);
+    }
+    private IEnumerator EnemyFollowPath(GameObject character, Vector3 targetPos)
+    {
+        float moveLimit = character.GetComponent<EnemyController>().moveRange / 2f;
+        List<Vector3> path = pathfinder.GetWorldPath(character.transform.position, targetPos);
+        float distanceMoved = 0f; // track distance traveled
+        Vector3 previousPos = character.transform.position;
 
+        walkingAudio.Play();
 
+        foreach (Vector3 waypoint in path)
+        {
+            // Keep moving until you reach the waypoint
+            while (Vector3.Distance(character.transform.position, waypoint) > 0.1f)
+            {
+                // Step toward waypoint
+                Vector3 oldPos = character.transform.position;
+                character.transform.position = Vector3.MoveTowards(
+                    character.transform.position,
+                    waypoint,
+                    moveSpeed * Time.deltaTime
+                );
+
+                // Add to total distance moved
+                distanceMoved += Vector3.Distance(oldPos, character.transform.position);
+
+                // Check if move limit reached
+                if (distanceMoved >= moveLimit)
+                {
+                    walkingAudio.Stop();
+                    yield break; // stop moving any further
+                }
+
+                yield return null;
+            }
+        }
+
+        walkingAudio.Stop();
+    }
+    private GameObject GetClosest(GameObject target, GameObject objects)
+    {
+        GameObject closest = null;
+        float shortestDistance = Mathf.Infinity;
+
+        foreach (Transform character in objects.transform)
+        {
+            if (character.gameObject == null) continue;
+
+            float distance = Vector3.Distance(target.transform.position, character.gameObject.transform.position);
+
+            if (distance < shortestDistance)
+            {
+                shortestDistance = distance;
+                closest = character.gameObject;
+            }
+        }
+
+        return closest;
+    }
 }

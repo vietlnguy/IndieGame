@@ -46,18 +46,25 @@ public class PlayerController : MonoBehaviour
         spriteRenderer.sortingOrder = -(int)(transform.position.y * 100) + offset;
     }
     void OnMouseEnter()
+
     {
-        if (battleController.introFinished && !battleController.disabledCharacters.Contains(gameObject))
+        if (battleController.introFinished)
         {
-            spriteRenderer.color = Color.yellow;
+            if (!battleController.disabledCharacters.Contains(gameObject))
+            {
+                spriteRenderer.color = Color.yellow;
+            }
+            battleController.enableCharacterToolTip(gameObject);
         }
+
     }
     void OnMouseExit()
     {
         if (battleController.introFinished && !battleController.disabledCharacters.Contains(gameObject))
         {
-            spriteRenderer.color = Color.white;     
+            spriteRenderer.color = Color.white;
         }
+        battleController.disableCharacterToolTip();
 
     }
     void OnMouseDown()

@@ -46,6 +46,8 @@ public class AttackPreview : MonoBehaviour
     public TextMeshProUGUI battleScreenEnemyCRIT;
     public TextMeshProUGUI battleScreenPlayerHealth;
     public TextMeshProUGUI battleScreenEnemyHealth;
+    public GameObject battleScreenPlayerHpBar;
+    public GameObject battleScreenEnemyHpBar;
     public TextMeshProUGUI previewPlayerHp;
     public TextMeshProUGUI previewPlayerMaxHp;
     public TextMeshProUGUI previewPlayerMana;
@@ -59,14 +61,17 @@ public class AttackPreview : MonoBehaviour
     public ConfirmAttackButton confirmAttackButtonScript;
     public AudioSource selectBeepAudio;
     private Vector2 originalHpManaBarSize;
+    private Vector2 originalBattleScreenHpBarSize;
+    public AudioSource battleScreenTransitionAudio;
     void Awake()
     {
         scm = FindFirstObjectByType<SaveManager>();
         attackSelectorInitialPos = attackSelector.GetComponent<RectTransform>().anchoredPosition;
+        originalHpManaBarSize = previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta;
+        originalBattleScreenHpBarSize = battleScreenEnemyHpBar.GetComponent<RectTransform>().sizeDelta;
     }
     void Start()
     {
-        originalHpManaBarSize = previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta;
     }
     void Update()
     {
@@ -304,6 +309,7 @@ public class AttackPreview : MonoBehaviour
     public IEnumerator startAttackSequence()
     {
         battleScreen.SetActive(true);
+        battleScreenTransitionAudio.Play();
 
         //Instantiate player and enemy sprite
 
@@ -314,6 +320,8 @@ public class AttackPreview : MonoBehaviour
         //Populate player and enemy health
         battleScreenPlayerHealth.text = battleController.characterSelected.GetComponent<PlayerController>().hp.ToString();
         battleScreenEnemyHealth.text = battleController.enemySelected.GetComponent<EnemyController>().hp.ToString();
+        battleScreenPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().hp / battleController.characterSelected.GetComponent<PlayerController>().maxHp, 1f);
+        battleScreenEnemyHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.enemySelected.GetComponent<EnemyController>().hp / battleController.enemySelected.GetComponent<EnemyController>().maxHp, 1f);
 
         //Populate player and enemy chosen Attacks
         battleScreenPlayerAttack.text = playerChosenAttack.name;
@@ -360,6 +368,10 @@ public class AttackPreview : MonoBehaviour
             yield return null;
         }
         attackPanel.GetComponent<RectTransform>().localScale = startScale; // snap to final value
+
+        //Reset Hp bar sizes
+        battleScreenPlayerHpBar.GetComponent<RectTransform>().sizeDelta = originalBattleScreenHpBarSize;
+        battleScreenEnemyHpBar.GetComponent<RectTransform>().sizeDelta = originalBattleScreenHpBarSize;
 
         //Diasble Attack preview and end character turn
         StartCoroutine(disablePreview());

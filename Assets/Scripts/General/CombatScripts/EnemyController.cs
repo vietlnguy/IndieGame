@@ -17,41 +17,41 @@ public class EnemyController : MonoBehaviour
     public int attackRange;
     public int moveRange;
     public string title;
+    public bool roams;
     public Attack attackMove;
 
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
-
     void Start()
     {
         //Crate moveset
         if (title == "Soldier")
         {
-            attackMove = new Attack("Slash", "physical", 10, 100, 0, 0, "Slash the enemy with your sword");
+            attackMove = new Attack("Slash", "physical", 10, 100, 0, 0, "Slash the enemy with sword");
         }
     }
-
     void Update()
     {
 
     }
-
     void LateUpdate()
     {
         // Multiply by -100 to invert Y (lower on screen = higher order)
         spriteRenderer.sortingOrder = -(int)(transform.position.y * 100) + offset;
     }
-
     void OnMouseEnter()
     {
+        if (battleController.introFinished)
+        {
+            battleController.enableCharacterToolTip(gameObject);    
+        }
 
     }
-
     void OnMouseExit()
     {
-
+        battleController.disableCharacterToolTip();    
     }
     void OnMouseDown()
     {

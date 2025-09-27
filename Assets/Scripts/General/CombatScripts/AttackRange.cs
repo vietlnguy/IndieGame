@@ -18,14 +18,29 @@ public class AttackRange : MonoBehaviour
     {
         if (active)
         {
-            gameObject.transform.position = battleController.characterSelected.transform.position;
+            try
+            {
+                gameObject.transform.position = battleController.characterSelected.transform.position;
+            }
+            catch
+            {
+                gameObject.transform.position = battleController.enemySelected.transform.position;   
+            }
         }
     }
 
     public void enableAttackRange(GameObject character)
     {
+        float scale;
         gameObject.SetActive(true);
-        float scale = character.GetComponent<PlayerController>().attackRange;
+        try
+        {
+            scale = character.GetComponent<PlayerController>().attackRange;
+        }
+        catch
+        {
+            scale = character.GetComponent<EnemyController>().attackRange;
+        }
         gameObject.transform.localScale = new Vector3(scale, scale, scale);
         active = true;
     }
