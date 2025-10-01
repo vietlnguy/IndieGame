@@ -5,7 +5,6 @@ using TMPro;
 
 public class BattleController : MonoBehaviour
 {
-    public GameObject moveRange;
     public AttackRange attackRange;
     public Vector3 originalPosition;
     public GameObject characterSelected;
@@ -40,6 +39,7 @@ public class BattleController : MonoBehaviour
     public TextMeshProUGUI characterToolTipMana;
     public TextMeshProUGUI characterToolTipMaxMana;
     public TilemapPathfinder pathfinder;
+    public GameObject moveRangeCircle;
 
     void Awake()
     {
@@ -176,6 +176,7 @@ public class BattleController : MonoBehaviour
     }
     public void selectCharacter(GameObject character)
     {
+        //Character is disabled
         if (disabledCharacters.Contains(character))
         {
             //should only bring up character info
@@ -186,12 +187,18 @@ public class BattleController : MonoBehaviour
             enableEndTurnUI();
             return;
         }
-        //check if another character is already selected
+        //if another character is already selected
         else if (characterSelected != null && characterSelected != character)
         {
             DeselectCharacter();
+            characterSelected = character;
+            originalPosition = character.transform.position;
+            characterSelected.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            characterSelected.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
+            enableMoveRange();
+            attackRange.enableAttackRange(character);
         }
-
+        //Select character
         else
         {
             characterSelected = character;
@@ -287,26 +294,20 @@ public class BattleController : MonoBehaviour
     }
     private void enableMoveRange()
     {
-
-        moveRange.SetActive(true);
-        float moveRangeScale = characterSelected.GetComponent<PlayerController>().moveRange;
-        moveRange.transform.localScale = new Vector3(moveRangeScale, moveRangeScale, moveRangeScale);
-        moveRange.transform.position = characterSelected.transform.position;
-        moveRange.GetComponent<EdgeCollider2D>().enabled = true;
-
+        moveRangeCircle.SetActive(true);
+        moveRangeCircle.transform.position = characterSelected.transform.position;
+        moveRangeCircle.GetComponent<MoveRangeCircle>().DrawFilledCircle(characterSelected.GetComponent<PlayerController>().moveRange);
     }
     private void disableMoveRange()
     {
-        moveRange.SetActive(false);
+        moveRangeCircle.SetActive(false);
     }
     private void enableEnemyMoveRange()
     {
 
-        moveRange.SetActive(true);
-        float moveRangeScale = enemySelected.GetComponent<EnemyController>().moveRange;
-        moveRange.transform.localScale = new Vector3(moveRangeScale, moveRangeScale, moveRangeScale);
-        moveRange.transform.position = enemySelected.transform.position;
-        moveRange.GetComponent<EdgeCollider2D>().enabled = false;
+        moveRangeCircle.SetActive(true);
+        moveRangeCircle.transform.position = enemySelected.transform.position;
+        moveRangeCircle.GetComponent<MoveRangeCircle>().DrawEnemyFilledCircle(enemySelected.GetComponent<EnemyController>().moveRange);
 
     }
     private System.Collections.IEnumerator FlashCoroutine()
@@ -368,7 +369,7 @@ public class BattleController : MonoBehaviour
     private IEnumerator enemyTurn()
     {
         yield return new WaitForSeconds(2f);
-
+        
         foreach (Transform enemy in enemies.transform)
         {
             selectEnemy(enemy.gameObject);
@@ -378,7 +379,7 @@ public class BattleController : MonoBehaviour
             if (enemy.gameObject.GetComponent<EnemyController>().roams)
             {
                 GameObject target = GetClosest(enemy.gameObject, characters);
-                yield return StartCoroutine(EnemyFollowPath(enemy.gameObject, target.transform.position));
+                yield return StartCoroutine(pathfinder.EnemyFollowPath(enemy.gameObject, target.transform.position));
             }
 
             disabledEnemies.Add(enemy.gameObject);
@@ -418,44 +419,6 @@ public class BattleController : MonoBehaviour
     public void disableCharacterToolTip()
     {
         characterToolTip.SetActive(false);
-    }
-    private IEnumerator EnemyFollowPath(GameObject character, Vector3 targetPos)
-    {
-        float moveLimit = character.GetComponent<EnemyController>().moveRange / 2f;
-        List<Vector3> path = pathfinder.GetWorldPath(character.transform.position, targetPos);
-        float distanceMoved = 0f; // track distance traveled
-        Vector3 previousPos = character.transform.position;
-
-        walkingAudio.Play();
-
-        foreach (Vector3 waypoint in path)
-        {
-            // Keep moving until you reach the waypoint
-            while (Vector3.Distance(character.transform.position, waypoint) > 0.1f)
-            {
-                // Step toward waypoint
-                Vector3 oldPos = character.transform.position;
-                character.transform.position = Vector3.MoveTowards(
-                    character.transform.position,
-                    waypoint,
-                    moveSpeed * Time.deltaTime
-                );
-
-                // Add to total distance moved
-                distanceMoved += Vector3.Distance(oldPos, character.transform.position);
-
-                // Check if move limit reached
-                if (distanceMoved >= moveLimit)
-                {
-                    walkingAudio.Stop();
-                    yield break; // stop moving any further
-                }
-
-                yield return null;
-            }
-        }
-
-        walkingAudio.Stop();
     }
     private GameObject GetClosest(GameObject target, GameObject objects)
     {

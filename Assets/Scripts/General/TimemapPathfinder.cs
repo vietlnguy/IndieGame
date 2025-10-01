@@ -7,9 +7,11 @@ public class TilemapPathfinder : MonoBehaviour
 {
     public Tilemap tilemap;
     public LayerMask obstacleLayer;
-    
+
     [Tooltip("The 'radius' of padding around the unit. 0 means no padding. 1 means it needs 1 clear cell around it.")]
     public int padding = 0; // New variable for padding
+    public AudioSource walkingAudio;
+    public float moveSpeed = 4f;
 
     public List<Vector3> GetWorldPath(Vector3 worldStart, Vector3 worldEnd)
     {
@@ -21,13 +23,13 @@ public class TilemapPathfinder : MonoBehaviour
         if (IsCellDirectlyBlocked(startCell))
         {
             Debug.LogWarning("Start cell is directly blocked. Path might not be found.");
-            return new List<Vector3>(); 
+            return new List<Vector3>();
         }
         // If the end cell itself is an obstacle, we can't end there.
         if (IsCellDirectlyBlocked(endCell))
         {
             Debug.LogWarning("End cell is directly blocked. Path might not be found.");
-            return new List<Vector3>(); 
+            return new List<Vector3>();
         }
 
 
@@ -107,13 +109,13 @@ public class TilemapPathfinder : MonoBehaviour
             for (int yOffset = -padding; yOffset <= padding; yOffset++)
             {
                 // Skip the center cell as it's already checked
-                if (xOffset == 0 && yOffset == 0) continue; 
+                if (xOffset == 0 && yOffset == 0) continue;
 
                 Vector3Int paddedCell = new Vector3Int(cell.x + xOffset, cell.y + yOffset, cell.z);
-                
+
                 // CRITICAL: Ensure we don't accidentally block the goal if it's within the padding radius
                 // of a non-goal cell being checked. This ensures the path can always reach the goal.
-                if (paddedCell == goalCell) continue; 
+                if (paddedCell == goalCell) continue;
 
                 if (IsCellDirectlyBlocked(paddedCell))
                 {
@@ -167,4 +169,70 @@ public class TilemapPathfinder : MonoBehaviour
 
         return neighbors;
     }
+
+    public System.Collections.IEnumerator EnemyFollowPath(GameObject enemy, Vector3 targetPos)
+    {
+        float moveLimit = enemy.GetComponent<EnemyController>().moveRange;
+        List<Vector3> path = GetWorldPath(enemy.transform.position, targetPos);
+        float distanceMoved = 0f; // track distance traveled
+        Vector3 previousPos = enemy.transform.position;
+
+        walkingAudio.Play();
+
+        foreach (Vector3 waypoint in path)
+        {
+            // Keep moving until you reach the waypoint
+            while (Vector3.Distance(enemy.transform.position, waypoint) > 0.1f)
+            {
+                // Step toward waypoint
+                Vector3 oldPos = enemy.transform.position;
+                enemy.transform.position = Vector3.MoveTowards(
+                    enemy.transform.position,
+                    waypoint,
+                    moveSpeed * Time.deltaTime
+                );
+
+                // Add to total distance moved
+                distanceMoved += Vector3.Distance(oldPos, enemy.transform.position);
+
+                // Check if move limit reached
+                if (distanceMoved >= moveLimit)
+                {
+                    walkingAudio.Stop();
+                    yield break; // stop moving any further
+                }
+
+                yield return null;
+            }
+        }
+
+        walkingAudio.Stop();
+    }
+    public System.Collections.IEnumerator FollowPath(GameObject enemy, Vector3 targetPos)
+    {
+        List<Vector3> path = GetWorldPath(enemy.transform.position, targetPos);
+
+        walkingAudio.Play();
+
+        foreach (Vector3 waypoint in path)
+        {
+            // Keep moving until you reach the waypoint
+            while (Vector3.Distance(enemy.transform.position, waypoint) > 0.1f)
+            {
+                // Step toward waypoint
+                enemy.transform.position = Vector3.MoveTowards(
+                    enemy.transform.position,
+                    waypoint,
+                    moveSpeed * Time.deltaTime
+                );
+
+                yield return null;
+            }
+        }
+
+        walkingAudio.Stop();
+    }
+
+
+
 }

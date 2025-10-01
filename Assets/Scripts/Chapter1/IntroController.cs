@@ -11,7 +11,6 @@ public class IntroController: MonoBehaviour
     public GameObject astrid;
     public GameObject DialogueController;
     public GameObject fullBodyCharacterParent;
-    public float moveSpeed = 4f;
     public bool dialogueFinished = false;
     public bool secondDialogueFinished = false;
     public bool thirdDialogueFinished = false;
@@ -145,20 +144,6 @@ public class IntroController: MonoBehaviour
             child.gameObject.GetComponent<Rigidbody2D>().simulated = true;
         }
     }
-    private IEnumerator FollowPath(GameObject character, Vector3 targetPos) {
-        List<Vector3> path = pathfinder.GetWorldPath(character.transform.position, targetPos);
-        footstepAudio.Play();
-        foreach (Vector3 waypoint in path)
-        {
-            while (Vector3.Distance(character.transform.position, waypoint) > 0.1f)
-            {
-                character.transform.position = Vector3.MoveTowards(character.transform.position, waypoint, moveSpeed * Time.deltaTime);
-                yield return null;
-            }
-
-        }
-        footstepAudio.Stop();
-    }
     private void disableCharacterImages()
     {
         for (int i = 0; i < fullBodyCharacterParent.transform.childCount; i++)
@@ -201,7 +186,7 @@ public class IntroController: MonoBehaviour
         //Overworld movement and dialogue
         yield return StartCoroutine(UndoFade(whiteScreen, 1f));
         yield return new WaitForSeconds(1f);
-        yield return StartCoroutine(FollowPath(mainChar, new Vector3(-6.57f, -11.28f, 0f)));
+        yield return StartCoroutine(pathfinder.FollowPath(mainChar, new Vector3(-6.57f, -11.28f, 0f)));
         yield return new WaitForSeconds(.5f);
         doorAudio.Play();
         yield return StartCoroutine(characterDisappear(mainChar));
@@ -265,11 +250,11 @@ public class IntroController: MonoBehaviour
         doorAudio.Play();
         yield return StartCoroutine(characterAppear(mainChar));
         yield return new WaitForSeconds(.5f);
-        yield return StartCoroutine(FollowPath(mainChar, new Vector3(-7.53f, -12f, 0f)));
+        yield return StartCoroutine(pathfinder.FollowPath(mainChar, new Vector3(-7.53f, -12f, 0f)));
         astrid.transform.position = new Vector3(-6.57f, -11.28f, 0f);
         astrid.GetComponent<SpriteRenderer>().enabled = true;
         yield return StartCoroutine(characterAppear(astrid));
-        yield return StartCoroutine(FollowPath(astrid, new Vector3(-5.66f, -12f, 0f)));
+        yield return StartCoroutine(pathfinder.FollowPath(astrid, new Vector3(-5.66f, -12f, 0f)));
         yield return new WaitForSeconds(.5f);
 
         fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
@@ -304,11 +289,11 @@ public class IntroController: MonoBehaviour
         doorAudio.Play();
         yield return StartCoroutine(characterAppear(mainChar));
         yield return new WaitForSeconds(.5f);
-        yield return StartCoroutine(FollowPath(mainChar, new Vector3(-7.53f, -12f, 0f)));
+        yield return StartCoroutine(pathfinder.FollowPath(mainChar, new Vector3(-8f, -13f, 0f)));
         astrid.transform.position = new Vector3(-6.57f, -11.28f, 0f);
         astrid.GetComponent<SpriteRenderer>().enabled = true;
         yield return StartCoroutine(characterAppear(astrid));
-        yield return StartCoroutine(FollowPath(astrid, new Vector3(-5.66f, -12f, 0f)));
+        yield return StartCoroutine(pathfinder.FollowPath(astrid, new Vector3(-5.66f, -13f, 0f)));
         yield return new WaitForSeconds(.5f);
 
         fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
