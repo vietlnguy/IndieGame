@@ -7,12 +7,10 @@ public class TilemapPathfinder : MonoBehaviour
 {
     public Tilemap tilemap;
     public LayerMask obstacleLayer;
-
-    [Tooltip("The 'radius' of padding around the unit. 0 means no padding. 1 means it needs 1 clear cell around it.")]
     public int padding = 0; // New variable for padding
     public AudioSource walkingAudio;
     public float moveSpeed = 4f;
-
+    public List<Vector3Int> occupiedTiles;
     public List<Vector3> GetWorldPath(Vector3 worldStart, Vector3 worldEnd)
     {
         Vector3Int startCell = tilemap.WorldToCell(worldStart);
@@ -44,8 +42,31 @@ public class TilemapPathfinder : MonoBehaviour
 
         return worldPath;
     }
+    public List<Vector3Int> GetUnoccupiedAdjacent(Vector3 targetPos)
+    {
+        // 1. Determine the character's current cell position
+        Vector3Int currentCell = tilemap.WorldToCell(targetPos);
 
-    // Modified to accept the goal cell
+        // CHANGE: Return type is List<Vector3Int>
+        List<Vector3Int> adjacentCells = new List<Vector3Int>();
+
+        // 2. Get the 4 cardinal neighbors
+        List<Vector3Int> neighbors = GetNeighbors(currentCell);
+
+        // 3. Iterate through neighbors and check for blocking/unreachability
+        foreach (Vector3Int neighborCell in neighbors)
+        {
+            // Check if the neighbor is blocked, considering the unit's padding.
+            bool isBlocked = IsBlockedWithPadding(neighborCell, neighborCell);
+
+            if (!isBlocked && !occupiedTiles.Contains(neighborCell))
+            {
+                adjacentCells.Add(neighborCell);
+            }
+        }
+
+        return adjacentCells;
+    }
     List<Vector3Int> FindPath(Vector3Int start, Vector3Int goal)
     {
         var openSet = new List<Vector3Int> { start };
@@ -86,8 +107,6 @@ public class TilemapPathfinder : MonoBehaviour
 
         return new List<Vector3Int>(); // No path found
     }
-
-    // New method to check if a cell is blocked, considering padding, and respecting the goal
     bool IsBlockedWithPadding(Vector3Int cell, Vector3Int goalCell)
     {
         // If the current cell being checked is the GOAL CELL,
@@ -125,8 +144,6 @@ public class TilemapPathfinder : MonoBehaviour
         }
         return false; // No cells within padding (or the cell itself) are blocked for non-goal cells
     }
-
-    // Original IsBlocked, renamed to be specific to a single cell
     bool IsCellDirectlyBlocked(Vector3Int cell)
     {
         // Physics2D.OverlapPoint checks if *any* collider on the obstacleLayer overlaps the center of the cell.
@@ -134,7 +151,6 @@ public class TilemapPathfinder : MonoBehaviour
         Vector3 worldPos = tilemap.GetCellCenterWorld(cell);
         return Physics2D.OverlapPoint(worldPos, obstacleLayer);
     }
-
     List<Vector3Int> ReconstructPath(Dictionary<Vector3Int, Vector3Int> cameFrom, Vector3Int current)
     {
         var totalPath = new List<Vector3Int> { current };
@@ -145,13 +161,11 @@ public class TilemapPathfinder : MonoBehaviour
         }
         return totalPath;
     }
-
     float Heuristic(Vector3Int a, Vector3Int b)
     {
         // Manhattan distance heuristic for 4-directional movement
         return Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y);
     }
-
     List<Vector3Int> GetNeighbors(Vector3Int pos)
     {
         var neighbors = new List<Vector3Int>
@@ -169,44 +183,50 @@ public class TilemapPathfinder : MonoBehaviour
 
         return neighbors;
     }
-
     public System.Collections.IEnumerator EnemyFollowPath(GameObject enemy, Vector3 targetPos)
     {
+
         float moveLimit = enemy.GetComponent<EnemyController>().moveRange;
-        List<Vector3> path = GetWorldPath(enemy.transform.position, targetPos);
-        float distanceMoved = 0f; // track distance traveled
+        float distanceMoved = 0f;
         Vector3 previousPos = enemy.transform.position;
 
-        walkingAudio.Play();
-
-        foreach (Vector3 waypoint in path)
+        //check if already adjacent to target
+        if (!alreadyAdjacent(enemy, targetPos))
         {
-            // Keep moving until you reach the waypoint
-            while (Vector3.Distance(enemy.transform.position, waypoint) > 0.1f)
+            List<Vector3Int> unoccupiedTiles = GetUnoccupiedAdjacent(targetPos);
+            List<Vector3> path = GetWorldPath(enemy.transform.position, unoccupiedTiles[0]);
+
+            walkingAudio.Play();
+
+            //Move enemy
+            foreach (Vector3 waypoint in path)
             {
-                // Step toward waypoint
-                Vector3 oldPos = enemy.transform.position;
-                enemy.transform.position = Vector3.MoveTowards(
-                    enemy.transform.position,
-                    waypoint,
-                    moveSpeed * Time.deltaTime
-                );
-
-                // Add to total distance moved
-                distanceMoved += Vector3.Distance(oldPos, enemy.transform.position);
-
-                // Check if move limit reached
-                if (distanceMoved >= moveLimit)
+                // Keep moving until you reach the waypoint
+                while (Vector3.Distance(enemy.transform.position, waypoint) > 0.1f)
                 {
-                    walkingAudio.Stop();
-                    yield break; // stop moving any further
+                    // Step toward waypoint
+                    Vector3 oldPos = enemy.transform.position;
+                    enemy.transform.position = Vector3.MoveTowards(
+                        enemy.transform.position,
+                        waypoint,
+                        moveSpeed * Time.deltaTime
+                    );
+
+                    // Add to total distance moved
+                    distanceMoved += Vector3.Distance(oldPos, enemy.transform.position);
+
+                    // Check if move limit reached
+                    if (distanceMoved >= moveLimit)
+                    {
+                        walkingAudio.Stop();
+                        yield break; // stop moving any further
+                    }
+
+                    yield return null;
                 }
-
-                yield return null;
             }
+            walkingAudio.Stop();
         }
-
-        walkingAudio.Stop();
     }
     public System.Collections.IEnumerator FollowPath(GameObject enemy, Vector3 targetPos)
     {
@@ -232,7 +252,32 @@ public class TilemapPathfinder : MonoBehaviour
 
         walkingAudio.Stop();
     }
+    public void calculateOccupiedTiles(GameObject characters, GameObject enemies)
+    {
+        occupiedTiles.Clear();
+        foreach (Transform child in characters.transform)
+        {
+            Vector3 worldStart = child.gameObject.transform.position;
+            Vector3Int currentCell = tilemap.WorldToCell(worldStart);
+            occupiedTiles.Add(currentCell);
+        }
+        foreach (Transform child in enemies.transform)
+        {
+            Vector3 worldStart = child.gameObject.transform.position;
+            Vector3Int currentCell = tilemap.WorldToCell(worldStart);
+            occupiedTiles.Add(currentCell);
+        }
+    }
+    private bool alreadyAdjacent(GameObject enemy, Vector3 targetPos)
+    {
+        Vector3Int enemyCell = tilemap.WorldToCell(enemy.transform.position);
+        Vector3Int targetCell = tilemap.WorldToCell(targetPos);
 
+        int dx = Mathf.Abs(enemyCell.x - targetCell.x);
+        int dy = Mathf.Abs(enemyCell.y - targetCell.y);
 
+        // Adjacent if one step away in cardinal direction. i.e. returns true if adjacent
+        return (dx + dy) == 1;
 
+    }
 }

@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
     {
         if (battleController.introFinished)
         {
-            if (!battleController.disabledCharacters.Contains(gameObject))
+            if (!battleController.disabledCharacters.Contains(gameObject) && battleController.characterSelected == null)
             {
                 spriteRenderer.color = Color.yellow;
             }
@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
     }
     void OnMouseExit()
     {
-        if (battleController.introFinished && !battleController.disabledCharacters.Contains(gameObject))
+        if (battleController.introFinished && !battleController.disabledCharacters.Contains(gameObject) && battleController.characterSelected == null)
         {
             spriteRenderer.color = Color.white;
         }
@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
     }
     void OnMouseDown()
     {
-        if (battleController.introFinished && !battleController.isPaused)
+        if (battleController.introFinished && !battleController.isPaused && !battleController.attackPreviewScript.active && !battleController.isEnemyTurn)
         {
             battleController.selectCharacter(gameObject);
         }
@@ -104,4 +104,13 @@ public class PlayerController : MonoBehaviour
         title = hero.characterName;
         knownAttacks = hero.knownAttacks;
     }
+    public void highlightAssistable()
+    {
+        spriteRenderer.color = Color.green;
+    }
+    public void unhighlightAssistable()
+    {
+        spriteRenderer.color = Color.white;
+    }
+
 }

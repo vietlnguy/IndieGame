@@ -40,6 +40,7 @@ public class BattleController : MonoBehaviour
     public TextMeshProUGUI characterToolTipMaxMana;
     public TilemapPathfinder pathfinder;
     public GameObject moveRangeCircle;
+    public bool isEnemyTurn = false;
 
     void Awake()
     {
@@ -350,6 +351,7 @@ public class BattleController : MonoBehaviour
     {
         if (s == "Player")
         {
+            isEnemyTurn = false;
             playerPhaseAudio.Play();
             fightScreenText.text = "Player Phase";
             fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
@@ -358,6 +360,7 @@ public class BattleController : MonoBehaviour
         }
         else
         {
+            isEnemyTurn = true;
             enemyPhaseAudio.Play();
             fightScreenText.text = "Enemy Phase";
             fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
@@ -373,9 +376,10 @@ public class BattleController : MonoBehaviour
         foreach (Transform enemy in enemies.transform)
         {
             selectEnemy(enemy.gameObject);
-
+            pathfinder.calculateOccupiedTiles(characters, enemies);
+            
             yield return new WaitForSeconds(2f);
-            //If enemy roams
+
             if (enemy.gameObject.GetComponent<EnemyController>().roams)
             {
                 GameObject target = GetClosest(enemy.gameObject, characters);
@@ -383,7 +387,6 @@ public class BattleController : MonoBehaviour
             }
 
             disabledEnemies.Add(enemy.gameObject);
-            yield return new WaitForSeconds(1.5f);
         }
 
         yield return null;
