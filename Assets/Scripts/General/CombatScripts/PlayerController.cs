@@ -4,8 +4,18 @@ using System.Collections.Generic;
 public class PlayerController : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
-    public int offset = 0;
+    private Animator animator;
+    public SaveManager saveManager;
+    private Rigidbody2D rigidBody;
+    public bool movementEnabled = false;
+    private float moveSpeed = 6.0f;
+    public AudioSource walkingAudio;
     public BattleController battleController;
+    public CharacterToolTip characterToolTipScript;
+    public MoveRangeCircle moveRangeCircleScript;
+    public AttackRangeCircle attackRangeCircleScript;
+    public CharacterMenu characterMenuScript;
+    public int offset = 0;
     public int hp;
     public int maxHp;
     public int mana;
@@ -24,13 +34,21 @@ public class PlayerController : MonoBehaviour
     public Equipment armorEquiped;
     public Equipment accessoryEquiped;
     public List<Attack> knownAttacks;
-    public SaveManager saveManager;
+    private Vector3 originalPosition;
+    private bool isHovered = false;
 
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        rigidBody = GetComponent<Rigidbody2D>();
+        walkingAudio = GameObject.Find("WalkingAudio").GetComponent<AudioSource>();
         battleController = GameObject.Find("BattleController").GetComponent<BattleController>();
+        characterToolTipScript = GameObject.Find("characterInfoToolTip").GetComponent<CharacterToolTip>();
         saveManager = FindFirstObjectByType<SaveManager>();
+        moveRangeCircleScript = GameObject.Find("MoveRangeCircle").GetComponent<MoveRangeCircle>();
+        attackRangeCircleScript = GameObject.Find("AttackRangeCircle").GetComponent<AttackRangeCircle>();
+        characterMenuScript = GameObject.Find("CharacterMenu").GetComponent<CharacterMenu>();
         populateCharacterData();
     }
     void Start()
@@ -39,13 +57,42 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        int layerMask = LayerMask.GetMask("Characters"); // ignore AttackRange layer
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, Mathf.Infinity, layerMask);
+
+        if (hit.collider != null && hit.collider.gameObject == gameObject)
+        {
+            // Hover logic
+            if (!isHovered)
+            {
+                isHovered = true;
+                OnHoverEnter();
+            }
+
+            // Click logic
+            if (Input.GetMouseButtonDown(0))
+            {
+                OnClick();
+            }
+        }
+        else if (isHovered)
+        {
+            isHovered = false;
+            OnHoverExit();
+        }
+
+        if (movementEnabled)
+        {
+            handleMovement();
+        }
     }
     void LateUpdate()
     {
         // Multiply by -100 to invert Y (lower on screen = higher order)
         spriteRenderer.sortingOrder = -(int)(transform.position.y * 100) + offset;
     }
-    void OnMouseEnter()
+    void OnHoverEnter()
 
     {
         if (battleController.introFinished)
@@ -54,26 +101,60 @@ public class PlayerController : MonoBehaviour
             {
                 spriteRenderer.color = Color.yellow;
             }
-            battleController.enableCharacterToolTip(gameObject);
+
+            if (!characterMenuScript.active)
+            {
+                characterToolTipScript.enableCharacterToolTip(gameObject);
+            }
         }
 
     }
-    void OnMouseExit()
+    void OnHoverExit()
     {
         if (battleController.introFinished && !battleController.disabledCharacters.Contains(gameObject) && battleController.characterSelected == null)
         {
             spriteRenderer.color = Color.white;
         }
-        battleController.disableCharacterToolTip();
+        characterToolTipScript.disableCharacterToolTip();
 
     }
-    void OnMouseDown()
+    void OnClick()
     {
-        if (battleController.introFinished && !battleController.isPaused && !battleController.attackPreviewScript.active && !battleController.isEnemyTurn)
+        //Intro is finished, not paused, not attack preview, not characterMenu, and not enemies turn
+        if (battleController.introFinished && !battleController.isPaused && !battleController.attackPreviewScript.active && !characterMenuScript.active && !battleController.isEnemyTurn)
         {
-            battleController.selectCharacter(gameObject);
-        }
+            //no character selected yet. Should select this character.
+            if (battleController.characterSelected == null)
+            {
+                selectCharacter();
+            }
 
+            //this character already selected and this character is clicked again. Should bring up inventory and end turn menu
+            else if (battleController.characterSelected == gameObject)
+            {
+                characterMenuScript.enableCharacterMenu(gameObject);
+                movementEnabled = false;
+                characterToolTipScript.disableCharacterToolTip();
+            }
+
+            //different character already selected and this character is clicked
+            else if (battleController.characterSelected != null && battleController.characterSelected != gameObject)
+            {
+                //if this character is in assistable range. Should bring up assistable UI
+                if (attackRangeCircleScript.alliesInRange.Contains(gameObject))
+                {
+                    //TODO: implement assistable UI
+                }
+
+                //this character is not in assistable range. Should deselect other character and select this character
+                else
+                {
+                    battleController.characterSelected.GetComponent<PlayerController>().deselectCharacter();
+                    selectCharacter();
+                }
+            }
+
+        }
     }
     void populateCharacterData()
     {
@@ -108,9 +189,97 @@ public class PlayerController : MonoBehaviour
     {
         spriteRenderer.color = Color.green;
     }
-    public void unhighlightAssistable()
+    public void unhighlight()
     {
         spriteRenderer.color = Color.white;
     }
+    public void graySprite()
+    {
+        spriteRenderer.color = Color.gray;
+    }
+    public void highlightAttackable()
+    {
+        spriteRenderer.color = Color.red;
+    }
+    public void handleMovement()
+    {
+        Vector3 direction = Vector3.zero;
 
+        if (Input.GetKey(KeyCode.W)) { direction.y += 1; if (!walkingAudio.isPlaying) { walkingAudio.Play(); } }
+        if (Input.GetKey(KeyCode.S))
+        {
+            direction.y -= 1;
+            if (!walkingAudio.isPlaying)
+            {
+                walkingAudio.Play();
+            }
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            direction.x -= 1;
+            if (!walkingAudio.isPlaying)
+            {
+                walkingAudio.Play();
+            }
+            Vector3 localScale = transform.localScale;
+            localScale.x = -Mathf.Abs(localScale.x);
+            transform.localScale = localScale;
+
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            direction.x += 1;
+            if (!walkingAudio.isPlaying)
+            {
+                walkingAudio.Play();
+            }
+            Vector3 localScale = transform.localScale;
+            localScale.x = Mathf.Abs(localScale.x);
+            transform.localScale = localScale;
+        }
+
+        if (Input.GetKeyUp(KeyCode.W)) { walkingAudio.Stop(); }
+        if (Input.GetKeyUp(KeyCode.S)) { walkingAudio.Stop(); }
+        if (Input.GetKeyUp(KeyCode.A)) { walkingAudio.Stop(); }
+        if (Input.GetKeyUp(KeyCode.D)) { walkingAudio.Stop(); }
+
+        if (direction != Vector3.zero)
+        {
+            transform.position += direction.normalized * moveSpeed * Time.deltaTime;
+            animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
+    }
+    public void graySpriteAndFreeze()
+    {
+        spriteRenderer.color = Color.gray;
+        animator.SetBool("isFrozen", true);
+        rigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
+
+    }
+    public void deselectCharacter()
+    {
+        //reset position and freeze
+        transform.position = originalPosition;
+        rigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
+        moveRangeCircleScript.disableMoveRange();
+        attackRangeCircleScript.disableAttackRange();
+        movementEnabled = false;
+        battleController.characterSelected = null;
+        unhighlight();
+
+    }
+    public void selectCharacter()
+    {
+        originalPosition = transform.position;
+        battleController.characterSelected = gameObject;
+        moveRangeCircleScript.enableMoveRange(gameObject);
+        attackRangeCircleScript.enableAttackRange(gameObject);
+        movementEnabled = true;
+        rigidBody.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
+        rigidBody.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
+    }
 }

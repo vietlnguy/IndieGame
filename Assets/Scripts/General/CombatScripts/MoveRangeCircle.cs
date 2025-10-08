@@ -27,7 +27,7 @@ public class MoveRangeCircle : MonoBehaviour
 
         edgeCollider = GetComponent<EdgeCollider2D>();
     }
-    public void DrawFilledCircle(float radius)
+    private void DrawFilledCircle(float radius)
     {
         Mesh mesh = new Mesh();
 
@@ -62,40 +62,7 @@ public class MoveRangeCircle : MonoBehaviour
         UpdateCollider(radius);
         edgeCollider.enabled = true;
     }
-    public void DrawEnemyFilledCircle(float radius)
-    {
-        Mesh mesh = new Mesh();
-
-        Vector3[] vertices = new Vector3[segments + 1];
-        int[] triangles = new int[segments * 3];
-
-        vertices[0] = Vector3.zero; // center of circle
-
-        float angleStep = 2 * Mathf.PI / segments;
-
-        for (int i = 0; i < segments; i++)
-        {
-            float angle = i * angleStep;
-            vertices[i + 1] = new Vector3(Mathf.Cos(angle) * radius, Mathf.Sin(angle) * radius, 0f);
-        }
-
-        for (int i = 0; i < segments; i++)
-        {
-            int triStart = i * 3;
-            triangles[triStart] = 0;
-            triangles[triStart + 1] = i + 1;
-            triangles[triStart + 2] = (i + 2 > segments) ? 1 : i + 2;
-        }
-
-        mesh.vertices = vertices;
-        mesh.triangles = triangles;
-        mesh.RecalculateNormals();
-        mesh.RecalculateBounds();
-
-        meshFilter.mesh = mesh;
-        edgeCollider.enabled = false;
-    }
-    public void UpdateCollider(float radius)
+    private void UpdateCollider(float radius)
     {
         Vector2[] points = new Vector2[segments + 1];
         float angleStep = 2 * Mathf.PI / segments;
@@ -107,5 +74,16 @@ public class MoveRangeCircle : MonoBehaviour
         }
 
         edgeCollider.points = points;
+    }
+    public void enableMoveRange(GameObject character)
+    {
+        meshRenderer.enabled = true;
+        transform.position = character.transform.position;
+        DrawFilledCircle(character.GetComponent<PlayerController>().moveRange);
+    }
+    public void disableMoveRange()
+    {
+        meshRenderer.enabled = false;
+        edgeCollider.enabled = false;
     }
 }

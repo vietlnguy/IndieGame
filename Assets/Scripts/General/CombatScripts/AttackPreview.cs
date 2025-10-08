@@ -375,7 +375,7 @@ public class AttackPreview : MonoBehaviour
 
         //Diasble Attack preview and end character turn
         StartCoroutine(disablePreview());
-        battleController.endCharacterTurn();
+        //battleController.endCharacterTurn();
     }
     
 }

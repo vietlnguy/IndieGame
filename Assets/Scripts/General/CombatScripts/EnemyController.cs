@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     public int offset = 0;
     public BattleController battleController;
+    public CharacterToolTip characterToolTipScript;
     public int hp;
     public int maxHp;
     public int mana;
@@ -23,6 +24,7 @@ public class EnemyController : MonoBehaviour
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        characterToolTipScript = GameObject.Find("characterInfoToolTip").GetComponent<CharacterToolTip>();
     }
     void Start()
     {
@@ -45,19 +47,19 @@ public class EnemyController : MonoBehaviour
     {
         if (battleController.introFinished)
         {
-            battleController.enableCharacterToolTip(gameObject);    
+            characterToolTipScript.enableCharacterToolTip(gameObject);    
         }
 
     }
     void OnMouseExit()
     {
-        battleController.disableCharacterToolTip();    
+        characterToolTipScript.disableCharacterToolTip();    
     }
     void OnMouseDown()
     {
         if (battleController.introFinished)
         {
-            battleController.selectEnemy(gameObject);
+            
         }
 
     }
@@ -65,7 +67,11 @@ public class EnemyController : MonoBehaviour
     {
         spriteRenderer.color = Color.red;
     }
-    public void unhighlightAttackable()
+    public void highlightAssistable()
+    {
+        spriteRenderer.color = Color.green;
+    }
+    public void unhighlight()
     {
         spriteRenderer.color = Color.white;
     }
