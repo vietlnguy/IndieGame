@@ -3355,7 +3355,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.91, y: -21.8}
+  m_AnchoredPosition: {x: 1.91, y: -22.88}
   m_SizeDelta: {x: 114.11, y: 19.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &95107784
@@ -9827,135 +9827,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: 0
---- !u!1 &375972756
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 375972757}
-  - component: {fileID: 375972758}
-  m_Layer: 0
-  m_Name: BattleScreenTransitionExitAudio
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &375972757
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375972756}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 147.62299, y: 78.75348, z: -6.1348753}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1366974634}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &375972758
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 375972756}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b6d0edc900b400a4285fefdc394c270c, type: 3}
-  m_Resource: {fileID: 8300000, guid: b6d0edc900b400a4285fefdc394c270c, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &380446569
 GameObject:
   m_ObjectHideFlags: 0
@@ -11162,6 +11033,10 @@ MonoBehaviour:
   offset: 0
   battleController: {fileID: 1859551252}
   characterToolTipScript: {fileID: 0}
+  moveRangeCircleScript: {fileID: 0}
+  attackRangeCircleScript: {fileID: 0}
+  attackPreviewScript: {fileID: 0}
+  characterMenuScript: {fileID: 0}
   hp: 11
   maxHp: 11
   mana: 5
@@ -11182,6 +11057,7 @@ MonoBehaviour:
     baseCrit: 0
     description: Slash the enemy with your sword
     manaCost: 0
+  deselectAudio: {fileID: 0}
 --- !u!50 &418793981
 Rigidbody2D:
   serializedVersion: 5
@@ -11949,6 +11825,10 @@ MonoBehaviour:
   offset: 0
   battleController: {fileID: 1859551252}
   characterToolTipScript: {fileID: 0}
+  moveRangeCircleScript: {fileID: 0}
+  attackRangeCircleScript: {fileID: 0}
+  attackPreviewScript: {fileID: 0}
+  characterMenuScript: {fileID: 0}
   hp: 11
   maxHp: 11
   mana: 5
@@ -11969,6 +11849,7 @@ MonoBehaviour:
     baseCrit: 0
     description: Slash the enemy with your sword
     manaCost: 0
+  deselectAudio: {fileID: 0}
 --- !u!1 &460393665
 GameObject:
   m_ObjectHideFlags: 0
@@ -16876,6 +16757,10 @@ MonoBehaviour:
   offset: 0
   battleController: {fileID: 1859551252}
   characterToolTipScript: {fileID: 0}
+  moveRangeCircleScript: {fileID: 0}
+  attackRangeCircleScript: {fileID: 0}
+  attackPreviewScript: {fileID: 0}
+  characterMenuScript: {fileID: 0}
   hp: 11
   maxHp: 11
   mana: 5
@@ -16896,6 +16781,7 @@ MonoBehaviour:
     baseCrit: 0
     description: Slash the enemy with your sword
     manaCost: 0
+  deselectAudio: {fileID: 0}
 --- !u!50 &605859449
 Rigidbody2D:
   serializedVersion: 5
@@ -18701,6 +18587,10 @@ MonoBehaviour:
   offset: 0
   battleController: {fileID: 1859551252}
   characterToolTipScript: {fileID: 0}
+  moveRangeCircleScript: {fileID: 0}
+  attackRangeCircleScript: {fileID: 0}
+  attackPreviewScript: {fileID: 0}
+  characterMenuScript: {fileID: 0}
   hp: 11
   maxHp: 11
   mana: 5
@@ -18721,6 +18611,7 @@ MonoBehaviour:
     baseCrit: 0
     description: Slash the enemy with your sword
     manaCost: 0
+  deselectAudio: {fileID: 0}
 --- !u!50 &672184374
 Rigidbody2D:
   serializedVersion: 5
@@ -56483,7 +56374,6 @@ Transform:
   - {fileID: 1993554773}
   - {fileID: 616433946}
   - {fileID: 461974981}
-  - {fileID: 375972757}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1369959718
@@ -56605,6 +56495,9 @@ MonoBehaviour:
   characterMenu: {fileID: 199167607}
   active: 0
   battleController: {fileID: 1859551252}
+  selector: {fileID: 1795896412}
+  selectorAudio: {fileID: 616433947}
+  deselectAudio: {fileID: 1968524359}
 --- !u!1 &1370931792
 GameObject:
   m_ObjectHideFlags: 0
@@ -66270,13 +66163,14 @@ GameObject:
   - component: {fileID: 1716513249}
   - component: {fileID: 1716513248}
   - component: {fileID: 1716513251}
+  - component: {fileID: 1716513252}
   m_Layer: 5
   m_Name: ConfirmAttackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1716513247
 RectTransform:
   m_ObjectHideFlags: 0
@@ -66394,6 +66288,18 @@ MonoBehaviour:
   scm: {fileID: 0}
   attackPreview: {fileID: 1388701263}
   validAttack: 0
+--- !u!225 &1716513252
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716513246}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1717424611
 GameObject:
   m_ObjectHideFlags: 0
@@ -68198,7 +68104,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.912, y: 29.785}
+  m_AnchoredPosition: {x: 1.912, y: 30}
   m_SizeDelta: {x: 142.66, y: 25.528}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1797585331
@@ -68879,8 +68785,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterSelected: {fileID: 0}
   enemySelected: {fileID: 0}
-  endTurnObj: {fileID: 0}
   disabledCharacters: []
+  disabledEnemies: []
   introFinished: 0
   fightScreen: {fileID: 2046485967}
   fightScreenText: {fileID: 668906954}
@@ -68898,6 +68804,7 @@ MonoBehaviour:
   worldCamera: {fileID: 0}
   pathfinder: {fileID: 231026216}
   moveRangeCircleScript: {fileID: 1091499195}
+  attackRangeCircleScript: {fileID: 70349276}
   isEnemyTurn: 0
   characterMenuActive: 0
 --- !u!4 &1859551253

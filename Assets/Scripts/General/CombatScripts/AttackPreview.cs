@@ -171,11 +171,13 @@ public class AttackPreview : MonoBehaviour
         }
 
     }
-    public IEnumerator enablePreview(GameObject enemy)
+    public IEnumerator enablePreview()
     {
+        battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = false;
+
         //Update titles
         characterTitle.text = battleController.characterSelected.GetComponent<PlayerController>().title;
-        enemyTitle.text = enemy.GetComponent<EnemyController>().title;
+        enemyTitle.text = battleController.enemySelected.GetComponent<EnemyController>().title;
 
         //Update health bars and values
         previewPlayerHp.text = battleController.characterSelected.GetComponent<PlayerController>().hp.ToString();
@@ -240,11 +242,13 @@ public class AttackPreview : MonoBehaviour
 
         GameObject enemyPrefab;
         temp = new Vector2(enemyPortraitBackground.GetComponent<RectTransform>().position.x, enemyPortraitBackground.GetComponent<RectTransform>().position.y - 1f);
-        if (enemy.GetComponent<EnemyController>().title == "Soldier") { enemyPrefab = Instantiate(soldierPrefab, temp, Quaternion.identity, attackPreviewSprites.transform); }
+        if (battleController.enemySelected.GetComponent<EnemyController>().title == "Soldier") { enemyPrefab = Instantiate(soldierPrefab, temp, Quaternion.identity, attackPreviewSprites.transform); }
         //TODO: include more prefabs for enemies
 
         //Enable buttons
-        confirmButton.SetActive(true);
+        confirmButton.GetComponent<CanvasGroup>().alpha = 1;
+        confirmButton.GetComponent<CanvasGroup>().interactable = true;
+        confirmButton.GetComponent<CanvasGroup>().blocksRaycasts = true;
         vsText.SetActive(true);
         active = true;
 
@@ -256,7 +260,6 @@ public class AttackPreview : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-        attackWooshAudio.Play();
 
         //Move off screen
         float duration = 0.05f;
@@ -300,11 +303,15 @@ public class AttackPreview : MonoBehaviour
         previewPlayerManaBar.GetComponent<RectTransform>().sizeDelta = originalHpManaBarSize;
 
         //Disable vs and confirm button
-        confirmButton.SetActive(false);
+        confirmButton.GetComponent<CanvasGroup>().alpha = 0;
+        confirmButton.GetComponent<CanvasGroup>().interactable = false;
+        confirmButton.GetComponent<CanvasGroup>().blocksRaycasts = false;
         vsText.SetActive(false);
         active = false;
 
+        battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = true;
         yield return null;
+
     }
     public IEnumerator startAttackSequence()
     {
@@ -373,9 +380,10 @@ public class AttackPreview : MonoBehaviour
         battleScreenPlayerHpBar.GetComponent<RectTransform>().sizeDelta = originalBattleScreenHpBarSize;
         battleScreenEnemyHpBar.GetComponent<RectTransform>().sizeDelta = originalBattleScreenHpBarSize;
 
-        //Diasble Attack preview and end character turn
-        StartCoroutine(disablePreview());
-        //battleController.endCharacterTurn();
+        yield return StartCoroutine(disablePreview());
+
+        battleController.characterSelected.GetComponent<PlayerController>().endTurn();
+        yield return null;
     }
     
 }

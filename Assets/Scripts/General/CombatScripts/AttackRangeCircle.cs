@@ -49,7 +49,7 @@ public class AttackRangeCircle : MonoBehaviour
             }
             catch
             {
-                gameObject.transform.position = battleController.characterSelected.transform.position;
+                gameObject.transform.position = battleController.enemySelected.transform.position;
             }
         }
     }
@@ -59,7 +59,7 @@ public class AttackRangeCircle : MonoBehaviour
         float radius;
         meshRenderer.enabled = true;
         circleCollider.enabled = true;
-        
+
         try
         {
             radius = character.GetComponent<PlayerController>().attackRange;
@@ -71,7 +71,6 @@ public class AttackRangeCircle : MonoBehaviour
 
         DrawFilledCircle(radius);
         UpdateCollider(radius);
-
         active = true;
     }
 
@@ -105,7 +104,7 @@ public class AttackRangeCircle : MonoBehaviour
         //Enemy is selected and others enter AttackRange
         if (battleController.enemySelected != null && battleController.characterSelected == null)
         {
-            if (other.CompareTag("enemy"))
+            if (other.CompareTag("enemy") && other.gameObject != battleController.enemySelected)
             {
                 other.GetComponent<EnemyController>().highlightAssistable();
                 alliesInRange.Add(other.gameObject);
@@ -123,6 +122,7 @@ public class AttackRangeCircle : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
+
         //Character is selected and others leave the AttackRange
         if (battleController.characterSelected != null)
         {
@@ -135,7 +135,7 @@ public class AttackRangeCircle : MonoBehaviour
             {
                 if (battleController.disabledCharacters.Contains(other.gameObject))
                 {
-                    other.GetComponent<PlayerController>().graySprite();
+                    other.GetComponent<PlayerController>().graySpriteAndFreeze();
                 }
                 else
                 {
@@ -152,13 +152,25 @@ public class AttackRangeCircle : MonoBehaviour
             {
                 if (battleController.disabledCharacters.Contains(other.gameObject))
                 {
-                    other.GetComponent<PlayerController>().graySprite();
+                    other.GetComponent<PlayerController>().graySpriteAndFreeze();
                 }
                 else
                 {
                     other.GetComponent<PlayerController>().unhighlight();
                 }
                 enemiesInRange.RemoveAll(item => item == other.gameObject);
+            }
+            else if (other.CompareTag("enemy"))
+            {
+                if (battleController.disabledEnemies.Contains(other.gameObject))
+                {
+                    other.GetComponent<EnemyController>().graySpriteAndFreeze();
+                }
+                else
+                {
+                    other.GetComponent<EnemyController>().unhighlight();
+                }
+                enemiesInRange.RemoveAll(item => item == other.gameObject);  
             }
         }
     }

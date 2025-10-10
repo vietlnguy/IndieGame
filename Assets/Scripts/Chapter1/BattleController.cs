@@ -8,8 +8,10 @@ public class BattleController : MonoBehaviour
 
     public GameObject characterSelected;
     public GameObject enemySelected;
+    public GameObject enemies;
+    public GameObject characters;
     public List<GameObject> disabledCharacters;
-    private List<GameObject> disabledEnemies;
+    public List<GameObject> disabledEnemies;
     private int partySize;
     public bool introFinished = true;
     public GameObject fightScreen;
@@ -18,8 +20,6 @@ public class BattleController : MonoBehaviour
     public AudioSource enemyPhaseAudio;
     public bool liamDefeated = false;
     public bool astridDefeated = false;
-    public GameObject enemies;
-    public GameObject characters;
     private int enemiesRemaining = 4;
     public GameObject pauseMenu;
     public GameObject saveMenu;
@@ -29,6 +29,7 @@ public class BattleController : MonoBehaviour
     public Camera worldCamera;
     public TilemapPathfinder pathfinder;
     public MoveRangeCircle moveRangeCircleScript;
+    public AttackRangeCircle attackRangeCircleScript;
     public bool isEnemyTurn = false;
     public bool characterMenuActive = false;
     void Awake()
@@ -70,95 +71,79 @@ public class BattleController : MonoBehaviour
                     characterMenuScript.disableCharacterMenu();
                     characterSelected.GetComponent<PlayerController>().movementEnabled = true;
                 }
+                else if (attackPreviewScript.active)
+                {
+                    StartCoroutine(attackPreviewScript.disablePreview());
+                }
                 else if (characterSelected)
                 {
                     characterSelected.GetComponent<PlayerController>().deselectCharacter();
                 }
+                else if (enemySelected)
+                {
+                    enemySelected.GetComponent<EnemyController>().deselectEnemy();
+                }
             }
+
+            HandleGameLoop();
         }
 
     }
     private void HandleGameLoop()
     {
+        //Check victory/defeat conditions
 
-        //Win condition
-        if (enemiesRemaining == 0)
+
+        //All characters are disabled and its not the enemies turn yet. Should start enemy turn
+        if (disabledCharacters.Count == partySize && !isEnemyTurn)
         {
-            //start outro
-        }
-
-        //Lose condition
-        else if (liamDefeated || astridDefeated)
-        {
-            //death dialogue
-            //retry menu
-            //restart fight
-        }
-
-        //Start enemy phase
-        else if (disabledCharacters.Count == partySize)
-        {
-            foreach (var obj in disabledCharacters)
-            {
-                characterSelected = obj;
-                characterSelected.GetComponent<Animator>().SetBool("isFrozen", false);
-                characterSelected.GetComponent<Animator>().SetBool("isWalking", false);
-
-            }
+            isEnemyTurn = true;
             characterSelected = null;
-            disabledCharacters.Clear();
-
-            StartCoroutine(phaseTransition("Enemy"));
             StartCoroutine(enemyTurn());
         }
 
         //Start player phase
-        else if (disabledEnemies.Count == enemiesRemaining)
-        {
-            disabledEnemies.Clear();
-            StartCoroutine(phaseTransition("Player"));
-        }
-    }
-    //public void endCharacterTurn()
-    //{
-    //    moveRangeCircleScript.disableMoveRange();
-
-    //    characterSelected.GetComponent<PlayerController>().graySpriteAndFreeze();
-    //    disableEndTurnUI();
-    //    characterSelected.GetComponent<Animator>().SetBool("isFrozen", true);
-    //    disabledCharacters.Add(characterSelected);
-    //    characterSelected = null;
-    //}
-    private IEnumerator phaseTransition(string s)
-    {
-        if (s == "Player")
+        else if (disabledEnemies.Count == enemiesRemaining && isEnemyTurn)
         {
             isEnemyTurn = false;
-            playerPhaseAudio.Play();
-            fightScreenText.text = "Player Phase";
-            fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
-            yield return new WaitForSeconds(2.5f);
-            fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
+            foreach (Transform enemy in enemies.transform)
+            {
+                enemy.gameObject.GetComponent<EnemyController>().unhighlight();
+            }
+            foreach (Transform character in characters.transform)
+            {
+                character.gameObject.GetComponent<PlayerController>().unhighlight();
+            }
+            disabledEnemies.Clear();
+            disabledCharacters.Clear();
+            StartCoroutine(playerTurn());
         }
-        else
-        {
-            isEnemyTurn = true;
-            enemyPhaseAudio.Play();
-            fightScreenText.text = "Enemy Phase";
-            fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
-            yield return new WaitForSeconds(2.5f);
-            fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
-        }
-        yield return null;
+    }
+    private IEnumerator playerTurn()
+    {
+        playerPhaseAudio.Play();
+        fightScreenText.text = "Player Phase";
+        fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
+        yield return new WaitForSeconds(2.5f);
+        fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
+        
     }
     private IEnumerator enemyTurn()
     {
+        enemyPhaseAudio.Play();
+        fightScreenText.text = "Enemy Phase";
+        fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
+        yield return new WaitForSeconds(2.5f);
+        fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
+
         yield return new WaitForSeconds(2f);
-        
+
         foreach (Transform enemy in enemies.transform)
         {
             pathfinder.calculateOccupiedTiles(characters, enemies);
-            
+
+            enemy.GetComponent<EnemyController>().selectEnemy();
+
             yield return new WaitForSeconds(2f);
 
             if (enemy.gameObject.GetComponent<EnemyController>().roams)
@@ -168,9 +153,10 @@ public class BattleController : MonoBehaviour
             }
 
             disabledEnemies.Add(enemy.gameObject);
+            enemy.gameObject.GetComponent<EnemyController>().graySpriteAndFreeze();
         }
 
-
+        attackRangeCircleScript.disableAttackRange();
         moveRangeCircleScript.disableMoveRange();
 
         yield return null;

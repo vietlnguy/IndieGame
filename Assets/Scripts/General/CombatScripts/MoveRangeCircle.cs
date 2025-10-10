@@ -79,7 +79,15 @@ public class MoveRangeCircle : MonoBehaviour
     {
         meshRenderer.enabled = true;
         transform.position = character.transform.position;
-        DrawFilledCircle(character.GetComponent<PlayerController>().moveRange);
+        try
+        {
+            DrawFilledCircle(character.GetComponent<PlayerController>().moveRange);
+        }
+        catch
+        {
+            DrawFilledCircle(character.GetComponent<EnemyController>().moveRange);
+        }
+
     }
     public void disableMoveRange()
     {

@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public CharacterToolTip characterToolTipScript;
     public MoveRangeCircle moveRangeCircleScript;
     public AttackRangeCircle attackRangeCircleScript;
+    public AttackPreview attackPreviewScript;
     public CharacterMenu characterMenuScript;
     public int offset = 0;
     public int hp;
@@ -36,6 +37,8 @@ public class PlayerController : MonoBehaviour
     public List<Attack> knownAttacks;
     private Vector3 originalPosition;
     private bool isHovered = false;
+    public AudioSource selectAudio;
+    public AudioSource deselectAudio;
 
     void Awake()
     {
@@ -48,7 +51,10 @@ public class PlayerController : MonoBehaviour
         saveManager = FindFirstObjectByType<SaveManager>();
         moveRangeCircleScript = GameObject.Find("MoveRangeCircle").GetComponent<MoveRangeCircle>();
         attackRangeCircleScript = GameObject.Find("AttackRangeCircle").GetComponent<AttackRangeCircle>();
+        attackPreviewScript = GameObject.Find("AttackPreview").GetComponent<AttackPreview>();
         characterMenuScript = GameObject.Find("CharacterMenu").GetComponent<CharacterMenu>();
+        selectAudio = GameObject.Find("SelectBeep").GetComponent<AudioSource>();
+        deselectAudio = GameObject.Find("AttackPreviewWoosh").GetComponent<AudioSource>();
         populateCharacterData();
     }
     void Start()
@@ -102,7 +108,7 @@ public class PlayerController : MonoBehaviour
                 spriteRenderer.color = Color.yellow;
             }
 
-            if (!characterMenuScript.active)
+            if (!characterMenuScript.active && !attackPreviewScript.active)
             {
                 characterToolTipScript.enableCharacterToolTip(gameObject);
             }
@@ -135,6 +141,7 @@ public class PlayerController : MonoBehaviour
                 characterMenuScript.enableCharacterMenu(gameObject);
                 movementEnabled = false;
                 characterToolTipScript.disableCharacterToolTip();
+                selectAudio.Play();
             }
 
             //different character already selected and this character is clicked
@@ -192,10 +199,7 @@ public class PlayerController : MonoBehaviour
     public void unhighlight()
     {
         spriteRenderer.color = Color.white;
-    }
-    public void graySprite()
-    {
-        spriteRenderer.color = Color.gray;
+        animator.SetBool("isFrozen", false);
     }
     public void highlightAttackable()
     {
@@ -263,6 +267,7 @@ public class PlayerController : MonoBehaviour
     public void deselectCharacter()
     {
         //reset position and freeze
+        deselectAudio.Play();
         transform.position = originalPosition;
         rigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
         moveRangeCircleScript.disableMoveRange();
@@ -281,5 +286,16 @@ public class PlayerController : MonoBehaviour
         movementEnabled = true;
         rigidBody.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
         rigidBody.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
+    }
+    public void endTurn()
+    {
+        moveRangeCircleScript.disableMoveRange();
+        attackRangeCircleScript.disableAttackRange();
+        graySpriteAndFreeze();
+        characterMenuScript.disableCharacterMenu();
+        battleController.disabledCharacters.Add(gameObject);
+        battleController.characterSelected = null;
+        originalPosition = transform.position;
+        movementEnabled = false;
     }
 }
