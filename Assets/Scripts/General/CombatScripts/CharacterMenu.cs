@@ -10,6 +10,7 @@ public class CharacterMenu : MonoBehaviour
     public bool active = false;
     private int index = 0;
     public BattleController battleController;
+    public InventoryMenu inventoryMenuScript;
     public GameObject selector;
     public AudioSource selectorAudio;
     public AudioSource deselectAudio;
@@ -19,12 +20,17 @@ public class CharacterMenu : MonoBehaviour
         worldCamera = Camera.main;
         characterMenuParentCanvasRect = GetComponent<RectTransform>();
     }
-    void Update()
+    void LateUpdate()
     {
         if (active)
         {
+            if (Input.GetMouseButtonDown(1))
+            {
+                disableCharacterMenu();
+                battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = true;
+            }
             //Move the selector
-            if (Input.GetKeyDown(KeyCode.W))
+            else if (Input.GetKeyDown(KeyCode.W))
             {
                 if (index != 0)
                 {
@@ -32,7 +38,7 @@ public class CharacterMenu : MonoBehaviour
                     moveSelectorDown();
                 }
             }
-            if (Input.GetKeyDown(KeyCode.S))
+            else if (Input.GetKeyDown(KeyCode.S))
             {
                 if (index != 2)
                 {
@@ -42,7 +48,7 @@ public class CharacterMenu : MonoBehaviour
             }
 
             //Make selection
-            if (Input.GetKeyDown(KeyCode.Space))
+            else if (Input.GetKeyDown(KeyCode.Space))
             {
                 //Open info UI
                 if (index == 0)
@@ -53,7 +59,8 @@ public class CharacterMenu : MonoBehaviour
                 //Open ineventory UI
                 else if (index == 1)
                 {
-
+                    inventoryMenuScript.enableInventoryGiverMenu();
+                    disableCharacterMenu();
                 }
 
                 //End turn

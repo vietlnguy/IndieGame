@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public AttackRangeCircle attackRangeCircleScript;
     public AttackPreview attackPreviewScript;
     public CharacterMenu characterMenuScript;
+    public CharacterAssistMenu characterAssistMenuScript;
+    public InventoryMenu inventoryMenuScript;
     public int offset = 0;
     public int hp;
     public int maxHp;
@@ -35,6 +37,7 @@ public class PlayerController : MonoBehaviour
     public Equipment armorEquiped;
     public Equipment accessoryEquiped;
     public List<Attack> knownAttacks;
+    public List<Item> inventory;
     private Vector3 originalPosition;
     private bool isHovered = false;
     public AudioSource selectAudio;
@@ -53,6 +56,8 @@ public class PlayerController : MonoBehaviour
         attackRangeCircleScript = GameObject.Find("AttackRangeCircle").GetComponent<AttackRangeCircle>();
         attackPreviewScript = GameObject.Find("AttackPreview").GetComponent<AttackPreview>();
         characterMenuScript = GameObject.Find("CharacterMenu").GetComponent<CharacterMenu>();
+        characterAssistMenuScript = GameObject.Find("CharacterAssistMenu").GetComponent<CharacterAssistMenu>();
+        inventoryMenuScript = GameObject.Find("InventoryMenu").GetComponent<InventoryMenu>();
         selectAudio = GameObject.Find("SelectBeep").GetComponent<AudioSource>();
         deselectAudio = GameObject.Find("AttackPreviewWoosh").GetComponent<AudioSource>();
         populateCharacterData();
@@ -92,6 +97,7 @@ public class PlayerController : MonoBehaviour
         {
             handleMovement();
         }
+
     }
     void LateUpdate()
     {
@@ -127,7 +133,7 @@ public class PlayerController : MonoBehaviour
     void OnClick()
     {
         //Intro is finished, not paused, not attack preview, not characterMenu, and not enemies turn
-        if (battleController.introFinished && !battleController.isPaused && !battleController.attackPreviewScript.active && !characterMenuScript.active && !battleController.isEnemyTurn)
+        if (battleController.introFinished && !battleController.isPaused && !battleController.isEnemyTurn && !attackPreviewScript.active && !characterMenuScript.active && !inventoryMenuScript.active && !characterAssistMenuScript.active && !battleController.disabledCharacters.Contains(gameObject))
         {
             //no character selected yet. Should select this character.
             if (battleController.characterSelected == null)
@@ -136,7 +142,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //this character already selected and this character is clicked again. Should bring up inventory and end turn menu
-            else if (battleController.characterSelected == gameObject)
+            else if (battleController.characterSelected == gameObject && !characterAssistMenuScript.active)
             {
                 characterMenuScript.enableCharacterMenu(gameObject);
                 movementEnabled = false;
@@ -151,6 +157,10 @@ public class PlayerController : MonoBehaviour
                 if (attackRangeCircleScript.alliesInRange.Contains(gameObject))
                 {
                     //TODO: implement assistable UI
+                    characterAssistMenuScript.enableCharacterAssistMenu(gameObject);
+                    battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = false;
+                    characterToolTipScript.disableCharacterToolTip();
+                    selectAudio.Play();
                 }
 
                 //this character is not in assistable range. Should deselect other character and select this character
@@ -191,6 +201,7 @@ public class PlayerController : MonoBehaviour
         owned = hero.owned;
         title = hero.characterName;
         knownAttacks = hero.knownAttacks;
+        inventory = hero.inventory;
     }
     public void highlightAssistable()
     {

@@ -73,10 +73,14 @@ public class AttackPreview : MonoBehaviour
     void Start()
     {
     }
-    void Update()
+    void LateUpdate()
     {
         if (active)
         {
+            if (Input.GetMouseButtonDown(1))
+            {
+                StartCoroutine(disablePreview());
+            }
             handleAttackSelection();
         }
 
@@ -255,6 +259,7 @@ public class AttackPreview : MonoBehaviour
     }
     public IEnumerator disablePreview()
     {
+        attackWooshAudio.Play();
         //Destroy attack preview prefabs
         foreach (Transform child in attackPreviewSprites.transform)
         {

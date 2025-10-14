@@ -18,20 +18,19 @@ public class BattleController : MonoBehaviour
     public TextMeshProUGUI fightScreenText;
     public AudioSource playerPhaseAudio;
     public AudioSource enemyPhaseAudio;
-    public bool liamDefeated = false;
-    public bool astridDefeated = false;
     private int enemiesRemaining = 4;
     public GameObject pauseMenu;
     public GameObject saveMenu;
     public bool isPaused = false;
     public AttackPreview attackPreviewScript;
     public CharacterMenu characterMenuScript;
+    public CharacterAssistMenu characterAssistMenuScript;
     public Camera worldCamera;
     public TilemapPathfinder pathfinder;
     public MoveRangeCircle moveRangeCircleScript;
     public AttackRangeCircle attackRangeCircleScript;
+    public InventoryMenu inventoryMenuScript;
     public bool isEnemyTurn = false;
-    public bool characterMenuActive = false;
     void Awake()
     {
         disabledCharacters = new List<GameObject>();
@@ -64,27 +63,20 @@ public class BattleController : MonoBehaviour
 
         if (introFinished && !isPaused)
         {
-            if (Input.GetMouseButtonDown(1))
+            if (!characterAssistMenuScript.active && !characterMenuScript.active && !attackPreviewScript.active && !inventoryMenuScript.active)
             {
-                if (characterMenuScript.active)
+                if (Input.GetMouseButtonDown(1))
                 {
-                    characterMenuScript.disableCharacterMenu();
-                    characterSelected.GetComponent<PlayerController>().movementEnabled = true;
-                }
-                else if (attackPreviewScript.active)
-                {
-                    StartCoroutine(attackPreviewScript.disablePreview());
-                }
-                else if (characterSelected)
-                {
-                    characterSelected.GetComponent<PlayerController>().deselectCharacter();
-                }
-                else if (enemySelected)
-                {
-                    enemySelected.GetComponent<EnemyController>().deselectEnemy();
+                    if (characterSelected)
+                    {
+                        characterSelected.GetComponent<PlayerController>().deselectCharacter();
+                    }
+                    else if (enemySelected)
+                    {
+                        enemySelected.GetComponent<EnemyController>().deselectEnemy();
+                    }
                 }
             }
-
             HandleGameLoop();
         }
 

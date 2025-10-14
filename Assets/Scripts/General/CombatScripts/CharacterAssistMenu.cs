@@ -1,0 +1,130 @@
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+
+public class CharacterAssistMenu : MonoBehaviour
+{
+    public Camera worldCamera;
+    private RectTransform characterMenuParentCanvasRect;
+    public GameObject characterMenu;
+    public bool active = false;
+    private int index = 0;
+    public BattleController battleController;
+    public GameObject selector;
+    public AudioSource selectorAudio;
+    public AudioSource deselectAudio;
+    public TextMeshProUGUI talkText;
+    public TextMeshProUGUI assistText;
+
+    void Awake()
+    {
+        worldCamera = Camera.main;
+        characterMenuParentCanvasRect = GetComponent<RectTransform>();
+    }
+    void LateUpdate()
+    {
+        if (active)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                disableCharacterAssistMenu();
+                battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = true;
+            }
+            //Move the selector
+            else if (Input.GetKeyDown(KeyCode.W))
+            {
+                if (index != 0)
+                {
+                    index--;
+                    moveSelectorDown();
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.S))
+            {
+                if (index != 2)
+                {
+                    index++;
+                    moveSelectorUp();
+                }
+            }
+
+            //Make selection
+            else if (Input.GetKeyDown(KeyCode.Space))
+            {
+                //Open info UI
+                if (index == 0)
+                {
+
+                }
+
+                //Open ineventory UI
+                else if (index == 1)
+                {
+                    if (assistText.color == Color.white)
+                    {
+                        Debug.Log("Open assist preview");
+                    }
+                }
+
+                //End turn
+                else if (index == 2)
+                {
+
+                }
+            }
+        }
+    }
+    public void enableCharacterAssistMenu(GameObject character)
+    {
+        //Set position of UI panel
+        characterMenu.SetActive(true);
+        active = true;
+        Vector3 screenPos = RectTransformUtility.WorldToScreenPoint(worldCamera, character.transform.position);
+        Vector2 localPos;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(characterMenuParentCanvasRect, screenPos, worldCamera, out localPos);
+        characterMenu.GetComponent<RectTransform>().localPosition = localPos + new Vector2(-20f, 235f);
+
+        //Check if any of character attacks are support moves
+        bool supportingMoves = false;
+        foreach (Attack attack in battleController.characterSelected.GetComponent<PlayerController>().knownAttacks)
+        {
+            if (attack.isSupportingMove)
+            {
+                supportingMoves = true;
+                break;
+            }
+        }
+        if (supportingMoves) { assistText.color = Color.white; }
+        else { assistText.color = new Color(0f, 0f, 0f, .45f); }
+
+        //Check if character can be talked to
+        //TODO: what does this even mean
+
+
+
+    }
+    public void disableCharacterAssistMenu()
+    {
+        deselectAudio.Play();
+        characterMenu.SetActive(false);
+        active = false;
+    }
+    private void moveSelectorDown()
+    {
+        selectorAudio.Play();
+        RectTransform rt = selector.GetComponent<RectTransform>();
+        Vector2 anchoredPos = rt.anchoredPosition;
+        anchoredPos.y += 27f;
+        rt.anchoredPosition = anchoredPos;
+    }
+    private void moveSelectorUp()
+    {
+        selectorAudio.Play();
+        RectTransform rt = selector.GetComponent<RectTransform>();
+        Vector2 anchoredPos = rt.anchoredPosition;
+        anchoredPos.y -= 27f;
+        rt.anchoredPosition = anchoredPos;
+    }
+    
+}

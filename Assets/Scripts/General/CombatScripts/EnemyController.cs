@@ -11,6 +11,8 @@ public class EnemyController : MonoBehaviour
     public AttackRangeCircle attackRangeCircleScript;
     public AttackPreview attackPreviewScript;
     public CharacterMenu characterMenuScript;
+    public CharacterAssistMenu characterAssistMenuScript;
+    public InventoryMenu inventoryMenuScript;
     private Rigidbody2D rigidBody;
     private bool isHovered = false;
     public int hp;
@@ -36,16 +38,17 @@ public class EnemyController : MonoBehaviour
         moveRangeCircleScript = GameObject.Find("MoveRangeCircle").GetComponent<MoveRangeCircle>();
         attackRangeCircleScript = GameObject.Find("AttackRangeCircle").GetComponent<AttackRangeCircle>();
         characterMenuScript = GameObject.Find("CharacterMenu").GetComponent<CharacterMenu>();
+        characterAssistMenuScript = GameObject.Find("CharacterAssistMenu").GetComponent<CharacterAssistMenu>();
         attackPreviewScript = GameObject.Find("AttackPreview").GetComponent<AttackPreview>();
+        inventoryMenuScript = GameObject.Find("InventoryMenu").GetComponent<InventoryMenu>();
         deselectAudio = GameObject.Find("AttackPreviewWoosh").GetComponent<AudioSource>();
     }
-
     void Start()
     {
         //Crate moveset
         if (title == "Soldier")
         {
-            attackMove = new Attack("Slash", "physical", 10, 100, 0, 0, "Slash the enemy with sword");
+            attackMove = new Attack("Slash", "physical", 10, 100, 0, 0, false, "Slash the enemy with sword");
         }
     }
     void Update()
@@ -98,7 +101,7 @@ public class EnemyController : MonoBehaviour
     }
     public void OnClick()
     {
-        if (battleController.introFinished && !battleController.isPaused && !battleController.attackPreviewScript.active && !characterMenuScript.active && !battleController.isEnemyTurn)
+        if (battleController.introFinished && !battleController.isPaused && !battleController.isEnemyTurn && !attackPreviewScript.active && !characterMenuScript.active && !characterAssistMenuScript.active && !inventoryMenuScript.active)
         {
             //no character or enemy selected
             if (battleController.characterSelected == null && battleController.enemySelected == null)
