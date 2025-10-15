@@ -90,7 +90,7 @@ public class InventoryMenu : MonoBehaviour
             {
                 try
                 {
-                    if (battleController.characterSelected.GetComponent<PlayerController>().inventory[itemIndex] == null);
+                    if (battleController.characterSelected.GetComponent<PlayerController>().inventory[itemIndex] == null) ;
                     confirmBox.SetActive(true);
                     confirmBoxActive = true;
                 }
@@ -105,7 +105,7 @@ public class InventoryMenu : MonoBehaviour
             {
                 if (confirmBoxIndex == 0)
                 {
-                    //TODO: use item
+                    useItem();
                 }
                 else if (confirmBoxIndex == 1)
                 {
@@ -235,5 +235,72 @@ public class InventoryMenu : MonoBehaviour
         RectTransform rect = confirmBoxSelector.GetComponent<RectTransform>();
         rect.anchoredPosition = new Vector2(.89f, 15f);
         confirmBoxIndex = 0;
+    }
+    private void useItem()
+    {
+        Item item = battleController.characterSelected.GetComponent<PlayerController>().inventory[itemIndex];
+
+        //Restore HP or Mana
+        if (item.hpOrMana == "hp")
+        {
+            if (battleController.characterSelected.GetComponent<PlayerController>().hp + item.restorationAmount > battleController.characterSelected.GetComponent<PlayerController>().maxHp)
+            {
+                battleController.characterSelected.GetComponent<PlayerController>().hp = battleController.characterSelected.GetComponent<PlayerController>().maxHp;
+            }
+            else
+            {
+                battleController.characterSelected.GetComponent<PlayerController>().hp += item.restorationAmount;
+            }
+        }
+        else if (item.hpOrMana == "mana")
+        {
+            if (battleController.characterSelected.GetComponent<PlayerController>().mana + item.restorationAmount > battleController.characterSelected.GetComponent<PlayerController>().maxMana)
+            {
+                battleController.characterSelected.GetComponent<PlayerController>().mana = battleController.characterSelected.GetComponent<PlayerController>().maxMana;
+            }
+            else
+            {
+                battleController.characterSelected.GetComponent<PlayerController>().mana += item.restorationAmount;
+            }
+        }
+
+        //Update health bars and values
+        previewPlayerHp.text = battleController.characterSelected.GetComponent<PlayerController>().hp.ToString();
+        previewPlayerMaxHp.text = battleController.characterSelected.GetComponent<PlayerController>().maxHp.ToString();
+        previewPlayerMana.text = battleController.characterSelected.GetComponent<PlayerController>().mana.ToString();
+        previewPlayerMaxMana.text = battleController.characterSelected.GetComponent<PlayerController>().maxMana.ToString();
+        previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta = originalHpManaBarSize;
+        previewPlayerManaBar.GetComponent<RectTransform>().sizeDelta = originalHpManaBarSize;
+        previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().hp / battleController.characterSelected.GetComponent<PlayerController>().maxHp, 1f);
+        previewPlayerManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().mana / battleController.characterSelected.GetComponent<PlayerController>().maxMana, 1f);
+
+        //Cure status ailments
+        if (item.curesBlind)
+        {
+            battleController.characterSelected.GetComponent<PlayerController>().statuses.Remove("Blind");
+        }
+        if (item.curesBleed)
+        {
+            battleController.characterSelected.GetComponent<PlayerController>().statuses.Remove("Bleed");
+        }
+        if (item.curesRooted)
+        {
+            battleController.characterSelected.GetComponent<PlayerController>().statuses.Remove("Rooted");
+        }
+
+        //TODO: Update UI to remove status ailment icons
+
+        //Decrement item quantity
+        battleController.characterSelected.GetComponent<PlayerController>().inventory[itemIndex].currentQuantity--;
+        if (battleController.characterSelected.GetComponent<PlayerController>().inventory[itemIndex].currentQuantity == 0)
+        {
+            battleController.characterSelected.GetComponent<PlayerController>().inventory.RemoveAt(itemIndex);
+        }
+
+        //End turn
+        disableConfirmBox();
+        disableInventoryMenu();
+        battleController.characterSelected.GetComponent<PlayerController>().endTurn();
+
     }
 }

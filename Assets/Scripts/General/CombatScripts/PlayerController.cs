@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     public int relationship;
     public bool owned;
     public string title;
+    public List<string> statuses;
     public Equipment weaponEquiped;
     public Equipment armorEquiped;
     public Equipment accessoryEquiped;
