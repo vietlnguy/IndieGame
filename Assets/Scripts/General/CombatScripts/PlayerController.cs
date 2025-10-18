@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour
     void OnClick()
     {
         //Intro is finished, not paused, not attack preview, not characterMenu, and not enemies turn
-        if (battleController.introFinished && !battleController.isPaused && !battleController.isEnemyTurn && !attackPreviewScript.active && !characterMenuScript.active && !inventoryMenuScript.active && !characterAssistMenuScript.active && !battleController.disabledCharacters.Contains(gameObject))
+        if (battleController.introFinished && !battleController.isPaused && !battleController.isEnemyTurn && !attackPreviewScript.active && !characterMenuScript.active && !inventoryMenuScript.active && !characterAssistMenuScript.active)
         {
             //no character selected yet. Should select this character.
             if (battleController.characterSelected == null)
@@ -157,9 +157,9 @@ public class PlayerController : MonoBehaviour
                 //if this character is in assistable range. Should bring up assistable UI
                 if (attackRangeCircleScript.alliesInRange.Contains(gameObject))
                 {
-                    //TODO: implement assistable UI
                     characterAssistMenuScript.enableCharacterAssistMenu(gameObject);
                     battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = false;
+                    battleController.assistableCharacterSelected = gameObject;
                     characterToolTipScript.disableCharacterToolTip();
                     selectAudio.Play();
                 }
@@ -286,7 +286,14 @@ public class PlayerController : MonoBehaviour
         attackRangeCircleScript.disableAttackRange();
         movementEnabled = false;
         battleController.characterSelected = null;
-        unhighlight();
+        if (battleController.disabledCharacters.Contains(gameObject))
+        {
+            graySpriteAndFreeze();
+        }
+        else
+        {
+            unhighlight();
+        }
 
     }
     public void selectCharacter()
@@ -295,9 +302,12 @@ public class PlayerController : MonoBehaviour
         battleController.characterSelected = gameObject;
         moveRangeCircleScript.enableMoveRange(gameObject);
         attackRangeCircleScript.enableAttackRange(gameObject);
-        movementEnabled = true;
-        rigidBody.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
-        rigidBody.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
+        if (!battleController.disabledCharacters.Contains(gameObject))
+        {
+            movementEnabled = true;
+            rigidBody.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
+            rigidBody.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
+        }
     }
     public void endTurn()
     {

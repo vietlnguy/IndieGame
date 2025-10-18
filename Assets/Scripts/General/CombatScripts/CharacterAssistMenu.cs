@@ -11,6 +11,7 @@ public class CharacterAssistMenu : MonoBehaviour
     public bool active = false;
     private int index = 0;
     public BattleController battleController;
+    public InventoryMenu inventoryMenuScript;
     public GameObject selector;
     public AudioSource selectorAudio;
     public AudioSource deselectAudio;
@@ -30,6 +31,7 @@ public class CharacterAssistMenu : MonoBehaviour
             {
                 disableCharacterAssistMenu();
                 battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = true;
+                battleController.assistableCharacterSelected = null;
             }
             //Move the selector
             else if (Input.GetKeyDown(KeyCode.W))
@@ -52,13 +54,13 @@ public class CharacterAssistMenu : MonoBehaviour
             //Make selection
             else if (Input.GetKeyDown(KeyCode.Space))
             {
-                //Open info UI
+                //TODO: Handle Talk option
                 if (index == 0)
                 {
 
                 }
 
-                //Open ineventory UI
+                //TODO: Handle assist preview
                 else if (index == 1)
                 {
                     if (assistText.color == Color.white)
@@ -67,10 +69,11 @@ public class CharacterAssistMenu : MonoBehaviour
                     }
                 }
 
-                //End turn
+                //Open trading menu
                 else if (index == 2)
                 {
-
+                    inventoryMenuScript.enableTradingMenu();
+                    disableCharacterAssistMenu();
                 }
             }
         }

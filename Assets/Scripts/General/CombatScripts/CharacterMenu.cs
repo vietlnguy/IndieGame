@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 public class CharacterMenu : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class CharacterMenu : MonoBehaviour
     public GameObject selector;
     public AudioSource selectorAudio;
     public AudioSource deselectAudio;
+    public TextMeshProUGUI endTurnText;
 
     void Awake()
     {
@@ -27,7 +29,10 @@ public class CharacterMenu : MonoBehaviour
             if (Input.GetMouseButtonDown(1))
             {
                 disableCharacterMenu();
-                battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = true;
+                if (!battleController.disabledCharacters.Contains(battleController.characterSelected))
+                {
+                    battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = true;
+                }
             }
             //Move the selector
             else if (Input.GetKeyDown(KeyCode.W))
@@ -59,25 +64,37 @@ public class CharacterMenu : MonoBehaviour
                 //Open ineventory UI
                 else if (index == 1)
                 {
-                    inventoryMenuScript.enableInventoryGiverMenu();
+                    inventoryMenuScript.enableInventoryGiverMenu(battleController.characterSelected);
                     disableCharacterMenu();
                 }
 
                 //End turn
                 else if (index == 2)
                 {
-                    battleController.characterSelected.GetComponent<PlayerController>().endTurn();
-                    selectorAudio.Play();
+                    if (!battleController.disabledCharacters.Contains(battleController.characterSelected))
+                    {
+                        battleController.characterSelected.GetComponent<PlayerController>().endTurn();
+                        selectorAudio.Play();
+                    }
                 }
             }
         }
     }
     public void enableCharacterMenu(GameObject character)
     {
+        //Gray out EndTurn if character already ended turn
+        if (battleController.disabledCharacters.Contains(battleController.characterSelected))
+        {
+            endTurnText.color = new Color(0f, 0f, 0f, .3f);
+        }
+        else
+        {
+            endTurnText.color = new Color(1f, 1f, 1f, 1f); 
+        }
+
         characterMenu.SetActive(true);
         active = true;
         Vector3 screenPos = RectTransformUtility.WorldToScreenPoint(worldCamera, character.transform.position);
-
         Vector2 localPos;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(characterMenuParentCanvasRect, screenPos, worldCamera, out localPos);
 

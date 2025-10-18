@@ -7,8 +7,11 @@ public class InventoryMenu : MonoBehaviour
 {
 
     public GameObject inventoryGiverMenu;
+    public GameObject inventoryRecipientMenu;
     public bool active = false;
-    private int index = 0;
+    public int index = 0;
+    private int leftRightIndex = 0;
+    private int confirmBoxIndex = 0;
     public BattleController battleController;
     public CharacterMenu characterMenuScript;
     public GameObject selector;
@@ -16,19 +19,32 @@ public class InventoryMenu : MonoBehaviour
     public AudioSource selectorAudio;
     public AudioSource deselectAudio;
     public GameObject items;
+    public GameObject recipientItems;
     public TextMeshProUGUI previewPlayerHp;
     public TextMeshProUGUI previewPlayerMaxHp;
     public TextMeshProUGUI previewPlayerMana;
     public TextMeshProUGUI previewPlayerMaxMana;
     public GameObject previewPlayerHpBar;
     public GameObject previewPlayerManaBar;
+    public TextMeshProUGUI recipientPreviewPlayerHp;
+    public TextMeshProUGUI recipientPreviewPlayerMaxHp;
+    public TextMeshProUGUI recipientPreviewPlayerMana;
+    public TextMeshProUGUI recipientPreviewPlayerMaxMana;
+    public GameObject recipientPreviewPlayerHpBar;
+    public GameObject recipientPreviewPlayerManaBar;
     private Vector2 originalHpManaBarSize;
     public TextMeshProUGUI characterTitle;
+    public TextMeshProUGUI recipientCharacterTitle;
     public TextMeshProUGUI itemDescriptionText;
-    private int itemIndex = 0;
-    public int confirmBoxIndex = 0;
+    public TextMeshProUGUI recipientItemDescriptionText;
     public GameObject confirmBox;
     private bool confirmBoxActive = false;
+    private bool coroutineRunning = false;
+    public GameObject arrows;
+    public GameObject confirmButton;
+    private bool trading = false;
+    private Item itemToGive;
+    private bool tradingItemSelected = false;
 
     void Awake()
     {
@@ -51,110 +67,204 @@ public class InventoryMenu : MonoBehaviour
                 }
             }
 
-            //Move the selector
-            else if (Input.GetKeyDown(KeyCode.W) && !confirmBoxActive)
+            if (!trading)
             {
-                if (index != 0)
+                //Move selector
+                if (Input.GetKeyDown(KeyCode.W) && !confirmBoxActive)
                 {
-                    index--;
-                    moveSelectorUp();
+                    if (index != 0)
+                    {
+                        index--;
+                        moveSelectorUp();
+                    }
+                }
+                else if (Input.GetKeyDown(KeyCode.S) && !confirmBoxActive)
+                {
+                    if (index != 4)
+                    {
+                        index++;
+                        moveSelectorDown();
+                    }
+                }
+
+                //Move confirm box selector
+                else if (Input.GetKeyDown(KeyCode.W) && confirmBoxActive && !coroutineRunning)
+                {
+                    if (confirmBoxIndex != 0)
+                    {
+                        moveConfirmBoxSelectorUp();
+                    }
+                }
+                else if (Input.GetKeyDown(KeyCode.S) && confirmBoxActive && !coroutineRunning)
+                {
+                    if (confirmBoxIndex != 1)
+                    {
+                        moveConfirmBoxSelectorDown();
+                    }
+                }
+
+                //Make item selection
+                else if (Input.GetKeyDown(KeyCode.Space) && !confirmBoxActive && !battleController.disabledCharacters.Contains(battleController.characterSelected))
+                {
+                    try
+                    {
+                        if (battleController.characterSelected.GetComponent<PlayerController>().inventory[index] == null) ;
+                        confirmBox.SetActive(true);
+                        confirmBoxActive = true;
+                    }
+                    catch
+                    {
+                        //Not a valid item selection
+                    }
+                }
+
+                //Confirm item use
+                else if (Input.GetKeyDown(KeyCode.Space) && confirmBoxActive)
+                {
+                    if (confirmBoxIndex == 0)
+                    {
+                        StartCoroutine(useItem());
+                    }
+                    else if (confirmBoxIndex == 1)
+                    {
+                        resetConfirmBoxSelector();
+                        confirmBox.SetActive(false);
+                        confirmBoxActive = false;
+                    }
                 }
             }
-            else if (Input.GetKeyDown(KeyCode.S) && !confirmBoxActive)
+            else if (trading)
             {
-                if (index != 4)
+                //Move selector
+                if (Input.GetKeyDown(KeyCode.W))
                 {
-                    index++;
-                    moveSelectorDown();
+                    if (index != 0)
+                    {
+                        index--;
+                        moveSelectorUp();
+                    }
                 }
+                else if (Input.GetKeyDown(KeyCode.S))
+                {
+                    if (index != 4)
+                    {
+                        index++;
+                        moveSelectorDown();
+                    }
+                }
+                else if (Input.GetKeyDown(KeyCode.A) && !tradingItemSelected)
+                {
+                    if (leftRightIndex != 0)
+                    {
+                        leftRightIndex--;
+                        moveSelectorLeft();   
+                    }
+                }
+                else if (Input.GetKeyDown(KeyCode.D) && !tradingItemSelected)
+                {
+                    if (leftRightIndex != 1)
+                    {
+                        leftRightIndex++;
+                        moveSelectorRight();
+                    }
+
+                }
+
+                //Make item selection
+                else if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    try
+                    {
+                        if (battleController.characterSelected.GetComponent<PlayerController>().inventory[index] == null) ;
+                        confirmBox.SetActive(true);
+                        confirmBoxActive = true;
+                    }
+                    catch
+                    {
+                        //Not a valid item selection
+                    }
+                }
+    
             }
 
-            //Move confirm box selector
-            else if (Input.GetKeyDown(KeyCode.W) && confirmBoxActive)
-            {
-                if (confirmBoxIndex != 0)
-                {
-                    moveConfirmBoxSelectorUp();
-                }
-            }
-            else if (Input.GetKeyDown(KeyCode.S) && confirmBoxActive)
-            {
-                if (confirmBoxIndex != 1)
-                {
-                    moveConfirmBoxSelectorDown();
-                }
-            }
 
-            //Make item selection
-            else if (Input.GetKeyDown(KeyCode.Space) && !confirmBoxActive)
-            {
-                try
-                {
-                    if (battleController.characterSelected.GetComponent<PlayerController>().inventory[itemIndex] == null) ;
-                    confirmBox.SetActive(true);
-                    confirmBoxActive = true;
-                }
-                catch
-                {
-                    //Not a valid item selection
-                }
-            }
-
-            //Confirm item use
-            else if (Input.GetKeyDown(KeyCode.Space) && confirmBoxActive)
-            {
-                if (confirmBoxIndex == 0)
-                {
-                    useItem();
-                }
-                else if (confirmBoxIndex == 1)
-                {
-                    resetConfirmBoxSelector();
-                    confirmBox.SetActive(false);
-                    confirmBoxActive = false;
-                }
-            }
         }
     }
-    public void enableInventoryGiverMenu()
+    public void enableInventoryGiverMenu(GameObject character)
     {
+        selector.SetActive(true);
         inventoryGiverMenu.SetActive(true);
         active = true;
-        int index = 0;
+        int tempIndex = 0;
         characterMenuScript.disableCharacterMenu();
 
         //Update titles
-        characterTitle.text = battleController.characterSelected.GetComponent<PlayerController>().title;
+        characterTitle.text = character.GetComponent<PlayerController>().title;
 
         //Update health bars and values
-        previewPlayerHp.text = battleController.characterSelected.GetComponent<PlayerController>().hp.ToString();
-        previewPlayerMaxHp.text = battleController.characterSelected.GetComponent<PlayerController>().maxHp.ToString();
-        previewPlayerMana.text = battleController.characterSelected.GetComponent<PlayerController>().mana.ToString();
-        previewPlayerMaxMana.text = battleController.characterSelected.GetComponent<PlayerController>().maxMana.ToString();
+        previewPlayerHp.text = character.GetComponent<PlayerController>().hp.ToString();
+        previewPlayerMaxHp.text = character.GetComponent<PlayerController>().maxHp.ToString();
+        previewPlayerMana.text = character.GetComponent<PlayerController>().mana.ToString();
+        previewPlayerMaxMana.text = character.GetComponent<PlayerController>().maxMana.ToString();
 
-        previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().hp / battleController.characterSelected.GetComponent<PlayerController>().maxHp, 1f);
-        previewPlayerManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().mana / battleController.characterSelected.GetComponent<PlayerController>().maxMana, 1f);
+        previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)character.GetComponent<PlayerController>().hp / character.GetComponent<PlayerController>().maxHp, 1f);
+        previewPlayerManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)character.GetComponent<PlayerController>().mana / character.GetComponent<PlayerController>().maxMana, 1f);
 
         //Populate inventory
         foreach (Transform row in items.transform)
         {
             try
             {
-                row.gameObject.GetComponent<TextMeshProUGUI>().text = battleController.characterSelected.GetComponent<PlayerController>().inventory[index].name;
-                row.GetChild(0).GetComponent<TextMeshProUGUI>().text = battleController.characterSelected.GetComponent<PlayerController>().inventory[index].currentQuantity.ToString() + "/" + battleController.characterSelected.GetComponent<PlayerController>().inventory[index].maxQuantity.ToString();
+                row.gameObject.GetComponent<TextMeshProUGUI>().text = character.GetComponent<PlayerController>().inventory[tempIndex].name;
+                row.GetChild(0).GetComponent<TextMeshProUGUI>().text = character.GetComponent<PlayerController>().inventory[tempIndex].currentQuantity.ToString() + "/" + character.GetComponent<PlayerController>().inventory[tempIndex].maxQuantity.ToString();
             }
             catch
             {
                 //Nothing
             }
-            index++;
+            tempIndex++;
         }
 
-        updateDescription();
+        updateDescription(character);
+    }
+    public void enableInventoryRecipientMenu(GameObject character)
+    {
+        inventoryRecipientMenu.SetActive(true);
+        int tempIndex = 0;
+
+        //Update titles
+        recipientCharacterTitle.text = character.GetComponent<PlayerController>().title;
+
+        //Update health bars and values
+        recipientPreviewPlayerHp.text = character.GetComponent<PlayerController>().hp.ToString();
+        recipientPreviewPlayerMaxHp.text = character.GetComponent<PlayerController>().maxHp.ToString();
+        recipientPreviewPlayerMana.text = character.GetComponent<PlayerController>().mana.ToString();
+        recipientPreviewPlayerMaxMana.text = character.GetComponent<PlayerController>().maxMana.ToString();
+
+        recipientPreviewPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)character.GetComponent<PlayerController>().hp / character.GetComponent<PlayerController>().maxHp, 1f);
+        recipientPreviewPlayerManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)character.GetComponent<PlayerController>().mana / character.GetComponent<PlayerController>().maxMana, 1f);
+
+        //Populate inventory
+        foreach (Transform row in recipientItems.transform)
+        {
+            try
+            {
+                row.gameObject.GetComponent<TextMeshProUGUI>().text = character.GetComponent<PlayerController>().inventory[tempIndex].name;
+                row.GetChild(0).GetComponent<TextMeshProUGUI>().text = character.GetComponent<PlayerController>().inventory[tempIndex].currentQuantity.ToString() + "/" + character.GetComponent<PlayerController>().inventory[tempIndex].maxQuantity.ToString();
+            }
+            catch
+            {
+                //Nothing
+            }
+            tempIndex++;
+        }
+
+        updateRecipientDescription(character);
 
     }
     public void disableInventoryMenu()
     {
+        selector.SetActive(false);
         deselectAudio.Play();
         foreach (Transform row in items.transform)
         {
@@ -179,27 +289,76 @@ public class InventoryMenu : MonoBehaviour
     }
     public void enableTradingMenu()
     {
-
+        enableInventoryGiverMenu(battleController.characterSelected);
+        enableInventoryRecipientMenu(battleController.assistableCharacterSelected);
+        arrows.SetActive(true);
+        confirmButton.SetActive(true);
+        trading = true;
     }
     private void moveSelectorDown()
     {
         selectorAudio.Play();
         RectTransform rt = selector.GetComponent<RectTransform>();
         Vector2 anchoredPos = rt.anchoredPosition;
-        anchoredPos.y -= 25.5f;
+        anchoredPos.y -= 51f;
         rt.anchoredPosition = anchoredPos;
-        itemIndex++;
-        updateDescription();
+        if (leftRightIndex == 0)
+        {
+            updateDescription(battleController.characterSelected);
+        }
+        else
+        {
+            updateRecipientDescription(battleController.assistableCharacterSelected);
+        }
+
     }
     private void moveSelectorUp()
     {
         selectorAudio.Play();
         RectTransform rt = selector.GetComponent<RectTransform>();
         Vector2 anchoredPos = rt.anchoredPosition;
-        anchoredPos.y += 25.5f;
+        anchoredPos.y += 51f;
         rt.anchoredPosition = anchoredPos;
-        itemIndex--;
-        updateDescription();
+        if (leftRightIndex == 0)
+        {
+            updateDescription(battleController.characterSelected);
+        }
+        else
+        {
+            updateRecipientDescription(battleController.assistableCharacterSelected);
+        }
+    }
+    private void moveSelectorRight()
+    {
+        selectorAudio.Play();
+        RectTransform rt = selector.GetComponent<RectTransform>();
+        Vector2 anchoredPos = rt.anchoredPosition;
+        anchoredPos.x += 736f;
+        rt.anchoredPosition = anchoredPos;
+        if (leftRightIndex == 0)
+        {
+            updateDescription(battleController.characterSelected);
+        }
+        else
+        {
+            updateRecipientDescription(battleController.assistableCharacterSelected);
+        }
+    }
+    private void moveSelectorLeft()
+    {
+        selectorAudio.Play();
+        RectTransform rt = selector.GetComponent<RectTransform>();
+        Vector2 anchoredPos = rt.anchoredPosition;
+        anchoredPos.x -= 736f;
+        rt.anchoredPosition = anchoredPos;
+        if (leftRightIndex == 0)
+        {
+            updateDescription(battleController.characterSelected);
+        }
+        else
+        {
+            updateRecipientDescription(battleController.assistableCharacterSelected);
+        }
     }
     private void moveConfirmBoxSelectorDown()
     {
@@ -219,15 +378,26 @@ public class InventoryMenu : MonoBehaviour
         rt.anchoredPosition = anchoredPos;
         confirmBoxIndex--;
     }
-    private void updateDescription()
+    private void updateDescription(GameObject character)
     {
         try
         {
-            itemDescriptionText.text = battleController.characterSelected.GetComponent<PlayerController>().inventory[itemIndex].description;
+            itemDescriptionText.text = character.GetComponent<PlayerController>().inventory[index].description;
         }
         catch
         {
             itemDescriptionText.text = "-";
+        }
+    }
+    private void updateRecipientDescription(GameObject character)
+    {
+        try
+        {
+            recipientItemDescriptionText.text = character.GetComponent<PlayerController>().inventory[index].description;
+        }
+        catch
+        {
+            recipientItemDescriptionText.text = "-";
         }
     }
     private void resetConfirmBoxSelector()
@@ -236,43 +406,43 @@ public class InventoryMenu : MonoBehaviour
         rect.anchoredPosition = new Vector2(.89f, 15f);
         confirmBoxIndex = 0;
     }
-    private void useItem()
+    private IEnumerator useItem()
     {
-        Item item = battleController.characterSelected.GetComponent<PlayerController>().inventory[itemIndex];
+        Item item = battleController.characterSelected.GetComponent<PlayerController>().inventory[index];
 
         //Restore HP or Mana
         if (item.hpOrMana == "hp")
         {
+            int tempStartNumber = battleController.characterSelected.GetComponent<PlayerController>().hp;
+            int tempEndNumber;
             if (battleController.characterSelected.GetComponent<PlayerController>().hp + item.restorationAmount > battleController.characterSelected.GetComponent<PlayerController>().maxHp)
             {
                 battleController.characterSelected.GetComponent<PlayerController>().hp = battleController.characterSelected.GetComponent<PlayerController>().maxHp;
+                tempEndNumber = battleController.characterSelected.GetComponent<PlayerController>().maxHp;
             }
             else
             {
                 battleController.characterSelected.GetComponent<PlayerController>().hp += item.restorationAmount;
+                tempEndNumber = battleController.characterSelected.GetComponent<PlayerController>().hp;
             }
+            yield return StartCoroutine(animateHealthOrManaBars("hp", tempStartNumber, tempEndNumber));
         }
         else if (item.hpOrMana == "mana")
         {
+            int tempStartNumber = battleController.characterSelected.GetComponent<PlayerController>().mana;
+            int tempEndNumber;
             if (battleController.characterSelected.GetComponent<PlayerController>().mana + item.restorationAmount > battleController.characterSelected.GetComponent<PlayerController>().maxMana)
             {
                 battleController.characterSelected.GetComponent<PlayerController>().mana = battleController.characterSelected.GetComponent<PlayerController>().maxMana;
+                tempEndNumber = battleController.characterSelected.GetComponent<PlayerController>().maxMana;
             }
             else
             {
                 battleController.characterSelected.GetComponent<PlayerController>().mana += item.restorationAmount;
+                tempEndNumber = battleController.characterSelected.GetComponent<PlayerController>().mana;
             }
+            yield return StartCoroutine(animateHealthOrManaBars("mana", tempStartNumber, tempEndNumber));
         }
-
-        //Update health bars and values
-        previewPlayerHp.text = battleController.characterSelected.GetComponent<PlayerController>().hp.ToString();
-        previewPlayerMaxHp.text = battleController.characterSelected.GetComponent<PlayerController>().maxHp.ToString();
-        previewPlayerMana.text = battleController.characterSelected.GetComponent<PlayerController>().mana.ToString();
-        previewPlayerMaxMana.text = battleController.characterSelected.GetComponent<PlayerController>().maxMana.ToString();
-        previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta = originalHpManaBarSize;
-        previewPlayerManaBar.GetComponent<RectTransform>().sizeDelta = originalHpManaBarSize;
-        previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().hp / battleController.characterSelected.GetComponent<PlayerController>().maxHp, 1f);
-        previewPlayerManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().mana / battleController.characterSelected.GetComponent<PlayerController>().maxMana, 1f);
 
         //Cure status ailments
         if (item.curesBlind)
@@ -291,10 +461,10 @@ public class InventoryMenu : MonoBehaviour
         //TODO: Update UI to remove status ailment icons
 
         //Decrement item quantity
-        battleController.characterSelected.GetComponent<PlayerController>().inventory[itemIndex].currentQuantity--;
-        if (battleController.characterSelected.GetComponent<PlayerController>().inventory[itemIndex].currentQuantity == 0)
+        battleController.characterSelected.GetComponent<PlayerController>().inventory[index].currentQuantity--;
+        if (battleController.characterSelected.GetComponent<PlayerController>().inventory[index].currentQuantity == 0)
         {
-            battleController.characterSelected.GetComponent<PlayerController>().inventory.RemoveAt(itemIndex);
+            battleController.characterSelected.GetComponent<PlayerController>().inventory.RemoveAt(index);
         }
 
         //End turn
@@ -303,4 +473,86 @@ public class InventoryMenu : MonoBehaviour
         battleController.characterSelected.GetComponent<PlayerController>().endTurn();
 
     }
+    private IEnumerator animateHealthOrManaBars(string type, int startNumber, int endNumber)
+    {
+        coroutineRunning = true;
+        if (type == "hp")
+        {
+            // Initial size and text
+            RectTransform rect = previewPlayerHpBar.GetComponent<RectTransform>();
+            Vector2 initialSize = rect.sizeDelta;
+
+            // Calculate target size
+            PlayerController player = battleController.characterSelected.GetComponent<PlayerController>();
+            Vector2 targetSize = originalHpManaBarSize * new Vector2((float)player.hp / player.maxHp, 1f);
+
+            // Animation duration
+            float duration = 1.5f;
+            float elapsed = 0f;
+
+            // Smoothly interpolate between the initial and target sizes
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
+
+                // Optionally smooth interpolation
+                float smoothT = Mathf.SmoothStep(0f, 1f, t);
+
+                // Update bar size
+                rect.sizeDelta = Vector2.Lerp(initialSize, targetSize, smoothT);
+
+                // Update text
+                int currentHp = Mathf.RoundToInt(Mathf.Lerp(startNumber, endNumber, smoothT));
+                previewPlayerHp.text = currentHp.ToString();
+
+                yield return null;
+            }
+
+            // Ensure final size is exact
+            rect.sizeDelta = targetSize;
+            previewPlayerHp.text = endNumber.ToString();
+        }
+        else if (type == "mana")
+        {
+            // Initial size
+            RectTransform rect = previewPlayerManaBar.GetComponent<RectTransform>();
+            Vector2 initialSize = rect.sizeDelta;
+
+            // Calculate target size
+            PlayerController player = battleController.characterSelected.GetComponent<PlayerController>();
+            Vector2 targetSize = originalHpManaBarSize * new Vector2((float)player.mana / player.maxMana, 1f);
+
+            // Animation duration
+            float duration = 1.5f;
+            float elapsed = 0f;
+
+            // Smoothly interpolate between the initial and target sizes
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
+
+                // Optionally smooth interpolation
+                float smoothT = Mathf.SmoothStep(0f, 1f, t);
+
+                // Update bar size
+                rect.sizeDelta = Vector2.Lerp(initialSize, targetSize, smoothT);
+
+                // Update text
+                int currentMana = Mathf.RoundToInt(Mathf.Lerp(startNumber, endNumber, smoothT));
+                previewPlayerMana.text = currentMana.ToString();
+
+                yield return null;
+            }
+
+            // Ensure final size is exact
+            rect.sizeDelta = targetSize;
+            previewPlayerMana.text = endNumber.ToString();
+        }
+
+        yield return new WaitForSeconds(1f);
+        coroutineRunning = false;
+    }
+
 }

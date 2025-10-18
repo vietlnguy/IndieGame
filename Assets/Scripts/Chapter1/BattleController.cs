@@ -7,6 +7,7 @@ public class BattleController : MonoBehaviour
 {
 
     public GameObject characterSelected;
+    public GameObject assistableCharacterSelected;
     public GameObject enemySelected;
     public GameObject enemies;
     public GameObject characters;
@@ -63,7 +64,7 @@ public class BattleController : MonoBehaviour
 
         if (introFinished && !isPaused)
         {
-            if (!characterAssistMenuScript.active && !characterMenuScript.active && !attackPreviewScript.active && !inventoryMenuScript.active)
+            if (!characterAssistMenuScript.active && !characterMenuScript.active && !attackPreviewScript.active && !inventoryMenuScript.active && !isEnemyTurn)
             {
                 if (Input.GetMouseButtonDown(1))
                 {
