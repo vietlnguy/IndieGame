@@ -44,7 +44,7 @@ public class InventoryMenu : MonoBehaviour
     public GameObject confirmButton;
     private bool trading = false;
     private Item itemToGive;
-    private bool tradingItemSelected = false;
+    private int itemToGiveIndex;
 
     void Awake()
     {
@@ -63,7 +63,7 @@ public class InventoryMenu : MonoBehaviour
                 }
                 else
                 {
-                    disableInventoryMenu();
+                    disableTradingMenu();
                 }
             }
 
@@ -152,15 +152,15 @@ public class InventoryMenu : MonoBehaviour
                         moveSelectorDown();
                     }
                 }
-                else if (Input.GetKeyDown(KeyCode.A) && !tradingItemSelected)
+                else if (Input.GetKeyDown(KeyCode.A) && itemToGive == null)
                 {
                     if (leftRightIndex != 0)
                     {
                         leftRightIndex--;
-                        moveSelectorLeft();   
+                        moveSelectorLeft();
                     }
                 }
-                else if (Input.GetKeyDown(KeyCode.D) && !tradingItemSelected)
+                else if (Input.GetKeyDown(KeyCode.D) && itemToGive == null)
                 {
                     if (leftRightIndex != 1)
                     {
@@ -173,21 +173,77 @@ public class InventoryMenu : MonoBehaviour
                 //Make item selection
                 else if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    try
+                    //Item to give not chosen yet
+                    if (itemToGive == null)
                     {
-                        if (battleController.characterSelected.GetComponent<PlayerController>().inventory[index] == null) ;
-                        confirmBox.SetActive(true);
-                        confirmBoxActive = true;
+                        try
+                        {
+                            if (leftRightIndex == 0)
+                            {
+                                if (battleController.characterSelected.GetComponent<PlayerController>().inventory[index] == null) ;
+                                itemToGive = battleController.characterSelected.GetComponent<PlayerController>().inventory[index];
+                                itemToGiveIndex = index;
+                                leftRightIndex++;
+                                moveSelectorRight();
+                            }
+                            else if (leftRightIndex == 1)
+                            {
+                                if (battleController.assistableCharacterSelected.GetComponent<PlayerController>().inventory[index] == null) ;
+                                itemToGive = battleController.assistableCharacterSelected.GetComponent<PlayerController>().inventory[index];
+                                itemToGiveIndex = index;
+                                leftRightIndex--;
+                                moveSelectorLeft();
+                            }
+                        }
+
+                        //Empty row was selected
+                        catch
+                        {
+                        }
                     }
-                    catch
+
+                    //Item to give already chosen. Should move selector to opposite side and wait selection
+                    else if (itemToGive != null)
                     {
-                        //Not a valid item selection
+                        try
+                        {
+                            //Make the trade
+                            if (leftRightIndex == 0)
+                            {
+                                if (battleController.characterSelected.GetComponent<PlayerController>().inventory[index] == null) ;
+                                Item itemToRecieve = battleController.characterSelected.GetComponent<PlayerController>().inventory[index];
+                                battleController.characterSelected.GetComponent<PlayerController>().inventory[index] = itemToGive;
+                                battleController.assistableCharacterSelected.GetComponent<PlayerController>().inventory[itemToGiveIndex] = itemToRecieve;
+                            }
+                            else if (leftRightIndex == 1)
+                            {
+                                if (battleController.assistableCharacterSelected.GetComponent<PlayerController>().inventory[index] == null) ;
+                                Item itemToRecieve = battleController.assistableCharacterSelected.GetComponent<PlayerController>().inventory[index];
+                                battleController.assistableCharacterSelected.GetComponent<PlayerController>().inventory[index] = itemToGive;
+                                battleController.characterSelected.GetComponent<PlayerController>().inventory[itemToGiveIndex] = itemToRecieve;
+                            }
+                        }
+
+                        //Empty row was selected. Should give item to recipient
+                        catch
+                        {
+                            if (leftRightIndex == 0)
+                            {
+                                battleController.characterSelected.GetComponent<PlayerController>().inventory.Add(itemToGive);
+                                battleController.assistableCharacterSelected.GetComponent<PlayerController>().inventory.RemoveAt(itemToGiveIndex);
+                            }
+                            else if (leftRightIndex == 1)
+                            {
+                                battleController.assistableCharacterSelected.GetComponent<PlayerController>().inventory.Add(itemToGive);
+                                battleController.characterSelected.GetComponent<PlayerController>().inventory.RemoveAt(itemToGiveIndex);
+                            }
+                        }
+
+                        itemToGive = null;
+                        updateItemList();
                     }
                 }
-    
             }
-
-
         }
     }
     public void enableInventoryGiverMenu(GameObject character)
@@ -262,7 +318,7 @@ public class InventoryMenu : MonoBehaviour
         updateRecipientDescription(character);
 
     }
-    public void disableInventoryMenu()
+    public void disableTradingMenu()
     {
         selector.SetActive(false);
         deselectAudio.Play();
@@ -280,6 +336,22 @@ public class InventoryMenu : MonoBehaviour
         inventoryGiverMenu.SetActive(false);
         active = false;
         battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = true;
+
+        foreach (Transform row in recipientItems.transform)
+        {
+            row.gameObject.GetComponent<TextMeshProUGUI>().text = "-";
+            row.GetChild(0).GetComponent<TextMeshProUGUI>().text = "-";
+        }
+        recipientItemDescriptionText.text = "-";
+
+        //Reset health and mana bars
+        recipientPreviewPlayerHpBar.GetComponent<RectTransform>().sizeDelta = originalHpManaBarSize;
+        recipientPreviewPlayerManaBar.GetComponent<RectTransform>().sizeDelta = originalHpManaBarSize;
+
+        arrows.SetActive(false);
+        confirmButton.SetActive(false);
+        inventoryRecipientMenu.SetActive(false);
+
     }
     public void disableConfirmBox()
     {
@@ -469,7 +541,7 @@ public class InventoryMenu : MonoBehaviour
 
         //End turn
         disableConfirmBox();
-        disableInventoryMenu();
+        disableTradingMenu();
         battleController.characterSelected.GetComponent<PlayerController>().endTurn();
 
     }
@@ -554,5 +626,45 @@ public class InventoryMenu : MonoBehaviour
         yield return new WaitForSeconds(1f);
         coroutineRunning = false;
     }
+    private void updateItemList()
+    {
+        int tempIndex = 0;
+        
+        //Populate giver inventory
+        foreach (Transform row in items.transform)
+        {
+            try
+            {
+                row.gameObject.GetComponent<TextMeshProUGUI>().text = battleController.characterSelected.GetComponent<PlayerController>().inventory[tempIndex].name;
+                row.GetChild(0).GetComponent<TextMeshProUGUI>().text = battleController.characterSelected.GetComponent<PlayerController>().inventory[tempIndex].currentQuantity.ToString() + "/" + battleController.characterSelected.GetComponent<PlayerController>().inventory[tempIndex].maxQuantity.ToString();
+            }
+            catch
+            {
+                row.gameObject.GetComponent<TextMeshProUGUI>().text = "-";
+                row.GetChild(0).GetComponent<TextMeshProUGUI>().text = "-";
+            }
+            tempIndex++;
+        }
+
+        tempIndex = 0;
+        //Populate inventory
+        foreach (Transform row in recipientItems.transform)
+        {
+            try
+            {
+                row.gameObject.GetComponent<TextMeshProUGUI>().text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().inventory[tempIndex].name;
+                row.GetChild(0).GetComponent<TextMeshProUGUI>().text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().inventory[tempIndex].currentQuantity.ToString() + "/" + battleController.assistableCharacterSelected.GetComponent<PlayerController>().inventory[tempIndex].maxQuantity.ToString();
+            }
+            catch
+            {
+                row.gameObject.GetComponent<TextMeshProUGUI>().text = "-";
+                row.GetChild(0).GetComponent<TextMeshProUGUI>().text = "-";
+            }
+            tempIndex++;
+        }
+    
+    
+    }
+ 
 
 }
