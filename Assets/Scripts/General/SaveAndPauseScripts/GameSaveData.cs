@@ -130,4 +130,16 @@ public class Item
         this.curesRooted = curesRooted;
 
     }
+    public Item(Item item)
+    {
+        this.name = item.name;
+        this.maxQuantity = item.maxQuantity;
+        this.currentQuantity = item.currentQuantity;
+        this.hpOrMana = item.hpOrMana;
+        this.restorationAmount = item.restorationAmount;
+        this.description = item.description;
+        this.curesBlind = item.curesBlind;
+        this.curesBleed = item.curesBleed;
+        this.curesRooted = item.curesRooted;
+    }
 }

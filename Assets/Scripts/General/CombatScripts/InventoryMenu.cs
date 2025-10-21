@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using System.Linq;
 
 public class InventoryMenu : MonoBehaviour
 {
@@ -45,7 +46,11 @@ public class InventoryMenu : MonoBehaviour
     private bool trading = false;
     private Item itemToGive;
     private int itemToGiveIndex;
-
+    private List<Item> originalGiverInventory;
+    private List<Item> originalRecipientInventory;
+    private Coroutine flashCoroutine;
+    private TextMeshProUGUI flashingText;
+    private TextMeshProUGUI flashingText2;
     void Awake()
     {
         characterMenuScript = GameObject.Find("CharacterMenu").GetComponent<CharacterMenu>();
@@ -61,13 +66,36 @@ public class InventoryMenu : MonoBehaviour
                 {
                     disableConfirmBox();
                 }
+                else if (trading)
+                {
+                    resetInventories();
+                    disableRecipientMenu();
+                    disableGiverMenu();
+                    confirmButton.GetComponent<ConfirmTradeButton>().disableButton();
+                    confirmButton.SetActive(false);
+                    arrows.SetActive(false);
+                    trading = false;
+                    itemToGive = null;
+                    originalGiverInventory = null;
+                    originalRecipientInventory = null;
+                    try
+                    {
+                        StopFlashing();
+                    }
+                    catch
+                    {
+                    }
+
+                }
                 else
                 {
-                    disableTradingMenu();
+                    disableGiverMenu();
                 }
+                
+                resetSelectorPosition();
             }
 
-            if (!trading)
+            else if (!trading)
             {
                 //Move selector
                 if (Input.GetKeyDown(KeyCode.W) && !confirmBoxActive)
@@ -114,7 +142,6 @@ public class InventoryMenu : MonoBehaviour
                     }
                     catch
                     {
-                        //Not a valid item selection
                     }
                 }
 
@@ -183,6 +210,11 @@ public class InventoryMenu : MonoBehaviour
                                 if (battleController.characterSelected.GetComponent<PlayerController>().inventory[index] == null) ;
                                 itemToGive = battleController.characterSelected.GetComponent<PlayerController>().inventory[index];
                                 itemToGiveIndex = index;
+
+                                //Flash item selection
+                                StartFlashing(items.transform.GetChild(itemToGiveIndex).gameObject.GetComponent<TextMeshProUGUI>(), items.transform.GetChild(itemToGiveIndex).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>(), 1.5f);
+
+
                                 leftRightIndex++;
                                 moveSelectorRight();
                             }
@@ -191,6 +223,10 @@ public class InventoryMenu : MonoBehaviour
                                 if (battleController.assistableCharacterSelected.GetComponent<PlayerController>().inventory[index] == null) ;
                                 itemToGive = battleController.assistableCharacterSelected.GetComponent<PlayerController>().inventory[index];
                                 itemToGiveIndex = index;
+
+                                //Flash item selection
+                                StartFlashing(recipientItems.transform.GetChild(itemToGiveIndex).gameObject.GetComponent<TextMeshProUGUI>(), recipientItems.transform.GetChild(itemToGiveIndex).GetChild(0).gameObject.GetComponent<TextMeshProUGUI>(), 1.5f);
+
                                 leftRightIndex--;
                                 moveSelectorLeft();
                             }
@@ -239,8 +275,10 @@ public class InventoryMenu : MonoBehaviour
                             }
                         }
 
+                        StopFlashing();
                         itemToGive = null;
                         updateItemList();
+                        confirmButton.GetComponent<ConfirmTradeButton>().enableButton();
                     }
                 }
             }
@@ -310,7 +348,6 @@ public class InventoryMenu : MonoBehaviour
             }
             catch
             {
-                //Nothing
             }
             tempIndex++;
         }
@@ -318,7 +355,7 @@ public class InventoryMenu : MonoBehaviour
         updateRecipientDescription(character);
 
     }
-    public void disableTradingMenu()
+    public void disableGiverMenu()
     {
         selector.SetActive(false);
         deselectAudio.Play();
@@ -337,6 +374,8 @@ public class InventoryMenu : MonoBehaviour
         active = false;
         battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = true;
 
+    }
+    public void disableRecipientMenu() {
         foreach (Transform row in recipientItems.transform)
         {
             row.gameObject.GetComponent<TextMeshProUGUI>().text = "-";
@@ -348,8 +387,6 @@ public class InventoryMenu : MonoBehaviour
         recipientPreviewPlayerHpBar.GetComponent<RectTransform>().sizeDelta = originalHpManaBarSize;
         recipientPreviewPlayerManaBar.GetComponent<RectTransform>().sizeDelta = originalHpManaBarSize;
 
-        arrows.SetActive(false);
-        confirmButton.SetActive(false);
         inventoryRecipientMenu.SetActive(false);
 
     }
@@ -363,9 +400,39 @@ public class InventoryMenu : MonoBehaviour
     {
         enableInventoryGiverMenu(battleController.characterSelected);
         enableInventoryRecipientMenu(battleController.assistableCharacterSelected);
+        storeOriginalInventories();
         arrows.SetActive(true);
         confirmButton.SetActive(true);
         trading = true;
+    }
+    private void resetInventories()
+    {
+        battleController.characterSelected.GetComponent<PlayerController>().inventory = originalGiverInventory.Select(item => new Item(item)).ToList();
+        battleController.assistableCharacterSelected.GetComponent<PlayerController>().inventory = originalRecipientInventory.Select(item => new Item(item)).ToList();
+        originalGiverInventory = null;
+        originalRecipientInventory = null;
+    }
+    private void resetSelectorPosition()
+    {
+        if (leftRightIndex != 0)
+        {
+            moveSelectorLeft();
+            leftRightIndex--;
+        }
+        while (index != 0)
+        {
+            moveSelectorUp();
+            index--;
+        }
+    }
+    private void storeOriginalInventories()
+    {
+        originalGiverInventory = battleController.characterSelected.GetComponent<PlayerController>().inventory
+            .Select(item => new Item(item))
+            .ToList();
+        originalRecipientInventory = battleController.assistableCharacterSelected.GetComponent<PlayerController>().inventory
+            .Select(item => new Item(item))
+            .ToList();
     }
     private void moveSelectorDown()
     {
@@ -541,7 +608,7 @@ public class InventoryMenu : MonoBehaviour
 
         //End turn
         disableConfirmBox();
-        disableTradingMenu();
+        disableGiverMenu();
         battleController.characterSelected.GetComponent<PlayerController>().endTurn();
 
     }
@@ -629,7 +696,7 @@ public class InventoryMenu : MonoBehaviour
     private void updateItemList()
     {
         int tempIndex = 0;
-        
+
         //Populate giver inventory
         foreach (Transform row in items.transform)
         {
@@ -662,9 +729,66 @@ public class InventoryMenu : MonoBehaviour
             }
             tempIndex++;
         }
-    
-    
+
+
     }
- 
+    public void confirmTrade()
+    {
+        disableRecipientMenu();
+        disableGiverMenu();
+        resetSelectorPosition();
+        confirmButton.GetComponent<ConfirmTradeButton>().disableButton();
+        confirmButton.SetActive(false);
+        arrows.SetActive(false);
+        trading = false;
+        itemToGive = null;
+        originalGiverInventory = null;
+        originalRecipientInventory = null;
+    }
+    public void StartFlashing(TextMeshProUGUI textComponent, TextMeshProUGUI textComponent2, float duration = 1.5f)
+    {
+        flashCoroutine = StartCoroutine(FlashCoroutine(textComponent, textComponent2, duration));
+        flashingText = textComponent;
+        flashingText2 = textComponent2;
+    }
+    public void StopFlashing()
+    {
+        StopCoroutine(flashCoroutine);
+
+        flashingText.color = Color.white;
+        flashingText2.color = Color.white;
+    }
+    private IEnumerator FlashCoroutine(TextMeshProUGUI textComponent, TextMeshProUGUI textComponent2, float duration)
+    {
+        float halfDuration = duration / 2f;
+
+        while (true) // keeps flashing
+        {
+            float elapsed = 0f;
+
+            // White → Red
+            while (elapsed < halfDuration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / halfDuration);
+                textComponent.color = Color.Lerp(Color.white, Color.red, t);
+                textComponent2.color = Color.Lerp(Color.white, Color.red, t);
+                yield return null;
+            }
+
+            elapsed = 0f;
+
+            // Red → White
+            while (elapsed < halfDuration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / halfDuration);
+                textComponent.color = Color.Lerp(Color.red, Color.white, t);
+                textComponent2.color = Color.Lerp(Color.red, Color.white, t);
+                yield return null;
+            }
+        }
+    }
+
 
 }
