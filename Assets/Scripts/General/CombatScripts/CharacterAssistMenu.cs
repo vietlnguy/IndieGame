@@ -12,6 +12,7 @@ public class CharacterAssistMenu : MonoBehaviour
     private int index = 0;
     public BattleController battleController;
     public InventoryMenu inventoryMenuScript;
+    public AttackPreview attackPreviewScript;
     public GameObject selector;
     public AudioSource selectorAudio;
     public AudioSource deselectAudio;
@@ -65,7 +66,7 @@ public class CharacterAssistMenu : MonoBehaviour
                 {
                     if (assistText.color == Color.white)
                     {
-                        Debug.Log("Open assist preview");
+                        StartCoroutine(attackPreviewScript.enableAssistPreview());
                     }
                 }
 

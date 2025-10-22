@@ -257,6 +257,93 @@ public class AttackPreview : MonoBehaviour
         active = true;
 
     }
+    public IEnumerator enableAssistPreview()
+    {
+       battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = false;
+
+        //Update titles
+        characterTitle.text = battleController.characterSelected.GetComponent<PlayerController>().title;
+        enemyTitle.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().title;
+
+        //Update health bars and values
+        previewPlayerHp.text = battleController.characterSelected.GetComponent<PlayerController>().hp.ToString();
+        previewPlayerMaxHp.text = battleController.characterSelected.GetComponent<PlayerController>().maxHp.ToString();
+        previewPlayerMana.text = battleController.characterSelected.GetComponent<PlayerController>().mana.ToString();
+        previewPlayerMaxMana.text = battleController.characterSelected.GetComponent<PlayerController>().maxMana.ToString();
+        
+        previewEnemyHp.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().hp.ToString();
+        previewEnemyMaxHp.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().maxHp.ToString();
+        previewEnemyMana.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().mana.ToString();
+        previewEnemyMaxMana.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().maxMana.ToString();
+
+        previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().hp / battleController.characterSelected.GetComponent<PlayerController>().maxHp, 1f);
+        previewPlayerManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().mana / battleController.characterSelected.GetComponent<PlayerController>().maxMana, 1f);
+
+        //Update moveset
+        int index = 0;
+        foreach (Transform child in attacks.transform)
+        {
+            foreach (Transform child2 in child.transform)
+            {
+                try
+                {
+                    child2.GetComponent<TextMeshProUGUI>().text = battleController.characterSelected.GetComponent<PlayerController>().knownAttacks[index].name;
+                    if (battleController.characterSelected.GetComponent<PlayerController>().knownAttacks[index].isSupportingMove)
+                    {
+                        child2.GetComponent<TextMeshProUGUI>().color = new Color(1f, 1f, 1f, 1f);
+                    }
+                    else
+                    {
+                        child2.GetComponent<TextMeshProUGUI>().color = new Color(.75f, .75f, .75f, .35f);
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+            index++;
+        }
+
+        //Update damage stats
+        calculateDamageBlock();
+
+        //Move UI to visible area
+        attackClangAudio.Play();
+        float duration = 0.05f;
+        Vector2 attackerStartPos = attackerPreviewPanel.transform.localPosition;
+        Vector2 defenderStartPos = defenderPreviewPanel.transform.localPosition;
+        float elapsedTime = 0f;
+        while (elapsedTime < duration)
+        {
+            float t = elapsedTime / duration;
+            attackerPreviewPanel.transform.localPosition = Vector2.Lerp(attackerStartPos, new Vector2(-25, 22), t);
+            defenderPreviewPanel.transform.localPosition = Vector2.Lerp(defenderStartPos, new Vector2(292, 19), t);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        attackerPreviewPanel.transform.localPosition = new Vector2(-25, 22);
+        defenderPreviewPanel.transform.localPosition = new Vector2(292, 19);
+
+        //Instantiate potrait prefabs
+        GameObject characterPrefab;
+        Vector2 temp = new Vector2(portraitBackground.GetComponent<RectTransform>().position.x, portraitBackground.GetComponent<RectTransform>().position.y - 1f);
+        if (battleController.characterSelected.GetComponent<PlayerController>().title == scm.loadedData.mainCharacterName) { characterPrefab = Instantiate(mainCharacterPrefab, temp, Quaternion.identity, attackPreviewSprites.transform); }
+        else if (battleController.characterSelected.GetComponent<PlayerController>().title == "Astrid") { characterPrefab = Instantiate(astridPrefab, temp, Quaternion.identity, attackPreviewSprites.transform); }
+        //TODO: include more prefabs for characters
+
+        GameObject enemyPrefab;
+        temp = new Vector2(enemyPortraitBackground.GetComponent<RectTransform>().position.x, enemyPortraitBackground.GetComponent<RectTransform>().position.y - 1f);
+        if (battleController.assistableCharacterSelected.GetComponent<PlayerController>().title == "Astrid") { enemyPrefab = Instantiate(astridPrefab, temp, Quaternion.identity, attackPreviewSprites.transform); }
+        //TODO: include more prefabs for enemies
+
+        //Enable buttons
+        confirmButton.GetComponent<CanvasGroup>().alpha = 1;
+        confirmButton.GetComponent<CanvasGroup>().interactable = true;
+        confirmButton.GetComponent<CanvasGroup>().blocksRaycasts = true;
+        vsText.SetActive(true);
+        active = true; 
+    }
     public IEnumerator disablePreview()
     {
         attackWooshAudio.Play();
