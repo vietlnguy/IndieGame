@@ -9,6 +9,7 @@ public class CharacterMenu : MonoBehaviour
     private RectTransform characterMenuParentCanvasRect;
     public GameObject characterMenu;
     public bool active = false;
+    public bool characterInfoScreenActive = false;
     private int index = 0;
     public BattleController battleController;
     public InventoryMenu inventoryMenuScript;
@@ -16,6 +17,8 @@ public class CharacterMenu : MonoBehaviour
     public AudioSource selectorAudio;
     public AudioSource deselectAudio;
     public TextMeshProUGUI endTurnText;
+    public GameObject blackScreen;
+    public GameObject characterInfoScreen;
 
     void Awake()
     {
@@ -58,7 +61,7 @@ public class CharacterMenu : MonoBehaviour
                 //Open info UI
                 if (index == 0)
                 {
-
+                    StartCoroutine(Transition(blackScreen, .25f));
                 }
 
                 //Open ineventory UI
@@ -77,6 +80,13 @@ public class CharacterMenu : MonoBehaviour
                         selectorAudio.Play();
                     }
                 }
+            }
+        }
+        else if (characterInfoScreenActive)
+        {
+            if (Input.GetMouseButtonDown(1))
+            {
+                StartCoroutine(UndoTransition(blackScreen, .25f));
             }
         }
     }
@@ -122,5 +132,67 @@ public class CharacterMenu : MonoBehaviour
         anchoredPos.y -= 27f;
         rt.anchoredPosition = anchoredPos;
     }
-    
+    private IEnumerator Transition(GameObject obj, float duration){
+        active = false;
+        characterInfoScreenActive = true;
+        CanvasGroup canvasGroup = obj.GetComponent<CanvasGroup>();
+        float startAlpha = 0f;
+        float time = 0f;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, 1f, time / duration);
+            yield return null;
+        }
+        canvasGroup.alpha = 1f;
+        
+        characterInfoScreen.SetActive(true);
+        characterInfoScreen.GetComponent<CharacterInfoScreen>().populateInitialData(battleController.characterSelected);
+
+        startAlpha = 1f;
+        time = 0f;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, 0f, time / duration);
+            yield return null;
+        }
+
+        canvasGroup.alpha = 0f;
+
+
+    }
+    private IEnumerator UndoTransition(GameObject obj, float duration){
+        active = true;
+        characterInfoScreenActive = false;
+        CanvasGroup canvasGroup = obj.GetComponent<CanvasGroup>();
+        float startAlpha = 0f;
+        float time = 0f;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, 1f, time / duration);
+            yield return null;
+        }
+        canvasGroup.alpha = 1f;
+        
+        characterInfoScreen.SetActive(false);
+
+        startAlpha = 1f;
+        time = 0f;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, 0f, time / duration);
+            yield return null;
+        }
+
+        canvasGroup.alpha = 0f;
+
+
+    }
 }

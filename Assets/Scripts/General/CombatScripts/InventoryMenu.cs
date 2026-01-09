@@ -472,7 +472,7 @@ public class InventoryMenu : MonoBehaviour
         selectorAudio.Play();
         RectTransform rt = selector.GetComponent<RectTransform>();
         Vector2 anchoredPos = rt.anchoredPosition;
-        anchoredPos.x += 736f;
+        anchoredPos.x += 786f;
         rt.anchoredPosition = anchoredPos;
         if (leftRightIndex == 0)
         {
@@ -488,7 +488,7 @@ public class InventoryMenu : MonoBehaviour
         selectorAudio.Play();
         RectTransform rt = selector.GetComponent<RectTransform>();
         Vector2 anchoredPos = rt.anchoredPosition;
-        anchoredPos.x -= 736f;
+        anchoredPos.x -= 786f;
         rt.anchoredPosition = anchoredPos;
         if (leftRightIndex == 0)
         {

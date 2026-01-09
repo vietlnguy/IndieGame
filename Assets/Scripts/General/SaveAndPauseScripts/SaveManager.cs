@@ -74,11 +74,11 @@ public class SaveManager : MonoBehaviour
         dataToSave.mainCharacterName = mainCharacterName;
 
         //Populate character data
-        Character mainCharacter = new Character(mainCharacterName, 15, 8, 8, 7, 5, 6, 6, 3, 10, true);
+        Character mainCharacter = new Character(mainCharacterName, 15, 8, 8, 7, 5, 6, 6, 1, 5, true);
         mainCharacter.knownAttacks.Add(new Attack("Slash", "physical", 5, 90, 0, 0, false, "Slash the enemy with your sword."));
         mainCharacter.inventory.Add(new Item("Potion", 10, "hp", 10, "Restores 10 HP.", false, false, false));
 
-        Character astrid = new Character("Astrid", 11, 8, 6, 5, 6, 8, 7, 8, 6, true);
+        Character astrid = new Character("Astrid", 11, 8, 6, 5, 6, 8, 7, 3, 5, true);
         astrid.knownAttacks.Add(new Attack("Bow Shot", "physical", 4, 90, 0, 0, false, "Shoot an arrow at the enemy."));
         astrid.inventory.Add(new Item("Potion", 10, "hp", 10, "Restores 10 HP.", false, false, false));
 

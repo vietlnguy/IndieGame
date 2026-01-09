@@ -286,6 +286,8 @@ public class PlayerController : MonoBehaviour
         attackRangeCircleScript.disableAttackRange();
         movementEnabled = false;
         battleController.characterSelected = null;
+        animator.SetBool("isWalking", false);
+        walkingAudio.Stop();
         if (battleController.disabledCharacters.Contains(gameObject))
         {
             graySpriteAndFreeze();
