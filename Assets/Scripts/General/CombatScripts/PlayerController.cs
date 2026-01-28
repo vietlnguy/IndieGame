@@ -24,8 +24,9 @@ public class PlayerController : MonoBehaviour
     public int mana;
     public int maxMana;
     public int attack;
+    public int intelligence;
     public int defense;
-    public int specialDefense;
+    public int resistance;
     public int skill;
     public int speed;
     public int attackRange;
@@ -192,8 +193,9 @@ public class PlayerController : MonoBehaviour
         mana = hero.maxMana;
         maxMana = hero.maxMana;
         attack = hero.attack;
+        intelligence = hero.intelligence;
         defense = hero.defense;
-        specialDefense = hero.specialDefense;
+        resistance = hero.resistance;
         skill = hero.skill;
         speed = hero.speed;
         attackRange = hero.attackRange;

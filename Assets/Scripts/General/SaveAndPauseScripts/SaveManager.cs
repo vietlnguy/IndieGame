@@ -49,7 +49,7 @@ public class SaveManager : MonoBehaviour
             PlayerController pc = child.GetComponent<PlayerController>();
             if (pc.owned)
             {
-                Character temp = new Character(pc.title, pc.maxHp, pc.maxMana, pc.attack, pc.defense, pc.specialDefense, pc.skill, pc.speed, pc.attackRange, pc.moveRange, pc.owned);
+                Character temp = new Character(pc.title, pc.maxHp, pc.maxMana, pc.attack, pc.intelligence, pc.defense, pc.resistance, pc.skill, pc.speed, pc.attackRange, pc.moveRange, pc.owned);
                 temp.knownAttacks = pc.knownAttacks;
                 temp.inventory = pc.inventory;
                 dataToSave.characters.Add(temp);
@@ -74,11 +74,11 @@ public class SaveManager : MonoBehaviour
         dataToSave.mainCharacterName = mainCharacterName;
 
         //Populate character data
-        Character mainCharacter = new Character(mainCharacterName, 15, 8, 8, 7, 5, 6, 6, 1, 5, true);
+        Character mainCharacter = new Character(mainCharacterName, 15, 8, 8, 4, 7, 5, 6, 6, 1, 5, true);
         mainCharacter.knownAttacks.Add(new Attack("Slash", "physical", 5, 90, 0, 0, false, "Slash the enemy with your sword."));
         mainCharacter.inventory.Add(new Item("Potion", 10, "hp", 10, "Restores 10 HP.", false, false, false));
 
-        Character astrid = new Character("Astrid", 11, 8, 6, 5, 6, 8, 7, 3, 5, true);
+        Character astrid = new Character("Astrid", 11, 8, 6, 5, 5, 6, 8, 7, 3, 5, true);
         astrid.knownAttacks.Add(new Attack("Bow Shot", "physical", 4, 90, 0, 0, false, "Shoot an arrow at the enemy."));
         astrid.inventory.Add(new Item("Potion", 10, "hp", 10, "Restores 10 HP.", false, false, false));
 

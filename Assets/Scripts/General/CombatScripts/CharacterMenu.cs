@@ -148,7 +148,8 @@ public class CharacterMenu : MonoBehaviour
         canvasGroup.alpha = 1f;
         
         characterInfoScreen.SetActive(true);
-        characterInfoScreen.GetComponent<CharacterInfoScreen>().populateInitialData(battleController.characterSelected);
+        characterInfoScreen.GetComponent<CharacterInfoScreen>().characterScript = battleController.characterSelected.GetComponent<PlayerController>();
+        characterInfoScreen.GetComponent<CharacterInfoScreen>().populateInitialData();
 
         startAlpha = 1f;
         time = 0f;

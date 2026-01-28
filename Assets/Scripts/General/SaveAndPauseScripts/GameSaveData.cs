@@ -24,8 +24,9 @@ public class Character
     public int maxHp;
     public int maxMana;
     public int attack;
+    public int intelligence;
     public int defense;
-    public int specialDefense;
+    public int resistance;
     public int skill;
     public int speed;
     public int attackRange;
@@ -38,14 +39,15 @@ public class Character
     public Equipment armorEquiped;
     public Equipment accessoryEquiped;
 
-    public Character(string characterName, int maxHp, int maxMana, int attack, int defense, int specialDefense, int skill, int speed, int attackRange, int moveRange, bool owned)
+    public Character(string characterName, int maxHp, int maxMana, int attack, int intelligence, int defense, int resistance, int skill, int speed, int attackRange, int moveRange, bool owned)
     {
         this.characterName = characterName;
         this.maxHp = maxHp;
         this.maxMana = maxMana;
         this.attack = attack;
+        this.intelligence = intelligence;
         this.defense = defense;
-        this.specialDefense = specialDefense;
+        this.resistance = resistance;
         this.skill = skill;
         this.speed = speed;
         this.attackRange = attackRange;
