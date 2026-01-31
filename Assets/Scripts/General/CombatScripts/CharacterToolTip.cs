@@ -27,16 +27,16 @@ public class CharacterToolTip : MonoBehaviour
         characterToolTip.SetActive(true);
         try
         {
-            characterToolTipHp.text = character.GetComponent<PlayerController>().hp.ToString();
+            characterToolTipHp.text = character.GetComponent<PlayerController>().currentHp.ToString();
             characterToolTipMaxHp.text = character.GetComponent<PlayerController>().maxHp.ToString();
-            characterToolTipMana.text = character.GetComponent<PlayerController>().mana.ToString();
+            characterToolTipMana.text = character.GetComponent<PlayerController>().currentMana.ToString();
             characterToolTipMaxMana.text = character.GetComponent<PlayerController>().maxMana.ToString();
         }
         catch
         {
-            characterToolTipHp.text = character.GetComponent<EnemyController>().hp.ToString();
+            characterToolTipHp.text = character.GetComponent<EnemyController>().currentHp.ToString();
             characterToolTipMaxHp.text = character.GetComponent<EnemyController>().maxHp.ToString();
-            characterToolTipMana.text = character.GetComponent<EnemyController>().mana.ToString();
+            characterToolTipMana.text = character.GetComponent<EnemyController>().currentMana.ToString();
             characterToolTipMaxMana.text = character.GetComponent<EnemyController>().maxMana.ToString();
         }
         Vector3 screenPos = RectTransformUtility.WorldToScreenPoint(worldCamera, character.transform.position);

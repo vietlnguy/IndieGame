@@ -14,6 +14,9 @@ public class CharacterInfoScreen : MonoBehaviour
     public AudioSource selectorAudio;
     public AudioSource deselectAudio;
     public GameObject blackScreen;
+    public TextMeshProUGUI characterNameText;
+    public TextMeshProUGUI hpStat;
+    public TextMeshProUGUI manaStat;
     public TextMeshProUGUI atkStat;
     public TextMeshProUGUI intStat;
     public TextMeshProUGUI sklStat;
@@ -38,6 +41,12 @@ public class CharacterInfoScreen : MonoBehaviour
     public TextMeshProUGUI inventoryQty4;
     public TextMeshProUGUI inventoryQty5;
     public TextMeshProUGUI inventoryDescription;
+    public TextMeshProUGUI weaponEquipped;
+    public TextMeshProUGUI armorEquipped;
+    public TextMeshProUGUI accessoryEquipped;
+    public TextMeshProUGUI equipmentDescription;
+    public ModifierTextColor mtcScript;
+    public TextMeshProUGUI atkModText;
 
     void LateUpdate()
     {
@@ -306,12 +315,23 @@ public class CharacterInfoScreen : MonoBehaviour
     public void populateInitialData()
     {
         //Populate Stats
-        atkStat.text = characterScript.attack.ToString();
-        intStat.text = characterScript.intelligence.ToString();
-        sklStat.text = characterScript.skill.ToString();
-        defStat.text = characterScript.defense.ToString();
-        resStat.text = characterScript.resistance.ToString();
-        spdStat.text = characterScript.speed.ToString();
+        characterNameText.text = characterScript.title;
+        hpStat.text = characterScript.currentHp.ToString() + "/" + characterScript.maxHp;
+        manaStat.text = characterScript.currentMana.ToString() + "/" + characterScript.maxMana;
+        atkStat.text = characterScript.baseAttack.ToString();
+        intStat.text = characterScript.baseIntelligence.ToString();
+        sklStat.text = characterScript.baseSkill.ToString();
+        defStat.text = characterScript.baseDefense.ToString();
+        resStat.text = characterScript.baseResistance.ToString();
+        spdStat.text = characterScript.baseSpeed.ToString();
+
+
+        if (characterScript.totalAttackMod != 0)
+        {
+            if (characterScript.totalAttackMod > 0) { atkModText.text = "+" + characterScript.totalAttackMod.ToString(); mtcScript.Flash(atkModText, "blue");}
+            else { atkModText.text = "-" + characterScript.totalAttackMod.ToString(); mtcScript.Flash(atkModText, "red"); }
+        }
+
 
         //Update Descriptions
         updateStatsDescription();
@@ -351,6 +371,13 @@ public class CharacterInfoScreen : MonoBehaviour
             armorEquipped.text = characterScript.armorEquiped.name;
             accessoryEquipped.text = characterScript.accessoryEquiped.name; 
         }
+        catch{}
+
+        updateEquipmentDescription();
+
+
+    
+    
     }
     public void updateStatsDescription()
     {
@@ -441,7 +468,24 @@ public class CharacterInfoScreen : MonoBehaviour
     }
     public void updateEquipmentDescription()
     {
-        
+        try {
+            if (index == 0)
+            {
+                equipmentDescription.text = characterScript.weaponEquiped.description;
+            }
+            else if (index == 1)
+            {
+                equipmentDescription.text = characterScript.armorEquiped.description;
+            }
+            else if (index == 2)
+            {
+                equipmentDescription.text = characterScript.accessoryEquiped.description; 
+            }
+        }
+        catch
+        {
+            equipmentDescription.text = "-";
+        } 
     }
     public void updateItemDescription()
     {

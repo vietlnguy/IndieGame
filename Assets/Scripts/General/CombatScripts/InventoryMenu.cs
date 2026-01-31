@@ -296,13 +296,13 @@ public class InventoryMenu : MonoBehaviour
         characterTitle.text = character.GetComponent<PlayerController>().title;
 
         //Update health bars and values
-        previewPlayerHp.text = character.GetComponent<PlayerController>().hp.ToString();
+        previewPlayerHp.text = character.GetComponent<PlayerController>().currentHp.ToString();
         previewPlayerMaxHp.text = character.GetComponent<PlayerController>().maxHp.ToString();
-        previewPlayerMana.text = character.GetComponent<PlayerController>().mana.ToString();
+        previewPlayerMana.text = character.GetComponent<PlayerController>().currentMana.ToString();
         previewPlayerMaxMana.text = character.GetComponent<PlayerController>().maxMana.ToString();
 
-        previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)character.GetComponent<PlayerController>().hp / character.GetComponent<PlayerController>().maxHp, 1f);
-        previewPlayerManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)character.GetComponent<PlayerController>().mana / character.GetComponent<PlayerController>().maxMana, 1f);
+        previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)character.GetComponent<PlayerController>().currentHp / character.GetComponent<PlayerController>().maxHp, 1f);
+        previewPlayerManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)character.GetComponent<PlayerController>().currentMana / character.GetComponent<PlayerController>().maxMana, 1f);
 
         //Populate inventory
         foreach (Transform row in items.transform)
@@ -330,13 +330,13 @@ public class InventoryMenu : MonoBehaviour
         recipientCharacterTitle.text = character.GetComponent<PlayerController>().title;
 
         //Update health bars and values
-        recipientPreviewPlayerHp.text = character.GetComponent<PlayerController>().hp.ToString();
+        recipientPreviewPlayerHp.text = character.GetComponent<PlayerController>().currentHp.ToString();
         recipientPreviewPlayerMaxHp.text = character.GetComponent<PlayerController>().maxHp.ToString();
-        recipientPreviewPlayerMana.text = character.GetComponent<PlayerController>().mana.ToString();
+        recipientPreviewPlayerMana.text = character.GetComponent<PlayerController>().currentMana.ToString();
         recipientPreviewPlayerMaxMana.text = character.GetComponent<PlayerController>().maxMana.ToString();
 
-        recipientPreviewPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)character.GetComponent<PlayerController>().hp / character.GetComponent<PlayerController>().maxHp, 1f);
-        recipientPreviewPlayerManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)character.GetComponent<PlayerController>().mana / character.GetComponent<PlayerController>().maxMana, 1f);
+        recipientPreviewPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)character.GetComponent<PlayerController>().currentHp / character.GetComponent<PlayerController>().maxHp, 1f);
+        recipientPreviewPlayerManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)character.GetComponent<PlayerController>().currentMana / character.GetComponent<PlayerController>().maxMana, 1f);
 
         //Populate inventory
         foreach (Transform row in recipientItems.transform)
@@ -552,33 +552,33 @@ public class InventoryMenu : MonoBehaviour
         //Restore HP or Mana
         if (item.hpOrMana == "hp")
         {
-            int tempStartNumber = battleController.characterSelected.GetComponent<PlayerController>().hp;
+            int tempStartNumber = battleController.characterSelected.GetComponent<PlayerController>().currentHp;
             int tempEndNumber;
-            if (battleController.characterSelected.GetComponent<PlayerController>().hp + item.restorationAmount > battleController.characterSelected.GetComponent<PlayerController>().maxHp)
+            if (battleController.characterSelected.GetComponent<PlayerController>().currentHp + item.restorationAmount > battleController.characterSelected.GetComponent<PlayerController>().maxHp)
             {
-                battleController.characterSelected.GetComponent<PlayerController>().hp = battleController.characterSelected.GetComponent<PlayerController>().maxHp;
+                battleController.characterSelected.GetComponent<PlayerController>().currentHp = battleController.characterSelected.GetComponent<PlayerController>().maxHp;
                 tempEndNumber = battleController.characterSelected.GetComponent<PlayerController>().maxHp;
             }
             else
             {
-                battleController.characterSelected.GetComponent<PlayerController>().hp += item.restorationAmount;
-                tempEndNumber = battleController.characterSelected.GetComponent<PlayerController>().hp;
+                battleController.characterSelected.GetComponent<PlayerController>().currentHp += item.restorationAmount;
+                tempEndNumber = battleController.characterSelected.GetComponent<PlayerController>().currentHp;
             }
             yield return StartCoroutine(animateHealthOrManaBars("hp", tempStartNumber, tempEndNumber));
         }
         else if (item.hpOrMana == "mana")
         {
-            int tempStartNumber = battleController.characterSelected.GetComponent<PlayerController>().mana;
+            int tempStartNumber = battleController.characterSelected.GetComponent<PlayerController>().currentMana;
             int tempEndNumber;
-            if (battleController.characterSelected.GetComponent<PlayerController>().mana + item.restorationAmount > battleController.characterSelected.GetComponent<PlayerController>().maxMana)
+            if (battleController.characterSelected.GetComponent<PlayerController>().currentMana + item.restorationAmount > battleController.characterSelected.GetComponent<PlayerController>().maxMana)
             {
-                battleController.characterSelected.GetComponent<PlayerController>().mana = battleController.characterSelected.GetComponent<PlayerController>().maxMana;
+                battleController.characterSelected.GetComponent<PlayerController>().currentMana = battleController.characterSelected.GetComponent<PlayerController>().maxMana;
                 tempEndNumber = battleController.characterSelected.GetComponent<PlayerController>().maxMana;
             }
             else
             {
-                battleController.characterSelected.GetComponent<PlayerController>().mana += item.restorationAmount;
-                tempEndNumber = battleController.characterSelected.GetComponent<PlayerController>().mana;
+                battleController.characterSelected.GetComponent<PlayerController>().currentMana += item.restorationAmount;
+                tempEndNumber = battleController.characterSelected.GetComponent<PlayerController>().currentMana;
             }
             yield return StartCoroutine(animateHealthOrManaBars("mana", tempStartNumber, tempEndNumber));
         }
@@ -623,7 +623,7 @@ public class InventoryMenu : MonoBehaviour
 
             // Calculate target size
             PlayerController player = battleController.characterSelected.GetComponent<PlayerController>();
-            Vector2 targetSize = originalHpManaBarSize * new Vector2((float)player.hp / player.maxHp, 1f);
+            Vector2 targetSize = originalHpManaBarSize * new Vector2((float)player.currentHp / player.maxHp, 1f);
 
             // Animation duration
             float duration = 1.5f;
@@ -660,7 +660,7 @@ public class InventoryMenu : MonoBehaviour
 
             // Calculate target size
             PlayerController player = battleController.characterSelected.GetComponent<PlayerController>();
-            Vector2 targetSize = originalHpManaBarSize * new Vector2((float)player.mana / player.maxMana, 1f);
+            Vector2 targetSize = originalHpManaBarSize * new Vector2((float)player.currentMana / player.maxMana, 1f);
 
             // Animation duration
             float duration = 1.5f;

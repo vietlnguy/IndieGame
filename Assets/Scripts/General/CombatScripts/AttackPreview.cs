@@ -184,17 +184,17 @@ public class AttackPreview : MonoBehaviour
         enemyTitle.text = battleController.enemySelected.GetComponent<EnemyController>().title;
 
         //Update health bars and values
-        previewPlayerHp.text = battleController.characterSelected.GetComponent<PlayerController>().hp.ToString();
+        previewPlayerHp.text = battleController.characterSelected.GetComponent<PlayerController>().currentHp.ToString();
         previewPlayerMaxHp.text = battleController.characterSelected.GetComponent<PlayerController>().maxHp.ToString();
-        previewPlayerMana.text = battleController.characterSelected.GetComponent<PlayerController>().mana.ToString();
+        previewPlayerMana.text = battleController.characterSelected.GetComponent<PlayerController>().currentMana.ToString();
         previewPlayerMaxMana.text = battleController.characterSelected.GetComponent<PlayerController>().maxMana.ToString();
-        previewEnemyHp.text = battleController.enemySelected.GetComponent<EnemyController>().hp.ToString();
+        previewEnemyHp.text = battleController.enemySelected.GetComponent<EnemyController>().currentHp.ToString();
         previewEnemyMaxHp.text = battleController.enemySelected.GetComponent<EnemyController>().maxHp.ToString();
-        previewEnemyMana.text = battleController.enemySelected.GetComponent<EnemyController>().mana.ToString();
+        previewEnemyMana.text = battleController.enemySelected.GetComponent<EnemyController>().currentMana.ToString();
         previewEnemyMaxMana.text = battleController.enemySelected.GetComponent<EnemyController>().maxMana.ToString();
 
-        previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().hp / battleController.characterSelected.GetComponent<PlayerController>().maxHp, 1f);
-        previewPlayerManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().mana / battleController.characterSelected.GetComponent<PlayerController>().maxMana, 1f);
+        previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().currentHp / battleController.characterSelected.GetComponent<PlayerController>().maxHp, 1f);
+        previewPlayerManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().currentMana / battleController.characterSelected.GetComponent<PlayerController>().maxMana, 1f);
 
         //Update moveset
         int index = 0;
@@ -266,18 +266,18 @@ public class AttackPreview : MonoBehaviour
         enemyTitle.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().title;
 
         //Update health bars and values
-        previewPlayerHp.text = battleController.characterSelected.GetComponent<PlayerController>().hp.ToString();
+        previewPlayerHp.text = battleController.characterSelected.GetComponent<PlayerController>().currentHp.ToString();
         previewPlayerMaxHp.text = battleController.characterSelected.GetComponent<PlayerController>().maxHp.ToString();
-        previewPlayerMana.text = battleController.characterSelected.GetComponent<PlayerController>().mana.ToString();
+        previewPlayerMana.text = battleController.characterSelected.GetComponent<PlayerController>().currentMana.ToString();
         previewPlayerMaxMana.text = battleController.characterSelected.GetComponent<PlayerController>().maxMana.ToString();
         
-        previewEnemyHp.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().hp.ToString();
+        previewEnemyHp.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentHp.ToString();
         previewEnemyMaxHp.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().maxHp.ToString();
-        previewEnemyMana.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().mana.ToString();
+        previewEnemyMana.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentMana.ToString();
         previewEnemyMaxMana.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().maxMana.ToString();
 
-        previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().hp / battleController.characterSelected.GetComponent<PlayerController>().maxHp, 1f);
-        previewPlayerManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().mana / battleController.characterSelected.GetComponent<PlayerController>().maxMana, 1f);
+        previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().currentHp / battleController.characterSelected.GetComponent<PlayerController>().maxHp, 1f);
+        previewPlayerManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().currentMana / battleController.characterSelected.GetComponent<PlayerController>().maxMana, 1f);
 
         //Update moveset
         int index = 0;
@@ -417,10 +417,10 @@ public class AttackPreview : MonoBehaviour
         battleScreenEnemyName.text = battleController.enemySelected.GetComponent<EnemyController>().title;
 
         //Populate player and enemy health
-        battleScreenPlayerHealth.text = battleController.characterSelected.GetComponent<PlayerController>().hp.ToString();
-        battleScreenEnemyHealth.text = battleController.enemySelected.GetComponent<EnemyController>().hp.ToString();
-        battleScreenPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().hp / battleController.characterSelected.GetComponent<PlayerController>().maxHp, 1f);
-        battleScreenEnemyHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.enemySelected.GetComponent<EnemyController>().hp / battleController.enemySelected.GetComponent<EnemyController>().maxHp, 1f);
+        battleScreenPlayerHealth.text = battleController.characterSelected.GetComponent<PlayerController>().currentHp.ToString();
+        battleScreenEnemyHealth.text = battleController.enemySelected.GetComponent<EnemyController>().currentHp.ToString();
+        battleScreenPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().currentHp / battleController.characterSelected.GetComponent<PlayerController>().maxHp, 1f);
+        battleScreenEnemyHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.enemySelected.GetComponent<EnemyController>().currentHp / battleController.enemySelected.GetComponent<EnemyController>().maxHp, 1f);
 
         //Populate player and enemy chosen Attacks
         battleScreenPlayerAttack.text = playerChosenAttack.name;

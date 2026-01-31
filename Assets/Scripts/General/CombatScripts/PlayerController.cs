@@ -19,9 +19,9 @@ public class PlayerController : MonoBehaviour
     public CharacterAssistMenu characterAssistMenuScript;
     public InventoryMenu inventoryMenuScript;
     public int offset = 0;
-    public int hp;
+    public int currentHp;
     public int maxHp;
-    public int mana;
+    public int currentMana;
     public int maxMana;
     public int attack;
     public int intelligence;
@@ -31,6 +31,34 @@ public class PlayerController : MonoBehaviour
     public int speed;
     public int attackRange;
     public int moveRange;
+    public int baseMaxHp;
+    public int baseMaxMana;
+    public int baseAttack;
+    public int baseIntelligence;
+    public int baseDefense;
+    public int baseResistance;
+    public int baseSkill;
+    public int baseSpeed;
+    public int baseAttackRange;
+    public int baseMoveRange;
+    public int totalAttackMod;
+    public int totalIntelligenceMod;
+    public int totalDefenseMod;
+    public int totalResistanceMod;
+    public int totalSkillMod;
+    public int totalSpeedMod;
+    public float totalAttackMult;
+    public float totalIntelligenceMult;
+    public float totalDefenseMult;
+    public float totalResistanceMult;
+    public float totalSkillMult;
+    public float totalSpeedMult;
+    public float totalAttackRangeMult;
+    public float totalMoveRangeMult;
+    public float totalHpMod;
+    public float totalHpMult;
+    public float totalManaMod;
+    public float totalManaMult;
     public int relationship;
     public bool owned;
     public string title;
@@ -179,32 +207,100 @@ public class PlayerController : MonoBehaviour
     {
 
         string temp = gameObject.name.Substring(0, gameObject.name.IndexOf("Prefab"));
-        Character hero;
+        Character savedCharacter;
         if (temp == "MainCharacter")
         {
-            hero = saveManager.loadedData.characters.Find(c => c.characterName == saveManager.loadedData.mainCharacterName);
+            savedCharacter = saveManager.loadedData.characters.Find(c => c.characterName == saveManager.loadedData.mainCharacterName);
         }
         else
         {
-            hero = saveManager.loadedData.characters.Find(c => c.characterName == temp);
+            savedCharacter = saveManager.loadedData.characters.Find(c => c.characterName == temp);
+        } 
+        baseMaxHp = savedCharacter.baseMaxHp;
+        baseMaxMana = savedCharacter.baseMaxMana;
+        baseAttack = savedCharacter.baseAttack;
+        baseIntelligence = savedCharacter.baseIntelligence;
+        baseDefense = savedCharacter.baseDefense;
+        baseResistance = savedCharacter.baseResistance;
+        baseSkill = savedCharacter.baseSkill;
+        baseSpeed = savedCharacter.baseSpeed;
+        baseAttackRange = savedCharacter.baseAttackRange;
+        baseMoveRange = savedCharacter.baseMoveRange;
+        relationship = savedCharacter.relationship;
+        owned = savedCharacter.owned;
+        title = savedCharacter.characterName;
+        knownAttacks = savedCharacter.knownAttacks;
+        inventory = savedCharacter.inventory;
+        weaponEquiped = savedCharacter.weaponEquiped;
+        armorEquiped = savedCharacter.armorEquiped;
+        accessoryEquiped = savedCharacter.accessoryEquiped;
+
+        calculateStats();
+    }
+    public void calculateStats()
+    {   
+        Equipment tempWeapon;
+        Equipment tempArmor;
+        Equipment tempAccessory;
+
+        //When no equipment then use default
+        if (weaponEquiped == null)
+        {
+            tempWeapon = new Equipment("temp", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "temp");
         }
-        hp = hero.maxHp;
-        maxHp = hero.maxHp;
-        mana = hero.maxMana;
-        maxMana = hero.maxMana;
-        attack = hero.attack;
-        intelligence = hero.intelligence;
-        defense = hero.defense;
-        resistance = hero.resistance;
-        skill = hero.skill;
-        speed = hero.speed;
-        attackRange = hero.attackRange;
-        moveRange = hero.moveRange;
-        relationship = hero.relationship;
-        owned = hero.owned;
-        title = hero.characterName;
-        knownAttacks = hero.knownAttacks;
-        inventory = hero.inventory;
+        else
+        {
+            tempWeapon = weaponEquiped;
+        }       
+        if (armorEquiped == null)
+        {
+            tempArmor = new Equipment("temp", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "temp");
+        }
+        else
+        {
+            tempArmor = armorEquiped;
+        }
+        if (accessoryEquiped == null)
+        {            
+            tempAccessory = new Equipment("temp", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "temp");
+        }
+        else
+        {
+            tempAccessory = accessoryEquiped;
+        }
+        
+        totalAttackMod = tempWeapon.attackMod + tempArmor.attackMod + tempAccessory.attackMod;
+        totalIntelligenceMod = tempWeapon.intelligenceMod + tempArmor.intelligenceMod + tempAccessory.intelligenceMod;
+        totalDefenseMod = tempWeapon.defenseMod + tempArmor.defenseMod + tempAccessory.defenseMod;
+        totalResistanceMod = tempWeapon.resistanceMod + tempArmor.resistanceMod + tempAccessory.resistanceMod;
+        totalSkillMod = tempWeapon.skillMod + tempArmor.skillMod + tempAccessory.skillMod;
+        totalSpeedMod = tempWeapon.speedMod + tempArmor.speedMod + tempAccessory.speedMod;
+        totalHpMod = tempWeapon.hpMod + tempArmor.hpMod + tempAccessory.hpMod;
+        totalManaMod = tempWeapon.manaMod + tempArmor.manaMod + tempAccessory.manaMod;
+        
+        totalAttackMult = 1 + tempWeapon.attackMult + tempArmor.attackMult + tempAccessory.attackMult;
+        totalIntelligenceMult = 1 + tempWeapon.intelligenceMult + tempArmor.intelligenceMult + tempAccessory.intelligenceMult;
+        totalDefenseMult = 1 + tempWeapon.defenseMult + tempArmor.defenseMult + tempAccessory.defenseMult;
+        totalResistanceMult = 1 + tempWeapon.resistanceMult + tempArmor.resistanceMult + tempAccessory.resistanceMult;
+        totalSkillMult = 1 + tempWeapon.skillMult + tempArmor.skillMult + tempAccessory.skillMult;
+        totalSpeedMult = 1 +tempWeapon.speedMult + tempArmor.speedMult + tempAccessory.speedMult;
+        totalAttackRangeMult = 1 + tempWeapon.attackRangeMult + tempArmor.attackRangeMult + tempAccessory.attackRangeMult;
+        totalMoveRangeMult = 1 + tempWeapon.moveRangeMult + tempArmor.moveRangeMult + tempAccessory.moveRangeMult;
+        totalHpMult = 1 + tempWeapon.hpMult + tempArmor.hpMult + tempAccessory.hpMult;
+        totalManaMult = 1 + tempWeapon.manaMult + tempArmor.manaMult + tempAccessory.manaMult;
+
+        maxHp = Mathf.RoundToInt((float)(baseMaxHp + totalHpMod) * totalHpMult);
+        currentHp = maxHp;
+        maxMana = Mathf.RoundToInt((float)(baseMaxMana + totalManaMod) * totalManaMult);
+        currentMana = maxMana;
+        attack = Mathf.RoundToInt((float)(baseAttack + totalAttackMod) * totalAttackMult);
+        intelligence = Mathf.RoundToInt((float)(baseIntelligence + totalIntelligenceMod) * totalIntelligenceMult);
+        defense = Mathf.RoundToInt((float)(baseDefense + totalDefenseMod) * totalDefenseMult);
+        resistance = Mathf.RoundToInt((float)(baseResistance + totalResistanceMod) * totalResistanceMult);
+        skill = Mathf.RoundToInt((float)(baseSkill + totalSkillMod) * totalSkillMult);
+        speed = Mathf.RoundToInt((float)(baseSpeed + totalSpeedMod) * totalSpeedMult);
+        moveRange = Mathf.RoundToInt((float)baseMoveRange* totalMoveRangeMult);
+        attackRange = Mathf.RoundToInt((float)baseAttackRange * totalAttackRangeMult);
     }
     public void highlightAssistable()
     {

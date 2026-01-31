@@ -15,9 +15,9 @@ public class EnemyController : MonoBehaviour
     public InventoryMenu inventoryMenuScript;
     private Rigidbody2D rigidBody;
     private bool isHovered = false;
-    public int hp;
+    public int currentHp;
     public int maxHp;
-    public int mana;
+    public int currentMana;
     public int maxMana;
     public int attack;
     public int defense;

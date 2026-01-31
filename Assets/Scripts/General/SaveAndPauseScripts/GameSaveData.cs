@@ -21,16 +21,16 @@ public class GameSaveData
 public class Character
 {
     public string characterName;
-    public int maxHp;
-    public int maxMana;
-    public int attack;
-    public int intelligence;
-    public int defense;
-    public int resistance;
-    public int skill;
-    public int speed;
-    public int attackRange;
-    public int moveRange;
+    public int baseMaxHp;
+    public int baseMaxMana;
+    public int baseAttack;
+    public int baseIntelligence;
+    public int baseDefense;
+    public int baseResistance;
+    public int baseSkill;
+    public int baseSpeed;
+    public int baseAttackRange;
+    public int baseMoveRange;
     public int relationship;
     public bool owned;
     public List<Item> inventory;
@@ -42,16 +42,16 @@ public class Character
     public Character(string characterName, int maxHp, int maxMana, int attack, int intelligence, int defense, int resistance, int skill, int speed, int attackRange, int moveRange, bool owned)
     {
         this.characterName = characterName;
-        this.maxHp = maxHp;
-        this.maxMana = maxMana;
-        this.attack = attack;
-        this.intelligence = intelligence;
-        this.defense = defense;
-        this.resistance = resistance;
-        this.skill = skill;
-        this.speed = speed;
-        this.attackRange = attackRange;
-        this.moveRange = moveRange;
+        this.baseMaxHp = maxHp;
+        this.baseMaxMana = maxMana;
+        this.baseAttack = attack;
+        this.baseIntelligence = intelligence;
+        this.baseDefense = defense;
+        this.baseResistance = resistance;
+        this.baseSkill = skill;
+        this.baseSpeed = speed;
+        this.baseAttackRange = attackRange;
+        this.baseMoveRange = moveRange;
         this.owned = owned;
         relationship = 0;
         knownAttacks = new List<Attack>();
@@ -65,15 +65,54 @@ public class Character
 public class Equipment
 {
     public string name;
+    public string type;
     public int hpMod;
     public int manaMod;
     public int attackMod;
+    public int intelligenceMod;
     public int defenseMod;
+    public int resistanceMod;
     public int skillMod;
     public int speedMod;
-    public int attackRangeMod;
-    public int moveRangeMod;
+    public float hpMult;
+    public float manaMult;
+    public float attackMult;
+    public float intelligenceMult;
+    public float defenseMult;
+    public float resistanceMult;
+    public float skillMult;
+    public float speedMult;
+    public float attackRangeMult;
+    public float moveRangeMult;
+    public string description;
 
+    public Equipment(string name, string type, int hpMod, int manaMod, int attackMod, int intelligenceMod, int defenseMod, int skillMod, int speedMod, float hpMult, float manaMult, float attackMult, float intelligenceMult, float defenseMult, float resistanceMult, float skillMult, float speedMult, float attackRangeMult, float moveRangeMult, string description)
+    {
+        this.name = name;
+        this.type = type;
+
+        this.hpMod = hpMod;
+        this.manaMod = manaMod;
+        this.attackMod = attackMod;
+        this.intelligenceMod = intelligenceMod;
+        this.defenseMod = defenseMod;
+        this.resistanceMod = resistanceMod;
+        this.skillMod = skillMod;
+        this.speedMod = speedMod;
+
+        this.hpMult = hpMult;
+        this.manaMult = manaMult;
+        this.attackMult = attackMult;
+        this.intelligenceMult = intelligenceMult;
+        this.defenseMult = defenseMult;
+        this.resistanceMult = resistanceMult;
+        this.skillMult = skillMult;
+        this.speedMult = speedMult;
+        this.attackRangeMult = attackRangeMult;
+        this.moveRangeMult = moveRangeMult;
+        
+        this.description = description;
+    }
 }
 
 [System.Serializable]
@@ -144,4 +183,5 @@ public class Item
         this.curesBleed = item.curesBleed;
         this.curesRooted = item.curesRooted;
     }
+
 }
