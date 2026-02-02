@@ -49,6 +49,8 @@ public class CharacterInfoScreen : MonoBehaviour
     public TextMeshProUGUI atkModText;
     public GameObject childObject;
     public CharacterMenu characterMenuScript;
+    public AudioSource bookOpenAudio;
+    public AudioSource bookCloseAudio;
 
     void LateUpdate()
     {
@@ -509,6 +511,7 @@ public class CharacterInfoScreen : MonoBehaviour
         CanvasGroup canvasGroup = obj.GetComponent<CanvasGroup>();
         float startAlpha = 0f;
         float time = 0f;
+        bookOpenAudio.Play();
 
         while (time < duration)
         {
@@ -539,6 +542,8 @@ public class CharacterInfoScreen : MonoBehaviour
         CanvasGroup canvasGroup = obj.GetComponent<CanvasGroup>();
         float startAlpha = 0f;
         float time = 0f;
+        bookCloseAudio.time = 0.3f;
+        bookCloseAudio.Play();
 
         while (time < duration)
         {

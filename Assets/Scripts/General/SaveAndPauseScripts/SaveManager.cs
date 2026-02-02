@@ -80,15 +80,15 @@ public class SaveManager : MonoBehaviour
         Character mainCharacter = new Character(mainCharacterName, 15, 8, 8, 4, 7, 5, 6, 6, 1, 5, true);
         mainCharacter.knownAttacks.Add(new Attack("Slash", "physical", 5, 90, 0, 0, false, "Slash the enemy with your sword."));
         mainCharacter.inventory.Add(new Item("Potion", 10, "hp", 10, "Restores 10 HP.", false, false, false));
-        mainCharacter.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
-        mainCharacter.armorEquiped = new Equipment("Leather", "armor", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "For unexpected adventures. +2 Max HP.");
+        mainCharacter.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
+        mainCharacter.armorEquiped = new Equipment("Leather", "armor", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "For unexpected adventures. +2 Max HP.");
 
         Character astrid = new Character("Astrid", 11, 8, 6, 5, 5, 6, 8, 7, 3, 5, true);
         astrid.knownAttacks.Add(new Attack("Bow Shot", "physical", 4, 90, 0, 0, false, "Shoot an arrow at the enemy."));
         astrid.inventory.Add(new Item("Potion", 10, "hp", 10, "Restores 10 HP.", false, false, false));
-        astrid.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
-        astrid.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
-        astrid.accessoryEquiped = new Equipment("Power Bracelet", "accessory", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Tingles with power. +1 ATK.");
+        astrid.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
+        astrid.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
+        astrid.accessoryEquiped = new Equipment("Power Bracelet", "accessory", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Tingles with power. +1 ATK.");
 
         dataToSave.characters.Add(mainCharacter);
         dataToSave.characters.Add(astrid);

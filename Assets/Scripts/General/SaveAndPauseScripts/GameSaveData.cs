@@ -86,7 +86,7 @@ public class Equipment
     public float moveRangeMult;
     public string description;
 
-    public Equipment(string name, string type, int hpMod, int manaMod, int attackMod, int intelligenceMod, int defenseMod, int skillMod, int speedMod, float hpMult, float manaMult, float attackMult, float intelligenceMult, float defenseMult, float resistanceMult, float skillMult, float speedMult, float attackRangeMult, float moveRangeMult, string description)
+    public Equipment(string name, string type, int hpMod, int manaMod, int attackMod, int intelligenceMod, int defenseMod, int resistanceMod, int skillMod, int speedMod, float hpMult, float manaMult, float attackMult, float intelligenceMult, float defenseMult, float resistanceMult, float skillMult, float speedMult, float attackRangeMult, float moveRangeMult, string description)
     {
         this.name = name;
         this.type = type;

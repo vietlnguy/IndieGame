@@ -404,7 +404,7 @@ public class InventoryMenu : MonoBehaviour
     }
     public void enableTradingMenu()
     {
-        enableInventoryGiverMenu(battleController.characterSelected);
+        StartCoroutine(enableInventoryGiverMenu(battleController.characterSelected));
         enableInventoryRecipientMenu(battleController.assistableCharacterSelected);
         storeOriginalInventories();
         arrows.SetActive(true);

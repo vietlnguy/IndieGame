@@ -246,7 +246,7 @@ public class PlayerController : MonoBehaviour
         //When no equipment then use default
         if (weaponEquiped == null)
         {
-            tempWeapon = new Equipment("temp", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "temp");
+            tempWeapon = new Equipment("temp", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "temp");
         }
         else
         {
@@ -254,7 +254,7 @@ public class PlayerController : MonoBehaviour
         }       
         if (armorEquiped == null)
         {
-            tempArmor = new Equipment("temp", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "temp");
+            tempArmor = new Equipment("temp", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "temp");
         }
         else
         {
@@ -262,7 +262,7 @@ public class PlayerController : MonoBehaviour
         }
         if (accessoryEquiped == null)
         {            
-            tempAccessory = new Equipment("temp", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "temp");
+            tempAccessory = new Equipment("temp", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "temp");
         }
         else
         {

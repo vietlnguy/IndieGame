@@ -24,7 +24,7 @@ public class CharacterMenu : MonoBehaviour
         worldCamera = Camera.main;
         characterMenuParentCanvasRect = GetComponent<RectTransform>();
     }
-    void Update()
+    void LateUpdate()
     {
 
         if (active)
