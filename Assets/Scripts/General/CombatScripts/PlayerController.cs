@@ -174,7 +174,7 @@ public class PlayerController : MonoBehaviour
             //this character already selected and this character is clicked again. Should bring up inventory and end turn menu
             else if (battleController.characterSelected == gameObject && !characterAssistMenuScript.active)
             {
-                characterMenuScript.enableCharacterMenu(gameObject);
+                StartCoroutine(characterMenuScript.enableCharacterMenu(gameObject));
                 movementEnabled = false;
                 characterToolTipScript.disableCharacterToolTip();
                 selectAudio.Play();

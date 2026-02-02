@@ -77,7 +77,7 @@ public class AttackPreview : MonoBehaviour
     {
         if (active)
         {
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Q))
             {
                 StartCoroutine(disablePreview());
             }

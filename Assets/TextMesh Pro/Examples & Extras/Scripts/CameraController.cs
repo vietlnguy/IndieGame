@@ -147,7 +147,7 @@ namespace TMPro.Examples
 
 
                 // Check for right mouse button to change camera follow and elevation angle
-                if (Input.GetMouseButton(1))
+                if (Input.GetMouseButtonDown(1))
                 {
                     mouseY = Input.GetAxis("Mouse Y");
                     mouseX = Input.GetAxis("Mouse X");
@@ -196,7 +196,7 @@ namespace TMPro.Examples
                 }
 
                 // Check for left mouse button to select a new CameraTarget or to reset Follow position
-                if (Input.GetMouseButton(0))
+                if (Input.GetMouseButtonDown(0))
                 {
                     Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                     RaycastHit hit;
@@ -219,7 +219,7 @@ namespace TMPro.Examples
                 }
 
 
-                if (Input.GetMouseButton(2))
+                if (Input.GetMouseButtonDown(2))
                 {
                     if (dummyTarget == null)
                     {

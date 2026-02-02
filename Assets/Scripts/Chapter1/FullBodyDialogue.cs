@@ -119,7 +119,7 @@ public class FullBodyDialogue : MonoBehaviour
         {
             if (startedDialogue)
             {
-                if (Input.GetMouseButtonDown(0)) // Left click
+                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) // Left click
                 {
                     if (textComponent.text == lines[linesIndex])
                     {

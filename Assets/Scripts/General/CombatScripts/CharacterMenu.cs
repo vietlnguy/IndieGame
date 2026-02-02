@@ -9,27 +9,27 @@ public class CharacterMenu : MonoBehaviour
     private RectTransform characterMenuParentCanvasRect;
     public GameObject characterMenu;
     public bool active = false;
-    public bool characterInfoScreenActive = false;
     private int index = 0;
     public BattleController battleController;
     public InventoryMenu inventoryMenuScript;
+    public CharacterInfoScreen characterInfoScript;
     public GameObject selector;
     public AudioSource selectorAudio;
     public AudioSource deselectAudio;
     public TextMeshProUGUI endTurnText;
     public GameObject blackScreen;
-    public GameObject characterInfoScreen;
 
     void Awake()
     {
         worldCamera = Camera.main;
         characterMenuParentCanvasRect = GetComponent<RectTransform>();
     }
-    void LateUpdate()
+    void Update()
     {
+
         if (active)
         {
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Q))
             {
                 disableCharacterMenu();
                 if (!battleController.disabledCharacters.Contains(battleController.characterSelected))
@@ -61,14 +61,15 @@ public class CharacterMenu : MonoBehaviour
                 //Open info UI
                 if (index == 0)
                 {
-                    StartCoroutine(Transition(blackScreen, .25f));
+                    active = false;
+                    StartCoroutine(characterInfoScript.enableCharacterInfo(battleController.characterSelected));
                 }
 
                 //Open ineventory UI
                 else if (index == 1)
                 {
-                    inventoryMenuScript.enableInventoryGiverMenu(battleController.characterSelected);
-                    disableCharacterMenu();
+                    StartCoroutine(inventoryMenuScript.enableInventoryGiverMenu(battleController.characterSelected));
+                    active = false;
                 }
 
                 //End turn
@@ -78,20 +79,16 @@ public class CharacterMenu : MonoBehaviour
                     {
                         battleController.characterSelected.GetComponent<PlayerController>().endTurn();
                         selectorAudio.Play();
+
                     }
                 }
             }
         }
-        else if (characterInfoScreenActive)
-        {
-            if (Input.GetMouseButtonDown(1))
-            {
-                StartCoroutine(UndoTransition(blackScreen, .25f));
-            }
-        }
+
     }
-    public void enableCharacterMenu(GameObject character)
-    {
+    public IEnumerator enableCharacterMenu(GameObject character)
+    {   
+        yield return null;
         //Gray out EndTurn if character already ended turn
         if (battleController.disabledCharacters.Contains(battleController.characterSelected))
         {
@@ -113,8 +110,8 @@ public class CharacterMenu : MonoBehaviour
     public void disableCharacterMenu()
     {
         deselectAudio.Play();
-        characterMenu.SetActive(false);
         active = false;
+        characterMenu.SetActive(false);
     }
     private void moveSelectorDown()
     {
@@ -132,68 +129,5 @@ public class CharacterMenu : MonoBehaviour
         anchoredPos.y -= 27f;
         rt.anchoredPosition = anchoredPos;
     }
-    private IEnumerator Transition(GameObject obj, float duration){
-        active = false;
-        characterInfoScreenActive = true;
-        CanvasGroup canvasGroup = obj.GetComponent<CanvasGroup>();
-        float startAlpha = 0f;
-        float time = 0f;
 
-        while (time < duration)
-        {
-            time += Time.deltaTime;
-            canvasGroup.alpha = Mathf.Lerp(startAlpha, 1f, time / duration);
-            yield return null;
-        }
-        canvasGroup.alpha = 1f;
-        
-        characterInfoScreen.SetActive(true);
-        characterInfoScreen.GetComponent<CharacterInfoScreen>().characterScript = battleController.characterSelected.GetComponent<PlayerController>();
-        characterInfoScreen.GetComponent<CharacterInfoScreen>().populateInitialData();
-
-        startAlpha = 1f;
-        time = 0f;
-
-        while (time < duration)
-        {
-            time += Time.deltaTime;
-            canvasGroup.alpha = Mathf.Lerp(startAlpha, 0f, time / duration);
-            yield return null;
-        }
-
-        canvasGroup.alpha = 0f;
-
-
-    }
-    private IEnumerator UndoTransition(GameObject obj, float duration){
-        active = true;
-        characterInfoScreenActive = false;
-        CanvasGroup canvasGroup = obj.GetComponent<CanvasGroup>();
-        float startAlpha = 0f;
-        float time = 0f;
-
-        while (time < duration)
-        {
-            time += Time.deltaTime;
-            canvasGroup.alpha = Mathf.Lerp(startAlpha, 1f, time / duration);
-            yield return null;
-        }
-        canvasGroup.alpha = 1f;
-        
-        characterInfoScreen.SetActive(false);
-
-        startAlpha = 1f;
-        time = 0f;
-
-        while (time < duration)
-        {
-            time += Time.deltaTime;
-            canvasGroup.alpha = Mathf.Lerp(startAlpha, 0f, time / duration);
-            yield return null;
-        }
-
-        canvasGroup.alpha = 0f;
-
-
-    }
 }

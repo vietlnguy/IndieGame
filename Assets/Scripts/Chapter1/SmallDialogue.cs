@@ -69,7 +69,7 @@ public class SmallDialogue : MonoBehaviour
         {
             if (startedDialogue && !dialogues[dialoguesIndex].autoPlay)
             {
-                if (Input.GetMouseButtonDown(0)) // Left click
+                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) // Left click
                 {
                     if (textComponent.text == lines[linesIndex])
                     {

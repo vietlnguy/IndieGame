@@ -60,7 +60,7 @@ public class InventoryMenu : MonoBehaviour
     {
         if (active)
         {
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Q))
             {
                 if (confirmBoxActive)
                 {
@@ -70,7 +70,7 @@ public class InventoryMenu : MonoBehaviour
                 {
                     resetInventories();
                     disableRecipientMenu();
-                    disableGiverMenu();
+                    disableGiverMenu(false);
                     confirmButton.GetComponent<ConfirmTradeButton>().disableButton();
                     confirmButton.SetActive(false);
                     arrows.SetActive(false);
@@ -89,7 +89,9 @@ public class InventoryMenu : MonoBehaviour
                 }
                 else
                 {
-                    disableGiverMenu();
+                    disableGiverMenu(true);
+                    StartCoroutine(characterMenuScript.enableCharacterMenu(battleController.characterSelected));
+
                 }
                 
                 resetSelectorPosition();
@@ -284,8 +286,9 @@ public class InventoryMenu : MonoBehaviour
             }
         }
     }
-    public void enableInventoryGiverMenu(GameObject character)
+    public IEnumerator enableInventoryGiverMenu(GameObject character)
     {
+        yield return null;
         selector.SetActive(true);
         inventoryGiverMenu.SetActive(true);
         active = true;
@@ -355,7 +358,7 @@ public class InventoryMenu : MonoBehaviour
         updateRecipientDescription(character);
 
     }
-    public void disableGiverMenu()
+    public void disableGiverMenu(bool characterMenuWasActive)
     {
         selector.SetActive(false);
         deselectAudio.Play();
@@ -372,7 +375,10 @@ public class InventoryMenu : MonoBehaviour
 
         inventoryGiverMenu.SetActive(false);
         active = false;
-        battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = true;
+        if (!characterMenuWasActive)
+        {
+            battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = true;
+        }
 
     }
     public void disableRecipientMenu() {
@@ -608,7 +614,7 @@ public class InventoryMenu : MonoBehaviour
 
         //End turn
         disableConfirmBox();
-        disableGiverMenu();
+        disableGiverMenu(false);
         battleController.characterSelected.GetComponent<PlayerController>().endTurn();
 
     }
@@ -735,7 +741,7 @@ public class InventoryMenu : MonoBehaviour
     public void confirmTrade()
     {
         disableRecipientMenu();
-        disableGiverMenu();
+        disableGiverMenu(false);
         resetSelectorPosition();
         confirmButton.GetComponent<ConfirmTradeButton>().disableButton();
         confirmButton.SetActive(false);

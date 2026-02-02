@@ -28,7 +28,7 @@ public class CharacterAssistMenu : MonoBehaviour
     {
         if (active)
         {
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Q))
             {
                 disableCharacterAssistMenu();
                 battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = true;

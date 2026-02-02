@@ -31,6 +31,7 @@ public class BattleController : MonoBehaviour
     public MoveRangeCircle moveRangeCircleScript;
     public AttackRangeCircle attackRangeCircleScript;
     public InventoryMenu inventoryMenuScript;
+    public CharacterInfoScreen characterInfoScript;
     public bool isEnemyTurn = false;
     void Awake()
     {
@@ -64,9 +65,9 @@ public class BattleController : MonoBehaviour
 
         if (introFinished && !isPaused)
         {
-            if (!characterAssistMenuScript.active && !characterMenuScript.active && !attackPreviewScript.active && !inventoryMenuScript.active && !isEnemyTurn)
+            if (!characterAssistMenuScript.active && !characterMenuScript.active && !attackPreviewScript.active && !inventoryMenuScript.active && !isEnemyTurn && !characterInfoScript.active)
             {
-                if (Input.GetMouseButtonDown(1))
+                if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Q))
                 {
                     if (characterSelected)
                     {

@@ -6,7 +6,7 @@ using TMPro;
 public class CharacterInfoScreen : MonoBehaviour
 {
     public PlayerController characterScript;
-    public bool active = true;
+    public bool active = false;
     private int index = 0;
     private int upDownIndex = 0;
     private int leftRightIndex = 0;
@@ -47,6 +47,8 @@ public class CharacterInfoScreen : MonoBehaviour
     public TextMeshProUGUI equipmentDescription;
     public ModifierTextColor mtcScript;
     public TextMeshProUGUI atkModText;
+    public GameObject childObject;
+    public CharacterMenu characterMenuScript;
 
     void LateUpdate()
     {
@@ -121,7 +123,11 @@ public class CharacterInfoScreen : MonoBehaviour
                     } 
                 }
             }
-
+            else if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Q))
+            {
+                StartCoroutine(UndoTransition(blackScreen, .25f));
+                active = false;
+            }
         }
     }
     private void moveSelectorDown()
@@ -490,6 +496,74 @@ public class CharacterInfoScreen : MonoBehaviour
     public void updateItemDescription()
     {
         
+    }
+    public IEnumerator enableCharacterInfo(GameObject characterSelected)
+    {
+        yield return null;
+        characterScript = characterSelected.GetComponent<PlayerController>();
+        active = true;
+        populateInitialData();
+        StartCoroutine(TransitionToCharacterInfo(blackScreen, .25f));
+    }
+    private IEnumerator TransitionToCharacterInfo(GameObject obj, float duration){
+        CanvasGroup canvasGroup = obj.GetComponent<CanvasGroup>();
+        float startAlpha = 0f;
+        float time = 0f;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, 1f, time / duration);
+            yield return null;
+        }
+        canvasGroup.alpha = 1f;
+        
+        childObject.SetActive(true);
+
+        startAlpha = 1f;
+        time = 0f;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, 0f, time / duration);
+            yield return null;
+        }
+
+        canvasGroup.alpha = 0f;
+
+
+    }
+    public IEnumerator UndoTransition(GameObject obj, float duration){
+        active = false;
+        CanvasGroup canvasGroup = obj.GetComponent<CanvasGroup>();
+        float startAlpha = 0f;
+        float time = 0f;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, 1f, time / duration);
+            yield return null;
+        }
+        canvasGroup.alpha = 1f;
+
+        childObject.SetActive(false);
+
+        startAlpha = 1f;
+        time = 0f;
+
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, 0f, time / duration);
+            yield return null;
+        }
+
+        canvasGroup.alpha = 0f;
+
+        characterMenuScript.active = true;
+
     }
 }
 
