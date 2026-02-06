@@ -35,6 +35,7 @@ public class IntroController: MonoBehaviour
     public AudioSource playerPhaseAudio;
     public BattleController battleController;
     public SaveManager saveManager;
+    public GameObject victorySubquestBoxes;
 
     void Awake()
     {
@@ -180,6 +181,10 @@ public class IntroController: MonoBehaviour
             }
         }
     }
+    private void enableVictorySubquestBoxes()
+    {
+        victorySubquestBoxes.SetActive(true);
+    }
     private IEnumerator introSequence()
     {
         fluteAudio.Play();
@@ -272,12 +277,14 @@ public class IntroController: MonoBehaviour
         
         //TODO: Tutorial steps
 
+        enableVictorySubquestBoxes();
         yield return new WaitForSeconds(2f);
         playerPhaseAudio.Play();
         fightScreenText.text = "Player Phase";
         fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
         yield return new WaitForSeconds(2.5f);
         fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
+
 
         battleController.introFinished = true;
         saveManager.introBattleOutro = "battle";
@@ -317,6 +324,7 @@ public class IntroController: MonoBehaviour
         
         //TODO: Tutorial steps
 
+        enableVictorySubquestBoxes();
         yield return new WaitForSeconds(2f);
         playerPhaseAudio.Play();
         fightScreenText.text = "Player Phase";
