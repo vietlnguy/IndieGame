@@ -17,14 +17,6 @@ public class ConfirmAttackButton : MonoBehaviour, IPointerEnterHandler, IPointer
         scm = FindFirstObjectByType<SaveManager>();
     }
 
-    void Start()
-    {
-    }
-
-    void Update()
-    {
-    }
-
     public void OnPointerEnter(PointerEventData eventData)
     {
         image.color = new Color(.65f, .65f, .65f);

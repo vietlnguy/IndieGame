@@ -84,6 +84,7 @@ public class InventoryMenu : MonoBehaviour
                     }
                     catch
                     {
+                        //Intentional
                     }
 
                 }
@@ -144,6 +145,7 @@ public class InventoryMenu : MonoBehaviour
                     }
                     catch
                     {
+                        
                     }
                 }
 
@@ -237,6 +239,7 @@ public class InventoryMenu : MonoBehaviour
                         //Empty row was selected
                         catch
                         {
+                            //Intentional
                         }
                     }
 
@@ -351,6 +354,7 @@ public class InventoryMenu : MonoBehaviour
             }
             catch
             {
+                //Intentional
             }
             tempIndex++;
         }

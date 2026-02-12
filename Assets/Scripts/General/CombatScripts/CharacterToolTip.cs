@@ -11,6 +11,7 @@ public class CharacterToolTip : MonoBehaviour
     public TextMeshProUGUI characterToolTipMaxHp;
     public TextMeshProUGUI characterToolTipMana;
     public TextMeshProUGUI characterToolTipMaxMana;
+    public TextMeshProUGUI characterToolTipName;
 
     void Awake()
     {
@@ -31,6 +32,7 @@ public class CharacterToolTip : MonoBehaviour
             characterToolTipMaxHp.text = character.GetComponent<PlayerController>().maxHp.ToString();
             characterToolTipMana.text = character.GetComponent<PlayerController>().currentMana.ToString();
             characterToolTipMaxMana.text = character.GetComponent<PlayerController>().maxMana.ToString();
+            characterToolTipName.text = character.GetComponent<PlayerController>().title;
         }
         catch
         {
@@ -38,6 +40,7 @@ public class CharacterToolTip : MonoBehaviour
             characterToolTipMaxHp.text = character.GetComponent<EnemyController>().maxHp.ToString();
             characterToolTipMana.text = character.GetComponent<EnemyController>().currentMana.ToString();
             characterToolTipMaxMana.text = character.GetComponent<EnemyController>().maxMana.ToString();
+            characterToolTipName.text = character.GetComponent<EnemyController>().title;
         }
         Vector3 screenPos = RectTransformUtility.WorldToScreenPoint(worldCamera, character.transform.position);
 

@@ -16439,6 +16439,7 @@ MonoBehaviour:
   maxMana: 5
   attack: 5
   defense: 3
+  resistance: 0
   skill: 4
   speed: 4
   attackRange: 2
@@ -16447,14 +16448,15 @@ MonoBehaviour:
   roams: 1
   attackMove:
     name: Slash
-    damageType: physical
-    baseDamage: 5
-    accuracy: 90
-    baseCrit: 0
-    description: Slash the enemy with your sword
     manaCost: 0
-    isSupportingMove: 0
+    description: Slash the enemy with your sword
+    damageType: physical
+    attackMult: 0
+    intMult: 0
+    baseAccuracy: 0
+    baseCrit: 0
   deselectAudio: {fileID: 0}
+  knownAttacks: []
 --- !u!50 &418793981
 Rigidbody2D:
   serializedVersion: 5
@@ -17466,6 +17468,7 @@ MonoBehaviour:
   maxMana: 5
   attack: 5
   defense: 3
+  resistance: 0
   skill: 4
   speed: 4
   attackRange: 2
@@ -17474,14 +17477,15 @@ MonoBehaviour:
   roams: 1
   attackMove:
     name: Slash
-    damageType: physical
-    baseDamage: 5
-    accuracy: 90
-    baseCrit: 0
-    description: Slash the enemy with your sword
     manaCost: 0
-    isSupportingMove: 0
+    description: Slash the enemy with your sword
+    damageType: physical
+    attackMult: 0
+    intMult: 0
+    baseAccuracy: 0
+    baseCrit: 0
   deselectAudio: {fileID: 0}
+  knownAttacks: []
 --- !u!1 &460393665
 GameObject:
   m_ObjectHideFlags: 0
@@ -20829,6 +20833,7 @@ MonoBehaviour:
   characterToolTipMaxHp: {fileID: 83389735}
   characterToolTipMana: {fileID: 1123681873}
   characterToolTipMaxMana: {fileID: 546594655}
+  characterToolTipName: {fileID: 1170883827}
 --- !u!1 &524167879
 GameObject:
   m_ObjectHideFlags: 0
@@ -23398,6 +23403,7 @@ MonoBehaviour:
   maxMana: 5
   attack: 5
   defense: 3
+  resistance: 0
   skill: 4
   speed: 4
   attackRange: 2
@@ -23406,14 +23412,15 @@ MonoBehaviour:
   roams: 1
   attackMove:
     name: Slash
-    damageType: physical
-    baseDamage: 5
-    accuracy: 90
-    baseCrit: 0
-    description: Slash the enemy with your sword
     manaCost: 0
-    isSupportingMove: 0
+    description: Slash the enemy with your sword
+    damageType: physical
+    attackMult: 0
+    intMult: 0
+    baseAccuracy: 0
+    baseCrit: 0
   deselectAudio: {fileID: 0}
+  knownAttacks: []
 --- !u!50 &605859449
 Rigidbody2D:
   serializedVersion: 5
@@ -25792,6 +25799,7 @@ MonoBehaviour:
   maxMana: 5
   attack: 5
   defense: 3
+  resistance: 0
   skill: 4
   speed: 4
   attackRange: 2
@@ -25800,14 +25808,15 @@ MonoBehaviour:
   roams: 1
   attackMove:
     name: Slash
-    damageType: physical
-    baseDamage: 5
-    accuracy: 90
-    baseCrit: 0
-    description: Slash the enemy with your sword
     manaCost: 0
-    isSupportingMove: 0
+    description: Slash the enemy with your sword
+    damageType: physical
+    attackMult: 0
+    intMult: 0
+    baseAccuracy: 0
+    baseCrit: 0
   deselectAudio: {fileID: 0}
+  knownAttacks: []
 --- !u!50 &672184374
 Rigidbody2D:
   serializedVersion: 5
@@ -73069,6 +73078,7 @@ MonoBehaviour:
   soldierPrefab: {fileID: 748482123334707658, guid: 6f8794f192ac31549a80909214bbecdd, type: 3}
   attackPreviewSprites: {fileID: 189593989}
   attacks: {fileID: 801921120}
+  rightsideAttacks: {fileID: 1722147114}
   scm: {fileID: 0}
   attackSelector: {fileID: 2116066800}
   atkBlock: {fileID: 1252256669}
@@ -73105,6 +73115,7 @@ MonoBehaviour:
   confirmAttackButtonScript: {fileID: 1716513251}
   selectBeepAudio: {fileID: 616433947}
   battleScreenTransitionAudio: {fileID: 461974982}
+  isAssisting: 0
 --- !u!1 &1393151330
 GameObject:
   m_ObjectHideFlags: 0

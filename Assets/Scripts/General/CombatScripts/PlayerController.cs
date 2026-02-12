@@ -62,11 +62,12 @@ public class PlayerController : MonoBehaviour
     public int relationship;
     public bool owned;
     public string title;
+    public bool ranged;
     public List<string> statuses;
     public Equipment weaponEquiped;
     public Equipment armorEquiped;
     public Equipment accessoryEquiped;
-    public List<Attack> knownAttacks;
+    public List<AttackMoves> knownAttacks;
     public List<Item> inventory;
     private Vector3 originalPosition;
     private bool isHovered = false;
@@ -228,6 +229,7 @@ public class PlayerController : MonoBehaviour
         baseMoveRange = savedCharacter.baseMoveRange;
         relationship = savedCharacter.relationship;
         owned = savedCharacter.owned;
+        ranged = savedCharacter.ranged;
         title = savedCharacter.characterName;
         knownAttacks = savedCharacter.knownAttacks;
         inventory = savedCharacter.inventory;

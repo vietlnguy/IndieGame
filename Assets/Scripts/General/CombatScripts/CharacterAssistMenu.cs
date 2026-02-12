@@ -66,7 +66,7 @@ public class CharacterAssistMenu : MonoBehaviour
                 {
                     if (assistText.color == Color.white)
                     {
-                        StartCoroutine(attackPreviewScript.enableAssistPreview());
+                        StartCoroutine(attackPreviewScript.enablePreview(true));
                     }
                 }
 
@@ -90,22 +90,18 @@ public class CharacterAssistMenu : MonoBehaviour
         characterMenu.GetComponent<RectTransform>().localPosition = localPos + new Vector2(-20f, 235f);
 
         //Check if any of character attacks are support moves
-        bool supportingMoves = false;
-        foreach (Attack attack in battleController.characterSelected.GetComponent<PlayerController>().knownAttacks)
+        assistText.color = new Color(.5f, .5f, .5f, .5f);
+        foreach (AttackMoves attackMove in battleController.characterSelected.GetComponent<PlayerController>().knownAttacks)
         {
-            if (attack.isSupportingMove)
+            if (attackMove is SupportMove)
             {
-                supportingMoves = true;
+                assistText.color = Color.white;
                 break;
             }
         }
-        if (supportingMoves) { assistText.color = Color.white; }
-        else { assistText.color = new Color(0f, 0f, 0f, .45f); }
 
         //Check if character can be talked to
         //TODO: what does this even mean
-
-
 
     }
     public void disableCharacterAssistMenu()
@@ -130,5 +126,5 @@ public class CharacterAssistMenu : MonoBehaviour
         anchoredPos.y -= 27f;
         rt.anchoredPosition = anchoredPos;
     }
-    
+
 }

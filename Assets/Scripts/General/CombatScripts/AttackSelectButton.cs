@@ -19,7 +19,6 @@ public class AttackSelectButton : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        attackPreviewScript.chooseAttack(index);
     }
 
 }

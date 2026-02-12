@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine;
 
 [System.Serializable]
 public class GameSaveData
@@ -33,13 +34,16 @@ public class Character
     public int baseMoveRange;
     public int relationship;
     public bool owned;
+    public bool ranged;
     public List<Item> inventory;
-    public List<Attack> knownAttacks;
+
+    [SerializeReference]
+    public List<AttackMoves> knownAttacks = new();
     public Equipment weaponEquiped;
     public Equipment armorEquiped;
     public Equipment accessoryEquiped;
 
-    public Character(string characterName, int maxHp, int maxMana, int attack, int intelligence, int defense, int resistance, int skill, int speed, int attackRange, int moveRange, bool owned)
+    public Character(string characterName, int maxHp, int maxMana, int attack, int intelligence, int defense, int resistance, int skill, int speed, int attackRange, int moveRange, bool owned, bool ranged)
     {
         this.characterName = characterName;
         this.baseMaxHp = maxHp;
@@ -52,9 +56,10 @@ public class Character
         this.baseSpeed = speed;
         this.baseAttackRange = attackRange;
         this.baseMoveRange = moveRange;
+        this.ranged = ranged;
         this.owned = owned;
         relationship = 0;
-        knownAttacks = new List<Attack>();
+        knownAttacks = new List<AttackMoves>();
         inventory = new List<Item>();
 
     }
@@ -116,30 +121,54 @@ public class Equipment
 }
 
 [System.Serializable]
-public class Attack
+public class AttackMoves
 {
     public string name;
-    public string damageType;
-    public int baseDamage;
-    public int accuracy;
-    public int baseCrit;
-    public string description;
     public int manaCost;
-    public bool isSupportingMove;
+    public string description;
 
-    public Attack(string name, string damageType, int baseDamage, int accuracy, int baseCrit, int manaCost, bool isSupportingMove, string description)
+    public AttackMoves(string name, int manaCost, string description)
     {
         this.name = name;
-        this.damageType = damageType;
-        this.baseDamage = baseDamage;
-        this.accuracy = accuracy;
-        this.baseCrit = baseCrit;
         this.manaCost = manaCost;
-        this.isSupportingMove = isSupportingMove;
         this.description = description;
+    }
+}
 
-        //TODO: How to handle secondary effects?
+[System.Serializable]
+public class Attack : AttackMoves 
+{
+    public string damageType;
+    public float attackMult;
+    public float intMult;
+    public int baseAccuracy;
+    public int baseCrit;
 
+    public Attack(string name, string damageType, float attackMult, float intMult, int baseAccuracy, int baseCrit, int manaCost, string description) : base(name, manaCost, description)
+    {
+        this.damageType = damageType; //physical or magical. Determines whether resisted by DEF or RES
+        this.attackMult = attackMult;
+        this.intMult = intMult;
+        this.baseAccuracy = baseAccuracy; //base accuracy of the attack
+        this.baseCrit = baseCrit; //base critical chance
+
+    }
+}
+
+[System.Serializable]
+public class SupportMove : AttackMoves
+{
+    public string restoresHpOrMana;
+    public int restorationAmount;
+    public List<string> buffs;
+    public List<string> cures;
+    
+    public SupportMove(string name, int manaCost, string restoresHpOrMana, int restorationAmount, List<string> buffs, List<string> cures, string description) : base(name, manaCost, description)
+    {
+        this.restoresHpOrMana = restoresHpOrMana;
+        this.restorationAmount = restorationAmount;
+        this.buffs = buffs;
+        this.cures = cures;
     }
 }
 

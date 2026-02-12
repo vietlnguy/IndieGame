@@ -49,7 +49,7 @@ public class SaveManager : MonoBehaviour
             PlayerController pc = child.GetComponent<PlayerController>();
             if (pc.owned)
             {
-                Character temp = new Character(pc.title, pc.baseMaxHp, pc.baseMaxMana, pc.baseAttack, pc.baseIntelligence, pc.baseDefense, pc.baseResistance, pc.baseSkill, pc.baseSpeed, pc.baseAttackRange, pc.baseMoveRange, pc.owned);
+                Character temp = new Character(pc.title, pc.baseMaxHp, pc.baseMaxMana, pc.baseAttack, pc.baseIntelligence, pc.baseDefense, pc.baseResistance, pc.baseSkill, pc.baseSpeed, pc.baseAttackRange, pc.baseMoveRange, pc.owned, pc.ranged);
                 temp.knownAttacks = pc.knownAttacks;
                 temp.inventory = pc.inventory;
                 temp.weaponEquiped = pc.weaponEquiped;
@@ -77,14 +77,17 @@ public class SaveManager : MonoBehaviour
         dataToSave.mainCharacterName = mainCharacterName;
 
         //Populate character data
-        Character mainCharacter = new Character(mainCharacterName, 15, 8, 8, 4, 7, 5, 6, 6, 1, 5, true);
-        mainCharacter.knownAttacks.Add(new Attack("Slash", "physical", 5, 90, 0, 0, false, "Slash the enemy with your sword."));
+        Character mainCharacter = new Character(mainCharacterName, 15, 8, 8, 4, 7, 5, 6, 6, 1, 5, true, false);
+        mainCharacter.knownAttacks.Add(new Attack("Slash", "physical", 1.0f, 1.0f, 90, 0, 0, "Slash with your sword."));
+        mainCharacter.knownAttacks.Add(new Attack("Heavy Swing", "physical", 1.3f, 1.0f, 60, 0, 5, "Improved damage at the cost of accuracy."));
+        mainCharacter.knownAttacks.Add(new Attack("Dazing Blow", "physical", 1.4f, 1.0f, 80, 0, 6, "Aim for the head! 30% chance to daze."));
+        mainCharacter.knownAttacks.Add(new SupportMove("Heal", 3, "hp", 5, null, null, "Heal an ally. Scales with INT."));
         mainCharacter.inventory.Add(new Item("Potion", 10, "hp", 10, "Restores 10 HP.", false, false, false));
         mainCharacter.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
         mainCharacter.armorEquiped = new Equipment("Leather", "armor", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "For unexpected adventures. +2 Max HP.");
 
-        Character astrid = new Character("Astrid", 11, 8, 6, 5, 5, 6, 8, 7, 3, 5, true);
-        astrid.knownAttacks.Add(new Attack("Bow Shot", "physical", 4, 90, 0, 0, false, "Shoot an arrow at the enemy."));
+        Character astrid = new Character("Astrid", 11, 8, 6, 5, 5, 6, 8, 7, 3, 5, true, true);
+        astrid.knownAttacks.Add(new Attack("Bow Shot", "physical", 1.0f, 1.0f, 90, 5, 0, "Shoot an arrow at the enemy."));
         astrid.inventory.Add(new Item("Potion", 10, "hp", 10, "Restores 10 HP.", false, false, false));
         astrid.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
         astrid.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 

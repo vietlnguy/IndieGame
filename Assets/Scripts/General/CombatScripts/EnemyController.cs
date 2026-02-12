@@ -21,6 +21,7 @@ public class EnemyController : MonoBehaviour
     public int maxMana;
     public int attack;
     public int defense;
+    public int resistance;
     public int skill;
     public int speed;
     public int attackRange;
@@ -29,6 +30,7 @@ public class EnemyController : MonoBehaviour
     public bool roams;
     public Attack attackMove;
     public AudioSource deselectAudio;
+    public List<AttackMoves> knownAttacks;
 
     void Awake()
     {
@@ -48,7 +50,7 @@ public class EnemyController : MonoBehaviour
         //Crate moveset
         if (title == "Soldier")
         {
-            attackMove = new Attack("Slash", "physical", 10, 100, 0, 0, false, "Slash the enemy with sword");
+            attackMove = new Attack("Slash", "physical", 1.0f, 1.0f, 85, 0, 0, "Slash with your sword.");
         }
     }
     void Update()
@@ -120,7 +122,7 @@ public class EnemyController : MonoBehaviour
             if (battleController.characterSelected != null && attackRangeCircleScript.enemiesInRange.Contains(gameObject))
             {
                 battleController.enemySelected = gameObject;
-                StartCoroutine(attackPreviewScript.enablePreview());
+                StartCoroutine(attackPreviewScript.enablePreview(false));
             }
 
             //another character is selected and this enemy is not in attack range
