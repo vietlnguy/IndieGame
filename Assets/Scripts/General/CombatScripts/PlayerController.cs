@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -73,6 +74,8 @@ public class PlayerController : MonoBehaviour
     private bool isHovered = false;
     public AudioSource selectAudio;
     public AudioSource deselectAudio;
+    public static event Action<string> OnCharacterDied;
+
 
     void Awake()
     {
@@ -421,5 +424,11 @@ public class PlayerController : MonoBehaviour
         battleController.characterSelected = null;
         originalPosition = transform.position;
         movementEnabled = false;
+    }
+    public void die()
+    {
+        Debug.Log(title + " died");
+
+        OnCharacterDied?.Invoke(title);
     }
 }

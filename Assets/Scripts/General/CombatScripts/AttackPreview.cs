@@ -86,7 +86,13 @@ public class AttackPreview : MonoBehaviour
             {
                 StartCoroutine(disablePreview());
             }
-            handleAttackSelection();
+            try {
+                handleAttackSelection();
+            }
+            catch
+            {
+                //Left blank because deselect happens first and then this errors
+            }
         }
 
     }
@@ -285,9 +291,10 @@ public class AttackPreview : MonoBehaviour
         previewPlayerMaxHp.text = battleController.characterSelected.GetComponent<PlayerController>().maxHp.ToString();
         previewPlayerMana.text = battleController.characterSelected.GetComponent<PlayerController>().currentMana.ToString();
         previewPlayerMaxMana.text = battleController.characterSelected.GetComponent<PlayerController>().maxMana.ToString();
-
         previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().currentHp / battleController.characterSelected.GetComponent<PlayerController>().maxHp, 1f);
         previewPlayerManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().currentMana / battleController.characterSelected.GetComponent<PlayerController>().maxMana, 1f);
+
+
 
         //Update leftside moveset
         int index = 0;
@@ -352,10 +359,6 @@ public class AttackPreview : MonoBehaviour
             index++;
         }
 
-
-        //Choose enemy Attack
-
-
         //Update damage stats
         calculateDamageBlock();
 
@@ -377,16 +380,16 @@ public class AttackPreview : MonoBehaviour
         defenderPreviewPanel.transform.localPosition = new Vector2(292, 19);
 
         //Instantiate potrait prefabs
-        GameObject characterPrefab;
-        Vector2 temp = new Vector2(portraitBackground.GetComponent<RectTransform>().position.x, portraitBackground.GetComponent<RectTransform>().position.y - 1f);
-        if (battleController.characterSelected.GetComponent<PlayerController>().title == scm.loadedData.mainCharacterName) { characterPrefab = Instantiate(mainCharacterPrefab, temp, Quaternion.identity, attackPreviewSprites.transform); }
-        else if (battleController.characterSelected.GetComponent<PlayerController>().title == "Astrid") { characterPrefab = Instantiate(astridPrefab, temp, Quaternion.identity, attackPreviewSprites.transform); }
-        //TODO: include more prefabs for characters
-
-        GameObject enemyPrefab;
-        temp = new Vector2(enemyPortraitBackground.GetComponent<RectTransform>().position.x, enemyPortraitBackground.GetComponent<RectTransform>().position.y - 1f);
-        if (battleController.enemySelected.GetComponent<EnemyController>().title == "Soldier") { enemyPrefab = Instantiate(soldierPrefab, temp, Quaternion.identity, attackPreviewSprites.transform); }
-        //TODO: include more prefabs for enemies
+        //GameObject characterPrefab;
+        //Vector2 temp = new Vector2(portraitBackground.GetComponent<RectTransform>().position.x, portraitBackground.GetComponent<RectTransform>().position.y - 1f);
+        //if (battleController.characterSelected.GetComponent<PlayerController>().title == scm.loadedData.mainCharacterName) { characterPrefab = Instantiate(mainCharacterPrefab, temp, Quaternion.identity, attackPreviewSprites.transform); }
+        //else if (battleController.characterSelected.GetComponent<PlayerController>().title == "Astrid") { characterPrefab = Instantiate(astridPrefab, temp, Quaternion.identity, attackPreviewSprites.transform); }
+        ////TODO: include more prefabs for characters
+//
+        //GameObject enemyPrefab;
+        //temp = new Vector2(enemyPortraitBackground.GetComponent<RectTransform>().position.x, enemyPortraitBackground.GetComponent<RectTransform>().position.y - 1f);
+        //if (battleController.enemySelected.GetComponent<EnemyController>().title == "Soldier") { enemyPrefab = Instantiate(soldierPrefab, temp, Quaternion.identity, attackPreviewSprites.transform); }
+        ////TODO: include more prefabs for enemies
 
         //Enable buttons
         confirmButton.GetComponent<CanvasGroup>().alpha = 1;
@@ -477,7 +480,7 @@ public class AttackPreview : MonoBehaviour
 
         //Populate player and enemy chosen Attacks
         battleScreenPlayerAttack.text = chosenAttack.name;
-        battleScreenEnemyAttack.text = battleController.enemySelected.GetComponent<EnemyController>().attackMove.name;
+        //battleScreenEnemyAttack.text = battleController.enemySelected.GetComponent<EnemyController>().attackMove.name;
 
         //Populate player and enemy damage block
         battleScreenPlayerATK.text = totalDamage.ToString();

@@ -23,9 +23,5 @@ public class DataLoader : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-    }
-
 }
 

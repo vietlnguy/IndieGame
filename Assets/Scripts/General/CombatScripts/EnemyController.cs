@@ -20,6 +20,7 @@ public class EnemyController : MonoBehaviour
     public int currentMana;
     public int maxMana;
     public int attack;
+    public int intelligence;
     public int defense;
     public int resistance;
     public int skill;
@@ -28,7 +29,8 @@ public class EnemyController : MonoBehaviour
     public int moveRange;
     public string title;
     public bool roams;
-    public Attack attackMove;
+    public bool ranged;
+    public bool boss = false;
     public AudioSource deselectAudio;
     public List<AttackMoves> knownAttacks;
 
@@ -36,6 +38,7 @@ public class EnemyController : MonoBehaviour
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigidBody = GetComponent<Rigidbody2D>();
+        battleController = GameObject.Find("BattleController").GetComponent<BattleController>();
         characterToolTipScript = GameObject.Find("characterInfoToolTip").GetComponent<CharacterToolTip>();
         moveRangeCircleScript = GameObject.Find("MoveRangeCircle").GetComponent<MoveRangeCircle>();
         attackRangeCircleScript = GameObject.Find("AttackRangeCircle").GetComponent<AttackRangeCircle>();
@@ -44,14 +47,6 @@ public class EnemyController : MonoBehaviour
         attackPreviewScript = GameObject.Find("AttackPreview").GetComponent<AttackPreview>();
         inventoryMenuScript = GameObject.Find("InventoryMenu").GetComponent<InventoryMenu>();
         deselectAudio = GameObject.Find("AttackPreviewWoosh").GetComponent<AudioSource>();
-    }
-    void Start()
-    {
-        //Crate moveset
-        if (title == "Soldier")
-        {
-            attackMove = new Attack("Slash", "physical", 1.0f, 1.0f, 85, 0, 0, "Slash with your sword.");
-        }
     }
     void Update()
     {

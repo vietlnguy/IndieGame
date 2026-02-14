@@ -13,13 +13,11 @@ public class BattleController : MonoBehaviour
     public GameObject characters;
     public List<GameObject> disabledCharacters;
     public List<GameObject> disabledEnemies;
-    private int partySize;
     public bool introFinished = true;
     public GameObject fightScreen;
     public TextMeshProUGUI fightScreenText;
     public AudioSource playerPhaseAudio;
     public AudioSource enemyPhaseAudio;
-    private int enemiesRemaining = 4;
     public GameObject pauseMenu;
     public GameObject saveMenu;
     public bool isPaused = false;
@@ -33,14 +31,13 @@ public class BattleController : MonoBehaviour
     public InventoryMenu inventoryMenuScript;
     public CharacterInfoScreen characterInfoScript;
     public bool isEnemyTurn = false;
+    public int currentTurn = 0;
     void Awake()
     {
         disabledCharacters = new List<GameObject>();
         disabledEnemies = new List<GameObject>();
         worldCamera = Camera.main;
 
-        //TODO: partySize should read from the database
-        partySize = 2;
     }
     void Start()
     {
@@ -85,11 +82,8 @@ public class BattleController : MonoBehaviour
     }
     private void HandleGameLoop()
     {
-        //Check victory/defeat conditions
-
-
         //All characters are disabled and its not the enemies turn yet. Should start enemy turn
-        if (disabledCharacters.Count == partySize && !isEnemyTurn)
+        if (disabledCharacters.Count == characters.transform.childCount && !isEnemyTurn)
         {
             isEnemyTurn = true;
             characterSelected = null;
@@ -97,7 +91,7 @@ public class BattleController : MonoBehaviour
         }
 
         //Start player phase
-        else if (disabledEnemies.Count == enemiesRemaining && isEnemyTurn)
+        else if (disabledEnemies.Count == enemies.transform.childCount && isEnemyTurn)
         {
             isEnemyTurn = false;
             foreach (Transform enemy in enemies.transform)
@@ -115,6 +109,7 @@ public class BattleController : MonoBehaviour
     }
     private IEnumerator playerTurn()
     {
+        currentTurn++;
         playerPhaseAudio.Play();
         fightScreenText.text = "Player Phase";
         fightScreen.GetComponent<CanvasGroup>().alpha = 1f;

@@ -36,6 +36,7 @@ public class IntroController: MonoBehaviour
     public BattleController battleController;
     public SaveManager saveManager;
     public GameObject victorySubquestBoxes;
+    public ChapterOne chapterOneScript;
 
     void Awake()
     {
@@ -128,22 +129,6 @@ public class IntroController: MonoBehaviour
         }
 
         canvasGroup.alpha = 0f;
-    }
-    private void renderEnemies(GameObject enemies) {
-        foreach (Transform child in enemies.transform)
-        {
-            child.gameObject.GetComponent<SpriteRenderer>().enabled = true;
-        }
-    }
-    private void enableAllColliders() {
-        foreach (Transform child in enemies.transform)
-        {
-            child.gameObject.GetComponent<Rigidbody2D>().simulated = true;
-        }
-        foreach (Transform child in characters.transform)
-        {
-            child.gameObject.GetComponent<Rigidbody2D>().simulated = true;
-        }
     }
     private void disableCharacterImages()
     {
@@ -249,7 +234,7 @@ public class IntroController: MonoBehaviour
         //Overworld
         yield return StartCoroutine(FadeScreen(blackScreen, 2f));
         houseScreen.GetComponent<CanvasGroup>().alpha = 0f;
-        enableEnemySprites();
+        chapterOneScript.CreateEnemies();
         disableCharacterImages();
         yield return StartCoroutine(UndoFade(blackScreen, 2f));
         doorAudio.Play();
@@ -291,7 +276,7 @@ public class IntroController: MonoBehaviour
     }
     private IEnumerator shortSequence()
     {
-        enableEnemySprites();
+        chapterOneScript.CreateEnemies();
         mainChar.transform.position = new Vector3(-6.57f, -11.28f, 0f);
         doorAudio.Play();
         yield return StartCoroutine(characterAppear(mainChar));
