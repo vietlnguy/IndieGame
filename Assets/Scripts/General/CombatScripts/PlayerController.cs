@@ -75,6 +75,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource selectAudio;
     public AudioSource deselectAudio;
     public static event Action<string> OnCharacterDied;
+    public string deathDialogue;
 
 
     void Awake()
@@ -95,10 +96,6 @@ public class PlayerController : MonoBehaviour
         selectAudio = GameObject.Find("SelectBeep").GetComponent<AudioSource>();
         deselectAudio = GameObject.Find("AttackPreviewWoosh").GetComponent<AudioSource>();
         populateCharacterData();
-    }
-    void Start()
-    {
-
     }
     void Update()
     {
@@ -239,6 +236,48 @@ public class PlayerController : MonoBehaviour
         weaponEquiped = savedCharacter.weaponEquiped;
         armorEquiped = savedCharacter.armorEquiped;
         accessoryEquiped = savedCharacter.accessoryEquiped;
+        
+        if (savedCharacter.characterName == "Astrid")
+        {
+            deathDialogue = "Ah-- I suppose this is it. Stay safe everyone...";
+        }
+        else if (savedCharacter.characterName == "Amara")
+        {
+            deathDialogue = "Guh- I guess my luck finally ran out...";
+        }
+        else if (savedCharacter.characterName == "Celeste")
+        {
+            deathDialogue = "Ah- goddess... I come to you.. Protect Luc--";
+        }
+        else if (savedCharacter.characterName == "Gerard")
+        {
+            deathDialogue = "Urgh- no. I cannot fall here. I must protect the princess...";
+        }
+        else if (savedCharacter.characterName == "Ivy")
+        {
+            deathDialogue = "Ah- protect... forest.. please.";
+        }
+        else if (savedCharacter.characterName == "Katherine")
+        {
+            deathDialogue = "Ach- Not yet.. I can still fight.. I am strong..";   
+        }
+        else if (savedCharacter.characterName == "Lucas")
+        {
+            deathDialogue = "Guh- Bummer... Looks like I won't be a legend...";
+        }
+        else if (savedCharacter.characterName == "Penelope")
+        {
+            deathDialogue = "Oh- that's my blood... and I was just getting to the good part...";   
+        }
+        else if (savedCharacter.characterName == "Vanessa")
+        {
+            deathDialogue = "Ah- my time is up. I knew you'd come for me one day, Lady Death...";
+        }
+        else
+        {
+            deathDialogue = "Ack- This is it for me. I'm sorry, everyone... ";
+        }
+
 
         calculateStats();
     }
@@ -425,10 +464,10 @@ public class PlayerController : MonoBehaviour
         originalPosition = transform.position;
         movementEnabled = false;
     }
-    public void die()
+    public System.Collections.IEnumerator Die()
     {
         Debug.Log(title + " died");
-
         OnCharacterDied?.Invoke(title);
+        yield return null;
     }
 }

@@ -33,6 +33,7 @@ public class EnemyController : MonoBehaviour
     public bool boss = false;
     public AudioSource deselectAudio;
     public List<AttackMoves> knownAttacks;
+    public string deathDialogue;
 
     void Awake()
     {
@@ -113,11 +114,19 @@ public class EnemyController : MonoBehaviour
                 selectEnemy();
             }
 
-            //another character is selected and this enemy is in attack range
+            //another character is selected and this enemy is in attack range and character can still act
             if (battleController.characterSelected != null && attackRangeCircleScript.enemiesInRange.Contains(gameObject))
             {
-                battleController.enemySelected = gameObject;
-                StartCoroutine(attackPreviewScript.enablePreview(false));
+                if (battleController.disabledCharacters.Contains(battleController.characterSelected))
+                {
+                    battleController.characterSelected.GetComponent<PlayerController>().deselectCharacter();
+                    selectEnemy();
+                }
+                else
+                {
+                    battleController.enemySelected = gameObject;
+                    StartCoroutine(attackPreviewScript.enablePreview(false));
+                }
             }
 
             //another character is selected and this enemy is not in attack range
@@ -160,4 +169,11 @@ public class EnemyController : MonoBehaviour
         battleController.enemySelected = null;
         unhighlight();
     }
+    public System.Collections.IEnumerator Die()
+    {
+        Debug.Log("Enemy died");
+        Destroy(gameObject);
+        yield return null;
+    }
+
 }

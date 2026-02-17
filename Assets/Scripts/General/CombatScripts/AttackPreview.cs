@@ -9,10 +9,12 @@ public class AttackPreview : MonoBehaviour
     public GameObject attackerPreviewPanel;
     public GameObject defenderPreviewPanel;
     public GameObject confirmButton;
-    public GameObject vsText;
+    public GameObject attackIcon;
+    public GameObject assistIcon;
     public bool active = false;
     public AudioSource attackWooshAudio;
     public AudioSource attackClangAudio;
+    public AudioSource assistPreviewAudio;
     public TextMeshProUGUI characterTitle;
     public TextMeshProUGUI enemyTitle;
     public GameObject portraitBackground;
@@ -79,6 +81,11 @@ public class AttackPreview : MonoBehaviour
     private int enemyTotalAccuracy = 0;
     private int enemyTotalCrit = 0;
     public bool isAssisting = false;
+    public AudioSource typingAudio;
+    public TextMeshProUGUI dialogueBoxTitle;
+    public TextMeshProUGUI dialogueBoxText;
+    public CanvasGroup dialogueBoxCanvasGroup;
+    public RectTransform dialogueBoxRectTransform;
     void Awake()
     {
         scm = FindFirstObjectByType<SaveManager>();
@@ -454,7 +461,8 @@ public class AttackPreview : MonoBehaviour
         }
 
         //Move UI to visible area
-        attackClangAudio.Play();
+        if (isAssisting) { assistPreviewAudio.Play(); }
+        else { attackClangAudio.Play(); }
         float duration = 0.05f;
         Vector2 attackerStartPos = attackerPreviewPanel.transform.localPosition;
         Vector2 defenderStartPos = defenderPreviewPanel.transform.localPosition;
@@ -486,7 +494,9 @@ public class AttackPreview : MonoBehaviour
         confirmButton.GetComponent<CanvasGroup>().alpha = 1;
         confirmButton.GetComponent<CanvasGroup>().interactable = true;
         confirmButton.GetComponent<CanvasGroup>().blocksRaycasts = true;
-        vsText.SetActive(true);
+        
+        if (isAssisting) { assistIcon.SetActive(true); }
+        else { attackIcon.SetActive(true); }
         active = true;
 
     }
@@ -547,7 +557,9 @@ public class AttackPreview : MonoBehaviour
         confirmButton.GetComponent<CanvasGroup>().alpha = 0;
         confirmButton.GetComponent<CanvasGroup>().interactable = false;
         confirmButton.GetComponent<CanvasGroup>().blocksRaycasts = false;
-        vsText.SetActive(false);
+        attackIcon.SetActive(false);
+        assistIcon.SetActive(false);
+
         active = false;
 
         battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = true;
@@ -566,6 +578,8 @@ public class AttackPreview : MonoBehaviour
         battleScreenPlayerATK.text = totalDamage.ToString();
         battleScreenPlayerHIT.text = totalAccuracy.ToString();
         battleScreenPlayerCRIT.text = totalCrit.ToString();
+        
+        //Support sequence info population
         if (isAssisting)
         {
             battleScreenEnemyName.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().title;
@@ -573,6 +587,8 @@ public class AttackPreview : MonoBehaviour
             battleScreenEnemyHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentHp / battleController.assistableCharacterSelected.GetComponent<PlayerController>().maxHp, 1f);
            
         }
+        
+        //Attack sequence info population
         else
         {
             battleScreenEnemyName.text = battleController.enemySelected.GetComponent<EnemyController>().title; 
@@ -613,63 +629,99 @@ public class AttackPreview : MonoBehaviour
         }
         attackPanel.GetComponent<RectTransform>().localScale = endScale; // snap to final value
 
-        //Determine hit/crit roll for character
-        int roll = Random.Range(0, 100);
-        if (roll <= totalAccuracy)
+        //Support roll sequence
+        if (isAssisting)
         {
-            Debug.Log("Character hits with: " + roll);
-            roll = Random.Range(0, 100);
-            if (roll <= totalCrit)
-            {
-                Debug.Log("Character crit with: " + roll);
-                yield return StartCoroutine(AnimateHealthDamage(totalDamage * 2, battleScreenEnemyHpBar, battleController.enemySelected, battleScreenEnemyHealth));
-                battleController.enemySelected.GetComponent<EnemyController>().currentHp = battleController.enemySelected.GetComponent<EnemyController>().currentHp - totalDamage * 2;
-            }
-            else
-            {
-                yield return StartCoroutine(AnimateHealthDamage(totalDamage, battleScreenEnemyHpBar, battleController.enemySelected, battleScreenEnemyHealth));
-                battleController.enemySelected.GetComponent<EnemyController>().currentHp = battleController.enemySelected.GetComponent<EnemyController>().currentHp - totalDamage;
-            }
-
+            //TODO
+            yield return new WaitForSeconds(3f);
         }
+
+        //Attack roll sequence
         else
         {
-            Debug.Log("Character Missed!");
-        }
+            //TODO: Play character attack animation
+            yield return new WaitForSeconds(3f);  
 
-        //TODO: Play character attack animation
-        yield return new WaitForSeconds(3f);
-
-        //Determine hit/crit for enemy
-        if (((battleController.enemySelected.GetComponent<EnemyController>().ranged && battleController.characterSelected.GetComponent<PlayerController>().ranged) || (!battleController.enemySelected.GetComponent<EnemyController>().ranged && !battleController.characterSelected.GetComponent<PlayerController>().ranged)) && !isAssisting)
-        {
-            //Determine hit/crit roll for enemy
-            roll = Random.Range(0, 100);
-            if (roll <= enemyTotalAccuracy)
+            //Determine hit/crit roll for character
+            int roll = Random.Range(0, 100);
+            if (roll <= totalAccuracy)
             {
-                Debug.Log("Enemy hits with: " + roll);
+                Debug.Log("Character hits with: " + roll);
                 roll = Random.Range(0, 100);
-                if (roll <= enemyTotalCrit)
+                if (roll <= totalCrit)
                 {
-                    Debug.Log("Enemy crit with: " + roll);
-                    yield return StartCoroutine(AnimateHealthDamage(enemyTotalDamage * 2, battleScreenPlayerHpBar, battleController.characterSelected, battleScreenPlayerHealth));
-                    battleController.characterSelected.GetComponent<PlayerController>().currentHp = battleController.characterSelected.GetComponent<PlayerController>().currentHp - enemyTotalDamage * 2; 
+                    Debug.Log("Character crit with: " + roll);
+                    yield return StartCoroutine(AnimateHealthDamage(totalDamage * 2, battleScreenEnemyHpBar, battleController.enemySelected, battleScreenEnemyHealth));
+                    battleController.enemySelected.GetComponent<EnemyController>().currentHp = battleController.enemySelected.GetComponent<EnemyController>().currentHp - totalDamage * 2;
                 }
                 else
                 {
-                    yield return StartCoroutine(AnimateHealthDamage(enemyTotalDamage, battleScreenPlayerHpBar, battleController.characterSelected, battleScreenPlayerHealth));
-                    battleController.characterSelected.GetComponent<PlayerController>().currentHp = battleController.characterSelected.GetComponent<PlayerController>().currentHp - enemyTotalDamage; 
-
+                    yield return StartCoroutine(AnimateHealthDamage(totalDamage, battleScreenEnemyHpBar, battleController.enemySelected, battleScreenEnemyHealth));
+                    battleController.enemySelected.GetComponent<EnemyController>().currentHp = battleController.enemySelected.GetComponent<EnemyController>().currentHp - totalDamage;
                 }
+
             }
             else
             {
-                Debug.Log("Enemy Missed!");
-            }
-        }
-        
-        yield return new WaitForSeconds(3f);
+                //TODO: Show MISS ui
+                Debug.Log("Character Missed!");
 
+            } 
+        
+            //Play enemy death dialogue if necessary
+            if (battleController.enemySelected.GetComponent<EnemyController>().currentHp <= 0)
+            {   
+                //TODO: Remove sprite on battle screen
+                yield return StartCoroutine(battleController.enemySelected.GetComponent<EnemyController>().Die());
+                battleController.enemySelected = null;
+            }
+
+            //Enemy attacks character
+            else
+            {
+                //should only attack back if able to
+                if ((battleController.enemySelected.GetComponent<EnemyController>().ranged && battleController.characterSelected.GetComponent<PlayerController>().ranged) || (!battleController.enemySelected.GetComponent<EnemyController>().ranged && !battleController.characterSelected.GetComponent<PlayerController>().ranged))
+                {
+                    //TODO: Play attack animation
+                    yield return new WaitForSeconds(3f);
+
+                    //Determine hit/crit roll for enemy
+                    roll = Random.Range(0, 100);
+                    if (roll <= enemyTotalAccuracy)
+                    {
+                        Debug.Log("Enemy hits with: " + roll);
+                        roll = Random.Range(0, 100);
+                        if (roll <= enemyTotalCrit)
+                        {
+                            Debug.Log("Enemy crit with: " + roll);
+                            yield return StartCoroutine(AnimateHealthDamage(enemyTotalDamage * 2, battleScreenPlayerHpBar, battleController.characterSelected, battleScreenPlayerHealth));
+                            battleController.characterSelected.GetComponent<PlayerController>().currentHp = battleController.characterSelected.GetComponent<PlayerController>().currentHp - enemyTotalDamage * 2; 
+                        }
+                        else
+                        {
+                            yield return StartCoroutine(AnimateHealthDamage(enemyTotalDamage, battleScreenPlayerHpBar, battleController.characterSelected, battleScreenPlayerHealth));
+                            battleController.characterSelected.GetComponent<PlayerController>().currentHp = battleController.characterSelected.GetComponent<PlayerController>().currentHp - enemyTotalDamage; 
+
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log("Enemy Missed!");
+                    }
+                    
+                    //Play death dialogue if necessary
+                    if (battleController.characterSelected.GetComponent<PlayerController>().currentHp <= 0)
+                    {   
+                        yield return StartCoroutine(DeathDialogue(battleController.characterSelected));
+                        //TODO: Remove sprite on battle screen
+                        //yield return StartCoroutine(battleController.characterSelected.GetComponent<PlayerController>().Die());
+                    }
+                }
+            }
+        
+        
+        }
+       
         //Scale Panel from 1 to 0
         elapsed = 0f;
         duration = .2f;
@@ -763,6 +815,74 @@ public class AttackPreview : MonoBehaviour
         {
             currentPrintedNumber = targetNumber;
         }
+    }
+
+    private IEnumerator DeathDialogue(GameObject person)
+    {
+        float time = .15f;
+
+        //Player dialogue
+        if (person.GetComponent<PlayerController>() != null)
+        {
+            dialogueBoxTitle.text = person.GetComponent<PlayerController>().title;
+            yield return new WaitForSeconds(.25f);
+            Vector2 targetPos = new Vector2(0f, -50f);
+            Vector2 startPos = new Vector2(0f, -60f); // Off-screen bottom
+            dialogueBoxRectTransform.anchoredPosition = startPos;
+            dialogueBoxCanvasGroup.alpha = 0f;
+
+            float elapsed = 0f;
+            while (elapsed < time)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / time);
+                dialogueBoxCanvasGroup.alpha = t;
+                dialogueBoxRectTransform.anchoredPosition = Vector2.Lerp(startPos, targetPos, t);
+                yield return null;
+            }
+
+            // Ensure final values are set
+            dialogueBoxCanvasGroup.alpha = 1f;
+            dialogueBoxRectTransform.anchoredPosition = targetPos;
+            StartCoroutine(TypeLine(person.GetComponent<PlayerController>().deathDialogue));
+        }
+
+        //Enemy dialogue
+        else
+        {
+            dialogueBoxTitle.text = person.GetComponent<EnemyController>().title;
+            yield return new WaitForSeconds(.25f);
+            Vector2 targetPos = new Vector2(0f, -50f);
+            Vector2 startPos = new Vector2(0f, -60f); // Off-screen bottom
+            dialogueBoxRectTransform.anchoredPosition = startPos;
+            dialogueBoxCanvasGroup.alpha = 0f;
+
+            float elapsed = 0f;
+            while (elapsed < time)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / time);
+                dialogueBoxCanvasGroup.alpha = t;
+                dialogueBoxRectTransform.anchoredPosition = Vector2.Lerp(startPos, targetPos, t);
+                yield return null;
+            }
+
+            // Ensure final values are set
+            dialogueBoxCanvasGroup.alpha = 1f;
+            dialogueBoxRectTransform.anchoredPosition = targetPos;
+            StartCoroutine(TypeLine(person.GetComponent<EnemyController>().deathDialogue));
+            }
+
+       
+    }
+    private IEnumerator TypeLine(string s) 
+    {
+        typingAudio.Play();
+        foreach (char c in s.ToCharArray()) {
+            dialogueBoxText.text += c;
+            yield return new WaitForSeconds(.02f);
+        }
+        typingAudio.Stop();
     }
 }
 

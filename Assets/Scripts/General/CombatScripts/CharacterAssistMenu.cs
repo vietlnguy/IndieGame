@@ -67,6 +67,7 @@ public class CharacterAssistMenu : MonoBehaviour
                     if (assistText.color == Color.white)
                     {
                         StartCoroutine(attackPreviewScript.enablePreview(true));
+                        disableCharacterAssistMenu();
                     }
                 }
 
