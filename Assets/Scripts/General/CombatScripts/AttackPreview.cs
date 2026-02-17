@@ -64,9 +64,12 @@ public class AttackPreview : MonoBehaviour
     public TextMeshProUGUI previewEnemyMaxMana;
     public GameObject previewPlayerHpBar;
     public GameObject previewPlayerManaBar;
+    public GameObject previewEnemyHpBar;
+    public GameObject previewEnemyManaBar;
     public ConfirmAttackButton confirmAttackButtonScript;
     public AudioSource selectBeepAudio;
     private Vector2 originalHpManaBarSize;
+    private Vector2 originalEnemyHpManaBarSize;
     private Vector2 originalBattleScreenHpBarSize;
     public AudioSource battleScreenTransitionAudio;
     private int totalDamage = 0;
@@ -81,7 +84,9 @@ public class AttackPreview : MonoBehaviour
         scm = FindFirstObjectByType<SaveManager>();
         attackSelectorInitialPos = attackSelector.GetComponent<RectTransform>().anchoredPosition;
         originalHpManaBarSize = previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta;
+        originalEnemyHpManaBarSize = previewEnemyHpBar.GetComponent<RectTransform>().sizeDelta;
         originalBattleScreenHpBarSize = battleScreenEnemyHpBar.GetComponent<RectTransform>().sizeDelta;
+        
     }
     void Start()
     {
@@ -347,8 +352,8 @@ public class AttackPreview : MonoBehaviour
             previewEnemyMaxHp.text = battleController.enemySelected.GetComponent<EnemyController>().maxHp.ToString();
             previewEnemyMana.text = battleController.enemySelected.GetComponent<EnemyController>().currentMana.ToString();
             previewEnemyMaxMana.text = battleController.enemySelected.GetComponent<EnemyController>().maxMana.ToString();
-            previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.enemySelected.GetComponent<EnemyController>().currentHp / battleController.enemySelected.GetComponent<EnemyController>().maxHp, 1f);
-            previewPlayerManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.enemySelected.GetComponent<EnemyController>().currentMana / battleController.enemySelected.GetComponent<EnemyController>().maxMana, 1f);
+            previewEnemyHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.enemySelected.GetComponent<EnemyController>().currentHp / battleController.enemySelected.GetComponent<EnemyController>().maxHp, 1f);
+            previewEnemyManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.enemySelected.GetComponent<EnemyController>().currentMana / battleController.enemySelected.GetComponent<EnemyController>().maxMana, 1f);
 
         }
         else 
@@ -358,8 +363,8 @@ public class AttackPreview : MonoBehaviour
             previewEnemyMaxHp.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().maxHp.ToString();
             previewEnemyMana.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentMana.ToString();
             previewEnemyMaxMana.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().maxMana.ToString();
-            previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentHp / battleController.assistableCharacterSelected.GetComponent<PlayerController>().maxHp, 1f);
-            previewPlayerManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentMana / battleController.assistableCharacterSelected.GetComponent<PlayerController>().maxMana, 1f);
+            previewEnemyHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentHp / battleController.assistableCharacterSelected.GetComponent<PlayerController>().maxHp, 1f);
+            previewEnemyManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentMana / battleController.assistableCharacterSelected.GetComponent<PlayerController>().maxMana, 1f);
 
         }
 
@@ -535,6 +540,8 @@ public class AttackPreview : MonoBehaviour
         //Reset health and mana bars
         previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta = originalHpManaBarSize;
         previewPlayerManaBar.GetComponent<RectTransform>().sizeDelta = originalHpManaBarSize;
+        previewEnemyHpBar.GetComponent<RectTransform>().sizeDelta = originalEnemyHpManaBarSize;
+        previewEnemyManaBar.GetComponent<RectTransform>().sizeDelta = originalEnemyHpManaBarSize;
 
         //Disable vs and confirm button
         confirmButton.GetComponent<CanvasGroup>().alpha = 0;
@@ -549,9 +556,9 @@ public class AttackPreview : MonoBehaviour
     }
     public IEnumerator startAttackSequence()
     {
+        //Populate info
         battleScreen.SetActive(true);
         battleScreenTransitionAudio.Play();
-
         battleScreenPlayerName.text = battleController.characterSelected.GetComponent<PlayerController>().title;
         battleScreenPlayerHealth.text = battleController.characterSelected.GetComponent<PlayerController>().currentHp.ToString();
         battleScreenPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().currentHp / battleController.characterSelected.GetComponent<PlayerController>().maxHp, 1f);
@@ -559,7 +566,6 @@ public class AttackPreview : MonoBehaviour
         battleScreenPlayerATK.text = totalDamage.ToString();
         battleScreenPlayerHIT.text = totalAccuracy.ToString();
         battleScreenPlayerCRIT.text = totalCrit.ToString();
-
         if (isAssisting)
         {
             battleScreenEnemyName.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().title;
@@ -590,7 +596,6 @@ public class AttackPreview : MonoBehaviour
 
         }
 
-
         //Enable the Battle screen and scale it from 0 to 1
         Vector3 startScale = Vector3.zero;
         Vector3 endScale = Vector3.one;
@@ -608,10 +613,62 @@ public class AttackPreview : MonoBehaviour
         }
         attackPanel.GetComponent<RectTransform>().localScale = endScale; // snap to final value
 
-        //Play attack animation
-        yield return new WaitForSeconds(5f);
+        //Determine hit/crit roll for character
+        int roll = Random.Range(0, 100);
+        if (roll <= totalAccuracy)
+        {
+            Debug.Log("Character hits with: " + roll);
+            roll = Random.Range(0, 100);
+            if (roll <= totalCrit)
+            {
+                Debug.Log("Character crit with: " + roll);
+                yield return StartCoroutine(AnimateHealthDamage(totalDamage * 2, battleScreenEnemyHpBar, battleController.enemySelected, battleScreenEnemyHealth));
+                battleController.enemySelected.GetComponent<EnemyController>().currentHp = battleController.enemySelected.GetComponent<EnemyController>().currentHp - totalDamage * 2;
+            }
+            else
+            {
+                yield return StartCoroutine(AnimateHealthDamage(totalDamage, battleScreenEnemyHpBar, battleController.enemySelected, battleScreenEnemyHealth));
+                battleController.enemySelected.GetComponent<EnemyController>().currentHp = battleController.enemySelected.GetComponent<EnemyController>().currentHp - totalDamage;
+            }
 
-        //TODO 
+        }
+        else
+        {
+            Debug.Log("Character Missed!");
+        }
+
+        //TODO: Play character attack animation
+        yield return new WaitForSeconds(3f);
+
+        //Determine hit/crit for enemy
+        if (((battleController.enemySelected.GetComponent<EnemyController>().ranged && battleController.characterSelected.GetComponent<PlayerController>().ranged) || (!battleController.enemySelected.GetComponent<EnemyController>().ranged && !battleController.characterSelected.GetComponent<PlayerController>().ranged)) && !isAssisting)
+        {
+            //Determine hit/crit roll for enemy
+            roll = Random.Range(0, 100);
+            if (roll <= enemyTotalAccuracy)
+            {
+                Debug.Log("Enemy hits with: " + roll);
+                roll = Random.Range(0, 100);
+                if (roll <= enemyTotalCrit)
+                {
+                    Debug.Log("Enemy crit with: " + roll);
+                    yield return StartCoroutine(AnimateHealthDamage(enemyTotalDamage * 2, battleScreenPlayerHpBar, battleController.characterSelected, battleScreenPlayerHealth));
+                    battleController.characterSelected.GetComponent<PlayerController>().currentHp = battleController.characterSelected.GetComponent<PlayerController>().currentHp - enemyTotalDamage * 2; 
+                }
+                else
+                {
+                    yield return StartCoroutine(AnimateHealthDamage(enemyTotalDamage, battleScreenPlayerHpBar, battleController.characterSelected, battleScreenPlayerHealth));
+                    battleController.characterSelected.GetComponent<PlayerController>().currentHp = battleController.characterSelected.GetComponent<PlayerController>().currentHp - enemyTotalDamage; 
+
+                }
+            }
+            else
+            {
+                Debug.Log("Enemy Missed!");
+            }
+        }
+        
+        yield return new WaitForSeconds(3f);
 
         //Scale Panel from 1 to 0
         elapsed = 0f;
@@ -638,6 +695,74 @@ public class AttackPreview : MonoBehaviour
         battleController.characterSelected.GetComponent<PlayerController>().endTurn();
         yield return null;
     }
-    
+    private IEnumerator AnimateHealthDamage(int damage, GameObject healthBarObject, GameObject person, TextMeshProUGUI healthText)
+    {
+        RectTransform rect = healthBarObject.GetComponent<RectTransform>();
+        float duration = 1.5f;
+        float elapsed = 0f;
+        Vector2 startSize = rect.sizeDelta;
+        Vector2 endSize;
+        int startNumber = 0;
+        int targetNumber = 0;
+
+        if (person.GetComponent<PlayerController>() != null)
+        {
+            float temp = (float)(person.GetComponent<PlayerController>().currentHp - damage) / person.GetComponent<PlayerController>().maxHp;
+            endSize = originalBattleScreenHpBarSize * new Vector2(temp, 1f);
+            startNumber = person.GetComponent<PlayerController>().currentHp;
+            targetNumber = person.GetComponent<PlayerController>().currentHp - damage;
+        }
+        else
+        {
+            float temp = (float)(person.GetComponent<EnemyController>().currentHp - damage) / person.GetComponent<EnemyController>().maxHp;
+            endSize = originalBattleScreenHpBarSize * new Vector2(temp, 1f);
+            startNumber = person.GetComponent<EnemyController>().currentHp;
+            targetNumber = person.GetComponent<EnemyController>().currentHp - damage;
+        }
+
+        if (targetNumber < 0) { targetNumber = 0; }
+
+        // Track the current printed number
+        int currentPrintedNumber = startNumber;
+
+        // Determine direction
+        int direction = startNumber > targetNumber ? -1 : 1;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+
+            // Calculate lerp percentage
+            float t = elapsed / duration;
+
+            // Update size
+            rect.sizeDelta = Vector2.Lerp(startSize, endSize, t);
+
+            // Calculate the interpolated number based on progress
+            float numberLerp = Mathf.Lerp(startNumber, targetNumber, t);
+
+            // Convert to int in correct direction
+            int newNumber = direction == -1 
+                ? Mathf.FloorToInt(numberLerp)
+                : Mathf.CeilToInt(numberLerp);
+
+            // Only print when the number changes
+            if (newNumber != currentPrintedNumber)
+            {
+                currentPrintedNumber = newNumber;
+                healthText.text = currentPrintedNumber.ToString();
+            }
+
+            yield return null;
+        }
+
+        // Ensure final values are exact
+        rect.sizeDelta = endSize;
+
+        if (currentPrintedNumber != targetNumber)
+        {
+            currentPrintedNumber = targetNumber;
+        }
+    }
 }
 
