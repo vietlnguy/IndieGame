@@ -169,11 +169,10 @@ public class EnemyController : MonoBehaviour
         battleController.enemySelected = null;
         unhighlight();
     }
-    public System.Collections.IEnumerator Die()
+    public void Die()
     {
-        Debug.Log("Enemy died");
+        Debug.Log(title + "died");
         Destroy(gameObject);
-        yield return null;
     }
 
 }

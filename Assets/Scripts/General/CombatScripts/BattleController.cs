@@ -130,15 +130,15 @@ public class BattleController : MonoBehaviour
         foreach (Transform enemy in enemies.transform)
         {
             pathfinder.calculateOccupiedTiles(characters, enemies);
-
             enemy.GetComponent<EnemyController>().selectEnemy();
 
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(1f);
 
             if (enemy.gameObject.GetComponent<EnemyController>().roams)
             {
                 GameObject target = GetClosest(enemy.gameObject, characters);
                 yield return StartCoroutine(pathfinder.EnemyFollowPath(enemy.gameObject, target.transform.position));
+                
             }
 
             disabledEnemies.Add(enemy.gameObject);

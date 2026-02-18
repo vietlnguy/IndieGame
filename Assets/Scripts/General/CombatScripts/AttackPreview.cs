@@ -672,7 +672,7 @@ public class AttackPreview : MonoBehaviour
             if (battleController.enemySelected.GetComponent<EnemyController>().currentHp <= 0)
             {   
                 //TODO: Remove sprite on battle screen
-                yield return StartCoroutine(battleController.enemySelected.GetComponent<EnemyController>().Die());
+                battleController.enemySelected.GetComponent<EnemyController>().Die();
                 battleController.enemySelected = null;
             }
 
@@ -712,7 +712,7 @@ public class AttackPreview : MonoBehaviour
                     //Play death dialogue if necessary
                     if (battleController.characterSelected.GetComponent<PlayerController>().currentHp <= 0)
                     {   
-                        yield return StartCoroutine(DeathDialogue(battleController.characterSelected));
+                        yield return StartCoroutine(DeathSequence(battleController.characterSelected));
                         //TODO: Remove sprite on battle screen
                         //yield return StartCoroutine(battleController.characterSelected.GetComponent<PlayerController>().Die());
                     }
@@ -744,8 +744,11 @@ public class AttackPreview : MonoBehaviour
 
         chosenAttack = null;
 
-        battleController.characterSelected.GetComponent<PlayerController>().endTurn();
-        yield return null;
+        if (battleController.characterSelected != null)
+        {
+            battleController.characterSelected.GetComponent<PlayerController>().endTurn();
+        }
+
     }
     private IEnumerator AnimateHealthDamage(int damage, GameObject healthBarObject, GameObject person, TextMeshProUGUI healthText)
     {
@@ -816,22 +819,21 @@ public class AttackPreview : MonoBehaviour
             currentPrintedNumber = targetNumber;
         }
     }
-
-    private IEnumerator DeathDialogue(GameObject person)
+    private IEnumerator DeathSequence(GameObject person)
     {
         float time = .15f;
+        float elapsed = 0f;
+        Vector2 targetPos = new Vector2(0f, -50f);
+        Vector2 startPos = new Vector2(0f, -60f); // Off-screen bottom
 
         //Player dialogue
         if (person.GetComponent<PlayerController>() != null)
         {
             dialogueBoxTitle.text = person.GetComponent<PlayerController>().title;
             yield return new WaitForSeconds(.25f);
-            Vector2 targetPos = new Vector2(0f, -50f);
-            Vector2 startPos = new Vector2(0f, -60f); // Off-screen bottom
             dialogueBoxRectTransform.anchoredPosition = startPos;
             dialogueBoxCanvasGroup.alpha = 0f;
 
-            float elapsed = 0f;
             while (elapsed < time)
             {
                 elapsed += Time.deltaTime;
@@ -844,7 +846,8 @@ public class AttackPreview : MonoBehaviour
             // Ensure final values are set
             dialogueBoxCanvasGroup.alpha = 1f;
             dialogueBoxRectTransform.anchoredPosition = targetPos;
-            StartCoroutine(TypeLine(person.GetComponent<PlayerController>().deathDialogue));
+            yield return StartCoroutine(TypeLine(person.GetComponent<PlayerController>().deathDialogue));
+            yield return new WaitForSeconds(2f);
         }
 
         //Enemy dialogue
@@ -852,12 +855,9 @@ public class AttackPreview : MonoBehaviour
         {
             dialogueBoxTitle.text = person.GetComponent<EnemyController>().title;
             yield return new WaitForSeconds(.25f);
-            Vector2 targetPos = new Vector2(0f, -50f);
-            Vector2 startPos = new Vector2(0f, -60f); // Off-screen bottom
             dialogueBoxRectTransform.anchoredPosition = startPos;
             dialogueBoxCanvasGroup.alpha = 0f;
 
-            float elapsed = 0f;
             while (elapsed < time)
             {
                 elapsed += Time.deltaTime;
@@ -870,19 +870,49 @@ public class AttackPreview : MonoBehaviour
             // Ensure final values are set
             dialogueBoxCanvasGroup.alpha = 1f;
             dialogueBoxRectTransform.anchoredPosition = targetPos;
-            StartCoroutine(TypeLine(person.GetComponent<EnemyController>().deathDialogue));
-            }
+            yield return StartCoroutine(TypeLine(person.GetComponent<EnemyController>().deathDialogue));
+        }
 
-       
+        yield return new WaitForSeconds(2f);
+
+        //Fade box out and reset text
+        elapsed = 0f;
+        while (elapsed < time)
+        {
+            elapsed += Time.deltaTime;
+            float t2 = Mathf.Clamp01(elapsed / time);
+            dialogueBoxCanvasGroup.alpha = dialogueBoxCanvasGroup.alpha = Mathf.Lerp(1, 0f, elapsed / time);
+            dialogueBoxRectTransform.anchoredPosition = Vector2.Lerp(targetPos, startPos, t2);
+            yield return null;
+        }
+        dialogueBoxCanvasGroup.alpha = 0f;
+        dialogueBoxRectTransform.anchoredPosition = startPos;
+        dialogueBoxText.text = "";
+
+        yield return new WaitForSeconds(2f);
+
+        //Destroy gameobject
+        if (person.GetComponent<PlayerController>() != null)
+        {
+            person.GetComponent<PlayerController>().Die();
+            battleController.characterSelected = null;
+        }
+        else
+        {
+            person.GetComponent<EnemyController>().Die();
+            battleController.enemySelected = null;
+        }
+
     }
     private IEnumerator TypeLine(string s) 
     {
         typingAudio.Play();
         foreach (char c in s.ToCharArray()) {
             dialogueBoxText.text += c;
-            yield return new WaitForSeconds(.02f);
+            yield return new WaitForSeconds(.1f);
         }
         typingAudio.Stop();
+
     }
 }
 

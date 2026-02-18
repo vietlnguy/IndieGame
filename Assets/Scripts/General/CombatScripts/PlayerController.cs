@@ -275,7 +275,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            deathDialogue = "Ack- This is it for me. I'm sorry, everyone... ";
+            deathDialogue = "Ack- I think this is it for me.. I'm sorry, everyone... ";
         }
 
 
@@ -464,10 +464,9 @@ public class PlayerController : MonoBehaviour
         originalPosition = transform.position;
         movementEnabled = false;
     }
-    public System.Collections.IEnumerator Die()
+    public void Die()
     {
         Debug.Log(title + " died");
         OnCharacterDied?.Invoke(title);
-        yield return null;
     }
 }
