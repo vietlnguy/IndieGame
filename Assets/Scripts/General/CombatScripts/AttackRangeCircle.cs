@@ -16,6 +16,8 @@ public class AttackRangeCircle : MonoBehaviour
     private CircleCollider2D circleCollider;
     public List<GameObject> alliesInRange;
     public List<GameObject> enemiesInRange;
+    public bool enemyIsRangedAndMoving = false;
+    public TilemapPathfinder pathfinder;
 
     void Awake()
     {
@@ -38,7 +40,6 @@ public class AttackRangeCircle : MonoBehaviour
         meshRenderer.sortingLayerName = sortingLayerName;
         meshRenderer.sortingOrder = sortingOrder;
     }
-
     void Update()
     {
         if (active)
@@ -53,7 +54,6 @@ public class AttackRangeCircle : MonoBehaviour
             }
         }
     }
-
     public void enableAttackRange(GameObject character)
     {
         float radius;
@@ -73,14 +73,14 @@ public class AttackRangeCircle : MonoBehaviour
         UpdateCollider(radius);
         active = true;
     }
-
     public void disableAttackRange()
     {
         active = false;
         meshRenderer.enabled = false;
         circleCollider.enabled = false;
+        enemiesInRange.Clear();
+        alliesInRange.Clear();
     }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         //Character is selected and others enter AttackRange
@@ -89,14 +89,20 @@ public class AttackRangeCircle : MonoBehaviour
             if (other.CompareTag("enemy"))
             {
                 other.GetComponent<EnemyController>().highlightAttackable();
-                enemiesInRange.Add(other.gameObject);
+                if (!enemiesInRange.Contains(other.gameObject))
+                {
+                    enemiesInRange.Add(other.gameObject);
+                }
             }
             if (other.CompareTag("character"))
             {
                 if (other.gameObject != battleController.characterSelected)
                 {
                     other.GetComponent<PlayerController>().highlightAssistable();
-                    alliesInRange.Add(other.gameObject);
+                    if (!alliesInRange.Contains(other.gameObject))
+                    {
+                        alliesInRange.Add(other.gameObject);
+                    }
                 }
             }
         }
@@ -107,19 +113,33 @@ public class AttackRangeCircle : MonoBehaviour
             if (other.CompareTag("enemy") && other.gameObject != battleController.enemySelected)
             {
                 other.GetComponent<EnemyController>().highlightAssistable();
-                alliesInRange.Add(other.gameObject);
+                if (!alliesInRange.Contains(other.gameObject))
+                {
+                    alliesInRange.Add(other.gameObject);
+                }
+                if (enemyIsRangedAndMoving)
+                {
+                    pathfinder.StopEnemyFollow();
+                }
             }
             if (other.CompareTag("character"))
             {
                 if (other.gameObject != battleController.characterSelected)
                 {
                     other.GetComponent<PlayerController>().highlightAttackable();
-                    enemiesInRange.Add(other.gameObject);
+                    if (!enemiesInRange.Contains(other.gameObject))
+                    {
+                        enemiesInRange.Add(other.gameObject);
+                    }
+                }
+                if (enemyIsRangedAndMoving)
+                {
+                    pathfinder.StopEnemyFollow();
                 }
             }
+        
         }
     }
-
     void OnTriggerExit2D(Collider2D other)
     {
 
@@ -174,7 +194,6 @@ public class AttackRangeCircle : MonoBehaviour
             }
         }
     }
-
     public void DrawFilledCircle(float radius)
     {
         Mesh mesh = new Mesh();
@@ -207,7 +226,6 @@ public class AttackRangeCircle : MonoBehaviour
 
         meshFilter.mesh = mesh;
     }
-
     public void UpdateCollider(float radius)
     {
         if (circleCollider != null)

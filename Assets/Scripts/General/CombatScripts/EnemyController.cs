@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     public CharacterToolTip characterToolTipScript;
     public MoveRangeCircle moveRangeCircleScript;
     public AttackRangeCircle attackRangeCircleScript;
+    public EffectiveAttackRangeCircle effectiveAttackRangeCircleScript;
     public AttackPreview attackPreviewScript;
     public CharacterMenu characterMenuScript;
     public CharacterAssistMenu characterAssistMenuScript;
@@ -31,6 +32,8 @@ public class EnemyController : MonoBehaviour
     public bool roams;
     public bool ranged;
     public bool boss = false;
+    public bool support;
+    public bool hybrid;
     public AudioSource deselectAudio;
     public List<AttackMoves> knownAttacks;
     public string deathDialogue;
@@ -43,6 +46,7 @@ public class EnemyController : MonoBehaviour
         characterToolTipScript = GameObject.Find("characterInfoToolTip").GetComponent<CharacterToolTip>();
         moveRangeCircleScript = GameObject.Find("MoveRangeCircle").GetComponent<MoveRangeCircle>();
         attackRangeCircleScript = GameObject.Find("AttackRangeCircle").GetComponent<AttackRangeCircle>();
+        effectiveAttackRangeCircleScript = GameObject.Find("EffectiveAttackRangeCircle").GetComponent<EffectiveAttackRangeCircle>();
         characterMenuScript = GameObject.Find("CharacterMenu").GetComponent<CharacterMenu>();
         characterAssistMenuScript = GameObject.Find("CharacterAssistMenu").GetComponent<CharacterAssistMenu>();
         attackPreviewScript = GameObject.Find("AttackPreview").GetComponent<AttackPreview>();
@@ -160,12 +164,14 @@ public class EnemyController : MonoBehaviour
         battleController.enemySelected = gameObject;
         moveRangeCircleScript.enableMoveRange(gameObject);
         attackRangeCircleScript.enableAttackRange(gameObject);
+        effectiveAttackRangeCircleScript.enableEffectiveAttackRange(gameObject);
     }
     public void deselectEnemy()
     {
         deselectAudio.Play();
         moveRangeCircleScript.disableMoveRange();
         attackRangeCircleScript.disableAttackRange();
+        effectiveAttackRangeCircleScript.disableEffectiveAttackRange();
         battleController.enemySelected = null;
         unhighlight();
     }

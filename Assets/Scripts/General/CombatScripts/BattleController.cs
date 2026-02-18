@@ -28,10 +28,12 @@ public class BattleController : MonoBehaviour
     public TilemapPathfinder pathfinder;
     public MoveRangeCircle moveRangeCircleScript;
     public AttackRangeCircle attackRangeCircleScript;
+    public EffectiveAttackRangeCircle effectiveAttackRangeCircleScript;
     public InventoryMenu inventoryMenuScript;
     public CharacterInfoScreen characterInfoScript;
     public bool isEnemyTurn = false;
     public int currentTurn = 0;
+    private Coroutine enemyFollowCoroutine;
     void Awake()
     {
         disabledCharacters = new List<GameObject>();
@@ -129,15 +131,61 @@ public class BattleController : MonoBehaviour
 
         foreach (Transform enemy in enemies.transform)
         {
+            EnemyController enemyScript = enemy.GetComponent<EnemyController>();
+            
             pathfinder.calculateOccupiedTiles(characters, enemies);
-            enemy.GetComponent<EnemyController>().selectEnemy();
+            enemyScript.selectEnemy();
 
             yield return new WaitForSeconds(1f);
 
-            if (enemy.gameObject.GetComponent<EnemyController>().roams)
+            if (enemyScript.roams)
             {
-                GameObject target = GetClosest(enemy.gameObject, characters);
-                yield return StartCoroutine(pathfinder.EnemyFollowPath(enemy.gameObject, target.transform.position));
+                GameObject target = null;
+
+                //Enemy attacks player characters
+                if (!enemyScript.support)
+                {
+                    target = GetClosest(enemy.gameObject, characters);
+                    
+                    //Determine which character to target
+
+                    //if no characters within the EffectiveAttackRange then should move towards closest enemy
+                    target = GetClosest(enemy.gameObject, characters);
+
+                    //if characters within EffectiveAttackRange
+                        //Should prioritize characters that can be killed
+                        //Should prioritize melee characters if they themselves are ranged
+                        //Should priortize attacking the closest enemy
+                    
+
+
+                    //Ranged enemies should stop movement as soon as within range to attack
+                    //if (enemyScript.ranged) { attackRangeCircleScript.enemyIsRangedAndMoving = true; }
+                    //else { attackRangeCircleScript.enemyIsRangedAndMoving = false; }
+                    
+                    yield return StartCoroutine(pathfinder.EnemyFollowPath(enemy.gameObject, target.transform.position));
+
+                }
+
+                //Enemy supports other enemies
+                else if (enemyScript.support)
+                {
+                    target = GetClosest(enemy.gameObject, enemies);
+
+                    //Ranged enemies should stop movement as soon as within range to attack
+                    if (enemyScript.ranged) { attackRangeCircleScript.enemyIsRangedAndMoving = true; }
+                    else { attackRangeCircleScript.enemyIsRangedAndMoving = false; }
+                    
+                    yield return StartCoroutine(pathfinder.EnemyFollowPath(enemy.gameObject, target.transform.position));
+                }
+
+                //Enemy supports and attacks
+                else if (enemyScript.hybrid)
+                {
+                    
+                }
+
+              
                 
             }
 
@@ -146,6 +194,7 @@ public class BattleController : MonoBehaviour
         }
 
         attackRangeCircleScript.disableAttackRange();
+        effectiveAttackRangeCircleScript.disableEffectiveAttackRange();
         moveRangeCircleScript.disableMoveRange();
 
         yield return null;
@@ -158,7 +207,7 @@ public class BattleController : MonoBehaviour
 
         foreach (Transform character in objects.transform)
         {
-            if (character.gameObject == null) continue;
+            if (character.gameObject == null || character.gameObject == target) continue;
 
             float distance = Vector3.Distance(target.transform.position, character.gameObject.transform.position);
 
@@ -171,4 +220,7 @@ public class BattleController : MonoBehaviour
 
         return closest;
     }
+
+
+
 }

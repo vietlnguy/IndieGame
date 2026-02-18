@@ -40,11 +40,11 @@ public class ChapterOne : MonoBehaviour {
     public void CreateEnemies()
     {
         BasicEnemy(-21f, -11.25f, 0f);
-        BasicEnemy(-9f, -14.24f, 0f);
+        BasicRangedEnemy(-9f, -14.24f, 0f);
         BasicEnemy(7.7f, -3.84f, 0f);
         BossEnemy(10.5f, -6.36f, 0f);
         enemiesSpawned = true;
-        CharacterDeathSubscribe();
+        CharacterDeathSubscribe(); 
 
     }
     public void BasicEnemy(float x, float y, float z)
@@ -68,8 +68,36 @@ public class ChapterOne : MonoBehaviour {
 
         enemy.roams = true;
         enemy.ranged = false;
+        enemy.support = false;
+        enemy.hybrid = false;
 
         enemy.knownAttacks.Add(new Attack("Bash", "physical", 1.0f, 1.0f, 90, 0, 0, "Bash the enemy with your weapon."));
+    }
+    public void BasicRangedEnemy(float x, float y, float z)
+    {
+        GameObject temp = Instantiate(basicEnemyPrefab, new Vector3(x, y, z), Quaternion.identity, enemies.transform);
+        EnemyController enemy = temp.GetComponent<EnemyController>();
+        enemy.title = "Soldier";
+
+        enemy.maxHp = 11;
+        enemy.currentHp = enemy.maxHp;
+        enemy.maxMana = 8;
+        enemy.currentMana = enemy.maxMana;
+        enemy.attack = 7;
+        enemy.defense = 4;
+        enemy.resistance = 3;
+        enemy.intelligence = 4;
+        enemy.skill = 5;
+        enemy.speed = 4;
+        enemy.attackRange = 3;
+        enemy.moveRange = 4;
+
+        enemy.roams = true;
+        enemy.ranged = true;
+        enemy.support = false;
+        enemy.hybrid = false;
+
+        enemy.knownAttacks.Add(new Attack("Bow Shot", "physical", 1.0f, 1.0f, 90, 0, 0, "Shoot at arrow at the enemy."));
     }
     public void BossEnemy(float x, float y, float z)
     {

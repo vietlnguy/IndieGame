@@ -11,6 +11,7 @@ public class TilemapPathfinder : MonoBehaviour
     public AudioSource walkingAudio;
     public float moveSpeed = 4f;
     public List<Vector3Int> occupiedTiles;
+    public bool cancelFollow;
     public List<Vector3> GetWorldPath(Vector3 worldStart, Vector3 worldEnd)
     {
         Vector3Int startCell = tilemap.WorldToCell(worldStart);
@@ -185,7 +186,7 @@ public class TilemapPathfinder : MonoBehaviour
     }
     public System.Collections.IEnumerator EnemyFollowPath(GameObject enemy, Vector3 targetPos)
     {
-
+        cancelFollow = false;
         float moveLimit = enemy.GetComponent<EnemyController>().moveRange;
         float distanceMoved = 0f;
         Vector3 previousPos = enemy.transform.position;
@@ -202,7 +203,7 @@ public class TilemapPathfinder : MonoBehaviour
             foreach (Vector3 waypoint in path)
             {
                 // Keep moving until you reach the waypoint
-                while (Vector3.Distance(enemy.transform.position, waypoint) > 0.1f)
+                while (!cancelFollow && Vector3.Distance(enemy.transform.position, waypoint) > 0.1f)
                 {
                     // Step toward waypoint
                     Vector3 oldPos = enemy.transform.position;
@@ -218,7 +219,6 @@ public class TilemapPathfinder : MonoBehaviour
                     // Check if move limit reached
                     if (distanceMoved >= moveLimit)
                     {
-                        walkingAudio.Stop();
                         yield break; // stop moving any further
                     }
 
@@ -279,5 +279,9 @@ public class TilemapPathfinder : MonoBehaviour
         // Adjacent if one step away in cardinal direction. i.e. returns true if adjacent
         return (dx + dy) == 1;
 
+    }
+    public void StopEnemyFollow()
+    {
+        cancelFollow = true;
     }
 }
