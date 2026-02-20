@@ -106,6 +106,7 @@ public class TilemapPathfinder : MonoBehaviour
             }
         }
 
+        Debug.Log("No path found!");
         return new List<Vector3Int>(); // No path found
     }
     bool IsBlockedWithPadding(Vector3Int cell, Vector3Int goalCell)
@@ -221,7 +222,7 @@ public class TilemapPathfinder : MonoBehaviour
                     {
                         yield break; // stop moving any further
                     }
-
+                    walkingAudio.Play();
                     yield return null;
                 }
             }

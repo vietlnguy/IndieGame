@@ -9,7 +9,6 @@ public class ConfirmAttackButton : MonoBehaviour, IPointerEnterHandler, IPointer
     private Image image;
     public SaveManager scm;
     public AttackPreview attackPreview;
-    public bool validAttack = false;
 
     void Awake()
     {
@@ -27,7 +26,7 @@ public class ConfirmAttackButton : MonoBehaviour, IPointerEnterHandler, IPointer
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (validAttack)
+        if (attackPreview.validAttack)
         {
             StartCoroutine(attackPreview.startAttackSequence());
         }

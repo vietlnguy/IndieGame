@@ -83,62 +83,93 @@ public class AttackRangeCircle : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        //Character is selected and others enter AttackRange
-        if (battleController.characterSelected != null)
+        //Player's turn
+        if (!battleController.isEnemyTurn)
         {
-            if (other.CompareTag("enemy"))
+            //Character is selected and others enter AttackRange
+            if (battleController.characterSelected != null)
             {
-                other.GetComponent<EnemyController>().highlightAttackable();
-                if (!enemiesInRange.Contains(other.gameObject))
+                if (other.CompareTag("enemy"))
                 {
-                    enemiesInRange.Add(other.gameObject);
-                }
-            }
-            if (other.CompareTag("character"))
-            {
-                if (other.gameObject != battleController.characterSelected)
-                {
-                    other.GetComponent<PlayerController>().highlightAssistable();
-                    if (!alliesInRange.Contains(other.gameObject))
-                    {
-                        alliesInRange.Add(other.gameObject);
-                    }
-                }
-            }
-        }
-
-        //Enemy is selected and others enter AttackRange
-        if (battleController.enemySelected != null && battleController.characterSelected == null)
-        {
-            if (other.CompareTag("enemy") && other.gameObject != battleController.enemySelected)
-            {
-                other.GetComponent<EnemyController>().highlightAssistable();
-                if (!alliesInRange.Contains(other.gameObject))
-                {
-                    alliesInRange.Add(other.gameObject);
-                }
-                if (enemyIsRangedAndMoving)
-                {
-                    pathfinder.StopEnemyFollow();
-                }
-            }
-            if (other.CompareTag("character"))
-            {
-                if (other.gameObject != battleController.characterSelected)
-                {
-                    other.GetComponent<PlayerController>().highlightAttackable();
+                    other.GetComponent<EnemyController>().highlightAttackable();
                     if (!enemiesInRange.Contains(other.gameObject))
                     {
                         enemiesInRange.Add(other.gameObject);
                     }
                 }
-                if (enemyIsRangedAndMoving)
+                if (other.CompareTag("character"))
+                {
+                    if (other.gameObject != battleController.characterSelected)
+                    {
+                        other.GetComponent<PlayerController>().highlightAssistable();
+                        if (!alliesInRange.Contains(other.gameObject))
+                        {
+                            alliesInRange.Add(other.gameObject);
+                        }
+                    }
+                }
+            }
+
+            //Enemy is selected and others enter AttackRange
+            if (battleController.enemySelected != null && battleController.characterSelected == null)
+            {
+                if (other.CompareTag("enemy") && other.gameObject != battleController.enemySelected)
+                {
+                    other.GetComponent<EnemyController>().highlightAssistable();
+                    if (!alliesInRange.Contains(other.gameObject))
+                    {
+                        alliesInRange.Add(other.gameObject);
+                    }
+                }
+                if (other.CompareTag("character"))
+                {
+                    if (other.gameObject != battleController.characterSelected)
+                    {
+                        other.GetComponent<PlayerController>().highlightAttackable();
+                        if (!enemiesInRange.Contains(other.gameObject))
+                        {
+                            enemiesInRange.Add(other.gameObject);
+                        }
+                    }
+                }           
+            }
+            
+        }
+
+        //Enemy's turn
+        else
+        {
+            if (other.CompareTag("character"))
+            {
+                other.GetComponent<PlayerController>().highlightAttackable();
+                if (!enemiesInRange.Contains(other.gameObject))
+                {
+                    enemiesInRange.Add(other.gameObject);
+                }
+                
+                if (enemyIsRangedAndMoving && other.gameObject == battleController.enemyTarget)
                 {
                     pathfinder.StopEnemyFollow();
                 }
+                
             }
-        
+            else if (other.CompareTag("enemy"))
+            {
+                if (other.gameObject != battleController.enemySelected)
+                {
+                    other.GetComponent<EnemyController>().highlightAssistable();
+                    if (!alliesInRange.Contains(other.gameObject))
+                    {
+                        alliesInRange.Add(other.gameObject);
+                    }
+                    if (enemyIsRangedAndMoving && other.gameObject == battleController.enemyTarget)
+                    {
+                        pathfinder.StopEnemyFollow();
+                    }
+                }
+            }
         }
+
     }
     void OnTriggerExit2D(Collider2D other)
     {
