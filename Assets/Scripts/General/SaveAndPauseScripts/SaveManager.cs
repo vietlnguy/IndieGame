@@ -77,7 +77,7 @@ public class SaveManager : MonoBehaviour
         dataToSave.mainCharacterName = mainCharacterName;
 
         //Populate character data
-        Character mainCharacter = new Character(mainCharacterName, 15, 8, 8, 4, 5, 5, 6, 6, 1, 5, true, false);
+        Character mainCharacter = new Character(mainCharacterName, 12, 8, 8, 4, 5, 5, 6, 6, 1, 5, true, false);
         mainCharacter.knownAttacks.Add(new Attack("Slash", "physical", 1.0f, 1.0f, 90, 0, 0, "Slash with your sword."));
         mainCharacter.inventory.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
         mainCharacter.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");

@@ -83,6 +83,7 @@ public class AttackPreview : MonoBehaviour
     public CanvasGroup dialogueBoxCanvasGroup;
     public RectTransform dialogueBoxRectTransform;
     private AttackMoves chosenAttack;
+    public bool enemyCoroutineRunning = false;
     void Awake()
     {
         scm = FindFirstObjectByType<SaveManager>();
@@ -386,8 +387,8 @@ public class AttackPreview : MonoBehaviour
                 critBlock.text = damageArray[2].ToString();
                 attackDescription.text = battleController.characterSelected.GetComponent<PlayerController>().knownAttacks[attackIndex].description;
 
-                //When character is ranged, and enemy is not.
-                if (battleController.characterSelected.GetComponent<PlayerController>().ranged && !battleController.enemySelected.GetComponent<EnemyController>().ranged)
+                //When character is ranged, and enemy is not or vice versa
+                if ((battleController.characterSelected.GetComponent<PlayerController>().ranged && !battleController.enemySelected.GetComponent<EnemyController>().ranged) || (!battleController.characterSelected.GetComponent<PlayerController>().ranged && battleController.enemySelected.GetComponent<EnemyController>().ranged))
                 {
                     rightsideAtkBlock.text = "-";
                     rightsideHitBlock.text = "-";
@@ -524,7 +525,13 @@ public class AttackPreview : MonoBehaviour
 
         active = false;
 
-        battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = true;
+        try {
+            battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = true;
+        }
+        catch
+        {
+            
+        }
         yield return null;
 
     }
@@ -716,6 +723,7 @@ public class AttackPreview : MonoBehaviour
     {
         PlayerController defenderScript = defender.GetComponent<PlayerController>();
         EnemyController attackerScript = attacker.GetComponent<EnemyController>();
+        enemyCoroutineRunning = true;
 
         //Populate info
         battleScreen.SetActive(true);
@@ -734,8 +742,8 @@ public class AttackPreview : MonoBehaviour
         battleScreenEnemyCRIT.text = enemyDamageArray[2].ToString();
 
 
-        //Enemy is ranged and character is not
-        if (attackerScript.ranged && !defenderScript.ranged )
+        //Enemy is ranged and character is not, or vice versa
+        if ((attackerScript.ranged && !defenderScript.ranged) || (!attackerScript.ranged && defenderScript.ranged) )
         {
             battleScreenPlayerAttack.text = "-";
             battleScreenPlayerATK.text =  "-";
@@ -750,8 +758,7 @@ public class AttackPreview : MonoBehaviour
             battleScreenPlayerCRIT.text = damageArray[2].ToString();  
             battleScreenPlayerAttack.text = defenderScript.knownAttacks[0].name;
         }
-
-        
+     
         //Enable the Battle screen and scale it from 0 to 1
         Vector3 startScale = Vector3.zero;
         Vector3 endScale = Vector3.one;
@@ -885,7 +892,7 @@ public class AttackPreview : MonoBehaviour
         battleScreenEnemyHIT.text = "-";
         battleScreenEnemyCRIT.text = "-";
 
-
+        enemyCoroutineRunning = false;
     }
     private IEnumerator AnimateHealthDamage(int damage, GameObject healthBarObject, GameObject person, TextMeshProUGUI healthText)
     {

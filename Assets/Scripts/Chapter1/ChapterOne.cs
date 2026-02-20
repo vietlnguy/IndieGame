@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class ChapterOne : MonoBehaviour {
 
@@ -8,10 +9,18 @@ public class ChapterOne : MonoBehaviour {
     private bool enemiesSpawned = false;
     private bool shouldLose = false;
     private bool gameOver = false;
+    public SaveManager saveManager;
+    public CanvasGroup gameOverCanvasGroup;
+    public GameObject gameOverRetryButton;
+    public GameObject gameOverMainMenuButton;
+    public GameOverBlackScreen gameOverBlackScreenScript;
+    public AudioSource gameOverAudio;
+    public AttackPreview attackPreviewScript;
 
     public void Awake()
     {
         enemies = GameObject.Find("Enemies");
+        saveManager = FindFirstObjectByType<SaveManager>();
 
     }
     public void Update()
@@ -29,19 +38,21 @@ public class ChapterOne : MonoBehaviour {
         }
         
         //Lose condition
-        if (shouldLose && !gameOver)
+        if (shouldLose && !gameOver && !attackPreviewScript.enemyCoroutineRunning)
         {
-           Debug.Log("Game Over");
-           gameOver = true;
+            battleController.CancelEveryting();
+            gameOver = true;
+            StartCoroutine(GameOverSequence());
+
         }
 
         //Subquests?
     }
     public void CreateEnemies()
     {
-        BasicEnemy(-21f, -11.25f, 0f);
-        BasicRangedEnemy(-9f, -14.24f, 0f);
-        BasicEnemy(7.7f, -3.84f, 0f);
+        BasicRangedEnemy(-21f, -11.25f, 0f);
+        BasicEnemy(-9f, -14.24f, 0f);
+        BasicEnemy(2.57f, -10.15f, 0f);
         BossEnemy(10.5f, -6.36f, 0f);
         enemiesSpawned = true;
         CharacterDeathSubscribe(); 
@@ -136,9 +147,36 @@ public class ChapterOne : MonoBehaviour {
     private void HandleDeath(string name)
     {
         Debug.Log("Heard that " + name + " died!");
-        if (name == "Astrid")
+        if (name == "Astrid" || name == saveManager.loadedData.mainCharacterName)
         {
             shouldLose = true;
         }
+
+    }
+    private IEnumerator GameOverSequence()
+    {
+        yield return new WaitForSeconds(.5f);
+        gameOverBlackScreenScript.active = true;
+        gameOverAudio.Play();
+        //Fade in the game over screen
+        gameOverCanvasGroup.alpha = 0f;
+        gameOverCanvasGroup.interactable = true;
+        gameOverCanvasGroup.blocksRaycasts = true;
+        float elapsed = 0f;
+        float time = 1.5f;
+        while (elapsed < time)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / time);
+            gameOverCanvasGroup.alpha = t;
+            yield return null;
+        }
+        gameOverCanvasGroup.alpha = 1f;
+
+        yield return new WaitForSeconds(1f);
+
+        gameOverMainMenuButton.SetActive(true);
+        gameOverRetryButton.SetActive(true);
+
     }
 }

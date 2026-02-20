@@ -37,6 +37,7 @@ public class EnemyController : MonoBehaviour
     public AudioSource deselectAudio;
     public List<AttackMoves> knownAttacks;
     public string deathDialogue;
+    public GameOverBlackScreen gameOverBlackScreenScript;
 
     void Awake()
     {
@@ -52,34 +53,39 @@ public class EnemyController : MonoBehaviour
         attackPreviewScript = GameObject.Find("AttackPreview").GetComponent<AttackPreview>();
         inventoryMenuScript = GameObject.Find("InventoryMenu").GetComponent<InventoryMenu>();
         deselectAudio = GameObject.Find("AttackPreviewWoosh").GetComponent<AudioSource>();
+        gameOverBlackScreenScript = GameObject.Find("GameOverBlackScreen").GetComponent<GameOverBlackScreen>();
+
     }
     void Update()
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        int layerMask = LayerMask.GetMask("Characters"); // ignore AttackRange layer
-        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, Mathf.Infinity, layerMask);
-
-        if (hit.collider != null && hit.collider.gameObject == gameObject)
+        if (!gameOverBlackScreenScript.active) 
         {
-            // Hover logic
-            if (!isHovered)
-            {
-                isHovered = true;
-                OnHoverEnter();
-            }
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            int layerMask = LayerMask.GetMask("Characters"); // ignore AttackRange layer
+            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, Mathf.Infinity, layerMask);
 
-            // Click logic
-            if (Input.GetMouseButtonDown(0))
+            if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
-                OnClick();
-            }
-        }
-        else if (isHovered)
-        {
-            isHovered = false;
-            OnHoverExit();
-        }
+                // Hover logic
+                if (!isHovered)
+                {
+                    isHovered = true;
+                    OnHoverEnter();
+                }
 
+                // Click logic
+                if (Input.GetMouseButtonDown(0))
+                {
+                    OnClick();
+                }
+            }
+            else if (isHovered)
+            {
+                isHovered = false;
+                OnHoverExit();
+            }
+            
+        }
     }
     void LateUpdate()
     {

@@ -151,7 +151,7 @@ public class BattleController : MonoBehaviour
                     //if no characters within the EffectiveAttackRange then should move towards closest enemy
                     if (effectiveAttackRangeCircleScript.enemiesInRange.Count <= 0) 
                     { 
-                        enemyTarget = GetClosest(enemy.gameObject, characters);
+                        enemyTarget = GetClosest(enemy.gameObject, characters, null);
                         yield return StartCoroutine(pathfinder.EnemyFollowPath(enemy.gameObject, enemyTarget.transform.position));
                         walkingAudio.Stop();
                         Debug.Log("No one in range to attack");
@@ -212,7 +212,7 @@ public class BattleController : MonoBehaviour
                         //Else attack the closest
                         if (enemyTarget == null)
                         {
-                            enemyTarget = GetClosest(enemy.gameObject, characters);
+                            enemyTarget = GetClosest(enemy.gameObject, characters, null);
                         }
                     
                         //When target is not already in range, then move towards the target
@@ -279,9 +279,118 @@ public class BattleController : MonoBehaviour
                 {
                     
                 }
+       
+            }
+            
+            //Does roam, but still attacks those in Effective attack range. i.e. sentinels
+            else
+            {
 
-              
+                if (effectiveAttackRangeCircleScript.enemiesInRange.Count != 0)
+                {
+                    //Go through each character and see if any can be killed
+                    foreach (GameObject character in effectiveAttackRangeCircleScript.enemiesInRange)
+                    {
+                        PlayerController playerScript = character.GetComponent<PlayerController>();
+
+                        foreach (AttackMoves attack in enemyScript.knownAttacks)
+                        {
+                            //Calculate damage
+                            int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, character, attack);
+                            
+                            //If can kill
+                            if (damageArray[0] >= playerScript.currentHp && attack.manaCost <= enemyScript.currentMana)
+                            {
+                                enemyTarget = character;
+                                break;
+                            }
+
+                            if (enemyTarget != null) {break;}
+                        }
+                    }
+
+                    //Go through each character and see if any can be ranged attacked
+                    if (enemyTarget == null && enemyScript.ranged) 
+                    {
+                        foreach (GameObject character in effectiveAttackRangeCircleScript.enemiesInRange)
+                        {
+                            PlayerController playerScript = character.GetComponent<PlayerController>();
+                            if (!playerScript.ranged)
+                            {
+                                enemyTarget = character;
+                                break;
+                            }
+                        }
+                    }
+
+                    //Go through each character and see if any can be melee attacked
+                    if (enemyTarget == null && !enemyScript.ranged)
+                    {
+                        foreach (GameObject character in effectiveAttackRangeCircleScript.enemiesInRange)
+                        {
+                            PlayerController playerScript = character.GetComponent<PlayerController>();
+                            if (playerScript.ranged)
+                            {
+                                enemyTarget = character;
+                                break;
+                            }
+                        }
+                    }
+                    
+                    //Else attack the closest
+                    if (enemyTarget == null)
+                    {
+                        enemyTarget = GetClosest(enemy.gameObject, null, effectiveAttackRangeCircleScript.enemiesInRange);
+                    }
                 
+                    if (!attackRangeCircleScript.enemiesInRange.Contains(enemyTarget)) {
+                            
+                        //Ranged enemies should stop movement as soon as within range to attack
+                        if (enemyScript.ranged) { attackRangeCircleScript.enemyIsRangedAndMoving = true; }
+                        else { attackRangeCircleScript.enemyIsRangedAndMoving = false; }
+
+                        yield return StartCoroutine(pathfinder.EnemyFollowPath(enemy.gameObject, enemyTarget.transform.position));
+                        walkingAudio.Stop();
+                    }
+
+                    yield return new WaitForSeconds(1f);
+                    //TODO: attack indicator?
+
+                    AttackMoves attackMove = null;
+
+                    //Try to get killing move (mana allowing)
+                    foreach (AttackMoves attack in enemyScript.knownAttacks)
+                    {
+                        //Calculate damage
+                        int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, attack);
+                        
+                        //If can kill
+                        if (damageArray[0] >= enemyTarget.GetComponent<PlayerController>().currentHp && attack.manaCost <= enemyScript.currentMana)
+                        {
+                            attackMove = attack;
+                            break;
+                        }
+                    }
+
+                    //Else get most damage move (mana allowing)
+                    if (attackMove == null)
+                    {
+                        int highestDamage = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, enemyScript.knownAttacks[0])[0];
+                        attackMove = enemyScript.knownAttacks[0];
+                        foreach (AttackMoves attack in enemyScript.knownAttacks)
+                        {
+                            //Calculate damage
+                            int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, enemyScript.knownAttacks[0]);
+
+                            if (damageArray[0] > highestDamage && attack.manaCost <= enemyScript.currentMana)
+                            {
+                                attackMove = attack;
+                            }
+                        }
+                    }
+ 
+                    yield return StartCoroutine(attackPreviewScript.startEnemyAttackSequence(enemy.gameObject, enemyTarget, attackMove));
+                }
             }
 
             disabledEnemies.Add(enemy.gameObject);
@@ -292,27 +401,48 @@ public class BattleController : MonoBehaviour
 
 
     }
-    private GameObject GetClosest(GameObject target, GameObject objects)
+    private GameObject GetClosest(GameObject target, GameObject objects, List<GameObject> listOfObjects)
     {
         GameObject closest = null;
         float shortestDistance = Mathf.Infinity;
-
-        foreach (Transform character in objects.transform)
+        
+        if (objects != null)
         {
-            if (character.gameObject == null || character.gameObject == target) continue;
-
-            float distance = Vector3.Distance(target.transform.position, character.gameObject.transform.position);
-
-            if (distance < shortestDistance)
+            foreach (Transform character in objects.transform)
             {
-                shortestDistance = distance;
-                closest = character.gameObject;
+                if (character.gameObject == null || character.gameObject == target) continue;
+
+                float distance = Vector3.Distance(target.transform.position, character.gameObject.transform.position);
+
+                if (distance < shortestDistance)
+                {
+                    shortestDistance = distance;
+                    closest = character.gameObject;
+                }
+            }     
+        }
+        else
+        {
+            foreach (GameObject character in listOfObjects)
+            {
+                if (character == null || character == target) continue;
+
+                float distance = Vector3.Distance(target.transform.position, character.transform.position);
+
+                if (distance < shortestDistance)
+                {
+                    shortestDistance = distance;
+                    closest = character;
+                }
             }
         }
 
         return closest;
     }
-
-
+    public void CancelEveryting()
+    {
+        StopAllCoroutines();
+        Debug.Log("show game over screen");
+    }
 
 }

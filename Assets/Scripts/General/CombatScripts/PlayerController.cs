@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource deselectAudio;
     public static event Action<string> OnCharacterDied;
     public string deathDialogue;
-
+    public GameOverBlackScreen gameOverBlackScreenScript;
 
     void Awake()
     {
@@ -95,40 +95,43 @@ public class PlayerController : MonoBehaviour
         inventoryMenuScript = GameObject.Find("InventoryMenu").GetComponent<InventoryMenu>();
         selectAudio = GameObject.Find("SelectBeep").GetComponent<AudioSource>();
         deselectAudio = GameObject.Find("AttackPreviewWoosh").GetComponent<AudioSource>();
+        gameOverBlackScreenScript = GameObject.Find("GameOverBlackScreen").GetComponent<GameOverBlackScreen>();
         populateCharacterData();
     }
     void Update()
     {
-        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        int layerMask = LayerMask.GetMask("Characters"); // ignore AttackRange layer
-        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, Mathf.Infinity, layerMask);
+        if (!gameOverBlackScreenScript.active) {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            int layerMask = LayerMask.GetMask("Characters"); // ignore AttackRange layer
+            RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, Mathf.Infinity, layerMask);
 
-        if (hit.collider != null && hit.collider.gameObject == gameObject)
-        {
-            // Hover logic
-            if (!isHovered)
+            if (hit.collider != null && hit.collider.gameObject == gameObject)
             {
-                isHovered = true;
-                OnHoverEnter();
+                // Hover logic
+                if (!isHovered)
+                {
+                    isHovered = true;
+                    OnHoverEnter();
+                }
+
+                // Click logic
+                if (Input.GetMouseButtonDown(0))
+                {
+                    OnClick();
+                }
+            }
+            else if (isHovered)
+            {
+                isHovered = false;
+                OnHoverExit();
             }
 
-            // Click logic
-            if (Input.GetMouseButtonDown(0))
+            if (movementEnabled)
             {
-                OnClick();
+                handleMovement();
             }
+            
         }
-        else if (isHovered)
-        {
-            isHovered = false;
-            OnHoverExit();
-        }
-
-        if (movementEnabled)
-        {
-            handleMovement();
-        }
-
     }
     void LateUpdate()
     {
@@ -466,7 +469,6 @@ public class PlayerController : MonoBehaviour
     }
     public void Die()
     {
-        Debug.Log(title + " died");
         OnCharacterDied?.Invoke(title);
     }
 }
