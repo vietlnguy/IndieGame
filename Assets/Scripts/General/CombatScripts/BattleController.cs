@@ -35,6 +35,7 @@ public class BattleController : MonoBehaviour
     public int currentTurn = 0;
     private Coroutine enemyFollowCoroutine;
     public GameObject enemyTarget = null;
+    public AudioSource walkingAudio;
     void Awake()
     {
         disabledCharacters = new List<GameObject>();
@@ -152,6 +153,7 @@ public class BattleController : MonoBehaviour
                     { 
                         enemyTarget = GetClosest(enemy.gameObject, characters);
                         yield return StartCoroutine(pathfinder.EnemyFollowPath(enemy.gameObject, enemyTarget.transform.position));
+                        walkingAudio.Stop();
                         Debug.Log("No one in range to attack");
                     }
 
@@ -215,14 +217,13 @@ public class BattleController : MonoBehaviour
                     
                         //When target is not already in range, then move towards the target
                         if (!attackRangeCircleScript.enemiesInRange.Contains(enemyTarget)) {
-                            
-                            Debug.Log("should move towards " + enemyTarget.GetComponent<PlayerController>().title);
-                            
+                              
                             //Ranged enemies should stop movement as soon as within range to attack
-                            //if (enemyScript.ranged) { attackRangeCircleScript.enemyIsRangedAndMoving = true; }
-                            //else { attackRangeCircleScript.enemyIsRangedAndMoving = false; }
+                            if (enemyScript.ranged) { attackRangeCircleScript.enemyIsRangedAndMoving = true; }
+                            else { attackRangeCircleScript.enemyIsRangedAndMoving = false; }
 
                             yield return StartCoroutine(pathfinder.EnemyFollowPath(enemy.gameObject, enemyTarget.transform.position));
+                            walkingAudio.Stop();
                         }
 
                         yield return new WaitForSeconds(1f);

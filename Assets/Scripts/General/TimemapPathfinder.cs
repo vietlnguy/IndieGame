@@ -9,7 +9,7 @@ public class TilemapPathfinder : MonoBehaviour
     public LayerMask obstacleLayer;
     public int padding = 0; // New variable for padding
     public AudioSource walkingAudio;
-    public float moveSpeed = 4f;
+    public float moveSpeed = 1f;
     public List<Vector3Int> occupiedTiles;
     public bool cancelFollow;
     public List<Vector3> GetWorldPath(Vector3 worldStart, Vector3 worldEnd)
@@ -165,8 +165,10 @@ public class TilemapPathfinder : MonoBehaviour
     }
     float Heuristic(Vector3Int a, Vector3Int b)
     {
-        // Manhattan distance heuristic for 4-directional movement
-        return Mathf.Abs(a.x - b.x) + Mathf.Abs(a.y - b.y);
+        return Mathf.Max(
+            Mathf.Abs(a.x - b.x),
+            Mathf.Abs(a.y - b.y)
+        );
     }
     List<Vector3Int> GetNeighbors(Vector3Int pos)
     {
@@ -175,12 +177,12 @@ public class TilemapPathfinder : MonoBehaviour
             new Vector3Int(pos.x + 1, pos.y, 0), // Right
             new Vector3Int(pos.x - 1, pos.y, 0), // Left
             new Vector3Int(pos.x, pos.y + 1, 0), // Up
-            new Vector3Int(pos.x, pos.y - 1, 0)  // Down
+            new Vector3Int(pos.x, pos.y - 1, 0),  // Down
             // Add diagonal neighbors if you want 8-directional movement:
-            // new Vector3Int(pos.x + 1, pos.y + 1, 0),
-            // new Vector3Int(pos.x + 1, pos.y - 1, 0),
-            // new Vector3Int(pos.x - 1, pos.y + 1, 0),
-            // new Vector3Int(pos.x - 1, pos.y - 1, 0)
+             new Vector3Int(pos.x + 1, pos.y + 1, 0),
+             new Vector3Int(pos.x + 1, pos.y - 1, 0),
+             new Vector3Int(pos.x - 1, pos.y + 1, 0),
+             new Vector3Int(pos.x - 1, pos.y - 1, 0)
         };
 
         return neighbors;
@@ -222,11 +224,9 @@ public class TilemapPathfinder : MonoBehaviour
                     {
                         yield break; // stop moving any further
                     }
-                    walkingAudio.Play();
                     yield return null;
                 }
             }
-            walkingAudio.Stop();
         }
     }
     public System.Collections.IEnumerator FollowPath(GameObject enemy, Vector3 targetPos)

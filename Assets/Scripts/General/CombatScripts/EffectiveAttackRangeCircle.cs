@@ -42,7 +42,7 @@ public class EffectiveAttackRangeCircle : MonoBehaviour
         float radius;
         circleCollider.enabled = true;
 
-        radius = character.GetComponent<EnemyController>().attackRange + .80f * character.GetComponent<EnemyController>().moveRange;
+        radius = character.GetComponent<EnemyController>().attackRange + character.GetComponent<EnemyController>().moveRange;
         
         DrawFilledCircle(radius);
         UpdateCollider(radius);
