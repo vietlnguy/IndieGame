@@ -12,28 +12,21 @@ public class UIGeneral : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public SaveManager scm;
     public GameObject EnterNameUI;
     public TMP_InputField inputBox;
+    public GameObject highlightOverlay;
 
     void Awake()
     {
         image = GetComponent<Image>();
     }
 
-    void Start()
-    {
-    }
-
-    void Update()
-    {
-
-    }
-
     public void OnPointerEnter(PointerEventData eventData)
     {
-        image.color = new Color(.65f, .65f, .65f);
+        highlightOverlay.SetActive(true);
+        highlightOverlay.GetComponent<RectTransform>().anchoredPosition = gameObject.GetComponent<RectTransform>().anchoredPosition;
     }
     public void OnPointerExit(PointerEventData eventData)
-    {
-        image.color = new Color(1f, 1f, 1f);
+    {   
+        highlightOverlay.SetActive(false);
     }
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -62,7 +55,6 @@ public class UIGeneral : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         }
 
     }
-
     private IEnumerator FadeScreen(Image obj, float duration){
         CanvasGroup canvasGroup = obj.GetComponent<CanvasGroup>();
         float startAlpha = 0f;

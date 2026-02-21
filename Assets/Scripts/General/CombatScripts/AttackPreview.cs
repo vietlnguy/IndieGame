@@ -84,6 +84,14 @@ public class AttackPreview : MonoBehaviour
     public RectTransform dialogueBoxRectTransform;
     private AttackMoves chosenAttack;
     public bool enemyCoroutineRunning = false;
+    public GameObject battleScreenLeftMeleeImage;
+    public GameObject battleScreenLeftRangedImage;
+    public GameObject battleScreenRightMeleeImage;
+    public GameObject battleScreenRightRangedImage;
+    public GameObject previewLeftMeleeImage;
+    public GameObject previewLeftRangedImage;
+    public GameObject previewRightMeleeImage;
+    public GameObject previewRightRangedImage;
     void Awake()
     {
         scm = FindFirstObjectByType<SaveManager>();
@@ -289,7 +297,8 @@ public class AttackPreview : MonoBehaviour
             previewEnemyMaxMana.text = battleController.enemySelected.GetComponent<EnemyController>().maxMana.ToString();
             previewEnemyHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.enemySelected.GetComponent<EnemyController>().currentHp / battleController.enemySelected.GetComponent<EnemyController>().maxHp, 1f);
             previewEnemyManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.enemySelected.GetComponent<EnemyController>().currentMana / battleController.enemySelected.GetComponent<EnemyController>().maxMana, 1f);
-
+            if (battleController.enemySelected.GetComponent<EnemyController>().ranged) { previewRightMeleeImage.SetActive(false); previewRightRangedImage.SetActive(true); }
+            else { previewRightMeleeImage.SetActive(true); previewRightRangedImage.SetActive(false); }
         }
         else 
         { 
@@ -300,7 +309,8 @@ public class AttackPreview : MonoBehaviour
             previewEnemyMaxMana.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().maxMana.ToString();
             previewEnemyHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentHp / battleController.assistableCharacterSelected.GetComponent<PlayerController>().maxHp, 1f);
             previewEnemyManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentMana / battleController.assistableCharacterSelected.GetComponent<PlayerController>().maxMana, 1f);
-
+            if (battleController.assistableCharacterSelected.GetComponent<PlayerController>().ranged) { previewRightMeleeImage.SetActive(false); previewRightRangedImage.SetActive(true); }
+            else { previewRightMeleeImage.SetActive(true); previewRightRangedImage.SetActive(false); }
         }
 
         //Update leftside health bars and values
@@ -310,7 +320,9 @@ public class AttackPreview : MonoBehaviour
         previewPlayerMaxMana.text = battleController.characterSelected.GetComponent<PlayerController>().maxMana.ToString();
         previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().currentHp / battleController.characterSelected.GetComponent<PlayerController>().maxHp, 1f);
         previewPlayerManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().currentMana / battleController.characterSelected.GetComponent<PlayerController>().maxMana, 1f);
-
+        if (battleController.characterSelected.GetComponent<PlayerController>().ranged) { previewLeftMeleeImage.SetActive(false); previewLeftRangedImage.SetActive(true); }
+        else { previewLeftMeleeImage.SetActive(true); previewLeftRangedImage.SetActive(false); }
+        
         //Update leftside moveset
         int index = 0;
         foreach (Transform child in attacks.transform)
@@ -547,6 +559,8 @@ public class AttackPreview : MonoBehaviour
         battleScreenPlayerATK.text = damageArray[0].ToString();
         battleScreenPlayerHIT.text = damageArray[1].ToString();
         battleScreenPlayerCRIT.text = damageArray[2].ToString();
+        if (battleController.characterSelected.GetComponent<PlayerController>().ranged) { battleScreenLeftRangedImage.SetActive(true); battleScreenLeftMeleeImage.SetActive(false);}
+        else { battleScreenLeftRangedImage.SetActive(false); battleScreenLeftMeleeImage.SetActive(true); }
         
         //Support sequence info population
         if (isAssisting)
@@ -554,6 +568,9 @@ public class AttackPreview : MonoBehaviour
             battleScreenEnemyName.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().title;
             battleScreenEnemyHealth.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentHp.ToString();
             battleScreenEnemyHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentHp / battleController.assistableCharacterSelected.GetComponent<PlayerController>().maxHp, 1f);  
+            if (battleController.assistableCharacterSelected.GetComponent<PlayerController>().ranged) { battleScreenRightRangedImage.SetActive(true); battleScreenRightMeleeImage.SetActive(false);}
+            else { battleScreenRightRangedImage.SetActive(false); battleScreenRightMeleeImage.SetActive(true); }
+        
         }
         
         //Attack sequence info population
@@ -562,7 +579,9 @@ public class AttackPreview : MonoBehaviour
             battleScreenEnemyName.text = battleController.enemySelected.GetComponent<EnemyController>().title; 
             battleScreenEnemyHealth.text = battleController.enemySelected.GetComponent<EnemyController>().currentHp.ToString();
             battleScreenEnemyHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.enemySelected.GetComponent<EnemyController>().currentHp / battleController.enemySelected.GetComponent<EnemyController>().maxHp, 1f);
-            
+            if (battleController.enemySelected.GetComponent<EnemyController>().ranged) { battleScreenRightRangedImage.SetActive(true); battleScreenRightMeleeImage.SetActive(false);}
+            else { battleScreenRightRangedImage.SetActive(false); battleScreenRightMeleeImage.SetActive(true); }
+        
             //Enemy is not ranged and cannot attack back
             if (!battleController.enemySelected.GetComponent<EnemyController>().ranged && battleController.characterSelected.GetComponent<PlayerController>().ranged )
             {
@@ -740,7 +759,12 @@ public class AttackPreview : MonoBehaviour
         battleScreenEnemyATK.text = enemyDamageArray[0].ToString();
         battleScreenEnemyHIT.text = enemyDamageArray[1].ToString();
         battleScreenEnemyCRIT.text = enemyDamageArray[2].ToString();
-
+        if (attackerScript.ranged) { battleScreenLeftRangedImage.SetActive(true); battleScreenLeftMeleeImage.SetActive(false);}
+        else { battleScreenLeftRangedImage.SetActive(false); battleScreenLeftMeleeImage.SetActive(true); }
+        
+        if (defenderScript.ranged) { battleScreenRightRangedImage.SetActive(true); battleScreenRightMeleeImage.SetActive(false);}
+        else { battleScreenRightRangedImage.SetActive(false); battleScreenRightMeleeImage.SetActive(true); }
+        
 
         //Enemy is ranged and character is not, or vice versa
         if ((attackerScript.ranged && !defenderScript.ranged) || (!attackerScript.ranged && defenderScript.ranged) )

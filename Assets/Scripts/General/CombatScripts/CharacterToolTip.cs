@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+
 public class CharacterToolTip : MonoBehaviour
 {
     public Camera worldCamera;
@@ -12,6 +13,8 @@ public class CharacterToolTip : MonoBehaviour
     public TextMeshProUGUI characterToolTipMana;
     public TextMeshProUGUI characterToolTipMaxMana;
     public TextMeshProUGUI characterToolTipName;
+    public GameObject rangedImage;
+    public GameObject meleeImage;
 
     void Awake()
     {
@@ -28,19 +31,25 @@ public class CharacterToolTip : MonoBehaviour
         characterToolTip.SetActive(true);
         try
         {
-            characterToolTipHp.text = character.GetComponent<PlayerController>().currentHp.ToString();
-            characterToolTipMaxHp.text = character.GetComponent<PlayerController>().maxHp.ToString();
-            characterToolTipMana.text = character.GetComponent<PlayerController>().currentMana.ToString();
-            characterToolTipMaxMana.text = character.GetComponent<PlayerController>().maxMana.ToString();
-            characterToolTipName.text = character.GetComponent<PlayerController>().title;
+            PlayerController characterScript = character.GetComponent<PlayerController>();
+            characterToolTipHp.text = characterScript.currentHp.ToString();
+            characterToolTipMaxHp.text = characterScript.maxHp.ToString();
+            characterToolTipMana.text = characterScript.currentMana.ToString();
+            characterToolTipMaxMana.text = characterScript.maxMana.ToString();
+            characterToolTipName.text = characterScript.title;
+            if (characterScript.ranged) { rangedImage.SetActive(true); meleeImage.SetActive(false); }
+            else { rangedImage.SetActive(false); meleeImage.SetActive(true);  }
         }
         catch
         {
-            characterToolTipHp.text = character.GetComponent<EnemyController>().currentHp.ToString();
-            characterToolTipMaxHp.text = character.GetComponent<EnemyController>().maxHp.ToString();
-            characterToolTipMana.text = character.GetComponent<EnemyController>().currentMana.ToString();
-            characterToolTipMaxMana.text = character.GetComponent<EnemyController>().maxMana.ToString();
-            characterToolTipName.text = character.GetComponent<EnemyController>().title;
+            EnemyController characterScript = character.GetComponent<EnemyController>();
+            characterToolTipHp.text = characterScript.currentHp.ToString();
+            characterToolTipMaxHp.text = characterScript.maxHp.ToString();
+            characterToolTipMana.text = characterScript.currentMana.ToString();
+            characterToolTipMaxMana.text = characterScript.maxMana.ToString();
+            characterToolTipName.text = characterScript.title;
+            if (characterScript.ranged) { rangedImage.SetActive(true); meleeImage.SetActive(false); }
+            else { rangedImage.SetActive(false); meleeImage.SetActive(true);  }
         }
         Vector3 screenPos = RectTransformUtility.WorldToScreenPoint(worldCamera, character.transform.position);
 

@@ -32,7 +32,8 @@ public class BattleController : MonoBehaviour
     public InventoryMenu inventoryMenuScript;
     public CharacterInfoScreen characterInfoScript;
     public bool isEnemyTurn = false;
-    public int currentTurn = 0;
+    private int currentTurn = 1;
+    public TextMeshProUGUI currentTurnText;
     private Coroutine enemyFollowCoroutine;
     public GameObject enemyTarget = null;
     public AudioSource walkingAudio;
@@ -114,8 +115,8 @@ public class BattleController : MonoBehaviour
     }
     private IEnumerator playerTurn()
     {
-        currentTurn++;
         playerPhaseAudio.Play();
+        UpdateTurnNumber();
         fightScreenText.text = "Player Phase";
         fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
         yield return new WaitForSeconds(2.5f);
@@ -445,5 +446,9 @@ public class BattleController : MonoBehaviour
         StopAllCoroutines();
         Debug.Log("show game over screen");
     }
-
+    private void UpdateTurnNumber()
+    {
+        currentTurn++;
+        currentTurnText.text = currentTurn.ToString();
+    }
 }
