@@ -218,9 +218,9 @@ public class AttackPreview : MonoBehaviour
                     critChance = attackMove.baseCrit + (attackerScript.skill * 0.5f);
                 }
 
-                returnArray[0] = (int)Mathf.Floor(damage);
-                returnArray[1] = (int)Mathf.Floor(accuracy);
-                returnArray[2] = (int)Mathf.Floor(critChance);
+                returnArray[0] = (int)Mathf.Round(damage);
+                returnArray[1] = (int)Mathf.Round(accuracy);
+                returnArray[2] = (int)Mathf.Round(critChance);
             }
             else if (attack is SupportMove)
             {
@@ -259,9 +259,9 @@ public class AttackPreview : MonoBehaviour
                     critChance = attackMove.baseCrit + (attackerScript.skill * 0.5f);
                 }
 
-                returnArray[0] = (int)Mathf.Floor(damage);
-                returnArray[1] = (int)Mathf.Floor(accuracy);
-                returnArray[2] = (int)Mathf.Floor(critChance);
+                returnArray[0] = (int)Mathf.Round(damage);
+                returnArray[1] = (int)Mathf.Round(accuracy);
+                returnArray[2] = (int)Mathf.Round(critChance);
             }
             else if (attack is SupportMove)
             {
@@ -641,7 +641,7 @@ public class AttackPreview : MonoBehaviour
             if (battleController.enemySelected.GetComponent<EnemyController>().currentHp <= 0)
             {   
                 //TODO: Remove sprite on battle screen
-                battleController.enemySelected.GetComponent<EnemyController>().Die();
+                battleController.enemySelected.GetComponent<EnemyController>().Die(battleController.characterSelected);
                 battleController.enemySelected = null;
             }
 
@@ -855,7 +855,7 @@ public class AttackPreview : MonoBehaviour
                 if (attackerScript.currentHp <= 0)
                 {   
                     //TODO: Remove sprite on battle screen
-                    attackerScript.Die();
+                    attackerScript.Die(defender);
                     battleController.enemySelected = null;
                 }
             }
@@ -1043,19 +1043,22 @@ public class AttackPreview : MonoBehaviour
         }
         else
         {
-            person.GetComponent<EnemyController>().Die();
+            person.GetComponent<EnemyController>().Die(battleController.characterSelected);
             battleController.enemySelected = null;
         }
 
     }
     private IEnumerator TypeLine(string s) 
     {
+        typingAudio.pitch = 0.75f;
         typingAudio.Play();
         foreach (char c in s.ToCharArray()) {
             dialogueBoxText.text += c;
             yield return new WaitForSeconds(.1f);
         }
         typingAudio.Stop();
+
+        typingAudio.pitch = 1f;
 
     }
 }

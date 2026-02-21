@@ -9,8 +9,10 @@ public class SubquestsBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     private RectTransform rect;
     private Vector2 startPos;
     private Vector2 endPos;
-    public Image quest1Image;
-
+    public Image quest1ImageCheck;
+    public Image quest1ImageX;
+    Coroutine moveDownCoroutine;
+    Coroutine moveUpCoroutine;
     void Awake()
     {
         rect = GetComponent<RectTransform>();
@@ -19,25 +21,32 @@ public class SubquestsBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        StopCoroutine(MoveDown());
-        StopCoroutine(MoveUp());
-        StartCoroutine(MoveDown());
+        if (moveUpCoroutine != null) {
+            StopCoroutine(moveUpCoroutine);
+        }
+        moveDownCoroutine = StartCoroutine(MoveDown());
 
     }
     public void OnPointerExit(PointerEventData eventData)
     {
-        StopCoroutine(MoveDown());
-        StopCoroutine(MoveUp());
-        StartCoroutine(MoveUp());
+        if (moveUpCoroutine != null) {
+            StopCoroutine(moveUpCoroutine);
+        }
+        moveUpCoroutine = StartCoroutine(MoveUp());
 
     }
     public void updateQuest(int questNumber, bool completed)
     {
-        if (questNumber == 1)
+        //Astrid lands the killing blow on the boss
+        if (questNumber == 0)
         {
             if (completed)
             {
-                quest1Image.color = new Color(1, 1, 1, 1);
+                quest1ImageCheck.color = new Color(1, 1, 1, 1);
+            }
+            else
+            {
+                quest1ImageX.color = new Color(1, 1, 1, 1);
             }
         }
     }

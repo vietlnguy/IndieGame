@@ -5,7 +5,7 @@ using System;
 public class PlayerController : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
-    private Animator animator;
+    public Animator animator;
     public SaveManager saveManager;
     private Rigidbody2D rigidBody;
     public bool movementEnabled = false;
@@ -76,7 +76,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource deselectAudio;
     public static event Action<string> OnCharacterDied;
     public string deathDialogue;
-    public GameOverBlackScreen gameOverBlackScreenScript;
+    public GameOver gameOverScript;
 
     void Awake()
     {
@@ -95,12 +95,12 @@ public class PlayerController : MonoBehaviour
         inventoryMenuScript = GameObject.Find("InventoryMenu").GetComponent<InventoryMenu>();
         selectAudio = GameObject.Find("SelectBeep").GetComponent<AudioSource>();
         deselectAudio = GameObject.Find("AttackPreviewWoosh").GetComponent<AudioSource>();
-        gameOverBlackScreenScript = GameObject.Find("GameOverBlackScreen").GetComponent<GameOverBlackScreen>();
+        gameOverScript = GameObject.Find("GameOverScreen").GetComponent<GameOver>();
         populateCharacterData();
     }
     void Update()
     {
-        if (!gameOverBlackScreenScript.active) {
+        if (!gameOverScript.active) {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             int layerMask = LayerMask.GetMask("Characters"); // ignore AttackRange layer
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, Mathf.Infinity, layerMask);
@@ -180,6 +180,8 @@ public class PlayerController : MonoBehaviour
             {
                 StartCoroutine(characterMenuScript.enableCharacterMenu(gameObject));
                 movementEnabled = false;
+                walkingAudio.Stop();
+                animator.SetBool("isWalking", false);
                 characterToolTipScript.disableCharacterToolTip();
                 selectAudio.Play();
             }
@@ -190,6 +192,8 @@ public class PlayerController : MonoBehaviour
                 //if this character is in assistable range. Should bring up assistable UI
                 if (attackRangeCircleScript.alliesInRange.Contains(gameObject))
                 {
+                    walkingAudio.Stop();
+                    battleController.characterSelected.GetComponent<PlayerController>().animator.SetBool("isWalking", false);
                     characterAssistMenuScript.enableCharacterAssistMenu(gameObject);
                     battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = false;
                     battleController.assistableCharacterSelected = gameObject;

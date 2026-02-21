@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System;
+using System.Collections;
 
 public class EnemyController : MonoBehaviour
 {
@@ -37,10 +39,13 @@ public class EnemyController : MonoBehaviour
     public AudioSource deselectAudio;
     public List<AttackMoves> knownAttacks;
     public string deathDialogue;
-    public GameOverBlackScreen gameOverBlackScreenScript;
+    public GameOver gameOverScript;
+    public AudioSource walkingAudio;
+    public static event Action<GameObject[]> OnEnemyDied;
 
     void Awake()
     {
+        walkingAudio = GameObject.Find("WalkingAudio").GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigidBody = GetComponent<Rigidbody2D>();
         battleController = GameObject.Find("BattleController").GetComponent<BattleController>();
@@ -53,12 +58,12 @@ public class EnemyController : MonoBehaviour
         attackPreviewScript = GameObject.Find("AttackPreview").GetComponent<AttackPreview>();
         inventoryMenuScript = GameObject.Find("InventoryMenu").GetComponent<InventoryMenu>();
         deselectAudio = GameObject.Find("AttackPreviewWoosh").GetComponent<AudioSource>();
-        gameOverBlackScreenScript = GameObject.Find("GameOverBlackScreen").GetComponent<GameOverBlackScreen>();
+        gameOverScript = GameObject.Find("GameOverScreen").GetComponent<GameOver>();
 
     }
     void Update()
     {
-        if (!gameOverBlackScreenScript.active) 
+        if (!gameOverScript.active) 
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             int layerMask = LayerMask.GetMask("Characters"); // ignore AttackRange layer
@@ -135,6 +140,8 @@ public class EnemyController : MonoBehaviour
                 else
                 {
                     battleController.enemySelected = gameObject;
+                    walkingAudio.Stop();
+                    battleController.characterSelected.GetComponent<PlayerController>().animator.SetBool("isWalking", false);
                     StartCoroutine(attackPreviewScript.enablePreview(false));
                 }
             }
@@ -181,9 +188,10 @@ public class EnemyController : MonoBehaviour
         battleController.enemySelected = null;
         unhighlight();
     }
-    public void Die()
+    public void Die(GameObject killer)
     {
-        Debug.Log(title + "died");
+        GameObject[] list = { gameObject, killer };
+        OnEnemyDied?.Invoke(list);
         Destroy(gameObject);
     }
 

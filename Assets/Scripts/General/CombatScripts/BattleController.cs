@@ -36,6 +36,7 @@ public class BattleController : MonoBehaviour
     private Coroutine enemyFollowCoroutine;
     public GameObject enemyTarget = null;
     public AudioSource walkingAudio;
+    public GameOver gameOverScript;
     void Awake()
     {
         disabledCharacters = new List<GameObject>();
@@ -64,7 +65,7 @@ public class BattleController : MonoBehaviour
             }
         }
 
-        if (introFinished && !isPaused)
+        if (introFinished && !isPaused && !gameOverScript.active)
         {
             if (!characterAssistMenuScript.active && !characterMenuScript.active && !attackPreviewScript.active && !inventoryMenuScript.active && !isEnemyTurn && !characterInfoScript.active)
             {

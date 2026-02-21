@@ -10,12 +10,9 @@ public class ChapterOne : MonoBehaviour {
     private bool shouldLose = false;
     private bool gameOver = false;
     public SaveManager saveManager;
-    public CanvasGroup gameOverCanvasGroup;
-    public GameObject gameOverRetryButton;
-    public GameObject gameOverMainMenuButton;
-    public GameOverBlackScreen gameOverBlackScreenScript;
-    public AudioSource gameOverAudio;
+    public GameOver gameOverScript;
     public AttackPreview attackPreviewScript;
+    public SubquestsBox subquestsBoxScript;
 
     public void Awake()
     {
@@ -42,7 +39,7 @@ public class ChapterOne : MonoBehaviour {
         {
             battleController.CancelEveryting();
             gameOver = true;
-            StartCoroutine(GameOverSequence());
+            StartCoroutine(gameOverScript.GameOverSequence());
 
         }
 
@@ -56,6 +53,7 @@ public class ChapterOne : MonoBehaviour {
         BossEnemy(10.5f, -6.36f, 0f);
         enemiesSpawned = true;
         CharacterDeathSubscribe(); 
+        EnemyDeathSubscribe();
 
     }
     public void BasicEnemy(float x, float y, float z)
@@ -153,30 +151,31 @@ public class ChapterOne : MonoBehaviour {
         }
 
     }
-    private IEnumerator GameOverSequence()
+    private void EnemyDeathSubscribe()
     {
-        yield return new WaitForSeconds(.5f);
-        gameOverBlackScreenScript.active = true;
-        gameOverAudio.Play();
-        //Fade in the game over screen
-        gameOverCanvasGroup.alpha = 0f;
-        gameOverCanvasGroup.interactable = true;
-        gameOverCanvasGroup.blocksRaycasts = true;
-        float elapsed = 0f;
-        float time = 1.5f;
-        while (elapsed < time)
+        EnemyController.OnEnemyDied += HandleEnemyDeath;
+    }
+    private void EnemyDeathUnsubscribe()
+    {
+        EnemyController.OnEnemyDied -= HandleEnemyDeath;
+    }
+    private void HandleEnemyDeath(GameObject[] list)
+    {
+        Debug.Log("Heard that " + list[0].GetComponent<EnemyController>().title + " was killed by " + list[1].GetComponent<PlayerController>().title);
+
+        //Subquest 1: Astrid lands killing blow on boss
+        if (list[0].GetComponent<EnemyController>().boss && list[1].GetComponent<PlayerController>().title != "Astrid")
         {
-            elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / time);
-            gameOverCanvasGroup.alpha = t;
-            yield return null;
+            //Quest failure
+            subquestsBoxScript.updateQuest(0, false);
         }
-        gameOverCanvasGroup.alpha = 1f;
+        else if (list[0].GetComponent<EnemyController>().boss && list[1].GetComponent<PlayerController>().title == "Astrid")
+        {
+            //Quest success
+            subquestsBoxScript.updateQuest(0, true);
 
-        yield return new WaitForSeconds(1f);
-
-        gameOverMainMenuButton.SetActive(true);
-        gameOverRetryButton.SetActive(true);
+        }
 
     }
+
 }

@@ -8,7 +8,8 @@ public class VictoryBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     RectTransform rect;
     Vector2 startPos;
     Vector2 endPos;
-
+    Coroutine moveDownCoroutine;
+    Coroutine moveUpCoroutine;
     void Awake()
     {
         rect = GetComponent<RectTransform>();
@@ -17,20 +18,20 @@ public class VictoryBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
-        StopCoroutine(MoveDown());
-        StopCoroutine(MoveUp());
-        StartCoroutine(MoveDown());
+        if (moveUpCoroutine != null) {
+            StopCoroutine(moveUpCoroutine);
+        }
+        moveDownCoroutine = StartCoroutine(MoveDown());
 
     }
-
     public void OnPointerExit(PointerEventData eventData)
     {
-        StopCoroutine(MoveDown());
-        StopCoroutine(MoveUp());
-        StartCoroutine(MoveUp());
+        if (moveUpCoroutine != null) {
+            StopCoroutine(moveUpCoroutine);
+        }
+        moveUpCoroutine = StartCoroutine(MoveUp());
 
     }
-
     private IEnumerator MoveDown()
     {
         Vector2 currentPos = rect.anchoredPosition;
