@@ -51,6 +51,7 @@ public class InventoryMenu : MonoBehaviour
     private Coroutine flashCoroutine;
     private TextMeshProUGUI flashingText;
     private TextMeshProUGUI flashingText2;
+    public AudioSource potionAudio;
     void Awake()
     {
         characterMenuScript = GameObject.Find("CharacterMenu").GetComponent<CharacterMenu>();
@@ -558,7 +559,7 @@ public class InventoryMenu : MonoBehaviour
     private IEnumerator useItem()
     {
         Item item = battleController.characterSelected.GetComponent<PlayerController>().inventory[index];
-
+        potionAudio.Play();
         //Restore HP or Mana
         if (item.hpOrMana == "hp")
         {
