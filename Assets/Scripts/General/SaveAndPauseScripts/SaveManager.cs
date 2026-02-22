@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.IO;
 using System.Collections.Generic;
+using System.Collections;
 using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -105,7 +106,7 @@ public class SaveManager : MonoBehaviour
         loadedData = dataToSave;
         SceneManager.LoadScene(loadedData.currentChapter);
     }
-    public void LoadGame()
+    public IEnumerator LoadGame()
     {
         SaveEntry saveEntry = saveSelected.GetComponent<SaveEntry>();
         string saveFilePath = Application.persistentDataPath + "/" + saveEntry.characterName + "_" + saveEntry.chapter + "_" + saveEntry.scene + "_" + saveEntry.timestamp;
@@ -114,7 +115,7 @@ public class SaveManager : MonoBehaviour
             string jsonData = File.ReadAllText(saveFilePath);
             loadedData = JsonUtility.FromJson<GameSaveData>(jsonData);
         }
-
+        yield return StartCoroutine(SceneTransition());
         SceneManager.LoadScene(loadedData.currentChapter);
     }
     public List<string> GetAllSaveFiles()
@@ -190,5 +191,42 @@ public class SaveManager : MonoBehaviour
     {
         // Always unsubscribe to avoid memory leaks
         SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    public IEnumerator SceneTransition()
+    {
+        //Fade out all audios
+        AudioSource[] sources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        foreach (AudioSource source in sources)
+        {
+            StartCoroutine(FadeOut(source));
+        }
+
+        //Find SceneTransitionCanvas and fade in black screen
+        GameObject sceneTransitionCanvas = GameObject.Find("SceneTransitionCanvas");
+        float time = 0f;
+        float duration = 2f;
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            sceneTransitionCanvas.GetComponent<CanvasGroup>().alpha = Mathf.Lerp(0f, 1f, time / duration);
+            yield return null;
+        }
+        sceneTransitionCanvas.GetComponent<CanvasGroup>().alpha = 1f;
+
+    }
+    private IEnumerator FadeOut(AudioSource source)
+    {
+        float startVolume = source.volume;
+        float duration = 1.5f;
+        float time = 0;
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            source.volume = Mathf.Lerp(startVolume, 0, time / duration);
+            yield return null;
+        }
+
+        source.volume = 0;
+        source.Stop();
     }
 }

@@ -21,8 +21,13 @@ public class UIGeneral : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        highlightOverlay.SetActive(true);
-        highlightOverlay.GetComponent<RectTransform>().anchoredPosition = gameObject.GetComponent<RectTransform>().anchoredPosition;
+        try {
+            highlightOverlay.SetActive(true);
+            highlightOverlay.GetComponent<RectTransform>().anchoredPosition = gameObject.GetComponent<RectTransform>().anchoredPosition;
+        }
+        catch
+        { 
+        }
     }
     public void OnPointerExit(PointerEventData eventData)
     {   

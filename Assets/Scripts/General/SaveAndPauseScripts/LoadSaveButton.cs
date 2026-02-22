@@ -35,7 +35,7 @@ public class LoadSaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         if (scm.saveSelected)
         {
-            scm.LoadGame();
+            StartCoroutine(scm.LoadGame());
         }
     }
 
