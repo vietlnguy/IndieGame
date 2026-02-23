@@ -24,21 +24,14 @@ public class EnterName : MonoBehaviour
             runningCoroutine = StartCoroutine(SubmitHelper());
         }
     }
-    public void OnSubmit()
-    {   
-        Debug.Log("submitted");
-        runningCoroutine = StartCoroutine(SubmitHelper());
-    }
 
     private IEnumerator SubmitHelper()
     {
-        Debug.Log("submit helper called");
         string text = inputBox.text;
         scm.NewSave(text);
         confirmAudio.Play();
-        yield return new WaitForSeconds(2f);
-        //Debug.Log("shouldve waited");
+        yield return new WaitForSeconds(.5f);
         yield return StartCoroutine(scm.SceneTransition());
-        SceneManager.LoadScene("Chapter1");
+        SceneManager.LoadScene(scm.loadedData.currentChapter);
     }
 }

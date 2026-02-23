@@ -5,6 +5,7 @@ using System.Collections;
 using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Linq;
 
 public class SaveManager : MonoBehaviour
 {
@@ -104,7 +105,7 @@ public class SaveManager : MonoBehaviour
         File.WriteAllText(fullFilePath, jsonData);
 
         loadedData = dataToSave;
-        SceneManager.LoadScene(loadedData.currentChapter);
+
     }
     public IEnumerator LoadGame()
     {
@@ -120,17 +121,17 @@ public class SaveManager : MonoBehaviour
     }
     public List<string> GetAllSaveFiles()
     {
-        List<string> fileNames = new List<string>();
-        if (Directory.Exists(Application.persistentDataPath))
-        {
-            string[] files = Directory.GetFiles(Application.persistentDataPath, "*.json");
-            foreach (string filePath in files)
-            {
+        if (!Directory.Exists(Application.persistentDataPath)) 
+            return new List<string>();
 
-                fileNames.Add(Path.GetFileName(filePath));
-            }
-        }
-        return fileNames;
+        DirectoryInfo info = new DirectoryInfo(Application.persistentDataPath);
+        
+        // Grab all .json files, sort by the time they were last saved, 
+        // and then pull just the names into a list.
+        return info.GetFiles("*.json")
+                .OrderByDescending(f => f.LastWriteTime)
+                .Select(f => f.Name)
+                .ToList();
     }
     public void PopulateSaveList()
     {
@@ -142,7 +143,7 @@ public class SaveManager : MonoBehaviour
 
         //Get all of the save files and create saveEntrys for each
         List<string> saveFiles = GetAllSaveFiles();
-        for (int i = saveFiles.Count - 1; i >= 0; i--)
+        for (int i = 0; i < saveFiles.Count; i++)
         {
             string filename = saveFiles[i];
             GameObject newSaveEntry = Instantiate(saveEntryPrefab, content.transform, false);
