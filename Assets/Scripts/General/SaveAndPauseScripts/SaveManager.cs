@@ -194,6 +194,7 @@ public class SaveManager : MonoBehaviour
     }
     public IEnumerator SceneTransition()
     {
+        Debug.Log("called scene transition");
         //Fade out all audios
         AudioSource[] sources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
         foreach (AudioSource source in sources)

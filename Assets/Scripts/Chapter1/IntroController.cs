@@ -47,7 +47,7 @@ public class IntroController: MonoBehaviour
     }
     void Start()
     {
-
+        AudioListener.volume = PlayerPrefs.GetFloat("volume", 0.5f);
         if (saveManager.loadedData.introBattleOutro == "Intro")
         {
             saveManager.introBattleOutro = "Intro";

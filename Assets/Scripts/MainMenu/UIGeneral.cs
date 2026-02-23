@@ -13,6 +13,8 @@ public class UIGeneral : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public GameObject EnterNameUI;
     public TMP_InputField inputBox;
     public GameObject highlightOverlay;
+    public AudioSource selectAudio;
+    public GameObject settingsObject;
 
     void Awake()
     {
@@ -36,6 +38,7 @@ public class UIGeneral : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public void OnPointerClick(PointerEventData eventData)
     {
         string tag = gameObject.tag;
+        selectAudio.Play();
 
         if (tag == "continue")
         {
@@ -47,11 +50,15 @@ public class UIGeneral : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         }
         else if (tag == "settings")
         {
-
+            settingsObject.SetActive(true);
         }
         else if (tag == "exit")
         {
+            Application.Quit();
 
+        #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+        #endif
         }
         else if (tag == "exit_enter_name")
         {

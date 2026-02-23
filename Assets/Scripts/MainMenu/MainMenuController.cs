@@ -13,6 +13,7 @@ public class MainMenuController : MonoBehaviour
 
     void Start()
     {
+        AudioListener.volume = PlayerPrefs.GetFloat("volume", 0.5f);
         StartCoroutine(GameIntro());
     }
 

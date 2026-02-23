@@ -8,6 +8,7 @@ public class LoadSaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 {
     private Image image;
     public SaveManager scm;
+    public AudioSource confirmAudio;
 
     void Awake()
     {
@@ -35,6 +36,7 @@ public class LoadSaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         if (scm.saveSelected)
         {
+            confirmAudio.Play();
             StartCoroutine(scm.LoadGame());
         }
     }
