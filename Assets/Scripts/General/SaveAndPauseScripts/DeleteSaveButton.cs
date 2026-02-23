@@ -8,6 +8,7 @@ public class DeleteSaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
 {
     private Image image;
     public SaveManager scm;
+    public AudioSource deleteAudio;
 
     void Awake()
     {
@@ -34,6 +35,7 @@ public class DeleteSaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
     public void OnPointerClick(PointerEventData eventData)
     {
         scm.DeleteSelectedSave();
+        deleteAudio.Play();
     }
 
 }

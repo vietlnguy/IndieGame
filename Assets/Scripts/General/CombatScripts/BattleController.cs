@@ -13,7 +13,7 @@ public class BattleController : MonoBehaviour
     public GameObject characters;
     public List<GameObject> disabledCharacters;
     public List<GameObject> disabledEnemies;
-    public bool introFinished = true;
+    public bool introFinished = false;
     public GameObject fightScreen;
     public TextMeshProUGUI fightScreenText;
     public AudioSource playerPhaseAudio;
@@ -38,6 +38,7 @@ public class BattleController : MonoBehaviour
     public GameObject enemyTarget = null;
     public AudioSource walkingAudio;
     public GameOver gameOverScript;
+    private bool hoverableEnabled = false;
     void Awake()
     {
         disabledCharacters = new List<GameObject>();
@@ -68,6 +69,11 @@ public class BattleController : MonoBehaviour
 
         if (introFinished && !isPaused && !gameOverScript.active)
         {
+            if (!hoverableEnabled)
+            {
+                EnableHover();
+                hoverableEnabled = true;
+            }
             if (!characterAssistMenuScript.active && !characterMenuScript.active && !attackPreviewScript.active && !inventoryMenuScript.active && !isEnemyTurn && !characterInfoScript.active)
             {
                 if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Q))
@@ -450,5 +456,12 @@ public class BattleController : MonoBehaviour
     {
         currentTurn++;
         currentTurnText.text = currentTurn.ToString();
+    }
+    private void EnableHover()
+    {
+        foreach (Transform character in characters.transform)
+        {
+            character.gameObject.GetComponent<PlayerController>().hoverable = true;
+        }
     }
 }

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 public class SettingsButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     private Image image;
+    public GameObject settingsMenu;
 
     void Awake()
     {
@@ -32,7 +33,7 @@ public class SettingsButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        
+        settingsMenu.SetActive(true);
     }
 
 }

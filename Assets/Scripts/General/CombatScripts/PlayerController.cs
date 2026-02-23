@@ -77,6 +77,7 @@ public class PlayerController : MonoBehaviour
     public static event Action<string> OnCharacterDied;
     public string deathDialogue;
     public GameOver gameOverScript;
+    public bool hoverable = false;
 
     void Awake()
     {
@@ -100,7 +101,7 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
-        if (!gameOverScript.active) {
+        if (!gameOverScript.active && hoverable) {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             int layerMask = LayerMask.GetMask("Characters"); // ignore AttackRange layer
             RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero, Mathf.Infinity, layerMask);

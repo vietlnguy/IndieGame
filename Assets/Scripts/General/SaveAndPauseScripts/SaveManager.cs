@@ -74,7 +74,7 @@ public class SaveManager : MonoBehaviour
         GameSaveData dataToSave = new GameSaveData();
 
         //Get scene data
-        dataToSave.currentChapter = "Chapter1";
+        dataToSave.currentChapter = "Prologue";
         dataToSave.introBattleOutro = "Intro";
         dataToSave.mainCharacterName = mainCharacterName;
 
@@ -176,8 +176,8 @@ public class SaveManager : MonoBehaviour
     }
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        //Stuff to do whenever a new scene loads
         GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
-
         foreach (GameObject obj in allObjects)
         {
             if (obj.CompareTag("save_menu_content"))
@@ -186,7 +186,13 @@ public class SaveManager : MonoBehaviour
                 break;
             }
         }
-        PopulateSaveList();
+        try {
+            PopulateSaveList();
+        }
+        catch
+        {
+            //Some scenes like chapter bridge and prologue do not have a save menu
+        }
     }
     private void OnDestroy()
     {
@@ -195,7 +201,6 @@ public class SaveManager : MonoBehaviour
     }
     public IEnumerator SceneTransition()
     {
-        Debug.Log("called scene transition");
         //Fade out all audios
         AudioSource[] sources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
         foreach (AudioSource source in sources)

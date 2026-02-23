@@ -10,6 +10,7 @@ public class MainMenuController : MonoBehaviour
     public GameObject mainMenuCanvas;
     public AudioSource mainMenuThemeAudio;
     public GameObject mainMenuParentGroup;
+    public bool skipCredit = true;
 
     void Start()
     {
@@ -30,6 +31,9 @@ public class MainMenuController : MonoBehaviour
         float startAlpha = 0f;
         float time = 0f;
         float duration = 2f;
+        
+        if(!skipCredit)
+        {
         while (time < duration)
         {
             time += Time.deltaTime;
@@ -47,7 +51,7 @@ public class MainMenuController : MonoBehaviour
             yield return null;
         }
         creditsCanvasGroup.alpha = 0f;
-
+        }
         //Fade in main menu
         mainMenuCanvas.SetActive(true);
         creditsCanvas.SetActive(false);
