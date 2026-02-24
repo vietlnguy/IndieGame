@@ -170,12 +170,27 @@ public class IntroController: MonoBehaviour
     {
         victorySubquestBoxes.SetActive(true);
     }
+    private IEnumerator FadeInAudio(AudioSource source)
+    {
+        source.Play();
+        float duration = 1.5f;
+        float time = 0;
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            source.volume = Mathf.Lerp(0f, 0.2f, time / duration);
+            yield return null;
+        }
+
+        source.volume = 0.2f;
+
+    }
     private IEnumerator introSequence()
     {
-        fluteAudio.Play();
         //Overworld movement and dialogue
         yield return StartCoroutine(UndoFade(whiteScreen, 1f));
         yield return new WaitForSeconds(1f);
+        StartCoroutine(FadeInAudio(fluteAudio));
         yield return StartCoroutine(pathfinder.FollowPath(mainChar, new Vector3(-6.57f, -11.28f, 0f)));
         yield return new WaitForSeconds(.5f);
         doorAudio.Play();

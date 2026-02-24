@@ -7,14 +7,10 @@ public class CombatAnimToggle : MonoBehaviour
 
     void Start()
     {
-        // Load saved value (default = 1 if not found)
-        int savedValue = PlayerPrefs.GetInt("combatAnim", 0);
-
         // Set toggle state
-        combatAnimToggle.isOn = (savedValue == 1);
+        combatAnimToggle.isOn = false;
+        PlayerPrefs.SetInt("combatAnim", 0);
 
-        // Add listener AFTER setting value to avoid unnecessary save call
-        combatAnimToggle.onValueChanged.AddListener(OnToggleChanged);
     }
 
     public void OnToggleChanged(bool isOn)

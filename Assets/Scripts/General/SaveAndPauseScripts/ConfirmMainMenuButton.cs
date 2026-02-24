@@ -4,24 +4,15 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
-public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class ConfirmMainMenuGameButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     private Image image;
-    public AudioSource selectAudio;
-    public GameObject mainMenuConfirm;
+    public SaveManager scm;
 
     void Awake()
     {
         image = GetComponent<Image>();
-    }
-
-    void Start()
-    {
-    }
-
-    void Update()
-    {
-
+        scm = GameObject.Find("SaveManager").GetComponent<SaveManager>();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -34,9 +25,13 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        selectAudio.Play();
-        mainMenuConfirm.SetActive(true);
+       StartCoroutine(Helper());
     }
 
+    private IEnumerator Helper()
+    {
+        yield return StartCoroutine(scm.SceneTransition());
+        SceneManager.LoadScene("MainMenu");
+    }
 
 }

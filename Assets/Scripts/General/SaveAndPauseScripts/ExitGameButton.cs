@@ -7,8 +7,8 @@ using System.Collections.Generic;
 public class ExitGameButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     private Image image;
-
-
+    public AudioSource selectAudio;
+    public GameObject exitGameObject;
     void Awake()
     {
         image = GetComponent<Image>();
@@ -33,7 +33,8 @@ public class ExitGameButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        
+        selectAudio.Play();
+        exitGameObject.SetActive(true);
     }
 
 }

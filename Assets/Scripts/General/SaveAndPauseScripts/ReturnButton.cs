@@ -9,6 +9,7 @@ public class ReturnButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     private Image image;
     public GameObject pauseMenu;
     public BattleController battleController;
+    public AudioSource selectBeep;
 
     void Awake()
     {
@@ -34,7 +35,12 @@ public class ReturnButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        pauseMenu.SetActive(false);
-        battleController.isPaused = false;
+        selectBeep.Play();
+        if (battleController.introFinished)
+        {
+            battleController.isPaused = false;
+        }
+
+        pauseMenu.SetActive(false);;
     }
 }

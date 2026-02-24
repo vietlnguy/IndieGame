@@ -92,6 +92,7 @@ public class AttackPreview : MonoBehaviour
     public GameObject previewLeftRangedImage;
     public GameObject previewRightMeleeImage;
     public GameObject previewRightRangedImage;
+    public AudioSource overworldAttackAudio;
     void Awake()
     {
         scm = FindFirstObjectByType<SaveManager>();
@@ -549,74 +550,79 @@ public class AttackPreview : MonoBehaviour
     }
     public IEnumerator startAttackSequence()
     {
-        //Populate info
-        battleScreen.SetActive(true);
-        battleScreenTransitionAudio.Play();
-        battleScreenPlayerName.text = battleController.characterSelected.GetComponent<PlayerController>().title;
-        battleScreenPlayerHealth.text = battleController.characterSelected.GetComponent<PlayerController>().currentHp.ToString();
-        battleScreenPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().currentHp / battleController.characterSelected.GetComponent<PlayerController>().maxHp, 1f);
-        battleScreenPlayerAttack.text = chosenAttack.name;
-        battleScreenPlayerATK.text = damageArray[0].ToString();
-        battleScreenPlayerHIT.text = damageArray[1].ToString();
-        battleScreenPlayerCRIT.text = damageArray[2].ToString();
-        if (battleController.characterSelected.GetComponent<PlayerController>().ranged) { battleScreenLeftRangedImage.SetActive(true); battleScreenLeftMeleeImage.SetActive(false);}
-        else { battleScreenLeftRangedImage.SetActive(false); battleScreenLeftMeleeImage.SetActive(true); }
-        
-        //Support sequence info population
-        if (isAssisting)
+
+        //Populate battle info if showing animations
+        if (PlayerPrefs.GetInt("combatAnim", -1) == 1)
         {
-            battleScreenEnemyName.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().title;
-            battleScreenEnemyHealth.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentHp.ToString();
-            battleScreenEnemyHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentHp / battleController.assistableCharacterSelected.GetComponent<PlayerController>().maxHp, 1f);  
-            if (battleController.assistableCharacterSelected.GetComponent<PlayerController>().ranged) { battleScreenRightRangedImage.SetActive(true); battleScreenRightMeleeImage.SetActive(false);}
-            else { battleScreenRightRangedImage.SetActive(false); battleScreenRightMeleeImage.SetActive(true); }
-        
-        }
-        
-        //Attack sequence info population
-        else
-        {
-            battleScreenEnemyName.text = battleController.enemySelected.GetComponent<EnemyController>().title; 
-            battleScreenEnemyHealth.text = battleController.enemySelected.GetComponent<EnemyController>().currentHp.ToString();
-            battleScreenEnemyHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.enemySelected.GetComponent<EnemyController>().currentHp / battleController.enemySelected.GetComponent<EnemyController>().maxHp, 1f);
-            if (battleController.enemySelected.GetComponent<EnemyController>().ranged) { battleScreenRightRangedImage.SetActive(true); battleScreenRightMeleeImage.SetActive(false);}
-            else { battleScreenRightRangedImage.SetActive(false); battleScreenRightMeleeImage.SetActive(true); }
-        
-            //Enemy is not ranged and cannot attack back
-            if (!battleController.enemySelected.GetComponent<EnemyController>().ranged && battleController.characterSelected.GetComponent<PlayerController>().ranged )
+            //Populate info
+            battleScreen.SetActive(true);
+            battleScreenTransitionAudio.Play();
+            battleScreenPlayerName.text = battleController.characterSelected.GetComponent<PlayerController>().title;
+            battleScreenPlayerHealth.text = battleController.characterSelected.GetComponent<PlayerController>().currentHp.ToString();
+            battleScreenPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().currentHp / battleController.characterSelected.GetComponent<PlayerController>().maxHp, 1f);
+            battleScreenPlayerAttack.text = chosenAttack.name;
+            battleScreenPlayerATK.text = damageArray[0].ToString();
+            battleScreenPlayerHIT.text = damageArray[1].ToString();
+            battleScreenPlayerCRIT.text = damageArray[2].ToString();
+            if (battleController.characterSelected.GetComponent<PlayerController>().ranged) { battleScreenLeftRangedImage.SetActive(true); battleScreenLeftMeleeImage.SetActive(false);}
+            else { battleScreenLeftRangedImage.SetActive(false); battleScreenLeftMeleeImage.SetActive(true); }
+            
+            //Support sequence info population
+            if (isAssisting)
             {
-                battleScreenEnemyAttack.text = "-";
-                battleScreenEnemyATK.text =  "-";
-                battleScreenEnemyHIT.text =  "-";
-                battleScreenEnemyCRIT.text = "-";
+                battleScreenEnemyName.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().title;
+                battleScreenEnemyHealth.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentHp.ToString();
+                battleScreenEnemyHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentHp / battleController.assistableCharacterSelected.GetComponent<PlayerController>().maxHp, 1f);  
+                if (battleController.assistableCharacterSelected.GetComponent<PlayerController>().ranged) { battleScreenRightRangedImage.SetActive(true); battleScreenRightMeleeImage.SetActive(false);}
+                else { battleScreenRightRangedImage.SetActive(false); battleScreenRightMeleeImage.SetActive(true); }
+            
             }
+            
+            //Attack sequence info population
             else
             {
-                battleScreenEnemyAttack.text = battleController.enemySelected.GetComponent<EnemyController>().knownAttacks[0].name;
-                battleScreenEnemyATK.text =  enemyDamageArray[0].ToString();
-                battleScreenEnemyHIT.text =  enemyDamageArray[1].ToString();
-                battleScreenEnemyCRIT.text = enemyDamageArray[2].ToString();
+                battleScreenEnemyName.text = battleController.enemySelected.GetComponent<EnemyController>().title; 
+                battleScreenEnemyHealth.text = battleController.enemySelected.GetComponent<EnemyController>().currentHp.ToString();
+                battleScreenEnemyHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.enemySelected.GetComponent<EnemyController>().currentHp / battleController.enemySelected.GetComponent<EnemyController>().maxHp, 1f);
+                if (battleController.enemySelected.GetComponent<EnemyController>().ranged) { battleScreenRightRangedImage.SetActive(true); battleScreenRightMeleeImage.SetActive(false);}
+                else { battleScreenRightRangedImage.SetActive(false); battleScreenRightMeleeImage.SetActive(true); }
+            
+                //Enemy is not ranged and cannot attack back
+                if (!battleController.enemySelected.GetComponent<EnemyController>().ranged && battleController.characterSelected.GetComponent<PlayerController>().ranged )
+                {
+                    battleScreenEnemyAttack.text = "-";
+                    battleScreenEnemyATK.text =  "-";
+                    battleScreenEnemyHIT.text =  "-";
+                    battleScreenEnemyCRIT.text = "-";
+                }
+                else
+                {
+                    battleScreenEnemyAttack.text = battleController.enemySelected.GetComponent<EnemyController>().knownAttacks[0].name;
+                    battleScreenEnemyATK.text =  enemyDamageArray[0].ToString();
+                    battleScreenEnemyHIT.text =  enemyDamageArray[1].ToString();
+                    battleScreenEnemyCRIT.text = enemyDamageArray[2].ToString();
+                }
+
             }
 
+            //Enable the Battle screen and scale it from 0 to 1
+            Vector3 startScale = Vector3.zero;
+            Vector3 endScale = Vector3.one;
+            float elapsed = 0f;
+            float duration = .2f;
+            attackPanel.GetComponent<RectTransform>().localScale = startScale;
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
+
+                attackPanel.GetComponent<RectTransform>().localScale = Vector3.Lerp(startScale, endScale, t);
+
+                yield return null;
+            }
+            attackPanel.GetComponent<RectTransform>().localScale = endScale; // snap to final value
         }
-
-        //Enable the Battle screen and scale it from 0 to 1
-        Vector3 startScale = Vector3.zero;
-        Vector3 endScale = Vector3.one;
-        float elapsed = 0f;
-        float duration = .2f;
-        attackPanel.GetComponent<RectTransform>().localScale = startScale;
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / duration);
-
-            attackPanel.GetComponent<RectTransform>().localScale = Vector3.Lerp(startScale, endScale, t);
-
-            yield return null;
-        }
-        attackPanel.GetComponent<RectTransform>().localScale = endScale; // snap to final value
-
+        
         //Support roll sequence
         if (isAssisting)
         {
@@ -627,8 +633,16 @@ public class AttackPreview : MonoBehaviour
         //Attack roll sequence
         else
         {
-            //TODO: Play character attack animation
-            yield return new WaitForSeconds(3f);  
+
+            if (PlayerPrefs.GetInt("combatAnim") == 1)
+            {
+                //TODO: Attack animations
+                yield return new WaitForSeconds(3f);  
+            }
+            else
+            {
+                overworldAttackAudio.Play();
+            }
 
             //Determine hit/crit roll for character
             int roll = Random.Range(0, 100);
@@ -639,12 +653,18 @@ public class AttackPreview : MonoBehaviour
                 if (roll <= damageArray[2])
                 {
                     Debug.Log("Character crit with: " + roll);
-                    yield return StartCoroutine(AnimateHealthDamage(damageArray[0] * 2, battleScreenEnemyHpBar, battleController.enemySelected, battleScreenEnemyHealth));
+                    //When combat animation is on then animate health bar
+                    if (PlayerPrefs.GetInt("combatAnim") == 1) {
+                        yield return StartCoroutine(AnimateHealthDamage(damageArray[0] * 2, battleScreenEnemyHpBar, battleController.enemySelected, battleScreenEnemyHealth));
+                    }
                     battleController.enemySelected.GetComponent<EnemyController>().currentHp = battleController.enemySelected.GetComponent<EnemyController>().currentHp - damageArray[0] * 2;
                 }
                 else
-                {
-                    yield return StartCoroutine(AnimateHealthDamage(damageArray[0], battleScreenEnemyHpBar, battleController.enemySelected, battleScreenEnemyHealth));
+                {   
+                    //When combat animation is on then animate health bar
+                    if (PlayerPrefs.GetInt("combatAnim") == 1) {
+                        yield return StartCoroutine(AnimateHealthDamage(damageArray[0], battleScreenEnemyHpBar, battleController.enemySelected, battleScreenEnemyHealth));
+                    }
                     battleController.enemySelected.GetComponent<EnemyController>().currentHp = battleController.enemySelected.GetComponent<EnemyController>().currentHp - damageArray[0];
                 }
 
@@ -670,9 +690,11 @@ public class AttackPreview : MonoBehaviour
                 //should only attack back if able to
                 if ((battleController.enemySelected.GetComponent<EnemyController>().ranged && battleController.characterSelected.GetComponent<PlayerController>().ranged) || (!battleController.enemySelected.GetComponent<EnemyController>().ranged && !battleController.characterSelected.GetComponent<PlayerController>().ranged))
                 {
-                    //TODO: Play attack animation
-                    yield return new WaitForSeconds(3f);
-
+                    if (PlayerPrefs.GetInt("combatAnim", -1) == 1) 
+                    {
+                        //TODO: Enemy attack animation
+                        yield return new WaitForSeconds(3f);
+                    }
                     //Determine hit/crit roll for enemy
                     roll = Random.Range(0, 100);
                     if (roll <= enemyDamageArray[1])
@@ -710,19 +732,26 @@ public class AttackPreview : MonoBehaviour
         
         }
        
-        //Scale Panel from 1 to 0
-        elapsed = 0f;
-        duration = .2f;
-        while (elapsed < duration)
+        if (PlayerPrefs.GetInt("combatAnim", -1) == 1)
         {
-            elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / duration);
+            //Scale Panel from 1 to 0
+            float elapsed = 0f;
+            float duration = .2f;
+            Vector3 startScale = Vector3.zero;
+            Vector3 endScale = Vector3.one;
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
 
-            attackPanel.GetComponent<RectTransform>().localScale = Vector3.Lerp(endScale, startScale, t);
+                attackPanel.GetComponent<RectTransform>().localScale = Vector3.Lerp(endScale, startScale, t);
 
-            yield return null;
+                yield return null;
+            }
+            attackPanel.GetComponent<RectTransform>().localScale = startScale; // snap to final value
+
+
         }
-        attackPanel.GetComponent<RectTransform>().localScale = startScale; // snap to final value
 
         //Reset Hp bar sizes
         battleScreenPlayerHpBar.GetComponent<RectTransform>().sizeDelta = originalBattleScreenHpBarSize;
