@@ -14,6 +14,12 @@ public class PrologueController : MonoBehaviour
     public CanvasGroup backgroundImage;
     public GameObject cameraObject;
     public SaveManager scm;
+    private bool isPaused = false;
+    public GameObject pauseMenu;
+    public GameObject saveMenu;
+    public GameObject settingsMenu;
+    public GameObject exitGameMenu;
+    public GameObject exitMainMenu;
 
     void Awake(){
         AudioListener.volume = PlayerPrefs.GetFloat("volume", 0.5f);
@@ -38,6 +44,27 @@ public class PrologueController : MonoBehaviour
         dialogues.Add("On a small farm in the countryside, an unlikely adventure begins.");
 
         StartCoroutine(Intro());
+    }
+    void Update()
+    {
+        //On ESC press
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                pauseMenu.SetActive(false);
+                saveMenu.SetActive(false);
+                settingsMenu.SetActive(false);
+                exitGameMenu.SetActive(false);
+                exitMainMenu.SetActive(false);
+                isPaused = false;
+            }
+            else
+            {
+                pauseMenu.SetActive(true);
+                isPaused = true;
+            }
+        }
     }
     private IEnumerator Intro() {
         //Fade in Audio

@@ -39,6 +39,9 @@ public class BattleController : MonoBehaviour
     public AudioSource walkingAudio;
     public GameOver gameOverScript;
     private bool hoverableEnabled = false;
+    public GameObject settingsMenu;
+    public GameObject exitGameMenu;
+    public GameObject exitMainMenu;
     void Awake()
     {
         disabledCharacters = new List<GameObject>();
@@ -58,6 +61,9 @@ public class BattleController : MonoBehaviour
             {
                 pauseMenu.SetActive(false);
                 saveMenu.SetActive(false);
+                settingsMenu.SetActive(false);
+                exitGameMenu.SetActive(false);
+                exitMainMenu.SetActive(false);
                 isPaused = false;
             }
             else

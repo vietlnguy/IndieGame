@@ -24,6 +24,12 @@ public class GameOverRetryButton : MonoBehaviour, IPointerEnterHandler, IPointer
     }
     public void OnPointerClick(PointerEventData eventData)
     {
+        StartCoroutine(RestartScene());
+    }
+
+    private IEnumerator RestartScene()
+    {
+        yield return StartCoroutine(saveManager.SceneTransition());
         SceneManager.LoadScene(saveManager.loadedData.currentChapter);
     }
 

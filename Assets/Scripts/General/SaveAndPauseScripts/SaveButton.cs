@@ -9,7 +9,7 @@ public class SaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     private Image image;
     public SaveManager saveManager;
     public GameObject saveMenu;
-
+    public AudioSource selectAudio;
     void Awake()
     {
         image = GetComponent<Image>();
@@ -35,6 +35,7 @@ public class SaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     public void OnPointerClick(PointerEventData eventData)
     {
         saveMenu.SetActive(true);
+        selectAudio.Play();
     }
 
 }

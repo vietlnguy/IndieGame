@@ -15,7 +15,8 @@ public class SaveManager : MonoBehaviour
     public GameSaveData loadedData;
     public GameObject saveSelected;
     public GameObject saveEntryPrefab;
-    public GameObject content;
+    private GameObject content;
+    private string openedSaveFilePath = "";
 
     private void Awake()
     {
@@ -40,8 +41,8 @@ public class SaveManager : MonoBehaviour
         GameSaveData dataToSave = new GameSaveData();
 
         //Get scene data
-        dataToSave.currentChapter = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-        dataToSave.introBattleOutro = introBattleOutro;
+        dataToSave.currentChapter = loadedData.currentChapter;
+        dataToSave.introBattleOutro = loadedData.introBattleOutro;
         dataToSave.mainCharacterName = loadedData.mainCharacterName;
 
         //Go through each character and create a serializable Character to save
@@ -67,6 +68,7 @@ public class SaveManager : MonoBehaviour
         string jsonData = JsonUtility.ToJson(dataToSave, true);
         string filename = loadedData.mainCharacterName + "_" + dataToSave.currentChapter + "_" + dataToSave.introBattleOutro + "_" + time + ".json";
         string fullFilePath = Path.Combine(Application.persistentDataPath, filename);
+        openedSaveFilePath = fullFilePath;
         File.WriteAllText(fullFilePath, jsonData);
     }
     public void NewSave(string mainCharacterName)
@@ -100,7 +102,7 @@ public class SaveManager : MonoBehaviour
         time = time.Replace(":", "-");
         string filename = dataToSave.mainCharacterName + "_" + dataToSave.currentChapter + "_" + dataToSave.introBattleOutro + "_" + time + ".json";
         string fullFilePath = Path.Combine(Application.persistentDataPath, filename);
-
+        openedSaveFilePath = fullFilePath;
         string jsonData = JsonUtility.ToJson(dataToSave, true);
         File.WriteAllText(fullFilePath, jsonData);
 
@@ -110,11 +112,12 @@ public class SaveManager : MonoBehaviour
     public IEnumerator LoadGame()
     {
         SaveEntry saveEntry = saveSelected.GetComponent<SaveEntry>();
-        string saveFilePath = Application.persistentDataPath + "/" + saveEntry.characterName + "_" + saveEntry.chapter + "_" + saveEntry.scene + "_" + saveEntry.timestamp;
-        if (File.Exists(saveFilePath))
+        string s = Application.persistentDataPath + "/" + saveEntry.characterName + "_" + saveEntry.chapter + "_" + saveEntry.scene + "_" + saveEntry.timestamp;
+        if (File.Exists(s))
         {
-            string jsonData = File.ReadAllText(saveFilePath);
+            string jsonData = File.ReadAllText(s);
             loadedData = JsonUtility.FromJson<GameSaveData>(jsonData);
+            openedSaveFilePath = s;
         }
         yield return StartCoroutine(SceneTransition());
         SceneManager.LoadScene(loadedData.currentChapter);
@@ -161,6 +164,12 @@ public class SaveManager : MonoBehaviour
         {
             saveSelected.GetComponent<Image>().color = new Color(.2f, .24f, .52f, 0f);
         }
+    }
+    public void OverwriteSave()
+    {
+        File.Delete(openedSaveFilePath);
+        SaveGame();
+        PopulateSaveList();
     }
     public void DeleteSelectedSave()
     {

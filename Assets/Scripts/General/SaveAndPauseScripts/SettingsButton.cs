@@ -8,6 +8,7 @@ public class SettingsButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 {
     private Image image;
     public GameObject settingsMenu;
+    public AudioSource selectAudio;
 
     void Awake()
     {
@@ -34,6 +35,7 @@ public class SettingsButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public void OnPointerClick(PointerEventData eventData)
     {
         settingsMenu.SetActive(true);
+        selectAudio.Play();
     }
 
 }

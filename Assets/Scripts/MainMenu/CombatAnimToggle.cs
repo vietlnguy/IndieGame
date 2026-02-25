@@ -8,14 +8,27 @@ public class CombatAnimToggle : MonoBehaviour
     void Start()
     {
         // Set toggle state
-        combatAnimToggle.isOn = false;
-        PlayerPrefs.SetInt("combatAnim", 0);
-
+        if (PlayerPrefs.GetInt("combatAnim", -1) == -1)
+        {
+            combatAnimToggle.isOn = false;
+            PlayerPrefs.SetInt("combatAnim", 0);
+        }
+        else
+        {
+            if (PlayerPrefs.GetInt("combatAnim") == 0)
+            {
+                combatAnimToggle.isOn = false;
+            }
+            else
+            {
+                combatAnimToggle.isOn = true;
+            }
+        }
     }
 
-    public void OnToggleChanged(bool isOn)
-    {
-        PlayerPrefs.SetInt("combatAnim", isOn ? 1 : 0);
+    public void OnToggleChanged()
+    {   
+        PlayerPrefs.SetInt("combatAnim", combatAnimToggle.isOn ? 1 : 0);
     }
 
 

@@ -78,6 +78,7 @@ public class AttackPreview : MonoBehaviour
     public int[] enemyDamageArray = {-1, -1, -1};
     public bool isAssisting = false;
     public AudioSource typingAudio;
+    public GameObject dialogueBox;
     public TextMeshProUGUI dialogueBoxTitle;
     public TextMeshProUGUI dialogueBoxText;
     public CanvasGroup dialogueBoxCanvasGroup;
@@ -551,8 +552,8 @@ public class AttackPreview : MonoBehaviour
     public IEnumerator startAttackSequence()
     {
 
-        //Populate battle info if showing animations
-        if (PlayerPrefs.GetInt("combatAnim", -1) == 1)
+        //Populate battle info if showing animations. 0 means don't skip animations
+        if (PlayerPrefs.GetInt("combatAnim", -1) == 0)
         {
             //Populate info
             battleScreen.SetActive(true);
@@ -634,7 +635,7 @@ public class AttackPreview : MonoBehaviour
         else
         {
 
-            if (PlayerPrefs.GetInt("combatAnim") == 1)
+            if (PlayerPrefs.GetInt("combatAnim") == 0)
             {
                 //TODO: Attack animations
                 yield return new WaitForSeconds(3f);  
@@ -654,7 +655,7 @@ public class AttackPreview : MonoBehaviour
                 {
                     Debug.Log("Character crit with: " + roll);
                     //When combat animation is on then animate health bar
-                    if (PlayerPrefs.GetInt("combatAnim") == 1) {
+                    if (PlayerPrefs.GetInt("combatAnim") == 0) {
                         yield return StartCoroutine(AnimateHealthDamage(damageArray[0] * 2, battleScreenEnemyHpBar, battleController.enemySelected, battleScreenEnemyHealth));
                     }
                     battleController.enemySelected.GetComponent<EnemyController>().currentHp = battleController.enemySelected.GetComponent<EnemyController>().currentHp - damageArray[0] * 2;
@@ -662,7 +663,7 @@ public class AttackPreview : MonoBehaviour
                 else
                 {   
                     //When combat animation is on then animate health bar
-                    if (PlayerPrefs.GetInt("combatAnim") == 1) {
+                    if (PlayerPrefs.GetInt("combatAnim") == 0) {
                         yield return StartCoroutine(AnimateHealthDamage(damageArray[0], battleScreenEnemyHpBar, battleController.enemySelected, battleScreenEnemyHealth));
                     }
                     battleController.enemySelected.GetComponent<EnemyController>().currentHp = battleController.enemySelected.GetComponent<EnemyController>().currentHp - damageArray[0];
@@ -690,7 +691,7 @@ public class AttackPreview : MonoBehaviour
                 //should only attack back if able to
                 if ((battleController.enemySelected.GetComponent<EnemyController>().ranged && battleController.characterSelected.GetComponent<PlayerController>().ranged) || (!battleController.enemySelected.GetComponent<EnemyController>().ranged && !battleController.characterSelected.GetComponent<PlayerController>().ranged))
                 {
-                    if (PlayerPrefs.GetInt("combatAnim", -1) == 1) 
+                    if (PlayerPrefs.GetInt("combatAnim", -1) == 0) 
                     {
                         //TODO: Enemy attack animation
                         yield return new WaitForSeconds(3f);
@@ -732,7 +733,7 @@ public class AttackPreview : MonoBehaviour
         
         }
        
-        if (PlayerPrefs.GetInt("combatAnim", -1) == 1)
+        if (PlayerPrefs.GetInt("combatAnim", -1) == 0)
         {
             //Scale Panel from 1 to 0
             float elapsed = 0f;
@@ -772,66 +773,72 @@ public class AttackPreview : MonoBehaviour
         PlayerController defenderScript = defender.GetComponent<PlayerController>();
         EnemyController attackerScript = attacker.GetComponent<EnemyController>();
         enemyCoroutineRunning = true;
-
-        //Populate info
-        battleScreen.SetActive(true);
-        battleScreenTransitionAudio.Play();
-        battleScreenPlayerName.text = defenderScript.title;
-        battleScreenPlayerHealth.text = defenderScript.currentHp.ToString();
-        battleScreenPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)defenderScript.currentHp / defenderScript.maxHp, 1f);
-        battleScreenPlayerAttack.text = defenderScript.knownAttacks[0].name;
-        battleScreenEnemyName.text = attackerScript.title; 
-        battleScreenEnemyHealth.text = attackerScript.currentHp.ToString();
-        battleScreenEnemyHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)attackerScript.currentHp / attackerScript.maxHp, 1f);
-        enemyDamageArray = calculateDamage(attacker, defender, attackSelected);
-        battleScreenEnemyAttack.text = attackSelected.name;
-        battleScreenEnemyATK.text = enemyDamageArray[0].ToString();
-        battleScreenEnemyHIT.text = enemyDamageArray[1].ToString();
-        battleScreenEnemyCRIT.text = enemyDamageArray[2].ToString();
-        if (attackerScript.ranged) { battleScreenLeftRangedImage.SetActive(true); battleScreenLeftMeleeImage.SetActive(false);}
-        else { battleScreenLeftRangedImage.SetActive(false); battleScreenLeftMeleeImage.SetActive(true); }
-        
-        if (defenderScript.ranged) { battleScreenRightRangedImage.SetActive(true); battleScreenRightMeleeImage.SetActive(false);}
-        else { battleScreenRightRangedImage.SetActive(false); battleScreenRightMeleeImage.SetActive(true); }
-        
-
-        //Enemy is ranged and character is not, or vice versa
-        if ((attackerScript.ranged && !defenderScript.ranged) || (!attackerScript.ranged && defenderScript.ranged) )
-        {
-            battleScreenPlayerAttack.text = "-";
-            battleScreenPlayerATK.text =  "-";
-            battleScreenPlayerHIT.text =  "-";
-            battleScreenPlayerCRIT.text = "-";
-        }
-        else
-        {
-            damageArray = calculateDamage(defender, attacker, defenderScript.knownAttacks[0]);
-            battleScreenPlayerATK.text = damageArray[0].ToString();
-            battleScreenPlayerHIT.text = damageArray[1].ToString();
-            battleScreenPlayerCRIT.text = damageArray[2].ToString();  
-            battleScreenPlayerAttack.text = defenderScript.knownAttacks[0].name;
-        }
-     
-        //Enable the Battle screen and scale it from 0 to 1
         Vector3 startScale = Vector3.zero;
         Vector3 endScale = Vector3.one;
         float elapsed = 0f;
         float duration = .2f;
-        attackPanel.GetComponent<RectTransform>().localScale = startScale;
-        while (elapsed < duration)
+
+        enemyDamageArray = calculateDamage(attacker, defender, attackSelected);
+        damageArray = calculateDamage(defender, attacker, defenderScript.knownAttacks[0]);
+        
+        if (PlayerPrefs.GetInt("combatAnim") == 0) 
         {
-            elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / duration);
+            //Populate info
+            battleScreen.SetActive(true);
+            battleScreenTransitionAudio.Play();
+            battleScreenPlayerName.text = defenderScript.title;
+            battleScreenPlayerHealth.text = defenderScript.currentHp.ToString();
+            battleScreenPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)defenderScript.currentHp / defenderScript.maxHp, 1f);
+            battleScreenPlayerAttack.text = defenderScript.knownAttacks[0].name;
+            battleScreenEnemyName.text = attackerScript.title; 
+            battleScreenEnemyHealth.text = attackerScript.currentHp.ToString();
+            battleScreenEnemyHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)attackerScript.currentHp / attackerScript.maxHp, 1f);
+            battleScreenEnemyAttack.text = attackSelected.name;
+            battleScreenEnemyATK.text = enemyDamageArray[0].ToString();
+            battleScreenEnemyHIT.text = enemyDamageArray[1].ToString();
+            battleScreenEnemyCRIT.text = enemyDamageArray[2].ToString();
+            
 
-            attackPanel.GetComponent<RectTransform>().localScale = Vector3.Lerp(startScale, endScale, t);
+            if (attackerScript.ranged) { battleScreenLeftRangedImage.SetActive(true); battleScreenLeftMeleeImage.SetActive(false);}
+            else { battleScreenLeftRangedImage.SetActive(false); battleScreenLeftMeleeImage.SetActive(true); }
+            
+            if (defenderScript.ranged) { battleScreenRightRangedImage.SetActive(true); battleScreenRightMeleeImage.SetActive(false);}
+            else { battleScreenRightRangedImage.SetActive(false); battleScreenRightMeleeImage.SetActive(true); }
+            
 
-            yield return null;
+            //Enemy is ranged and character is not, or vice versa
+            if ((attackerScript.ranged && !defenderScript.ranged) || (!attackerScript.ranged && defenderScript.ranged) )
+            {
+                battleScreenPlayerAttack.text = "-";
+                battleScreenPlayerATK.text =  "-";
+                battleScreenPlayerHIT.text =  "-";
+                battleScreenPlayerCRIT.text = "-";
+            }
+            else
+            {
+                battleScreenPlayerATK.text = damageArray[0].ToString();
+                battleScreenPlayerHIT.text = damageArray[1].ToString();
+                battleScreenPlayerCRIT.text = damageArray[2].ToString();  
+                battleScreenPlayerAttack.text = defenderScript.knownAttacks[0].name;
+            }
+     
+            //Enable the Battle screen and scale it from 0 to 1
+            attackPanel.GetComponent<RectTransform>().localScale = startScale;
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
+
+                attackPanel.GetComponent<RectTransform>().localScale = Vector3.Lerp(startScale, endScale, t);
+
+                yield return null;
+            }
+            attackPanel.GetComponent<RectTransform>().localScale = endScale; // snap to final value
+
+            //Attack roll sequence
+            //TODO: Play enemy attack animation
+            yield return new WaitForSeconds(3f);  
         }
-        attackPanel.GetComponent<RectTransform>().localScale = endScale; // snap to final value
-
-        //Attack roll sequence
-        //TODO: Play enemy attack animation
-        yield return new WaitForSeconds(3f);  
 
         //Determine hit roll for enemy
         int roll = Random.Range(0, 100);
@@ -843,14 +850,19 @@ public class AttackPreview : MonoBehaviour
             {
 
                 Debug.Log(attackerScript.title + " crit " + defenderScript.title + " for " + (enemyDamageArray[0] * 2).ToString() + " damage.");
-                yield return StartCoroutine(AnimateHealthDamage(enemyDamageArray[0] * 2, battleScreenPlayerHpBar, defender, battleScreenPlayerHealth));
+                if (PlayerPrefs.GetInt("combatAnim") == 0) {
+                    yield return StartCoroutine(AnimateHealthDamage(enemyDamageArray[0] * 2, battleScreenPlayerHpBar, defender, battleScreenPlayerHealth));
+                }
                 defenderScript.currentHp = defenderScript.currentHp - enemyDamageArray[0] * 2; 
             }
             
             else
             {
                 Debug.Log(attackerScript.title + " hit " + defenderScript.title + " for " + enemyDamageArray[0].ToString() + " damage.");
-                yield return StartCoroutine(AnimateHealthDamage(enemyDamageArray[0], battleScreenPlayerHpBar, defender, battleScreenPlayerHealth));
+                if (PlayerPrefs.GetInt("combatAnim") == 0)
+                {
+                    yield return StartCoroutine(AnimateHealthDamage(enemyDamageArray[0], battleScreenPlayerHpBar, defender, battleScreenPlayerHealth));
+                }
                 defenderScript.currentHp = defenderScript.currentHp - enemyDamageArray[0]; 
             }
 
@@ -862,7 +874,7 @@ public class AttackPreview : MonoBehaviour
 
         } 
     
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
 
         //Play character death dialogue if necessary
         if (defenderScript.currentHp <= 0)
@@ -887,13 +899,20 @@ public class AttackPreview : MonoBehaviour
                     if (roll <= damageArray[2])
                     {
                         Debug.Log(defenderScript.title + " crit " + attackerScript.title + " for " + (damageArray[0] * 2).ToString() + " damage.");
-                        yield return StartCoroutine(AnimateHealthDamage(damageArray[0] * 2, battleScreenEnemyHpBar, attacker, battleScreenEnemyHealth));
+                        if (PlayerPrefs.GetInt("combatAnim") == 0)
+                        {
+                            yield return StartCoroutine(AnimateHealthDamage(damageArray[0] * 2, battleScreenEnemyHpBar, attacker, battleScreenEnemyHealth));
+                        }
                         attackerScript.currentHp = attackerScript.currentHp - damageArray[0] * 2;
                     }
                     else
                     {
                         Debug.Log(defenderScript.title + " hit " + attackerScript.title + " for " + damageArray[0].ToString() + " damage.");
-                        yield return StartCoroutine(AnimateHealthDamage(damageArray[0], battleScreenEnemyHpBar, attacker, battleScreenEnemyHealth));
+
+                        if (PlayerPrefs.GetInt("combatAnim") == 0)
+                        {
+                            yield return StartCoroutine(AnimateHealthDamage(damageArray[0], battleScreenEnemyHpBar, attacker, battleScreenEnemyHealth));
+                        }
                         attackerScript.currentHp = attackerScript.currentHp - damageArray[0];
                     }
 
@@ -916,19 +935,22 @@ public class AttackPreview : MonoBehaviour
     
         }
     
-        //Scale Panel from 1 to 0
-        elapsed = 0f;
-        duration = .2f;
-        while (elapsed < duration)
+        if (PlayerPrefs.GetInt("combatAnim") == 0)
         {
-            elapsed += Time.deltaTime;
-            float t = Mathf.Clamp01(elapsed / duration);
+            //Scale Panel from 1 to 0
+            elapsed = 0f;
+            duration = .2f;
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
 
-            attackPanel.GetComponent<RectTransform>().localScale = Vector3.Lerp(endScale, startScale, t);
+                attackPanel.GetComponent<RectTransform>().localScale = Vector3.Lerp(endScale, startScale, t);
 
-            yield return null;
+                yield return null;
+            }
+            attackPanel.GetComponent<RectTransform>().localScale = startScale; // snap to final value
         }
-        attackPanel.GetComponent<RectTransform>().localScale = startScale; // snap to final value
 
         //Reset Hp bar sizes
         battleScreenPlayerHpBar.GetComponent<RectTransform>().sizeDelta = originalBattleScreenHpBarSize;
@@ -944,7 +966,7 @@ public class AttackPreview : MonoBehaviour
         battleScreenEnemyATK.text = "-";
         battleScreenEnemyHIT.text = "-";
         battleScreenEnemyCRIT.text = "-";
-
+        
         enemyCoroutineRunning = false;
     }
     private IEnumerator AnimateHealthDamage(int damage, GameObject healthBarObject, GameObject person, TextMeshProUGUI healthText)
@@ -1018,6 +1040,7 @@ public class AttackPreview : MonoBehaviour
     }
     private IEnumerator DeathSequence(GameObject person)
     {
+        dialogueBox.SetActive(true);
         float time = .15f;
         float elapsed = 0f;
         Vector2 targetPos = new Vector2(0f, -50f);

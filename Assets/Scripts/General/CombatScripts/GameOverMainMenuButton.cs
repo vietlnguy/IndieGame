@@ -22,7 +22,6 @@ public class GameOverMainMenuButton : MonoBehaviour, IPointerEnterHandler, IPoin
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("main menu clicked");
         SceneManager.LoadScene("MainMenu");
     }
 

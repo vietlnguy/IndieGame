@@ -421,13 +421,13 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11500000, guid: bc1a8bba26f876b4d84e21a8f1634cee, type: 3}
+      - m_Target: {fileID: 68043816}
         m_TargetAssemblyTypeName: CombatAnimToggle, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: OnToggleChanged
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -665,7 +665,6 @@ MonoBehaviour:
     ownedEquipment: []
   saveSelected: {fileID: 0}
   saveEntryPrefab: {fileID: 2968229795632610955, guid: d3ef13cb9b97e4b4f8d2399b6e4bcf48, type: 3}
-  content: {fileID: 0}
   references:
     version: 2
     RefIds: []
@@ -5778,6 +5777,7 @@ MonoBehaviour:
   mainMenuCanvas: {fileID: 1771209700}
   mainMenuThemeAudio: {fileID: 947885517}
   mainMenuParentGroup: {fileID: 497391195}
+  skipCredit: 0
 --- !u!1 &1801852509
 GameObject:
   m_ObjectHideFlags: 0

@@ -40,6 +40,7 @@ public class IntroController: MonoBehaviour
 
     void Awake()
     {
+        Debug.Log("combatAnim = " + PlayerPrefs.GetInt("combatAnim", -1));
         saveManager = FindFirstObjectByType<SaveManager>();
         mainChar = GameObject.Find("MainCharacterPrefab(Clone)");
         astrid = GameObject.Find("AstridPrefab(Clone)");
@@ -50,12 +51,13 @@ public class IntroController: MonoBehaviour
         AudioListener.volume = PlayerPrefs.GetFloat("volume", 0.5f);
         if (saveManager.loadedData.introBattleOutro == "Intro")
         {
-            saveManager.introBattleOutro = "Intro";
+            saveManager.loadedData.currentChapter = "Chapter1";
+            saveManager.loadedData.introBattleOutro = "Intro";
+            saveManager.OverwriteSave();
             StartCoroutine(introSequence());
         }
-        else if (saveManager.loadedData.introBattleOutro == "battle")
+        else if (saveManager.loadedData.introBattleOutro == "Battle")
         {
-            saveManager.introBattleOutro = "battle";
             StartCoroutine(shortSequence());
         }
  
@@ -262,6 +264,9 @@ public class IntroController: MonoBehaviour
         yield return StartCoroutine(pathfinder.FollowPath(astrid, new Vector3(-5.66f, -12f, 0f)));
         yield return new WaitForSeconds(.5f);
 
+        saveManager.loadedData.introBattleOutro = "Battle";
+        saveManager.OverwriteSave();
+
         fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
         swordClash.Play();
         forestBattleTheme.Play();
@@ -287,7 +292,6 @@ public class IntroController: MonoBehaviour
 
 
         battleController.introFinished = true;
-        saveManager.introBattleOutro = "battle";
     }
     private IEnumerator shortSequence()
     {
@@ -302,6 +306,9 @@ public class IntroController: MonoBehaviour
         yield return StartCoroutine(characterAppear(astrid));
         yield return StartCoroutine(pathfinder.FollowPath(astrid, new Vector3(-5.66f, -13f, 0f)));
         yield return new WaitForSeconds(.5f);
+
+        saveManager.loadedData.introBattleOutro = "Battle";
+        saveManager.OverwriteSave();
 
         fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
         swordClash.Play();
@@ -333,7 +340,7 @@ public class IntroController: MonoBehaviour
         fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
 
         battleController.introFinished = true;
-        saveManager.introBattleOutro = "battle";
+
     }
 }
 
