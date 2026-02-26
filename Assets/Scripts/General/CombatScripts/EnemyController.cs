@@ -42,6 +42,7 @@ public class EnemyController : MonoBehaviour
     public GameOver gameOverScript;
     public AudioSource walkingAudio;
     public static event Action<GameObject[]> OnEnemyDied;
+    public bool hoverable = true;
 
     void Awake()
     {
@@ -49,7 +50,7 @@ public class EnemyController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigidBody = GetComponent<Rigidbody2D>();
         battleController = GameObject.Find("BattleController").GetComponent<BattleController>();
-        characterToolTipScript = GameObject.Find("characterInfoToolTip").GetComponent<CharacterToolTip>();
+        characterToolTipScript = GameObject.Find("CharacterInfoToolTip").GetComponent<CharacterToolTip>();
         moveRangeCircleScript = GameObject.Find("MoveRangeCircle").GetComponent<MoveRangeCircle>();
         attackRangeCircleScript = GameObject.Find("AttackRangeCircle").GetComponent<AttackRangeCircle>();
         effectiveAttackRangeCircleScript = GameObject.Find("EffectiveAttackRangeCircle").GetComponent<EffectiveAttackRangeCircle>();
@@ -63,7 +64,7 @@ public class EnemyController : MonoBehaviour
     }
     void Update()
     {
-        if (!gameOverScript.active) 
+        if (!gameOverScript.active && hoverable) 
         {
             Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             int layerMask = LayerMask.GetMask("Characters"); // ignore AttackRange layer

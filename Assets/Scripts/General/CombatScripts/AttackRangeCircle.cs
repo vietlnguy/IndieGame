@@ -21,6 +21,7 @@ public class AttackRangeCircle : MonoBehaviour
 
     void Awake()
     {
+        battleController = GameObject.Find("BattleController").GetComponent<BattleController>();
         alliesInRange = new List<GameObject>();
         enemiesInRange = new List<GameObject>();
 

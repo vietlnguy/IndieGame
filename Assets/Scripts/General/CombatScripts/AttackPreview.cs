@@ -5,16 +5,13 @@ using TMPro;
 
 public class AttackPreview : MonoBehaviour
 {
-    public BattleController battleController;
+    private BattleController battleController;
     public GameObject attackerPreviewPanel;
     public GameObject defenderPreviewPanel;
     public GameObject confirmButton;
     public GameObject attackIcon;
     public GameObject assistIcon;
     public bool active = false;
-    public AudioSource attackWooshAudio;
-    public AudioSource attackClangAudio;
-    public AudioSource assistPreviewAudio;
     public TextMeshProUGUI characterTitle;
     public TextMeshProUGUI enemyTitle;
     public GameObject portraitBackground;
@@ -41,7 +38,6 @@ public class AttackPreview : MonoBehaviour
     public TextMeshProUGUI rightsideManaBlock;
     public TextMeshProUGUI rightsideAttackDescription;
     public GameObject attackPanel;
-    public GameObject battleScreen;
     public TextMeshProUGUI battleScreenPlayerName;
     public TextMeshProUGUI battleScreenEnemyName;
     public TextMeshProUGUI battleScreenPlayerAttack;
@@ -69,15 +65,12 @@ public class AttackPreview : MonoBehaviour
     public GameObject previewEnemyHpBar;
     public GameObject previewEnemyManaBar;
     public ConfirmAttackButton confirmAttackButtonScript;
-    public AudioSource selectBeepAudio;
     private Vector2 originalHpManaBarSize;
     private Vector2 originalEnemyHpManaBarSize;
     private Vector2 originalBattleScreenHpBarSize;
-    public AudioSource battleScreenTransitionAudio;
     public int[] damageArray = {-1, -1, -1};
     public int[] enemyDamageArray = {-1, -1, -1};
     public bool isAssisting = false;
-    public AudioSource typingAudio;
     public GameObject dialogueBox;
     public TextMeshProUGUI dialogueBoxTitle;
     public TextMeshProUGUI dialogueBoxText;
@@ -94,9 +87,16 @@ public class AttackPreview : MonoBehaviour
     public GameObject previewRightMeleeImage;
     public GameObject previewRightRangedImage;
     public AudioSource overworldAttackAudio;
+    public AudioSource typingAudio;
+    public AudioSource battleScreenTransitionAudio;
+    public AudioSource selectBeepAudio;
+    public AudioSource attackWooshAudio;
+    public AudioSource attackClangAudio;
+    public AudioSource assistPreviewAudio;
     void Awake()
     {
         scm = FindFirstObjectByType<SaveManager>();
+        battleController = GameObject.Find("BattleController").GetComponent<BattleController>();
         attackSelectorInitialPos = attackSelector.GetComponent<RectTransform>().anchoredPosition;
         originalHpManaBarSize = previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta;
         originalEnemyHpManaBarSize = previewEnemyHpBar.GetComponent<RectTransform>().sizeDelta;
@@ -481,11 +481,12 @@ public class AttackPreview : MonoBehaviour
     {
         isAssisting = false;
         attackWooshAudio.Play();
+        
         //Destroy attack preview prefabs
-        foreach (Transform child in attackPreviewSprites.transform)
-        {
-            Destroy(child.gameObject);
-        }
+        //foreach (Transform child in attackPreviewSprites.transform)
+        //{
+        //    Destroy(child.gameObject);
+        //}
 
         //Move off screen
         float duration = 0.05f;
@@ -556,7 +557,6 @@ public class AttackPreview : MonoBehaviour
         if (PlayerPrefs.GetInt("combatAnim", -1) == 0)
         {
             //Populate info
-            battleScreen.SetActive(true);
             battleScreenTransitionAudio.Play();
             battleScreenPlayerName.text = battleController.characterSelected.GetComponent<PlayerController>().title;
             battleScreenPlayerHealth.text = battleController.characterSelected.GetComponent<PlayerController>().currentHp.ToString();
@@ -784,7 +784,6 @@ public class AttackPreview : MonoBehaviour
         if (PlayerPrefs.GetInt("combatAnim") == 0) 
         {
             //Populate info
-            battleScreen.SetActive(true);
             battleScreenTransitionAudio.Play();
             battleScreenPlayerName.text = defenderScript.title;
             battleScreenPlayerHealth.text = defenderScript.currentHp.ToString();

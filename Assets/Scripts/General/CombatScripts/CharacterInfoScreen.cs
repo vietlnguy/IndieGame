@@ -5,7 +5,7 @@ using TMPro;
 
 public class CharacterInfoScreen : MonoBehaviour
 {
-    public PlayerController characterScript;
+    private PlayerController characterScript;
     public bool active = false;
     private int index = 0;
     private int upDownIndex = 0;
@@ -48,10 +48,14 @@ public class CharacterInfoScreen : MonoBehaviour
     public ModifierTextColor mtcScript;
     public TextMeshProUGUI atkModText;
     public GameObject childObject;
-    public CharacterMenu characterMenuScript;
+    private CharacterMenu characterMenuScript;
     public AudioSource bookOpenAudio;
     public AudioSource bookCloseAudio;
 
+    void Awake()
+    {
+        characterMenuScript = GameObject.Find("CharacterMenu").GetComponent<CharacterMenu>();
+    }
     void LateUpdate()
     {
         if (active)

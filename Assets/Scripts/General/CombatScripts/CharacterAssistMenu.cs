@@ -10,9 +10,9 @@ public class CharacterAssistMenu : MonoBehaviour
     public GameObject characterMenu;
     public bool active = false;
     private int index = 0;
-    public BattleController battleController;
-    public InventoryMenu inventoryMenuScript;
-    public AttackPreview attackPreviewScript;
+    private BattleController battleController;
+    private InventoryMenu inventoryMenuScript;
+    private AttackPreview attackPreviewScript;
     public GameObject selector;
     public AudioSource selectorAudio;
     public AudioSource deselectAudio;
@@ -23,6 +23,9 @@ public class CharacterAssistMenu : MonoBehaviour
     {
         worldCamera = Camera.main;
         characterMenuParentCanvasRect = GetComponent<RectTransform>();
+        battleController = GameObject.Find("BattleController").GetComponent<BattleController>();
+        inventoryMenuScript = GameObject.Find("InventoryMenu").GetComponent<InventoryMenu>();
+        attackPreviewScript = GameObject.Find("AttackPreview").GetComponent<AttackPreview>();
     }
     void LateUpdate()
     {

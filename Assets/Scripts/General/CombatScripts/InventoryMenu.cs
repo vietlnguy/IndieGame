@@ -55,6 +55,7 @@ public class InventoryMenu : MonoBehaviour
     void Awake()
     {
         characterMenuScript = GameObject.Find("CharacterMenu").GetComponent<CharacterMenu>();
+        battleController = GameObject.Find("BattleController").GetComponent<BattleController>();
         originalHpManaBarSize = previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta;
     }
     void LateUpdate()
@@ -293,6 +294,7 @@ public class InventoryMenu : MonoBehaviour
     public IEnumerator enableInventoryGiverMenu(GameObject character)
     {
         yield return null;
+        disableHoverable();
         selector.SetActive(true);
         inventoryGiverMenu.SetActive(true);
         active = true;
@@ -330,6 +332,7 @@ public class InventoryMenu : MonoBehaviour
     }
     public void enableInventoryRecipientMenu(GameObject character)
     {
+        disableHoverable();
         inventoryRecipientMenu.SetActive(true);
         int tempIndex = 0;
 
@@ -384,7 +387,7 @@ public class InventoryMenu : MonoBehaviour
         {
             battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = true;
         }
-
+        enableHoverable();
     }
     public void disableRecipientMenu() {
         foreach (Transform row in recipientItems.transform)
@@ -399,7 +402,7 @@ public class InventoryMenu : MonoBehaviour
         recipientPreviewPlayerManaBar.GetComponent<RectTransform>().sizeDelta = originalHpManaBarSize;
 
         inventoryRecipientMenu.SetActive(false);
-
+        enableHoverable();
     }
     public void disableConfirmBox()
     {
@@ -415,6 +418,7 @@ public class InventoryMenu : MonoBehaviour
         arrows.SetActive(true);
         confirmButton.SetActive(true);
         trading = true;
+        disableHoverable();
     }
     private void resetInventories()
     {
@@ -755,6 +759,7 @@ public class InventoryMenu : MonoBehaviour
         itemToGive = null;
         originalGiverInventory = null;
         originalRecipientInventory = null;
+        enableHoverable();
     }
     public void StartFlashing(TextMeshProUGUI textComponent, TextMeshProUGUI textComponent2, float duration = 1.5f)
     {
@@ -800,6 +805,33 @@ public class InventoryMenu : MonoBehaviour
             }
         }
     }
+    private void disableHoverable()
+    {
+        GameObject characters = GameObject.Find("Characters");
+        foreach (Transform child in characters.transform)
+        {
+            child.GetComponent<PlayerController>().hoverable = false;
+        }
 
+        GameObject enemies = GameObject.Find("Enemies");
+        foreach (Transform child in enemies.transform)
+        {
+            child.GetComponent<EnemyController>().hoverable = false;
+        }
+    }
+    private void enableHoverable()
+    {
+        GameObject characters = GameObject.Find("Characters");
+        foreach (Transform child in characters.transform)
+        {
+            child.GetComponent<PlayerController>().hoverable = true;
+        }
+
+        GameObject enemies = GameObject.Find("Enemies");
+        foreach (Transform child in enemies.transform)
+        {
+            child.GetComponent<EnemyController>().hoverable = true;
+        }
+    }
 
 }

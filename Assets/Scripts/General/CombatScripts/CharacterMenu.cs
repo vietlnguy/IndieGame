@@ -10,19 +10,21 @@ public class CharacterMenu : MonoBehaviour
     public GameObject characterMenu;
     public bool active = false;
     private int index = 0;
-    public BattleController battleController;
-    public InventoryMenu inventoryMenuScript;
-    public CharacterInfoScreen characterInfoScript;
+    private BattleController battleController;
+    private InventoryMenu inventoryMenuScript;
+    private CharacterInfoScreen characterInfoScript;
     public GameObject selector;
     public AudioSource selectorAudio;
     public AudioSource deselectAudio;
     public TextMeshProUGUI endTurnText;
-    public GameObject blackScreen;
 
     void Awake()
     {
         worldCamera = Camera.main;
         characterMenuParentCanvasRect = GetComponent<RectTransform>();
+        battleController = GameObject.Find("BattleController").GetComponent<BattleController>();
+        inventoryMenuScript = GameObject.Find("InventoryMenu").GetComponent<InventoryMenu>();
+        characterInfoScript = GameObject.Find("CharacterInfoScreen").GetComponent<CharacterInfoScreen>();
     }
     void LateUpdate()
     {

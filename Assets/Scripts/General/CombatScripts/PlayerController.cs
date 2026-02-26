@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
         walkingAudio = GameObject.Find("WalkingAudio").GetComponent<AudioSource>();
         battleController = GameObject.Find("BattleController").GetComponent<BattleController>();
-        characterToolTipScript = GameObject.Find("characterInfoToolTip").GetComponent<CharacterToolTip>();
+        characterToolTipScript = GameObject.Find("CharacterInfoToolTip").GetComponent<CharacterToolTip>();
         saveManager = FindFirstObjectByType<SaveManager>();
         moveRangeCircleScript = GameObject.Find("MoveRangeCircle").GetComponent<MoveRangeCircle>();
         attackRangeCircleScript = GameObject.Find("AttackRangeCircle").GetComponent<AttackRangeCircle>();

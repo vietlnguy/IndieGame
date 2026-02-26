@@ -17,6 +17,7 @@ public class EffectiveAttackRangeCircle : MonoBehaviour
     public List<GameObject> enemiesInRange;
     void Awake()
     {
+        battleController = GameObject.Find("BattleController").GetComponent<BattleController>();
         alliesInRange = new List<GameObject>();
         enemiesInRange = new List<GameObject>();
 
@@ -31,7 +32,6 @@ public class EffectiveAttackRangeCircle : MonoBehaviour
         Material mat = new Material(Shader.Find("Sprites/Default"));
         mat.color = fillColor;
 
-
         // Sorting for 2D layering
 
     }
@@ -42,7 +42,7 @@ public class EffectiveAttackRangeCircle : MonoBehaviour
         float radius;
         circleCollider.enabled = true;
 
-        radius = character.GetComponent<EnemyController>().attackRange + character.GetComponent<EnemyController>().moveRange;
+        radius = character.GetComponent<EnemyController>().attackRange + 0.9f * character.GetComponent<EnemyController>().moveRange;
         
         DrawFilledCircle(radius);
         UpdateCollider(radius);

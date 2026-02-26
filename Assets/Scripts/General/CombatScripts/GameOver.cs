@@ -8,8 +8,6 @@ public class GameOver : MonoBehaviour {
     public GameObject gameOverRetryButton;
     public GameObject gameOverMainMenuButton;
     public AudioSource gameOverAudio;
-    public AudioSource backgroundAudio;
-    public AudioSource backgroundMusicAudio;
     public bool active = false;
 
     public void Awake()
@@ -24,9 +22,17 @@ public class GameOver : MonoBehaviour {
     {
         active = true;
         yield return new WaitForSeconds(.5f);
+        //Fade out all audios
+        AudioSource[] sources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        foreach (AudioSource source in sources)
+        {
+            StartCoroutine(FadeOut(source));
+        }
+        yield return new WaitForSeconds(1.5f);
+        gameOverAudio.volume = 0.5f;
         gameOverAudio.Play();
-        backgroundAudio.Stop();
-        backgroundMusicAudio.Stop();
+
+        
         //Fade in the game over screen
         gameOverCanvasGroup.alpha = 0f;
         gameOverCanvasGroup.interactable = true;
@@ -47,5 +53,20 @@ public class GameOver : MonoBehaviour {
         gameOverMainMenuButton.SetActive(true);
         gameOverRetryButton.SetActive(true);
 
+    }
+    private IEnumerator FadeOut(AudioSource source)
+    {
+        float startVolume = source.volume;
+        float duration = 0.5f;
+        float time = 0;
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            source.volume = Mathf.Lerp(startVolume, 0, time / duration);
+            yield return null;
+        }
+
+        source.volume = 0;
+        source.Stop();
     }
 }
