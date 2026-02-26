@@ -7,7 +7,7 @@ using System.Collections.Generic;
 public class SaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     private Image image;
-    public SaveManager saveManager;
+    private SaveManager saveManager;
     public GameObject saveMenu;
     public AudioSource selectAudio;
     void Awake()

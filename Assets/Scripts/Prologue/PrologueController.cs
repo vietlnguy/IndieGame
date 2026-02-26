@@ -13,7 +13,7 @@ public class PrologueController : MonoBehaviour
     public TextMeshProUGUI textBoxText;
     public CanvasGroup backgroundImage;
     public GameObject cameraObject;
-    public SaveManager scm;
+    private SaveManager scm;
     private bool isPaused = false;
     public GameObject pauseMenu;
     public GameObject saveMenu;

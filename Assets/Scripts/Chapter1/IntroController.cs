@@ -34,13 +34,11 @@ public class IntroController: MonoBehaviour
     public AudioSource forestBattleTheme;
     public AudioSource playerPhaseAudio;
     public BattleController battleController;
-    public SaveManager saveManager;
+    private SaveManager saveManager;
     public GameObject victorySubquestBoxes;
     public ChapterOne chapterOneScript;
-
     void Awake()
     {
-        Debug.Log("combatAnim = " + PlayerPrefs.GetInt("combatAnim", -1));
         saveManager = FindFirstObjectByType<SaveManager>();
         mainChar = GameObject.Find("MainCharacterPrefab(Clone)");
         astrid = GameObject.Find("AstridPrefab(Clone)");
@@ -343,7 +341,6 @@ public class IntroController: MonoBehaviour
 
     }
 }
-
 
 
 

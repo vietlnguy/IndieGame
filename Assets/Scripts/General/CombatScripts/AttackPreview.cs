@@ -22,7 +22,7 @@ public class AttackPreview : MonoBehaviour
     public GameObject attackPreviewSprites;
     public GameObject attacks;
     public GameObject rightsideAttacks;
-    public SaveManager scm;
+    private SaveManager scm;
     public GameObject attackSelector;
     private Vector2 attackSelectorInitialPos;
     private int attackIndex = 0;

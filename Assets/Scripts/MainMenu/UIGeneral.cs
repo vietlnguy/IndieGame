@@ -9,7 +9,7 @@ public class UIGeneral : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     private Image image;
     public Image blackScreen;
     public GameObject saveMenu;
-    public SaveManager scm;
+    private SaveManager scm;
     public GameObject EnterNameUI;
     public TMP_InputField inputBox;
     public GameObject highlightOverlay;
@@ -19,6 +19,7 @@ public class UIGeneral : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     void Awake()
     {
         image = GetComponent<Image>();
+        scm = GameObject.Find("SaveManager").GetComponent<SaveManager>();
     }
 
     public void OnPointerEnter(PointerEventData eventData)

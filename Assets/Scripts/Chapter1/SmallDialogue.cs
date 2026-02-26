@@ -27,7 +27,7 @@ public class SmallDialogue : MonoBehaviour
     private AudioSource audioSource;
     private bool autoPlayStarted = false;
     public BattleController battleController;
-    public SaveManager scm;
+    private SaveManager scm;
     void Start()
     {
         scm = FindFirstObjectByType<SaveManager>();

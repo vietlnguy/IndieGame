@@ -6,7 +6,7 @@ using System.Collections;
 public class EnterName : MonoBehaviour
 {
     public TMP_InputField inputBox;
-    public SaveManager scm;
+    private SaveManager scm;
     public AudioSource confirmAudio;
     Coroutine runningCoroutine;
 
@@ -14,6 +14,7 @@ public class EnterName : MonoBehaviour
     {
         // Ensure it has focus at the start if you want
         inputBox.ActivateInputField();
+        scm = GameObject.Find("SaveManager").GetComponent<SaveManager>();
     }
 
     void Update()

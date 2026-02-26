@@ -7,7 +7,7 @@ using System.Collections.Generic;
 public class DeleteSaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     private Image image;
-    public SaveManager scm;
+    private SaveManager scm;
     public AudioSource deleteAudio;
 
     void Awake()

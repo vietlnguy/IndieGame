@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GameOver : MonoBehaviour {
 
-    public SaveManager saveManager;
+    private SaveManager saveManager;
     public CanvasGroup gameOverCanvasGroup;
     public GameObject gameOverRetryButton;
     public GameObject gameOverMainMenuButton;

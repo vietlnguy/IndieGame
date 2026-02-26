@@ -3,7 +3,7 @@ using UnityEngine;
 [DefaultExecutionOrder(-1)]
 public class DataLoader : MonoBehaviour
 {
-    public SaveManager saveManager;
+    private SaveManager saveManager;
     public GameObject mainCharacterPrefab;
     public GameObject astridPrefab;
     public GameObject characters;

@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     public Animator animator;
-    public SaveManager saveManager;
+    private SaveManager saveManager;
     private Rigidbody2D rigidBody;
     public bool movementEnabled = false;
     private float moveSpeed = 6.0f;

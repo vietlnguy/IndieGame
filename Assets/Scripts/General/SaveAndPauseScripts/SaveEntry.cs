@@ -9,7 +9,7 @@ public class SaveEntry : MonoBehaviour, IPointerClickHandler
 
 {
     private Image image;
-    public SaveManager scm;
+    private SaveManager scm;
     public string characterName;
     public string chapter;
     public string scene;

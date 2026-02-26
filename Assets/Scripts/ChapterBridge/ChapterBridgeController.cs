@@ -8,7 +8,7 @@ public class ChapterBridgeController : MonoBehaviour
     public TextMeshProUGUI chapterTextBox;
     public CanvasGroup chapterTextBoxCanvas;
     public TextMeshProUGUI descriptionTextBox;
-    public SaveManager scm;
+    private SaveManager scm;
     public AudioSource backgroundAudio;
 
     void Awake()

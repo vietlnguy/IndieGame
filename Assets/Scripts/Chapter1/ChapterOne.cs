@@ -9,7 +9,7 @@ public class ChapterOne : MonoBehaviour {
     private bool enemiesSpawned = false;
     private bool shouldLose = false;
     private bool gameOver = false;
-    public SaveManager saveManager;
+    private SaveManager saveManager;
     public GameOver gameOverScript;
     public AttackPreview attackPreviewScript;
     public SubquestsBox subquestsBoxScript;

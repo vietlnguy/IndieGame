@@ -34,7 +34,7 @@ public class FullBodyDialogue : MonoBehaviour
     public AudioSource hitSound;
     public AudioSource doorOpen;
     public BattleController battleController;
-    public SaveManager scm;
+    private SaveManager scm;
     void Start()
     {
         scm = FindFirstObjectByType<SaveManager>();

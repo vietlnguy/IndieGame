@@ -7,7 +7,7 @@ using System.Collections.Generic;
 public class CreateSaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     private Image image;
-    public SaveManager scm;
+    private SaveManager scm;
 
     void Awake()
     {
