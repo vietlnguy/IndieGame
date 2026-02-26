@@ -43,6 +43,7 @@ public class EnemyController : MonoBehaviour
     public AudioSource walkingAudio;
     public static event Action<GameObject[]> OnEnemyDied;
     public bool hoverable = true;
+    public GameObject bossIconPrefab;
 
     void Awake()
     {
@@ -58,9 +59,17 @@ public class EnemyController : MonoBehaviour
         characterAssistMenuScript = GameObject.Find("CharacterAssistMenu").GetComponent<CharacterAssistMenu>();
         attackPreviewScript = GameObject.Find("AttackPreview").GetComponent<AttackPreview>();
         inventoryMenuScript = GameObject.Find("InventoryMenu").GetComponent<InventoryMenu>();
-        deselectAudio = GameObject.Find("AttackPreviewWoosh").GetComponent<AudioSource>();
+        deselectAudio = GameObject.Find("DeselectAudio").GetComponent<AudioSource>();
         gameOverScript = GameObject.Find("GameOverScreen").GetComponent<GameOver>();
 
+
+    }
+    void Start()
+    {
+        if (boss)
+        {
+            Instantiate(bossIconPrefab, gameObject.transform, false);
+        }
     }
     void Update()
     {

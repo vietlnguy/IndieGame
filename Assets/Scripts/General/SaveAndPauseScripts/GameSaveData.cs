@@ -214,3 +214,19 @@ public class Item
     }
 
 }
+
+public class Subquest
+{
+    public string description;
+    public int questNumber;
+    public bool completed;
+    public bool failed;
+
+    public Subquest(string description, int questNumber)
+    {
+        this.description = description;
+        this.questNumber = questNumber;
+        this.completed = false;
+        this.failed = false;
+    }
+}

@@ -77,7 +77,7 @@ public class AttackPreview : MonoBehaviour
     public CanvasGroup dialogueBoxCanvasGroup;
     public RectTransform dialogueBoxRectTransform;
     private AttackMoves chosenAttack;
-    public bool enemyCoroutineRunning = false;
+    public bool coroutineRunning = false;
     public GameObject battleScreenLeftMeleeImage;
     public GameObject battleScreenLeftRangedImage;
     public GameObject battleScreenRightMeleeImage;
@@ -551,7 +551,8 @@ public class AttackPreview : MonoBehaviour
 
     }
     public IEnumerator startAttackSequence()
-    {
+    {   
+        coroutineRunning = true;
 
         //Populate battle info if showing animations. 0 means don't skip animations
         if (PlayerPrefs.GetInt("combatAnim", -1) == 0)
@@ -589,7 +590,7 @@ public class AttackPreview : MonoBehaviour
                 else { battleScreenRightRangedImage.SetActive(false); battleScreenRightMeleeImage.SetActive(true); }
             
                 //Enemy is not ranged and cannot attack back
-                if (!battleController.enemySelected.GetComponent<EnemyController>().ranged && battleController.characterSelected.GetComponent<PlayerController>().ranged )
+                if ((!battleController.enemySelected.GetComponent<EnemyController>().ranged && battleController.characterSelected.GetComponent<PlayerController>().ranged) || (battleController.enemySelected.GetComponent<EnemyController>().ranged && !battleController.characterSelected.GetComponent<PlayerController>().ranged))
                 {
                     battleScreenEnemyAttack.text = "-";
                     battleScreenEnemyATK.text =  "-";
@@ -758,6 +759,17 @@ public class AttackPreview : MonoBehaviour
         battleScreenPlayerHpBar.GetComponent<RectTransform>().sizeDelta = originalBattleScreenHpBarSize;
         battleScreenEnemyHpBar.GetComponent<RectTransform>().sizeDelta = originalBattleScreenHpBarSize;
 
+        //Reset battlescreen info
+        battleScreenPlayerName.text = "-";
+        battleScreenPlayerHealth.text = "-";
+        battleScreenPlayerAttack.text = "-";
+        battleScreenEnemyName.text = "-";
+        battleScreenEnemyHealth.text = "-";
+        battleScreenEnemyAttack.text = "-";
+        battleScreenEnemyATK.text = "-";
+        battleScreenEnemyHIT.text = "-";
+        battleScreenEnemyCRIT.text = "-";
+
         yield return StartCoroutine(disablePreview());
 
         chosenAttack = null;
@@ -767,12 +779,13 @@ public class AttackPreview : MonoBehaviour
             battleController.characterSelected.GetComponent<PlayerController>().endTurn();
         }
 
+        coroutineRunning = false;
     }
     public IEnumerator startEnemyAttackSequence(GameObject attacker, GameObject defender, AttackMoves attackSelected)
     {
         PlayerController defenderScript = defender.GetComponent<PlayerController>();
         EnemyController attackerScript = attacker.GetComponent<EnemyController>();
-        enemyCoroutineRunning = true;
+        coroutineRunning = true;
         Vector3 startScale = Vector3.zero;
         Vector3 endScale = Vector3.one;
         float elapsed = 0f;
@@ -798,11 +811,11 @@ public class AttackPreview : MonoBehaviour
             battleScreenEnemyCRIT.text = enemyDamageArray[2].ToString();
             
 
-            if (attackerScript.ranged) { battleScreenLeftRangedImage.SetActive(true); battleScreenLeftMeleeImage.SetActive(false);}
-            else { battleScreenLeftRangedImage.SetActive(false); battleScreenLeftMeleeImage.SetActive(true); }
-            
-            if (defenderScript.ranged) { battleScreenRightRangedImage.SetActive(true); battleScreenRightMeleeImage.SetActive(false);}
+            if (attackerScript.ranged) { battleScreenRightRangedImage.SetActive(true); battleScreenRightMeleeImage.SetActive(false);}
             else { battleScreenRightRangedImage.SetActive(false); battleScreenRightMeleeImage.SetActive(true); }
+            
+            if (defenderScript.ranged) { battleScreenLeftRangedImage.SetActive(true); battleScreenLeftMeleeImage.SetActive(false);}
+            else { battleScreenLeftRangedImage.SetActive(false); battleScreenLeftMeleeImage.SetActive(true); }
             
 
             //Enemy is ranged and character is not, or vice versa
@@ -966,7 +979,7 @@ public class AttackPreview : MonoBehaviour
         battleScreenEnemyHIT.text = "-";
         battleScreenEnemyCRIT.text = "-";
         
-        enemyCoroutineRunning = false;
+        coroutineRunning = false;
     }
     private IEnumerator AnimateHealthDamage(int damage, GameObject healthBarObject, GameObject person, TextMeshProUGUI healthText)
     {

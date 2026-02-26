@@ -20,6 +20,9 @@ public class PrologueController : MonoBehaviour
     public GameObject settingsMenu;
     public GameObject exitGameMenu;
     public GameObject exitMainMenu;
+    private bool pressedOnce = false;
+    public GameObject skipTextBox;
+    private Coroutine coroutineRunning;
 
     void Awake(){
         AudioListener.volume = PlayerPrefs.GetFloat("volume", 0.5f);
@@ -63,6 +66,18 @@ public class PrologueController : MonoBehaviour
             {
                 pauseMenu.SetActive(true);
                 isPaused = true;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            if (pressedOnce && coroutineRunning == null)
+            {
+                coroutineRunning = StartCoroutine(GoNextScene());
+            }
+            else 
+            { 
+                pressedOnce = true;
+                EnableSkip();
             }
         }
     }
@@ -162,5 +177,13 @@ public class PrologueController : MonoBehaviour
 
         transform.position = targetPos;
     }
-
+    private void EnableSkip()
+    {
+        skipTextBox.SetActive(true);
+    }
+    private IEnumerator GoNextScene()
+    {
+        yield return StartCoroutine(scm.SceneTransition());
+        SceneManager.LoadScene("ChapterBridge");
+    }
 }

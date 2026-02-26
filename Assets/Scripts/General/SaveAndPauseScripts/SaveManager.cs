@@ -10,8 +10,6 @@ using System.Linq;
 public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance;
-    public string introBattleOutro;
-    public string chapter;
     public GameSaveData loadedData;
     public GameObject saveSelected;
     public GameObject saveEntryPrefab;
@@ -38,35 +36,28 @@ public class SaveManager : MonoBehaviour
     }
     public void SaveGame()
     {
-        GameSaveData dataToSave = new GameSaveData();
-
-        //Get scene data
-        dataToSave.currentChapter = loadedData.currentChapter;
-        dataToSave.introBattleOutro = loadedData.introBattleOutro;
-        dataToSave.mainCharacterName = loadedData.mainCharacterName;
-
         //Go through each character and create a serializable Character to save
-        GameObject characters = GameObject.Find("Characters");
-        foreach (Transform child in characters.transform)
-        {
-            PlayerController pc = child.GetComponent<PlayerController>();
-            if (pc.owned)
-            {
-                Character temp = new Character(pc.title, pc.baseMaxHp, pc.baseMaxMana, pc.baseAttack, pc.baseIntelligence, pc.baseDefense, pc.baseResistance, pc.baseSkill, pc.baseSpeed, pc.baseAttackRange, pc.baseMoveRange, pc.owned, pc.ranged);
-                temp.knownAttacks = pc.knownAttacks;
-                temp.inventory = pc.inventory;
-                temp.weaponEquiped = pc.weaponEquiped;
-                temp.armorEquiped = pc.armorEquiped;
-                temp.accessoryEquiped = pc.accessoryEquiped;
-                dataToSave.characters.Add(temp);
-            }
-        }
+        //GameObject characters = GameObject.Find("Characters");
+        //foreach (Transform child in characters.transform)
+        //{
+        //    PlayerController pc = child.GetComponent<PlayerController>();
+        //    if (pc.owned)
+        //    {
+        //        Character temp = new Character(pc.title, pc.baseMaxHp, pc.baseMaxMana, pc.baseAttack, pc.baseIntelligence, pc.baseDefense, pc.baseResistance, pc.baseSkill, pc.baseSpeed, pc.baseAttackRange, pc.baseMoveRange, pc.owned, pc.ranged);
+        //        temp.knownAttacks = pc.knownAttacks;
+        //        temp.inventory = pc.inventory;
+        //        temp.weaponEquiped = pc.weaponEquiped;
+        //        temp.armorEquiped = pc.armorEquiped;
+        //        temp.accessoryEquiped = pc.accessoryEquiped;
+        //        dataToSave.characters.Add(temp);
+        //    }
+        //}
 
         //Create save file name
         string time = DateTime.Now.ToString("F");
         time = time.Replace(":", "-");
-        string jsonData = JsonUtility.ToJson(dataToSave, true);
-        string filename = loadedData.mainCharacterName + "_" + dataToSave.currentChapter + "_" + dataToSave.introBattleOutro + "_" + time + ".json";
+        string jsonData = JsonUtility.ToJson(loadedData, true);
+        string filename = loadedData.mainCharacterName + "_" + loadedData.currentChapter + "_" + loadedData.introBattleOutro + "_" + time + ".json";
         string fullFilePath = Path.Combine(Application.persistentDataPath, filename);
         openedSaveFilePath = fullFilePath;
         File.WriteAllText(fullFilePath, jsonData);

@@ -5,43 +5,42 @@ using TMPro;
 
 public class BattleController : MonoBehaviour
 {
-
+    public Camera worldCamera;
     public GameObject characterSelected;
     public GameObject assistableCharacterSelected;
     public GameObject enemySelected;
     public GameObject enemies;
     public GameObject characters;
-    public List<GameObject> disabledCharacters;
-    public List<GameObject> disabledEnemies;
-    public bool introFinished = false;
-    public GameObject fightScreen;
-    public TextMeshProUGUI fightScreenText;
-    public AudioSource playerPhaseAudio;
-    public AudioSource enemyPhaseAudio;
     public GameObject pauseMenu;
     public GameObject saveMenu;
-    public bool isPaused = false;
-    public AttackPreview attackPreviewScript;
-    public CharacterMenu characterMenuScript;
-    public CharacterAssistMenu characterAssistMenuScript;
-    public Camera worldCamera;
-    public TilemapPathfinder pathfinder;
-    public MoveRangeCircle moveRangeCircleScript;
-    public AttackRangeCircle attackRangeCircleScript;
-    public EffectiveAttackRangeCircle effectiveAttackRangeCircleScript;
-    public InventoryMenu inventoryMenuScript;
-    public CharacterInfoScreen characterInfoScript;
-    public bool isEnemyTurn = false;
-    private int currentTurn = 1;
-    public TextMeshProUGUI currentTurnText;
-    private Coroutine enemyFollowCoroutine;
-    public GameObject enemyTarget = null;
-    public AudioSource walkingAudio;
-    public GameOver gameOverScript;
-    private bool hoverableEnabled = false;
+    public GameObject fightScreen;
     public GameObject settingsMenu;
     public GameObject exitGameMenu;
     public GameObject exitMainMenu;
+    public GameObject enemyTarget = null;
+    public TextMeshProUGUI currentTurnText;
+    public List<GameObject> disabledCharacters;
+    public List<GameObject> disabledEnemies;
+    public TextMeshProUGUI fightScreenText;
+    public AudioSource playerPhaseAudio;
+    public AudioSource enemyPhaseAudio;
+    public bool introFinished = false;
+    public bool isPaused = false;
+    public bool isEnemyTurn = false;
+    private bool hoverableEnabled = false;
+    public TilemapPathfinder pathfinder;
+    private AttackPreview attackPreviewScript;
+    private CharacterMenu characterMenuScript;
+    private CharacterAssistMenu characterAssistMenuScript;
+    private MoveRangeCircle moveRangeCircleScript;
+    private AttackRangeCircle attackRangeCircleScript;
+    private EffectiveAttackRangeCircle effectiveAttackRangeCircleScript;
+    private InventoryMenu inventoryMenuScript;
+    private CharacterInfoScreen characterInfoScript;
+    private GameOver gameOverScript;
+    private int currentTurn = 1;
+    private Coroutine enemyFollowCoroutine;
+    public AudioSource walkingAudio;
     void Awake()
     {
         disabledCharacters = new List<GameObject>();
@@ -51,6 +50,15 @@ public class BattleController : MonoBehaviour
     }
     void Start()
     {
+        attackPreviewScript = GameObject.Find("AttackPreview").GetComponent<AttackPreview>();
+        characterMenuScript = GameObject.Find("CharacterMenu").GetComponent<CharacterMenu>();
+        characterAssistMenuScript = GameObject.Find("CharacterAssistMenu").GetComponent<CharacterAssistMenu>();
+        moveRangeCircleScript = GameObject.Find("MoveRangeCircle").GetComponent<MoveRangeCircle>();
+        attackRangeCircleScript = GameObject.Find("AttackRangeCircle").GetComponent<AttackRangeCircle>();
+        effectiveAttackRangeCircleScript = GameObject.Find("EffectiveAttackRangeCircle").GetComponent<EffectiveAttackRangeCircle>();
+        inventoryMenuScript = GameObject.Find("InventoryMenu").GetComponent<InventoryMenu>();
+        characterInfoScript = GameObject.Find("CharacterInfoScreen").GetComponent<CharacterInfoScreen>();
+        gameOverScript = GameObject.Find("GameOverScreen").GetComponent<GameOver>();
     }
     void Update()
     {

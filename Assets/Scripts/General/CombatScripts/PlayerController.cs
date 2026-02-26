@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour
         characterAssistMenuScript = GameObject.Find("CharacterAssistMenu").GetComponent<CharacterAssistMenu>();
         inventoryMenuScript = GameObject.Find("InventoryMenu").GetComponent<InventoryMenu>();
         selectAudio = GameObject.Find("SelectBeep").GetComponent<AudioSource>();
-        deselectAudio = GameObject.Find("AttackPreviewWoosh").GetComponent<AudioSource>();
+        deselectAudio = GameObject.Find("DeselectAudio").GetComponent<AudioSource>();
         gameOverScript = GameObject.Find("GameOverScreen").GetComponent<GameOver>();
         populateCharacterData();
     }

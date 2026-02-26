@@ -15,15 +15,6 @@ public class SettingsButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         image = GetComponent<Image>();
     }
 
-    void Start()
-    {
-    }
-
-    void Update()
-    {
-
-    }
-
     public void OnPointerEnter(PointerEventData eventData)
     {
         image.color = new Color(.65f, .65f, .65f);

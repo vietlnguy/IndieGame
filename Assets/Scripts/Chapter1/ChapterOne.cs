@@ -1,23 +1,43 @@
 using UnityEngine;
 using System.Collections;
 
+[DefaultExecutionOrder(-1)]
 public class ChapterOne : MonoBehaviour {
 
     public GameObject basicEnemyPrefab;
-    public GameObject enemies;
+    private GameObject enemies;
     public BattleController battleController;
     private bool enemiesSpawned = false;
     private bool shouldLose = false;
     private bool gameOver = false;
+    private bool victorySequenceStarted = false;
     private SaveManager saveManager;
     public GameOver gameOverScript;
     public AttackPreview attackPreviewScript;
     public SubquestsBox subquestsBoxScript;
+    public GameObject victorySequence;
+    public GameObject mainCharacterPrefab;
+    public GameObject astridPrefab;
+    private GameObject characters;
 
     public void Awake()
-    {
-        enemies = GameObject.Find("Enemies");
+    {    
+    
         saveManager = FindFirstObjectByType<SaveManager>();
+        characters = GameObject.Find("Characters");
+        enemies = GameObject.Find("Enemies");
+
+        foreach (Character character in saveManager.loadedData.characters)
+        {
+            if (character.characterName == saveManager.loadedData.mainCharacterName)
+            {
+                Instantiate(mainCharacterPrefab, new Vector3(-20f, -9.35f), Quaternion.identity, characters.transform);
+            }
+            else if (character.characterName == "Astrid")
+            {
+                Instantiate(astridPrefab, new Vector3(-4.45f, -11.65f), Quaternion.identity, characters.transform);
+            }
+        }
 
     }
     public void Update()
@@ -27,15 +47,19 @@ public class ChapterOne : MonoBehaviour {
         //Chapter specific script events happen here, and win/lose conditions
         
         //Win condition
-        if (battleController.enemies.transform.childCount == 0 && enemiesSpawned)
+        if (battleController.enemies.transform.childCount == 0 && enemiesSpawned && !victorySequenceStarted && !attackPreviewScript.coroutineRunning)
         {
             //Start outro scene
-            Debug.Log("Win");
+            Debug.Log("got here");
+            battleController.CancelEveryting();
+            victorySequence.SetActive(true);
+            StartCoroutine(victorySequence.GetComponent<VictorySequence>().Victory());
             enemiesSpawned = false; //remove later
+            victorySequenceStarted = true;
         }
         
         //Lose condition
-        if (shouldLose && !gameOver && !attackPreviewScript.enemyCoroutineRunning)
+        if (shouldLose && !gameOver && !attackPreviewScript.coroutineRunning)
         {
             battleController.CancelEveryting();
             gameOver = true;
@@ -112,7 +136,7 @@ public class ChapterOne : MonoBehaviour {
     {
         GameObject temp = Instantiate(basicEnemyPrefab, new Vector3(x, y, z), Quaternion.identity, enemies.transform);
         EnemyController enemy = temp.GetComponent<EnemyController>();
-        enemy.title = "Soldier";
+        enemy.title = "Hegseth";
 
         enemy.maxHp = 14;
         enemy.currentHp = enemy.maxHp;
@@ -130,7 +154,7 @@ public class ChapterOne : MonoBehaviour {
         enemy.roams = false;
         enemy.ranged = false;
         enemy.boss = true;
-
+        enemy.deathDialogue = "Gah-- I must fall back. You will regret this. King Reiss WILL have your relic...";
         enemy.knownAttacks.Add(new Attack("Bash", "physical", 1.1f, 1.0f, 90, 0, 0, "Bash the enemy with your weapon."));
 
     }

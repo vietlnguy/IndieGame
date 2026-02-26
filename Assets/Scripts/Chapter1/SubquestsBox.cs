@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class SubquestsBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -13,11 +14,20 @@ public class SubquestsBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public Image quest1ImageX;
     Coroutine moveDownCoroutine;
     Coroutine moveUpCoroutine;
+    public List<Subquest> subquests;
+    public VictorySequence victorySequenceScript;
     void Awake()
     {
         rect = GetComponent<RectTransform>();
         startPos = rect.anchoredPosition;
         endPos = new Vector2(489, 291);
+
+    }
+    void Start()
+    {
+        subquests = new List<Subquest>();
+        subquests.Add(new Subquest("Astrid lands the killing blow on the boss.", 0));
+        victorySequenceScript.subquests = subquests;
     }
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -42,13 +52,17 @@ public class SubquestsBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         {
             if (completed)
             {
+                subquests[questNumber].completed = true;
                 quest1ImageCheck.color = new Color(1, 1, 1, 1);
             }
             else
             {
+                subquests[questNumber].failed = true;
                 quest1ImageX.color = new Color(1, 1, 1, 1);
             }
         }
+        victorySequenceScript.subquests = subquests;
+
     }
     private IEnumerator MoveDown()
     {

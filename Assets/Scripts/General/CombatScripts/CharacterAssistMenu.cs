@@ -26,6 +26,7 @@ public class CharacterAssistMenu : MonoBehaviour
         battleController = GameObject.Find("BattleController").GetComponent<BattleController>();
         inventoryMenuScript = GameObject.Find("InventoryMenu").GetComponent<InventoryMenu>();
         attackPreviewScript = GameObject.Find("AttackPreview").GetComponent<AttackPreview>();
+        gameObject.GetComponent<Canvas>().worldCamera = worldCamera;
     }
     void LateUpdate()
     {

@@ -16,12 +16,12 @@ public class CharacterToolTip : MonoBehaviour
     public GameObject rangedImage;
     public GameObject meleeImage;
 
-    void Awake()
+    void Start()
     {
-        worldCamera = Camera.main;
+        worldCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
         characterToolTipCanvasRect = GetComponent<RectTransform>();
+        gameObject.GetComponent<Canvas>().worldCamera = worldCamera;
     }
-
     void Update()
     {
 
@@ -58,7 +58,6 @@ public class CharacterToolTip : MonoBehaviour
 
         characterToolTip.GetComponent<RectTransform>().localPosition = localPos + new Vector2(-90f, 200f);
     }
-
     public void disableCharacterToolTip()
     {
         characterToolTip.SetActive(false);
