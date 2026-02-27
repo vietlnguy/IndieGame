@@ -682,8 +682,7 @@ public class AttackPreview : MonoBehaviour
             if (battleController.enemySelected.GetComponent<EnemyController>().currentHp <= 0)
             {   
                 //TODO: Remove sprite on battle screen
-                battleController.enemySelected.GetComponent<EnemyController>().Die(battleController.characterSelected);
-                battleController.enemySelected = null;
+                yield return StartCoroutine(DeathSequence(battleController.enemySelected));
             }
 
             //Enemy attacks character
@@ -939,8 +938,7 @@ public class AttackPreview : MonoBehaviour
                 if (attackerScript.currentHp <= 0)
                 {   
                     //TODO: Remove sprite on battle screen
-                    attackerScript.Die(defender);
-                    battleController.enemySelected = null;
+                    yield return StartCoroutine(DeathSequence(attacker));
                 }
             }
         

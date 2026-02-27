@@ -37,6 +37,7 @@ public class IntroController: MonoBehaviour
     private SaveManager saveManager;
     public GameObject victorySubquestBoxes;
     public ChapterOne chapterOneScript;
+    public Tutorial tutorialScript;
     void Awake()
     {
         saveManager = FindFirstObjectByType<SaveManager>();
@@ -46,6 +47,7 @@ public class IntroController: MonoBehaviour
     }
     void Start()
     {
+
         AudioListener.volume = PlayerPrefs.GetFloat("volume", 0.5f);
         if (saveManager.loadedData.introBattleOutro == "Intro")
         {
@@ -278,8 +280,6 @@ public class IntroController: MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
         
-        //TODO: Tutorial steps
-
         enableVictorySubquestBoxes();
         yield return new WaitForSeconds(2f);
         playerPhaseAudio.Play();
@@ -288,8 +288,8 @@ public class IntroController: MonoBehaviour
         yield return new WaitForSeconds(2.5f);
         fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
 
-
         battleController.introFinished = true;
+        tutorialScript.EnableTutorial();
     }
     private IEnumerator shortSequence()
     {
@@ -338,7 +338,7 @@ public class IntroController: MonoBehaviour
         fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
 
         battleController.introFinished = true;
-
+        tutorialScript.EnableTutorial();
     }
 }
 

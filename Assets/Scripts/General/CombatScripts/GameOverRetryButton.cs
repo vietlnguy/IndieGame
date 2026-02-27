@@ -8,10 +8,12 @@ public class GameOverRetryButton : MonoBehaviour, IPointerEnterHandler, IPointer
 {
     private Image image;
     private SaveManager saveManager;
+    private AudioSource confirmationAudio;
     void Awake()
     {
         image = GetComponent<Image>();
         saveManager = FindFirstObjectByType<SaveManager>();
+        confirmationAudio = GetComponent<AudioSource>();
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -28,7 +30,9 @@ public class GameOverRetryButton : MonoBehaviour, IPointerEnterHandler, IPointer
     }
 
     private IEnumerator RestartScene()
-    {
+    {   
+        confirmationAudio.Play();
+        yield return new WaitForSeconds(.25f);
         yield return StartCoroutine(saveManager.SceneTransition());
         SceneManager.LoadScene(saveManager.loadedData.currentChapter);
     }
