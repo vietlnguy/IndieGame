@@ -34,6 +34,7 @@ public class ExitSaveMenu : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     }
     public void OnPointerClick(PointerEventData eventData)
     {
+        image.color = new Color(1f, 1f, 1f);
         selectAudio.Play();
         saveMenu.SetActive(false);
     }

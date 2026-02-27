@@ -464,7 +464,6 @@ public class BattleController : MonoBehaviour
     public void CancelEveryting()
     {
         StopAllCoroutines();
-        Debug.Log("show game over screen");
     }
     private void UpdateTurnNumber()
     {

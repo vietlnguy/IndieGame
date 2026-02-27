@@ -25,6 +25,7 @@ public class EnterNameButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
     }
     public void OnPointerClick(PointerEventData eventData)
     {
+        image.color = new Color(1f, 1f, 1f);
         selectAudio.Play();
         enterNameObject.SetActive(false);
     }

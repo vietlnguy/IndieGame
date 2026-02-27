@@ -26,6 +26,7 @@ public class ConfirmAttackButton : MonoBehaviour, IPointerEnterHandler, IPointer
     }
     public void OnPointerClick(PointerEventData eventData)
     {
+        image.color = new Color(1f, 1f, 1f);
         if (attackPreview.validAttack)
         {
             StartCoroutine(attackPreview.startAttackSequence());

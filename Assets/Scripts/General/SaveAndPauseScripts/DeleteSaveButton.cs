@@ -34,6 +34,7 @@ public class DeleteSaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExi
     }
     public void OnPointerClick(PointerEventData eventData)
     {
+        image.color = new Color(1f, 1f, 1f);
         scm.DeleteSelectedSave();
         deleteAudio.Play();
     }

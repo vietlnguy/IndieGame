@@ -25,7 +25,8 @@ public class ConfirmMainMenuGameButton : MonoBehaviour, IPointerEnterHandler, IP
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-       StartCoroutine(Helper());
+        image.color = new Color(1f, 1f, 1f);
+        StartCoroutine(Helper());
     }
 
     private IEnumerator Helper()

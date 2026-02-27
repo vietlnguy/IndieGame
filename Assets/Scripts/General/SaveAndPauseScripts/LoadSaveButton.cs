@@ -36,6 +36,7 @@ public class LoadSaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         if (scm.saveSelected)
         {
+            image.color = new Color(1f, 1f, 1f);
             confirmAudio.Play();
             StartCoroutine(scm.LoadGame());
         }

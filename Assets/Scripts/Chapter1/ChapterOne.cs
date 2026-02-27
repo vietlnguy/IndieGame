@@ -50,7 +50,6 @@ public class ChapterOne : MonoBehaviour {
         if (battleController.enemies.transform.childCount == 0 && enemiesSpawned && !victorySequenceStarted && !attackPreviewScript.coroutineRunning)
         {
             //Start outro scene
-            Debug.Log("got here");
             battleController.CancelEveryting();
             victorySequence.SetActive(true);
             StartCoroutine(victorySequence.GetComponent<VictorySequence>().Victory());
@@ -67,7 +66,6 @@ public class ChapterOne : MonoBehaviour {
 
         }
 
-        //Subquests?
     }
     public void CreateEnemies()
     {

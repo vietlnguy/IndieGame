@@ -34,6 +34,7 @@ public class MainMenuButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     }
     public void OnPointerClick(PointerEventData eventData)
     {
+        image.color = new Color(1f, 1f, 1f);
         selectAudio.Play();
         mainMenuConfirm.SetActive(true);
     }

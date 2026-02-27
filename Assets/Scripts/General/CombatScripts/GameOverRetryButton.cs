@@ -26,6 +26,7 @@ public class GameOverRetryButton : MonoBehaviour, IPointerEnterHandler, IPointer
     }
     public void OnPointerClick(PointerEventData eventData)
     {
+        image.color = new Color(1f, 1f, 1f);
         StartCoroutine(RestartScene());
     }
 
