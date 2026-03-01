@@ -31,7 +31,7 @@ public class ConfirmMainMenuGameButton : MonoBehaviour, IPointerEnterHandler, IP
 
     private IEnumerator Helper()
     {
-        yield return StartCoroutine(scm.SceneTransition());
+        yield return StartCoroutine(scm.SceneTransition(false));
         SceneManager.LoadScene("MainMenu");
     }
 

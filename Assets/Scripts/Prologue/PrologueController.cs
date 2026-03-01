@@ -101,7 +101,7 @@ public class PrologueController : MonoBehaviour
             yield return new WaitForSeconds(0.5f);
         }
 
-        yield return StartCoroutine(scm.SceneTransition());
+        yield return StartCoroutine(scm.SceneTransition(false));
         SceneManager.LoadScene("ChapterBridge");
 
         yield return null;
@@ -183,7 +183,7 @@ public class PrologueController : MonoBehaviour
     }
     private IEnumerator GoNextScene()
     {
-        yield return StartCoroutine(scm.SceneTransition());
+        yield return StartCoroutine(scm.SceneTransition(true));
         SceneManager.LoadScene("ChapterBridge");
     }
 }

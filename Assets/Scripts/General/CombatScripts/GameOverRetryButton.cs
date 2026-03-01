@@ -34,7 +34,7 @@ public class GameOverRetryButton : MonoBehaviour, IPointerEnterHandler, IPointer
     {   
         confirmationAudio.Play();
         yield return new WaitForSeconds(.25f);
-        yield return StartCoroutine(saveManager.SceneTransition());
+        yield return StartCoroutine(saveManager.SceneTransition(false));
         SceneManager.LoadScene(saveManager.loadedData.currentChapter);
     }
 

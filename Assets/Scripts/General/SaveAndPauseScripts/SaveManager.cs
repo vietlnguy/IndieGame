@@ -6,6 +6,7 @@ using System;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System.Linq;
+using TMPro;
 
 public class SaveManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class SaveManager : MonoBehaviour
     public GameObject saveEntryPrefab;
     private GameObject content;
     private string openedSaveFilePath = "";
+    public GameObject sceneTransitionText;
+    public AudioSource savedConfirmedAudio;
 
     private void Awake()
     {
@@ -110,7 +113,7 @@ public class SaveManager : MonoBehaviour
             loadedData = JsonUtility.FromJson<GameSaveData>(jsonData);
             openedSaveFilePath = s;
         }
-        yield return StartCoroutine(SceneTransition());
+        yield return StartCoroutine(SceneTransition(false));
         SceneManager.LoadScene(loadedData.currentChapter);
     }
     public List<string> GetAllSaveFiles()
@@ -199,7 +202,7 @@ public class SaveManager : MonoBehaviour
         // Always unsubscribe to avoid memory leaks
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
-    public IEnumerator SceneTransition()
+    public IEnumerator SceneTransition(bool showSaved)
     {
         //Fade out all audios
         AudioSource[] sources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
@@ -218,7 +221,25 @@ public class SaveManager : MonoBehaviour
             sceneTransitionCanvas.GetComponent<CanvasGroup>().alpha = Mathf.Lerp(0f, 1f, time / duration);
             yield return null;
         }
+
         sceneTransitionCanvas.GetComponent<CanvasGroup>().alpha = 1f;
+        
+        if (showSaved)
+        {
+            yield return new WaitForSeconds(.5f);
+            GameObject sceneTransitionText = GameObject.Find("SceneTransitionText");
+            sceneTransitionText.GetComponent<CanvasGroup>().alpha = 1;
+
+            yield return new WaitForSeconds(1f);
+            sceneTransitionText.GetComponent<TextMeshProUGUI>().color = new Color(0f, 1f, 0f, 1f);
+            sceneTransitionText.GetComponent<TextMeshProUGUI>().text = "Saved!";
+
+            AudioSource savedConfirmedAudio = GameObject.Find("SavedConfirmedAudio").GetComponent<AudioSource>();
+            savedConfirmedAudio.volume = 0.5f;
+            savedConfirmedAudio.Play();
+        }
+
+        yield return new WaitForSeconds(1f);
 
     }
     private IEnumerator FadeOut(AudioSource source)

@@ -32,7 +32,7 @@ public class OutroController : MonoBehaviour
         dialogues.Add(new CharacterDialogue(mainCharacter, scm.loadedData.mainCharacterName, new string[] {"Phew... I don't know the last time I swung a sword.", "Or killed a man..", "It's done now, we're safe."}));
         dialogues.Add(new CharacterDialogue(astridCharacter, "Astrid", new string[]{"..."}));
         dialogues.Add(new CharacterDialogue(mainCharacter, scm.loadedData.mainCharacterName, new string[] {"What's wrong? Are you okay?"}));
-        dialogues.Add(new CharacterDialogue(astridCharacter, "Astrid", new string[] {"What's are we going to do now? We can't stay here.", "As long as I have these bracelets, we'll never be safe.","Maybe I should've just handed them over."}));
+        dialogues.Add(new CharacterDialogue(astridCharacter, "Astrid", new string[] {"What are we going to do now? We can't stay here.", "As long as I have these bracelets, we'll never be safe.","Maybe I should've just handed them over."}));
         dialogues.Add(new CharacterDialogue(mainCharacter, scm.loadedData.mainCharacterName, new string[] {"Absolutely not.", "We're going to speak with Lord Beesly, in town. I've known him to be an honorable man.", "He will speak to the royal envoy and fix this."}));
         dialogues.Add(new CharacterDialogue(astridCharacter, "Astrid", new string[] {"*sigh* And just as we were getting settled in..."}));
 
@@ -122,8 +122,10 @@ public class OutroController : MonoBehaviour
 
         }
 
-        yield return StartCoroutine(scm.SceneTransition());
-        //SceneManager.LoadScene("");
+        yield return StartCoroutine(scm.SceneTransition(true));
+        scm.loadedData.currentChapter = "Chapter2";
+        scm.loadedData.introBattleOutro = "Intro";
+        SceneManager.LoadScene("Overworld");
     }
     public IEnumerator TypeLine(string line, string speaker, AudioSource audioSource, TextMeshProUGUI textBox, float textSpeed) {
         if (speaker == "Astrid")

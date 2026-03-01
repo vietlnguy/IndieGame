@@ -19,6 +19,20 @@ public static class Helpers
         source.volume = 0;
         source.Stop();
     }
+    public static IEnumerator FadeInAudio(AudioSource source, float duration)
+    {
+        float startVolume = source.volume;
+        source.Play();
+        float time = 0;
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            source.volume = Mathf.Lerp(startVolume, 0.5f, time / duration);
+            yield return null;
+        }
+
+        source.volume = 0.5f;
+    }
     public static IEnumerator FadeOutCanvasGroup(CanvasGroup group, float duration)
     {
         float startAlpha = group.alpha;
@@ -124,5 +138,23 @@ public static class Helpers
         // Snap exactly to target at the end
         rectTransform.anchoredPosition = targetPos;
     }
+    public static IEnumerator MoveTransform(Transform obj, Vector3 startPos, Vector3 targetPos, float duration)
+    {
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+
+            obj.position = Vector3.Lerp(startPos, targetPos, t);
+
+            yield return null;
+        }
+
+        // Snap exactly to target at the end
+        obj.position = targetPos;
+    }
+
 
 }

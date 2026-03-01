@@ -34,7 +34,7 @@ public class ChapterBridgeController : MonoBehaviour
         yield return StartCoroutine(TypeLine(descriptionTextBox, temp));
 
         yield return new WaitForSeconds(2f);
-        yield return StartCoroutine(scm.SceneTransition());
+        yield return StartCoroutine(scm.SceneTransition(true));
         SceneManager.LoadScene(scm.loadedData.currentChapter);
 
     }

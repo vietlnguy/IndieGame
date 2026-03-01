@@ -32,7 +32,7 @@ public class EnterName : MonoBehaviour
         scm.NewSave(text);
         confirmAudio.Play();
         yield return new WaitForSeconds(.5f);
-        yield return StartCoroutine(scm.SceneTransition());
+        yield return StartCoroutine(scm.SceneTransition(true));
         SceneManager.LoadScene(scm.loadedData.currentChapter);
     }
 }
