@@ -214,7 +214,6 @@ public class Item
     }
 
 }
-
 public class Subquest
 {
     public string description;
@@ -229,4 +228,14 @@ public class Subquest
         this.completed = false;
         this.failed = false;
     }
+}
+public class CharacterDialogue
+{
+    public string[] lines;
+    public string title;
+    public Sprite sprite;
+    public bool pauseExecutionAfter;
+    public float dialoguePitch;
+    public bool autoPlay;
+
 }

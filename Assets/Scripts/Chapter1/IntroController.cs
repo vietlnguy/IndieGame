@@ -34,10 +34,12 @@ public class IntroController: MonoBehaviour
     public AudioSource forestBattleTheme;
     public AudioSource playerPhaseAudio;
     public BattleController battleController;
+    public OutroController outroScript;
     private SaveManager saveManager;
     public GameObject victorySubquestBoxes;
     public ChapterOne chapterOneScript;
     public Tutorial tutorialScript;
+    public 
     void Awake()
     {
         saveManager = FindFirstObjectByType<SaveManager>();
@@ -59,6 +61,10 @@ public class IntroController: MonoBehaviour
         else if (saveManager.loadedData.introBattleOutro == "Battle")
         {
             StartCoroutine(shortSequence());
+        }
+        else if (saveManager.loadedData.introBattleOutro == "Outro")
+        {
+            StartCoroutine(outroScript.OutroHelper());
         }
  
     }
@@ -340,6 +346,8 @@ public class IntroController: MonoBehaviour
         battleController.introFinished = true;
         tutorialScript.EnableTutorial();
     }
+
+
 }
 
 

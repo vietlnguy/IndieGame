@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using TMPro;
 
 public static class Helpers
 {
@@ -20,16 +21,18 @@ public static class Helpers
     }
     public static IEnumerator FadeOutCanvasGroup(CanvasGroup group, float duration)
     {
+        float startAlpha = group.alpha;
         float elapsed = 0f;
+
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
             float t = Mathf.Clamp01(elapsed / duration);
-            group.alpha = t;
+            group.alpha = Mathf.Lerp(startAlpha, 0f, t);
             yield return null;
         }
-        group.alpha = 0f;
 
+        group.alpha = 0f;
     }
     public static IEnumerator FadeInCanvasGroup(CanvasGroup group, float duration)
     {
@@ -102,4 +105,24 @@ public static class Helpers
             1f
         );
     }
+    public static IEnumerator MoveRectTransform(GameObject obj, Vector2 startPos, Vector2 targetPos, float duration)
+    {
+        RectTransform rectTransform = obj.GetComponent<RectTransform>();
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+
+            rectTransform.anchoredPosition = 
+                Vector2.Lerp(startPos, targetPos, t);
+
+            yield return null;
+        }
+
+        // Snap exactly to target at the end
+        rectTransform.anchoredPosition = targetPos;
+    }
+
 }
