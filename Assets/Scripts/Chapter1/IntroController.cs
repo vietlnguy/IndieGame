@@ -53,7 +53,7 @@ public class IntroController: MonoBehaviour
         AudioListener.volume = PlayerPrefs.GetFloat("volume", 0.5f);
         if (saveManager.loadedData.introBattleOutro == "Intro")
         {
-            saveManager.loadedData.currentChapter = "Chapter1";
+            saveManager.loadedData.currentChapter = "Chapter 1";
             saveManager.loadedData.introBattleOutro = "Intro";
             saveManager.OverwriteSave();
             StartCoroutine(introSequence());

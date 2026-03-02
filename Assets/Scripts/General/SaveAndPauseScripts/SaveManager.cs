@@ -114,7 +114,15 @@ public class SaveManager : MonoBehaviour
             openedSaveFilePath = s;
         }
         yield return StartCoroutine(SceneTransition(false));
-        SceneManager.LoadScene(loadedData.currentChapter);
+
+        if (loadedData.introBattleOutro == "Overworld")
+        {
+            SceneManager.LoadScene("Overworld");
+        }
+        else
+        {
+            SceneManager.LoadScene(loadedData.currentChapter);
+        }
     }
     public List<string> GetAllSaveFiles()
     {
@@ -239,7 +247,7 @@ public class SaveManager : MonoBehaviour
             savedConfirmedAudio.Play();
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
     }
     private IEnumerator FadeOut(AudioSource source)

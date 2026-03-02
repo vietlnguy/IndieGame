@@ -23,19 +23,25 @@ public class ChapterBridgeController : MonoBehaviour
     }
     private IEnumerator Intro()
     {
+        //Play intro
         yield return new WaitForSeconds(2f);
-        
         backgroundAudio.Play();
-        string temp = GetAndUpdateChapter();
-        chapterTextBox.text = "Chapter " + temp + ":";
+        chapterTextBox.text = scm.loadedData.currentChapter + ":";
         yield return StartCoroutine(FadeIn(chapterTextBoxCanvas, 1f));
-
-        temp = GetChapterName();
+        string temp = GetChapterName();
         yield return StartCoroutine(TypeLine(descriptionTextBox, temp));
-
         yield return new WaitForSeconds(2f);
-        yield return StartCoroutine(scm.SceneTransition(true));
-        SceneManager.LoadScene(scm.loadedData.currentChapter);
+
+        //Transition to next scene
+        yield return StartCoroutine(scm.SceneTransition(false));
+        if (scm.loadedData.introBattleOutro == "Overworld")
+        {
+            SceneManager.LoadScene("Overworld");
+        }
+        else
+        {
+            SceneManager.LoadScene(scm.loadedData.currentChapter);
+        }
 
     }
     private IEnumerator TypeLine(TextMeshProUGUI textComponent, string s) {
@@ -61,29 +67,18 @@ public class ChapterBridgeController : MonoBehaviour
         group.alpha = 1f;
         yield return null;
     }
-    private string GetAndUpdateChapter()
-    {
-        try {
-            int returnInt = int.Parse(scm.loadedData.currentChapter);
-            returnInt++;
-            scm.loadedData.currentChapter = "Chapter" + returnInt.ToString();
-            return returnInt.ToString();
-        }
-        catch
-        {
-            //currentChapter is prologue so return chapter 1;
-            scm.loadedData.currentChapter = "Chapter1";
-            return "1";
-        }
-    }
     private string GetChapterName()
     {
         try {
             string s = "error";
 
-            if (scm.loadedData.currentChapter == "Chapter1")
+            if (scm.loadedData.currentChapter == "Chapter 1")
             {
                 s = "An Unexpected Adventure";
+            }
+            else if (scm.loadedData.currentChapter == "Chapter 2")
+            {
+                s = "The Blue-Haired Twins";
             }
 
             return s;

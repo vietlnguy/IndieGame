@@ -123,8 +123,9 @@ public class OutroController : MonoBehaviour
         }
 
         yield return StartCoroutine(scm.SceneTransition(true));
-        scm.loadedData.currentChapter = "Chapter2";
-        scm.loadedData.introBattleOutro = "Intro";
+        scm.loadedData.currentChapter = "Chapter 2";
+        scm.loadedData.introBattleOutro = "Overworld";
+        scm.SaveGame();
         SceneManager.LoadScene("Overworld");
     }
     public IEnumerator TypeLine(string line, string speaker, AudioSource audioSource, TextMeshProUGUI textBox, float textSpeed) {

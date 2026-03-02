@@ -65,12 +65,13 @@ public static class Helpers
     {
         float elapsed = 0f;
         Color startColor = image.color;
+        float startAlpha = startColor.a;
 
         while (elapsed < duration)
         {
             elapsed += Time.deltaTime;
 
-            float alpha = Mathf.Lerp(1f, 0f, elapsed / duration);
+            float alpha = Mathf.Lerp(startAlpha, 0f, elapsed / duration);
 
             image.color = new Color(
                 startColor.r,
@@ -119,6 +120,35 @@ public static class Helpers
             1f
         );
     }
+    public static IEnumerator FadeInImageAlpha(Image image, float targetAlpha, float duration)
+    {
+        float elapsed = 0f;
+        Color startColor = image.color;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+
+            float alpha = Mathf.Lerp(0f, targetAlpha, elapsed / duration);
+
+            image.color = new Color(
+                startColor.r,
+                startColor.g,
+                startColor.b,
+                alpha
+            );
+
+            yield return null;
+        }
+
+        // Ensure fully transparent at end
+        image.color = new Color(
+            startColor.r,
+            startColor.g,
+            startColor.b,
+            targetAlpha
+        );
+    }
     public static IEnumerator MoveRectTransform(GameObject obj, Vector2 startPos, Vector2 targetPos, float duration)
     {
         RectTransform rectTransform = obj.GetComponent<RectTransform>();
@@ -155,6 +185,40 @@ public static class Helpers
         // Snap exactly to target at the end
         obj.position = targetPos;
     }
+    public static IEnumerator ScaleCameraSize(Camera cam, float targetSize, float duration)
+    {
+        float elapsed = 0f;
+        float startSize = cam.orthographicSize;
 
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
 
+            cam.orthographicSize = Mathf.Lerp(startSize, targetSize, t);
+
+            yield return null;
+        }
+
+        // Ensure exact final value
+        cam.orthographicSize = targetSize;
+    }
+    public static IEnumerator ChangeImageColor(Image image, Color targetColor, float duration)
+    {
+        float elapsed = 0f;
+        Color startColor = image.color;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+
+            image.color = Color.Lerp(startColor, targetColor, t);
+
+            yield return null;
+        }
+
+        // Ensure exact final color
+        image.color = targetColor;
+    }
 }
