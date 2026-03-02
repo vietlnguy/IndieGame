@@ -119,6 +119,10 @@ public class SaveManager : MonoBehaviour
         {
             SceneManager.LoadScene("Overworld");
         }
+        else if (loadedData.introBattleOutro == "Camp")
+        {
+            SceneManager.LoadScene("Camp");
+        }
         else
         {
             SceneManager.LoadScene(loadedData.currentChapter);
@@ -171,7 +175,13 @@ public class SaveManager : MonoBehaviour
     {
         File.Delete(openedSaveFilePath);
         SaveGame();
-        PopulateSaveList();
+        try {
+            PopulateSaveList();
+        }
+        catch
+        {
+            
+        }
     }
     public void DeleteSelectedSave()
     {

@@ -102,6 +102,8 @@ public class PrologueController : MonoBehaviour
         }
 
         yield return StartCoroutine(scm.SceneTransition(false));
+        scm.loadedData.currentChapter = "Chapter 1";
+        scm.loadedData.introBattleOutro = "Intro";
         SceneManager.LoadScene("ChapterBridge");
 
         yield return null;
@@ -183,7 +185,7 @@ public class PrologueController : MonoBehaviour
     }
     private IEnumerator GoNextScene()
     {
-        yield return StartCoroutine(scm.SceneTransition(true));
+        yield return StartCoroutine(scm.SceneTransition(false));
         scm.loadedData.currentChapter = "Chapter 1";
         scm.loadedData.introBattleOutro = "Intro";
         SceneManager.LoadScene("ChapterBridge");

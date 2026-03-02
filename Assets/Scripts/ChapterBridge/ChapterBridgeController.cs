@@ -38,9 +38,15 @@ public class ChapterBridgeController : MonoBehaviour
         {
             SceneManager.LoadScene("Overworld");
         }
-        else
+        else if (scm.loadedData.currentChapter == "Chapter 1")
         {
             SceneManager.LoadScene(scm.loadedData.currentChapter);
+        }
+        else
+        {
+            scm.loadedData.introBattleOutro = "Camp";
+            scm.OverwriteSave();
+            SceneManager.LoadScene("Camp");
         }
 
     }
