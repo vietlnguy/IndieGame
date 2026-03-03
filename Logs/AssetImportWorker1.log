@@ -15,7 +15,7 @@ C:/Users/viet_/projects/SecretProject
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-57016
+54984
 -job-worker-count
 7
 -background-job-worker-count
@@ -59,12 +59,12 @@ C:/Users/viet_/projects/SecretProject
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [38596]  Target information:
+Player connection [56876]  Target information:
 
-Player connection [38596]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 3078872970 [EditorId] 3078872970 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [56876]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 1103398569 [EditorId] 1103398569 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [38596] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [38596] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [56876] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [56876] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -76,7 +76,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 347.93 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 206.07 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.36f1 (9fe3b5f71dbb)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Resources/UnitySubsystems
@@ -92,43 +92,43 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56660
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56392
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002755 seconds.
-- Loaded All Assemblies, in  0.637 seconds
+Registered in 0.004065 seconds.
+- Loaded All Assemblies, in  7.042 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.285 seconds
-Domain Reload Profiling: 921ms
-	BeginReloadAssembly (288ms)
+- Finished resetting the current domain, in  0.326 seconds
+Domain Reload Profiling: 7366ms
+	BeginReloadAssembly (6627ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (33ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (43ms)
-	LoadAllAssembliesAndSetupDomain (262ms)
-		LoadAssemblies (285ms)
+	RebuildCommonClasses (36ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (50ms)
+	LoadAllAssembliesAndSetupDomain (317ms)
+		LoadAssemblies (6622ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (260ms)
-			TypeCache.Refresh (259ms)
-				TypeCache.ScanAssembly (248ms)
+		AnalyzeDomain (314ms)
+			TypeCache.Refresh (312ms)
+				TypeCache.ScanAssembly (297ms)
 			BuildScriptInfoCaches (0ms)
-			ResolveRequiredComponents (1ms)
-	FinalizeReload (285ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (326ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (246ms)
+		SetupLoadedEditorAssemblies (286ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (19ms)
+			InitializePlatformSupportModulesInManaged (21ms)
 			SetLoadedEditorAssemblies (3ms)
-			BeforeProcessingInitializeOnLoad (42ms)
-			ProcessInitializeOnLoadAttributes (121ms)
-			ProcessInitializeOnLoadMethodAttributes (61ms)
+			BeforeProcessingInitializeOnLoad (49ms)
+			ProcessInitializeOnLoadAttributes (153ms)
+			ProcessInitializeOnLoadMethodAttributes (59ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -137,115 +137,2011 @@ Domain Reload Profiling: 921ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  1.957 seconds
-Refreshing native plugins compatible for Editor in 1.61 ms, found 4 plugins.
+- Loaded All Assemblies, in  8.405 seconds
+Refreshing native plugins compatible for Editor in 1.64 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.410 seconds
-Domain Reload Profiling: 3364ms
-	BeginReloadAssembly (140ms)
+- Finished resetting the current domain, in  2.735 seconds
+Domain Reload Profiling: 11136ms
+	BeginReloadAssembly (180ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (8ms)
+		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (28ms)
-	RebuildCommonClasses (29ms)
+		CreateAndSetChildDomain (38ms)
+	RebuildCommonClasses (38ms)
 	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (34ms)
-	LoadAllAssembliesAndSetupDomain (1741ms)
-		LoadAssemblies (1536ms)
+	initialDomainReloadingComplete (37ms)
+	LoadAllAssembliesAndSetupDomain (8135ms)
+		LoadAssemblies (7976ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (283ms)
-			TypeCache.Refresh (209ms)
-				TypeCache.ScanAssembly (191ms)
-			BuildScriptInfoCaches (59ms)
-			ResolveRequiredComponents (12ms)
-	FinalizeReload (1411ms)
+		AnalyzeDomain (268ms)
+			TypeCache.Refresh (187ms)
+				TypeCache.ScanAssembly (162ms)
+			BuildScriptInfoCaches (66ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (2735ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (994ms)
+		SetupLoadedEditorAssemblies (2212ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (2ms)
-			SetLoadedEditorAssemblies (5ms)
-			BeforeProcessingInitializeOnLoad (120ms)
-			ProcessInitializeOnLoadAttributes (431ms)
-			ProcessInitializeOnLoadMethodAttributes (427ms)
-			AfterProcessingInitializeOnLoad (8ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (142ms)
+			ProcessInitializeOnLoadAttributes (1459ms)
+			ProcessInitializeOnLoadMethodAttributes (596ms)
+			AfterProcessingInitializeOnLoad (6ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 1.89 ms, found 4 plugins.
+		AwakeInstancesAfterBackupRestoration (6ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 3.05 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 220 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 6658 unused Assets / (4.6 MB). Loaded Objects now: 7354.
-Memory consumption went from 184.3 MB to 179.6 MB.
-Total: 8.783300 ms (FindLiveObjects: 0.853000 ms CreateObjectMapping: 0.418600 ms MarkObjects: 4.935600 ms  DeleteObjects: 2.574400 ms)
+Unloading 6660 unused Assets / (4.5 MB). Loaded Objects now: 7356.
+Memory consumption went from 190.1 MB to 185.7 MB.
+Total: 10.243100 ms (FindLiveObjects: 1.362100 ms CreateObjectMapping: 0.700500 ms MarkObjects: 5.437500 ms  DeleteObjects: 2.741700 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1063405.694935 seconds.
-  path: Assets/Scenes/Camp.unity
-  artifactKey: Guid(e9cbac1661e4e774098a27847b5b3472) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/Camp.unity using Guid(e9cbac1661e4e774098a27847b5b3472) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '34242786353fe6032826adb77206a8eb') in 0.0100357 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+  Time since last request: 1080709.259481 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Banners/Banners B/Banners-B_03.png
+  artifactKey: Guid(b4a2561033491c74d83098eb43a73d94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Banners/Banners B/Banners-B_03.png using Guid(b4a2561033491c74d83098eb43a73d94) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2e0581330f6853e6d798a1631de98576') in 0.1082873 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 305.974128 seconds.
-  path: Assets/Environments/FL_Houses/Sliced/FL_Houses_Houses.png
-  artifactKey: Guid(c0047525b56447a40b77885ae00440d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/FL_Houses/Sliced/FL_Houses_Houses.png using Guid(c0047525b56447a40b77885ae00440d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cf6828c8e1edab081ca4908a74d87cc7') in 0.2000604 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 46
+  Time since last request: 0.000025 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_20.png
+  artifactKey: Guid(2ea4a682dc27e9141b674cdde35e3ace) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_20.png using Guid(2ea4a682dc27e9141b674cdde35e3ace) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4b31e2fb5334a567fc5c2086be7a4c99') in 0.0172671 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 29.760274 seconds.
-  path: Assets/Environments/FL_Houses/Sliced/Interriors/FL_Houses_int_sidesOfTheHouses.png
-  artifactKey: Guid(5838653bf325dd144ae0e25addad2eff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/FL_Houses/Sliced/Interriors/FL_Houses_int_sidesOfTheHouses.png using Guid(5838653bf325dd144ae0e25addad2eff) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a4bc75bb898d314354f87e9d8ea4345a') in 0.5476312 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 564
+  Time since last request: 0.000024 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_26.png
+  artifactKey: Guid(d96ceb916d3f50d4c96267edd1a91bc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_26.png using Guid(d96ceb916d3f50d4c96267edd1a91bc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3aa9aac54bc98fb3b915679e592c6b4e') in 0.0157416 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 8.024208 seconds.
-  path: Assets/Environments/FL_Houses/Sliced/Interriors/Furnitures/FL_Houses_int_FurnituresB.png
-  artifactKey: Guid(9a5bb371d85254a46b19b3390e0705fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/FL_Houses/Sliced/Interriors/Furnitures/FL_Houses_int_FurnituresB.png using Guid(9a5bb371d85254a46b19b3390e0705fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '640c5933cd37e3558f7d29831f5ebcb9') in 0.8780887 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1031
+  Time since last request: 0.000024 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_27.png
+  artifactKey: Guid(3e4fd5397d16365478486b728690c5b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_27.png using Guid(3e4fd5397d16365478486b728690c5b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '63b488fbc1c74c6c2ee74b06e0e49e3b') in 0.0132197 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 14.102211 seconds.
-  path: Assets/Environments/FL_Houses/Anim/FL_Houses_candle2.png
-  artifactKey: Guid(6579d52b95c790a47ba1751d91f65ed2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/FL_Houses/Anim/FL_Houses_candle2.png using Guid(6579d52b95c790a47ba1751d91f65ed2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5c934076f82eb5efcc0757042679248e') in 0.0149334 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+  Time since last request: 0.000015 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_01.png
+  artifactKey: Guid(37a8cbc657ae84f449712a6de5ebc351) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_01.png using Guid(37a8cbc657ae84f449712a6de5ebc351) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a9c3bc1d631ff5c4e3062cdd9932e420') in 0.0153541 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/FL_Houses/Anim/FL_Houses_candle5.png
-  artifactKey: Guid(5f72ccd2820be434e97e0624e53cd087) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/FL_Houses/Anim/FL_Houses_candle5.png using Guid(5f72ccd2820be434e97e0624e53cd087) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ddb1cd39987caa4de03bbbf49ff74ff1') in 0.0220396 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+  Time since last request: 0.000015 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_19.png
+  artifactKey: Guid(f66ed1134ed28c845978f6fed546dd6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_19.png using Guid(f66ed1134ed28c845978f6fed546dd6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '651c1698d5ccfb0aac2fa21c6aba1e91') in 0.0129231 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_25.png
+  artifactKey: Guid(379e36909bb5eaf4085c914fe156d4ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_25.png using Guid(379e36909bb5eaf4085c914fe156d4ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cb372038fb966615d526f5decc635f1c') in 0.0165893 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Banners/Banners A/Banners-A_04.png
+  artifactKey: Guid(ec4c46e488c1a1240842abf2d534127b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Banners/Banners A/Banners-A_04.png using Guid(ec4c46e488c1a1240842abf2d534127b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '72e6319ef1eb8f03bd67f0e1c495a97f') in 0.0159621 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_07.png
+  artifactKey: Guid(ca47edaf27d5fa0448113124b6c1dd0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_07.png using Guid(ca47edaf27d5fa0448113124b6c1dd0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5c006c9692ae2490ee4d394d5acfe452') in 0.0137388 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000017 seconds.
-  path: Assets/Environments/FL_Houses/Anim/FL_Houses_fireplaceA.png
-  artifactKey: Guid(46c778e86b2abac43ba58306e96f4661) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/FL_Houses/Anim/FL_Houses_fireplaceA.png using Guid(46c778e86b2abac43ba58306e96f4661) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7eed0840658bcb64cc7f8a7e0c60d53e') in 0.0203186 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_23.png
+  artifactKey: Guid(d5ba6c142b5dd454b8dfde2d48ff665f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_23.png using Guid(d5ba6c142b5dd454b8dfde2d48ff665f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2d673ed493d65f5949d7391116a695dc') in 0.0145303 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Banners/Short Banners/Short-Banners_05.png
+  artifactKey: Guid(99d19d1390535cf4387a1220b7abc3e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Banners/Short Banners/Short-Banners_05.png using Guid(99d19d1390535cf4387a1220b7abc3e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a86c5f7c810898b0044614e7b8245fe5') in 0.0175828 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000020 seconds.
-  path: Assets/Environments/FL_Houses/Anim/FL_Houses_fireplaceB.png
-  artifactKey: Guid(5dcfb68a188e9c04297b675d9029f999) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/FL_Houses/Anim/FL_Houses_fireplaceB.png using Guid(5dcfb68a188e9c04297b675d9029f999) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'da19df8f6eb3c8d64d4db747db198d7b') in 0.0198368 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Book - Inventory/Book Inventory_03.png
+  artifactKey: Guid(de5f1da7331a0f8459448e970d7ece7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Book - Inventory/Book Inventory_03.png using Guid(de5f1da7331a0f8459448e970d7ece7a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3272b525bcddf1dc8e5ceb02a742647c') in 0.0178993 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/128x.preset
+  artifactKey: Guid(9a4709f51ff18a0438ea54f26e10aacc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/128x.preset using Guid(9a4709f51ff18a0438ea54f26e10aacc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '49a5ca1d6de310f984a2fcc9f8e3e220') in 0.0025478 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_22.png
+  artifactKey: Guid(a66dbe428ba74114ebba63b661124ad3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_22.png using Guid(a66dbe428ba74114ebba63b661124ad3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f5134454137e28159e8714d8b046f7bd') in 0.0147999 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_14.png
+  artifactKey: Guid(8b055c5eafe7dfc4d8e4f4f6e2dbff62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_14.png using Guid(8b055c5eafe7dfc4d8e4f4f6e2dbff62) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '20b90f6569604cf97d46c1f417e1e27f') in 0.0127912 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.768 seconds
+Refreshing native plugins compatible for Editor in 2.09 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.702 seconds
+Domain Reload Profiling: 1470ms
+	BeginReloadAssembly (198ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (12ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (54ms)
+	RebuildCommonClasses (32ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (500ms)
+		LoadAssemblies (397ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (194ms)
+			TypeCache.Refresh (10ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (168ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (703ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (515ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (106ms)
+			ProcessInitializeOnLoadAttributes (333ms)
+			ProcessInitializeOnLoadMethodAttributes (62ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Refreshing native plugins compatible for Editor in 2.68 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6658 unused Assets / (4.9 MB). Loaded Objects now: 7379.
+Memory consumption went from 160.9 MB to 156.0 MB.
+Total: 21.881600 ms (FindLiveObjects: 1.996700 ms CreateObjectMapping: 2.096200 ms MarkObjects: 11.706500 ms  DeleteObjects: 6.079800 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 152.361836 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_1/attack/chara_1_attack_down.png
+  artifactKey: Guid(9e4897e55fc9fae4ea836fe0973997cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_1/attack/chara_1_attack_down.png using Guid(9e4897e55fc9fae4ea836fe0973997cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '88617286c9ae2ebd906a70537b7b29cf') in 0.071589 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_1/attack/chara_1_attack_up.png
+  artifactKey: Guid(c022b25056ae0ee44b81ddc0f5558e5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_1/attack/chara_1_attack_up.png using Guid(c022b25056ae0ee44b81ddc0f5558e5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '57325a07ed02709d3a49b1e2aef2b018') in 0.0138947 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.976147 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_2/attack/chara_2_attack_down.png
+  artifactKey: Guid(b7a45d185be254c449e13c66265239ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_2/attack/chara_2_attack_down.png using Guid(b7a45d185be254c449e13c66265239ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b7518980acd8a67f76bf0604e5cd3df6') in 0.0161736 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_2/attack/chara_2_attack_up.png
+  artifactKey: Guid(d4042b7520d010d45b11f59d4b56b833) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_2/attack/chara_2_attack_up.png using Guid(d4042b7520d010d45b11f59d4b56b833) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8ce6ad291412e3f677afa8747c5103e4') in 0.0170786 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.111047 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_3/attack/chara_3_attack_down.png
+  artifactKey: Guid(9244345e3c03415448c7bcc942a4b8ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_3/attack/chara_3_attack_down.png using Guid(9244345e3c03415448c7bcc942a4b8ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '98357c2adde94504c57ce477b9c44c88') in 0.0187034 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_3/attack/chara_3_attack_right.png
+  artifactKey: Guid(a72c0a7892278a848b78e25d6b966d14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_3/attack/chara_3_attack_right.png using Guid(a72c0a7892278a848b78e25d6b966d14) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'eac678df65abe422b9b3d8f0ea9ace62') in 0.0145285 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.814991 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_4/attack/chara_4_attack_down.png
+  artifactKey: Guid(89338e91e3affdf49a9c8f43dc10cbc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_4/attack/chara_4_attack_down.png using Guid(89338e91e3affdf49a9c8f43dc10cbc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '334c880806633d0f3f35a202182a9910') in 0.0141353 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_4/attack/chara_4_attack_up.png
+  artifactKey: Guid(e0749455423b5584cb5463f410d6fdf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_4/attack/chara_4_attack_up.png using Guid(e0749455423b5584cb5463f410d6fdf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7e0cb071df218f01b59a499fe1468c18') in 0.0137558 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.934988 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_61/attack/chara_61_attack_down.png
+  artifactKey: Guid(fca1ca6f5ed891d4fabf5ccf800c983d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_61/attack/chara_61_attack_down.png using Guid(fca1ca6f5ed891d4fabf5ccf800c983d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b0c542300f26c36b01b40890a7f3abc3') in 0.0173823 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_61/attack/chara_61_attack_right.png
+  artifactKey: Guid(097f7f36282ebf943ae7c0ce07bf45d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_61/attack/chara_61_attack_right.png using Guid(097f7f36282ebf943ae7c0ce07bf45d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8b20716766a70405217950e7dbf89ae9') in 0.0240503 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.058510 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Icons/Icon_01.png
+  artifactKey: Guid(59f7a4695513b30449277cb9e1b4eecc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Icons/Icon_01.png using Guid(59f7a4695513b30449277cb9e1b4eecc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '79761d79a047425b3f917046b3958c24') in 0.1810958 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 164
+
+========================================================================
+Received Import Request.
+  Time since last request: 31.120124 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Monsters/Crows/Crow_1/Fly.png
+  artifactKey: Guid(6e5cc92caf8883046b394c8913dd65fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Monsters/Crows/Crow_1/Fly.png using Guid(6e5cc92caf8883046b394c8913dd65fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e22ae1c1b4ec3d2c305b3dcccf1db264') in 0.0177965 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.061996 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Monsters/Slimes/Slime_1/Idle.png
+  artifactKey: Guid(881335a1781e2d945bdb18e5700c727a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Monsters/Slimes/Slime_1/Idle.png using Guid(881335a1781e2d945bdb18e5700c727a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3917097f1b42d31e4cf32cd9030620ab') in 0.0688414 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 34
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.462440 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Player/Player.prefab
+  artifactKey: Guid(b48fe3c6b937a7a4a98a1ca3317d884e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Player/Player.prefab using Guid(b48fe3c6b937a7a4a98a1ca3317d884e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'be74a3640ad9c5a75b127ee25f7b3f9c') in 0.3493001 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 57
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.028983 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Barrels/barrel_001.prefab
+  artifactKey: Guid(24d3861de07b63d41bdb8080a4402be6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Barrels/barrel_001.prefab using Guid(24d3861de07b63d41bdb8080a4402be6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '205efc4f4192ea8a509f40b8674bc998') in 0.0188185 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.480739 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Barrels/Textures/barrel_001.png
+  artifactKey: Guid(b94cc36d80c503942839a8381a3104ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Barrels/Textures/barrel_001.png using Guid(b94cc36d80c503942839a8381a3104ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1160f4b4da7d0190491408df63b1d7f3') in 0.015364 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.756503 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Benches/bench_001.prefab
+  artifactKey: Guid(a50abfe885a39274aae74e356e44bc38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Benches/bench_001.prefab using Guid(a50abfe885a39274aae74e356e44bc38) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '51e425538bb5f82ae7b4998bf07bfb36') in 0.0146409 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.631138 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_5/walk/chara_5_walk_down.png
+  artifactKey: Guid(1b037a287dc0e9446ac21dec7c8cceed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_5/walk/chara_5_walk_down.png using Guid(1b037a287dc0e9446ac21dec7c8cceed) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd7c590d05b602a95f58a76169f23028f') in 0.0201639 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_5/walk/chara_5_walk_right.png
+  artifactKey: Guid(65cb938bcde08de4fb63467234fb95ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Characters/chara_5/walk/chara_5_walk_right.png using Guid(65cb938bcde08de4fb63467234fb95ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '221ea33e07b65e5059f8c9d84d848dab') in 0.0193922 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.116032 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Buildings/building_001.prefab
+  artifactKey: Guid(307e6277875640943aa664a3425a9958) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Buildings/building_001.prefab using Guid(307e6277875640943aa664a3425a9958) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4c46c1e79fe7419757d947efa739d576') in 0.0421889 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 53
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Buildings/building_009.prefab
+  artifactKey: Guid(49917b6c351f72a4fb043ff7964512ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Buildings/building_009.prefab using Guid(49917b6c351f72a4fb043ff7964512ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '13f5c85ae308aab4962bb0d3318434fe') in 0.0131421 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Buildings/building_014.prefab
+  artifactKey: Guid(36aac9723b51fe44ba25ae73796b0332) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Buildings/building_014.prefab using Guid(36aac9723b51fe44ba25ae73796b0332) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '67d405b3432c7c2fc2e5b32f6894d568') in 0.0133072 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Buildings/building_004.prefab
+  artifactKey: Guid(f8eed74b2a8aead4fa73a40f271cd287) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Buildings/building_004.prefab using Guid(f8eed74b2a8aead4fa73a40f271cd287) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f07d165c0e2bc2f4e95832b1606986e1') in 0.0124603 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Buildings/building_016.prefab
+  artifactKey: Guid(94a0c5e53cddad14db050086ae335e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Buildings/building_016.prefab using Guid(94a0c5e53cddad14db050086ae335e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b6ce31159f9d9c8e8f8ae6f7c3ad9aef') in 0.0141331 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Buildings/building_013.prefab
+  artifactKey: Guid(65047a21a3a798a4ca1a3dacfacab5bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Buildings/building_013.prefab using Guid(65047a21a3a798a4ca1a3dacfacab5bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5572ba81635bae132593872a187ed11c') in 0.0153895 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Buildings/building_006.prefab
+  artifactKey: Guid(c4d75247f2e46f24db3abb5ac828508f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Buildings/building_006.prefab using Guid(c4d75247f2e46f24db3abb5ac828508f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b2380115811b5f2073c1a6a84ec6d795') in 0.0134726 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Buildings/building_007.prefab
+  artifactKey: Guid(450f2840af3fb864c974856da749f4b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Buildings/building_007.prefab using Guid(450f2840af3fb864c974856da749f4b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '96b894d81ecbfff2e38437b798063909') in 0.0153992 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.374985 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Ivy/ivy_002.prefab
+  artifactKey: Guid(1bbd1937d6b3663459f34c94e7cdb282) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Ivy/ivy_002.prefab using Guid(1bbd1937d6b3663459f34c94e7cdb282) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ddcfdd877fa6ada4c7dda8dae40c0dcd') in 0.019555 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Ivy/ivy_006.prefab
+  artifactKey: Guid(d3bc26dd794875143810c5e8b69de37b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Ivy/ivy_006.prefab using Guid(d3bc26dd794875143810c5e8b69de37b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '500c448eb064f710276b3cd4e21e060b') in 0.0148659 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.724370 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Rocks/rock_002.prefab
+  artifactKey: Guid(ba0bb9d3fa81c0a418b05bd2bac55c1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Rocks/rock_002.prefab using Guid(ba0bb9d3fa81c0a418b05bd2bac55c1d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '29e49c06871cd621286955de505bcea7') in 0.0153603 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Rocks/rock_008.prefab
+  artifactKey: Guid(d8bbe4ae9e6b78149b951d1e9fd4004e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Rocks/rock_008.prefab using Guid(d8bbe4ae9e6b78149b951d1e9fd4004e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1324c50cb34326f510ce18e318cba945') in 0.0120479 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Rocks/rock_009.prefab
+  artifactKey: Guid(4c0650de0ffbf1140a7ca2de53cc8133) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Rocks/rock_009.prefab using Guid(4c0650de0ffbf1140a7ca2de53cc8133) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '99858f0f9eb2686ef9c13349b4862f91') in 0.0133663 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.507013 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Crates/crate_002.prefab
+  artifactKey: Guid(eeb7ebb9014b9a24f8e03b6ef0231c86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Crates/crate_002.prefab using Guid(eeb7ebb9014b9a24f8e03b6ef0231c86) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3905a7d017c7a6d4815b7536a235de74') in 0.0140307 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.411909 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Cliffs/Style_03/cliff_style_03_back_left.prefab
+  artifactKey: Guid(56e7664897b595c488339ddfd2d71c90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Cliffs/Style_03/cliff_style_03_back_left.prefab using Guid(56e7664897b595c488339ddfd2d71c90) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a8aa167641f1a5124edd2e1c64b52204') in 0.0158708 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Cliffs/Style_03/cliff_style_03_left.prefab
+  artifactKey: Guid(35430687a86e083409d9f75b84a67a95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Props/Cliffs/Style_03/cliff_style_03_left.prefab using Guid(35430687a86e083409d9f75b84a67a95) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd9c6cce791908bafe39746ecaae89e5f') in 0.0159796 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 7
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.970212 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/VFX/HammerHit_001.png
+  artifactKey: Guid(58e9d420c83672441ae62c65dff42333) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/VFX/HammerHit_001.png using Guid(58e9d420c83672441ae62c65dff42333) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '25e20662669c67e3c568b9ee084f3349') in 0.0584781 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 22
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/VFX/Stars_001.png
+  artifactKey: Guid(a93a406a090489e4cafca78e3c3d7cc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/VFX/Stars_001.png using Guid(a93a406a090489e4cafca78e3c3d7cc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7dcc51742451b144d2dab50b46b33827') in 0.02632 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/VFX/Waterfall_001.png
+  artifactKey: Guid(cebee05318bb9b140bdbf1109af9d126) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/VFX/Waterfall_001.png using Guid(cebee05318bb9b140bdbf1109af9d126) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ad244540a971942310ed5a3e60824ff6') in 0.0272944 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.454847 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes001.png
+  artifactKey: Guid(4bc9b1cf113ef504c81738344558578b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes001.png using Guid(4bc9b1cf113ef504c81738344558578b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3dbb2b29d9b3dc39d6f8197f2dc1eea3') in 0.0159175 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes012.png
+  artifactKey: Guid(2752fbe54171275408578c0bc948b21e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes012.png using Guid(2752fbe54171275408578c0bc948b21e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b8b33b9a413e24e1490552d83c80d2d0') in 0.0121738 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes035.png
+  artifactKey: Guid(61df004fead64a547b3cdbb63468868e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes035.png using Guid(61df004fead64a547b3cdbb63468868e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd0753656590ae58369021c065d903061') in 0.0172032 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes041.png
+  artifactKey: Guid(ddb8d9afe9642004c849315df350bb0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes041.png using Guid(ddb8d9afe9642004c849315df350bb0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '77b6b9d2d483c1fdfc30f4448a649b53') in 0.0148817 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes040.png
+  artifactKey: Guid(19bfb49408553b248b5db15c979a0f2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes040.png using Guid(19bfb49408553b248b5db15c979a0f2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6cd8edb12627e5cb8b146698296c68e4') in 0.0162866 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes027.png
+  artifactKey: Guid(5d71696ecec2ceb44855b06d764034d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes027.png using Guid(5d71696ecec2ceb44855b06d764034d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c84db4b355ca7e9e44d8b07ecf93847b') in 0.0148555 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes047.png
+  artifactKey: Guid(40c6e44be43243945b429de220463cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes047.png using Guid(40c6e44be43243945b429de220463cb5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6774bb01fbad88307b99e799d4662656') in 0.0137411 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes037.png
+  artifactKey: Guid(0ecd272009af1b844bb81f9d121864fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes037.png using Guid(0ecd272009af1b844bb81f9d121864fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '94dfb795b735837056ec22e44cfd3f31') in 0.0142292 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes038.png
+  artifactKey: Guid(32c5e45c03885174691a75353be20dbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes038.png using Guid(32c5e45c03885174691a75353be20dbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'afa92a91470980ee3450f3ce2d49c488') in 0.0139125 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes005.png
+  artifactKey: Guid(fe9632a60c9ca384c9504365f2b658e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes005.png using Guid(fe9632a60c9ca384c9504365f2b658e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b4f98da17ca33d41f7877312a80117e8') in 0.0150542 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes010.png
+  artifactKey: Guid(c1448946539cc66459d7a1ae2fae67a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes010.png using Guid(c1448946539cc66459d7a1ae2fae67a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1f3e9fb2e6f4732ffacf12cd8fc77bc9') in 0.0148126 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes024.png
+  artifactKey: Guid(ab6d8430ad8be6645b8a5bd9aba8c789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes024.png using Guid(ab6d8430ad8be6645b8a5bd9aba8c789) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fb5941627fcf51e54f5826dda0ed6c93') in 0.0143309 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.011231 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes051.png
+  artifactKey: Guid(2334e8e9b7602394e9c1ec3be9d54b0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes051.png using Guid(2334e8e9b7602394e9c1ec3be9d54b0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0eea9d50080e823266c26f6e4a5e4dbe') in 0.0143904 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes055.png
+  artifactKey: Guid(11d4a72855703bc4cb6ba778ea07ed4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes055.png using Guid(11d4a72855703bc4cb6ba778ea07ed4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0f642ec5eb6221deca2939b6f8e03179') in 0.0123186 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes058.png
+  artifactKey: Guid(a821cca942833fb43902185808dcd510) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes058.png using Guid(a821cca942833fb43902185808dcd510) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c7dde3cbb27b91977e259c1442223b05') in 0.0144077 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes062.png
+  artifactKey: Guid(63fef1c79c9d2d74c92fa46185cf8a67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes062.png using Guid(63fef1c79c9d2d74c92fa46185cf8a67) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dc55346fa96f9ef5558fdc414119984b') in 0.0114397 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.419347 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes065.png
+  artifactKey: Guid(a455ba141a94aee419cbb15daf4d10b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes065.png using Guid(a455ba141a94aee419cbb15daf4d10b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e0cab75711537004235c9f0601cbe161') in 0.0144295 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes072.png
+  artifactKey: Guid(82b1cf7dc752f124b9921d9707e3a01a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes072.png using Guid(82b1cf7dc752f124b9921d9707e3a01a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1215e13ad5fc4241c84eb5bacd88c1b0') in 0.013936 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes074.png
+  artifactKey: Guid(f2722f235c2f23c4d9a03e94fe4522c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Axes/Axes074.png using Guid(f2722f235c2f23c4d9a03e94fe4522c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1fb3d196640ac66aef68abe5058142ea') in 0.0125857 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 30.010976 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows001.png
+  artifactKey: Guid(a791c23906c9d284e96e5e3cc98b277c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows001.png using Guid(a791c23906c9d284e96e5e3cc98b277c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '87b4b5b0a7b24b2138ae6a2b2bb10375') in 0.0145741 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows008.png
+  artifactKey: Guid(32270eb1dc4d6f448a4e8b17f4858978) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows008.png using Guid(32270eb1dc4d6f448a4e8b17f4858978) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0ef0c109d01d46b8eb6957ed5f945380') in 0.0184115 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows044.png
+  artifactKey: Guid(b57570bf36fcb8e47a3bd83b23c4bbff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows044.png using Guid(b57570bf36fcb8e47a3bd83b23c4bbff) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e1ce587718d25fc7565b5fa45b4f34b4') in 0.014037 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows016.png
+  artifactKey: Guid(79704f5badd004a4a9e511179a2d55cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows016.png using Guid(79704f5badd004a4a9e511179a2d55cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5a6a1f1a2d9e2b3bced5c2560a5af4dc') in 0.0214584 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows018.png
+  artifactKey: Guid(7b9d7b62261caf9489b66f7738e0cb84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows018.png using Guid(7b9d7b62261caf9489b66f7738e0cb84) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9bd3e49747b276aee6fa56380bf93cc1') in 0.0152783 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows026.png
+  artifactKey: Guid(688214b7d5bf7fa41933410f0cf8f9f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows026.png using Guid(688214b7d5bf7fa41933410f0cf8f9f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ef74fde63cee6d8663d12b727052a125') in 0.0119882 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows007.png
+  artifactKey: Guid(f99d8c6995dc9e541bd31acb069115fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows007.png using Guid(f99d8c6995dc9e541bd31acb069115fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e95e6a18381dc2ff3f50b6a724e26eb7') in 0.0115853 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows014.png
+  artifactKey: Guid(2e839f461ac05cf4aac6624b8ac09a31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows014.png using Guid(2e839f461ac05cf4aac6624b8ac09a31) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7e2aed10d8f3000c3b66f411880079fa') in 0.0139933 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows023.png
+  artifactKey: Guid(2feba108dc15c3d4b9fc96e192ef9bab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows023.png using Guid(2feba108dc15c3d4b9fc96e192ef9bab) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3df53a8af40213e107c232a6fd77ce1b') in 0.0139274 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows013.png
+  artifactKey: Guid(0b1bf34df7a40b941aca3fee0ad56b67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows013.png using Guid(0b1bf34df7a40b941aca3fee0ad56b67) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '15c0b3fcfc7edbf8b3c51ec1e2cdf86a') in 0.0143009 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows017.png
+  artifactKey: Guid(eece3b53a3d74414c9b53c6aa15936e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows017.png using Guid(eece3b53a3d74414c9b53c6aa15936e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1be4dc14cf0adc35ad3b973692be14c0') in 0.0145926 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows035.png
+  artifactKey: Guid(b4c2c19c56743514eb93a97445e40b88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows035.png using Guid(b4c2c19c56743514eb93a97445e40b88) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '13ce0c57fb5bee8ad2d155505505815a') in 0.0141558 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows019.png
+  artifactKey: Guid(245fe9a63e5f9224c856e206d1f6908e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows019.png using Guid(245fe9a63e5f9224c856e206d1f6908e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'de74cc74cc474d43fdbf6df97e4a43f0') in 0.0123679 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.965091 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows051.png
+  artifactKey: Guid(daa5cab196325df4e92efdbd6e42668c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows051.png using Guid(daa5cab196325df4e92efdbd6e42668c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '120c3e7867260944f1d77fd6b63b79ce') in 0.0147334 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows055.png
+  artifactKey: Guid(4bfe834b48f7a8b44bd35fe2eb92ffd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows055.png using Guid(4bfe834b48f7a8b44bd35fe2eb92ffd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6de6e76f13076bdbe3ee5376053b49f3') in 0.0150688 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows061.png
+  artifactKey: Guid(ef0bb9860744ccb40b4e31e916f79a96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows061.png using Guid(ef0bb9860744ccb40b4e31e916f79a96) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6cb95298c899a7611f1a1f715620ad60') in 0.0168763 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows058.png
+  artifactKey: Guid(5fb32e7107ee1d44d9d3ced4704ec552) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows058.png using Guid(5fb32e7107ee1d44d9d3ced4704ec552) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '02a2880abd5cb1965e9818981f8614cd') in 0.0142695 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.212594 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows065.png
+  artifactKey: Guid(84770ad4742136d409a23f2123b4ea47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows065.png using Guid(84770ad4742136d409a23f2123b4ea47) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1910b42c07d4cda8d984bec0e2506c24') in 0.0170911 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows069.png
+  artifactKey: Guid(e8abf34b720cd7345a70564db5701831) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Bows/Bows069.png using Guid(e8abf34b720cd7345a70564db5701831) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f0871e0e7b64967691ed1a90068af54c') in 0.0149423 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 20.120818 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords001.png
+  artifactKey: Guid(daeb1b17b9a23274f90878628f124dad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords001.png using Guid(daeb1b17b9a23274f90878628f124dad) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '68e7205a1579e717738200f1cf067d6c') in 0.0145609 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords010.png
+  artifactKey: Guid(49c06f568893c7c4190724d99e14068d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords010.png using Guid(49c06f568893c7c4190724d99e14068d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '84e18b702ec90a065e49005cbe0f3038') in 0.0130705 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords019.png
+  artifactKey: Guid(d3fa0091e9234d5468e141d781a8d032) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords019.png using Guid(d3fa0091e9234d5468e141d781a8d032) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'eaabfa84a2f70eb44c3a1df8519b4656') in 0.015844 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords016.png
+  artifactKey: Guid(b324746a810f6b743878e4e6842a350f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords016.png using Guid(b324746a810f6b743878e4e6842a350f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '76bbdbae890fd6bbfb5b7c299597ddc4') in 0.0176491 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords009.png
+  artifactKey: Guid(c739773a20a4a724db4f7d8dbda771dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords009.png using Guid(c739773a20a4a724db4f7d8dbda771dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd3a353660add51a596b2689713547772') in 0.0150397 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords020.png
+  artifactKey: Guid(020b88cfa34260e4183914a17d3070fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords020.png using Guid(020b88cfa34260e4183914a17d3070fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6e82d2a8f5a350530cf2e207b745858a') in 0.0135448 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords004.png
+  artifactKey: Guid(4319cd995c99a9e4184ef1742d1ece3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords004.png using Guid(4319cd995c99a9e4184ef1742d1ece3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '513bc3c4a65238a4469e1f109caa15e3') in 0.0133161 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords047.png
+  artifactKey: Guid(ead8606f5354c904a82b2590f27684c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords047.png using Guid(ead8606f5354c904a82b2590f27684c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'af97cef582ed9b308ee82580ee508028') in 0.0143675 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords028.png
+  artifactKey: Guid(dd619a94d8598c14eac4df1b071485c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords028.png using Guid(dd619a94d8598c14eac4df1b071485c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd433736380b962a07a6a3f93bc65de5b') in 0.0143408 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords030.png
+  artifactKey: Guid(a9a27c79f6b8e494a9b1221cc3ba9448) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords030.png using Guid(a9a27c79f6b8e494a9b1221cc3ba9448) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5d763b943c35ef02249c7ab10819ef18') in 0.0145609 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords015.png
+  artifactKey: Guid(a67b831da91b61640837da7be136484c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords015.png using Guid(a67b831da91b61640837da7be136484c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dc700beb0edbbb290fb3cdb7812d7804') in 0.0138641 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords042.png
+  artifactKey: Guid(740994f7d3331de45a5e666e5509fa0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords042.png using Guid(740994f7d3331de45a5e666e5509fa0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '39f58f3e0eb70b9cb1cc5841f4fa8d67') in 0.0146673 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.727140 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords051.png
+  artifactKey: Guid(e42ce7038440de64d8a3c40f85a954cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords051.png using Guid(e42ce7038440de64d8a3c40f85a954cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '367fc8488b388346937c87167a45a6e0') in 0.0140544 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords055.png
+  artifactKey: Guid(86f0387fd04249947a26781fee369292) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords055.png using Guid(86f0387fd04249947a26781fee369292) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6f1002e9462022cdb0bd638876f279ca') in 0.0143941 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords063.png
+  artifactKey: Guid(6e6cd8580860bfb4f811ea73aa9967ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords063.png using Guid(6e6cd8580860bfb4f811ea73aa9967ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5a543f843174b04c97193e699a070eeb') in 0.0144801 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.485178 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords065.png
+  artifactKey: Guid(1f1dca827bcc89243a6809f85bd1e195) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords065.png using Guid(1f1dca827bcc89243a6809f85bd1e195) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6a04ee681cac98da60bfb8023f332eda') in 0.0144621 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords068.png
+  artifactKey: Guid(710e2f9985585f1488468c4508595e4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords068.png using Guid(710e2f9985585f1488468c4508595e4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b72846998632504e69a7228f9857a357') in 0.0149482 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords077.png
+  artifactKey: Guid(fb862b4354719484d91a07efd1f54aa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords077.png using Guid(fb862b4354719484d91a07efd1f54aa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c04cb12899cd764a48df6f0b097b42db') in 0.0139131 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords079.png
+  artifactKey: Guid(44b191c5d3b7dd741b2b6df9e203f2e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords079.png using Guid(44b191c5d3b7dd741b2b6df9e203f2e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '52649fa40588796c4e820b0cd3a9e302') in 0.0142264 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords080.png
+  artifactKey: Guid(22995b62afb69a242bb56958a6df88d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords080.png using Guid(22995b62afb69a242bb56958a6df88d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0ea614b01daeb440f0df6ad1649acf46') in 0.0143863 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.075016 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords086.png
+  artifactKey: Guid(c26148e1b876000489c25fb8e56109d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords086.png using Guid(c26148e1b876000489c25fb8e56109d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ab58f9d6bac3662f38e5b16a13f8850c') in 0.0142481 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords089.png
+  artifactKey: Guid(1e9bea4b0f9684e4f8cc6c9ffbec696b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords089.png using Guid(1e9bea4b0f9684e4f8cc6c9ffbec696b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'eca6cc1a4778519250a044347b4745d2') in 0.0135503 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords098.png
+  artifactKey: Guid(1634675483a3369419209a6df435c2fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords098.png using Guid(1634675483a3369419209a6df435c2fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd1b15d90dd88c9283306f2253b61255c') in 0.0132991 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords104.png
+  artifactKey: Guid(e5a518ca854dbac478f6229abc80cf40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords104.png using Guid(e5a518ca854dbac478f6229abc80cf40) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cc56c9f0a17b0843838edde2a5cbbdce') in 0.013533 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords100.png
+  artifactKey: Guid(cdf5da2b59a340e4096453e603dc03f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords100.png using Guid(cdf5da2b59a340e4096453e603dc03f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ec94a7b941d11cbaee091a82a203d361') in 0.0145305 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.552330 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords107.png
+  artifactKey: Guid(4c59ba4e4b04e704abbfe845dc756c8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords107.png using Guid(4c59ba4e4b04e704abbfe845dc756c8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'defeecc0bee556404628291a9f701912') in 0.0147947 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords114.png
+  artifactKey: Guid(01ab49ca607fa234fbaf043e7a185347) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords114.png using Guid(01ab49ca607fa234fbaf043e7a185347) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '263fc970f3a5f85a6955525ad530e63a') in 0.013423 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords113.png
+  artifactKey: Guid(ccf3fe51fce22c04e9d4076917bf63f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords113.png using Guid(ccf3fe51fce22c04e9d4076917bf63f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '026ee8e574f058eaf3123cc6833087b2') in 0.0143483 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords119.png
+  artifactKey: Guid(28d05b4780d306448a7213cf66b45238) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Swords/Swords119.png using Guid(28d05b4780d306448a7213cf66b45238) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4be7ea28e0927c11a81493471ef4054f') in 0.0119039 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.632122 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs001.png
+  artifactKey: Guid(e605230b3319549498fb4318e6ce2f52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs001.png using Guid(e605230b3319549498fb4318e6ce2f52) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5f183eecf2b40b39d585065d03ab0fab') in 0.0145283 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs013.png
+  artifactKey: Guid(234323c68a0916f4f93a68d98e0a3973) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs013.png using Guid(234323c68a0916f4f93a68d98e0a3973) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '699d9389c2251befa41a2cda18997742') in 0.0133747 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs034.png
+  artifactKey: Guid(2e5ae9aa3913f7e4fa4394e9ca159c0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs034.png using Guid(2e5ae9aa3913f7e4fa4394e9ca159c0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c37e37b0a7aa79c173386524c3a1fca5') in 0.0171702 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs026.png
+  artifactKey: Guid(9a7ae79bdfd2fec4c83f56770cf8d29d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs026.png using Guid(9a7ae79bdfd2fec4c83f56770cf8d29d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7795b32f8ca26ff259569820cbf744b5') in 0.0200162 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs049.png
+  artifactKey: Guid(62f6ba161f445c144a60d0553adc6ab5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs049.png using Guid(62f6ba161f445c144a60d0553adc6ab5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8765d7c4f670dc1183e891bd4c18c216') in 0.0113816 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs018.png
+  artifactKey: Guid(7b848fcc5376af842bf6382e85554db8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs018.png using Guid(7b848fcc5376af842bf6382e85554db8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '019c53c11e1777d6c57366022314f3fd') in 0.0124581 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs006.png
+  artifactKey: Guid(6ac7feee079cde242858db0b74a2c023) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs006.png using Guid(6ac7feee079cde242858db0b74a2c023) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0836137a04ed42dee81339a652a89404') in 0.0138053 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs019.png
+  artifactKey: Guid(3788963d868ecce4da64e577947d6bc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs019.png using Guid(3788963d868ecce4da64e577947d6bc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b3afa888bf09ae388144179b5ea5dac4') in 0.0140005 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs029.png
+  artifactKey: Guid(3c39d2c24375762408dc0f5acdbf69d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs029.png using Guid(3c39d2c24375762408dc0f5acdbf69d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f2d22929c6e1edc5bb0ba4de3ab5fc7c') in 0.0142512 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs023.png
+  artifactKey: Guid(4a3dff4b1e7a96240ac8e41e6622e509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs023.png using Guid(4a3dff4b1e7a96240ac8e41e6622e509) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1c3224411de4f5d7b097b75a1f12182a') in 0.0138688 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs012.png
+  artifactKey: Guid(99533f3b85fbea54d9a5fdece1f2a289) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs012.png using Guid(99533f3b85fbea54d9a5fdece1f2a289) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '675c7f50869a85af4c842de27fb59773') in 0.0130948 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs037.png
+  artifactKey: Guid(83e8d9e965883044c9209f584c7638d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs037.png using Guid(83e8d9e965883044c9209f584c7638d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6c6e366a41261e7fd28361da1cec6599') in 0.0138918 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.813368 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs051.png
+  artifactKey: Guid(d8784f14cae7b554e9a2259468bdb8b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Weapons/Staffs/Staffs051.png using Guid(d8784f14cae7b554e9a2259468bdb8b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '441a00e64c680244bf8290d6b440fb13') in 0.015288 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 25.351837 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain.prefab
+  artifactKey: Guid(313eff1d34131354ca4bd86cd559fd62) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain.prefab using Guid(313eff1d34131354ca4bd86cd559fd62) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '75c6fb41f101a9f4db88f53e78b0b002') in 0.2019097 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 673
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_16.asset
+  artifactKey: Guid(d8609c9024a9a574aaaca25e8feb2f61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_16.asset using Guid(d8609c9024a9a574aaaca25e8feb2f61) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '48abff91cfab7296f8aff1be4b3b2727') in 0.0080851 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_11.asset
+  artifactKey: Guid(a0fc34828f6b69c44ad2d9b4a039f01a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_11.asset using Guid(a0fc34828f6b69c44ad2d9b4a039f01a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a8e17ab37bc5e5f0ae844f0a7bf6a37a') in 0.0117269 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_17.asset
+  artifactKey: Guid(079660ff593fcd04fb806002b651b137) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_17.asset using Guid(079660ff593fcd04fb806002b651b137) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '94d8079f6e9edf502c0d13d53932e395') in 0.0120227 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_35.asset
+  artifactKey: Guid(bc8a8f1b925226547a99090f90d0473b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_35.asset using Guid(bc8a8f1b925226547a99090f90d0473b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '922673ee6785ed1a2e792ed8b9cb2e3b') in 0.0125328 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_28.asset
+  artifactKey: Guid(845c6f6ec5f7282418c1f7c04d113b9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_28.asset using Guid(845c6f6ec5f7282418c1f7c04d113b9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0d34e55590da5a7696ea09e81abf035b') in 0.0057148 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000077 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_25.asset
+  artifactKey: Guid(205b37f95ed02924bb132ca423634e56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_25.asset using Guid(205b37f95ed02924bb132ca423634e56) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a71e19726a018d49bfc8b4ef06a6a0df') in 0.0111891 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_23.asset
+  artifactKey: Guid(2985a34505fe6b94d83b6c18d2d170e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_23.asset using Guid(2985a34505fe6b94d83b6c18d2d170e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '30cce919bd6ee5f9ff399c39dc92136b') in 0.0050678 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_31.asset
+  artifactKey: Guid(ed4e3cf3b3f677e41ab394424625579d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_31.asset using Guid(ed4e3cf3b3f677e41ab394424625579d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd28e4d0bb4584a9f25bcf5e946859a21') in 0.0131061 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_39.asset
+  artifactKey: Guid(fd0b5cac6c882a745ba15a2cccfc60a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_39.asset using Guid(fd0b5cac6c882a745ba15a2cccfc60a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a0818e7399d9a99cf1a0c9073496ffec') in 0.0141628 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_29.asset
+  artifactKey: Guid(d4a169138a76eb54f8c11cf90dfe1f40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_29.asset using Guid(d4a169138a76eb54f8c11cf90dfe1f40) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '35c5db254eee09ce2f17f4b3f2631ba8') in 0.0049611 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.784717 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_49.asset
+  artifactKey: Guid(d69c14cc9edf7224f8e117981c3c4656) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_49.asset using Guid(d69c14cc9edf7224f8e117981c3c4656) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '33f6d5060c852302d75db8b77e0b7ed9') in 0.007064 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_52.asset
+  artifactKey: Guid(8b5e108d1ec2b2e4d9e977ef9ea0f9b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_52.asset using Guid(8b5e108d1ec2b2e4d9e977ef9ea0f9b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7a3cefa3676ea05798b45e8d547d4518') in 0.0114258 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_59.asset
+  artifactKey: Guid(c85ddb871fab16b489b1343acc2990ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_59.asset using Guid(c85ddb871fab16b489b1343acc2990ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fe4746435e818a84215f9c22229e8e6a') in 0.0112652 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_60.asset
+  artifactKey: Guid(1d72ac1dbcf5b334b937c35441a58737) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_60.asset using Guid(1d72ac1dbcf5b334b937c35441a58737) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '73e84af63dde5c27bfee764a6535d657') in 0.0109446 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.171518 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_63.asset
+  artifactKey: Guid(1d2af0eb35908534d8f6b84d4c652676) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_63.asset using Guid(1d2af0eb35908534d8f6b84d4c652676) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8bdecfc1cae0b51db4ff16147313f9f5') in 0.0116425 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_68.asset
+  artifactKey: Guid(1ef561a7a271628429ae4c6b3e5e1760) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_68.asset using Guid(1ef561a7a271628429ae4c6b3e5e1760) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '21572eb1b641ed2236bf050e10d055cd') in 0.0096468 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_80.asset
+  artifactKey: Guid(71b752e744faaf446969bac46bac2c8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_80.asset using Guid(71b752e744faaf446969bac46bac2c8a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '581665cb0812bcf621d8ffa61cd2ff2f') in 0.0061379 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_83.asset
+  artifactKey: Guid(10a7a9c0a76ae5d42988408268dbf0b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_83.asset using Guid(10a7a9c0a76ae5d42988408268dbf0b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4753f09539cb5fbd0418bc27bfb7a450') in 0.0118915 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_74.asset
+  artifactKey: Guid(70a999c1ab20ee140927967d8046c104) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_74.asset using Guid(70a999c1ab20ee140927967d8046c104) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8ba411d164f87385bdf2bda141482dfd') in 0.0102269 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_87.asset
+  artifactKey: Guid(f83b695aed8951d4aaa36ab3407f6c87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_87.asset using Guid(f83b695aed8951d4aaa36ab3407f6c87) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '221531891d7c48ae32fd9ea2b5449e7d') in 0.0122879 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_82.asset
+  artifactKey: Guid(d52e94c1e94692c4c822f5b5b0da174c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_82.asset using Guid(d52e94c1e94692c4c822f5b5b0da174c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '22c415ceb50eec842e0c308e3fac2b82') in 0.0119426 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.079680 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_91.asset
+  artifactKey: Guid(1d5163486b8627448b0d1d9bf76db19d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_91.asset using Guid(1d5163486b8627448b0d1d9bf76db19d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a80fe36ed4f444ddb879e2eeb62926c8') in 0.0067381 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_94.asset
+  artifactKey: Guid(41dbc0a424d993f40888eccbc48e66ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_94.asset using Guid(41dbc0a424d993f40888eccbc48e66ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '43741a10a205a03107610f7490ffcf55') in 0.0118512 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_103.asset
+  artifactKey: Guid(7405c57e69de15345b86065ae579999a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_103.asset using Guid(7405c57e69de15345b86065ae579999a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'aa8c02f537b19c622e50cc9a1c2a3d1a') in 0.0123083 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_110.asset
+  artifactKey: Guid(cfb2d89c82794dd4d8ec68ea18d639f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_110.asset using Guid(cfb2d89c82794dd4d8ec68ea18d639f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b0cd54c03d4406b81ecf416ea4ac0aa5') in 0.0123375 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_101.asset
+  artifactKey: Guid(d15aab5d57a3daf419a128841c80de68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_101.asset using Guid(d15aab5d57a3daf419a128841c80de68) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2a683fa979a2617031db5edb7f9d6c6d') in 0.0118904 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_109.asset
+  artifactKey: Guid(c0003ba965fb01043bbffa194d11cdb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_cliff_plain/Desire_Fantasy_cliff_plain_109.asset using Guid(c0003ba965fb01043bbffa194d11cdb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '96c3f4c7e48aceb79c02414a35d269c4') in 0.0098807 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.889164 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_terrain_plain/Desire_Fantasy_terrain_plain.prefab
+  artifactKey: Guid(842b87c22c5bb1046aac0c793357f758) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_terrain_plain/Desire_Fantasy_terrain_plain.prefab using Guid(842b87c22c5bb1046aac0c793357f758) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '479d5df02e721364181a9feff7b6457d') in 0.5275875 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1603
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_terrain_plain/Desire_Fantasy_terrain_plain_20.asset
+  artifactKey: Guid(abaa3053fc2b0c94bb7a04ac1fc7f194) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_terrain_plain/Desire_Fantasy_terrain_plain_20.asset using Guid(abaa3053fc2b0c94bb7a04ac1fc7f194) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '43814735e061fcd8d445813a63698cfa') in 0.0152143 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_terrain_plain/Desire_Fantasy_terrain_plain_46.asset
+  artifactKey: Guid(fcbf54a566a112c47b2b1b37fd273ced) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_terrain_plain/Desire_Fantasy_terrain_plain_46.asset using Guid(fcbf54a566a112c47b2b1b37fd273ced) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f91df8a0943f3332d61e22ffb99ac540') in 0.0158994 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_terrain_plain/Desire_Fantasy_terrain_plain_26.asset
+  artifactKey: Guid(a064cd8e82982ee4a84198a9f8326ba9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_terrain_plain/Desire_Fantasy_terrain_plain_26.asset using Guid(a064cd8e82982ee4a84198a9f8326ba9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c6b7fa1bc558b06e16c58ebd066d4139') in 0.0146896 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_terrain_plain/Desire_Fantasy_terrain_plain_35.asset
+  artifactKey: Guid(8b549a7207003e44cbdcdffd1e25685e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_terrain_plain/Desire_Fantasy_terrain_plain_35.asset using Guid(8b549a7207003e44cbdcdffd1e25685e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3ef1b741bb60b59f1aa8c23f60c4f3fa') in 0.0153568 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_terrain_plain/Desire_Fantasy_terrain_plain_40.asset
+  artifactKey: Guid(f881810bb297d6c47a19aeca39d09ea7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_terrain_plain/Desire_Fantasy_terrain_plain_40.asset using Guid(f881810bb297d6c47a19aeca39d09ea7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9f9bc8272af1f41a22c278a53d7f8e37') in 0.0147627 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_terrain_plain/Desire_Fantasy_terrain_plain_41.asset
+  artifactKey: Guid(f0208def4835692479ffc1273947e421) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_terrain_plain/Desire_Fantasy_terrain_plain_41.asset using Guid(f0208def4835692479ffc1273947e421) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'df1ebe656fdccb116deea98ff929eb27') in 0.0137941 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_terrain_plain/Desire_Fantasy_terrain_plain_47.asset
+  artifactKey: Guid(d5b9be2751323344481ba3b7113794bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_terrain_plain/Desire_Fantasy_terrain_plain_47.asset using Guid(d5b9be2751323344481ba3b7113794bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e1c33520c08045f3101668980c9eb23a') in 0.0130192 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.158870 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_hill/Desire_Fantasy_texture_hill.prefab
+  artifactKey: Guid(6d2e743605aec5f4d9315ca292b03f72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_hill/Desire_Fantasy_texture_hill.prefab using Guid(6d2e743605aec5f4d9315ca292b03f72) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fea3a64c6dfff27fc9b50d86f436bf73') in 0.2804898 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 851
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_hill/Desire_Fantasy_texture_hill_41.asset
+  artifactKey: Guid(d2e76842233862940819fc80010fd465) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_hill/Desire_Fantasy_texture_hill_41.asset using Guid(d2e76842233862940819fc80010fd465) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2ed454cb2528c84755b7e06a0df59855') in 0.0118464 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_hill/Desire_Fantasy_texture_hill_47.asset
+  artifactKey: Guid(d2964d08322822446a2361661a4ef613) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_hill/Desire_Fantasy_texture_hill_47.asset using Guid(d2964d08322822446a2361661a4ef613) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '70ca20b529ee1a2bf9db3ca03f0e6172') in 0.0108228 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_hill/Desire_Fantasy_texture_hill_27.asset
+  artifactKey: Guid(c1932d819e7a1aa4d829f2554a783984) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_hill/Desire_Fantasy_texture_hill_27.asset using Guid(c1932d819e7a1aa4d829f2554a783984) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e136d1ea824fc7615d27452d9f1da5ae') in 0.0111607 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_hill/Desire_Fantasy_texture_hill_12.asset
+  artifactKey: Guid(d8d2e79968b0c3241bca8d195c3a21cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_hill/Desire_Fantasy_texture_hill_12.asset using Guid(d8d2e79968b0c3241bca8d195c3a21cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '77e9cbf370ecfbdf3ee8312782c8a089') in 0.0094018 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_hill/Desire_Fantasy_texture_hill_25.asset
+  artifactKey: Guid(64dbffc2f9444a94c95c7d82009258dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_hill/Desire_Fantasy_texture_hill_25.asset using Guid(64dbffc2f9444a94c95c7d82009258dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd315982426a6923ce23107c4530f495d') in 0.0111515 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_hill/Desire_Fantasy_texture_hill_36.asset
+  artifactKey: Guid(781d22969c9c09149a2476dcf71d0f95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_hill/Desire_Fantasy_texture_hill_36.asset using Guid(781d22969c9c09149a2476dcf71d0f95) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7ecf5266a4c36150312075be3d53b650') in 0.011209 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_hill/Desire_Fantasy_texture_hill_32.asset
+  artifactKey: Guid(1815d77ab32d1344ebe4fc1e1cbb834d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_hill/Desire_Fantasy_texture_hill_32.asset using Guid(1815d77ab32d1344ebe4fc1e1cbb834d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd1e29dc0f2080dc45958ee1dee8085c0') in 0.012106 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_hill/Desire_Fantasy_texture_hill_33.asset
+  artifactKey: Guid(1ac23ed455987f4428031fd0b90ccd10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_hill/Desire_Fantasy_texture_hill_33.asset using Guid(1ac23ed455987f4428031fd0b90ccd10) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3083792f92868b8ec621970dbf414138') in 0.0132765 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_hill/Desire_Fantasy_texture_hill_40.asset
+  artifactKey: Guid(15f1642cdbf8b69499d834a863eab3e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_hill/Desire_Fantasy_texture_hill_40.asset using Guid(15f1642cdbf8b69499d834a863eab3e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '314b0fc81e2838215deb65900d7f1265') in 0.0122921 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.663184 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_indoor/Desire_fantasy_texture_indoor.prefab
+  artifactKey: Guid(6bc8e3bba3aa2bf42a8062dfb25d9f75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_indoor/Desire_fantasy_texture_indoor.prefab using Guid(6bc8e3bba3aa2bf42a8062dfb25d9f75) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd071c13c4be8261ad1faea62d6ff9cf3') in 0.2252349 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 659
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_indoor/Desire_fantasy_texture_indoor_41.asset
+  artifactKey: Guid(38cdd86f9b08a4d4bbb29aeb77ad94d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_indoor/Desire_fantasy_texture_indoor_41.asset using Guid(38cdd86f9b08a4d4bbb29aeb77ad94d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6f853e9c1d55ce9487f6dc9b2752aa2c') in 0.0121524 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000062 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_indoor/Desire_fantasy_texture_indoor_31.asset
+  artifactKey: Guid(a4c7e6cce60468e45a6703c38f07711e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_indoor/Desire_fantasy_texture_indoor_31.asset using Guid(a4c7e6cce60468e45a6703c38f07711e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f9af3f36e2665bd2899f8ae35ccf5fa1') in 0.0124554 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_indoor/Desire_fantasy_texture_indoor_13.asset
+  artifactKey: Guid(b7e06d99f171d354a89de287389cdc02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_indoor/Desire_fantasy_texture_indoor_13.asset using Guid(b7e06d99f171d354a89de287389cdc02) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5976553fb1c6355e9ca618f80adbec94') in 0.0119693 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_indoor/Desire_fantasy_texture_indoor_10.asset
+  artifactKey: Guid(65900fdec3f34c84dbec4332959e393f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_indoor/Desire_fantasy_texture_indoor_10.asset using Guid(65900fdec3f34c84dbec4332959e393f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6dca701c08528133512fe0770d5c2045') in 0.011169 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_indoor/Desire_fantasy_texture_indoor_45.asset
+  artifactKey: Guid(dc6961c5b35cf9146bd1a61be7f98f73) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_indoor/Desire_fantasy_texture_indoor_45.asset using Guid(dc6961c5b35cf9146bd1a61be7f98f73) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e1fbf09c7175ea590117224d3e2b3447') in 0.0132094 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_indoor/Desire_fantasy_texture_indoor_19.asset
+  artifactKey: Guid(497483fefb589334282fa02d29e43237) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_indoor/Desire_fantasy_texture_indoor_19.asset using Guid(497483fefb589334282fa02d29e43237) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0ba8d876ad3d00a50bfbe593a9279537') in 0.0119869 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_indoor/Desire_fantasy_texture_indoor_37.asset
+  artifactKey: Guid(a14b073d5f807c04f8ad2b8ee63a4a8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_indoor/Desire_fantasy_texture_indoor_37.asset using Guid(a14b073d5f807c04f8ad2b8ee63a4a8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fa1e6f0e9a1260d6c38b4375f25096f2') in 0.0125495 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_indoor/Desire_fantasy_texture_indoor_39.asset
+  artifactKey: Guid(de3269d078e85e8499b2de340728a413) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_indoor/Desire_fantasy_texture_indoor_39.asset using Guid(de3269d078e85e8499b2de340728a413) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '18a86993881efae0907a2a62df40fed0') in 0.0136086 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_indoor/Desire_fantasy_texture_indoor_15.asset
+  artifactKey: Guid(b4873be92be301e42a55c51966fb19a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_indoor/Desire_fantasy_texture_indoor_15.asset using Guid(b4873be92be301e42a55c51966fb19a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b24f4a903c37ce67445702b5cd3cb989') in 0.0134119 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.572432 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle.prefab
+  artifactKey: Guid(2fae0433542de9145a43ec15b6ec5e56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle.prefab using Guid(2fae0433542de9145a43ec15b6ec5e56) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '10af598adc6f5809abbb45441355bac8') in 0.1364964 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 411
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_43.asset
+  artifactKey: Guid(b4b46e6cf23805d4d90e2d144a358ec3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_43.asset using Guid(b4b46e6cf23805d4d90e2d144a358ec3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ece82cdac878137edd61c859648fc9d3') in 0.0102668 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_28.asset
+  artifactKey: Guid(c014bea60357422458951796da302bf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_28.asset using Guid(c014bea60357422458951796da302bf6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7fa6b525c84b4ea79b608c5e060da35f') in 0.0118534 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_26.asset
+  artifactKey: Guid(9bba9ab497e59e643892aad72cf2af42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_26.asset using Guid(9bba9ab497e59e643892aad72cf2af42) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '76adc2a13b5adcfdd1e8667519146943') in 0.0119446 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_34.asset
+  artifactKey: Guid(e078815dcbbd3574d9e2c04bc412a0e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_34.asset using Guid(e078815dcbbd3574d9e2c04bc412a0e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '58983d647d421bea3e4d04d859f3eef9') in 0.0131567 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_30.asset
+  artifactKey: Guid(9f6214c266b83424190b731936da47e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_30.asset using Guid(9f6214c266b83424190b731936da47e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c352eeb6c0924edc202c5ebcf0ba7ac8') in 0.012434 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_38.asset
+  artifactKey: Guid(5abd21d7713d4ea419d10a2b437cd30b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_38.asset using Guid(5abd21d7713d4ea419d10a2b437cd30b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dcf5b1a3fffed100c88984a1647614cd') in 0.0122522 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_19.asset
+  artifactKey: Guid(443ec9b18d61d734ab0de33a6752b5a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_19.asset using Guid(443ec9b18d61d734ab0de33a6752b5a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '55111f40f5892404a17a5dcbddc97f0f') in 0.011823 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_10.asset
+  artifactKey: Guid(ab8798572c4741144b1dc241e7011080) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_10.asset using Guid(ab8798572c4741144b1dc241e7011080) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd32c60ef0599d61465494b4fcda10f3c') in 0.0110678 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_46.asset
+  artifactKey: Guid(d4e127a3f06874d46ab3286ae265376f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_46.asset using Guid(d4e127a3f06874d46ab3286ae265376f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3d8f2cd5fded34dea24147ce8fbece6e') in 0.0120624 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_31.asset
+  artifactKey: Guid(732c72ca0dd341644b3505de44b85934) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_31.asset using Guid(732c72ca0dd341644b3505de44b85934) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7358d82247bd3c620ebe7302e7074441') in 0.0119163 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_25.asset
+  artifactKey: Guid(a854f42b2e8e6204aa991004f873c258) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_jungle/Desire_Fantasy_texture_jungle_25.asset using Guid(a854f42b2e8e6204aa991004f873c258) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f32795a3bb3ed3954c7899cdf58b4329') in 0.010659 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.589944 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town.prefab
+  artifactKey: Guid(8840e48789126084f99909412d4570f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town.prefab using Guid(8840e48789126084f99909412d4570f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f5088842b6524915e1a38a1c52d280b2') in 0.1785552 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 511
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_14.asset
+  artifactKey: Guid(856ebdc9375f4c34d94ee05d6c6008d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_14.asset using Guid(856ebdc9375f4c34d94ee05d6c6008d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '798eb2ebf8282b7a97bdba030dfb9382') in 0.0111047 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_19.asset
+  artifactKey: Guid(5885e8406892f824db7b534402d31d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_19.asset using Guid(5885e8406892f824db7b534402d31d43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ace283203fb0a24ab49adea0b060967b') in 0.0114109 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_40.asset
+  artifactKey: Guid(5660416a09d02a241ad00919b107f9b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_40.asset using Guid(5660416a09d02a241ad00919b107f9b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2010d43c76a02b468fafb798fa25ad47') in 0.0109464 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_17.asset
+  artifactKey: Guid(a5d736cc81ab6e441942ccb62ddc3269) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_17.asset using Guid(a5d736cc81ab6e441942ccb62ddc3269) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '410d5e3399df18828e5cad6bf70fc0ee') in 0.011747 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_2.asset
+  artifactKey: Guid(b88a6eac75e667a42b1f9d7efa0cbda0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_2.asset using Guid(b88a6eac75e667a42b1f9d7efa0cbda0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '61e160eb4792271f2ee8ca8014b2bb31') in 0.0117757 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_23.asset
+  artifactKey: Guid(5f5341a45546490459e9293f92aa7bfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_23.asset using Guid(5f5341a45546490459e9293f92aa7bfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '11c3e5bbb9f27a258b1303f15620c913') in 0.0126501 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_30.asset
+  artifactKey: Guid(1dc2a750f7fdec648a96a63298196c3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_30.asset using Guid(1dc2a750f7fdec648a96a63298196c3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '913f8a7e38978d1df594487e72512c46') in 0.0110207 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_24.asset
+  artifactKey: Guid(0c372e18d864b4749984905edd6df6b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_24.asset using Guid(0c372e18d864b4749984905edd6df6b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8eaaef1cc0d985f97e99c29128459e03') in 0.0106951 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_47.asset
+  artifactKey: Guid(f1a291e1d2b0f1c4aa2f695f1e2240dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_47.asset using Guid(f1a291e1d2b0f1c4aa2f695f1e2240dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '047807677d27ab569a186c52ebf99dd2') in 0.0110337 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_5.asset
+  artifactKey: Guid(d33f759852640514fa7bce57d9586f67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_5.asset using Guid(d33f759852640514fa7bce57d9586f67) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '74261b8e3daa7e110066d19289ce1087') in 0.0143083 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 90.922284 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_49.asset
+  artifactKey: Guid(efd2c94a735d7914daacc4766a17b3d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_49.asset using Guid(efd2c94a735d7914daacc4766a17b3d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '636fc33a4ba663680222631166eaae23') in 0.0154526 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_53.asset
+  artifactKey: Guid(4c7b17a8a9c1dd14fa0e547d33e8f6a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_53.asset using Guid(4c7b17a8a9c1dd14fa0e547d33e8f6a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '431ee0e3b13ac92f40192631f825d5e9') in 0.0111152 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_56.asset
+  artifactKey: Guid(46c08117ad8a7f844afd27b74aa91ee9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_56.asset using Guid(46c08117ad8a7f844afd27b74aa91ee9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd10108adb036202506a393e7000e8238') in 0.0105283 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_66.asset
+  artifactKey: Guid(4b30b9a55de1ce246aed7792b3e77e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_66.asset using Guid(4b30b9a55de1ce246aed7792b3e77e48) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '498225aff0d71fc3aa1471fb66128851') in 0.0097858 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_58.asset
+  artifactKey: Guid(280e88d29ebed2d4ba91708398ef03b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_58.asset using Guid(280e88d29ebed2d4ba91708398ef03b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3d4e60c63c63f95dc0ba429a86e910ae') in 0.0103714 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_67.asset
+  artifactKey: Guid(ecaa0bd197a297247809e49d4470cc08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_67.asset using Guid(ecaa0bd197a297247809e49d4470cc08) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '86fcff3ca88a98aae30b2d6ea8a723e1') in 0.0125275 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_86.asset
+  artifactKey: Guid(41016f44ba660d8458d3cd8ce86c7538) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_86.asset using Guid(41016f44ba660d8458d3cd8ce86c7538) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'deb7c6c07cfc0818db6c8bbc115a2bcf') in 0.0121518 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_89.asset
+  artifactKey: Guid(2a3c147902c93d246b09832b8d533bcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_89.asset using Guid(2a3c147902c93d246b09832b8d533bcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '37d393e61e69b3602a3a76978c50c0b7') in 0.010775 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_81.asset
+  artifactKey: Guid(aae15b5339bc5e14a8ed940e77c63f64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_81.asset using Guid(aae15b5339bc5e14a8ed940e77c63f64) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '044b369faca436042050eddbafe2e4c5') in 0.0115231 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_74.asset
+  artifactKey: Guid(cc4e2b4834ca0be47ab0d4ad290451cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_74.asset using Guid(cc4e2b4834ca0be47ab0d4ad290451cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5cce406d31617c90ece6cd85ae108ab6') in 0.012388 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_70.asset
+  artifactKey: Guid(dd6ffcc9d4e09ca4f97c928247195326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_70.asset using Guid(dd6ffcc9d4e09ca4f97c928247195326) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e7cf1dbbe3721b92c75095953b2f2b93') in 0.0130497 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_85.asset
+  artifactKey: Guid(8080fdb2f1dde6748b48a8685ba02e67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_85.asset using Guid(8080fdb2f1dde6748b48a8685ba02e67) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bc32b92c1cff7513b869a52044a7fa91') in 0.0125031 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_62.asset
+  artifactKey: Guid(8256b5da0110ae24d9b7609da4ff3dff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_62.asset using Guid(8256b5da0110ae24d9b7609da4ff3dff) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dd9f7e90d24a2b8801cc1ff8392c3c43') in 0.0121116 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_77.asset
+  artifactKey: Guid(0c046e5c2a779e04897656a9f54b42bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_77.asset using Guid(0c046e5c2a779e04897656a9f54b42bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '46df18ea03bdd17e6c51cb5ae133d886') in 0.0157526 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_51.asset
+  artifactKey: Guid(4a5ffb6bd3e637645af5933b48f01877) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_51.asset using Guid(4a5ffb6bd3e637645af5933b48f01877) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2aadca7d945a613927046cd83e2613c2') in 0.0133753 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_83.asset
+  artifactKey: Guid(a2a372d9a8b58c64ba38f01f719f368a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_83.asset using Guid(a2a372d9a8b58c64ba38f01f719f368a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e23206a8487064aca0da6d570b879246') in 0.014667 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_78.asset
+  artifactKey: Guid(eaf847b9508c80e438757f2accf0d8f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_78.asset using Guid(eaf847b9508c80e438757f2accf0d8f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8d81a0843ecb975f3851dde7c09ad904') in 0.0146227 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_71.asset
+  artifactKey: Guid(4714e68db232c954ebe53a8687169641) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_71.asset using Guid(4714e68db232c954ebe53a8687169641) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '257545b7dfa557567a3a1cac513ab1be') in 0.0141666 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_55.asset
+  artifactKey: Guid(839a6e33c4a729545932bf25156799ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_55.asset using Guid(839a6e33c4a729545932bf25156799ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1e492b472d571c14cfed2f7298f8b3f7') in 0.0142289 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_52.asset
+  artifactKey: Guid(a457e0df51094014e86ef52abb5f5261) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_52.asset using Guid(a457e0df51094014e86ef52abb5f5261) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '19f3211630e0ad700c1cc8e999dd3d8e') in 0.0179266 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_88.asset
+  artifactKey: Guid(065a59640952968459921cbb4b57e20a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Gif/Desire_Fantasy_Collection/Resources/Tilesets/Desire_Fantasy_texture_town/Desire_Fantasy_texture_town_88.asset using Guid(065a59640952968459921cbb4b57e20a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0eb0a5dde95bfda039c400334db1415a') in 0.0132663 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.745 seconds
+Refreshing native plugins compatible for Editor in 1.30 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.678 seconds
+Domain Reload Profiling: 1423ms
+	BeginReloadAssembly (225ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (21ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (74ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (27ms)
+	LoadAllAssembliesAndSetupDomain (453ms)
+		LoadAssemblies (339ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (201ms)
+			TypeCache.Refresh (7ms)
+				TypeCache.ScanAssembly (0ms)
+			BuildScriptInfoCaches (178ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (678ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (502ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (111ms)
+			ProcessInitializeOnLoadAttributes (314ms)
+			ProcessInitializeOnLoadMethodAttributes (66ms)
+			AfterProcessingInitializeOnLoad (6ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 3.98 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6658 unused Assets / (4.9 MB). Loaded Objects now: 7426.
+Memory consumption went from 166.1 MB to 161.1 MB.
+Total: 21.087500 ms (FindLiveObjects: 1.789100 ms CreateObjectMapping: 1.539700 ms MarkObjects: 11.112800 ms  DeleteObjects: 6.643600 ms)
+
+Prepare: number of updated asset objects reloaded= 0
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting

@@ -15,7 +15,7 @@ C:/Users/viet_/projects/SecretProject
 -logFile
 Logs/AssetImportWorker3.log
 -srvPort
-50690
+57016
 -job-worker-count
 7
 -background-job-worker-count
@@ -59,12 +59,12 @@ C:/Users/viet_/projects/SecretProject
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [26636]  Target information:
+Player connection [17880]  Target information:
 
-Player connection [26636]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 328349651 [EditorId] 328349651 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [17880]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 1411093190 [EditorId] 1411093190 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [26636] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [26636] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [17880] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [17880] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -76,7 +76,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 3.02 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 2.88 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.36f1 (9fe3b5f71dbb)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Resources/UnitySubsystems
@@ -92,43 +92,43 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56148
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56956
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002468 seconds.
-- Loaded All Assemblies, in  0.402 seconds
+Registered in 0.002537 seconds.
+- Loaded All Assemblies, in  0.298 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.303 seconds
-Domain Reload Profiling: 703ms
-	BeginReloadAssembly (141ms)
+- Finished resetting the current domain, in  0.259 seconds
+Domain Reload Profiling: 556ms
+	BeginReloadAssembly (102ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (36ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (48ms)
-	LoadAllAssembliesAndSetupDomain (164ms)
-		LoadAssemblies (137ms)
+	RebuildCommonClasses (28ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (40ms)
+	LoadAllAssembliesAndSetupDomain (117ms)
+		LoadAssemblies (100ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (161ms)
-			TypeCache.Refresh (159ms)
-				TypeCache.ScanAssembly (143ms)
+		AnalyzeDomain (115ms)
+			TypeCache.Refresh (113ms)
+				TypeCache.ScanAssembly (102ms)
 			BuildScriptInfoCaches (0ms)
-			ResolveRequiredComponents (1ms)
-	FinalizeReload (303ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (259ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (256ms)
+		SetupLoadedEditorAssemblies (221ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (21ms)
-			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (51ms)
-			ProcessInitializeOnLoadAttributes (136ms)
-			ProcessInitializeOnLoadMethodAttributes (44ms)
+			InitializePlatformSupportModulesInManaged (20ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (40ms)
+			ProcessInitializeOnLoadAttributes (115ms)
+			ProcessInitializeOnLoadMethodAttributes (42ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -137,538 +137,698 @@ Domain Reload Profiling: 703ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.708 seconds
-Refreshing native plugins compatible for Editor in 1.47 ms, found 4 plugins.
+- Loaded All Assemblies, in  0.660 seconds
+Refreshing native plugins compatible for Editor in 1.51 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.859 seconds
-Domain Reload Profiling: 1560ms
-	BeginReloadAssembly (155ms)
+- Finished resetting the current domain, in  0.649 seconds
+Domain Reload Profiling: 1306ms
+	BeginReloadAssembly (142ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (33ms)
-	RebuildCommonClasses (34ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (40ms)
-	LoadAllAssembliesAndSetupDomain (462ms)
-		LoadAssemblies (316ms)
+		CreateAndSetChildDomain (29ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (36ms)
+	LoadAllAssembliesAndSetupDomain (438ms)
+		LoadAssemblies (305ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (237ms)
-			TypeCache.Refresh (172ms)
-				TypeCache.ScanAssembly (155ms)
-			BuildScriptInfoCaches (51ms)
+		AnalyzeDomain (213ms)
+			TypeCache.Refresh (154ms)
+				TypeCache.ScanAssembly (139ms)
+			BuildScriptInfoCaches (47ms)
 			ResolveRequiredComponents (10ms)
-	FinalizeReload (860ms)
+	FinalizeReload (650ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (681ms)
+		SetupLoadedEditorAssemblies (533ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (2ms)
 			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (105ms)
+			BeforeProcessingInitializeOnLoad (95ms)
 			ProcessInitializeOnLoadAttributes (334ms)
-			ProcessInitializeOnLoadMethodAttributes (231ms)
-			AfterProcessingInitializeOnLoad (4ms)
+			ProcessInitializeOnLoadMethodAttributes (91ms)
+			AfterProcessingInitializeOnLoad (6ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-Refreshing native plugins compatible for Editor in 2.59 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 2.72 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 220 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 6657 unused Assets / (4.5 MB). Loaded Objects now: 7353.
-Memory consumption went from 184.4 MB to 179.9 MB.
-Total: 15.151400 ms (FindLiveObjects: 1.772700 ms CreateObjectMapping: 0.952000 ms MarkObjects: 8.000200 ms  DeleteObjects: 4.424600 ms)
+Unloading 6658 unused Assets / (4.7 MB). Loaded Objects now: 7354.
+Memory consumption went from 186.5 MB to 181.9 MB.
+Total: 17.132900 ms (FindLiveObjects: 2.002200 ms CreateObjectMapping: 1.424400 ms MarkObjects: 8.180400 ms  DeleteObjects: 5.524000 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 814617.093883 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/008.png
-  artifactKey: Guid(555b1d424b7524e4b89a42ac96169380) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/008.png using Guid(555b1d424b7524e4b89a42ac96169380) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'de3ef6bdecb5699bca438d006384693c') in 0.092891 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/023.png
-  artifactKey: Guid(f50a393a522d35e4baeb942a3a2749a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/023.png using Guid(f50a393a522d35e4baeb942a3a2749a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b57c654a56316fbd69b693fdc49098f2') in 0.0175588 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/027.png
-  artifactKey: Guid(7f458739003cd494792435a67f14c538) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/027.png using Guid(7f458739003cd494792435a67f14c538) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2c089263cc3cf2a1fb62e475e687a909') in 0.0157841 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/036.png
-  artifactKey: Guid(1b9534944d5b83a418e02f1fa1b48c97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/036.png using Guid(1b9534944d5b83a418e02f1fa1b48c97) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '26cff4a61d214ff0c25923cfdce1f3ef') in 0.0147881 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/039.png
-  artifactKey: Guid(06c1d137ad5f78b488300dd65fc61322) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/039.png using Guid(06c1d137ad5f78b488300dd65fc61322) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2c160ab1c7639538f45eb0e180f08ed7') in 0.0162934 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/038.png
-  artifactKey: Guid(5384c8aa2883b0b419a5bf43fd0df5a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/038.png using Guid(5384c8aa2883b0b419a5bf43fd0df5a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3b80f0fecd6553976a55179e2a05f41c') in 0.0154007 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/049.png
-  artifactKey: Guid(e7d9d27b27c44104cb5025ef7c04ee79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/049.png using Guid(e7d9d27b27c44104cb5025ef7c04ee79) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dbd4da8303a2e550044c4de1f8c585c2') in 0.0178697 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/048.png
-  artifactKey: Guid(49d8471348d428e46b6fd787ec167047) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/048.png using Guid(49d8471348d428e46b6fd787ec167047) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ec5ec6a0f02aaa86a21bddf3750f0c56') in 0.0163844 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/058.png
-  artifactKey: Guid(620cb69fdf5f18c4687e139929cb5e02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/058.png using Guid(620cb69fdf5f18c4687e139929cb5e02) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e84f6ec47e775ffbe8e42e11818422fc') in 0.016968 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/059.png
-  artifactKey: Guid(b7499a9b15befba42bc2effdbd9ee0f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/059.png using Guid(b7499a9b15befba42bc2effdbd9ee0f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e58b42db5b43c952a415b8f2a8867cea') in 0.016653 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/063.png
-  artifactKey: Guid(b2e6680a44d8e8247ad0bf7aa2898190) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/063.png using Guid(b2e6680a44d8e8247ad0bf7aa2898190) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '28b4de89b37177774d2a8b6937ed0605') in 0.0154688 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/070.png
-  artifactKey: Guid(ea05d8297f1dec1429dc16f4217da04a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/070.png using Guid(ea05d8297f1dec1429dc16f4217da04a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f6366937b5aaef92f59b582e425fbe43') in 0.0181691 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/073.png
-  artifactKey: Guid(547ccb0e12da9144ebca86a11e8c46c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/073.png using Guid(547ccb0e12da9144ebca86a11e8c46c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'eabbbe614ec0a2629112531b1cf8eea0') in 0.0196843 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/075.png
-  artifactKey: Guid(6f5b3a9eae876484cae17b6fe9f39117) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/075.png using Guid(6f5b3a9eae876484cae17b6fe9f39117) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3ddbbff4aea8e4efd6f01df2b10f8b72') in 0.0214527 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/081.png
-  artifactKey: Guid(c416f0a40165b124fa5ce929055ac076) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/081.png using Guid(c416f0a40165b124fa5ce929055ac076) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0f690be1fb68682fae385655cbd08eb3') in 0.0509447 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  Time since last request: 1063838.977595 seconds.
+  path: Assets/Environments/RPGBuildings_DESERT/Sliced/houses_outside.png
+  artifactKey: Guid(d7b1319f6f6630642892ef6add5ef390) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGBuildings_DESERT/Sliced/houses_outside.png using Guid(d7b1319f6f6630642892ef6add5ef390) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f82a093c8a9442dda46ce5eefd39cedb') in 0.7421977 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 632
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000029 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/013.png
-  artifactKey: Guid(b52d42ceebeb34c42ae806307073e2db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/013.png using Guid(b52d42ceebeb34c42ae806307073e2db) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1faffc4e3d2a7a7a6cb8875df539bfe0') in 0.0556279 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  path: Assets/Environments/RPGBuildings_DESERT/Sliced/interriors2.png
+  artifactKey: Guid(ec4eab600cd1d554ba244b8c80ffa84f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGBuildings_DESERT/Sliced/interriors2.png using Guid(ec4eab600cd1d554ba244b8c80ffa84f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8cf7a2fae722aa024e764a82907090f3') in 0.1860852 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 178
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/043.png
-  artifactKey: Guid(88fa1f3df2073d24dbf31d96837dfb8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/043.png using Guid(88fa1f3df2073d24dbf31d96837dfb8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7bf0c66efd7748011f43ff98db6888e2') in 0.0189844 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/021.png
-  artifactKey: Guid(a897b0d9044f71a4e865721dba16a878) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/021.png using Guid(a897b0d9044f71a4e865721dba16a878) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '45867f595e3c502e0d7971d1bccc919d') in 0.0190583 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/051.png
-  artifactKey: Guid(472bdae7c43a6eb40bfa9821119a277b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/051.png using Guid(472bdae7c43a6eb40bfa9821119a277b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9cf2023513094fd1fc63e3a272cc69b4') in 0.0177351 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.808135 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/089.png
-  artifactKey: Guid(2604ee72ce4f1a640923ec60f6a4b5b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/089.png using Guid(2604ee72ce4f1a640923ec60f6a4b5b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6a34d23d1d3f8094dfd5752666de8a12') in 0.0142192 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001952 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/093.png
-  artifactKey: Guid(abe3b45843fa17d4e8db4322e04f1de4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/093.png using Guid(abe3b45843fa17d4e8db4322e04f1de4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bdff04c1526d5288a3ffd26e47a9ae72') in 0.0136758 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002495 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/097.png
-  artifactKey: Guid(e9a7075235da6d349b2d67b528cb9259) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/097.png using Guid(e9a7075235da6d349b2d67b528cb9259) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8e4b698580f863aabae708d43c027b4e') in 0.0155415 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.028272 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/103.png
-  artifactKey: Guid(0e2e98962d5c5c8438c8a8768f550e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/103.png using Guid(0e2e98962d5c5c8438c8a8768f550e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8b2b6ddea857df03b1e75912c3e1f64e') in 0.0142509 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/107.png
-  artifactKey: Guid(fdba313becd036340ac9199ff8fc8757) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/107.png using Guid(fdba313becd036340ac9199ff8fc8757) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '960c31b3465ae71eb3708d3c431ce1ac') in 0.0143572 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/110.png
-  artifactKey: Guid(5348c7dfdbeb91d4397fd33fcad47b3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/110.png using Guid(5348c7dfdbeb91d4397fd33fcad47b3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd11ac7146a05f2b1d8859fd054d14a1c') in 0.0157675 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/115.png
-  artifactKey: Guid(d876fdd0d1f9bd0428847625d65cc48a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 2/115.png using Guid(d876fdd0d1f9bd0428847625d65cc48a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9f121e69994e06f3d097a3dcf926fd6f') in 0.1308184 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.487256 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/009.png
-  artifactKey: Guid(4f14833ab32296c49af462b3338b7a83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/009.png using Guid(4f14833ab32296c49af462b3338b7a83) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '472e79bfbe35c380a216eaa2a3b69cfe') in 0.0147883 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/013.png
-  artifactKey: Guid(bdeddc4390f0e7248ade95419b8c3f43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/013.png using Guid(bdeddc4390f0e7248ade95419b8c3f43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cc793191a2518d4bea4456b3d93b1217') in 0.0165061 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/017.png
-  artifactKey: Guid(ee004e6adb5e76c42b68d7b4a901f917) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/017.png using Guid(ee004e6adb5e76c42b68d7b4a901f917) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '669090bdbe67814531f1677b551fd992') in 0.0163973 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/022.png
-  artifactKey: Guid(deeeb40a7816c8a458e4d1dabce7ac50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/022.png using Guid(deeeb40a7816c8a458e4d1dabce7ac50) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '600f6b33c09e04ff5db31525f21c4cfc') in 0.0157138 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/028.png
-  artifactKey: Guid(ea5c03d4673409644a5f68afd008defc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/028.png using Guid(ea5c03d4673409644a5f68afd008defc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7c35b8e03c03551cda94f17576b017e7') in 0.0191002 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/033.png
-  artifactKey: Guid(52e9d51a35af57a4f899636341be0f9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/033.png using Guid(52e9d51a35af57a4f899636341be0f9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '61b69afc387f87e113587b42192d769c') in 0.0137509 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/036.png
-  artifactKey: Guid(bfec846666adb2145a52840ced75bd04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/036.png using Guid(bfec846666adb2145a52840ced75bd04) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9289e0c40e282f7fabe8d8f90b471cab') in 0.014498 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/043.png
-  artifactKey: Guid(63a7aaf9e02287448b4060abaae22ed8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/043.png using Guid(63a7aaf9e02287448b4060abaae22ed8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ced00cbe9c9e12d31c1277febdcce1c2') in 0.0190778 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/048.png
-  artifactKey: Guid(3d7c36ba2d8f84549b0cb68e717ec9eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/048.png using Guid(3d7c36ba2d8f84549b0cb68e717ec9eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e503d9f9fa34f3625413796101c34b8e') in 0.0156604 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/052.png
-  artifactKey: Guid(4a94a4248b5e3dd4aa12c3d7ab36bab1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/052.png using Guid(4a94a4248b5e3dd4aa12c3d7ab36bab1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '05f97403b9e7af093a84caac0a7a2103') in 0.0166956 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/056.png
-  artifactKey: Guid(103810aef0faa8c4eaf0ba29803ea735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/056.png using Guid(103810aef0faa8c4eaf0ba29803ea735) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c02e43733a1424954897c45c17058957') in 0.0146779 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/063.png
-  artifactKey: Guid(fd412b28f6659fa4fb6167c694a493c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/063.png using Guid(fd412b28f6659fa4fb6167c694a493c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6dedae86d259de92e5ade23073e5177a') in 0.0766756 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/047.png
-  artifactKey: Guid(ea8726cd1b51c614db5545da4864f9e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/047.png using Guid(ea8726cd1b51c614db5545da4864f9e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '67f2a9c7efb8d701d20d1cf34afea0f9') in 0.0134781 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  Time since last request: 0.000040 seconds.
+  path: Assets/Environments/RPGBuildings_DESERT/Sliced/mainbuildings2_shadows.png
+  artifactKey: Guid(63ee71fe6aa4abd4e95b4d8422ac63f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGBuildings_DESERT/Sliced/mainbuildings2_shadows.png using Guid(63ee71fe6aa4abd4e95b4d8422ac63f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f921fd5d08d398b4f782efcc5ed0645f') in 0.3725014 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 345
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000027 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/072.png
-  artifactKey: Guid(2b912bf79d57d7c4895749c2f8e08e40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/072.png using Guid(2b912bf79d57d7c4895749c2f8e08e40) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b5960dc527d9eacb11fd709d582141b2') in 0.0147007 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  path: Assets/Environments/RPGBuildings_DESERT/Sliced/interriors1.png
+  artifactKey: Guid(5db524f370639ec4a842bc4aa2f9a946) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGBuildings_DESERT/Sliced/interriors1.png using Guid(5db524f370639ec4a842bc4aa2f9a946) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6b8487b1d886825ded60d73dbef8d133') in 0.5745439 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 624
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/077.png
-  artifactKey: Guid(0dbc7e718cfb2154487d85ad2f5c640a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/077.png using Guid(0dbc7e718cfb2154487d85ad2f5c640a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '78f047cf8d01739cae2411716cf69b36') in 0.0145589 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  Time since last request: 9.120107 seconds.
+  path: Assets/Environments/RPGBuildings_HOUSES/houses_outside_shadows.png
+  artifactKey: Guid(2aac6e945cc245d4e8ef5a393fe615f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGBuildings_HOUSES/houses_outside_shadows.png using Guid(2aac6e945cc245d4e8ef5a393fe615f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1c09c5e6b56e118866c4100d5d01fc7b') in 0.2483742 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 117
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/079.png
-  artifactKey: Guid(140b4f950457fc84d8fab76fcc8e10d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/079.png using Guid(140b4f950457fc84d8fab76fcc8e10d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '297c3fe518eb52255de8bf074f706a5a') in 0.0180438 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/083.png
-  artifactKey: Guid(c340e51730d5a104e9895e496fd7b248) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/083.png using Guid(c340e51730d5a104e9895e496fd7b248) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7209a3a59cb97d81950d500deb9e9733') in 0.0189716 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/084.png
-  artifactKey: Guid(d1e76b53e4735aa4e8036b6dcab0c484) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/084.png using Guid(d1e76b53e4735aa4e8036b6dcab0c484) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd9a6fe3a77a1a9da27cae9e72b3f38ec') in 0.0194169 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/049.png
-  artifactKey: Guid(351c5c200b9aebf46b2cf113dd1ea704) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/049.png using Guid(351c5c200b9aebf46b2cf113dd1ea704) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '45038ed75f51206992c95bbd6e595f5b') in 0.0189296 seconds
+  Time since last request: 24.277688 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_0.asset
+  artifactKey: Guid(e019931e76af24d49a36c919515dfcba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_0.asset using Guid(e019931e76af24d49a36c919515dfcba) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd2a3785b15d2e017265cc2adb17b8fbe') in 0.0588878 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000021 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/065.png
-  artifactKey: Guid(cdff76f58885f0045b2a8b226b99ee22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/065.png using Guid(cdff76f58885f0045b2a8b226b99ee22) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '15d38dc4c72c87d2dded76690307663f') in 0.0165144 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.474799 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/089.png
-  artifactKey: Guid(09887e93f4a244a4a83bf9f79148298f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/089.png using Guid(09887e93f4a244a4a83bf9f79148298f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7e119900dbed2ef091ae935c7538ffc5') in 0.0165481 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/093.png
-  artifactKey: Guid(05cbfc7416bf77149904843783631743) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/093.png using Guid(05cbfc7416bf77149904843783631743) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '02bc477a8d1fedc22e5b555aa88d9609') in 0.0152366 seconds
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_5.asset
+  artifactKey: Guid(1918d2a0df1cff94787e3628b0aa44e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_5.asset using Guid(1918d2a0df1cff94787e3628b0aa44e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0b243e7d8f4ffc501e49b5e36401ef03') in 0.024936 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000019 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/094.png
-  artifactKey: Guid(022cad707530be64b972292a4b00716d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/094.png using Guid(022cad707530be64b972292a4b00716d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6bbd771e6c51427fb1ca5217dfd5f80c') in 0.0164455 seconds
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_6.asset
+  artifactKey: Guid(3e397e2f5256b494d9e2b26dddae65d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_6.asset using Guid(3e397e2f5256b494d9e2b26dddae65d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4a9a155d75f4bb4065b4b78d4594f809') in 0.0209246 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_14.asset
+  artifactKey: Guid(3e08a11a8181dd34e80a503b077e7dc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_14.asset using Guid(3e08a11a8181dd34e80a503b077e7dc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b5cc376d95ba1e7c93b09ac1668ffd7b') in 0.0194724 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_22.asset
+  artifactKey: Guid(e91fd22e82149c340a4fd91d1030456c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_22.asset using Guid(e91fd22e82149c340a4fd91d1030456c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bb33822e1f2226eb85d34bdfef736c8f') in 0.0197542 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000019 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/100.png
-  artifactKey: Guid(ea56892138d44c34589c0e14e0ca2913) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/100.png using Guid(ea56892138d44c34589c0e14e0ca2913) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0c3105bcd7e8c4c044adbe171642f344') in 0.0175896 seconds
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_30.asset
+  artifactKey: Guid(1b55406b9fc5c6746a9614c07e3643d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_30.asset using Guid(1b55406b9fc5c6746a9614c07e3643d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd410524c8c54e6c8c4bcbb90628c7ec6') in 0.0191631 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/105.png
-  artifactKey: Guid(3bd523c2ea5339b42bc7fea9a924590b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/105.png using Guid(3bd523c2ea5339b42bc7fea9a924590b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'faf6ce7e9f56c1d6f235bcb7c365e148') in 0.0168114 seconds
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_34.asset
+  artifactKey: Guid(901dbb42624177241bd1a6cf5236759b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_34.asset using Guid(901dbb42624177241bd1a6cf5236759b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b4feceef8daa51068c2de1821fd2b86c') in 0.0207667 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_36.asset
+  artifactKey: Guid(340bb06f225427c4286ec6fbfc558007) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_36.asset using Guid(340bb06f225427c4286ec6fbfc558007) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '037774ce0b624027eb628b00711d0ab9') in 0.0185649 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_45.asset
+  artifactKey: Guid(343c361e6db66f04fad9a43f9c464a8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_45.asset using Guid(343c361e6db66f04fad9a43f9c464a8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7b107a80aaf364a325db89f917daabb1') in 0.0189866 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_50.asset
+  artifactKey: Guid(0ba35f2f6fe651e49bc8fa63bd4c4d29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_50.asset using Guid(0ba35f2f6fe651e49bc8fa63bd4c4d29) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '66dfa350a69cbd38b6da115906b9f559') in 0.0215113 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_26.asset
+  artifactKey: Guid(a6a9411704895fb47a34b14643c45a53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_26.asset using Guid(a6a9411704895fb47a34b14643c45a53) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '48abfc30e184f72b9b06eba635224b62') in 0.0204604 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_18.asset
+  artifactKey: Guid(7ad0fd06b14e3d3409325a97b2d19bf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_18.asset using Guid(7ad0fd06b14e3d3409325a97b2d19bf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b762c5e3a4bb7f7ff69c8086cd5a2376') in 0.0213822 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_7.asset
+  artifactKey: Guid(4672a69c5669c6d41845a7eb2b33a8d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_7.asset using Guid(4672a69c5669c6d41845a7eb2b33a8d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '64fc115bfc32b06f751d52b51e470d41') in 0.0205671 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_1.asset
+  artifactKey: Guid(a944bd6a4c3479945a4d1c78d166a850) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_1.asset using Guid(a944bd6a4c3479945a4d1c78d166a850) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'eb7e86b23b7ba6c0ddb13f30b65d0729') in 0.020332 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_20.asset
+  artifactKey: Guid(30cf2f44ab885b545865aae661887bc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_20.asset using Guid(30cf2f44ab885b545865aae661887bc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9c878a6f0758be0b38769a11254cf8c4') in 0.0144181 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_9.asset
+  artifactKey: Guid(a2fb90ce8d6b7ca42ab0ebef22a5c9bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_9.asset using Guid(a2fb90ce8d6b7ca42ab0ebef22a5c9bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '99b684de432d1c5a92c3f637011b57e8') in 0.0205338 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_12.asset
+  artifactKey: Guid(71b0fdf3106270d48a3f1708e5186686) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_12.asset using Guid(71b0fdf3106270d48a3f1708e5186686) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a528f007e9f27e3bc20b296bf6311774') in 0.0200776 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_39.asset
+  artifactKey: Guid(1d50d74776f306c47b8fc5329409ac49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_39.asset using Guid(1d50d74776f306c47b8fc5329409ac49) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e725032187a3b6c8d529008c1e0b25f8') in 0.0181423 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_4.asset
+  artifactKey: Guid(f734eff99f0515147b0e2b7668ebef29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_4.asset using Guid(f734eff99f0515147b0e2b7668ebef29) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7cf7a1d8f1eabfeb66b1b67b52fd90b5') in 0.0216885 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_23.asset
+  artifactKey: Guid(c9f0124f6840e1048b5a08cb3406514f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_23.asset using Guid(c9f0124f6840e1048b5a08cb3406514f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'edd4fd4b30f95ff225359414e2b97356') in 0.0134382 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_42.asset
+  artifactKey: Guid(581e3264f3638834d8d6ef2b524f7813) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_42.asset using Guid(581e3264f3638834d8d6ef2b524f7813) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b810ba20225602cb9db667976cb55012') in 0.0256943 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_3.asset
+  artifactKey: Guid(f18b237be9831b844af35164c89d756a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_3.asset using Guid(f18b237be9831b844af35164c89d756a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '36a288b4bb48abc72f05e78f9b430421') in 0.0247017 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_25.asset
+  artifactKey: Guid(c504e73b7cbe22a4fafddb399d17db54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_25.asset using Guid(c504e73b7cbe22a4fafddb399d17db54) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a55482f6fc3b485ef37b210b08757ff4') in 0.0233827 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_31.asset
+  artifactKey: Guid(7d650df2b22bc5842b66da00902a8098) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_31.asset using Guid(7d650df2b22bc5842b66da00902a8098) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '109e72172f622180af99e977ee46b547') in 0.0239944 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_19.asset
+  artifactKey: Guid(9c4215887235e4448af58afe48e45f18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_19.asset using Guid(9c4215887235e4448af58afe48e45f18) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1c00867da73ca3bca591867838d0f71d') in 0.0136111 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_51.asset
+  artifactKey: Guid(7951b76888a91ff4eb92cbe1b9616cf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_51.asset using Guid(7951b76888a91ff4eb92cbe1b9616cf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '990420e6f65160eb7e1992386deef45d') in 0.0146933 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_32.asset
+  artifactKey: Guid(4bebe5c5d8daabb418dfa1659919e7eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_32.asset using Guid(4bebe5c5d8daabb418dfa1659919e7eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c1f51fb1407d2faab388226d70a2827e') in 0.021085 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_49.asset
+  artifactKey: Guid(6ecfb6eba28ab184fb1717169a104f51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_49.asset using Guid(6ecfb6eba28ab184fb1717169a104f51) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ab82bca676fac503aebae18a478f4e4a') in 0.0261136 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_56.asset
+  artifactKey: Guid(1552b83ec2b5f4b468f717be926b6941) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_56.asset using Guid(1552b83ec2b5f4b468f717be926b6941) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '21137d8e9eae2a72052e750003f346cd') in 0.0314514 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000017 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/112.png
-  artifactKey: Guid(9b2b69fe7ebcb8c4799db4dd39eb7daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/112.png using Guid(9b2b69fe7ebcb8c4799db4dd39eb7daf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '299b54164c88917bba39ed8d39d5ee5e') in 0.017593 seconds
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_33.asset
+  artifactKey: Guid(1e00f38fffa9fb049aaccf3c28c650e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_33.asset using Guid(1e00f38fffa9fb049aaccf3c28c650e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '04c84aae117a2e781f440a859afd9705') in 0.029006 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/118.png
-  artifactKey: Guid(f68495e9e40858b47832275337f341be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/118.png using Guid(f68495e9e40858b47832275337f341be) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cf83f9cafa5fa59d54bfe20ede444e54') in 0.0167604 seconds
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_17.asset
+  artifactKey: Guid(f33624124d0b51e40a17f0b079b613c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_17.asset using Guid(f33624124d0b51e40a17f0b079b613c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a748c40b7c5eea8d5ed58f6bc8a63833') in 0.0138451 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000081 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_53.asset
+  artifactKey: Guid(9f0bfbfa0fc27ed4fb40846545dacba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_53.asset using Guid(9f0bfbfa0fc27ed4fb40846545dacba6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fa9b8d2165c58fcc29394980a2a17f73') in 0.0207423 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.509974 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_0.asset
+  artifactKey: Guid(3714484be1b672944aeb70ab089e61e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_0.asset using Guid(3714484be1b672944aeb70ab089e61e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '913c6bbcb86e5fc9dd0161e926b4c8ef') in 0.0243977 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_1.asset
+  artifactKey: Guid(d445f049d72d2f94587fa9b27eccf165) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_1.asset using Guid(d445f049d72d2f94587fa9b27eccf165) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b2e45ef33b9fdc735bfd8aea897a4ac1') in 0.0164695 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_5.asset
+  artifactKey: Guid(7e2b7e91ab292774492ebf45dc632965) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_5.asset using Guid(7e2b7e91ab292774492ebf45dc632965) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '64aa57eab26ad349583014cbc6455209') in 0.0140379 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_6.asset
+  artifactKey: Guid(dd6bd27203ce1974491d0413e5b02393) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_6.asset using Guid(dd6bd27203ce1974491d0413e5b02393) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '72e5347669f8b1a64f416b0ab2911619') in 0.0161446 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_17.asset
+  artifactKey: Guid(d6af22702cdc573429e249bd3a7b275b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_17.asset using Guid(d6af22702cdc573429e249bd3a7b275b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '27b227b68c457414062609de9458d4c7') in 0.0149232 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_19.asset
+  artifactKey: Guid(dde8270a3b1584d45aacb02c5761922c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_19.asset using Guid(dde8270a3b1584d45aacb02c5761922c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4eb3c56cc3ecbe94e735550e2850b919') in 0.0170325 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_18.asset
+  artifactKey: Guid(864ba87afc6eb25469d6023803e5a43a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_18.asset using Guid(864ba87afc6eb25469d6023803e5a43a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '20da94a78d781676594554a341ddc17e') in 0.011076 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_31.asset
+  artifactKey: Guid(f309f15b183535f46855c58d79313547) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_31.asset using Guid(f309f15b183535f46855c58d79313547) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4f02523b647f1e8061e8dcc25b409724') in 0.0108495 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_10.asset
+  artifactKey: Guid(b9978062d7cbe4743ba68459e5ea4020) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_10.asset using Guid(b9978062d7cbe4743ba68459e5ea4020) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '13b95dcfd7edbea54eba5cd4ecbf7594') in 0.0153519 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_38.asset
+  artifactKey: Guid(8ffe9cc60179bd54f89c9ddeda9500b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_38.asset using Guid(8ffe9cc60179bd54f89c9ddeda9500b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ce38f2c8287e142a2e486cd3ff790526') in 0.0151233 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_45.asset
+  artifactKey: Guid(065f756bea195d141b3200bb5bef1fcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_45.asset using Guid(065f756bea195d141b3200bb5bef1fcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '33b828398998b5d6bd756fce4b393429') in 0.0161471 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_53.asset
+  artifactKey: Guid(e9e4c1df44e210345acfa60e8626fbfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_53.asset using Guid(e9e4c1df44e210345acfa60e8626fbfe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c7a3aae16797e9c39d519ba0039da48d') in 0.0157709 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_40.asset
+  artifactKey: Guid(ce59cb3ff024b4d449769f7c8d27d575) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_40.asset using Guid(ce59cb3ff024b4d449769f7c8d27d575) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8aa45229f630b97980eb265bd8eb13db') in 0.0179937 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_7.asset
+  artifactKey: Guid(40961e58f35d57e44872abf86e3a390b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_7.asset using Guid(40961e58f35d57e44872abf86e3a390b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '13f0df235f98587496203cf162bc8136') in 0.0183125 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_51.asset
+  artifactKey: Guid(4cec8f5ffee0aad4084a970140614b22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_51.asset using Guid(4cec8f5ffee0aad4084a970140614b22) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '379f6f7327ff0f0ee6c890b9a9e031e0') in 0.021406 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_30.asset
+  artifactKey: Guid(4dbce19d48282b743809dd3dbdcbd520) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_30.asset using Guid(4dbce19d48282b743809dd3dbdcbd520) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '40e6d4a25fd89ed2130103543cb0cb61') in 0.0105387 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_2.asset
+  artifactKey: Guid(87cd9b8fc854a4547b3b186cdc09f252) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_2.asset using Guid(87cd9b8fc854a4547b3b186cdc09f252) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e7765f11bd8755943ab35958e05b3152') in 0.017854 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_16.asset
+  artifactKey: Guid(bdfeb8a2c3f589d4f9f72fd3c7ba164b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_16.asset using Guid(bdfeb8a2c3f589d4f9f72fd3c7ba164b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '942e86d92ad48b7ffe5251af77bdede6') in 0.009063 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_54.asset
+  artifactKey: Guid(9a1d61d628366a44b872b0e0e18764ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_54.asset using Guid(9a1d61d628366a44b872b0e0e18764ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '60a3bf09a06afde94644e9246fd9c64e') in 0.018142 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_9.asset
+  artifactKey: Guid(efd2a14786272cf40b6aeb7d5cf2ade0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_9.asset using Guid(efd2a14786272cf40b6aeb7d5cf2ade0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e5cea2724fac42b8ab6e7cad66cb0db0') in 0.0182404 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_52.asset
+  artifactKey: Guid(674f1f8beeadcd34baadb6552401532d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_52.asset using Guid(674f1f8beeadcd34baadb6552401532d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'baae342d81399eb62687238d8b059cd3') in 0.0188375 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_35.asset
+  artifactKey: Guid(cdf8bc53de0df884fa25b9a8844b8f02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_35.asset using Guid(cdf8bc53de0df884fa25b9a8844b8f02) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd1fc3142936f2ddec4064511db1d21f7') in 0.0098128 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.612531 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_61.asset
+  artifactKey: Guid(64a9c540b5e1cbd4eab8f3396e7231a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_61.asset using Guid(64a9c540b5e1cbd4eab8f3396e7231a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'db3cd9b4212dc9ebd01f608a5536ae62') in 0.0155675 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_65.asset
+  artifactKey: Guid(a6c55d333c0ff1f4581b5830651b43b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_65.asset using Guid(a6c55d333c0ff1f4581b5830651b43b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0b66de65a1cea878efab59e053694c16') in 0.0174626 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_69.asset
+  artifactKey: Guid(a3cb9b4cf915fe040836cb7909fd2c44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_69.asset using Guid(a3cb9b4cf915fe040836cb7909fd2c44) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c4029ebe0b7cf50ab3429a1b1154bca4') in 0.0117387 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_72.asset
+  artifactKey: Guid(0e3a717102a62654fb8d6c8f711eea41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_72.asset using Guid(0e3a717102a62654fb8d6c8f711eea41) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'edd37f57a6edf68bbee0d8d828e1de04') in 0.0104758 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_76.asset
+  artifactKey: Guid(77549e1a52d58424f83d0f65505c4d25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_76.asset using Guid(77549e1a52d58424f83d0f65505c4d25) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '47ce81e2f207555621d1cfeb4f5a97c4') in 0.0157647 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000072 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_80.asset
+  artifactKey: Guid(8553289beee76e84294166f5d56dbcc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_80.asset using Guid(8553289beee76e84294166f5d56dbcc6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '367f4f2b716186dbd5ce62404952b804') in 0.0169595 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_87.asset
+  artifactKey: Guid(c66c77b1632fe7c4c90728c5ab0a8d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_87.asset using Guid(c66c77b1632fe7c4c90728c5ab0a8d1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '87f75973b93f72731adef3e66cdb288a') in 0.0154992 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_90.asset
+  artifactKey: Guid(dfb69179c73601f41adef54418d21d9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_90.asset using Guid(dfb69179c73601f41adef54418d21d9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3f391d6a1b5d6e7731a173afeb6f38a2') in 0.0179751 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_96.asset
+  artifactKey: Guid(23f338b8bc2b9234cadb85f091fd2bdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_96.asset using Guid(23f338b8bc2b9234cadb85f091fd2bdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c64935489d5be210d9b385d9e0601578') in 0.0181631 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_95.asset
+  artifactKey: Guid(0c1b1d7cc5b28624c8a20e6b295a6b24) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_95.asset using Guid(0c1b1d7cc5b28624c8a20e6b295a6b24) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c1350dfcd15e08884cc3a194944247f4') in 0.0160309 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000017 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/126.png
-  artifactKey: Guid(97ee1c5619185094c991ac7b60c37a76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/126.png using Guid(97ee1c5619185094c991ac7b60c37a76) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e1b80eca4bb52165951a4216038283b1') in 0.0325954 seconds
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_101.asset
+  artifactKey: Guid(2ab57442194a0f84e8a0bb0a7f99194d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_101.asset using Guid(2ab57442194a0f84e8a0bb0a7f99194d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '425000eb8df59cc33c32c19eecf3e887') in 0.017891 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/117.png
-  artifactKey: Guid(c6bee8de906146e41ae95a714d4120f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/117.png using Guid(c6bee8de906146e41ae95a714d4120f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f3527e5f868a01bdd46f0372a55faa4e') in 0.0210174 seconds
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_108.asset
+  artifactKey: Guid(09f71b0d46276af42abe56ca74e47e41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_108.asset using Guid(09f71b0d46276af42abe56ca74e47e41) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6aab92aa373edbd6192a6898b7aed709') in 0.0118058 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_112.asset
+  artifactKey: Guid(60a34d425d0cd0845b49c1d519bc19db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_112.asset using Guid(60a34d425d0cd0845b49c1d519bc19db) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4f1eab4f75931dbee79350197730d2f6') in 0.0119499 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_105.asset
+  artifactKey: Guid(c17cd3207bdb57c4a852307ae0c437f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_105.asset using Guid(c17cd3207bdb57c4a852307ae0c437f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '31578b8603b216abaa2d83232aa24f5b') in 0.0102978 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_120.asset
+  artifactKey: Guid(3f79a672135e65a40a6cc490555ce8eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_120.asset using Guid(3f79a672135e65a40a6cc490555ce8eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c36936b418b13c1cbca22b0ba76c3b50') in 0.011537 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_126.asset
+  artifactKey: Guid(59576d91fee8631438d36ee1803c81dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_126.asset using Guid(59576d91fee8631438d36ee1803c81dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '33e90ff4b94a2d09464c5d6ca291ff02') in 0.0099093 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000025 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/109.png
-  artifactKey: Guid(3591591d8b29a054bbb40b2a69e05549) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/109.png using Guid(3591591d8b29a054bbb40b2a69e05549) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e966f1d8f899e474dea605b55c26b6b1') in 0.0217066 seconds
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_131.asset
+  artifactKey: Guid(6f7f478abeae7b84896caf4359d465d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_131.asset using Guid(6f7f478abeae7b84896caf4359d465d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ce810780d04768070e01618060cd052b') in 0.0108952 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/111.png
-  artifactKey: Guid(290867282c1ccb043912d6ce4a70a7f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/111.png using Guid(290867282c1ccb043912d6ce4a70a7f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '167c72554eed1a60c0af5c6b955b4363') in 0.0146759 seconds
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_136.asset
+  artifactKey: Guid(d0e96c0a7b3d81b4a958c00dc1377436) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_136.asset using Guid(d0e96c0a7b3d81b4a958c00dc1377436) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1a1ffe529dff253f5fd1b45e75aee30d') in 0.0196715 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.161846 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/138.png
-  artifactKey: Guid(c57a14a6c51c29e438a91012ea44f84a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/138.png using Guid(c57a14a6c51c29e438a91012ea44f84a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '35f89a6f65df02d9bb78ef5df6bbe61d') in 0.0177752 seconds
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_124.asset
+  artifactKey: Guid(8d7daefa1151ed446bbeef2eb045a463) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_124.asset using Guid(8d7daefa1151ed446bbeef2eb045a463) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd924a9ac42d13fb32221bec523acc29b') in 0.0180901 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.068772 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/145.png
-  artifactKey: Guid(6b72531d231f42c4c93da050787d1b69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/145.png using Guid(6b72531d231f42c4c93da050787d1b69) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '548f5a56fec3484e5014c513ea8fcab4') in 0.0168797 seconds
+  Time since last request: 0.000033 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_82.asset
+  artifactKey: Guid(2691e3e5e87428a4f8653016c43d0e75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_82.asset using Guid(2691e3e5e87428a4f8653016c43d0e75) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b7812d63a6e71427cfb433d6ad994ed8') in 0.0125808 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.134528 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/158.png
-  artifactKey: Guid(ccf03002c35d721428bd2522fba9d0e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/158.png using Guid(ccf03002c35d721428bd2522fba9d0e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8556cecc95710142ed980cc71d0e859f') in 0.0155668 seconds
+  Time since last request: 29.234252 seconds.
+  path: Assets/Environments/RPGW_GL_v2.0/MainLev_autotiling.png
+  artifactKey: Guid(eb66366aac9106b4eb0069d351049a0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_GL_v2.0/MainLev_autotiling.png using Guid(eb66366aac9106b4eb0069d351049a0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '03bc4d694c8705ebe3450204e4d6006e') in 0.0258106 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.049118 seconds.
-  path: Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/165.png
-  artifactKey: Guid(1dd19d64b33f19c4eb5593fe53c33898) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/Pixel Battle Backgrounds Mega Pack/Pixel Battle Backgrounds - Pack 3/165.png using Guid(1dd19d64b33f19c4eb5593fe53c33898) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c4a7489be4b54196e94e1cc823745c32') in 0.0174288 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  Time since last request: 2.007217 seconds.
+  path: Assets/Environments/RPGW_GL_v2.0/Sliced/MainLev_auto.png
+  artifactKey: Guid(d0785111d54959245b335ba29557ef35) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_GL_v2.0/Sliced/MainLev_auto.png using Guid(d0785111d54959245b335ba29557ef35) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '88c2fa8dbedc2f722bf89cbf22209461') in 0.7229359 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 806
 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server

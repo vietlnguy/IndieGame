@@ -15,7 +15,7 @@ C:/Users/viet_/projects/SecretProject
 -logFile
 Logs/AssetImportWorker4.log
 -srvPort
-50690
+57016
 -job-worker-count
 7
 -background-job-worker-count
@@ -59,12 +59,12 @@ C:/Users/viet_/projects/SecretProject
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [22696]  Target information:
+Player connection [43512]  Target information:
 
-Player connection [22696]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 1429435280 [EditorId] 1429435280 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [43512]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 2622391041 [EditorId] 2622391041 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [22696] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [22696] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [43512] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [43512] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -76,7 +76,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 233.42 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 2.36 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.36f1 (9fe3b5f71dbb)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Resources/UnitySubsystems
@@ -92,43 +92,43 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56224
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56664
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002787 seconds.
-- Loaded All Assemblies, in  0.498 seconds
+Registered in 0.002454 seconds.
+- Loaded All Assemblies, in  0.295 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.277 seconds
-Domain Reload Profiling: 773ms
-	BeginReloadAssembly (116ms)
+- Finished resetting the current domain, in  0.259 seconds
+Domain Reload Profiling: 553ms
+	BeginReloadAssembly (100ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (29ms)
+	RebuildCommonClasses (28ms)
 	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (42ms)
-	LoadAllAssembliesAndSetupDomain (301ms)
-		LoadAssemblies (113ms)
+	initialDomainReloadingComplete (40ms)
+	LoadAllAssembliesAndSetupDomain (117ms)
+		LoadAssemblies (98ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (298ms)
-			TypeCache.Refresh (297ms)
-				TypeCache.ScanAssembly (285ms)
+		AnalyzeDomain (115ms)
+			TypeCache.Refresh (113ms)
+				TypeCache.ScanAssembly (102ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (277ms)
+	FinalizeReload (259ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (239ms)
+		SetupLoadedEditorAssemblies (221ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (20ms)
 			SetLoadedEditorAssemblies (3ms)
 			BeforeProcessingInitializeOnLoad (41ms)
-			ProcessInitializeOnLoadAttributes (116ms)
-			ProcessInitializeOnLoadMethodAttributes (58ms)
+			ProcessInitializeOnLoadAttributes (114ms)
+			ProcessInitializeOnLoadMethodAttributes (42ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -137,242 +137,626 @@ Domain Reload Profiling: 773ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.695 seconds
-Refreshing native plugins compatible for Editor in 1.45 ms, found 4 plugins.
+- Loaded All Assemblies, in  0.670 seconds
+Refreshing native plugins compatible for Editor in 1.33 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.819 seconds
-Domain Reload Profiling: 1510ms
-	BeginReloadAssembly (156ms)
+- Finished resetting the current domain, in  0.645 seconds
+Domain Reload Profiling: 1310ms
+	BeginReloadAssembly (152ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (6ms)
+		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (27ms)
-	RebuildCommonClasses (34ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (37ms)
-	LoadAllAssembliesAndSetupDomain (453ms)
-		LoadAssemblies (332ms)
+		CreateAndSetChildDomain (34ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (44ms)
+	LoadAllAssembliesAndSetupDomain (429ms)
+		LoadAssemblies (297ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (218ms)
-			TypeCache.Refresh (157ms)
-				TypeCache.ScanAssembly (142ms)
-			BuildScriptInfoCaches (48ms)
-			ResolveRequiredComponents (10ms)
-	FinalizeReload (819ms)
+		AnalyzeDomain (213ms)
+			TypeCache.Refresh (154ms)
+				TypeCache.ScanAssembly (140ms)
+			BuildScriptInfoCaches (47ms)
+			ResolveRequiredComponents (9ms)
+	FinalizeReload (645ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (532ms)
+		SetupLoadedEditorAssemblies (528ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (2ms)
 			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (95ms)
-			ProcessInitializeOnLoadAttributes (329ms)
-			ProcessInitializeOnLoadMethodAttributes (97ms)
+			BeforeProcessingInitializeOnLoad (97ms)
+			ProcessInitializeOnLoadAttributes (331ms)
+			ProcessInitializeOnLoadMethodAttributes (89ms)
 			AfterProcessingInitializeOnLoad (5ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (5ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 2.50 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
+Refreshing native plugins compatible for Editor in 2.36 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 220 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 6657 unused Assets / (4.4 MB). Loaded Objects now: 7353.
-Memory consumption went from 184.5 MB to 180.1 MB.
-Total: 16.411300 ms (FindLiveObjects: 1.586600 ms CreateObjectMapping: 1.217100 ms MarkObjects: 9.186900 ms  DeleteObjects: 4.419100 ms)
+Unloading 6658 unused Assets / (4.7 MB). Loaded Objects now: 7354.
+Memory consumption went from 184.4 MB to 179.7 MB.
+Total: 16.947200 ms (FindLiveObjects: 1.939500 ms CreateObjectMapping: 0.980800 ms MarkObjects: 8.484800 ms  DeleteObjects: 5.540200 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 818248.666362 seconds.
-  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Gems/F_UI_Gems Tile Map 22x22.png
-  artifactKey: Guid(44168ef17beb46d4397aa423b9f037e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Gems/F_UI_Gems Tile Map 22x22.png using Guid(44168ef17beb46d4397aa423b9f037e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '793c565bc3785f6570be78fa01842449') in 0.161478 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 42
-
-========================================================================
-Received Import Request.
-  Time since last request: 22.627908 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Medallions Bases
-  artifactKey: Guid(819afb9eadb124b4aa86f1902c737629) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Medallions Bases using Guid(819afb9eadb124b4aa86f1902c737629) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ee3ebebdd0d861f22f3f5e70aa23cd78') in 0.0006161 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.953543 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions
-  artifactKey: Guid(eb9b7378cb611e2449615de6821accbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions using Guid(eb9b7378cb611e2449615de6821accbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '46efc12b9202ac59758bda7fe1530288') in 0.0005618 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.042229 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsA_01.png
-  artifactKey: Guid(1cb50a36a68f356439e465c41e54868e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsA_01.png using Guid(1cb50a36a68f356439e465c41e54868e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c5568ede4c7e2a7530e8df99397f8f3c') in 0.0137957 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsA_04.png
-  artifactKey: Guid(9983666bf6e22054da55c7de31c635f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsA_04.png using Guid(9983666bf6e22054da55c7de31c635f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7b7f1bdb399aac866db2102491c9d9f6') in 0.0412293 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsA_06.png
-  artifactKey: Guid(71f47f2c82a497f42b11acae3cd889cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsA_06.png using Guid(71f47f2c82a497f42b11acae3cd889cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5376dfd3e38dedf11ffdb3fd65b85f3a') in 0.0141004 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsB_04.png
-  artifactKey: Guid(3b1ecb2b8b70d674db3a908b3f3c75cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsB_04.png using Guid(3b1ecb2b8b70d674db3a908b3f3c75cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dcce44c0451209ce7bceef65a40e79c9') in 0.0123739 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsB_02.png
-  artifactKey: Guid(6e11869940274f247bfcadcd7641835f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsB_02.png using Guid(6e11869940274f247bfcadcd7641835f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '084de1a60efbfa96648231a90ddfa298') in 0.0129018 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsD_03.png
-  artifactKey: Guid(f5ab49adfee11ee4eaf3b6143ac38ae1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsD_03.png using Guid(f5ab49adfee11ee4eaf3b6143ac38ae1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f7bfdde78b8f444543e558098acc3422') in 0.0121491 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsE_05.png
-  artifactKey: Guid(88401d5c810638340806238ac7f96fef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsE_05.png using Guid(88401d5c810638340806238ac7f96fef) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9d8f5c567b48d74632963b2c9743e797') in 0.0131288 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsF_04.png
-  artifactKey: Guid(6e3582536fe5b4f43aaf42296d05c264) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsF_04.png using Guid(6e3582536fe5b4f43aaf42296d05c264) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '15af3998ccb525d1bf576414a6550e47') in 0.0136267 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  Time since last request: 1063838.948753 seconds.
+  path: Assets/Environments/RPGBuildings_DESERT/Sliced/dec_props_outside1.png
+  artifactKey: Guid(5fb52688e8fad9d4cb7ed5eec105a7a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGBuildings_DESERT/Sliced/dec_props_outside1.png using Guid(5fb52688e8fad9d4cb7ed5eec105a7a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1961092cd2dc863572ac661b006607f1') in 0.3815129 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 279
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000022 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsG_05.png
-  artifactKey: Guid(8e258032282d0f54c9ba906120e4f118) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsG_05.png using Guid(8e258032282d0f54c9ba906120e4f118) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '18f3fbb453ad092bdcc94ccb78d24cc3') in 0.0178055 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  path: Assets/Environments/RPGBuildings_DESERT/Sliced/mainbuildings3.png
+  artifactKey: Guid(0ff15bb61e84ca04b846e087f78cf8bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGBuildings_DESERT/Sliced/mainbuildings3.png using Guid(0ff15bb61e84ca04b846e087f78cf8bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7c89224bb6b89b13e97b85979ba52e6d') in 0.2261241 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 200
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsD_01.png
-  artifactKey: Guid(d32d11d7d615196499f9ebbb620f8ad6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsD_01.png using Guid(d32d11d7d615196499f9ebbb620f8ad6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '507a22b535a1f4ed94453f26f28dfebc') in 0.0178595 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  Time since last request: 0.000029 seconds.
+  path: Assets/Environments/RPGBuildings_DESERT/Sliced/houses_outside_shadows.png
+  artifactKey: Guid(64a53d0eef8e9e0438fd1c5d22bd0601) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGBuildings_DESERT/Sliced/houses_outside_shadows.png using Guid(64a53d0eef8e9e0438fd1c5d22bd0601) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '41fef407b5424c905127eaf038f7320a') in 0.6933777 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 650
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsC_01.png
-  artifactKey: Guid(322d4848c542b7d49be4319a9042cf12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsC_01.png using Guid(322d4848c542b7d49be4319a9042cf12) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c25bf98dcedb6b64f7a229240db7995a') in 0.0176597 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/RPGBuildings_DESERT/Sliced/smallobj.png
+  artifactKey: Guid(4e394c37a86c93242a3c4181b66da2f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGBuildings_DESERT/Sliced/smallobj.png using Guid(4e394c37a86c93242a3c4181b66da2f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2b0e68ca1f6f66ded7f85ccef358ce76') in 0.1475399 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 81
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsC_06.png
-  artifactKey: Guid(ec0cd3f8d7260d14e91cad30c2c56c85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsC_06.png using Guid(ec0cd3f8d7260d14e91cad30c2c56c85) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ab7bbc6d935cd84cf43a83e36e3f8bf7') in 0.0129741 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsC_04.png
-  artifactKey: Guid(81b2c6c77f40bb8419efef49fb9ec3d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsC_04.png using Guid(81b2c6c77f40bb8419efef49fb9ec3d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '77596fb9ff24f2088d3e9439fedcf5a4') in 0.0142174 seconds
+  Time since last request: 9.575258 seconds.
+  path: Assets/Environments/RPGBuildings_HOUSES/furnitures.png
+  artifactKey: Guid(313c1ee2c8e2d7a41b38f54e386ac7da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGBuildings_HOUSES/furnitures.png using Guid(313c1ee2c8e2d7a41b38f54e386ac7da) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '38f4914a1a230be6ceac4f0c182f8eaa') in 0.0321148 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000015 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsB_06.png
-  artifactKey: Guid(ebebc9bfac48ac84fb19eeeb563414dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsB_06.png using Guid(ebebc9bfac48ac84fb19eeeb563414dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a79b1001c1cd5fa219193721a8393c7c') in 0.0151366 seconds
+  path: Assets/Environments/RPGBuildings_HOUSES/smallobj.png
+  artifactKey: Guid(b434c3d272204b94cb4d7e54aa1bea0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGBuildings_HOUSES/smallobj.png using Guid(b434c3d272204b94cb4d7e54aa1bea0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '096cfd29cd1e594b6f4a021818d132cd') in 0.1418547 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 81
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.749545 seconds.
+  path: Assets/Environments/RPGW Wetland/Dec_props1.png
+  artifactKey: Guid(cadb50855ec71b14ba640cd42b1da702) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Dec_props1.png using Guid(cadb50855ec71b14ba640cd42b1da702) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '91771b3bf8306aea3f550351dddfec41') in 0.1978908 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 114
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.301979 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/Dec_props1.png
+  artifactKey: Guid(69192b60c5d3ff9449200885c72c5d5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/Dec_props1.png using Guid(69192b60c5d3ff9449200885c72c5d5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '77e7b27f0e4a32a8e31aec44fb93df08') in 0.9403485 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1000
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_16.asset
+  artifactKey: Guid(c14d6074d0bbf5e418e9b197c82481ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_16.asset using Guid(c14d6074d0bbf5e418e9b197c82481ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '50e2b0bccb49e2015c962c69f3cb6ba7') in 0.0228102 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsD_05.png
-  artifactKey: Guid(7d04b7be706d4d6438f1b6b1cc7557fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsD_05.png using Guid(7d04b7be706d4d6438f1b6b1cc7557fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6b79102eac7197486932af763dc2997a') in 0.015618 seconds
+  Time since last request: 0.000038 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_24.asset
+  artifactKey: Guid(e7af9730a6683644dae44d6782f7b14f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_24.asset using Guid(e7af9730a6683644dae44d6782f7b14f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '74605c51e9773aa9f53a3a8e5e93f06e') in 0.0142054 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_2.asset
+  artifactKey: Guid(61e7caa777d069b48ae31897a4e7c534) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_2.asset using Guid(61e7caa777d069b48ae31897a4e7c534) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7271175722746108cfbe4ca5aa96e3f1') in 0.0211205 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_13.asset
+  artifactKey: Guid(0aa526bc40be788408088884175c4164) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_13.asset using Guid(0aa526bc40be788408088884175c4164) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0ac3c1acbab57cb94fb5373d96bacea4') in 0.0238645 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_28.asset
+  artifactKey: Guid(eaf0e792af19e8d4892f5578e39212b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_28.asset using Guid(eaf0e792af19e8d4892f5578e39212b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'da1af62fce167b7da0719e94ba0f7bc6') in 0.0215329 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_8.asset
+  artifactKey: Guid(cd354b0c4e4c9fc4c887b283df832724) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_8.asset using Guid(cd354b0c4e4c9fc4c887b283df832724) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6739fc01f585c8ad097cde9702c5ff4e') in 0.0307065 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_52.asset
+  artifactKey: Guid(e8d65d6544cfa1a47b3124b56ab5fd38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_52.asset using Guid(e8d65d6544cfa1a47b3124b56ab5fd38) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '14e79583403913421ec3a9be0796c058') in 0.0232534 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_35.asset
+  artifactKey: Guid(ea8c5c2103c922843bf5fe8c4e07b2e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_35.asset using Guid(ea8c5c2103c922843bf5fe8c4e07b2e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '204470cfdd6c08614e2e920eb4b3ee82') in 0.0250551 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_27.asset
+  artifactKey: Guid(d4923137d14f60e48bb98e640ca90229) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_27.asset using Guid(d4923137d14f60e48bb98e640ca90229) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4806b43375bd0cb914a61b7db81fe25b') in 0.026272 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_40.asset
+  artifactKey: Guid(b520158ae2cb53440b29ac20e37a670d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_40.asset using Guid(b520158ae2cb53440b29ac20e37a670d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '17a17f4d032bf2c5a8a52ded16016f25') in 0.0341211 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_37.asset
+  artifactKey: Guid(91b6f3dd0d7a16947833b54ed2e98c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_37.asset using Guid(91b6f3dd0d7a16947833b54ed2e98c03) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd0143c6996f36a1461b06edc97869351') in 0.0260409 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_55.asset
+  artifactKey: Guid(f5c6e448f4849a742b021a1a87f6e642) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_55.asset using Guid(f5c6e448f4849a742b021a1a87f6e642) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0012e1f0f79529e0dda033a8fadf0723') in 0.0239599 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Environments/RPGW Wetland/Sliced/MainLev_54.asset
+  artifactKey: Guid(8d75abc161ea7f145a4a5a26b91b6afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW Wetland/Sliced/MainLev_54.asset using Guid(8d75abc161ea7f145a4a5a26b91b6afd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b867d7a10148a08bc7496db7480dc41d') in 0.0240002 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.407770 seconds.
+  path: Assets/Environments/RPGW_AncientForest/Decorative.png
+  artifactKey: Guid(901f0ec70cfa78b44b8ce47a355bd3ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_AncientForest/Decorative.png using Guid(901f0ec70cfa78b44b8ce47a355bd3ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7f28de5bdfc7b14939437e23f65ec049') in 0.0505909 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.239506 seconds.
+  path: Assets/Environments/RPGW_AncientForest/Sliced/Decorative.png
+  artifactKey: Guid(090f31176a604e54abd2b39895cb40dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_AncientForest/Sliced/Decorative.png using Guid(090f31176a604e54abd2b39895cb40dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8027baf6121b68741e0987de59a67bfa') in 0.7164987 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 818
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.480757 seconds.
+  path: Assets/Environments/RPGW_Desert/decorative1.png
+  artifactKey: Guid(707ce7c807328ea48ac85393bc4a45a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/decorative1.png using Guid(707ce7c807328ea48ac85393bc4a45a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5b907629e2ae562230da020e53537669') in 0.0440265 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.419325 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/decorative1.png
+  artifactKey: Guid(7697ef35f10f2df489291ef168c53125) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/decorative1.png using Guid(7697ef35f10f2df489291ef168c53125) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '63e2f9f0e87489a7adbdde6f9ec0c4ad') in 0.1399388 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 102
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000022 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsF_01.png
-  artifactKey: Guid(b3f0e9be358251d4e8a4580f25c519a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsF_01.png using Guid(b3f0e9be358251d4e8a4580f25c519a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9737a3adb708fd9ae455c148bdf4b5db') in 0.0120515 seconds
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_8.asset
+  artifactKey: Guid(3c0dec19e702c2d45bb86066be27afbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_8.asset using Guid(3c0dec19e702c2d45bb86066be27afbb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2eaf1fe76dcdb85264d94e34589a2d66') in 0.0187249 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsB_05.png
-  artifactKey: Guid(998340e007da0d64f98a3433a10b4e4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsB_05.png using Guid(998340e007da0d64f98a3433a10b4e4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '246a39abcdbdf7083934c47b7afda97f') in 0.0136511 seconds
+  Time since last request: 0.000038 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_15.asset
+  artifactKey: Guid(838e5ded986602149bf8c0ecf84fff60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_15.asset using Guid(838e5ded986602149bf8c0ecf84fff60) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '44f38d5d67d10f67694a6d2e62777112') in 0.0168632 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000017 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsA_05.png
-  artifactKey: Guid(2b11a35e59b97274ca3e3fd00b4e8c28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsA_05.png using Guid(2b11a35e59b97274ca3e3fd00b4e8c28) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd1f70e0c5f38234951400b8b58c04e38') in 0.0131015 seconds
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_21.asset
+  artifactKey: Guid(3fd85d5bb9e667947a55fc302b37e581) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_21.asset using Guid(3fd85d5bb9e667947a55fc302b37e581) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f0c6e84039dfada59974fcf71411b1ae') in 0.0163779 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsA_03.png
-  artifactKey: Guid(778a61d3a9c2b8d4788e25d03e510e61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsA_03.png using Guid(778a61d3a9c2b8d4788e25d03e510e61) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'db168cc9779850098b3368bc5b53c5ab') in 0.0134657 seconds
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_23.asset
+  artifactKey: Guid(d55e06a8d9394f7468bc78e75c58b5b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_23.asset using Guid(d55e06a8d9394f7468bc78e75c58b5b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '028340302a91e2baea691d16e23fb16a') in 0.0093122 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsE_06.png
-  artifactKey: Guid(55486db5fe0117e40b11d4868b460012) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsE_06.png using Guid(55486db5fe0117e40b11d4868b460012) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '27b5c15cca9b2b56f337534d447d6b42') in 0.0126458 seconds
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_29.asset
+  artifactKey: Guid(1915820c353306249b5b283bbe7db297) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_29.asset using Guid(1915820c353306249b5b283bbe7db297) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '08526b137b03959d8295a568a0e2a769') in 0.0092452 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_36.asset
+  artifactKey: Guid(d9c1f83ca2196ae42874036c5baee9c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_36.asset using Guid(d9c1f83ca2196ae42874036c5baee9c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c009c8f7c6a25d9de8969cbd0fbd9262') in 0.0097329 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_41.asset
+  artifactKey: Guid(2f843041e2b7fb54bb1fb0b8ee347501) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_41.asset using Guid(2f843041e2b7fb54bb1fb0b8ee347501) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e6695b4d6223529a3e356e137013654a') in 0.015013 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_46.asset
+  artifactKey: Guid(8b0940c8a83ac304b91b00bf50e9ee64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_46.asset using Guid(8b0940c8a83ac304b91b00bf50e9ee64) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '466f8d0b5d9ba1b342ea878bec105ba7') in 0.015025 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_50.asset
+  artifactKey: Guid(ff323d28ab6eb1d44a72a47dd7698292) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_50.asset using Guid(ff323d28ab6eb1d44a72a47dd7698292) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b64b542f13f307c607152fbe4d2ed0d4') in 0.0156471 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_42.asset
+  artifactKey: Guid(8af785b96872b5e4cb64ec2a185d9a10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_42.asset using Guid(8af785b96872b5e4cb64ec2a185d9a10) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f450c7ab355400f42f227ff6d786b0aa') in 0.0168283 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_13.asset
+  artifactKey: Guid(db745ee2affe79b4c8ffcddca28ce471) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_13.asset using Guid(db745ee2affe79b4c8ffcddca28ce471) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '40e9e3add617c4aeb0ec3364bf30347f') in 0.0222105 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_48.asset
+  artifactKey: Guid(d8f71dd68a69f1e4387889c5a9cfff21) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_48.asset using Guid(d8f71dd68a69f1e4387889c5a9cfff21) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ba1df2116b0c02a4c15213699a3b67e2') in 0.0193232 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000016 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsF_05.png
-  artifactKey: Guid(521e1956402bf414cba3f615de1dbc13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions/Animated Medallions/MedallionsF_05.png using Guid(521e1956402bf414cba3f615de1dbc13) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fb76aeb1af5b41510537d28cdf6f2e4b') in 0.0131506 seconds
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_12.asset
+  artifactKey: Guid(52bc2de91dbfd2441b83dcd85f028ff4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_12.asset using Guid(52bc2de91dbfd2441b83dcd85f028ff4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bec76e6370bc9b151a256d60a36258ce') in 0.0166193 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_57.asset
+  artifactKey: Guid(c7b777f4c5cb4ad4aa86b3f938b06480) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_57.asset using Guid(c7b777f4c5cb4ad4aa86b3f938b06480) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '41573a46f5c4bbbe459086cf2cd6d2c3') in 0.0186626 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_3.asset
+  artifactKey: Guid(9c9205854b4aa4140a0993b40d851419) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_3.asset using Guid(9c9205854b4aa4140a0993b40d851419) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'be6a9d7ff28eb823dbca2c06d825c19a') in 0.0177034 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_37.asset
+  artifactKey: Guid(5928dfc376da6e74193106c5d51ebd94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_37.asset using Guid(5928dfc376da6e74193106c5d51ebd94) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '997528ee26e98d31a530f9e652a7dd86') in 0.0176353 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_39.asset
+  artifactKey: Guid(f189b80482feea04c8f14bf8c916103c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_39.asset using Guid(f189b80482feea04c8f14bf8c916103c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a72fc3cf0429e3cce98c09dba5b7aef3') in 0.0113086 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_55.asset
+  artifactKey: Guid(cdd2d2d76f4487d4b842ff9e31e49f84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_55.asset using Guid(cdd2d2d76f4487d4b842ff9e31e49f84) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a1589ad486d5320fb9abd7fb6e8afc76') in 0.0174499 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_32.asset
+  artifactKey: Guid(fa9ab27d29766e04e8238e6cbc38bb4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_32.asset using Guid(fa9ab27d29766e04e8238e6cbc38bb4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '89e6d9d49d530ba30af0f629d50171cc') in 0.0089867 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.601523 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_58.asset
+  artifactKey: Guid(ba2d2b49c27fb7440aedd4e32bef7611) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_58.asset using Guid(ba2d2b49c27fb7440aedd4e32bef7611) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '36ada73afadcd47d51a37d48abcd0671') in 0.015444 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_62.asset
+  artifactKey: Guid(6366169990fd4a7498a770448e036687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_62.asset using Guid(6366169990fd4a7498a770448e036687) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '77d66ad3a7729acbf59be272559c0d91') in 0.0177727 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_66.asset
+  artifactKey: Guid(2107dd999a2f6ce488ba06152f2b9536) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_66.asset using Guid(2107dd999a2f6ce488ba06152f2b9536) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '86282eeba5c31d6360b8b274b48473bd') in 0.0159292 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_70.asset
+  artifactKey: Guid(bc553b114350fb949845cf5b4decd3f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_70.asset using Guid(bc553b114350fb949845cf5b4decd3f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a06a98e489282b7cb95cb68a034b5579') in 0.0110868 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_74.asset
+  artifactKey: Guid(3ce7c5c9d9b779c42bcb676ba46964e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_74.asset using Guid(3ce7c5c9d9b779c42bcb676ba46964e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '241e22793a3e6cac7e0f2177dc57eb4c') in 0.0163928 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_78.asset
+  artifactKey: Guid(88e836d387fc6ad43816b5de587272ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_78.asset using Guid(88e836d387fc6ad43816b5de587272ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7b79f6d0dcf40f09aa7ff005788dd2ad') in 0.0154268 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_85.asset
+  artifactKey: Guid(cb4cfc16d9a17c149ba26d1be8031921) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_85.asset using Guid(cb4cfc16d9a17c149ba26d1be8031921) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dff04daa35284d33e4ecff8839db538a') in 0.009585 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_79.asset
+  artifactKey: Guid(ec2966cc78a4c9b428c7cddfdcde1415) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_79.asset using Guid(ec2966cc78a4c9b428c7cddfdcde1415) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3a9ee1cdcd2c6dc70af9e067b1b27d20') in 0.0087861 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_91.asset
+  artifactKey: Guid(6cae39f04c3860d4f9817d1b46765d29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_91.asset using Guid(6cae39f04c3860d4f9817d1b46765d29) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9199e83c01259876c43b4ea6c0f1e7e7') in 0.0139595 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_94.asset
+  artifactKey: Guid(ff9111c74ed76da4aae55623b4ac9e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_94.asset using Guid(ff9111c74ed76da4aae55623b4ac9e6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '108f6065b44959748295f4c6592ac966') in 0.018144 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_98.asset
+  artifactKey: Guid(f53b1d7d8a383434a93a6b0fa7b985ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_98.asset using Guid(f53b1d7d8a383434a93a6b0fa7b985ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '89d2187796bcae03142e003540980857') in 0.0161527 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_102.asset
+  artifactKey: Guid(3039afde18fe7eb4fa828d7c570d3388) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_102.asset using Guid(3039afde18fe7eb4fa828d7c570d3388) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8a3b422662d42169ac2667086dfe9706') in 0.0172652 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_106.asset
+  artifactKey: Guid(66340f2704770ea4b8eaee0d40682459) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_106.asset using Guid(66340f2704770ea4b8eaee0d40682459) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '402425c65ac170adf3c5fec8b47ca5b9') in 0.0163112 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_113.asset
+  artifactKey: Guid(3554d0e89d0298a4eb22f2fe988b0bb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_113.asset using Guid(3554d0e89d0298a4eb22f2fe988b0bb9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '21944d25f8f851f0abbf09faddc03922') in 0.0184851 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_115.asset
+  artifactKey: Guid(39e11bba83c3151469a71dc55698b2c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_115.asset using Guid(39e11bba83c3151469a71dc55698b2c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '05697fb888099376b5468bbf42372499') in 0.0171448 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_123.asset
+  artifactKey: Guid(488c3e975aa146248a285a6ea5e03135) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_123.asset using Guid(488c3e975aa146248a285a6ea5e03135) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '543d25a75f5fe9796b5e2c045acf0632') in 0.0084111 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_127.asset
+  artifactKey: Guid(8ebff47b7d9368348921bde0739a9964) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_127.asset using Guid(8ebff47b7d9368348921bde0739a9964) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6b4cbcd1ef6bd76528c2eeaf50ddad4b') in 0.0102107 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_132.asset
+  artifactKey: Guid(f7d8c61cf8fe9934083fdd67b6ccb7df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_132.asset using Guid(f7d8c61cf8fe9934083fdd67b6ccb7df) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '58d0c15876eab8c251e8adc6927197a6') in 0.0158009 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_137.asset
+  artifactKey: Guid(239ee9dc7b0836a48b975121e77feeb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_137.asset using Guid(239ee9dc7b0836a48b975121e77feeb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '37d7903ed3487080380bf3bef97ad8a3') in 0.0168094 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_135.asset
+  artifactKey: Guid(5d532323f45416846ba2a3edfdd1dfe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_135.asset using Guid(5d532323f45416846ba2a3edfdd1dfe8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a4455d63fcd6d91b3b24b2629e951829') in 0.0085617 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_133.asset
+  artifactKey: Guid(b41679366f5cd6943b55395488de3a16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_133.asset using Guid(b41679366f5cd6943b55395488de3a16) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1a950227cf222a40e580f5540c8b58c6') in 0.0107106 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 29.177250 seconds.
+  path: Assets/Environments/RPGW_GL_v2.0/decorative.png
+  artifactKey: Guid(f813840ad462b9940b7edb4f80572005) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_GL_v2.0/decorative.png using Guid(f813840ad462b9940b7edb4f80572005) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e8b454658508f1955eda15462e4c18bb') in 0.0635166 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.990760 seconds.
+  path: Assets/Environments/RPGW_GL_v2.0/Sliced/decorative.png
+  artifactKey: Guid(ac4a9b707ee17ce469b0ffe2a84de53a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_GL_v2.0/Sliced/decorative.png using Guid(ac4a9b707ee17ce469b0ffe2a84de53a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8dd3ea93d11b4a7e42693e17f21fe769') in 0.0447787 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.818896 seconds.
+  path: Assets/Environments/RPGW_Mountains/Decorative_props.png
+  artifactKey: Guid(93d94c7c1ddf1ab468c852680ba83a11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Mountains/Decorative_props.png using Guid(93d94c7c1ddf1ab468c852680ba83a11) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '92d588af13039da9f10d0d7b687879ab') in 0.2743366 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 173
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.930117 seconds.
+  path: Assets/Environments/RPGW_Mountains/Sliced/Decorative_props.png
+  artifactKey: Guid(cf7ad96187a882c4b80769551bbdc989) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/RPGW_Mountains/Sliced/Decorative_props.png using Guid(cf7ad96187a882c4b80769551bbdc989) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3dea89fc1a7037c33669f58c2bccb093') in 1.4761049 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1712
+
+========================================================================
+Received Import Request.
+  Time since last request: 69.221969 seconds.
+  path: Assets/Environments/FL_Houses/Sliced/Exterriors/FL_Houses_ext_building elements.png
+  artifactKey: Guid(757c2889efb228b419e401d78dd8ce11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/FL_Houses/Sliced/Exterriors/FL_Houses_ext_building elements.png using Guid(757c2889efb228b419e401d78dd8ce11) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8df831905e2df3c5fb7e40cfb260dc56') in 0.8347994 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1041
+
+========================================================================
+Received Import Request.
+  Time since last request: 23.488592 seconds.
+  path: Assets/Environments/FL_Houses/Sliced/Exterriors/Roofs/FL_Houses_ext_roofsA1.png
+  artifactKey: Guid(1b54255460c15b946804df63076557b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/FL_Houses/Sliced/Exterriors/Roofs/FL_Houses_ext_roofsA1.png using Guid(1b54255460c15b946804df63076557b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8a7ace8b090f64a79004fab1c611c20f') in 0.5532133 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 600
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Environments/FL_Houses/Sliced/Exterriors/Roofs/FL_Houses_ext_side_Roofs.png
+  artifactKey: Guid(9c27f85535279b3479da09f530fbfece) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/FL_Houses/Sliced/Exterriors/Roofs/FL_Houses_ext_side_Roofs.png using Guid(9c27f85535279b3479da09f530fbfece) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c7eb8bab3ce24a87806261f2ef474678') in 0.5919712 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 660
 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
