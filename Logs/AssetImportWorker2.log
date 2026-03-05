@@ -15,7 +15,7 @@ C:/Users/viet_/projects/SecretProject
 -logFile
 Logs/AssetImportWorker2.log
 -srvPort
-54984
+60893
 -job-worker-count
 7
 -background-job-worker-count
@@ -59,12 +59,12 @@ C:/Users/viet_/projects/SecretProject
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [52340]  Target information:
+Player connection [13796]  Target information:
 
-Player connection [52340]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 1262330391 [EditorId] 1262330391 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [13796]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 4032620327 [EditorId] 4032620327 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [52340] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [52340] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [13796] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [13796] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -76,7 +76,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 2.11 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 551.04 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.36f1 (9fe3b5f71dbb)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Resources/UnitySubsystems
@@ -92,43 +92,43 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56676
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56528
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.004315 seconds.
-- Loaded All Assemblies, in  3.579 seconds
+Registered in 0.006768 seconds.
+- Loaded All Assemblies, in  0.863 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.329 seconds
-Domain Reload Profiling: 3905ms
-	BeginReloadAssembly (3167ms)
+- Finished resetting the current domain, in  0.306 seconds
+Domain Reload Profiling: 1167ms
+	BeginReloadAssembly (295ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (35ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (51ms)
-	LoadAllAssembliesAndSetupDomain (314ms)
-		LoadAssemblies (3165ms)
+	RebuildCommonClasses (46ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (50ms)
+	LoadAllAssembliesAndSetupDomain (459ms)
+		LoadAssemblies (288ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (312ms)
-			TypeCache.Refresh (310ms)
-				TypeCache.ScanAssembly (295ms)
+		AnalyzeDomain (457ms)
+			TypeCache.Refresh (454ms)
+				TypeCache.ScanAssembly (436ms)
 			BuildScriptInfoCaches (0ms)
-			ResolveRequiredComponents (0ms)
-	FinalizeReload (329ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (306ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (287ms)
+		SetupLoadedEditorAssemblies (263ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (21ms)
-			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (48ms)
-			ProcessInitializeOnLoadAttributes (150ms)
-			ProcessInitializeOnLoadMethodAttributes (63ms)
+			InitializePlatformSupportModulesInManaged (20ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (46ms)
+			ProcessInitializeOnLoadAttributes (144ms)
+			ProcessInitializeOnLoadMethodAttributes (49ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -137,161 +137,521 @@ Domain Reload Profiling: 3905ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  8.403 seconds
-Refreshing native plugins compatible for Editor in 4.18 ms, found 4 plugins.
+- Loaded All Assemblies, in  1.202 seconds
+Refreshing native plugins compatible for Editor in 1.51 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  2.739 seconds
-Domain Reload Profiling: 11139ms
-	BeginReloadAssembly (187ms)
+- Finished resetting the current domain, in  2.167 seconds
+Domain Reload Profiling: 3365ms
+	BeginReloadAssembly (159ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (41ms)
-	RebuildCommonClasses (37ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (37ms)
-	LoadAllAssembliesAndSetupDomain (8125ms)
-		LoadAssemblies (7967ms)
+		CreateAndSetChildDomain (30ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (36ms)
+	LoadAllAssembliesAndSetupDomain (962ms)
+		LoadAssemblies (784ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (269ms)
-			TypeCache.Refresh (189ms)
-				TypeCache.ScanAssembly (165ms)
-			BuildScriptInfoCaches (64ms)
-			ResolveRequiredComponents (12ms)
-	FinalizeReload (2740ms)
+		AnalyzeDomain (272ms)
+			TypeCache.Refresh (207ms)
+				TypeCache.ScanAssembly (189ms)
+			BuildScriptInfoCaches (51ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (2167ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (2209ms)
+		SetupLoadedEditorAssemblies (1403ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (2ms)
-			SetLoadedEditorAssemblies (6ms)
-			BeforeProcessingInitializeOnLoad (141ms)
-			ProcessInitializeOnLoadAttributes (1458ms)
-			ProcessInitializeOnLoadMethodAttributes (595ms)
-			AfterProcessingInitializeOnLoad (7ms)
+			SetLoadedEditorAssemblies (5ms)
+			BeforeProcessingInitializeOnLoad (105ms)
+			ProcessInitializeOnLoadAttributes (1133ms)
+			ProcessInitializeOnLoadMethodAttributes (152ms)
+			AfterProcessingInitializeOnLoad (5ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (6ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 3.14 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Refreshing native plugins compatible for Editor in 3.09 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 220 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 6660 unused Assets / (4.9 MB). Loaded Objects now: 7356.
-Memory consumption went from 190.2 MB to 185.3 MB.
-Total: 15.603200 ms (FindLiveObjects: 1.333000 ms CreateObjectMapping: 0.665100 ms MarkObjects: 7.945200 ms  DeleteObjects: 5.658500 ms)
+Unloading 6668 unused Assets / (4.7 MB). Loaded Objects now: 7364.
+Memory consumption went from 184.5 MB to 179.8 MB.
+Total: 19.483100 ms (FindLiveObjects: 1.590500 ms CreateObjectMapping: 1.440800 ms MarkObjects: 10.740600 ms  DeleteObjects: 5.709000 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1080709.264601 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Banners/Banners B/Banners-B_01.png
-  artifactKey: Guid(4fe6eb58e88ff444cb33de6fde3adbe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Banners/Banners B/Banners-B_01.png using Guid(4fe6eb58e88ff444cb33de6fde3adbe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b993eca6aaf1fb1fd44f4d9717c4b301') in 0.1052506 seconds
+  Time since last request: 1280975.854272 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Buttons/Gold Buttons/Gold Btn A_01.png
+  artifactKey: Guid(0e19adbf5c36e5a4b84021f16463fb4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Buttons/Gold Buttons/Gold Btn A_01.png using Guid(0e19adbf5c36e5a4b84021f16463fb4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4d95ac9a5203f3359ece92d0b6c628be') in 0.1035546 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000049 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Banners/Banners A/Banners-A_02.png
-  artifactKey: Guid(5c607628d399db5418bc941528d76f2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Banners/Banners A/Banners-A_02.png using Guid(5c607628d399db5418bc941528d76f2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd1781e16797af749371760eacc411124') in 0.0173147 seconds
+  Time since last request: 42.502408 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Font/Fantasypixelfont SDF.asset
+  artifactKey: Guid(7e93cf950105fa1439cda190f5bd3eb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Font/Fantasypixelfont SDF.asset using Guid(7e93cf950105fa1439cda190f5bd3eb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3afd98ae27ffa0da91995f7488b7c6ae') in 0.3978849 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 598.079651 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Cursors/F_UI_Cursor1.png
+  artifactKey: Guid(32666ef1d3942fc4b836cbd6701a6937) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Cursors/F_UI_Cursor1.png using Guid(32666ef1d3942fc4b836cbd6701a6937) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5388d652439f0df1def7d681dd761a1c') in 0.0406348 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_13.png
-  artifactKey: Guid(a9a0db09687549247ab2e6f2750a2986) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_13.png using Guid(a9a0db09687549247ab2e6f2750a2986) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '471e4b9b98ab36b965f1581b22b7877b') in 0.0157694 seconds
+  Time since last request: 1.762719 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Dynamic Bars
+  artifactKey: Guid(c089859a77197a14898929bab0913806) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Dynamic Bars using Guid(c089859a77197a14898929bab0913806) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '25344fd6740d96e65714a18dfe21c287') in 0.0008176 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.049012 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Dynamic Bars/Dynamic Bars 160x32 Tile.png
+  artifactKey: Guid(e25af5e7e9911094ca13394ff9cb5fbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Dynamic Bars/Dynamic Bars 160x32 Tile.png using Guid(e25af5e7e9911094ca13394ff9cb5fbc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '08a7c8f33532d265d36276ff73c5ed03') in 0.0269658 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 21
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.031629 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Obj Icons Inventory
+  artifactKey: Guid(9c9709be59dadfb4c8dff341d7813668) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Obj Icons Inventory using Guid(9c9709be59dadfb4c8dff341d7813668) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e5db26052913d08ef3a2fbdde833dfd3') in 0.0009776 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.025129 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Obj Icons Inventory/F_U_ObjectIcon Tile Map 22x22 1.png
+  artifactKey: Guid(97674d34c3046274f9cee23fa0f2aec1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Obj Icons Inventory/F_U_ObjectIcon Tile Map 22x22 1.png using Guid(97674d34c3046274f9cee23fa0f2aec1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'da0ae0a9485f8fa11ff00f105b86c1ca') in 0.1857319 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 200
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.759996 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skills Icons
+  artifactKey: Guid(a58bb4d3a055e7d49802a019101c2bc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skills Icons using Guid(a58bb4d3a055e7d49802a019101c2bc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '041b755e9b06060dd8da8ee05552dd33') in 0.0006147 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.030083 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skills Icons/F_UI_SkillsTileMap 22x22.png
+  artifactKey: Guid(42eca34bb05eb054a97d4bf4eebcbed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Skills Icons/F_UI_SkillsTileMap 22x22.png using Guid(42eca34bb05eb054a97d4bf4eebcbed1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'db19253970072e44f8ed3d3e51ad87f8') in 0.1452628 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 170
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.175525 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar
+  artifactKey: Guid(eb22c6897b9404c468eb87e2f61e521d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar using Guid(eb22c6897b9404c468eb87e2f61e521d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cec61f9713f643031b7f4d2907d3fe4b') in 0.0005951 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.041356 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_BlueBar.png
+  artifactKey: Guid(c5166d02c90b0b4428dbcb840981bbe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_BlueBar.png using Guid(c5166d02c90b0b4428dbcb840981bbe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a2059ed38dbffcfc1a20cbf083c1f669') in 0.0123887 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Banners/Banners B.png
-  artifactKey: Guid(214d3f5b94fd8504baae9e58fb6e0522) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Banners/Banners B.png using Guid(214d3f5b94fd8504baae9e58fb6e0522) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ace12ea0b8f6b4501f50faeb86f119ea') in 0.0176231 seconds
+  Time since last request: 0.000069 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_RedBar.png
+  artifactKey: Guid(b6f3374714cb57a48b662e17ad5c16d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_RedBar.png using Guid(b6f3374714cb57a48b662e17ad5c16d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '03fffd29fc3a6d5892c1c4e54e991ebc') in 0.0154775 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_24.png
-  artifactKey: Guid(348f6f9911375c14d9f4e3578fc9ab8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_24.png using Guid(348f6f9911375c14d9f4e3578fc9ab8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'acb1ad68194dd24af37624da40feb4e0') in 0.0144314 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_17.png
-  artifactKey: Guid(ec9c23cd79f89104f8feae14413a84a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_17.png using Guid(ec9c23cd79f89104f8feae14413a84a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ae85d360ef560853ec8e1ecdfbd6fe8c') in 0.0126648 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Book - Inventory/Bookmark_02.png
-  artifactKey: Guid(f0529d00c5dbb4448895ffe10b941755) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Book - Inventory/Bookmark_02.png using Guid(f0529d00c5dbb4448895ffe10b941755) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6b9b7b7f0206355d691acb8c501142e4') in 0.0164174 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Banners/Banners A/Banners-A_05.png
-  artifactKey: Guid(6b60456f616770141a1ff9cdbd745627) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Banners/Banners A/Banners-A_05.png using Guid(6b60456f616770141a1ff9cdbd745627) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bf8354b708f7e4082502f409cd07737d') in 0.0164421 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_10.png
-  artifactKey: Guid(bc02a54db69d82c4b8d2b5c5bcc0c3cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_10.png using Guid(bc02a54db69d82c4b8d2b5c5bcc0c3cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e0fdc8c9f5ca59b534bf943e127cc1a3') in 0.0136544 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Book - Inventory/Bookmark_01.png
-  artifactKey: Guid(9027cbe94dddfda4ab07f74945e18fd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Book - Inventory/Bookmark_01.png using Guid(9027cbe94dddfda4ab07f74945e18fd5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9d625622adf1c44cb6c73801ad790c7f') in 0.0148671 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_05.png
-  artifactKey: Guid(c6ab3bcb5f537bd4590473a41171b233) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_05.png using Guid(c6ab3bcb5f537bd4590473a41171b233) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bf95a9474b118ba9634ec3889a2c19f9') in 0.0149019 seconds
+  Time since last request: 0.000069 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_SlideBar_A2.png
+  artifactKey: Guid(a1b149734aed0eb49ad7caaf15856dcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_SlideBar_A2.png using Guid(a1b149734aed0eb49ad7caaf15856dcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd8c496040645db5e8024d7006fe099da') in 0.0185217 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000027 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Banners/Banners B/Banners-B_04.png
-  artifactKey: Guid(eef8d18d26d039540953ff8b1e1a2396) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Banners/Banners B/Banners-B_04.png using Guid(eef8d18d26d039540953ff8b1e1a2396) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '22f4e918c17f16495f6c5cec42228917') in 0.0152485 seconds
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_SlideBar_B3.png
+  artifactKey: Guid(5af08a04c7ce21c4bb8d7dc67e4dae53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_SlideBar_B3.png using Guid(5af08a04c7ce21c4bb8d7dc67e4dae53) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'db219a740028d864a6b0436e21c53b10') in 0.0115523 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_16.png
-  artifactKey: Guid(014bad635c48fb54f91600d76eb4a96f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_16.png using Guid(014bad635c48fb54f91600d76eb4a96f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '53b70cf4c1a354fa4a6a163b3585a201') in 0.0132058 seconds
+  Time since last request: 0.000022 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_SlideBar_B1.png
+  artifactKey: Guid(e02d38310f5fd49479724afb4a06b696) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_SlideBar_B1.png using Guid(e02d38310f5fd49479724afb4a06b696) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '594db0aee82b57c2e7d3000184445e6f') in 0.0135353 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_SlideBar_B5.png
+  artifactKey: Guid(537aa108002f44a4e913022f025d201c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_SlideBar_B5.png using Guid(537aa108002f44a4e913022f025d201c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f307185cdc0fb7ad913bc6ded3958012') in 0.0131184 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_SlideBar_A5.png
+  artifactKey: Guid(0d850f5c18c2ffb43b234e26ec4aef3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_SlideBar_A5.png using Guid(0d850f5c18c2ffb43b234e26ec4aef3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1fecc7e0d1d38f55fa0f1d06020b9685') in 0.0194715 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_SlideBar_B6.png
+  artifactKey: Guid(3dd2e07b275fc104499582a75da3b063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_SlideBar_B6.png using Guid(3dd2e07b275fc104499582a75da3b063) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fa5af1d4455df12e121184a703c51b28') in 0.0167225 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_SlideBar_A3.png
+  artifactKey: Guid(5382b82117fb2ab47a65982739cf50e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/F_UI_SlideBar_A3.png using Guid(5382b82117fb2ab47a65982739cf50e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9c1e48bd78525c55c0734c6743f468b3') in 0.0142664 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 47.099984 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/Handles/F_U_SlidebarHandle_A1.png
+  artifactKey: Guid(cbd68466820f91940b406c2e57016851) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/Handles/F_U_SlidebarHandle_A1.png using Guid(cbd68466820f91940b406c2e57016851) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bc3e4d1664560339f01a8c4cf735d9cf') in 0.0179235 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/Handles/F_U_SlidebarHandle_A5.png
+  artifactKey: Guid(a428be4a3142641498e9b273fd33ca43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/Handles/F_U_SlidebarHandle_A5.png using Guid(a428be4a3142641498e9b273fd33ca43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '86a0f780fcbdaf5498158dca4b10bce1') in 0.0154772 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/Handles/F_U_SlidebarHandle_B2.png
+  artifactKey: Guid(5bbd235226260ac42af9db94d625e775) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/Handles/F_U_SlidebarHandle_B2.png using Guid(5bbd235226260ac42af9db94d625e775) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c5c4fe928f5bc35c61f83b83cb9af3a4') in 0.0156712 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/Handles/F_U_SlidebarHandle_B4.png
+  artifactKey: Guid(7dadbc9dc7be47c41be43d7a0d2566a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/Handles/F_U_SlidebarHandle_B4.png using Guid(7dadbc9dc7be47c41be43d7a0d2566a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '143c4c00d48d42d2749ed65b277fc23e') in 0.015112 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/Handles/F_U_SlidebarHandle_B3.png
+  artifactKey: Guid(833e56e85d369be4ba368a8832f4defe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Slide Bar/Handles/F_U_SlidebarHandle_B3.png using Guid(833e56e85d369be4ba368a8832f4defe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '689ef8b29a177d8268894e1935b41224') in 0.0138371 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 26.475670 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Charge Bars/Charge Bars A_02.png
+  artifactKey: Guid(27808e92848260f45b1c09594df8e8c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Charge Bars/Charge Bars A_02.png using Guid(27808e92848260f45b1c09594df8e8c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4816ffea2ca5904edcf5cb3d4210a32b') in 0.0172784 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Charge Bars/Charge Bars B_01.png
+  artifactKey: Guid(3179d2cf9234d7647a690c668c0f37d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Charge Bars/Charge Bars B_01.png using Guid(3179d2cf9234d7647a690c668c0f37d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5ab44500a18a4fe86792ab5857c32c01') in 0.012953 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Charge Bars/Charge Bars B_05.png
+  artifactKey: Guid(d60a279b4de2a834f8b27ec588311d0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Charge Bars/Charge Bars B_05.png using Guid(d60a279b4de2a834f8b27ec588311d0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8d7757523a20f16b6042419d0d7b2313') in 0.0139556 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.511029 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_01_01.png
+  artifactKey: Guid(83ead26ad91fdbb40a9aafe5d9a86a22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_01_01.png using Guid(83ead26ad91fdbb40a9aafe5d9a86a22) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a186ad52e89c80612fd46f0e502764a0') in 0.0134599 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_01_05.png
+  artifactKey: Guid(3052564c2433dbc49bbd7955b435adbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_01_05.png using Guid(3052564c2433dbc49bbd7955b435adbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '48fe667495579168a394265bdef30feb') in 0.0172484 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_02_04.png
+  artifactKey: Guid(8cbc6986917e4394cb940344b6028a1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_02_04.png using Guid(8cbc6986917e4394cb940344b6028a1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '86e24b947e4599c599a484945a51f559') in 0.0131161 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_03_03.png
+  artifactKey: Guid(5cca93a90f6cc3b45819a833a2476a01) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_03_03.png using Guid(5cca93a90f6cc3b45819a833a2476a01) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8d993ce1de32ff2850cde648b7c4aa62') in 0.0139001 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_05_03.png
+  artifactKey: Guid(74b2fbcf88d3ffa4fbff49575e95b36a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_05_03.png using Guid(74b2fbcf88d3ffa4fbff49575e95b36a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '09e790ee7ffa2dbbece46341b419583c') in 0.0127078 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_06_03.png
+  artifactKey: Guid(b745bcf4db5160445bafb68b6a6f5e41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_06_03.png using Guid(b745bcf4db5160445bafb68b6a6f5e41) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4249c9be780f414733092b65303e1a95') in 0.0135529 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_03_04.png
+  artifactKey: Guid(062565a0af83e7c43b385202f69049ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_03_04.png using Guid(062565a0af83e7c43b385202f69049ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1e894aef9325bff2131347e212d4a886') in 0.0118927 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_08_01.png
+  artifactKey: Guid(37968968579f6704583b606d5a83d18e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_08_01.png using Guid(37968968579f6704583b606d5a83d18e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd2360ae923f94838c2104becfb4ba2d8') in 0.0131973 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_09_05.png
+  artifactKey: Guid(4d17e5101b1c7f2488ce44f98fa1456c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_09_05.png using Guid(4d17e5101b1c7f2488ce44f98fa1456c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a3c5fd3207bc07997a89cb6602d6be2a') in 0.016164 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_10_03.png
+  artifactKey: Guid(0fdd89f2b447fe94fa64d63800c898a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_10_03.png using Guid(0fdd89f2b447fe94fa64d63800c898a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3c340f3507477df65a400d13bc9247a4') in 0.0118243 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_06_04.png
+  artifactKey: Guid(c8408c50c2764e44e8aed50995200687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_06_04.png using Guid(c8408c50c2764e44e8aed50995200687) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '54b2717232bc19c6bc8c3574e5562a6c') in 0.0135948 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_13_01.png
+  artifactKey: Guid(34c7cff42b22c314091049317061dcae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_13_01.png using Guid(34c7cff42b22c314091049317061dcae) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9af188506b7bae9162c3a192abaccd4f') in 0.0151145 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_11_05.png
+  artifactKey: Guid(e174a1e1d0ed24c4f82dd5fe3a6dd7f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_11_05.png using Guid(e174a1e1d0ed24c4f82dd5fe3a6dd7f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bcc60e5ef2e25469b684270e7361892e') in 0.0138857 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000026 seconds.
-  path: Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_11.png
-  artifactKey: Guid(73b51449df6cab948850e6f5930738e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Combo Objects/Combo Objects_11.png using Guid(73b51449df6cab948850e6f5930738e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '15345f0a234dc4f53043e124f53cdbc6') in 0.0147067 seconds
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_12_02.png
+  artifactKey: Guid(92739d3376e94874e87fbb4be2be4690) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_12_02.png using Guid(92739d3376e94874e87fbb4be2be4690) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5722ee99d73239349a375dbc67712d50') in 0.0138632 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000070 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_11_01.png
+  artifactKey: Guid(d82a9dc0ba683f346ba423ab3de235cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_11_01.png using Guid(d82a9dc0ba683f346ba423ab3de235cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4ff2f26e4e41d7779d167941041296e7') in 0.0165669 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_12_01.png
+  artifactKey: Guid(5279d00d1a0a8e64fbec1d1a5fd5ba4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_12_01.png using Guid(5279d00d1a0a8e64fbec1d1a5fd5ba4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '985ab9fa2eb61afcf5f3a8b5d01eb898') in 0.0158012 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_08_03.png
+  artifactKey: Guid(89155b0f1282f7944980b6bad717262b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_08_03.png using Guid(89155b0f1282f7944980b6bad717262b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c7e3d54f89d902f3a80fb001da4b9b39') in 0.0141263 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.599515 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_13_05.png
+  artifactKey: Guid(70bd566571843224d8abbc9ad8d14cc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_13_05.png using Guid(70bd566571843224d8abbc9ad8d14cc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8cc63ff8674c6cba1e2e7ab743dde412') in 0.0120012 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_14_04.png
+  artifactKey: Guid(c7d9dad314f4b6b40a7447f4e0634ede) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_14_04.png using Guid(c7d9dad314f4b6b40a7447f4e0634ede) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2bdc8aaf5a8b6f86d9f5d8ebbaead6b5') in 0.0169603 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_15_04.png
+  artifactKey: Guid(09bd968c41e9e2c43b57db2b27541fa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_15_04.png using Guid(09bd968c41e9e2c43b57db2b27541fa6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '854714518e75343023ec5170e30a4892') in 0.019448 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_16_02.png
+  artifactKey: Guid(9a5620c15cc21e64dbdd4df491b48f5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_16_02.png using Guid(9a5620c15cc21e64dbdd4df491b48f5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd7213ae8014df86ebb7b25353611f36c') in 0.0114941 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_17_02.png
+  artifactKey: Guid(c5a73f07f7e483a42aaf30c7bf26370c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_17_02.png using Guid(c5a73f07f7e483a42aaf30c7bf26370c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5cb8c450395280e16a910bb7ce440369') in 0.0116175 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_18_04.png
+  artifactKey: Guid(28c94a79a82ae634898601007742d20e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_18_04.png using Guid(28c94a79a82ae634898601007742d20e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '143afb757c3192f59d7b4232a81c9c24') in 0.016078 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_18_03.png
+  artifactKey: Guid(d4770508c0a08ba45a34f91d1b12e130) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_18_03.png using Guid(d4770508c0a08ba45a34f91d1b12e130) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '47c73788248b1ed2c0228d79c9961c94') in 0.0129758 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.447785 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_19_01.png
+  artifactKey: Guid(bfe3318a6e472f8418ed38a402cb4909) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_19_01.png using Guid(bfe3318a6e472f8418ed38a402cb4909) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ade2b0dc99120f21d5665d95af086ae9') in 0.0129093 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_19_05.png
+  artifactKey: Guid(b9b35910e7f5cee4aab5c3248bbab7d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_19_05.png using Guid(b9b35910e7f5cee4aab5c3248bbab7d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3f477b17d9e7d2c8e7c1a66cea7828cc') in 0.0116161 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_20_05.png
+  artifactKey: Guid(12c96f2c6166311448207890fac9f9b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_20_05.png using Guid(12c96f2c6166311448207890fac9f9b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f2bdaa75dbc47cbd190cf164620f59fe') in 0.02014 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_21_01.png
+  artifactKey: Guid(8d3326c9aa1659042bb7ce0760086acd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_21_01.png using Guid(8d3326c9aa1659042bb7ce0760086acd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c29dff06824ddd5b76eb7a46df058e3b') in 0.0117777 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_22_01.png
+  artifactKey: Guid(e9bcf3629a1c27241a8c4ef52adfe454) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_22_01.png using Guid(e9bcf3629a1c27241a8c4ef52adfe454) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '56f17db3343118fc21065959d5c289de') in 0.0156856 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_22_04.png
+  artifactKey: Guid(294b2bb64be0b454d8422752e912a313) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_22_04.png using Guid(294b2bb64be0b454d8422752e912a313) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '755e1a745f19c2626ba7ae94c94acdf5') in 0.0175086 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_23_04.png
+  artifactKey: Guid(061a536f4e0c0b74f876cb79de0ff88d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_23_04.png using Guid(061a536f4e0c0b74f876cb79de0ff88d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b7b878c6ef486f5dd636b98ac657799b') in 0.0151786 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_24_02.png
+  artifactKey: Guid(1cdfd53d65d427844a182048b30558ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Runes/Runes_24_02.png using Guid(1cdfd53d65d427844a182048b30558ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c2bcc23a7baab876516c53735f48d9ea') in 0.0135579 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
