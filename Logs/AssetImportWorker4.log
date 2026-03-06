@@ -574,3 +574,103 @@ Memory consumption went from 155.2 MB to 150.8 MB.
 Total: 17.068100 ms (FindLiveObjects: 1.859600 ms CreateObjectMapping: 2.598400 ms MarkObjects: 8.567200 ms  DeleteObjects: 4.041300 ms)
 
 Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Prepare
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  2.279 seconds
+Refreshing native plugins compatible for Editor in 1.50 ms, found 4 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.651 seconds
+Domain Reload Profiling: 2932ms
+	BeginReloadAssembly (590ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (56ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (1ms)
+		CreateAndSetChildDomain (135ms)
+	RebuildCommonClasses (31ms)
+	RebuildNativeTypeToScriptingClass (10ms)
+	initialDomainReloadingComplete (28ms)
+	LoadAllAssembliesAndSetupDomain (1621ms)
+		LoadAssemblies (1716ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (221ms)
+			TypeCache.Refresh (17ms)
+				TypeCache.ScanAssembly (3ms)
+			BuildScriptInfoCaches (188ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (652ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (483ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (2ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (92ms)
+			ProcessInitializeOnLoadAttributes (314ms)
+			ProcessInitializeOnLoadMethodAttributes (63ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (14ms)
+Refreshing native plugins compatible for Editor in 2.37 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 13 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 6666 unused Assets / (4.3 MB). Loaded Objects now: 7392.
+Memory consumption went from 155.2 MB to 150.9 MB.
+Total: 11.555700 ms (FindLiveObjects: 1.292200 ms CreateObjectMapping: 0.604900 ms MarkObjects: 6.688200 ms  DeleteObjects: 2.969700 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+========================================================================
+Received Import Request.
+  Time since last request: 47777.630685 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Slide bars/Handle 1.png
+  artifactKey: Guid(216413e5182571440bb88502ee3c44a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Slide bars/Handle 1.png using Guid(216413e5182571440bb88502ee3c44a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bf0c91d0ef48141a290f74e07765a3d5') in 0.6063696 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000108 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Slide bars/Vertical Slidebar_03.png
+  artifactKey: Guid(b7d11fb85274c62499751926ca327926) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Slide bars/Vertical Slidebar_03.png using Guid(b7d11fb85274c62499751926ca327926) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '876b52950cec602da33e55e935902a16') in 0.0171372 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Slide bars/Horizontal Slidebar_01.png
+  artifactKey: Guid(973534a06eff8524f9cdb6f72c9539c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Slide bars/Horizontal Slidebar_01.png using Guid(973534a06eff8524f9cdb6f72c9539c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '90d62059ae3e04784467e70cec6f4ca3') in 0.0168153 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Slide bars/Horizontal Slidebar_03.png
+  artifactKey: Guid(694e7664a5e35c54ca16836e2c123981) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Slide bars/Horizontal Slidebar_03.png using Guid(694e7664a5e35c54ca16836e2c123981) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2d8f98a11e3e7849fa5d7a3e9d18a104') in 0.0166141 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Slide bars/Handle 5.png
+  artifactKey: Guid(a66949074316fce429b68697c72c72d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Slide bars/Handle 5.png using Guid(a66949074316fce429b68697c72c72d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fab94cea5d09f7a4703985548ac34eb9') in 0.0155922 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Slide bars/Vertical Slidebar_02.png
+  artifactKey: Guid(c6c4be176bcf8724a8e26f6ebd15d608) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Slide bars/Vertical Slidebar_02.png using Guid(c6c4be176bcf8724a8e26f6ebd15d608) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '74452949522b9186be4ae04bf96f2cb0') in 0.0181942 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

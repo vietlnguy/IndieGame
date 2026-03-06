@@ -78,6 +78,19 @@ public class CampAssistMenu : MonoBehaviour
                     campTradeScript.enableTradingMenu(characterSelected);
                     active = false;
                 }
+
+                //Open equipment menu
+                else if (index == 3)
+                {
+                    
+                }
+
+                //Open supply menu
+                else if (index == 4)
+                {
+                    campTradeScript.enableSupplyMenu(characterSelected);
+                    active = false;
+                }
             }
         }
     }

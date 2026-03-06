@@ -90,6 +90,19 @@ public class SaveManager : MonoBehaviour
 
         dataToSave.characters.Add(mainCharacter);
         dataToSave.characters.Add(astrid);
+        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
+        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
+        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
+        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
+        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
+        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
+        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
+        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
+        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
+        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
+        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
+        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
+
 
         //Create save file name
         string time = DateTime.Now.ToString("F");

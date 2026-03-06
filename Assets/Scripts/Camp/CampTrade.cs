@@ -3,14 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using System.Linq;
-
+using UnityEngine.UI;
 public class CampTrade : MonoBehaviour
 {
-
+    private SaveManager scm;
     public GameObject inventoryGiverMenu;
     public GameObject inventoryRecipientMenu;
     public bool active = false;
     public int index = 0;
+    private int supplyTopIndex = 0;
+    private int supplyBotIndex = 8;
     private int leftRightIndex = 0;
     private int confirmBoxIndex = 0;
     private CampController campControllerScript;
@@ -49,8 +51,13 @@ public class CampTrade : MonoBehaviour
     private TextMeshProUGUI flashingText;
     private TextMeshProUGUI flashingText2;
     public AudioSource potionAudio;
+    public GameObject supplyItemPrefab;
+    public GameObject supplyContent;
+    public GameObject supplyWindow;
+    public ScrollRect supplyScrollRect;
     void Awake()
     {
+        scm = FindFirstObjectByType<SaveManager>();
         campAssistMenuScript = FindFirstObjectByType<CampAssistMenu>();
         campControllerScript = FindFirstObjectByType<CampController>();
         originalHpManaBarSize = previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta;
@@ -65,11 +72,10 @@ public class CampTrade : MonoBehaviour
                 if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Q))
                 {
                     active = false;
-                    tradingWithOthers = false;
                     resetInventories();
                     disableRecipientMenu();
                     disableGiverMenu(false);
-                    confirmButton.GetComponent<ConfirmTradeButton>().disableButton();
+                    confirmButton.GetComponent<CampConfirmTrade>().disableButton();
                     confirmButton.SetActive(false);
                     arrows.SetActive(false);
                     itemToGive = null;
@@ -85,6 +91,7 @@ public class CampTrade : MonoBehaviour
                         //Intentional
                     }
                     resetSelectorPosition();
+                    tradingWithOthers = false;
                 }
                 
                 else
@@ -209,12 +216,99 @@ public class CampTrade : MonoBehaviour
                             confirmButton.GetComponent<CampConfirmTrade>().enableButton();
                         }
                     }
+                
                 }
             }
         
             else if (tradingWithSupply)
             {
-                
+                //Move selector
+                if (Input.GetKeyDown(KeyCode.W))
+                {
+                    if (leftRightIndex == 0)
+                    {
+                        if (index != 0)
+                        {
+                            index--;
+                            moveSelectorUp();
+                        }
+                    }
+                    else if (leftRightIndex == 1)
+                    {
+                        if (index == supplyTopIndex && index != 0)
+                        {
+                            moveSupplyContentWindowUp();
+                            index--;
+                        }
+                        
+                        else if (index != 0)
+                        {
+                            moveSupplySelectorUp();
+                            index--;
+                        }
+                        
+                    }
+                }
+                else if (Input.GetKeyDown(KeyCode.S))
+                {
+                    if (leftRightIndex == 0)
+                    {
+                        if (index != 4)
+                        {
+                            index++;
+                            moveSelectorDown();
+                        }
+                    }
+                    else if (leftRightIndex == 1)
+                    {
+                        if (index == supplyBotIndex && index != scm.loadedData.supplyItems.Count)
+                        {
+                            moveSupplyContentWindowDown();
+                            index++;
+                        }
+                        
+                        else if (index != scm.loadedData.supplyItems.Count)
+                        {
+                            moveSupplySelectorDown();
+                            index++;
+                        }
+                        
+                    }
+                }
+                else if (Input.GetKeyDown(KeyCode.A))
+                {
+                    if (leftRightIndex != 0)
+                    {
+                        resetSelectorPosition();
+                    }
+                }
+                else if (Input.GetKeyDown(KeyCode.D))
+                {
+                    if (leftRightIndex != 1)
+                    {
+                        resetSupplySelector();
+                    }
+
+                }
+
+                //Make item selection
+                else if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    if (leftRightIndex == 0)
+                    {
+                        try
+                        {
+                            scm.loadedData.supplyItems.Add(campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().inventory[index]);
+                            campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().inventory.RemoveAt(index);
+                            updateItemList();
+                        }
+                        catch
+                        {
+                           //Should do nothing. Because trying to trade an empty row 
+                        }
+                    }
+                }
+            
             }
         
         }
@@ -345,22 +439,38 @@ public class CampTrade : MonoBehaviour
     private void resetInventories()
     {
         campControllerScript.mainCharacterObj.GetComponent<CampPlayerController>().inventory = originalGiverInventory.Select(item => new Item(item)).ToList();
-        campControllerScript.mainCharacterObj.GetComponent<CampPlayerController>().inventory = originalRecipientInventory.Select(item => new Item(item)).ToList();
+        campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().inventory = originalRecipientInventory.Select(item => new Item(item)).ToList();
         originalGiverInventory = null;
         originalRecipientInventory = null;
     }
     private void resetSelectorPosition()
     {
-        if (leftRightIndex != 0)
-        {
-            moveSelectorLeft();
-            leftRightIndex--;
+        if (tradingWithOthers) {
+            if (leftRightIndex != 0)
+            {
+                moveSelectorLeft();
+                leftRightIndex--;
+            }
+            while (index != 0)
+            {
+                moveSelectorUp();
+                index--;
+            }
         }
-        while (index != 0)
+        else if (tradingWithSupply)
         {
-            moveSelectorUp();
-            index--;
+            selectorAudio.Play();
+            selector.GetComponent<RectTransform>().anchoredPosition = new Vector2(-382f, 9f);
+            index = 0;
+            leftRightIndex = 0;
         }
+    }
+    private void resetSupplySelector()
+    {
+        selectorAudio.Play();
+        selector.GetComponent<RectTransform>().anchoredPosition = new Vector2(421f, 95f);
+        index = supplyTopIndex;
+        leftRightIndex = 1;
     }
     private void storeOriginalInventories(GameObject character)
     {
@@ -371,6 +481,55 @@ public class CampTrade : MonoBehaviour
         originalRecipientInventory = character.GetComponent<CampPlayerController>().inventory
             .Select(item => new Item(item))
             .ToList();
+    }
+    private void moveSupplySelectorDown()
+    {
+        selectorAudio.Play();
+        RectTransform rt = selector.GetComponent<RectTransform>();
+        Vector2 anchoredPos = rt.anchoredPosition;
+        anchoredPos.y -= 51f;
+        rt.anchoredPosition = anchoredPos;
+        if (leftRightIndex == 0)
+        {
+            updateDescription(campControllerScript.mainCharacterObj);
+        }
+        else
+        {
+            updateRecipientDescription(campControllerScript.mainCharacterObj);
+        }
+
+    }
+    private void moveSupplySelectorUp()
+    {
+        selectorAudio.Play();
+        RectTransform rt = selector.GetComponent<RectTransform>();
+        Vector2 anchoredPos = rt.anchoredPosition;
+        anchoredPos.y += 51f;
+        rt.anchoredPosition = anchoredPos;
+        if (leftRightIndex == 0)
+        {
+            updateDescription(campControllerScript.mainCharacterObj);
+        }
+        else
+        {
+            updateRecipientDescription(campControllerScript.mainCharacterObj);
+        }
+    }
+    private void moveSupplyContentWindowUp()
+    {
+        selectorAudio.Play();
+        RectTransform temp = supplyContent.GetComponent<RectTransform>();
+        temp.anchoredPosition += new Vector2(0f, -25f);
+        supplyBotIndex--;
+        supplyTopIndex--;
+    }
+    private void moveSupplyContentWindowDown()
+    {
+        selectorAudio.Play();
+        RectTransform temp = supplyContent.GetComponent<RectTransform>();
+        temp.anchoredPosition += new Vector2(0f, 25f);
+        supplyBotIndex++;
+        supplyTopIndex++;
     }
     private void moveSelectorDown()
     {
@@ -418,7 +577,7 @@ public class CampTrade : MonoBehaviour
         }
         else
         {
-            updateRecipientDescription(campControllerScript.mainCharacterObj);
+            updateRecipientDescription(campAssistMenuScript.characterSelected);
         }
     }
     private void moveSelectorLeft()
@@ -434,7 +593,7 @@ public class CampTrade : MonoBehaviour
         }
         else
         {
-            updateRecipientDescription(campControllerScript.mainCharacterObj);
+            updateRecipientDescription(campAssistMenuScript.characterSelected);
         }
     }
     private void updateDescription(GameObject character)
@@ -463,40 +622,63 @@ public class CampTrade : MonoBehaviour
     {
         int tempIndex = 0;
 
-        //Populate giver inventory
-        foreach (Transform row in items.transform)
+        if (tradingWithOthers)
         {
-            try
+            //Populate giver inventory
+            foreach (Transform row in items.transform)
             {
-                row.gameObject.GetComponent<TextMeshProUGUI>().text = campControllerScript.mainCharacterObj.GetComponent<CampPlayerController>().inventory[tempIndex].name;
-                row.GetChild(0).GetComponent<TextMeshProUGUI>().text = campControllerScript.mainCharacterObj.GetComponent<CampPlayerController>().inventory[tempIndex].currentQuantity.ToString() + "/" + campControllerScript.mainCharacterObj.GetComponent<CampPlayerController>().inventory[tempIndex].maxQuantity.ToString();
+                try
+                {
+                    row.gameObject.GetComponent<TextMeshProUGUI>().text = campControllerScript.mainCharacterObj.GetComponent<CampPlayerController>().inventory[tempIndex].name;
+                    row.GetChild(0).GetComponent<TextMeshProUGUI>().text = campControllerScript.mainCharacterObj.GetComponent<CampPlayerController>().inventory[tempIndex].currentQuantity.ToString() + "/" + campControllerScript.mainCharacterObj.GetComponent<CampPlayerController>().inventory[tempIndex].maxQuantity.ToString();
+                }
+                catch
+                {
+                    row.gameObject.GetComponent<TextMeshProUGUI>().text = "-";
+                    row.GetChild(0).GetComponent<TextMeshProUGUI>().text = "-";
+                }
+                tempIndex++;
             }
-            catch
+
+            tempIndex = 0;
+            //Populate recipient inventory
+            foreach (Transform row in recipientItems.transform)
             {
-                row.gameObject.GetComponent<TextMeshProUGUI>().text = "-";
-                row.GetChild(0).GetComponent<TextMeshProUGUI>().text = "-";
+                try
+                {
+                    row.gameObject.GetComponent<TextMeshProUGUI>().text = campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().inventory[tempIndex].name;
+                    row.GetChild(0).GetComponent<TextMeshProUGUI>().text = campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().inventory[tempIndex].currentQuantity.ToString() + "/" + campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().inventory[tempIndex].maxQuantity.ToString();
+                }
+                catch
+                {
+                    row.gameObject.GetComponent<TextMeshProUGUI>().text = "-";
+                    row.GetChild(0).GetComponent<TextMeshProUGUI>().text = "-";
+                }
+                tempIndex++;
             }
-            tempIndex++;
+            
         }
 
-        tempIndex = 0;
-        //Populate recipient inventory
-        foreach (Transform row in recipientItems.transform)
+        else if (tradingWithSupply)
         {
-            try
+            tempIndex = 0;
+            //Populate recipient inventory
+            foreach (Transform row in items.transform)
             {
-                row.gameObject.GetComponent<TextMeshProUGUI>().text = campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().inventory[tempIndex].name;
-                row.GetChild(0).GetComponent<TextMeshProUGUI>().text = campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().inventory[tempIndex].currentQuantity.ToString() + "/" + campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().inventory[tempIndex].maxQuantity.ToString();
+                try
+                {
+                    row.gameObject.GetComponent<TextMeshProUGUI>().text = campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().inventory[tempIndex].name;
+                    row.GetChild(0).GetComponent<TextMeshProUGUI>().text = campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().inventory[tempIndex].currentQuantity.ToString() + "/" + campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().inventory[tempIndex].maxQuantity.ToString();
+                }
+                catch
+                {
+                    row.gameObject.GetComponent<TextMeshProUGUI>().text = "-";
+                    row.GetChild(0).GetComponent<TextMeshProUGUI>().text = "-";
+                }
+                tempIndex++;
             }
-            catch
-            {
-                row.gameObject.GetComponent<TextMeshProUGUI>().text = "-";
-                row.GetChild(0).GetComponent<TextMeshProUGUI>().text = "-";
-            }
-            tempIndex++;
+            populateSupply();
         }
-
-
     }
     public void confirmTrade()
     {
@@ -569,8 +751,24 @@ public class CampTrade : MonoBehaviour
 
     }
     private void enableSupplyWindow()
+    {   
+        supplyWindow.SetActive(true);
+        populateSupply();
+    }
+    private void populateSupply()
     {
-        
+        //Clear the content
+        foreach (Transform child in supplyContent.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        //Instantiate itemPrefab for each item in scm.loadedData.supplyItems
+        foreach (Item item in scm.loadedData.supplyItems)
+        {
+            GameObject temp = Instantiate(supplyItemPrefab, supplyContent.transform, false);
+            temp.GetComponent<SupplyItem>().item = item;
+        }
     }
 
 }

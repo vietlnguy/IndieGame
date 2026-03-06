@@ -9,12 +9,14 @@ public class GameSaveData
     public string introBattleOutro;
     public string mainCharacterName;
     public List<Character> characters;
-    public List<Equipment> ownedEquipment;
+    public List<Equipment> supplyEquipment;
+    public List<Item> supplyItems;
 
     public GameSaveData()
     {
         characters = new List<Character>();
-        ownedEquipment = new List<Equipment>();
+        supplyEquipment = new List<Equipment>();
+        supplyItems = new List<Item>();
     }
 }
 
