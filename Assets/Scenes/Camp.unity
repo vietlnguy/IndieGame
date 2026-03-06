@@ -952,7 +952,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 20
+  m_ScrollSensitivity: 0
   m_Viewport: {fileID: 1218464329}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 1054563092}
@@ -12349,7 +12349,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1814302522}
   m_HandleRect: {fileID: 1814302521}
   m_Direction: 2
@@ -98843,7 +98843,7 @@ MonoBehaviour:
     curesBlind: 0
     curesBleed: 0
     curesRooted: 0
-  potionAudio: {fileID: 7575311412592650014}
+  errorAudio: {fileID: 7575311412592650014}
   supplyItemPrefab: {fileID: 654399739772488136, guid: a1e225afd5a89e34cbef85d10b0f5a12, type: 3}
   supplyContent: {fileID: 301294756}
   supplyWindow: {fileID: 1223980976}
@@ -100522,8 +100522,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 3d7fb5f92979dc44aabd3b11c2897bbb, type: 3}
-  m_Resource: {fileID: 8300000, guid: 3d7fb5f92979dc44aabd3b11c2897bbb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e877168678665b34cb06b3d78380e12a, type: 3}
+  m_Resource: {fileID: 8300000, guid: e877168678665b34cb06b3d78380e12a, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
@@ -101280,7 +101280,7 @@ GameObject:
   - component: {fileID: 6738120897882070818}
   - component: {fileID: 7575311412592650014}
   m_Layer: 5
-  m_Name: PotionAudio
+  m_Name: errorAudio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

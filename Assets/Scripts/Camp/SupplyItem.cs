@@ -13,7 +13,16 @@ public class SupplyItem : MonoBehaviour
     }
     void Start()
     {
-        itemName.text = item.name;
-        itemQty.text = item.currentQuantity.ToString() + "/" + item.maxQuantity.ToString();
+        if (item.name == "")
+        {
+            itemName.text = "-";
+            itemQty.text = "-/-";
+        }
+        else
+        {
+            itemName.text = item.name;
+            itemQty.text = item.currentQuantity.ToString() + "/" + item.maxQuantity.ToString();
+        }
+
     }
 }
