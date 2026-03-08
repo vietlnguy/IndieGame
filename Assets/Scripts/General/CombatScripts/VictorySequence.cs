@@ -42,6 +42,7 @@ public class VictorySequence : MonoBehaviour
         StartCoroutine(MoveBox());
 
         //Populate subquests content
+        int index = 1;
         foreach (Subquest subquest in subquests)
         {
             //Set description
@@ -50,7 +51,7 @@ public class VictorySequence : MonoBehaviour
 
             //Set quest number
             Transform temp2 = temp.transform.Find("Number");
-            temp2.gameObject.GetComponent<TextMeshProUGUI>().text = (subquest.questNumber + 1).ToString() + ".";
+            temp2.gameObject.GetComponent<TextMeshProUGUI>().text = index.ToString() + ".";
         }
 
         //Scale up subquests box
@@ -59,7 +60,7 @@ public class VictorySequence : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         //Show check or X for each Subquest
-        int index = 0;
+        index = 0;
         foreach (Transform child in subquestsBoxContent.transform)
         {
             //Failed

@@ -55,13 +55,13 @@ public class CampDialogue : MonoBehaviour
             }
         }
     }
-
     public IEnumerator EnableDialogueWindow(GameObject character)
     {
         DetermineDialogue(character);
         yield return StartCoroutine(Helpers.FadeInImageAlpha(blackScreen, 1f));
 
         CampPlayerController characterScript = character.GetComponent<CampPlayerController>();
+        mainCharacterImage.SetActive(true);
 
         //Enable the right character image
         if (characterScript.title == "Astrid")
@@ -119,7 +119,16 @@ public class CampDialogue : MonoBehaviour
 
         }
     
-        
+        //Enable
+
+
+        //Instantiate dialoguePrefab options
+
+
+        //Fade in text box
+        StartCoroutine(Helpers.MoveRectTransform(textBox, textBox.GetComponent<RectTransform>().anchoredPosition, textBox.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, 10f), .25f));
+        StartCoroutine(Helpers.FadeInCanvasGroup(textBox.GetComponent<CanvasGroup>(), 0.25f));
+
     }
     private void DetermineDialogue(GameObject character)
     {
@@ -138,9 +147,10 @@ public class CampDialogue : MonoBehaviour
                     dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"What's so funny??"}));
                     dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"You, you're very cute.", "We can get turkey pies, dear. I think it would do us some good to take our mind off of everything that's happened.", "I miss this life sometimes.", "Travelling the king's road, sword by my side, no plan. Just living life.",}));
                     dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"*coyly* You mean the life before you met me?"}));
-                    dialogues.Add(new CharacterDialogue(mainCharcterImage, scm.loadedData.mainCharacterName, new string[] {"Of course not!", "I would much rather live in the forest in isolation shoveling dirt and breaking my back.", "...rather than spend my time at the tavern, drinking good ale, and knee deep in pus--"}));
+                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"Of course not!", "I would much rather live in the forest in isolation shoveling dirt and breaking my back.", "...rather than spend my time at the tavern, drinking good ale, and knee deep in pus--"}));
                     dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"*bonk*", "Oh hush, you."}));
-                    dialogues.Add(new CharacterDialogue(mainCharcterImage, scm.loadedData.mainCharacterName, new string[] {"*chuckles*"}));
+                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"*chuckles*"}));
+                    dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"Is there anything else you need, dear?"}));
                     
                 }
                 else

@@ -65,6 +65,7 @@ public class CampAssistMenu : MonoBehaviour
                 //TODO: Handle Talk option
                 if (index == 0)
                 {
+                    active = false;
                     StartCoroutine(campDialogueScript.EnableDialogueWindow(characterSelected));
                 }
 

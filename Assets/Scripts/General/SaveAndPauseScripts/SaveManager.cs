@@ -39,23 +39,6 @@ public class SaveManager : MonoBehaviour
     }
     public void SaveGame()
     {
-        //Go through each character and create a serializable Character to save
-        //GameObject characters = GameObject.Find("Characters");
-        //foreach (Transform child in characters.transform)
-        //{
-        //    PlayerController pc = child.GetComponent<PlayerController>();
-        //    if (pc.owned)
-        //    {
-        //        Character temp = new Character(pc.title, pc.baseMaxHp, pc.baseMaxMana, pc.baseAttack, pc.baseIntelligence, pc.baseDefense, pc.baseResistance, pc.baseSkill, pc.baseSpeed, pc.baseAttackRange, pc.baseMoveRange, pc.owned, pc.ranged);
-        //        temp.knownAttacks = pc.knownAttacks;
-        //        temp.inventory = pc.inventory;
-        //        temp.weaponEquiped = pc.weaponEquiped;
-        //        temp.armorEquiped = pc.armorEquiped;
-        //        temp.accessoryEquiped = pc.accessoryEquiped;
-        //        dataToSave.characters.Add(temp);
-        //    }
-        //}
-
         //Create save file name
         string time = DateTime.Now.ToString("F");
         time = time.Replace(":", "-");
@@ -87,22 +70,9 @@ public class SaveManager : MonoBehaviour
         astrid.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
         astrid.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
         astrid.accessoryEquiped = new Equipment("Power Bracelet", "accessory", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Tingles with power. +1 ATK.");
-
+        astrid.subquests.Add(new Subquest("Astrid1", "Astrid lands the killing blow on the boss.", "Discuss the power of the bracelets."));
         dataToSave.characters.Add(mainCharacter);
         dataToSave.characters.Add(astrid);
-        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
-        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
-        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
-        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
-        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
-        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
-        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
-        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
-        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
-        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
-        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
-        dataToSave.supplyItems.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
-
 
         //Create save file name
         string time = DateTime.Now.ToString("F");

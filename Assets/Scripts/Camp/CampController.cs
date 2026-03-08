@@ -35,21 +35,14 @@ public class CampController : MonoBehaviour
     {
         scm = GameObject.Find("SaveManager").GetComponent<SaveManager>();
         AudioListener.volume = PlayerPrefs.GetFloat("volume", 0.5f);
-        
-        
         ChooseScenery();
-
-        
+   
     }
     void Start()
     {
         StartCoroutine(Intro());
     }
     void Update()
-    {
-
-    }
-    void FixedUpdate()
     {
         if (isPaused)
         {
@@ -72,15 +65,15 @@ public class CampController : MonoBehaviour
                 pauseMenu.SetActive(true);
                 isPaused = true;
             }
-
-            else
-            {
-                if (movementEnabled)
-                {
-                    HandleMovement(mainCharacterObj);
-                }
-            }
         }
+    }
+    void FixedUpdate()
+    {
+        if (movementEnabled)
+        {
+            HandleMovement(mainCharacterObj);
+        }
+            
     }
     private IEnumerator Intro()
     {

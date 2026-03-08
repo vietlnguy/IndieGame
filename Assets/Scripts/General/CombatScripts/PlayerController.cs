@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour
     public float totalHpMult;
     public float totalManaMod;
     public float totalManaMult;
-    public int relationship;
+    public List<Subquest> subquests;
     public bool owned;
     public string title;
     public bool ranged;
@@ -235,7 +235,6 @@ public class PlayerController : MonoBehaviour
         baseSpeed = savedCharacter.baseSpeed;
         baseAttackRange = savedCharacter.baseAttackRange;
         baseMoveRange = savedCharacter.baseMoveRange;
-        relationship = savedCharacter.relationship;
         owned = savedCharacter.owned;
         ranged = savedCharacter.ranged;
         title = savedCharacter.characterName;
@@ -244,6 +243,7 @@ public class PlayerController : MonoBehaviour
         weaponEquiped = savedCharacter.weaponEquiped;
         armorEquiped = savedCharacter.armorEquiped;
         accessoryEquiped = savedCharacter.accessoryEquiped;
+        subquests = savedCharacter.subquests;
         
         if (savedCharacter.characterName == "Astrid")
         {

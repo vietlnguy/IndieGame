@@ -24,9 +24,10 @@ public class SubquestsBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     }
     void Start()
-    {
+    {   
+        //Remember: Everytime I add a subquest here, I should add an exact copy subquest to PlayerController.
         subquests = new List<Subquest>();
-        subquests.Add(new Subquest("Astrid lands the killing blow on the boss.", 0));
+        subquests.Add(new Subquest("Astrid1", "Astrid lands the killing blow on the boss.", "Discuss the power of the bracelets."));
         victorySequenceScript.subquests = subquests;
     }
     public void OnPointerEnter(PointerEventData eventData)
@@ -45,22 +46,42 @@ public class SubquestsBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         moveUpCoroutine = StartCoroutine(MoveUp());
 
     }
-    public void updateQuest(int questNumber, bool completed)
+    public void updateQuest(string identifier, bool completed, GameObject characterToUpdate)
     {
-        //Astrid lands the killing blow on the boss
-        if (questNumber == 0)
+        //Update this script's subquests
+        foreach (Subquest s in subquests)
         {
-            if (completed)
+            if (s.sceneToLoad == identifier)
             {
-                subquests[questNumber].completed = true;
-                quest1ImageCheck.color = new Color(1, 1, 1, 1);
-            }
-            else
-            {
-                subquests[questNumber].failed = true;
-                quest1ImageX.color = new Color(1, 1, 1, 1);
+                if (completed)
+                {
+                    s.completed = true;
+                    quest1ImageCheck.color = new Color(1, 1, 1, 1);
+                }
+                else
+                {
+                    s.failed = true;
+                    quest1ImageX.color = new Color(1, 1, 1, 1);
+                }
             }
         }
+
+        //Update the characters subquests
+        foreach (Subquest s in characterToUpdate.GetComponent<PlayerController>().subquests)
+        {
+            if (s.sceneToLoad == identifier)
+            {
+                if (completed)
+                {
+                    s.completed = true;
+                }
+                else
+                {
+                    s.failed = true;
+                }
+            }
+        }
+
         victorySequenceScript.subquests = subquests;
 
     }

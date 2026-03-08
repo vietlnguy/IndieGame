@@ -34,7 +34,7 @@ public class Character
     public int baseSpeed;
     public int baseAttackRange;
     public int baseMoveRange;
-    public int relationship;
+    public List<Subquest> subquests;
     public bool owned;
     public bool ranged;
     public List<Item> inventory;
@@ -60,9 +60,9 @@ public class Character
         this.baseMoveRange = moveRange;
         this.ranged = ranged;
         this.owned = owned;
-        relationship = 0;
         knownAttacks = new List<AttackMoves>();
         inventory = new List<Item>();
+        this.subquests = new List<Subquest>();
 
     }
 
@@ -216,28 +216,22 @@ public class Item
     }
 
 }
+
+[System.Serializable]
 public class Subquest
 {
     public string description;
-    public int questNumber;
+    public string campDescription;
+    public string sceneToLoad;
     public bool completed;
     public bool failed;
-
-    public Subquest(string description, int questNumber)
+ 
+    public Subquest(string sceneToLoad, string description, string campDescription)
     {
         this.description = description;
-        this.questNumber = questNumber;
+        this.campDescription = campDescription;
+        this.sceneToLoad = sceneToLoad;
         this.completed = false;
         this.failed = false;
     }
-}
-public class CharacterDialogue
-{
-    public string[] lines;
-    public string title;
-    public Sprite sprite;
-    public bool pauseExecutionAfter;
-    public float dialoguePitch;
-    public bool autoPlay;
-
 }

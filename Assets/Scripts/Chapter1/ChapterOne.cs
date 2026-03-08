@@ -189,12 +189,12 @@ public class ChapterOne : MonoBehaviour {
         if (list[0].GetComponent<EnemyController>().boss && list[1].GetComponent<PlayerController>().title != "Astrid")
         {
             //Quest failure
-            subquestsBoxScript.updateQuest(0, false);
+            subquestsBoxScript.updateQuest("Astrid1", false, list[1]);
         }
         else if (list[0].GetComponent<EnemyController>().boss && list[1].GetComponent<PlayerController>().title == "Astrid")
         {
             //Quest success
-            subquestsBoxScript.updateQuest(0, true);
+            subquestsBoxScript.updateQuest("Astrid1", true, list[1]);
 
         }
 
