@@ -14,6 +14,7 @@ public class CampAssistMenu : MonoBehaviour
     private InventoryMenu inventoryMenuScript;
     private CampInfoScreen campInfoScript;
     private CampTrade campTradeScript;
+    private CampDialogue campDialogueScript;
     public GameObject selector;
     public AudioSource selectorAudio;
     public AudioSource deselectAudio;
@@ -27,6 +28,7 @@ public class CampAssistMenu : MonoBehaviour
         //inventoryMenuScript = GameObject.Find("InventoryMenu").GetComponent<InventoryMenu>();
         campInfoScript = FindFirstObjectByType<CampInfoScreen>();
         campTradeScript = FindFirstObjectByType<CampTrade>();
+        campDialogueScript = FindFirstObjectByType<CampDialogue>();
         campControllerScript = FindFirstObjectByType<CampController>();
         gameObject.GetComponent<Canvas>().worldCamera = worldCamera;
     }
@@ -63,7 +65,7 @@ public class CampAssistMenu : MonoBehaviour
                 //TODO: Handle Talk option
                 if (index == 0)
                 {
-
+                    StartCoroutine(campDialogueScript.EnableDialogueWindow(characterSelected));
                 }
 
                 //Open info screen
