@@ -938,7 +938,10 @@ public class AttackPreview : MonoBehaviour
                 if (attackerScript.currentHp <= 0)
                 {   
                     //TODO: Remove sprite on battle screen
-                    yield return StartCoroutine(DeathSequence(attacker));
+                    if (attackerScript.deathDialogue != "")
+                    {
+                        yield return StartCoroutine(DeathSequence(attacker));
+                    }
                 }
             }
         

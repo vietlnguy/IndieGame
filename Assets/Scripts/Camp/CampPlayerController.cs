@@ -60,6 +60,7 @@ public class CampPlayerController : MonoBehaviour
     private CampMoveCircle campMoveCircleScript;
     private CampAssistMenu campAssistMenuScript;
     private SpriteRenderer spriteRenderer;
+    public bool spokenToAlready = false;
     void Awake()
     {
         scm = GameObject.Find("SaveManager").GetComponent<SaveManager>();

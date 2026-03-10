@@ -153,5 +153,19 @@ public class CampController : MonoBehaviour
 
         // Animation
         animator.SetBool("isWalking", direction != Vector2.zero);
+        if (direction != Vector2.zero)
+        {
+            if (!walkingAudio.isPlaying)
+            {
+                walkingAudio.Play();
+            }
+        }
+        else
+        {
+            if (walkingAudio.isPlaying)
+            {
+                walkingAudio.Stop();
+            }
+        }
     }
 }

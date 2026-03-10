@@ -215,7 +215,7 @@ public class SaveManager : MonoBehaviour
         //Find SceneTransitionCanvas and fade in black screen
         GameObject sceneTransitionCanvas = GameObject.Find("SceneTransitionCanvas");
         float time = 0f;
-        float duration = 2f;
+        float duration = 1.5f;
         while (time < duration)
         {
             time += Time.deltaTime;
@@ -242,6 +242,22 @@ public class SaveManager : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
+    }
+    public IEnumerator UndoSceneTransition()
+    {
+        //Find SceneTransitionCanvas and fade in black screen
+        GameObject sceneTransitionCanvas = GameObject.Find("SceneTransitionCanvas");
+        float time = 0f;
+        float duration = 1.5f;
+        while (time < duration)
+        {
+            time += Time.deltaTime;
+            sceneTransitionCanvas.GetComponent<CanvasGroup>().alpha = Mathf.Lerp(1f, 0f, time / duration);
+            yield return null;
+        }
+
+        sceneTransitionCanvas.GetComponent<CanvasGroup>().alpha = 0f;
+         
     }
     private IEnumerator FadeOut(AudioSource source)
     {

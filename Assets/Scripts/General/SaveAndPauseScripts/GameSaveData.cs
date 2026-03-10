@@ -120,6 +120,33 @@ public class Equipment
         
         this.description = description;
     }
+    public Equipment(Equipment equipment)
+    {
+        this.name = equipment.name;
+        this.type = equipment.type;
+
+        this.hpMod = equipment.hpMod;
+        this.manaMod = equipment.manaMod;
+        this.attackMod = equipment.attackMod;
+        this.intelligenceMod = equipment.intelligenceMod;
+        this.defenseMod = equipment.defenseMod;
+        this.resistanceMod = equipment.resistanceMod;
+        this.skillMod = equipment.skillMod;
+        this.speedMod = equipment.speedMod;
+
+        this.hpMult = equipment.hpMult;
+        this.manaMult = equipment.manaMult;
+        this.attackMult = equipment.attackMult;
+        this.intelligenceMult = equipment.intelligenceMult;
+        this.defenseMult = equipment.defenseMult;
+        this.resistanceMult = equipment.resistanceMult;
+        this.skillMult = equipment.skillMult;
+        this.speedMult = equipment.speedMult;
+        this.attackRangeMult = equipment.attackRangeMult;
+        this.moveRangeMult = equipment.moveRangeMult;
+        
+        this.description = equipment.description;
+    }
 }
 
 [System.Serializable]

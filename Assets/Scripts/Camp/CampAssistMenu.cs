@@ -72,6 +72,7 @@ public class CampAssistMenu : MonoBehaviour
                 //Open info screen
                 else if (index == 1)
                 {
+                    active = false;
                     StartCoroutine(campInfoScript.enableCharacterInfo(characterSelected));
                 }
 
@@ -85,7 +86,8 @@ public class CampAssistMenu : MonoBehaviour
                 //Open equipment menu
                 else if (index == 3)
                 {
-                    
+                    active = false;
+                    campTradeScript.enableEquipmentMenu(characterSelected);
                 }
 
                 //Open supply menu

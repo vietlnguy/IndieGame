@@ -508,7 +508,6 @@ public class CampInfoScreen : MonoBehaviour
         yield return null;
         characterScript = characterSelected.GetComponent<CampPlayerController>();
         active = true;
-        campAssistMenuScript.active = false;
         populateInitialData();
         StartCoroutine(TransitionToCharacterInfo(blackScreen, .25f));
     }

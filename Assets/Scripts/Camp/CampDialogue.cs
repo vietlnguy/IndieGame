@@ -3,60 +3,131 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CampDialogue : MonoBehaviour
 {
     private SaveManager scm;
+    private CampAssistMenu campAssistMenuScript;
     public Image blackScreen;
+    public GameObject mainCamera;
+    public GameObject eventSystem;
     public GameObject nameBox;
     public GameObject textBox;
+    public GameObject selector;
+    public GameObject scrollView;
+    public GameObject scrollViewContent;
+    public GameObject campDialoguePrefab;
     public GameObject everdellScenery;
     public GameObject astridImage;
     public GameObject mainCharacterImage;
+    public GameObject characterSelected;
     private bool active = false;
     public bool nextLine = false;
     private bool isTyping = false;
-    private bool astridTalkedToAlready = false;
+    private bool dialogueOptionsActive = false;
+    public bool cutSceneActive = false; 
+    private bool coroutineRunning = false;   
     public List<CharacterDialogue> dialogues;
     public Coroutine typingCoroutine;
     private string lineToBeTyped = "";
     public AudioSource typingAudio;
-
+    public AudioSource selectorAudio;
+    public AudioSource backgroundAudio;
+    public int dialogueIndex = 0;
+    public int dialogueTopIndex = 0;
+    public int dialogueBotIndex = 2;
 
     void Awake()
     {
         scm = FindFirstObjectByType<SaveManager>();
+        campAssistMenuScript = FindFirstObjectByType<CampAssistMenu>();
         dialogues = new List<CharacterDialogue>();
     }
-
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
-        if (active)
+        if (!cutSceneActive)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (active)
             {
-                if (isTyping)
+                if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
                 {
-                    StopCoroutine(typingCoroutine);
-                    typingCoroutine = null;
-                    textBox.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = lineToBeTyped;
-                    typingAudio.Stop();
-                    isTyping = false;
-                }
-                else
-                {
-                    nextLine = true;
+                    if (isTyping)
+                    {
+                        StopCoroutine(typingCoroutine);
+                        typingCoroutine = null;
+                        textBox.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = lineToBeTyped;
+                        typingAudio.Stop();
+                        isTyping = false;
+                    }
+                    else
+                    {
+                        nextLine = true;
+                    }
                 }
             }
+            
+            if (dialogueOptionsActive)
+            {
+                //Move selector
+                if (Input.GetKeyDown(KeyCode.W))
+                {
+                    if (dialogueIndex == dialogueTopIndex && dialogueIndex != 0)
+                    {
+                        moveContentWindowUp();
+                        dialogueIndex--;
+                    }
+                    
+                    else if (dialogueIndex != 0)
+                    {
+                        moveSelectorUp();
+                        dialogueIndex--;
+                    }
+                        
+                }
+                else if (Input.GetKeyDown(KeyCode.S))
+                {
+                    if (dialogueIndex == dialogueBotIndex && dialogueIndex < characterSelected.GetComponent<CampPlayerController>().subquests.Count)
+                    {
+                        moveContentWindowDown();
+                        dialogueIndex++;
+                    }
+                    
+                    else if (dialogueIndex != characterSelected.GetComponent<CampPlayerController>().subquests.Count)
+                    {
+                        moveSelectorDown();
+                        dialogueIndex++;
+                    }
+                        
+                
+                }
+            
+                //Make item selection
+                else if (Input.GetKeyDown(KeyCode.Space) && !coroutineRunning)
+                {
+                    //Close dialogue
+                    if (dialogueIndex == characterSelected.GetComponent<CampPlayerController>().subquests.Count)
+                    {
+                        coroutineRunning = true;
+                        StartCoroutine(DisableDialogueWindow());
+                    }
+                    else
+                    {
+                        if (characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].completed)
+                        {
+                            coroutineRunning = true;
+                            StartCoroutine(PlayCutscene());
+                        }
+
+                    }
+                }
+        
+            }     
         }
     }
     public IEnumerator EnableDialogueWindow(GameObject character)
     {
+        characterSelected = character;
         DetermineDialogue(character);
         yield return StartCoroutine(Helpers.FadeInImageAlpha(blackScreen, 1f));
 
@@ -118,17 +189,87 @@ public class CampDialogue : MonoBehaviour
             yield return new WaitForSeconds(0.25f);
 
         }
-    
-        //Enable
-
+ 
+        scrollView.SetActive(true);
+        nameBox.SetActive(false);
+        selector.SetActive(true);
 
         //Instantiate dialoguePrefab options
+        int index3 = 1;
+        foreach (Subquest subquest in character.GetComponent<CampPlayerController>().subquests)
+        {
+            GameObject temp = Instantiate(campDialoguePrefab, scrollViewContent.transform, false);
+            string s = index3.ToString() + ". ";
+            if (subquest.completed)
+            {
+                s = s + "[Subquest Completed] ";
+                temp.GetComponent<TextMeshProUGUI>().color = Color.white;
+            }
+            else if (subquest.failed)
+            {
+                s = s + "[Subquest Failed] ";
+                temp.GetComponent<TextMeshProUGUI>().color = Color.gray;
+            }
+            else
+            {
+                s = s + "[Subquest Incomplete] ";
+                temp.GetComponent<TextMeshProUGUI>().color = Color.gray;
+            }
 
+            s = s + subquest.campDescription;
+            temp.GetComponent<TextMeshProUGUI>().text = s;
+            index3++;
+        }
+        GameObject temp2 = Instantiate(campDialoguePrefab, scrollViewContent.transform, false);
+        temp2.GetComponent<TextMeshProUGUI>().text = index3.ToString() + ". " + "Goodbye.";
 
         //Fade in text box
         StartCoroutine(Helpers.MoveRectTransform(textBox, textBox.GetComponent<RectTransform>().anchoredPosition, textBox.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, 10f), .25f));
         StartCoroutine(Helpers.FadeInCanvasGroup(textBox.GetComponent<CanvasGroup>(), 0.25f));
 
+        dialogueOptionsActive = true;
+    }
+    public IEnumerator DisableDialogueWindow()
+    {
+        yield return StartCoroutine(Helpers.FadeInImageAlpha(blackScreen, 1f));
+
+        textBox.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = "";
+        active = false;
+        dialogueOptionsActive = false;
+        scrollView.SetActive(false);
+        selector.SetActive(false);
+        nameBox.SetActive(true);
+        resetSelectorPosition();
+        disableCharacterImages();
+        disableBackgrounds();
+        characterSelected.GetComponent<CampPlayerController>().spokenToAlready = true;
+        dialogueIndex = 0;
+        dialogueBotIndex = 2;
+        dialogueTopIndex = 0;
+
+        foreach (Transform obj in scrollViewContent.transform)
+        {
+            Destroy(obj.gameObject);
+        }
+
+        //Fade out text box
+        StartCoroutine(Helpers.MoveRectTransform(textBox, textBox.GetComponent<RectTransform>().anchoredPosition, textBox.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, -10f), .25f));
+        StartCoroutine(Helpers.FadeOutCanvasGroup(textBox.GetComponent<CanvasGroup>(), 0.25f));
+
+        yield return StartCoroutine(Helpers.FadeOutImageAlpha(blackScreen, 1f));
+        campAssistMenuScript.active = true;
+        coroutineRunning = false;
+        
+
+    }
+    private void disableCharacterImages()
+    {
+        astridImage.SetActive(false);
+        mainCharacterImage.SetActive(false);
+    }
+    private void disableBackgrounds()
+    {
+        everdellScenery.SetActive(false);
     }
     private void DetermineDialogue(GameObject character)
     {
@@ -140,7 +281,7 @@ public class CampDialogue : MonoBehaviour
         {
             if (scm.loadedData.currentChapter == "Chapter 2")
             {
-                if (!astridTalkedToAlready)
+                if (!characterScript.spokenToAlready)
                 {
                     dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"Even though we had to leave our home, it's nice to be out in the countryside again.", "I wonder how long we'll be gone.", "Ooo when we get to Maplemire do you think we can get turkey pies??", "It's been so long since I've had one.", "No, we shouldn't we should stay focused..."}));
                     dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"*laughs*"}));
@@ -151,7 +292,7 @@ public class CampDialogue : MonoBehaviour
                     dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"*bonk*", "Oh hush, you."}));
                     dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"*chuckles*"}));
                     dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"Is there anything else you need, dear?"}));
-                    
+
                 }
                 else
                 {
@@ -165,14 +306,53 @@ public class CampDialogue : MonoBehaviour
             }
         }
     }
-    public IEnumerator TypeLine(string line, string speaker, AudioSource audioSource, TextMeshProUGUI textBox, float textSpeed) {
+    private void moveSelectorDown()
+    {
+        selectorAudio.Play();
+        RectTransform rt = selector.GetComponent<RectTransform>();
+        Vector2 anchoredPos = rt.anchoredPosition;
+        anchoredPos.y -= 32f;
+        rt.anchoredPosition = anchoredPos;
+
+    }
+    private void moveSelectorUp()
+    {
+        selectorAudio.Play();
+        RectTransform rt = selector.GetComponent<RectTransform>();
+        Vector2 anchoredPos = rt.anchoredPosition;
+        anchoredPos.y += 32f;
+        rt.anchoredPosition = anchoredPos;
+    }
+    private void moveContentWindowUp()
+    {
+        selectorAudio.Play();
+        RectTransform temp = scrollViewContent.GetComponent<RectTransform>();
+        temp.anchoredPosition += new Vector2(0f, -32.5f);
+        dialogueBotIndex--;
+        dialogueTopIndex--;
+    }
+    private void moveContentWindowDown()
+    {
+        selectorAudio.Play();
+        RectTransform temp = scrollViewContent.GetComponent<RectTransform>();
+        temp.anchoredPosition += new Vector2(0f, 32.5f);
+        dialogueBotIndex++;
+        dialogueTopIndex++;
+    }
+    private void resetSelectorPosition()
+    {
+        selector.GetComponent<RectTransform>().anchoredPosition = new Vector2(-469f, 37f);
+    }
+    private IEnumerator TypeLine(string line, string speaker, AudioSource audioSource, TextMeshProUGUI textBox, float textSpeed) {
         if (speaker == "Astrid")
         {
             audioSource.pitch = 1.2f;
+            textBox.color = new Color(1f, .75f, .79f, 1f);
         }
         else
         {
             audioSource.pitch = 1.0f;
+            textBox.color = Color.white;
         }
         isTyping = true;
         audioSource.Play();
@@ -182,6 +362,35 @@ public class CampDialogue : MonoBehaviour
         }
         audioSource.Stop();
         isTyping = false;
+    }
+    private IEnumerator PlayCutscene()
+    {
+        // Disable gameplay systems
+        cutSceneActive = true;
+        coroutineRunning = true;
+        string sceneName = characterSelected.GetComponent<CampPlayerController>().title + (dialogueIndex + 1).ToString();
+
+        StartCoroutine(Helpers.FadeOutAudio(backgroundAudio, 0.75f));
+        yield return StartCoroutine(Helpers.FadeInImageAlpha(blackScreen, 1f));
+
+        mainCamera.SetActive(false);
+        eventSystem.SetActive(false);
+
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+        
+        yield return StartCoroutine(Helpers.FadeOutImageAlpha(blackScreen, 1f));
+    }
+    public IEnumerator Resume()
+    {
+        StartCoroutine(Helpers.FadeInAudio(backgroundAudio, 1.5f));
+        yield return StartCoroutine(Helpers.FadeInImageAlpha(blackScreen, 1f));
+        SceneManager.UnloadSceneAsync("Astrid1");
+        mainCamera.SetActive(true);
+        eventSystem.SetActive(true);
+        cutSceneActive = false;
+        coroutineRunning = false;
+
+        yield return StartCoroutine(Helpers.FadeOutImageAlpha(blackScreen, 1f));
 
     }
     public struct CharacterDialogue {

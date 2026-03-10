@@ -128,14 +128,16 @@ public class OutroController : MonoBehaviour
         scm.OverwriteSave();
         SceneManager.LoadScene("Overworld");
     }
-    public IEnumerator TypeLine(string line, string speaker, AudioSource audioSource, TextMeshProUGUI textBox, float textSpeed) {
+    private IEnumerator TypeLine(string line, string speaker, AudioSource audioSource, TextMeshProUGUI textBox, float textSpeed) {
         if (speaker == "Astrid")
         {
             audioSource.pitch = 1.2f;
+            textBox.color = new Color(1f, .75f, .79f, 1f);
         }
         else
         {
             audioSource.pitch = 1.0f;
+            textBox.color = Color.white;
         }
         isTyping = true;
         audioSource.Play();
@@ -145,7 +147,6 @@ public class OutroController : MonoBehaviour
         }
         audioSource.Stop();
         isTyping = false;
-
     }
     public struct CharacterDialogue {
         public string[] lines;

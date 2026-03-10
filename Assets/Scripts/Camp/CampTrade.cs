@@ -42,6 +42,7 @@ public class CampTrade : MonoBehaviour
     public TextMeshProUGUI recipientItemDescriptionText;
     private bool tradingWithSupply = false;
     private bool tradingWithOthers = false;
+    private bool tradingWithEquipment = false;
     public GameObject arrows;
     public GameObject confirmButton;
     public Item itemToGive;
@@ -49,6 +50,10 @@ public class CampTrade : MonoBehaviour
     private List<Item> originalGiverInventory;
     private List<Item> originalRecipientInventory;
     private List<Item> originalSupplyInventory;
+    private Equipment originalWeapon;
+    private Equipment originalArmor;
+    private Equipment originalAccessory;
+    private List<Equipment> originalSupplyEquipment;
     private Coroutine flashCoroutine;
     private TextMeshProUGUI flashingText;
     private TextMeshProUGUI flashingText2;
@@ -57,6 +62,43 @@ public class CampTrade : MonoBehaviour
     public GameObject supplyContent;
     public GameObject supplyWindow;
     public ScrollRect supplyScrollRect;
+    public TextMeshProUGUI weaponSlot;
+    public TextMeshProUGUI armorSlot;
+    public TextMeshProUGUI accessorySlot;
+    public TextMeshProUGUI baseAtkText;
+    public TextMeshProUGUI baseIntText;
+    public TextMeshProUGUI baseDefText;
+    public TextMeshProUGUI baseResText;
+    public TextMeshProUGUI baseSklText;
+    public TextMeshProUGUI baseSpdText;
+    public TextMeshProUGUI atkModText;
+    public TextMeshProUGUI intModText;
+    public TextMeshProUGUI defModText;
+    public TextMeshProUGUI resModText;
+    public TextMeshProUGUI sklModText;
+    public TextMeshProUGUI spdModText;
+    public TextMeshProUGUI atkMultText;
+    public TextMeshProUGUI intMultText;
+    public TextMeshProUGUI defMultText;
+    public TextMeshProUGUI resMultText;
+    public TextMeshProUGUI sklMultText;
+    public TextMeshProUGUI spdMultText;
+    public TextMeshProUGUI equipmentCurrentHP;
+    public TextMeshProUGUI equipmentMaxHP;
+    public TextMeshProUGUI equipmentCurrentMana;
+    public TextMeshProUGUI equipmentMaxMana;
+    public TextMeshProUGUI equipmentNamePlate;
+    public TextMeshProUGUI equipmentDescription;
+    public TextMeshProUGUI supplyEquipmentDescription;
+    public GameObject equipmentTrade;
+    public GameObject supplyEquipmentPrefab;
+    public GameObject equipmentSupplyContent;
+    public GameObject equipmentSelector;
+    public int equipmentIndex = 0;
+    public int equipmentLeftRightIndex = 0;
+    public int equipmentTopIndex = 0;
+    public int equipmentBotIndex = 7;
+
     void Awake()
     {
         scm = FindFirstObjectByType<SaveManager>();
@@ -368,6 +410,199 @@ public class CampTrade : MonoBehaviour
             
             }
         
+            else if (tradingWithEquipment)
+            {
+                //Close menu
+                if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Q))
+                {
+                    active = false;
+                    confirmButton.GetComponent<CampConfirmTrade>().disableButton();
+                    confirmButton.SetActive(false);
+                    resetOriginalEquipment();
+                    equipmentTrade.SetActive(false);
+                    campAssistMenuScript.active = true;
+                    tradingWithEquipment = false;
+                }
+
+                //Move selector
+                if (Input.GetKeyDown(KeyCode.W))
+                {
+                    if (equipmentLeftRightIndex == 0)
+                    {
+                        if (equipmentIndex != 0)
+                        {
+                            equipmentIndex--;
+                            moveEquipmentSelectorUp();
+                        }
+                    }
+                    else if (equipmentLeftRightIndex == 1)
+                    {
+                        if (equipmentIndex == equipmentTopIndex && equipmentIndex != 0)
+                        {
+                            moveEquipmentSupplyContentWindowUp();
+                            equipmentIndex--;
+                        }
+                        
+                        else if (equipmentIndex != 0)
+                        {
+                            moveEquipmentSupplySelectorUp();
+                            equipmentIndex--;
+                        }
+                        
+                    }
+
+                }
+                else if (Input.GetKeyDown(KeyCode.S))
+                {
+                    if (equipmentLeftRightIndex == 0)
+                    {
+                        if (equipmentIndex != 2)
+                        {
+                            equipmentIndex++;
+                            moveEquipmentSelectorDown();
+                        }
+                    }
+                    else if (equipmentLeftRightIndex == 1)
+                    {
+                        if (equipmentIndex == equipmentBotIndex && equipmentIndex < supplySize - 1)
+                        {
+                            moveEquipmentSupplyContentWindowDown();
+                            equipmentIndex++;
+                        }
+                        
+                        else if (equipmentIndex != supplySize - 1)
+                        {
+                            moveEquipmentSupplySelectorDown();
+                            equipmentIndex++;
+                        }
+                        updateEquipmentDescription();
+                        
+                    }
+
+                }
+                else if (Input.GetKeyDown(KeyCode.A))
+                {
+                    moveEquipmentSelectorLeft();
+                }
+                else if (Input.GetKeyDown(KeyCode.D))
+                {
+                    moveEquipmentSelectorRight();
+                }
+
+                //Make item selection
+                else if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    if (equipmentLeftRightIndex == 0)
+                    {
+                        try
+                        {
+                            if (scm.loadedData.supplyEquipment.Count < supplySize)
+                            {
+                                selectorAudio.Play();
+                                if (equipmentIndex == 0)
+                                {   
+                                    if (campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().weaponEquiped != null)
+                                    {
+                                        scm.loadedData.supplyEquipment.Add(campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().weaponEquiped);
+                                        campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().weaponEquiped = null;
+                                    }
+                                }
+                                else if (equipmentIndex == 1)
+                                {
+                                    if (campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().armorEquiped != null)
+                                    {
+                                        scm.loadedData.supplyEquipment.Add(campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().armorEquiped);
+                                        campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().armorEquiped = null;
+                                    }
+                                }
+                                else if (equipmentIndex == 2)
+                                {
+                                    if (campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().accessoryEquiped != null)
+                                    {
+                                        scm.loadedData.supplyEquipment.Add(campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().accessoryEquiped);
+                                        campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().accessoryEquiped = null;
+                                    }
+                                }
+                                campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().calculateStats();
+                                populateCharacterInfo(campAssistMenuScript.characterSelected);
+                                populateEquipmentSupply();
+                                confirmButton.GetComponent<CampConfirmTrade>().enableButton();
+                            }
+
+                            //Supply is full
+                            else
+                            {
+                                errorAudio.Play();
+                            }
+
+                        }
+                        catch
+                        {
+                           //Should do nothing. Because trying to trade an empty row 
+                        }
+                    }
+                    else if (equipmentLeftRightIndex == 1)
+                    {
+                        try 
+                        {
+                            selectorAudio.Play();
+                            if (scm.loadedData.supplyEquipment[equipmentIndex].type == "weapon")
+                            {
+                                if (campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().weaponEquiped == null)
+                                {
+                                    campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().weaponEquiped = scm.loadedData.supplyEquipment[equipmentIndex];                   
+                                    scm.loadedData.supplyEquipment.RemoveAt(equipmentIndex);
+                                }
+                                else
+                                {
+                                    Equipment temp = campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().weaponEquiped;
+                                    campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().weaponEquiped = scm.loadedData.supplyEquipment[equipmentIndex];                   
+                                    scm.loadedData.supplyEquipment[equipmentIndex] = temp;
+                                }
+                            }
+                            else if (scm.loadedData.supplyEquipment[equipmentIndex].type == "armor")
+                            {
+                                if (campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().armorEquiped == null)
+                                {
+                                    campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().armorEquiped = scm.loadedData.supplyEquipment[equipmentIndex];
+                                    scm.loadedData.supplyEquipment.RemoveAt(equipmentIndex);
+                                }
+                                else
+                                {
+                                    Equipment temp = campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().armorEquiped;
+                                    campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().armorEquiped = scm.loadedData.supplyEquipment[equipmentIndex];                   
+                                    scm.loadedData.supplyEquipment[equipmentIndex] = temp;
+                                }
+                            }
+                            else if (scm.loadedData.supplyEquipment[equipmentIndex].type == "accessory")
+                            {
+                                if (campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().accessoryEquiped == null)
+                                {
+                                    campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().accessoryEquiped = scm.loadedData.supplyEquipment[equipmentIndex];
+                                    scm.loadedData.supplyEquipment.RemoveAt(equipmentIndex);
+                                }
+                                else
+                                {
+                                    Equipment temp = campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().accessoryEquiped;
+                                    campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().accessoryEquiped = scm.loadedData.supplyEquipment[equipmentIndex];                   
+                                    scm.loadedData.supplyEquipment[equipmentIndex] = temp;
+                                }
+                            }
+
+                            campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().calculateStats();
+                            populateCharacterInfo(campAssistMenuScript.characterSelected);
+                            populateEquipmentSupply();
+                            confirmButton.GetComponent<CampConfirmTrade>().enableButton();
+                        }
+                        catch
+                        {
+                            //Trying to move an empty row
+                        }
+
+                    }
+                }
+            
+            }
         }
 
         
@@ -753,6 +988,7 @@ public class CampTrade : MonoBehaviour
             }
             populateSupply();
         }
+
     }
     public void confirmTrade()
     {
@@ -785,7 +1021,19 @@ public class CampTrade : MonoBehaviour
             originalSupplyInventory = null;
             tradingWithSupply = false;
         }
-
+        else if (tradingWithEquipment)
+        {
+            active = false;
+            confirmButton.GetComponent<CampConfirmTrade>().disableButton();
+            confirmButton.SetActive(false);
+            originalAccessory = null;
+            originalArmor = null;
+            originalWeapon = null;
+            originalSupplyEquipment = null;
+            equipmentTrade.SetActive(false);
+            campAssistMenuScript.active = true;
+            tradingWithEquipment = false;
+        }
     }
     public void StartFlashing(TextMeshProUGUI textComponent, TextMeshProUGUI textComponent2, float duration = 1.5f)
     {
@@ -879,5 +1127,250 @@ public class CampTrade : MonoBehaviour
             }
         }
     }
+    public void enableEquipmentMenu(GameObject character)
+    {
+        equipmentTrade.SetActive(true);
+        storeOriginalEquipment(character);
+        confirmButton.SetActive(true);
+        active = true;
+        tradingWithEquipment = true;
+        equipmentIndex = 0;
+        equipmentLeftRightIndex = 0;
+        equipmentTopIndex = 0;
+        equipmentBotIndex = 7;
+        equipmentSupplyContent.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 0f);
+        resetEquipmentSelectorPosition();
+        updateEquipmentDescription();
 
+        character.GetComponent<CampPlayerController>().calculateStats();
+        populateCharacterInfo(character);
+        populateEquipmentSupply();
+    }
+    private void storeOriginalEquipment(GameObject character)
+    {
+        originalWeapon = character.GetComponent<CampPlayerController>().weaponEquiped;
+        originalArmor = character.GetComponent<CampPlayerController>().armorEquiped;    
+        originalAccessory = character.GetComponent<CampPlayerController>().accessoryEquiped;
+
+        originalSupplyEquipment = scm.loadedData.supplyEquipment
+            .Select(item => new Equipment(item))
+            .ToList();
+    }
+    private void resetOriginalEquipment()
+    {
+        CampPlayerController characterScript = campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>();
+        characterScript.weaponEquiped = originalWeapon;
+        characterScript.armorEquiped = originalArmor;
+        characterScript.accessoryEquiped = originalAccessory;
+        scm.loadedData.supplyEquipment = originalSupplyEquipment;
+
+        originalAccessory = null;
+        originalArmor = null;
+        originalWeapon = null;
+        originalSupplyEquipment = null;
+
+    }
+    private void populateCharacterInfo(GameObject character)
+    {
+        CampPlayerController characterScript = character.GetComponent<CampPlayerController>();
+
+        equipmentNamePlate.text = characterScript.title;
+
+        //Populate equipment names
+        if (characterScript.weaponEquiped != null)
+        {
+            weaponSlot.text = characterScript.weaponEquiped.name;
+        }
+        else
+        {
+            weaponSlot.text = "-";
+        }
+        if (characterScript.armorEquiped != null)
+        {
+            armorSlot.text = characterScript.armorEquiped.name;
+        }
+        else
+        {
+            armorSlot.text = "-";
+        }
+        if (characterScript.accessoryEquiped != null)
+        {
+            accessorySlot.text = characterScript.accessoryEquiped.name;
+        }
+        else
+        {
+            accessorySlot.text = "-";
+        }
+    
+        //Populate stats
+        baseAtkText.text = characterScript.baseAttack.ToString();
+        baseIntText.text = characterScript.baseIntelligence.ToString();
+        baseDefText.text = characterScript.baseDefense.ToString();
+        baseResText.text = characterScript.baseResistance.ToString();
+        baseSklText.text = characterScript.baseSkill.ToString();
+        baseSpdText.text = characterScript.baseSpeed.ToString();
+
+        //Populate mods
+        atkModText.text = characterScript.totalAttackMod.ToString();
+        intModText.text = characterScript.totalIntelligenceMod.ToString();
+        defModText.text = characterScript.totalDefenseMod.ToString();
+        resModText.text = characterScript.totalResistanceMod.ToString();
+        sklModText.text = characterScript.totalSkillMod.ToString();
+        spdModText.text = characterScript.totalSpeedMod.ToString();
+        
+        //Populate mult;
+        atkMultText.text = characterScript.totalAttackMult.ToString();
+        intMultText.text = characterScript.totalIntelligenceMult.ToString();
+        defMultText.text = characterScript.totalDefenseMult.ToString();
+        resMultText.text = characterScript.totalResistanceMult.ToString();
+        sklMultText.text = characterScript.totalSkillMult.ToString();
+        spdMultText.text = characterScript.totalSpeedMult.ToString();
+
+        //Populate hp and mana
+        equipmentCurrentHP.text = characterScript.maxHp.ToString();
+        equipmentMaxHP.text = characterScript.maxHp.ToString();
+        equipmentCurrentMana.text = characterScript.currentMana.ToString();
+        equipmentMaxMana.text = characterScript.maxMana.ToString();
+
+        updateEquipmentDescription();
+    }
+    private void populateEquipmentSupply()
+    {
+        //Clear the content
+        foreach (Transform child in equipmentSupplyContent.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        //Instantiate items
+        for (int i = 0; i < supplySize; i++)
+        {
+            try
+            {   
+                Equipment equipment = scm.loadedData.supplyEquipment[i];
+                GameObject temp = Instantiate(supplyEquipmentPrefab, equipmentSupplyContent.transform, false);
+                temp.GetComponent<SupplyEquipment>().equipment = equipment;
+                temp.GetComponent<SupplyEquipment>().populateData();
+            }
+            catch
+            {
+                GameObject temp = Instantiate(supplyEquipmentPrefab, equipmentSupplyContent.transform, false);
+                temp.GetComponent<SupplyEquipment>().populateEmptyData();
+            }
+        }
+    }
+    private void resetEquipmentSelectorPosition()
+    {
+        equipmentSelector.GetComponent<RectTransform>().anchoredPosition = new Vector2(94f, 57f);
+        equipmentSelector.transform.GetChild(0).gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(383f, 38f);
+    }
+    private void updateEquipmentDescription()
+    {
+        if (equipmentLeftRightIndex == 0)
+        {
+
+            if (equipmentIndex == 0)
+            {
+                try { equipmentDescription.text = campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().weaponEquiped.description; }
+                catch { equipmentDescription.text = "-"; }
+            }
+            else if (equipmentIndex == 1)
+            {
+                try { equipmentDescription.text = campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().armorEquiped.description; }
+                catch { equipmentDescription.text = "-"; }
+            }
+            else if (equipmentIndex == 2)
+            {
+                try { equipmentDescription.text = campAssistMenuScript.characterSelected.GetComponent<CampPlayerController>().accessoryEquiped.description; }
+                catch { equipmentDescription.text = "-"; }
+            }
+            
+
+        }
+        else if (equipmentLeftRightIndex == 1)
+        {
+            try
+            {
+                supplyEquipmentDescription.text = scm.loadedData.supplyEquipment[equipmentIndex].description;
+            }
+            catch
+            {
+                supplyEquipmentDescription.text = "-";
+            }
+        }
+    }
+    private void moveEquipmentSupplySelectorDown()
+    {
+        selectorAudio.Play();
+        RectTransform rt = equipmentSelector.GetComponent<RectTransform>();
+        Vector2 anchoredPos = rt.anchoredPosition;
+        anchoredPos.y -= 50f;
+        rt.anchoredPosition = anchoredPos;
+        updateDescription(campControllerScript.mainCharacterObj);
+    }
+    private void moveEquipmentSupplySelectorUp()
+    {
+        selectorAudio.Play();
+        RectTransform rt = equipmentSelector.GetComponent<RectTransform>();
+        Vector2 anchoredPos = rt.anchoredPosition;
+        anchoredPos.y += 50f;
+        rt.anchoredPosition = anchoredPos;
+        updateDescription(campControllerScript.mainCharacterObj);
+    }
+    private void moveEquipmentSupplyContentWindowUp()
+    {
+        selectorAudio.Play();
+        RectTransform temp = equipmentSupplyContent.GetComponent<RectTransform>();
+        temp.anchoredPosition += new Vector2(0f, -25f);
+        equipmentBotIndex--;
+        equipmentTopIndex--;
+    }
+    private void moveEquipmentSupplyContentWindowDown()
+    {
+        selectorAudio.Play();
+        RectTransform temp = equipmentSupplyContent.GetComponent<RectTransform>();
+        temp.anchoredPosition += new Vector2(0f, 25f);
+        equipmentBotIndex++;
+        equipmentTopIndex++;
+    }
+    private void moveEquipmentSelectorDown()
+    {
+        selectorAudio.Play();
+        RectTransform rt = equipmentSelector.GetComponent<RectTransform>();
+        Vector2 anchoredPos = rt.anchoredPosition;
+        anchoredPos.y -= 106f;
+        rt.anchoredPosition = anchoredPos;
+        updateEquipmentDescription();
+
+    }
+    private void moveEquipmentSelectorUp()
+    {
+        selectorAudio.Play();
+        RectTransform rt = equipmentSelector.GetComponent<RectTransform>();
+        Vector2 anchoredPos = rt.anchoredPosition;
+        anchoredPos.y += 106f;
+        rt.anchoredPosition = anchoredPos;
+        updateEquipmentDescription();
+
+    }
+    private void moveEquipmentSelectorRight()
+    {
+        equipmentLeftRightIndex = 1;
+        equipmentIndex = 0;
+        selectorAudio.Play();
+        equipmentSelector.GetComponent<RectTransform>().anchoredPosition = new Vector2(858f, 52f);
+        equipmentSelector.transform.GetChild(0).gameObject.GetComponent<RectTransform>().sizeDelta = new Vector2(513f, 38f);
+
+        updateEquipmentDescription();
+
+    }
+    private void moveEquipmentSelectorLeft()
+    {
+        selectorAudio.Play();
+        resetEquipmentSelectorPosition();
+        equipmentLeftRightIndex = 0;
+        equipmentIndex = 0;
+        updateEquipmentDescription();
+    }
+    
 }
