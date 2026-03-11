@@ -53,6 +53,21 @@ public class CampMoveCircle : MonoBehaviour
             other.gameObject.GetComponent<CampPlayerController>().highlightAssistable();
             alliesInRange.Add(other.gameObject);
         }
+        else if (other.tag == "equipmentChest")
+        {
+            alliesInRange.Add(other.gameObject);
+            other.gameObject.GetComponent<OpenEquipment>().highlight();
+        }
+        else if (other.tag == "supplyChest")
+        {
+            alliesInRange.Add(other.gameObject);
+            other.gameObject.GetComponent<OpenSupply>().highlight();
+        }
+        else if (other.tag == "exitWagon")
+        {
+            alliesInRange.Add(other.gameObject);
+            other.gameObject.GetComponent<ExitWagon>().highlight();
+        }
     }
     void OnTriggerExit2D(Collider2D other)
     {
@@ -63,6 +78,21 @@ public class CampMoveCircle : MonoBehaviour
         else if (other.tag == "character") {
             other.gameObject.GetComponent<CampPlayerController>().unhighlight();
             alliesInRange.RemoveAll(item => item == other.gameObject);
+        }
+        else if (other.tag == "equipmentChest")
+        {
+            alliesInRange.RemoveAll(item => item == other.gameObject);
+            other.gameObject.GetComponent<OpenEquipment>().unhighlight();
+        }
+        else if (other.tag == "supplyChest")
+        {
+            alliesInRange.RemoveAll(item => item == other.gameObject);
+            other.gameObject.GetComponent<OpenSupply>().unhighlight();
+        }
+        else if (other.tag == "exitWagon")
+        {
+            alliesInRange.RemoveAll(item => item == other.gameObject);
+            other.gameObject.GetComponent<ExitWagon>().unhighlight();
         }
 
     }

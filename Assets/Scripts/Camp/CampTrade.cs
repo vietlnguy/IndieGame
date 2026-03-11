@@ -98,6 +98,7 @@ public class CampTrade : MonoBehaviour
     public int equipmentLeftRightIndex = 0;
     public int equipmentTopIndex = 0;
     public int equipmentBotIndex = 7;
+    public bool soloEquipmentOrSupply = false;
 
     void Awake()
     {
@@ -285,6 +286,12 @@ public class CampTrade : MonoBehaviour
                     index = 0;
                     supplyBotIndex = 8;
                     supplyTopIndex = 0;
+                    if (soloEquipmentOrSupply)
+                    {
+                        campAssistMenuScript.active = false;
+                        soloEquipmentOrSupply = false;
+                        campControllerScript.movementEnabled = true;
+                    }
                 }
 
                 //Move selector
@@ -422,7 +429,14 @@ public class CampTrade : MonoBehaviour
                     equipmentTrade.SetActive(false);
                     campAssistMenuScript.active = true;
                     tradingWithEquipment = false;
+                    if (soloEquipmentOrSupply)
+                    {
+                        campAssistMenuScript.active = false;
+                        soloEquipmentOrSupply = false;
+                        campControllerScript.movementEnabled = true;
+                    }
                 }
+                
 
                 //Move selector
                 if (Input.GetKeyDown(KeyCode.W))
@@ -603,6 +617,7 @@ public class CampTrade : MonoBehaviour
                 }
             
             }
+        
         }
 
         
@@ -1211,20 +1226,20 @@ public class CampTrade : MonoBehaviour
         baseSpdText.text = characterScript.baseSpeed.ToString();
 
         //Populate mods
-        atkModText.text = characterScript.totalAttackMod.ToString();
-        intModText.text = characterScript.totalIntelligenceMod.ToString();
-        defModText.text = characterScript.totalDefenseMod.ToString();
-        resModText.text = characterScript.totalResistanceMod.ToString();
-        sklModText.text = characterScript.totalSkillMod.ToString();
-        spdModText.text = characterScript.totalSpeedMod.ToString();
-        
-        //Populate mult;
-        atkMultText.text = characterScript.totalAttackMult.ToString();
-        intMultText.text = characterScript.totalIntelligenceMult.ToString();
-        defMultText.text = characterScript.totalDefenseMult.ToString();
-        resMultText.text = characterScript.totalResistanceMult.ToString();
-        sklMultText.text = characterScript.totalSkillMult.ToString();
-        spdMultText.text = characterScript.totalSpeedMult.ToString();
+        formatStatMods(characterScript.totalAttackMod,atkModText );
+        formatStatMods(characterScript.totalIntelligenceMod,intModText );
+        formatStatMods(characterScript.totalDefenseMod,defModText );
+        formatStatMods(characterScript.totalResistanceMod,resModText );
+        formatStatMods(characterScript.totalSkillMod,sklModText );
+        formatStatMods(characterScript.totalSpeedMod,spdModText );
+           
+        //Populate mults
+        formatStatMult(characterScript.totalAttackMult,atkMultText );
+        formatStatMult(characterScript.totalIntelligenceMult, intMultText);
+        formatStatMult(characterScript.totalDefenseMult,defMultText );
+        formatStatMult(characterScript.totalResistanceMult,resMultText );
+        formatStatMult(characterScript.totalSkillMult,sklMultText );
+        formatStatMult(characterScript.totalSpeedMult, spdMultText);
 
         //Populate hp and mana
         equipmentCurrentHP.text = characterScript.maxHp.ToString();
@@ -1372,5 +1387,89 @@ public class CampTrade : MonoBehaviour
         equipmentIndex = 0;
         updateEquipmentDescription();
     }
-    
+    private void formatStatMods(int stat, TextMeshProUGUI text)
+    {
+        if (stat == 0)
+        {
+            text.text = "";
+            text.color = Color.white;
+        }
+        else if (stat < 0)
+        {
+            text.text = stat.ToString();
+            text.color = Color.red;
+            StartCoroutine(PulseLoop(text, "red"));
+        }
+        
+        else
+        {
+            text.text = "+" + stat.ToString();
+            text.color = Color.blue;
+            StartCoroutine(PulseLoop(text, "blue"));
+        }
+    }
+    private void formatStatMult(float stat, TextMeshProUGUI text)
+    {
+        if (stat == 1f)
+        {
+            text.text = "";
+        } 
+        else
+        {
+            text.text = "x" + stat.ToString();
+        }
+
+        if (stat < 1f)
+        {
+            text.color = Color.red;
+            StartCoroutine(PulseLoop(text, "red"));
+        }
+        else if (stat > 1f)
+        {
+            text.color = Color.blue;
+            StartCoroutine(PulseLoop(text, "blue"));
+        }
+        else
+        {
+            text.color = Color.white;
+        }
+
+    }
+    private System.Collections.IEnumerator PulseLoop(TextMeshProUGUI text, string s)
+    {
+        Color originalColor = text.color;
+        Color tempColor;
+
+        if (s == "blue" ) { tempColor = new Color(0f, 0.5f, 1f, 1f); }
+        else { tempColor = Color.red; }
+
+        float halfDuration = 0.5f;
+
+        while (true)
+        {
+            float t = 0f;
+
+            // Original → Blue
+            while (t < halfDuration)
+            {
+                t += Time.deltaTime;
+                text.color = Color.Lerp(originalColor, tempColor, t / halfDuration);
+                yield return null;
+            }
+
+            t = 0f;
+
+            // Blue → Original
+            while (t < halfDuration)
+            {
+                t += Time.deltaTime;
+                text.color = Color.Lerp(tempColor, originalColor, t / halfDuration);
+                yield return null;
+            }
+        }
+    }
+    public void Flash(TextMeshProUGUI text, string colorToFlash)
+    {
+        StartCoroutine(PulseLoop(text, colorToFlash));
+    }
 }
