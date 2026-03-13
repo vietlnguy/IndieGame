@@ -37,6 +37,7 @@ public class CampDialogue : MonoBehaviour
     public int dialogueIndex = 0;
     public int dialogueTopIndex = 0;
     public int dialogueBotIndex = 2;
+    private string sceneName = "";
 
     void Awake()
     {
@@ -368,7 +369,7 @@ public class CampDialogue : MonoBehaviour
         // Disable gameplay systems
         cutSceneActive = true;
         coroutineRunning = true;
-        string sceneName = characterSelected.GetComponent<CampPlayerController>().title + (dialogueIndex + 1).ToString();
+        sceneName = characterSelected.GetComponent<CampPlayerController>().title + (dialogueIndex + 1).ToString();
 
         StartCoroutine(Helpers.FadeOutAudio(backgroundAudio, 0.75f));
         yield return StartCoroutine(Helpers.FadeInImageAlpha(blackScreen, 1f));
@@ -392,6 +393,32 @@ public class CampDialogue : MonoBehaviour
 
         yield return StartCoroutine(Helpers.FadeOutImageAlpha(blackScreen, 1f));
 
+        if (ShouldGainAttack())
+        {
+            yield return new StartCoroutine(UpdateAttacks());
+        }
+    }
+
+    private bool ShouldGainAttack()
+    {
+        CampPlayerController characterScript = characterSelected.GetComponent<CampPlayerController>();
+        bool b = false;
+
+        if (sceneName.Contains("Astrid"))
+        {
+            
+        }
+        else if (sceneName.Contains("Amara"))
+        {
+            
+        }
+
+
+        return b;
+    }
+    private IEnumerator UpdateAttacks()
+    {
+        
     }
     public struct CharacterDialogue {
         public string[] lines;
