@@ -4,16 +4,26 @@ public class OpenSupply : MonoBehaviour
 {
     SpriteRenderer sr;
     CampMoveCircle cmc;
+    CampAssistMenu cam;
+    CampTrade ct;
+    CampController campControllerScript;
+    public GameObject mainCharacter;
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
         cmc = FindFirstObjectByType<CampMoveCircle>();
+        cam = FindFirstObjectByType<CampAssistMenu>();
+        ct = FindFirstObjectByType<CampTrade>();
+        campControllerScript = FindFirstObjectByType<CampController>();
     }
     private void OnMouseDown()
     {
         if (cmc.alliesInRange.Contains(gameObject))
         {
-            Debug.Log("open supply");
+            cam.characterSelected = mainCharacter;
+            ct.enableSupplyMenu(mainCharacter);
+            campControllerScript.movementEnabled = false;
+            ct.soloEquipmentOrSupply = true;
         }
     }
     public void highlight()

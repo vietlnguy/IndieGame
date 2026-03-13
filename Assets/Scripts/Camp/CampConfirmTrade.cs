@@ -35,7 +35,6 @@ public class CampConfirmTrade : MonoBehaviour, IPointerEnterHandler, IPointerExi
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;  
     }
-
     public void OnPointerEnter(PointerEventData eventData)
     {
         image.color = new Color(.65f, .65f, .65f);

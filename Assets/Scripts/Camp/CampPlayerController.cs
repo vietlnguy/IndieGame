@@ -69,6 +69,9 @@ public class CampPlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         populateCharacterData();
     }
+    void Start()
+    {
+    }
     void Update()
     {
         if (campMoveCircleScript.alliesInRange.Contains(gameObject)) {

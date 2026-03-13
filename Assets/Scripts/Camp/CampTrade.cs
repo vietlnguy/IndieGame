@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using System.Linq;
 using UnityEngine.UI;
+using System;
 public class CampTrade : MonoBehaviour
 {
     private SaveManager scm;
