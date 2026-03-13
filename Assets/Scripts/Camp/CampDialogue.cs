@@ -398,17 +398,24 @@ public class CampDialogue : MonoBehaviour
             yield return new StartCoroutine(UpdateAttacks());
         }
     }
-
     private bool ShouldGainAttack()
     {
         CampPlayerController characterScript = characterSelected.GetComponent<CampPlayerController>();
         bool b = false;
 
-        if (sceneName.Contains("Astrid"))
+        if (sceneName == "Astrid1")
         {
+            bool contains = false;
+            foreach (AttackMove attackMove in characterScript.knownAttacks)
+            {
+                if (attackMove.name == "Power Draw")
+                {
+                    contains = true;
+                }
+            }
             
         }
-        else if (sceneName.Contains("Amara"))
+        else if (sceneName == "Astrid2")
         {
             
         }
