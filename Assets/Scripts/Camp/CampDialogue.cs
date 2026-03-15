@@ -38,6 +38,10 @@ public class CampDialogue : MonoBehaviour
     public int dialogueTopIndex = 0;
     public int dialogueBotIndex = 2;
     private string sceneName = "";
+    public GameObject newAttackBox;
+    public TextMeshProUGUI newAttackBoxName;
+    public TextMeshProUGUI newAttackBoxText;
+    public AudioSource gainedNewAttackAudio;
 
     void Awake()
     {
@@ -381,52 +385,61 @@ public class CampDialogue : MonoBehaviour
         
         yield return StartCoroutine(Helpers.FadeOutImageAlpha(blackScreen, 1f));
     }
-    public IEnumerator Resume()
+    public void Resume()
+    {
+        StartCoroutine(ResumeHelper());
+    }
+    private IEnumerator ResumeHelper()
     {
         StartCoroutine(Helpers.FadeInAudio(backgroundAudio, 1.5f));
         yield return StartCoroutine(Helpers.FadeInImageAlpha(blackScreen, 1f));
-        SceneManager.UnloadSceneAsync("Astrid1");
+        SceneManager.UnloadSceneAsync(sceneName);
         mainCamera.SetActive(true);
         eventSystem.SetActive(true);
         cutSceneActive = false;
         coroutineRunning = false;
-
         yield return StartCoroutine(Helpers.FadeOutImageAlpha(blackScreen, 1f));
+        yield return StartCoroutine(ShouldGainAttack());
 
-        if (ShouldGainAttack())
-        {
-            yield return new StartCoroutine(UpdateAttacks());
-        }
     }
-    private bool ShouldGainAttack()
+    private IEnumerator ShouldGainAttack()
     {
         CampPlayerController characterScript = characterSelected.GetComponent<CampPlayerController>();
-        bool b = false;
-
-        if (sceneName == "Astrid1")
+        Attack newAttack = null;
+       
+        if (sceneName.Contains("Astrid"))
         {
-            bool contains = false;
-            foreach (AttackMove attackMove in characterScript.knownAttacks)
+            if (characterScript.knownAttacks.Count == 1) 
             {
-                if (attackMove.name == "Power Draw")
-                {
-                    contains = true;
-                }
+                newAttack = new Attack("Power Draw", "physical", 1.1f, 1.0f, 90, 0, 4, "Shoot a powerful shot at the enemy.");
+                characterScript.knownAttacks.Add(newAttack);
             }
-            
+            else if (characterScript.knownAttacks.Count == 2)
+            {
+                newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, "Target the enemies footing. 50% chance to cripple (Target cannot move).");
+                characterScript.knownAttacks.Add(newAttack);                
+            }
+            else if (characterScript.knownAttacks.Count == 3)
+            {
+                newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, "Strike with extreme precision. Always crits.");
+                characterScript.knownAttacks.Add(newAttack); 
+            }
         }
-        else if (sceneName == "Astrid2")
+
+        if (newAttack != null)
         {
-            
+            newAttackBox.SetActive(true);
+            newAttackBoxName.text = characterScript.title + " learned a new Attack!";
+            newAttackBoxText.text = newAttack.name;
+            gainedNewAttackAudio.Play();
+
+            yield return new WaitForSeconds(4f);
+            newAttackBox.SetActive(false);
+
         }
-
-
-        return b;
+        yield return null;
     }
-    private IEnumerator UpdateAttacks()
-    {
-        
-    }
+
     public struct CharacterDialogue {
         public string[] lines;
         public string name;
