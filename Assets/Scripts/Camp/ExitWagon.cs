@@ -36,7 +36,9 @@ public class ExitWagon : MonoBehaviour
     public IEnumerator nextScene()
     {
        yield return StartCoroutine(scm.SceneTransition(true));
+       scm.loadedData.introBattleOutro = "intro";
        scm.OverwriteSave();
+       SceneManager.LoadScene(scm.loadedData.currentChapter);
     }
 
 }
