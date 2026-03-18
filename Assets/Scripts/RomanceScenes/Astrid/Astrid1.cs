@@ -32,12 +32,37 @@ public class Astrid1 : MonoBehaviour
         dialogues.Add(new CharacterDialogue(mcn, new string[] {"That is a good point..", "Well why don't we test out some theories?", "I'll pretend to attack you and then you try to push me away!"}));
         dialogues.Add(new CharacterDialogue("Astrid", new string[] {"Uh-- that doesn't seem very scientific."}));
         dialogues.Add(new CharacterDialogue(mcn, new string[] {"Come on, what's there to lose?", "We might learn a thing or two."}));
-        dialogues.Add(new CharacterDialogue("Astrid", new string[] {"Alright, I guess..", "Just don't do anything reckless"}));
+        dialogues.Add(new CharacterDialogue("Astrid", new string[] {"Alright, I guess..", "Just don't do anything reckless!"}));
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"I won't!", "Okay, ready?", "1...", "2...", "3!"}));
+        //Charge at astrid, pins against tree
 
+        dialogues.Add(new CharacterDialogue("Astrid", new string[] {"Oof--"}));
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"HAND OVER ALL OF YOUR MONEY!! OR MY KNIFE WILL BE THE LAST THING YOU SEE."}));
+        dialogues.Add(new CharacterDialogue("Astrid", new string[] {"Hrrmphhhh!"}));
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"HAHAHA!", "IS THAT ALL THE STRENGTH YOU CAN MUSTER UP???"}));
+        dialogues.Add(new CharacterDialogue("Astrid", new string[] {"Hrrrrrrahhh!!!"}));
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"HOW CUTE!", "MAYBE AFTER I TAKE ALL OF YOUR MONEY, I'LL TAKE A PEEK UNDER THAT SKIRT!!"}));
+        dialogues.Add(new CharacterDialogue("Astrid", new string[] {"*startled* " + mcn + "!", "Why would you say that??"}));
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"Stay focused, Astrid! This could happen in real life you need to be prepared!",}));
 
+        //turns Astrid around against tree or the wagon or something
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"HAR HAR HAR. YOU'RE CUTE ASS BELONGS TO ME.",}));
+        dialogues.Add(new CharacterDialogue("Astrid", new string[] {"You dumbass, I know what you're doing!!"}));
 
-        dialogues.Add(new CharacterDialogue(mcn, new string[] {""}));
-        dialogues.Add(new CharacterDialogue("Astrid", new string[] {""}));
+        //hits it from behind lol
+        dialogues.Add(new CharacterDialogue("Astrid", new string[] {"Mmphhh...", "How is this-- *ahhh* supposed to unlock the power of the bracelets?"}));
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"Shhhh.", "This is all a part of the training.."}));
+        dialogues.Add(new CharacterDialogue("Astrid", new string[] {"Ungh... that feels good", "Right there... don't stop...", }));
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"Hey!", "What do you mean \"don't stop\"? This is training, you're supposed to push me away!", "Tsk tsk tsk.",}));
+        dialogues.Add(new CharacterDialogue("Astrid", new string[] {"Sorry sweetie, I guess this bandit can fuck me better. Ungg..."}));
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"HA. HA. Very funny..."}));
+        dialogues.Add(new CharacterDialogue("Astrid", new string[] {"Mmmmm... I'm about to cum..", "Keep going, don't stop..."}));
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"Ahhh fuck, me too...", "It feel's too good!"}));
+
+        //cums lol
+        dialogues.Add(new CharacterDialogue("Astrid", new string[] {"Ahhhh...", "So much for figuring out how to use the bracelets..."}));
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"What do you mean? I learned a ton!", "For instance, the bracelets do not react to sex!"}));
+        dialogues.Add(new CharacterDialogue("Astrid", new string[] {"Woooooooow, at this rate we'll have the bracelets mastered in no time..."}));
 
 
     }
