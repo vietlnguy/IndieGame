@@ -1,7 +1,12 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine.UI;
 
 public class Chapter2 : MonoBehaviour
 {
+    public GameObject camera;
     public GameObject basicEnemyPrefab;
     private GameObject enemies;
     public BattleController battleController;
@@ -17,31 +22,58 @@ public class Chapter2 : MonoBehaviour
     public GameObject mainCharacterPrefab;
     public GameObject astridPrefab;
     private GameObject characters;
+    private TilemapPathfinder pathfinder;
+    private Coroutine intro;
+    private Coroutine typingCoroutine;
+    private bool isTyping = false;
+    private bool nextLine = false;
+    private string lineToBeTyped = "";
+    public AudioSource typingAudio;
+    public GameObject smallDialogueTextBox;
+    public TextMeshProUGUI smallDialogueNameBox;
+    public GameObject mainCharacterImage;
+    public GameObject astridImage;
+    public GameObject lucasImage;
+    public GameObject celesteImage;
+    public GameObject soldierImage;
+    public List<CharacterDialogue> dialogues;
+    public List<CharacterDialogue> dialogues2;
 
     public void Awake()
     {    
-    
         saveManager = FindFirstObjectByType<SaveManager>();
         characters = GameObject.Find("Characters");
         enemies = GameObject.Find("Enemies");
+        pathfinder = FindFirstObjectByType<TilemapPathfinder>();
 
+        dialogues = new List<CharacterDialogue>();
+        dialogues.Add(new CharacterDialogue(mainCharacterImage, saveManager.loadedData.mainCharacterName, new string[] {"It's been a long time since we've been back to Maplemire.", "We should try to load up on supplies, while we can.", "It's not much further til we get to the castle."}));
+        dialogues.Add(new CharacterDialogue(astridImage, "Astrid", new string[] {"That sounds like a good idea.", "Doesn't town seem awfully quiet, though? Where is everybody?"}));
+        dialogues.Add(new CharacterDialogue(mainCharacterImage, saveManager.loadedData.mainCharacterName, new string[] {"You're right, something's off--", "Wait a second.", "Something is going on at the church over there."}));
+
+        dialogues2 = new List<CharacterDialogue>();
+        dialogues2.Add(new CharacterDialogue(lucasImage, "Lucas", new string[] {"Back off, chump!", "We don't have any of those stinkin' relics!"}));
+        dialogues2.Add(new CharacterDialogue(celesteImage, "Celeste", new string[]{"Oh dear. Please forgive my brother, sir. But he speaks true.", "Our goddess, Ilvera, forbids us to lie. We do not possess any relics."}));
+        dialogues2.Add(new CharacterDialogue(soldierImage, "Soldier", new string[] {"I understand that priestess, but I have orders. "}));
+        
+        
         //Load characters
         foreach (Character character in saveManager.loadedData.characters)
         {
             if (character.characterName == saveManager.loadedData.mainCharacterName)
             {
-                Instantiate(mainCharacterPrefab, new Vector3(-20f, -6.35f), Quaternion.identity, characters.transform);
+                Instantiate(mainCharacterPrefab, new Vector3(-29f, -11f, 0f), Quaternion.identity, characters.transform);
             }
             else if (character.characterName == "Astrid")
             {
-                Instantiate(astridPrefab, new Vector3(-22f, -11.65f), Quaternion.identity, characters.transform);
+                Instantiate(astridPrefab, new Vector3(-30f, -13f, 0f), Quaternion.identity, characters.transform);
             }
         }
 
     }
     public void Start()
     {
-        StartCoroutine(Intro());
+        intro = StartCoroutine(Intro());
     }
     public void Update()
     {
@@ -49,6 +81,26 @@ public class Chapter2 : MonoBehaviour
         //Battle controller should be abstract enough to apply to all chapters
         //Chapter specific script events happen here, and win/lose conditions
         
+        //Intro control
+        if (intro != null)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (isTyping)
+                {
+                    StopCoroutine(typingCoroutine);
+                    typingCoroutine = null;
+                    smallDialogueTextBox.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = lineToBeTyped;
+                    typingAudio.Stop();
+                    isTyping = false;
+                }
+                else
+                {
+                    nextLine = true;
+                }
+            }
+        }
+
         //Win condition
         if (battleController.enemies.transform.childCount == 0 && enemiesSpawned && !victorySequenceStarted && !attackPreviewScript.coroutineRunning)
         {
@@ -207,17 +259,88 @@ public class Chapter2 : MonoBehaviour
         GameObject mainChar = GameObject.Find("MainCharacterPrefab(Clone)");
         GameObject astrid = GameObject.Find("AstridPrefab(Clone)");
 
+        //Fade Out blackwhite screen
+
+        yield return new WaitForSeconds(2f);
         //Move characters on screen
-        yield return StartCoroutine(pathfinder.FollowPath(mainChar, new Vector3(-13f, -7f, 0f)));
-        yield return StartCoroutine(pathfinder.FollowPath(mainChar, new Vector3(-14.33f, -8.35f, 0f)));
+        yield return StartCoroutine(pathfinder.FollowPath(mainChar, new Vector3(-18.5f, -11f, 0f)));
+        yield return StartCoroutine(pathfinder.FollowPath(astrid, new Vector3(-20.5f, -12.7f, 0f)));
 
         //Small dialogue
+        for (int index = 0; index < dialogues.Count; index++)
+        {
+            //Update name text
+            smallDialogueNameBox.text = dialogues[index].name;
+
+            //Fade in text box
+            StartCoroutine(Helpers.MoveRectTransform(smallDialogueTextBox, smallDialogueTextBox.GetComponent<RectTransform>().anchoredPosition, smallDialogueTextBox.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, 10f), .25f));
+            StartCoroutine(Helpers.FadeInCanvasGroup(smallDialogueTextBox.GetComponent<CanvasGroup>(), 0.25f));
+
+            yield return new WaitForSeconds(.25f);
+            //Type each line
+            for (int index2 = 0; index2 < dialogues[index].lines.Length; index2++)
+            {
+                nextLine = false;
+                typingCoroutine = StartCoroutine(TypeLine(dialogues[index].lines[index2], dialogues[index].name, typingAudio, smallDialogueTextBox.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>(), .05f));
+                lineToBeTyped = dialogues[index].lines[index2];
+
+                while (isTyping || !nextLine)
+                {
+                    yield return new WaitForSeconds(.25f);
+                }
+                smallDialogueTextBox.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = "";
+            
+            }
+
+            //Fade out text box
+            StartCoroutine(Helpers.MoveRectTransform(smallDialogueTextBox, smallDialogueTextBox.GetComponent<RectTransform>().anchoredPosition, smallDialogueTextBox.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, -10f), .25f));
+            StartCoroutine(Helpers.FadeOutCanvasGroup(smallDialogueTextBox.GetComponent<CanvasGroup>(), 0.25f));
+
+            yield return new WaitForSeconds(0.25f);
+
+        }
+        typingCoroutine = null;
 
         //Pan camera to church
-
+        yield return StartCoroutine(Helpers.MoveTransform(camera.transform, camera.transform.position, new Vector3(10.23f, -7.5f, -10f), 1.5f));
+        
         //blink arrow
 
         //small dialoue
+        for (int index = 0; index < dialogues2.Count; index++)
+        {
+            //Update name text
+            smallDialogueNameBox.text = dialogues2[index].name;
+
+            //Fade in text box
+            StartCoroutine(Helpers.MoveRectTransform(smallDialogueTextBox, smallDialogueTextBox.GetComponent<RectTransform>().anchoredPosition, smallDialogueTextBox.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, 10f), .25f));
+            StartCoroutine(Helpers.FadeInCanvasGroup(smallDialogueTextBox.GetComponent<CanvasGroup>(), 0.25f));
+
+            yield return new WaitForSeconds(.25f);
+            //Type each line
+            for (int index2 = 0; index2 < dialogues2[index].lines.Length; index2++)
+            {
+                nextLine = false;
+                typingCoroutine = StartCoroutine(TypeLine(dialogues2[index].lines[index2], dialogues2[index].name, typingAudio, smallDialogueTextBox.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>(), .05f));
+                lineToBeTyped = dialogues2[index].lines[index2];
+
+                while (isTyping || !nextLine)
+                {
+                    yield return new WaitForSeconds(.25f);
+                }
+                smallDialogueTextBox.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = "";
+            
+            }
+
+            //Fade out text box
+            StartCoroutine(Helpers.MoveRectTransform(smallDialogueTextBox, smallDialogueTextBox.GetComponent<RectTransform>().anchoredPosition, smallDialogueTextBox.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, -10f), .25f));
+            StartCoroutine(Helpers.FadeOutCanvasGroup(smallDialogueTextBox.GetComponent<CanvasGroup>(), 0.25f));
+
+            yield return new WaitForSeconds(0.25f);
+
+        }
+        typingCoroutine = null;
+
 
         //pan camera back
 
@@ -225,5 +348,36 @@ public class Chapter2 : MonoBehaviour
 
 
         yield return null;
+    }
+    private IEnumerator TypeLine(string line, string speaker, AudioSource audioSource, TextMeshProUGUI textBox, float textSpeed) {
+        if (speaker == "Astrid")
+        {
+            audioSource.pitch = 1.2f;
+            textBox.color = new Color(1f, .75f, .79f, 1f);
+        }
+        else
+        {
+            audioSource.pitch = 1.0f;
+            textBox.color = Color.white;
+        }
+        isTyping = true;
+        audioSource.Play();
+        foreach (char c in line.ToCharArray()) {
+            textBox.text += c;
+            yield return new WaitForSeconds(textSpeed);
+        }
+        audioSource.Stop();
+        isTyping = false;
+    }
+    public struct CharacterDialogue {
+        public string[] lines;
+        public string name;
+        public GameObject characterImage;
+        public CharacterDialogue(GameObject characterImage, string name,string[] lines)
+        {
+            this.lines = lines;
+            this.name = name;
+            this.characterImage = characterImage;
+        }
     }
 }

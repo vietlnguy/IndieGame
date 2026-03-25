@@ -727,7 +727,7 @@ Transform:
   m_GameObject: {fileID: 24279702}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.26, y: -7.47, z: -10}
+  m_LocalPosition: {x: -6.55, y: -7.47, z: -10}
   m_LocalScale: {x: 1.0875, y: 1.0375, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -41264,7 +41264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b0880d213758644b837139466188ed3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemap: {fileID: 0}
+  tilemap: {fileID: 748840920}
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -42523,7 +42523,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Maplemire. It's been a long time since I've been back here.
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7e93cf950105fa1439cda190f5bd3eb2, type: 2}
   m_sharedMaterial: {fileID: -3650841308131034549, guid: 7e93cf950105fa1439cda190f5bd3eb2, type: 2}
@@ -46001,6 +46001,7 @@ GameObject:
   - component: {fileID: 1660119428}
   - component: {fileID: 1660119430}
   - component: {fileID: 1660119429}
+  - component: {fileID: 1660119431}
   m_Layer: 5
   m_Name: DialogueBox
   m_TagString: Untagged
@@ -46069,6 +46070,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1660119427}
   m_CullTransparentMesh: 1
+--- !u!225 &1660119431
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660119427}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1660928370
 GameObject:
   m_ObjectHideFlags: 0
@@ -46792,6 +46805,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f06576c7f890a3347b7ed278ecfd6a7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  camera: {fileID: 24279702}
   basicEnemyPrefab: {fileID: 0}
   battleController: {fileID: 1629418538}
   gameOverScript: {fileID: 2095115134}
@@ -46800,6 +46814,11 @@ MonoBehaviour:
   victorySequence: {fileID: 195047763}
   mainCharacterPrefab: {fileID: 7365784556819137381, guid: 787a9e1dc54dd124ab88bc33e274ce67, type: 3}
   astridPrefab: {fileID: 3514692152733908472, guid: 0a24a05d13054d540b40f7ae10a7df7b, type: 3}
+  typingAudio: {fileID: 1055500799}
+  smallDialogueTextBox: {fileID: 1660119427}
+  smallDialogueNameBox: {fileID: 70789725}
+  mainCharacterImage: {fileID: 1226673183}
+  astridImage: {fileID: 1226673183}
 --- !u!4 &1738994000
 Transform:
   m_ObjectHideFlags: 0
