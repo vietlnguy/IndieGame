@@ -15,7 +15,7 @@ C:/Users/viet_/projects/SecretProject
 -logFile
 Logs/AssetImportWorker2.log
 -srvPort
-53490
+62824
 -job-worker-count
 7
 -background-job-worker-count
@@ -59,12 +59,12 @@ C:/Users/viet_/projects/SecretProject
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [32076]  Target information:
+Player connection [36680]  Target information:
 
-Player connection [32076]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 465289689 [EditorId] 465289689 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [36680]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 4127066374 [EditorId] 4127066374 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [32076] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [32076] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [36680] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [36680] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -76,7 +76,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 244.34 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 2.30 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.36f1 (9fe3b5f71dbb)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Resources/UnitySubsystems
@@ -92,43 +92,43 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56428
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56136
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.101817 seconds.
-- Loaded All Assemblies, in  7.354 seconds
+Registered in 0.002144 seconds.
+- Loaded All Assemblies, in  0.295 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.277 seconds
-Domain Reload Profiling: 7629ms
-	BeginReloadAssembly (6752ms)
+- Finished resetting the current domain, in  0.251 seconds
+Domain Reload Profiling: 545ms
+	BeginReloadAssembly (103ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (169ms)
+	RebuildCommonClasses (29ms)
 	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (140ms)
-	LoadAllAssembliesAndSetupDomain (283ms)
-		LoadAssemblies (6750ms)
+	initialDomainReloadingComplete (38ms)
+	LoadAllAssembliesAndSetupDomain (115ms)
+		LoadAssemblies (101ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (281ms)
-			TypeCache.Refresh (279ms)
-				TypeCache.ScanAssembly (268ms)
+		AnalyzeDomain (113ms)
+			TypeCache.Refresh (112ms)
+				TypeCache.ScanAssembly (101ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (277ms)
+	FinalizeReload (251ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (240ms)
+		SetupLoadedEditorAssemblies (213ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (18ms)
 			SetLoadedEditorAssemblies (3ms)
-			BeforeProcessingInitializeOnLoad (41ms)
-			ProcessInitializeOnLoadAttributes (119ms)
-			ProcessInitializeOnLoadMethodAttributes (59ms)
+			BeforeProcessingInitializeOnLoad (40ms)
+			ProcessInitializeOnLoadAttributes (111ms)
+			ProcessInitializeOnLoadMethodAttributes (41ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -137,298 +137,50 @@ Domain Reload Profiling: 7629ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  7.778 seconds
-Refreshing native plugins compatible for Editor in 1.51 ms, found 4 plugins.
+- Loaded All Assemblies, in  0.640 seconds
+Refreshing native plugins compatible for Editor in 1.38 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.921 seconds
-Domain Reload Profiling: 8697ms
-	BeginReloadAssembly (149ms)
+- Finished resetting the current domain, in  0.639 seconds
+Domain Reload Profiling: 1275ms
+	BeginReloadAssembly (135ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (29ms)
-	RebuildCommonClasses (33ms)
-	RebuildNativeTypeToScriptingClass (10ms)
+		CreateAndSetChildDomain (25ms)
+	RebuildCommonClasses (29ms)
+	RebuildNativeTypeToScriptingClass (9ms)
 	initialDomainReloadingComplete (31ms)
-	LoadAllAssembliesAndSetupDomain (7552ms)
-		LoadAssemblies (7248ms)
+	LoadAllAssembliesAndSetupDomain (431ms)
+		LoadAssemblies (299ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (395ms)
-			TypeCache.Refresh (337ms)
-				TypeCache.ScanAssembly (323ms)
+		AnalyzeDomain (212ms)
+			TypeCache.Refresh (153ms)
+				TypeCache.ScanAssembly (139ms)
 			BuildScriptInfoCaches (46ms)
-			ResolveRequiredComponents (9ms)
-	FinalizeReload (922ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (639ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (606ms)
+		SetupLoadedEditorAssemblies (530ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (2ms)
 			SetLoadedEditorAssemblies (4ms)
-			BeforeProcessingInitializeOnLoad (95ms)
-			ProcessInitializeOnLoadAttributes (377ms)
-			ProcessInitializeOnLoadMethodAttributes (124ms)
-			AfterProcessingInitializeOnLoad (3ms)
+			BeforeProcessingInitializeOnLoad (90ms)
+			ProcessInitializeOnLoadAttributes (343ms)
+			ProcessInitializeOnLoadMethodAttributes (87ms)
+			AfterProcessingInitializeOnLoad (4ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (5ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 2.12 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 2.48 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 220 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 6678 unused Assets / (4.7 MB). Loaded Objects now: 7374.
-Memory consumption went from 182.3 MB to 177.6 MB.
-Total: 10.244600 ms (FindLiveObjects: 0.866800 ms CreateObjectMapping: 1.140200 ms MarkObjects: 5.288900 ms  DeleteObjects: 2.948200 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 721345.968501 seconds.
-  path: Assets/Environments/RPGW_Mountains/Sliced/Decorative_props.png
-  artifactKey: Guid(cf7ad96187a882c4b80769551bbdc989) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Mountains/Sliced/Decorative_props.png using Guid(cf7ad96187a882c4b80769551bbdc989) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1d4906c31fd5f3eb8323a74970698b66') in 0.3136436 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 173
-
-========================================================================
-Received Import Request.
-  Time since last request: 455.765523 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_51.asset
-  artifactKey: Guid(20b8688f78661eb4e90ec5c00ab3effa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_51.asset using Guid(20b8688f78661eb4e90ec5c00ab3effa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2e3281e8a2103b723545ac51c2e4c7cb') in 0.0172336 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_54.asset
-  artifactKey: Guid(d442eb0e8a54ed449a72233d97dc6143) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_54.asset using Guid(d442eb0e8a54ed449a72233d97dc6143) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6f85544804cfa00666f72ecc4e0dddb4') in 0.0119374 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_55.asset
-  artifactKey: Guid(6ac1310ab3a27ea4485d3c5ae422f2cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_55.asset using Guid(6ac1310ab3a27ea4485d3c5ae422f2cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c1785470b05edca709bd3a18a17210f5') in 0.0144859 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 91.102816 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_139.asset
-  artifactKey: Guid(f3b6bb47bfb2b744b9d8c0614be777bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_139.asset using Guid(f3b6bb47bfb2b744b9d8c0614be777bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '682edec243bcbbeec453339ee5a5ebef') in 0.0325802 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_140.asset
-  artifactKey: Guid(ee60710f52a7b12499a44478f17ee7f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_140.asset using Guid(ee60710f52a7b12499a44478f17ee7f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c627f6d7a7a17017e72d8c994cfc6839') in 0.0135247 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_141.asset
-  artifactKey: Guid(1840453a4c236ec4ab924fe0abddb73b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_141.asset using Guid(1840453a4c236ec4ab924fe0abddb73b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '492e23e9f476b8a8cad19b9f12cb0329') in 0.0135636 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.107986 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_143.asset
-  artifactKey: Guid(1aab462eece266243b78395096a619ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_143.asset using Guid(1aab462eece266243b78395096a619ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dea0063e97da33f8a71939203f90760f') in 0.0130251 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_146.asset
-  artifactKey: Guid(dd2672f1dacce0e4aae001ac52bf887c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_146.asset using Guid(dd2672f1dacce0e4aae001ac52bf887c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b95220721e2143196c4ce0ab13f5a72e') in 0.0165792 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_144.asset
-  artifactKey: Guid(f44afa8f1ced200449d4ff787b6abf12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_144.asset using Guid(f44afa8f1ced200449d4ff787b6abf12) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c3be96f53857e27155694d664496609d') in 0.0156372 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_148.asset
-  artifactKey: Guid(31444a3e83751fe41a701b9f0cc4eda3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_148.asset using Guid(31444a3e83751fe41a701b9f0cc4eda3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '094cc89001c8dd26b4da320a93721b2e') in 0.0175991 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_154.asset
-  artifactKey: Guid(4e1bcfbfd26f2454cabcd6fed322af6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_154.asset using Guid(4e1bcfbfd26f2454cabcd6fed322af6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8f4898ceed7ba6b265ebf8da8619363c') in 0.0146742 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_160.asset
-  artifactKey: Guid(d7a5e1bca71945744985da854c80ec74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_160.asset using Guid(d7a5e1bca71945744985da854c80ec74) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3b82c30eaa6e13922ec89ab68c85d84e') in 0.0143153 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_155.asset
-  artifactKey: Guid(d945995c908d43641978bc3870778da9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_155.asset using Guid(d945995c908d43641978bc3870778da9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '244bdc4e67a7fc3cdc39eb5b63387082') in 0.0150228 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_170.asset
-  artifactKey: Guid(454d0a55dc108074bab6f4d3c00402a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_170.asset using Guid(454d0a55dc108074bab6f4d3c00402a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e753d7e0e64ab02603cdf61736cca69c') in 0.015039 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_174.asset
-  artifactKey: Guid(92ae90244f6b1da4697b09c0c8f50120) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_174.asset using Guid(92ae90244f6b1da4697b09c0c8f50120) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dc05a95daecaf41e4406ad5fddcbe128') in 0.0149041 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000043 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_180.asset
-  artifactKey: Guid(6df56c894deb8874aacfde3970c3442f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_180.asset using Guid(6df56c894deb8874aacfde3970c3442f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8affd9097bf1d618fb4faff140857d88') in 0.018979 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000051 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_167.asset
-  artifactKey: Guid(19d80a3ca88400b4e9304545e78c78dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_167.asset using Guid(19d80a3ca88400b4e9304545e78c78dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2772cfa7660868ed7375de629661ffe9') in 0.0190347 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_179.asset
-  artifactKey: Guid(14dd88580cb3d5f428eefef56b9b85b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_179.asset using Guid(14dd88580cb3d5f428eefef56b9b85b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1f185eb7ed6b07850eab11428cb45039') in 0.017786 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_177.asset
-  artifactKey: Guid(29ab7756415075947abb0f175f023dd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_177.asset using Guid(29ab7756415075947abb0f175f023dd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7f8ffb3cb9e422f63072cf215ceb4de4') in 0.0106029 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_163.asset
-  artifactKey: Guid(e917643e9dbdf1e418869b248072fe61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_163.asset using Guid(e917643e9dbdf1e418869b248072fe61) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '358acc283eece37466164f053e437408') in 0.0206505 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_173.asset
-  artifactKey: Guid(639f8965695e39c4a801d4b5fa5b11cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_173.asset using Guid(639f8965695e39c4a801d4b5fa5b11cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e254b54f1632eec6476c903b844c13d9') in 0.0173985 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_182.asset
-  artifactKey: Guid(500270419dd7447458b0612d4f42c66c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_182.asset using Guid(500270419dd7447458b0612d4f42c66c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f70719d02102c9befdb70d6ff8fd9e9d') in 0.0154164 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_166.asset
-  artifactKey: Guid(8c9a6aa8412c2254ea1f1a9592351be3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_166.asset using Guid(8c9a6aa8412c2254ea1f1a9592351be3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cb5d4a4c71faa4e0988a5c0f176e6794') in 0.011213 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_189.asset
-  artifactKey: Guid(c094948063c711146a5a213e694fa5bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_189.asset using Guid(c094948063c711146a5a213e694fa5bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'eed987a9501e5cf41f19bf285927be8d') in 0.0117243 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_188.asset
-  artifactKey: Guid(0a00285cdf1409943be773b8ee1fdda7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_188.asset using Guid(0a00285cdf1409943be773b8ee1fdda7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '92b247818e2cd96205ff2a130cf9e1b9') in 0.0109213 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_150.asset
-  artifactKey: Guid(49de1649aae3a2a44b258ac6b50457c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_150.asset using Guid(49de1649aae3a2a44b258ac6b50457c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '835f6a9f43cfc425c28b9d5e0753e412') in 0.0174452 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_147.asset
-  artifactKey: Guid(f67683bf9cd0913499222d9572456f05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_147.asset using Guid(f67683bf9cd0913499222d9572456f05) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3655a8235ab243e9cb01af10511877d1') in 0.0097589 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_156.asset
-  artifactKey: Guid(ccd4d5db871c52649b8260da8fd18a7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_156.asset using Guid(ccd4d5db871c52649b8260da8fd18a7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b3d35f9464ad7ff21c900d3deedad2f1') in 0.0186436 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_165.asset
-  artifactKey: Guid(96d6cc251a6353841995b4ea8377035b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_165.asset using Guid(96d6cc251a6353841995b4ea8377035b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1ec28b864ed962a7efcc862d182b5470') in 0.0093208 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_169.asset
-  artifactKey: Guid(bda4614501fc7b34792985acecd905ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_169.asset using Guid(bda4614501fc7b34792985acecd905ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6033c402ad9cd94b21df14c925873dd1') in 0.0166864 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+Memory consumption went from 186.3 MB to 181.6 MB.
+Total: 16.926300 ms (FindLiveObjects: 1.491400 ms CreateObjectMapping: 1.877500 ms MarkObjects: 9.302500 ms  DeleteObjects: 4.253100 ms)
 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server

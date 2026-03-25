@@ -26,7 +26,7 @@ public class Astrid1 : MonoBehaviour
         dialogues = new List<CharacterDialogue>();
         dialogues.Add(new CharacterDialogue("Astrid", new string[] {"Do you have a minute to talk, " + mcn + "?"}));
         dialogues.Add(new CharacterDialogue(mcn, new string[] {"Of course, is something the matter?"}));
-        dialogues.Add(new CharacterDialogue("Astrid", new string[] {"Well...", "I was thinking about these bracelets.", "Back on the farm, I felt a rush of energy when that soldier attacked me.", "But now I don't feel anything anymore."}));
+        dialogues.Add(new CharacterDialogue("Astrid", new string[] {"Well...", "I was thinking about these bracelets.", "Back on the farm, I felt a rush of energy when that soldier attacked me.", "But now I don't feel anything at all."}));
         dialogues.Add(new CharacterDialogue(mcn, new string[] {"Hmm.", "It is ancient technology..", "Maybe it automatically responds to danger?"}));
         dialogues.Add(new CharacterDialogue("Astrid", new string[] {"I'm not sure.", "And what if we're in danger and I need to use the power again?", "I'm worried I won't be able to access it."}));
         dialogues.Add(new CharacterDialogue(mcn, new string[] {"That is a good point..", "Well why don't we test out some theories?", "I'll pretend to attack you and then you try to push me away!"}));
@@ -41,8 +41,8 @@ public class Astrid1 : MonoBehaviour
         dialogues.Add(new CharacterDialogue("Astrid", new string[] {"Hrrmphhhh!"}));
         dialogues.Add(new CharacterDialogue(mcn, new string[] {"HAHAHA!", "IS THAT ALL THE STRENGTH YOU CAN MUSTER UP???"}));
         dialogues.Add(new CharacterDialogue("Astrid", new string[] {"Hrrrrrrahhh!!!"}));
-        dialogues.Add(new CharacterDialogue(mcn, new string[] {"HOW CUTE!", "MAYBE AFTER I TAKE ALL OF YOUR MONEY, I'LL TAKE A PEEK UNDER THAT SKIRT!!"}));
-        dialogues.Add(new CharacterDialogue("Astrid", new string[] {"*startled* " + mcn + "!", "Why would you say that??"}));
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"HOW CUTE!", "MAYBE AFTER I TAKE ALL OF YOUR MONEY, I'LL TAKE A PEEK UNDER THAT SKIRT TOO!!"}));
+        dialogues.Add(new CharacterDialogue("Astrid", new string[] {mcn + "!", "Why would you say that??"}));
         dialogues.Add(new CharacterDialogue(mcn, new string[] {"Stay focused, Astrid! This could happen in real life you need to be prepared!",}));
 
         //turns Astrid around against tree or the wagon or something

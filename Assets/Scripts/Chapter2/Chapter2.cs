@@ -25,18 +25,23 @@ public class Chapter2 : MonoBehaviour
         characters = GameObject.Find("Characters");
         enemies = GameObject.Find("Enemies");
 
+        //Load characters
         foreach (Character character in saveManager.loadedData.characters)
         {
             if (character.characterName == saveManager.loadedData.mainCharacterName)
             {
-                Instantiate(mainCharacterPrefab, new Vector3(-20f, -9.35f), Quaternion.identity, characters.transform);
+                Instantiate(mainCharacterPrefab, new Vector3(-20f, -6.35f), Quaternion.identity, characters.transform);
             }
             else if (character.characterName == "Astrid")
             {
-                Instantiate(astridPrefab, new Vector3(-4.45f, -11.65f), Quaternion.identity, characters.transform);
+                Instantiate(astridPrefab, new Vector3(-22f, -11.65f), Quaternion.identity, characters.transform);
             }
         }
 
+    }
+    public void Start()
+    {
+        StartCoroutine(Intro());
     }
     public void Update()
     {
@@ -197,5 +202,28 @@ public class Chapter2 : MonoBehaviour
         }
 
     }
+    private IEnumerator Intro()
+    {
+        GameObject mainChar = GameObject.Find("MainCharacterPrefab(Clone)");
+        GameObject astrid = GameObject.Find("AstridPrefab(Clone)");
 
+        //Move characters on screen
+        yield return StartCoroutine(pathfinder.FollowPath(mainChar, new Vector3(-13f, -7f, 0f)));
+        yield return StartCoroutine(pathfinder.FollowPath(mainChar, new Vector3(-14.33f, -8.35f, 0f)));
+
+        //Small dialogue
+
+        //Pan camera to church
+
+        //blink arrow
+
+        //small dialoue
+
+        //pan camera back
+
+        //small dialogue
+
+
+        yield return null;
+    }
 }
