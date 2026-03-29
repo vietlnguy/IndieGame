@@ -168,7 +168,7 @@ public class PlayerController : MonoBehaviour
     void OnClick()
     {
         //Intro is finished, not paused, not attack preview, not characterMenu, and not enemies turn
-        if (battleController.introFinished && !battleController.isPaused && !battleController.isEnemyTurn && !attackPreviewScript.active && !characterMenuScript.active && !inventoryMenuScript.active && !characterAssistMenuScript.active)
+        if (battleController.introFinished && !battleController.isPaused && !battleController.isEnemyTurn && !attackPreviewScript.active && !characterMenuScript.active && !inventoryMenuScript.active && !characterAssistMenuScript.active && owned)
         {
             //no character selected yet. Should select this character.
             if (battleController.characterSelected == null)

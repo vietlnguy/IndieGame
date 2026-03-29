@@ -15,7 +15,7 @@ C:/Users/viet_/projects/SecretProject
 -logFile
 Logs/AssetImportWorker4.log
 -srvPort
-53490
+62824
 -job-worker-count
 7
 -background-job-worker-count
@@ -59,12 +59,12 @@ C:/Users/viet_/projects/SecretProject
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [23348]  Target information:
+Player connection [22676]  Target information:
 
-Player connection [23348]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 318898196 [EditorId] 318898196 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [22676]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 2532587961 [EditorId] 2532587961 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [23348] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [23348] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [22676] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [22676] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -76,7 +76,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 2.35 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 221.01 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.36f1 (9fe3b5f71dbb)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Resources/UnitySubsystems
@@ -92,43 +92,43 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56036
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56728
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002325 seconds.
-- Loaded All Assemblies, in  0.293 seconds
+Registered in 0.122220 seconds.
+- Loaded All Assemblies, in  7.604 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.259 seconds
-Domain Reload Profiling: 551ms
-	BeginReloadAssembly (101ms)
+- Finished resetting the current domain, in  0.334 seconds
+Domain Reload Profiling: 7937ms
+	BeginReloadAssembly (6911ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (31ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (38ms)
-	LoadAllAssembliesAndSetupDomain (113ms)
-		LoadAssemblies (99ms)
+		CreateAndSetChildDomain (2ms)
+	RebuildCommonClasses (202ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (176ms)
+	LoadAllAssembliesAndSetupDomain (303ms)
+		LoadAssemblies (6904ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (111ms)
-			TypeCache.Refresh (110ms)
-				TypeCache.ScanAssembly (100ms)
+		AnalyzeDomain (299ms)
+			TypeCache.Refresh (298ms)
+				TypeCache.ScanAssembly (287ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (259ms)
+	FinalizeReload (334ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (220ms)
+		SetupLoadedEditorAssemblies (272ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (18ms)
+			InitializePlatformSupportModulesInManaged (19ms)
 			SetLoadedEditorAssemblies (3ms)
-			BeforeProcessingInitializeOnLoad (38ms)
-			ProcessInitializeOnLoadAttributes (107ms)
-			ProcessInitializeOnLoadMethodAttributes (54ms)
+			BeforeProcessingInitializeOnLoad (44ms)
+			ProcessInitializeOnLoadAttributes (142ms)
+			ProcessInitializeOnLoadMethodAttributes (64ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -137,1160 +137,404 @@ Domain Reload Profiling: 551ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.622 seconds
-Refreshing native plugins compatible for Editor in 1.53 ms, found 4 plugins.
+- Loaded All Assemblies, in  8.559 seconds
+Refreshing native plugins compatible for Editor in 1.26 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.672 seconds
-Domain Reload Profiling: 1291ms
-	BeginReloadAssembly (131ms)
+- Finished resetting the current domain, in  0.915 seconds
+Domain Reload Profiling: 9461ms
+	BeginReloadAssembly (130ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (5ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (26ms)
+		CreateAndSetChildDomain (25ms)
 	RebuildCommonClasses (28ms)
-	RebuildNativeTypeToScriptingClass (8ms)
-	initialDomainReloadingComplete (30ms)
-	LoadAllAssembliesAndSetupDomain (422ms)
-		LoadAssemblies (270ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (8347ms)
+		LoadAssemblies (7961ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (227ms)
-			TypeCache.Refresh (164ms)
-				TypeCache.ScanAssembly (149ms)
-			BuildScriptInfoCaches (51ms)
-			ResolveRequiredComponents (10ms)
-	FinalizeReload (673ms)
+		AnalyzeDomain (460ms)
+			TypeCache.Refresh (400ms)
+				TypeCache.ScanAssembly (385ms)
+			BuildScriptInfoCaches (47ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (915ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (550ms)
+		SetupLoadedEditorAssemblies (583ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (2ms)
-			SetLoadedEditorAssemblies (5ms)
-			BeforeProcessingInitializeOnLoad (99ms)
-			ProcessInitializeOnLoadAttributes (357ms)
-			ProcessInitializeOnLoadMethodAttributes (83ms)
-			AfterProcessingInitializeOnLoad (4ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (91ms)
+			ProcessInitializeOnLoadAttributes (361ms)
+			ProcessInitializeOnLoadMethodAttributes (121ms)
+			AfterProcessingInitializeOnLoad (5ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (5ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-Refreshing native plugins compatible for Editor in 2.83 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Refreshing native plugins compatible for Editor in 2.23 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 220 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 6678 unused Assets / (4.4 MB). Loaded Objects now: 7374.
-Memory consumption went from 186.4 MB to 181.9 MB.
-Total: 16.254800 ms (FindLiveObjects: 1.503200 ms CreateObjectMapping: 1.891600 ms MarkObjects: 8.943200 ms  DeleteObjects: 3.914700 ms)
+Unloading 6678 unused Assets / (4.8 MB). Loaded Objects now: 7374.
+Memory consumption went from 186.4 MB to 181.6 MB.
+Total: 15.980800 ms (FindLiveObjects: 0.869800 ms CreateObjectMapping: 1.088500 ms MarkObjects: 10.712400 ms  DeleteObjects: 3.309200 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 721891.111677 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced
-  artifactKey: Guid(961fe01a2e21f7941af957049a63653c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced using Guid(961fe01a2e21f7941af957049a63653c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2755b6f63a0f79087ebc8f2077cdae2a') in 0.0043773 seconds
+  Time since last request: 1150622.618272 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Font/Fantasypixelfont SDF.asset
+  artifactKey: Guid(7e93cf950105fa1439cda190f5bd3eb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Font/Fantasypixelfont SDF.asset using Guid(7e93cf950105fa1439cda190f5bd3eb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '14c32105af078f4a6225940fadad9a3e') in 0.4186736 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 362.323020 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Animators
+  artifactKey: Guid(ee07d4fad626f68459642501e977e8e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Animators using Guid(ee07d4fad626f68459642501e977e8e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '33f567e31c42ee1e65c9e4e1f2aa50f9') in 0.0056061 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.153902 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_138.asset
-  artifactKey: Guid(aac3a3f602636594dac777d77e39a742) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_138.asset using Guid(aac3a3f602636594dac777d77e39a742) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3fdc98e5d677dcf769d4256372e04179') in 0.0799361 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.138290 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_142.asset
-  artifactKey: Guid(1b3ceb94edbff7b4e88b23d0756ff231) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_142.asset using Guid(1b3ceb94edbff7b4e88b23d0756ff231) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd0a071c8c45823a30ff04b85d3a34c8e') in 0.0155146 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_145.asset
-  artifactKey: Guid(285bebef437cfec438b9e037468b2132) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_145.asset using Guid(285bebef437cfec438b9e037468b2132) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dbf70b7eda8584334c5b40cb1d994044') in 0.0177418 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_149.asset
-  artifactKey: Guid(a999ead339dce164ea4c9329dba53153) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_149.asset using Guid(a999ead339dce164ea4c9329dba53153) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f546c45d0c34c16248edf0f56009dcc9') in 0.0159196 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_152.asset
-  artifactKey: Guid(cccf54f1739c38f488497ce31f651e19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_152.asset using Guid(cccf54f1739c38f488497ce31f651e19) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2f61f03f208150590389dad9489ed232') in 0.0108112 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_153.asset
-  artifactKey: Guid(74e1f81bc90268a46ae0fd98c592d60c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_153.asset using Guid(74e1f81bc90268a46ae0fd98c592d60c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '55da6202c9c10ddc64c4f9ab0a372333') in 0.0179847 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_157.asset
-  artifactKey: Guid(f5f079048bce4e14fb1803019ebda2fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_157.asset using Guid(f5f079048bce4e14fb1803019ebda2fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fc35b9b3d993885d09ae6e516fabefc0') in 0.0152249 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_164.asset
-  artifactKey: Guid(6154cf7f7cbe04f489b7e49fe3205a8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_164.asset using Guid(6154cf7f7cbe04f489b7e49fe3205a8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0e2ea5a7337ee84b931fd57f81aee92f') in 0.0155453 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_171.asset
-  artifactKey: Guid(212f3ffa04f703245a6b0d67f43ec861) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_171.asset using Guid(212f3ffa04f703245a6b0d67f43ec861) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3fe8ea663ee7207065f1444d5877768e') in 0.017167 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_175.asset
-  artifactKey: Guid(5ae9fb7920d2886439845373391d1be4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_175.asset using Guid(5ae9fb7920d2886439845373391d1be4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '89a8a6259c5ab6bbc4485ebb92a79faa') in 0.0147566 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_185.asset
-  artifactKey: Guid(e43e3f94b4135de47aa787be83545b1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_185.asset using Guid(e43e3f94b4135de47aa787be83545b1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f6f1e7fc56dea73d87956865c074d654') in 0.0189708 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_176.asset
-  artifactKey: Guid(94d50ddb53c239c41baf29365aed6f27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_176.asset using Guid(94d50ddb53c239c41baf29365aed6f27) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8a47ebed60d7257c972a01e9ed950e74') in 0.0115517 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_168.asset
-  artifactKey: Guid(e293c34d90cb6c34ea0ac199172322d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_168.asset using Guid(e293c34d90cb6c34ea0ac199172322d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '27aa908314b4e4a68d940bd676602afb') in 0.0203629 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_178.asset
-  artifactKey: Guid(250fdaa6b667df341ad911a0b28bd5e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_178.asset using Guid(250fdaa6b667df341ad911a0b28bd5e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'af8bec5f00e663f5ffbc1b6f8948dc69') in 0.018964 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_184.asset
-  artifactKey: Guid(c886299351ea4784daf65dc0c48882c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_184.asset using Guid(c886299351ea4784daf65dc0c48882c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '843cc521ebc9eeab8d89557d35164f15') in 0.0167092 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_181.asset
-  artifactKey: Guid(5c389e84e2b523845bd9949495573ed2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_181.asset using Guid(5c389e84e2b523845bd9949495573ed2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6e8f50c56cb75a62c3219d794bbe5c5d') in 0.0117151 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_186.asset
-  artifactKey: Guid(80bbfd1669777b745b730c0add8b3770) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_186.asset using Guid(80bbfd1669777b745b730c0add8b3770) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9a82754a2c90f068d54126e5d30e9a38') in 0.0152786 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_159.asset
-  artifactKey: Guid(77391a690a856e6419b40f24c36dc5eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_159.asset using Guid(77391a690a856e6419b40f24c36dc5eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a2d6edb4cecfdf73ee8a4ba0160fc9bb') in 0.0121917 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_187.asset
-  artifactKey: Guid(bf0092ac1d01c0d4fb56b28fdfb6dde8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_187.asset using Guid(bf0092ac1d01c0d4fb56b28fdfb6dde8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '215c889e870fc4519b28e05621993537') in 0.0112089 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_158.asset
-  artifactKey: Guid(e519320e802904846b89f66ae55bb552) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_158.asset using Guid(e519320e802904846b89f66ae55bb552) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '71db3f3936067d85f64ea801d4ca7e5c') in 0.0173927 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_151.asset
-  artifactKey: Guid(01db0907ffce9de449baf98d019ceafc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_151.asset using Guid(01db0907ffce9de449baf98d019ceafc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3a4ffb1aa28bb05324d34588042483c9') in 0.0164575 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_162.asset
-  artifactKey: Guid(4eb38ff9699c60948920af07cc558d6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_162.asset using Guid(4eb38ff9699c60948920af07cc558d6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5aab976da8fe2a1ae24f5a16572deb21') in 0.0176368 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_183.asset
-  artifactKey: Guid(7c75159c062102e44bb4c7ed15dcdc8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_183.asset using Guid(7c75159c062102e44bb4c7ed15dcdc8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '53f6fd25a98a8ca0a32366241ad11a86') in 0.0166495 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_172.asset
-  artifactKey: Guid(4aad03aed6df5b240bb5649cb38b080e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_172.asset using Guid(4aad03aed6df5b240bb5649cb38b080e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0a06037595db7433f9fade728dc61767') in 0.0167814 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_161.asset
-  artifactKey: Guid(dfe201c4d89422f42a900c7c34185019) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Sliced/MainLev2.0_161.asset using Guid(dfe201c4d89422f42a900c7c34185019) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c7d392f6e5f08b82b72a2684e0ac8f03') in 0.0165246 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.415541 seconds.
-  path: Assets/Environments/RPGW_Desert/Scenes
-  artifactKey: Guid(9d8e895d85f923c448d736a6506b301b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Desert/Scenes using Guid(9d8e895d85f923c448d736a6506b301b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '86f9f06fe5600960622e22a40c1183ee') in 0.000682 seconds
+  Time since last request: 0.293059 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Animations
+  artifactKey: Guid(e301a549011cae04881a2cbf41345bf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Animations using Guid(e301a549011cae04881a2cbf41345bf1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e39951fcbc73c2eb06d539b0be968551') in 0.0005588 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 501.562739 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_56.asset
-  artifactKey: Guid(121d3665b3c915c4bab558ab382e575d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_56.asset using Guid(121d3665b3c915c4bab558ab382e575d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6a1882ee92b131a8166dfe09094dc48d') in 0.01754 seconds
+  Time since last request: 1.355341 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Animations/Skill Cards
+  artifactKey: Guid(7675933845d01144f95f0f6e9f0a99b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Animations/Skill Cards using Guid(7675933845d01144f95f0f6e9f0a99b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2f7e99982b9fa22ad2766aa5c2a6f259') in 0.0054721 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.900169 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Animations/trading_arrow.anim
+  artifactKey: Guid(a3e2692bb4beb59449ea5ed59cd2dc31) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Animations/trading_arrow.anim using Guid(a3e2692bb4beb59449ea5ed59cd2dc31) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '51fcfbf7bbf688b3658ab7a54cbd1768') in 0.0014171 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.287808 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Animations/trading_arrow_left.anim
+  artifactKey: Guid(784ede61ba2bafd4d9675dc4e7ed67f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Animations/trading_arrow_left.anim using Guid(784ede61ba2bafd4d9675dc4e7ed67f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0c61f347fea0a828e162f040b9916fdd') in 0.0013848 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.302261 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Animations/trading_arrow_left_1.anim
+  artifactKey: Guid(79528182d2d31ca4aa294482b6bdf776) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Animations/trading_arrow_left_1.anim using Guid(79528182d2d31ca4aa294482b6bdf776) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0db1895dc174b2ad8506170fdd8748ba') in 0.0063106 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 65.457836 seconds.
+  path: Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Resources Orbs
+  artifactKey: Guid(9d4923f3207501747b8f490e375e0d7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/2D Pixel Quest Vol.3 - The UI-GUI/Sprites/Resources Orbs using Guid(9d4923f3207501747b8f490e375e0d7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2dd846db51866782f7db7161d5e7c5cb') in 0.0054208 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 21.615293 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Panels
+  artifactKey: Guid(1b1c6ab09ca2d68438a45465a1a77d0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Panels using Guid(1b1c6ab09ca2d68438a45465a1a77d0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '33b588608d466bb589259d4780283feb') in 0.0057387 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.036466 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels.png
+  artifactKey: Guid(4845bd80a717ab64ab6a1096b40ca146) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels.png using Guid(4845bd80a717ab64ab6a1096b40ca146) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '60151bb804c6f83e7af44a760d74ef6f') in 0.0339692 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_58.asset
-  artifactKey: Guid(ffd265e1ab5900445b111e93a85296e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_58.asset using Guid(ffd265e1ab5900445b111e93a85296e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f1ec465d0820ef836e4940cddfbdad3b') in 0.0120967 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_79.asset
-  artifactKey: Guid(e08daa7fad363c443ba74b5edde1d70e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_79.asset using Guid(e08daa7fad363c443ba74b5edde1d70e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '64afda5caa7710c76ada2f4e63ea5d3a') in 0.012277 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_69.asset
-  artifactKey: Guid(97e518e340b52f143aff5e224c5289de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_69.asset using Guid(97e518e340b52f143aff5e224c5289de) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '81f629e273a291da7e285ede3658104e') in 0.0137731 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_59.asset
-  artifactKey: Guid(6e4811abde93c044fb48602240afa2a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_59.asset using Guid(6e4811abde93c044fb48602240afa2a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '88c213c05b8ddb755651db0e6dc4c68e') in 0.0127886 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_75.asset
-  artifactKey: Guid(453ae30969d4be446a8a7ab21297f3c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_75.asset using Guid(453ae30969d4be446a8a7ab21297f3c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'db8b9caf3971d8ad42bed6cce848c348') in 0.0108049 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_63.asset
-  artifactKey: Guid(bc667f7428c973f48b2886ce8c7a4b50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_63.asset using Guid(bc667f7428c973f48b2886ce8c7a4b50) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '85b75910cfb307085651ec981448b68b') in 0.0122734 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_76.asset
-  artifactKey: Guid(6249cb2587087d247823c0e6cf3ec8fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_76.asset using Guid(6249cb2587087d247823c0e6cf3ec8fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '572a3d18d24d42e5c36b7d81d907adce') in 0.0155969 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_66.asset
-  artifactKey: Guid(1e5898f2c7b7f8a45a37e551f905b9f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_66.asset using Guid(1e5898f2c7b7f8a45a37e551f905b9f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bb57d7ee8fa713794042fc13de80207a') in 0.0123087 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_77.asset
-  artifactKey: Guid(94f99d663662ea748a62f3ed3f3184d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_77.asset using Guid(94f99d663662ea748a62f3ed3f3184d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd3959e30a36a863d2960b9f24b88b011') in 0.0055105 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_86.asset
-  artifactKey: Guid(6cced7d253f247649bdd5435d085374b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_86.asset using Guid(6cced7d253f247649bdd5435d085374b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e72fd706acc65f7699ad708728a04c4c') in 0.0060241 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_81.asset
-  artifactKey: Guid(b4a798cc04edbe74b9f846125506edb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_81.asset using Guid(b4a798cc04edbe74b9f846125506edb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ea581344bb1b1da6b67daef20096d87c') in 0.0126332 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_107.asset
-  artifactKey: Guid(4806b4b996e1b7f4d89657f4925cebd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_107.asset using Guid(4806b4b996e1b7f4d89657f4925cebd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0220d306556f2656ca26e366f8eb933f') in 0.0071052 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_112.asset
-  artifactKey: Guid(0be607794bb2e69468885a7cb0b5d96e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_112.asset using Guid(0be607794bb2e69468885a7cb0b5d96e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2ab8190e10851b030531e611fa591f2b') in 0.0059601 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_110.asset
-  artifactKey: Guid(aaa429cba99c5f54682b6c63d6d51c77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_110.asset using Guid(aaa429cba99c5f54682b6c63d6d51c77) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'aeb30be3f1267b80e42656ffdc515e35') in 0.0061239 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_97.asset
-  artifactKey: Guid(ba8a845a604606348a1f6868c9384bee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_97.asset using Guid(ba8a845a604606348a1f6868c9384bee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a378cc456fe4a3a1f31541324c93d633') in 0.0146036 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_98.asset
-  artifactKey: Guid(be7e81692596e6547aa4b4504d7da780) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_98.asset using Guid(be7e81692596e6547aa4b4504d7da780) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fd31338473297c27e5d9038efb93c384') in 0.0162844 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_104.asset
-  artifactKey: Guid(69fd06695da47044aa329ad624ab7af8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_104.asset using Guid(69fd06695da47044aa329ad624ab7af8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6879b3277dc131f41862e4bca0a9125d') in 0.0129742 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_83.asset
-  artifactKey: Guid(c4d630e803c5de84d9af97725cb157e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_83.asset using Guid(c4d630e803c5de84d9af97725cb157e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0e45e3905d3c71e040209bf6cf73ce6d') in 0.0165146 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_108.asset
-  artifactKey: Guid(5c90e8b76da2cd74cb736ef48ff5af42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_108.asset using Guid(5c90e8b76da2cd74cb736ef48ff5af42) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'acea42995b8b113ddab8a2aa43439245') in 0.0065336 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_103.asset
-  artifactKey: Guid(de0483520913fff4f9f2c448a852f404) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_103.asset using Guid(de0483520913fff4f9f2c448a852f404) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '34cdcc50e57b3d5506da95115cd80776') in 0.0126673 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_87.asset
-  artifactKey: Guid(7cd45571807e66a4b8af4c118bff67bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_87.asset using Guid(7cd45571807e66a4b8af4c118bff67bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '628256731512c84b00dc129e5a502b0a') in 0.00529 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_99.asset
-  artifactKey: Guid(3c70dc7460d31fd48bd855fadc31fb40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_99.asset using Guid(3c70dc7460d31fd48bd855fadc31fb40) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'db4c7cae6ebbe016fda3f2ee4f9c54b7') in 0.0131744 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_92.asset
-  artifactKey: Guid(309fa93a370cb904da00b181a24cd190) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_92.asset using Guid(309fa93a370cb904da00b181a24cd190) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b507e229d47dc3545b7c694343a0b936') in 0.0125551 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_91.asset
-  artifactKey: Guid(39ab10a69ffc1d34a9dd2d2565c57bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_91.asset using Guid(39ab10a69ffc1d34a9dd2d2565c57bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1bd50d1644dd5275289cdb78ee43e347') in 0.011766 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_138.asset
-  artifactKey: Guid(6142d1f843b6d0f46aa3fb1fc45c9399) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_138.asset using Guid(6142d1f843b6d0f46aa3fb1fc45c9399) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'aac241f023376c622e927a6f19a4a7b3') in 0.0125501 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_126.asset
-  artifactKey: Guid(d0b06b34232bf414bbe4dd4565a033b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_126.asset using Guid(d0b06b34232bf414bbe4dd4565a033b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8ec47ebf8dd7d194bf4112d354d40170') in 0.0130631 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_127.asset
-  artifactKey: Guid(19e2e459023902648b777f5d6a917e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_127.asset using Guid(19e2e459023902648b777f5d6a917e4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4f982ccdca4706be2bf263fb58101922') in 0.0126199 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_128.asset
-  artifactKey: Guid(0e6991ccd317f88489c1ed5f58ce2a1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_128.asset using Guid(0e6991ccd317f88489c1ed5f58ce2a1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bc8a29941c1ebb4876422c13bea66c92') in 0.012292 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_122.asset
-  artifactKey: Guid(a4463ec210fd0a5498da8b86c4a4b1a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_122.asset using Guid(a4463ec210fd0a5498da8b86c4a4b1a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '267c0f752c65d76e6f953fe2c90b91f8') in 0.0056739 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_133.asset
-  artifactKey: Guid(e3519a0235435464e89ae42d01a98ba9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_133.asset using Guid(e3519a0235435464e89ae42d01a98ba9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ef97ed9ee84fc2178fae1b1dfabebf5a') in 0.0223293 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_117.asset
-  artifactKey: Guid(c131791665dc9a845a523bf1b6e1aeda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_117.asset using Guid(c131791665dc9a845a523bf1b6e1aeda) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5855da50d167a2aca1d9acb3dec45a36') in 0.0133131 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_131.asset
-  artifactKey: Guid(a01a6b529b7af594bb12d38730f13159) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_131.asset using Guid(a01a6b529b7af594bb12d38730f13159) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1520373a72f820d1604cd31cd522474b') in 0.0154901 seconds
+  Time since last request: 0.000049 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_06.png
+  artifactKey: Guid(14a1a3656366b6e4ba229f2da8e8f255) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_06.png using Guid(14a1a3656366b6e4ba229f2da8e8f255) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '509a1d153cd8269157c294512e05223c') in 0.0181379 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000036 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_100.asset
-  artifactKey: Guid(4236d8a46254c2d42bdb9788548681d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_100.asset using Guid(4236d8a46254c2d42bdb9788548681d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '029a74b62bc28e59fff7ab6cb714afb9') in 0.0152816 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_62.asset
-  artifactKey: Guid(fef7d1b43abc627458aff822689c203b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_62.asset using Guid(fef7d1b43abc627458aff822689c203b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9ed3c7dab63b4e440e0fd85e3547916a') in 0.012457 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_159.asset
-  artifactKey: Guid(c64efe5c8f565b64a808af7a07e42283) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_159.asset using Guid(c64efe5c8f565b64a808af7a07e42283) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f53ddc12b19c4c52b19aad4fcd012ec4') in 0.011361 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_185.asset
-  artifactKey: Guid(74f39f4bde1f56f4a9c275155d35fc4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_185.asset using Guid(74f39f4bde1f56f4a9c275155d35fc4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1207717fa27fcdab7d2fcf5b88d9eb9c') in 0.0111864 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_140.asset
-  artifactKey: Guid(c024c697f78b1de41bd6ad7da82d0f77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_140.asset using Guid(c024c697f78b1de41bd6ad7da82d0f77) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00018a873cd714ef1d059977167abb81') in 0.0064026 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_141.asset
-  artifactKey: Guid(166cd88ee333ec745988535c8360356a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_141.asset using Guid(166cd88ee333ec745988535c8360356a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '083abcb3700bee729644b032dfa862e8') in 0.0123701 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_166.asset
-  artifactKey: Guid(61904fcef3dd636459c03beb20a49b3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_166.asset using Guid(61904fcef3dd636459c03beb20a49b3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ababb75dde5b9a21ede175e3d5a27c15') in 0.0062279 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_170.asset
-  artifactKey: Guid(9e1271df6546b4c4c9f37f181070f391) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_170.asset using Guid(9e1271df6546b4c4c9f37f181070f391) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3e21ca7decd0a15b7fdbeb91a5a1507a') in 0.0125486 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_182.asset
-  artifactKey: Guid(484535cdf05d72846affa04428688a97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_182.asset using Guid(484535cdf05d72846affa04428688a97) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '84c00db535de8e36d8ff6f853d3ef7ed') in 0.0124806 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_173.asset
-  artifactKey: Guid(0feb9cec9060f504e92ce7dca2c38558) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_173.asset using Guid(0feb9cec9060f504e92ce7dca2c38558) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '45c9d7147cf3779badd9b083ed55c716') in 0.012328 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_186.asset
-  artifactKey: Guid(0fae6527aafff7b449d3e6573482eaf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_186.asset using Guid(0fae6527aafff7b449d3e6573482eaf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3af7acf3f02276e17ebe276a4ddfdfc0') in 0.0063528 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_149.asset
-  artifactKey: Guid(c67bbfdb630ddd949b6646e1835b73b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_149.asset using Guid(c67bbfdb630ddd949b6646e1835b73b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e27cdceb000354a5cafcd76bec9054d9') in 0.0126588 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_174.asset
-  artifactKey: Guid(6574c01a551a47f40a511da3dbd5c7c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_174.asset using Guid(6574c01a551a47f40a511da3dbd5c7c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e7225eb604b3f67fffbd6347a91a69c9') in 0.0074895 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_162.asset
-  artifactKey: Guid(000fac0b61b523d48bcd8ba69f62a637) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_162.asset using Guid(000fac0b61b523d48bcd8ba69f62a637) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '56346e7c3dc367fef4aeb91ea217f4f5') in 0.0081453 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_205.asset
-  artifactKey: Guid(d9ab88c8b57278a438511ccab1fdcac8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_205.asset using Guid(d9ab88c8b57278a438511ccab1fdcac8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fa8b09552f50a335d526ed04abc762f8') in 0.0131446 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_222.asset
-  artifactKey: Guid(cda3a6ef8f186bf4898d7a36928b739a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_222.asset using Guid(cda3a6ef8f186bf4898d7a36928b739a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9523833ec093e3ac5e157bad19a79f3a') in 0.0126723 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_195.asset
-  artifactKey: Guid(6651fc8b7fc6c624d9916d384405692e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_195.asset using Guid(6651fc8b7fc6c624d9916d384405692e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9830bb24100a342ca6a75ecf6f111c6a') in 0.0120016 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_221.asset
-  artifactKey: Guid(460ad8e375b4132458be7149d0473abe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_221.asset using Guid(460ad8e375b4132458be7149d0473abe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '3da539703e88d512ed4fa573604e5ca4') in 0.0119023 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_204.asset
-  artifactKey: Guid(00d09ccc82777a44a81f12b29871d45c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_204.asset using Guid(00d09ccc82777a44a81f12b29871d45c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '23e01143ec8c5cfa7b0262ffe3349f7a') in 0.0129806 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_136.asset
-  artifactKey: Guid(cd838ae18669d4a488a0c4fdad3a13e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_136.asset using Guid(cd838ae18669d4a488a0c4fdad3a13e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '852ac8a2750bf625dec1271b00e598a1') in 0.0078518 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_224.asset
-  artifactKey: Guid(35dc36a41ef79a74399265695dcf2355) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_224.asset using Guid(35dc36a41ef79a74399265695dcf2355) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bf06319c49b0249013ced441a73d5c07') in 0.0151796 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_238.asset
-  artifactKey: Guid(4fa7f3d59590f1c458abd50e0c495c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_238.asset using Guid(4fa7f3d59590f1c458abd50e0c495c0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5b6cc1422d0719c147d15dd6a1932441') in 0.0184022 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_245.asset
-  artifactKey: Guid(83fa79a2eafb8044c930f821781eafcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_245.asset using Guid(83fa79a2eafb8044c930f821781eafcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ef6c35cb829dcdf7fedd1c760767d04d') in 0.01243 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_247.asset
-  artifactKey: Guid(912bd9fc16872da4bbd6961ee1c78bdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_247.asset using Guid(912bd9fc16872da4bbd6961ee1c78bdf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'af6310da4960cb493b541729e5ee8ee3') in 0.0164354 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_179.asset
-  artifactKey: Guid(e71da7588b6539c4fbaa5528d48c4d56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_179.asset using Guid(e71da7588b6539c4fbaa5528d48c4d56) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd3ec192b12d37b153fbf01727f82efce') in 0.0062262 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_124.asset
-  artifactKey: Guid(f0eaf405b30350348a327574011c41f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_124.asset using Guid(f0eaf405b30350348a327574011c41f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f25d13357ef1bea17a5dbdf2f5908b0b') in 0.0137973 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_67.asset
-  artifactKey: Guid(3f6850e6aa5d02f46bfea8c595aee31e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_67.asset using Guid(3f6850e6aa5d02f46bfea8c595aee31e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6b317c062602bcb6efc2ba4b2ed1f2c2') in 0.0064545 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_94.asset
-  artifactKey: Guid(51a1476ff5496824ea5c22da73c44711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_94.asset using Guid(51a1476ff5496824ea5c22da73c44711) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '212e57cf5584d89ac513655098c1bfb2') in 0.0123869 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_206.asset
-  artifactKey: Guid(38c6e81edb5171f4a977fee34c3d4ccf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_206.asset using Guid(38c6e81edb5171f4a977fee34c3d4ccf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7a4f1135f866560b3e35b1053e812c00') in 0.0136695 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_65.asset
-  artifactKey: Guid(b4fd9eca63485b840993f3b1c09aeeb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_65.asset using Guid(b4fd9eca63485b840993f3b1c09aeeb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5a0dc13dab744347ad1e9360229e3e5a') in 0.0064403 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_152.asset
-  artifactKey: Guid(3c4158fc4b075ba41b9d7a161fc0c421) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_152.asset using Guid(3c4158fc4b075ba41b9d7a161fc0c421) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f7bcf9038a4649fa6c9d867f9760f7c1') in 0.0061338 seconds
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_11.png
+  artifactKey: Guid(442f794c53de4c6418f0355de7c94727) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_11.png using Guid(442f794c53de4c6418f0355de7c94727) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c6b0590d1b260daa336d76a2c3228c76') in 0.0189396 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000021 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_227.asset
-  artifactKey: Guid(371ed5a707960564e8df2caffe7bf751) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_227.asset using Guid(371ed5a707960564e8df2caffe7bf751) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5ec97dd3d1cdae4614c28234d9c2ef70') in 0.0139075 seconds
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_10.png
+  artifactKey: Guid(7ec5f1d5394aea2439399cd0d08cdca6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_10.png using Guid(7ec5f1d5394aea2439399cd0d08cdca6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6f299a89064b3330393aaf7228adc1c3') in 0.0132619 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_251.asset
-  artifactKey: Guid(60d4d34217841274791c19f7fe989dbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_251.asset using Guid(60d4d34217841274791c19f7fe989dbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'dac07034e29532c43e9d4a954e2cce5a') in 0.0125293 seconds
+  Time since last request: 0.000028 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_09.png
+  artifactKey: Guid(bc7818d7f5ca82e4191101653db15efd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_09.png using Guid(bc7818d7f5ca82e4191101653db15efd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9055b69280a2fffec7d60a6fa4b8c65e') in 0.0158119 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_257.asset
-  artifactKey: Guid(56a228a87dd1a7144952487fccbe9a0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_257.asset using Guid(56a228a87dd1a7144952487fccbe9a0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a21a7c3d87fd3a0f9b3b66abc36ffb6d') in 0.0138302 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_199.asset
-  artifactKey: Guid(cc616618463ce434e8d75b5aceb3e009) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_199.asset using Guid(cc616618463ce434e8d75b5aceb3e009) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '08f9eae662c17e42d36c3d3d81ede2ed') in 0.0142584 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_169.asset
-  artifactKey: Guid(09f8e6896c5782a4f963414643197506) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_169.asset using Guid(09f8e6896c5782a4f963414643197506) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'eb3192ee5a54102696743015a84c27ed') in 0.016949 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_197.asset
-  artifactKey: Guid(5745f5829c3cb2e4f855ab1f1e9d54d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_197.asset using Guid(5745f5829c3cb2e4f855ab1f1e9d54d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6816f00d0920ae7d5ddc25e814076911') in 0.0127444 seconds
+  Time since last request: 0.000024 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_03.png
+  artifactKey: Guid(cf98872b6c63a19479d25bde98131f65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_03.png using Guid(cf98872b6c63a19479d25bde98131f65) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b7807e0500c2ce43aa468d90082d4621') in 0.0179396 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000064 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_151.asset
-  artifactKey: Guid(91f556537a92b044fb1176e51f09f971) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_151.asset using Guid(91f556537a92b044fb1176e51f09f971) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '97abe1636e6c710d59e8f4c87096894e') in 0.0064554 seconds
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_02.png
+  artifactKey: Guid(8247bb3b1476dd544ab0437fc1af5692) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_02.png using Guid(8247bb3b1476dd544ab0437fc1af5692) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f86393f0607549b0d384eaf10cbcfd8e') in 0.0150893 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_153.asset
-  artifactKey: Guid(42b5f830dc98f82499931f37e7f1eab8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_153.asset using Guid(42b5f830dc98f82499931f37e7f1eab8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2fc78b0d007a0ebb241480f232ba5430') in 0.0127282 seconds
+  Time since last request: 10.990530 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Medallions
+  artifactKey: Guid(2469aa2c89d99704c9918e5a264e6878) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Medallions using Guid(2469aa2c89d99704c9918e5a264e6878) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6a3b22ffb7d54648c46a8140af3d62f2') in 0.0009175 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.713301 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Emblems
+  artifactKey: Guid(413cb88e58f9d97419425a71ef312380) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Emblems using Guid(413cb88e58f9d97419425a71ef312380) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'afe7d04ecdeea862dd46a8bc23451337') in 0.0054772 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.561466 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Emblems/Bases
+  artifactKey: Guid(f184008347fd8c847bf1561f0cf954d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Emblems/Bases using Guid(f184008347fd8c847bf1561f0cf954d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9a80252047cae2a1ae1d91e476ec3413') in 0.000583 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.055493 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Emblems/Bases/Base A.png
+  artifactKey: Guid(b2c7d5e5ba22d324fba3cfffe19bcd63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Emblems/Bases/Base A.png using Guid(b2c7d5e5ba22d324fba3cfffe19bcd63) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '365e4cc597f183344aa7ce578a1586db') in 0.0154733 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_184.asset
-  artifactKey: Guid(80bd58f0159415c41a09adbbcb4442b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_184.asset using Guid(80bd58f0159415c41a09adbbcb4442b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd6e2902fe7bfccd6ede2e5c5f0023eb1') in 0.0130152 seconds
+  Time since last request: 5.985943 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck B
+  artifactKey: Guid(5f8d20e0cbebfee4c99e030576f0c93f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck B using Guid(5f8d20e0cbebfee4c99e030576f0c93f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '203bc60d735a1983c56cc4a4d935daf6') in 0.0008786 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.038991 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck B/Cards-Deck-B_01.png
+  artifactKey: Guid(10ca3525e08dd11459c27dc2b9af9d4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck B/Cards-Deck-B_01.png using Guid(10ca3525e08dd11459c27dc2b9af9d4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f1f53dc8de695fdacb147124d3724b18') in 0.0152497 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_147.asset
-  artifactKey: Guid(5e91b9d87dbbb9a418767a7f5596e6cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_147.asset using Guid(5e91b9d87dbbb9a418767a7f5596e6cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5bad28caf6fdf6acd9ef02dc01a2bbab') in 0.0140352 seconds
+  Time since last request: 0.000027 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck B/Cards-Deck-B_05.png
+  artifactKey: Guid(f3a3ea36e66392d49bc352c18ef0eca8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck B/Cards-Deck-B_05.png using Guid(f3a3ea36e66392d49bc352c18ef0eca8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bbb6c2259832df944c4e04ce64cb4188') in 0.0125856 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_253.asset
-  artifactKey: Guid(d0ad955615dd4b440934317b8a4a2814) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_253.asset using Guid(d0ad955615dd4b440934317b8a4a2814) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0f8711d0fa5114f9b0f7d4dbd8f8bd54') in 0.0132369 seconds
+  Time since last request: 0.000038 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck B/Cards-Deck-B_09.png
+  artifactKey: Guid(96cfe677abce00943b10f90589e86a0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck B/Cards-Deck-B_09.png using Guid(96cfe677abce00943b10f90589e86a0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bddec2e25a1b7c5e50398c82cb10d671') in 0.008738 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_157.asset
-  artifactKey: Guid(c3e77f1e9d525804d96b44ff2435b5e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_157.asset using Guid(c3e77f1e9d525804d96b44ff2435b5e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '01db76f684d56e41e18bc5b1e64a31c6') in 0.0086666 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  Time since last request: 7.679865 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck A
+  artifactKey: Guid(9b52684a911b2fc4ca9990ff8e235baa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck A using Guid(9b52684a911b2fc4ca9990ff8e235baa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '74b57f65a19dbc94f17ca282c07d2361') in 0.0011834 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_211.asset
-  artifactKey: Guid(3cdcc8627d5d53c48815f48c26f46f3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_211.asset using Guid(3cdcc8627d5d53c48815f48c26f46f3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '22a4c6ffd90b251b1f4e70bd46f2c567') in 0.0128551 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_216.asset
-  artifactKey: Guid(472eb42215257dd4598ce5483bd7f743) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_216.asset using Guid(472eb42215257dd4598ce5483bd7f743) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'ef246fa2aef8cb14a7b68c0fd1a1288d') in 0.0128713 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_171.asset
-  artifactKey: Guid(27bcfc1580d61bd46898ff7872119eca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_171.asset using Guid(27bcfc1580d61bd46898ff7872119eca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7f2850951cb7f25cf5f0cfdcfdbe51ac') in 0.0136062 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_210.asset
-  artifactKey: Guid(53b4403a80428964ca8531b8115f74f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_210.asset using Guid(53b4403a80428964ca8531b8115f74f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0a5b6bd2d56575c6faee64ddfd257a6e') in 0.0149226 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_196.asset
-  artifactKey: Guid(b5d6bbe6b94f18f42be822a4623d00b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_196.asset using Guid(b5d6bbe6b94f18f42be822a4623d00b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e800eaecff3badd57382d78806193031') in 0.012323 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_223.asset
-  artifactKey: Guid(5063b65af51fa684bbb7697dfe36b5fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_223.asset using Guid(5063b65af51fa684bbb7697dfe36b5fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9937aa339f08016b07fbbb10fdddaf7b') in 0.0123732 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_229.asset
-  artifactKey: Guid(27461ee93a3156342b227f2577d1583a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_229.asset using Guid(27461ee93a3156342b227f2577d1583a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4f8462feecf45d28c949e84f92dee41e') in 0.0120441 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_237.asset
-  artifactKey: Guid(5e47cf3201f77c1449e1b786a2695885) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_237.asset using Guid(5e47cf3201f77c1449e1b786a2695885) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cabebace7bcb9930456aad77867f8b24') in 0.0137153 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_241.asset
-  artifactKey: Guid(b870944e4f434be48881fe51ce99eebe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_241.asset using Guid(b870944e4f434be48881fe51ce99eebe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e686f663da34f6edeb09dae404bf9de6') in 0.0126991 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_143.asset
-  artifactKey: Guid(7f48482e8ad74844da28d670c9c408f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_143.asset using Guid(7f48482e8ad74844da28d670c9c408f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1fa0d84a1035e056ce63a87385416fad') in 0.0069546 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_240.asset
-  artifactKey: Guid(c98d55a375cfa114799dc25b0361c903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_240.asset using Guid(c98d55a375cfa114799dc25b0361c903) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5384682a8029eb9ce5942a7d488b318b') in 0.0129128 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_231.asset
-  artifactKey: Guid(f95d726ba2687da47bf150c8fc88386e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_231.asset using Guid(f95d726ba2687da47bf150c8fc88386e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd93e94429c97eade62e065e9888d470e') in 0.0139727 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_225.asset
-  artifactKey: Guid(27c6ba4a354c6064b84f70173936d369) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_225.asset using Guid(27c6ba4a354c6064b84f70173936d369) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '376d5b0016535ce14fc94c9959e43a14') in 0.0147792 seconds
+  Time since last request: 0.039149 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck A/Cards-Deck-A_01.png
+  artifactKey: Guid(6abb7fc10cf04cb4ca2088d558eef69a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck A/Cards-Deck-A_01.png using Guid(6abb7fc10cf04cb4ca2088d558eef69a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '841e02a00d3d8f3f5dbd01ec76c9a12a') in 0.0152187 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000025 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_226.asset
-  artifactKey: Guid(71bece81336dbd144b53947d4df5bef2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_226.asset using Guid(71bece81336dbd144b53947d4df5bef2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '640b2d720b2c1d676978b1ac20cd40e4') in 0.0146884 seconds
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck A/Cards-Deck-A_05.png
+  artifactKey: Guid(1d1c8bd0dc9e0f9449e1e730723e1e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck A/Cards-Deck-A_05.png using Guid(1d1c8bd0dc9e0f9449e1e730723e1e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'db3a6f558770f3c829ea8e997e879434') in 0.0131301 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_256.asset
-  artifactKey: Guid(bbc85bb9cb514184782fd57de1565988) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_256.asset using Guid(bbc85bb9cb514184782fd57de1565988) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'fe5295b9d3cb5c7de87844bfdec6533e') in 0.0133468 seconds
+  Time since last request: 0.000033 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck A/Cards-Deck-A_09.png
+  artifactKey: Guid(a6515d69e3276b045ae3cb4622ed9dae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck A/Cards-Deck-A_09.png using Guid(a6515d69e3276b045ae3cb4622ed9dae) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd079e42b030694009e384da4362bd631') in 0.0079722 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_137.asset
-  artifactKey: Guid(6345475f4865b314f96b7dd29a1d40f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_137.asset using Guid(6345475f4865b314f96b7dd29a1d40f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '30ea9097c56268976dc11cc0b92ef089') in 0.0065835 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_64.asset
-  artifactKey: Guid(a3810db4f517ae84789d64abdbeec994) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_64.asset using Guid(a3810db4f517ae84789d64abdbeec994) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '372e6a7271d2698a0f6aafa2db002369') in 0.0119531 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_180.asset
-  artifactKey: Guid(5fc8fa3b2be56224ebf07281e4e54023) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_180.asset using Guid(5fc8fa3b2be56224ebf07281e4e54023) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1729399f5c7b8f8478059630095c3638') in 0.0111526 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_183.asset
-  artifactKey: Guid(1243c004ccaeeda4d8faf2e38f0b6e44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_183.asset using Guid(1243c004ccaeeda4d8faf2e38f0b6e44) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd0fd18af0bfd623b23b473a02956e710') in 0.0129743 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_106.asset
-  artifactKey: Guid(2212087e6b0b1764090e5e23676be7f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_106.asset using Guid(2212087e6b0b1764090e5e23676be7f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0540f5452b79d2662024749ab31afa25') in 0.0131817 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_200.asset
-  artifactKey: Guid(e4f1a619c2006454ab80dd18d98209a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_200.asset using Guid(e4f1a619c2006454ab80dd18d98209a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a53d332b0e057d562315327c9b5f14c7') in 0.011735 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_105.asset
-  artifactKey: Guid(06daad05e5667884ca2d2b2d407550dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_105.asset using Guid(06daad05e5667884ca2d2b2d407550dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8a6c705b6f3103f325e77c6e572bb12f') in 0.0127366 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_214.asset
-  artifactKey: Guid(6a3a82e23c93c25438f7e8eda49d92e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_214.asset using Guid(6a3a82e23c93c25438f7e8eda49d92e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '00f432a1e2edd52122739a8ccae0fedd') in 0.0130046 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_156.asset
-  artifactKey: Guid(81c1917160ad0c34d8d37e81c871eaf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_156.asset using Guid(81c1917160ad0c34d8d37e81c871eaf0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6b4f43fb3382103a193d11afc517b63f') in 0.0108228 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_181.asset
-  artifactKey: Guid(6ded67c02faeac9498b15f8ca038f0e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_181.asset using Guid(6ded67c02faeac9498b15f8ca038f0e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '08411b9886177fa7dc25fc1263c032c8') in 0.0414318 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_208.asset
-  artifactKey: Guid(4d85a58ef86d626469ca72204423316f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_208.asset using Guid(4d85a58ef86d626469ca72204423316f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5b3e7e4d5d7a93c17b37c9e47d7b7a11') in 0.0354066 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000134 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_220.asset
-  artifactKey: Guid(3a94542c2ec15514c9f569f0c13fa0b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_220.asset using Guid(3a94542c2ec15514c9f569f0c13fa0b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c8962693c0eb7f43711bcd800a26e46d') in 0.021807 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/RPGW_Harbor/Harbor_198.asset
-  artifactKey: Guid(ce60dcd8a13184c4286207e1367d9af1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_Harbor/Harbor_198.asset using Guid(ce60dcd8a13184c4286207e1367d9af1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1a4e97b0e9817a96e687ff36fb169974') in 0.0273714 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.526954 seconds.
-  path: Assets/Environments/RPGW_SL_v2.0/Sliced
-  artifactKey: Guid(22d3581b50ad8604ba67aadc1820f551) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_SL_v2.0/Sliced using Guid(22d3581b50ad8604ba67aadc1820f551) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '09590afa84b3e3080e00a06db14716e4') in 0.0005456 seconds
+  Time since last request: 3.052498 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck C
+  artifactKey: Guid(d9a6e6c825282aa428c886c863500d5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck C using Guid(d9a6e6c825282aa428c886c863500d5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd425fd7f5f3ddc34c86ed0304acb3ac4') in 0.0005767 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 495.273407 seconds.
-  path: Assets/Environments/FL_Houses/Sliced/Exterriors/Walls/FL_Houses_ext_Walls.png
-  artifactKey: Guid(e65c5df25eae8754c88f017e476632d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/FL_Houses/Sliced/Exterriors/Walls/FL_Houses_ext_Walls.png using Guid(e65c5df25eae8754c88f017e476632d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '93ccd3189f1d5177fb70e5ef61aee4b5') in 0.545445 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 738
+  Time since last request: 0.036190 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck C/Cards-Deck-C_01.png
+  artifactKey: Guid(ce8b764d734945441ab0630942f5e4ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck C/Cards-Deck-C_01.png using Guid(ce8b764d734945441ab0630942f5e4ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8078a6dc63c06dfda38aa05a6eaa795d') in 0.0121309 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 369.882714 seconds.
-  path: Assets/Environments/FL_Houses/Sliced/Exterriors/Walls/FL_Houses_ext_Walls.png
-  artifactKey: Guid(e65c5df25eae8754c88f017e476632d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/FL_Houses/Sliced/Exterriors/Walls/FL_Houses_ext_Walls.png using Guid(e65c5df25eae8754c88f017e476632d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '72284601a918f73c8bf9ee262a31570c') in 0.1517406 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 44
+  Time since last request: 0.000023 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck C/Cards-Deck-C_05.png
+  artifactKey: Guid(bdffb69391c1bc646a2a98ef43c43326) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck C/Cards-Deck-C_05.png using Guid(bdffb69391c1bc646a2a98ef43c43326) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f7338d3e7d0b6b8087c20d9b7efb41fb') in 0.0126476 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 162.648358 seconds.
-  path: Assets/Environments/FL_Houses/Sliced/Exterriors/Walls/FL_Houses_ext_Walls.png
-  artifactKey: Guid(e65c5df25eae8754c88f017e476632d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/FL_Houses/Sliced/Exterriors/Walls/FL_Houses_ext_Walls.png using Guid(e65c5df25eae8754c88f017e476632d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '09c897e236ef31361c13422226193d07') in 0.1380112 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 64
+  Time since last request: 0.000028 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck C/Cards-Deck-C_10.png
+  artifactKey: Guid(954773dba7f8e2241872df4c0f7db1f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck C/Cards-Deck-C_10.png using Guid(954773dba7f8e2241872df4c0f7db1f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4ed813ce6f83f2e9ea6baa6f506cceb4') in 0.0095142 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 789.722928 seconds.
-  path: Assets/Environments/FL_Houses/Sliced/Exterriors/Walls/FL_Houses_ext_Walls.png
-  artifactKey: Guid(e65c5df25eae8754c88f017e476632d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/FL_Houses/Sliced/Exterriors/Walls/FL_Houses_ext_Walls.png using Guid(e65c5df25eae8754c88f017e476632d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b1f4cc8355d94407cea57844173bf261') in 0.1688616 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 66
-
-========================================================================
-Received Import Request.
-  Time since last request: 958.046055 seconds.
-  path: Assets/Environments/FL_Houses/Sliced/Exterriors/Walls/FL_Houses_ext_Walls.png
-  artifactKey: Guid(e65c5df25eae8754c88f017e476632d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/FL_Houses/Sliced/Exterriors/Walls/FL_Houses_ext_Walls.png using Guid(e65c5df25eae8754c88f017e476632d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '9b1ec1a67aaed76d6502ef8d54b9b60c') in 0.1120304 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 68
-
-========================================================================
-Received Import Request.
-  Time since last request: 3456.536554 seconds.
-  path: Assets/Environments/RPGW_AncientForest/Scenes
-  artifactKey: Guid(1dad94783a364f24890f48ecc7ed5ec2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_AncientForest/Scenes using Guid(1dad94783a364f24890f48ecc7ed5ec2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '37fb455397d14926a7d64195b62e2ad1') in 0.0065847 seconds
+  Time since last request: 4.521921 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck D
+  artifactKey: Guid(6a5e561f002ec7243b6ad7833690bc51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck D using Guid(6a5e561f002ec7243b6ad7833690bc51) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '75abd66bf1623bb44bc4c033950cee6e') in 0.0006183 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.415900 seconds.
-  path: Assets/Environments/RPGW_AncientForest/Sliced/Decorative.png
-  artifactKey: Guid(090f31176a604e54abd2b39895cb40dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/RPGW_AncientForest/Sliced/Decorative.png using Guid(090f31176a604e54abd2b39895cb40dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f8e2b80f0b925783f1c1733cd5476d8d') in 1.3564776 seconds
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1609
+  Time since last request: 0.615564 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck D/Cards-Deck-D_01.png
+  artifactKey: Guid(7f2e3fb5564b13049b106d3cf77ddc47) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck D/Cards-Deck-D_01.png using Guid(7f2e3fb5564b13049b106d3cf77ddc47) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '35b7c723d068a0038973c961e8b7d1b7') in 0.0125487 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck D/Cards-Deck-D_05.png
+  artifactKey: Guid(6f26df234c544ce419217aa8743e2ea2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck D/Cards-Deck-D_05.png using Guid(6f26df234c544ce419217aa8743e2ea2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '7f32d510d891ba0ea788c45780eb5e63') in 0.0130622 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck D/Cards-Deck-D_11.png
+  artifactKey: Guid(be36474c1681a644f8b8ce3c449f337f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck D/Cards-Deck-D_11.png using Guid(be36474c1681a644f8b8ce3c449f337f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e68526e821c8e478a39b716f53ce86bf') in 0.0083415 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.916138 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck E
+  artifactKey: Guid(413ba37d350b9614283696777d8aa8d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck E using Guid(413ba37d350b9614283696777d8aa8d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f5460863374ba4593d831bf7d5ea6340') in 0.0008159 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.027947 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck E/Cards-Deck-E_01.png
+  artifactKey: Guid(0ea733acb657fd9478a6ae22426113c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck E/Cards-Deck-E_01.png using Guid(0ea733acb657fd9478a6ae22426113c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '8a52655f84fa58b22e69284a3eba6097') in 0.0125876 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck E/Cards-Deck-E_05.png
+  artifactKey: Guid(cb3563a0fb50c3642a649a02812f7440) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck E/Cards-Deck-E_05.png using Guid(cb3563a0fb50c3642a649a02812f7440) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0e546320cb8ff402929934e0b722c617') in 0.0135467 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck E/Cards-Deck-E_11.png
+  artifactKey: Guid(112cac1e045985446bee783b570b4184) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck E/Cards-Deck-E_11.png using Guid(112cac1e045985446bee783b570b4184) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'c42c7eee662d1b92f9d913cd8cb869a3') in 0.016237 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.582646 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck F
+  artifactKey: Guid(66ac7332101d4ab40a499e4f14bfba1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck F using Guid(66ac7332101d4ab40a499e4f14bfba1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1db1053126eeaa9a95557f307b368a38') in 0.0054861 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.035058 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck F/Cards-Deck-F_01.png
+  artifactKey: Guid(3aee47c9b1582bb4b9064550fc039b32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck F/Cards-Deck-F_01.png using Guid(3aee47c9b1582bb4b9064550fc039b32) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '6baf16c079c8cd089f35b95234b91cf4') in 0.0124025 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck F/Cards-Deck-F_05.png
+  artifactKey: Guid(63e6059a212cb8a4d84ca7ec0b7b7a18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck F/Cards-Deck-F_05.png using Guid(63e6059a212cb8a4d84ca7ec0b7b7a18) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '980fab360b722145e542fd2e237401e6') in 0.0127934 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck F/Cards-Deck-F_09.png
+  artifactKey: Guid(54428a6bf41697d4fb15e5726e8292dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck F/Cards-Deck-F_09.png using Guid(54428a6bf41697d4fb15e5726e8292dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '5e5cb09c1df36d3d6e4bf764cee15a49') in 0.0121513 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

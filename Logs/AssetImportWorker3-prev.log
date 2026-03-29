@@ -15,7 +15,7 @@ C:/Users/viet_/projects/SecretProject
 -logFile
 Logs/AssetImportWorker3.log
 -srvPort
-53490
+62824
 -job-worker-count
 7
 -background-job-worker-count
@@ -59,12 +59,12 @@ C:/Users/viet_/projects/SecretProject
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [38832]  Target information:
+Player connection [6976]  Target information:
 
-Player connection [38832]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 3158392080 [EditorId] 3158392080 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [6976]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 2788872384 [EditorId] 2788872384 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [38832] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [38832] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [6976] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [6976] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -76,7 +76,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 244.33 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 221.01 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 6000.0.36f1 (9fe3b5f71dbb)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Resources/UnitySubsystems
@@ -92,43 +92,43 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56320
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56800
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.0.36f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.102487 seconds.
-- Loaded All Assemblies, in  7.352 seconds
+Registered in 0.122317 seconds.
+- Loaded All Assemblies, in  7.606 seconds
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.277 seconds
-Domain Reload Profiling: 7628ms
-	BeginReloadAssembly (6751ms)
+- Finished resetting the current domain, in  0.332 seconds
+Domain Reload Profiling: 7937ms
+	BeginReloadAssembly (6911ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (169ms)
-	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (140ms)
-	LoadAllAssembliesAndSetupDomain (282ms)
-		LoadAssemblies (6748ms)
+		CreateAndSetChildDomain (2ms)
+	RebuildCommonClasses (203ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (174ms)
+	LoadAllAssembliesAndSetupDomain (305ms)
+		LoadAssemblies (6904ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (279ms)
-			TypeCache.Refresh (278ms)
-				TypeCache.ScanAssembly (267ms)
+		AnalyzeDomain (301ms)
+			TypeCache.Refresh (300ms)
+				TypeCache.ScanAssembly (286ms)
 			BuildScriptInfoCaches (0ms)
 			ResolveRequiredComponents (0ms)
-	FinalizeReload (278ms)
+	FinalizeReload (332ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (240ms)
+		SetupLoadedEditorAssemblies (272ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (18ms)
+			InitializePlatformSupportModulesInManaged (19ms)
 			SetLoadedEditorAssemblies (3ms)
-			BeforeProcessingInitializeOnLoad (41ms)
-			ProcessInitializeOnLoadAttributes (119ms)
-			ProcessInitializeOnLoadMethodAttributes (58ms)
+			BeforeProcessingInitializeOnLoad (44ms)
+			ProcessInitializeOnLoadAttributes (143ms)
+			ProcessInitializeOnLoadMethodAttributes (64ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -137,50 +137,250 @@ Domain Reload Profiling: 7628ms
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  7.792 seconds
-Refreshing native plugins compatible for Editor in 1.43 ms, found 4 plugins.
+- Loaded All Assemblies, in  8.563 seconds
+Refreshing native plugins compatible for Editor in 1.39 ms, found 4 plugins.
 Native extension for WindowsStandalone target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.918 seconds
-Domain Reload Profiling: 8707ms
-	BeginReloadAssembly (149ms)
+- Finished resetting the current domain, in  0.916 seconds
+Domain Reload Profiling: 9466ms
+	BeginReloadAssembly (136ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (5ms)
+		DisableScriptedObjects (6ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (27ms)
-	RebuildCommonClasses (32ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (34ms)
-	LoadAllAssembliesAndSetupDomain (7565ms)
-		LoadAssemblies (7261ms)
+	RebuildCommonClasses (27ms)
+	RebuildNativeTypeToScriptingClass (9ms)
+	initialDomainReloadingComplete (33ms)
+	LoadAllAssembliesAndSetupDomain (8344ms)
+		LoadAssemblies (7963ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (395ms)
-			TypeCache.Refresh (337ms)
-				TypeCache.ScanAssembly (323ms)
-			BuildScriptInfoCaches (46ms)
-			ResolveRequiredComponents (9ms)
-	FinalizeReload (919ms)
+		AnalyzeDomain (458ms)
+			TypeCache.Refresh (398ms)
+				TypeCache.ScanAssembly (383ms)
+			BuildScriptInfoCaches (48ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (917ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (603ms)
+		SetupLoadedEditorAssemblies (584ms)
 			LogAssemblyErrors (0ms)
 			InitializePlatformSupportModulesInManaged (2ms)
-			SetLoadedEditorAssemblies (5ms)
-			BeforeProcessingInitializeOnLoad (95ms)
-			ProcessInitializeOnLoadAttributes (376ms)
-			ProcessInitializeOnLoadMethodAttributes (122ms)
-			AfterProcessingInitializeOnLoad (4ms)
+			SetLoadedEditorAssemblies (4ms)
+			BeforeProcessingInitializeOnLoad (92ms)
+			ProcessInitializeOnLoadAttributes (361ms)
+			ProcessInitializeOnLoadMethodAttributes (121ms)
+			AfterProcessingInitializeOnLoad (5ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
 		AwakeInstancesAfterBackupRestoration (5ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-Refreshing native plugins compatible for Editor in 2.12 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 2.14 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 220 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 6678 unused Assets / (4.7 MB). Loaded Objects now: 7374.
-Memory consumption went from 186.4 MB to 181.8 MB.
-Total: 10.088600 ms (FindLiveObjects: 0.860500 ms CreateObjectMapping: 1.163300 ms MarkObjects: 5.151300 ms  DeleteObjects: 2.912500 ms)
+Memory consumption went from 184.5 MB to 179.8 MB.
+Total: 15.980800 ms (FindLiveObjects: 0.905900 ms CreateObjectMapping: 1.099100 ms MarkObjects: 10.670800 ms  DeleteObjects: 3.304200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1151075.857340 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_01.png
+  artifactKey: Guid(0323bcdd05237ea448138932ddd016b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_01.png using Guid(0323bcdd05237ea448138932ddd016b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '555488aa1030a677528bbfb12e008cc3') in 0.1096444 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_12.png
+  artifactKey: Guid(8b5e87b01a260754bac7c54dcb4a7210) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_12.png using Guid(8b5e87b01a260754bac7c54dcb4a7210) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'bdc68b1b4716efed3181d5e33d2d2944') in 0.0146506 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_08.png
+  artifactKey: Guid(f63ccc4ef82236a4dae0e5fbb920366a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_08.png using Guid(f63ccc4ef82236a4dae0e5fbb920366a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '2ccfafd9fc573b44090be23261cb87d7') in 0.0175771 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_07.png
+  artifactKey: Guid(a0810c3d32e36b1429ce693905df2388) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_07.png using Guid(a0810c3d32e36b1429ce693905df2388) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'cc376a7566d680cdfa203052e792a33e') in 0.0185038 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_05.png
+  artifactKey: Guid(156d9177493b1ad4e96d706121495f09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_05.png using Guid(156d9177493b1ad4e96d706121495f09) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'aad28bf0feb7a680a203529da785e14e') in 0.0171186 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_04.png
+  artifactKey: Guid(2045e12f2be14b946a06d99b4e8ec51f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Panels/Panels_04.png using Guid(2045e12f2be14b946a06d99b4e8ec51f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b69d04c484e4d3970659688308600c98') in 0.0181678 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.369793 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Emblems/Bases/Base C.png
+  artifactKey: Guid(1647561c67e768341b9bf7bcee9874db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Emblems/Bases/Base C.png using Guid(1647561c67e768341b9bf7bcee9874db) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '66b1fa0efa228b7d9960442d38cb537f') in 0.0189327 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.050609 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck B/Cards-Deck-B_03.png
+  artifactKey: Guid(3ad576297b198df44a38611a3dd65fab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck B/Cards-Deck-B_03.png using Guid(3ad576297b198df44a38611a3dd65fab) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a00f63d9f9db7ba7fa3d1731460fb66c') in 0.0157102 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck B/Cards-Deck-B_07.png
+  artifactKey: Guid(08de5a75a595c33419d6fbdd0d3f1713) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck B/Cards-Deck-B_07.png using Guid(08de5a75a595c33419d6fbdd0d3f1713) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'f8e7b115b3b06e4d44bc247c7bd3da12') in 0.0149622 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck B/Cards-Deck-B_11.png
+  artifactKey: Guid(c6e3f09510b118e4e86f9092d607a1fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck B/Cards-Deck-B_11.png using Guid(c6e3f09510b118e4e86f9092d607a1fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b665b0bae4bae19d2a45a095b4b8c760') in 0.0152277 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.735127 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck A/Cards-Deck-A_03.png
+  artifactKey: Guid(92920ec2a4dd98b4582874ea9fb71c6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck A/Cards-Deck-A_03.png using Guid(92920ec2a4dd98b4582874ea9fb71c6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '4ac026b6bdab285b62d61fdc8ab0403a') in 0.0160851 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck A/Cards-Deck-A_07.png
+  artifactKey: Guid(86c3925221235ab4fa6165a8e8564ba5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck A/Cards-Deck-A_07.png using Guid(86c3925221235ab4fa6165a8e8564ba5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '0d31f6a5d75dab5271fd8e8e95f3fd6c') in 0.0134942 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck A/Cards-Deck-A_12.png
+  artifactKey: Guid(66a9ddc57d41c3747b778f7f5e4ebc09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck A/Cards-Deck-A_12.png using Guid(66a9ddc57d41c3747b778f7f5e4ebc09) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '25d6297e9eb9239107ff8f52150f7769') in 0.0137098 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.113187 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck C/Cards-Deck-C_03.png
+  artifactKey: Guid(c012ec36bc37fbe4a8b6015c745bd186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck C/Cards-Deck-C_03.png using Guid(c012ec36bc37fbe4a8b6015c745bd186) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'b13ea9d973756f0afab5a032ad510034') in 0.011396 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck C/Cards-Deck-C_07.png
+  artifactKey: Guid(dd99200d639ce9d4ea3d4dfd67ce73dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck C/Cards-Deck-C_07.png using Guid(dd99200d639ce9d4ea3d4dfd67ce73dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'e6de17ab1d0b5bd04a6998352b2c16ee') in 0.0124384 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck C/Cards-Deck-C_12.png
+  artifactKey: Guid(dd784bc4aa83b234184496ca5a5709d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck C/Cards-Deck-C_12.png using Guid(dd784bc4aa83b234184496ca5a5709d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '16a7f5dc07250bdbf9b486b908b0c4e9') in 0.0134513 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.161688 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck D/Cards-Deck-D_03.png
+  artifactKey: Guid(a95e012ad26b04349b27118e937b2dd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck D/Cards-Deck-D_03.png using Guid(a95e012ad26b04349b27118e937b2dd0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a892b4aa585ebee70e4b35be86d0f65d') in 0.011371 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck D/Cards-Deck-D_07.png
+  artifactKey: Guid(3004a6b25fa607d4d9bcb513b42eb676) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck D/Cards-Deck-D_07.png using Guid(3004a6b25fa607d4d9bcb513b42eb676) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a3e09b85fce9530bb3d4e9a569c96df7') in 0.0126536 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck D/Cards-Deck-D_12.png
+  artifactKey: Guid(bc380c80e30f95a4e96f2952ed6b6ce8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck D/Cards-Deck-D_12.png using Guid(bc380c80e30f95a4e96f2952ed6b6ce8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '021323ef2bb507ffb7a567a070539546') in 0.0092612 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.974393 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck E/Cards-Deck-E_03.png
+  artifactKey: Guid(fe76b2481348c21498e04bd0056a191c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck E/Cards-Deck-E_03.png using Guid(fe76b2481348c21498e04bd0056a191c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '99415021667ab63bfffca0c0726d9bb2') in 0.011375 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck E/Cards-Deck-E_07.png
+  artifactKey: Guid(baa0b6f5fcfad6a4b85b86214068b952) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck E/Cards-Deck-E_07.png using Guid(baa0b6f5fcfad6a4b85b86214068b952) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '009cf94f2d9f2f9eecea232d22cbc97d') in 0.0133068 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck E/Cards-Deck-E_09.png
+  artifactKey: Guid(a489ab8979b14444482f38e44193103f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck E/Cards-Deck-E_09.png using Guid(a489ab8979b14444482f38e44193103f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '1a352e55d346d949e5661fec8a5ee2e5') in 0.0083373 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.660070 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck F/Cards-Deck-F_03.png
+  artifactKey: Guid(7d6c013ebed7a5748be729c95688bd1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck F/Cards-Deck-F_03.png using Guid(7d6c013ebed7a5748be729c95688bd1c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a55e269353e8f01f2627102219ca4956') in 0.0109914 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck F/Cards-Deck-F_07.png
+  artifactKey: Guid(b08332287adf2ef40b6c76af14100466) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck F/Cards-Deck-F_07.png using Guid(b08332287adf2ef40b6c76af14100466) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'd0b4bf8b3c988f6d618a1dd042865a11') in 0.0114599 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck F/Cards-Deck-F_11.png
+  artifactKey: Guid(36c5bdc741f96314bb0392f4b2af8c2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Pixel Quest UI EXTENDED/Sprites/Cards/Deck F/Cards-Deck-F_11.png using Guid(36c5bdc741f96314bb0392f4b2af8c2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: 'a236e2d99afb394dcdcd42e3b20de40a') in 0.008532 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server

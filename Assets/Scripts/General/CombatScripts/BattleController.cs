@@ -41,6 +41,13 @@ public class BattleController : MonoBehaviour
     private int currentTurn = 1;
     private Coroutine enemyFollowCoroutine;
     public AudioSource walkingAudio;
+    public GameObject victoryAndSubquestBox;
+    private float cameraSpeed = 10f;
+    public float minX;
+    public float maxX;
+    public float minY;
+    public float maxY;
+
     void Awake()
     {
         disabledCharacters = new List<GameObject>();
@@ -88,8 +95,30 @@ public class BattleController : MonoBehaviour
                 EnableHover();
                 hoverableEnabled = true;
             }
+
+            //Allow camera movement
+            if (characterSelected == null && enemySelected == null)
+            {
+                // Movement input
+                float moveX = Input.GetAxisRaw("Horizontal");
+                float moveY = Input.GetAxisRaw("Vertical");
+
+                Vector3 move = new Vector3(moveX, moveY, 0f).normalized;
+                Vector3 newPosition = transform.position + move * moveSpeed * Time.deltaTime;
+
+                // Camera size
+                float camHeight = cam.orthographicSize;
+                float camWidth = camHeight * cam.aspect;
+
+                // Clamp position
+                newPosition.x = Mathf.Clamp(newPosition.x, minX + camWidth, maxX - camWidth);
+                newPosition.y = Mathf.Clamp(newPosition.y, minY + camHeight, maxY - camHeight);
+
+                transform.position = new Vector3(newPosition.x, newPosition.y, transform.position.z);
+            }
             if (!characterAssistMenuScript.active && !characterMenuScript.active && !attackPreviewScript.active && !inventoryMenuScript.active && !isEnemyTurn && !characterInfoScript.active)
             {
+
                 if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Q))
                 {
                     if (characterSelected)
@@ -476,5 +505,11 @@ public class BattleController : MonoBehaviour
         {
             character.gameObject.GetComponent<PlayerController>().hoverable = true;
         }
+    }
+    public void StartCombat()
+    {
+        introFinished = true;
+        victoryAndSubquestBox.SetActive(true);
+        StartCoroutine(playerTurn());
     }
 }

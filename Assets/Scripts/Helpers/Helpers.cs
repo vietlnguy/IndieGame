@@ -221,4 +221,43 @@ public static class Helpers
         // Ensure exact final color
         image.color = targetColor;
     }
+    public static IEnumerator FlashSprite(SpriteRenderer sr, float interval, bool remain)
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            sr.enabled = true;
+            yield return new WaitForSeconds(interval);
+
+            sr.enabled = false;
+            yield return new WaitForSeconds(interval);
+        }
+        if (remain)
+        {
+            sr.enabled = true;
+        }
+        else
+        {
+            sr.enabled = false;
+        }
+    }
+    public static IEnumerator EnterCharacter(SpriteRenderer sr, float duration)
+    {
+        sr.enabled = true;
+        Color startColor = Color.black;
+        Color endColor = Color.white;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+            sr.color = Color.Lerp(startColor, endColor, t);
+            yield return null;
+        }
+
+        sr.color = endColor;
+        yield return new WaitForSeconds(1f);
+    }
+
+
 }
