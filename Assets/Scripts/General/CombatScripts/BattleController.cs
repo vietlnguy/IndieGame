@@ -47,7 +47,8 @@ public class BattleController : MonoBehaviour
     public float maxX;
     public float minY;
     public float maxY;
-
+    public bool neutralPhase;
+    
     void Awake()
     {
         disabledCharacters = new List<GameObject>();
@@ -96,28 +97,12 @@ public class BattleController : MonoBehaviour
                 hoverableEnabled = true;
             }
 
-            //Allow camera movement
-            if (characterSelected == null && enemySelected == null)
-            {
-                // Movement input
-                float moveX = Input.GetAxisRaw("Horizontal");
-                float moveY = Input.GetAxisRaw("Vertical");
-
-                Vector3 move = new Vector3(moveX, moveY, 0f).normalized;
-                Vector3 newPosition = transform.position + move * moveSpeed * Time.deltaTime;
-
-                // Camera size
-                float camHeight = cam.orthographicSize;
-                float camWidth = camHeight * cam.aspect;
-
-                // Clamp position
-                newPosition.x = Mathf.Clamp(newPosition.x, minX + camWidth, maxX - camWidth);
-                newPosition.y = Mathf.Clamp(newPosition.y, minY + camHeight, maxY - camHeight);
-
-                transform.position = new Vector3(newPosition.x, newPosition.y, transform.position.z);
-            }
             if (!characterAssistMenuScript.active && !characterMenuScript.active && !attackPreviewScript.active && !inventoryMenuScript.active && !isEnemyTurn && !characterInfoScript.active)
             {
+                if (characterSelected == null && enemySelected == null)
+                {
+                    MoveCamera();
+                }
 
                 if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Q))
                 {
@@ -135,10 +120,43 @@ public class BattleController : MonoBehaviour
         }
 
     }
+    void MoveCamera()
+    {
+        float moveX = Input.GetAxisRaw("Horizontal"); // Cleaner than KeyCode.W/A/S/D
+        float moveY = Input.GetAxisRaw("Vertical");
+
+        Vector3 moveDirection = new Vector3(moveX, moveY, 0f).normalized;
+        
+        if (moveDirection.magnitude > 0) 
+        {
+            Vector3 targetPosition = worldCamera.transform.position + moveDirection * cameraSpeed * Time.deltaTime;
+            
+            targetPosition.x = Mathf.Clamp(targetPosition.x, minX, maxX);
+            targetPosition.y = Mathf.Clamp(targetPosition.y, minY, maxY);
+
+            worldCamera.transform.position = targetPosition;
+        }
+    }
     private void HandleGameLoop()
     {
+        int ownedCharacters = 0;
+        foreach (Transform t in characters.transform)
+        {
+            if (t.gameObject.GetComponent<PlayerController>().owned)
+            {
+                ownedCharacters++;
+            }
+        }
+
         //All characters are disabled and its not the enemies turn yet. Should start enemy turn
-        if (disabledCharacters.Count == characters.transform.childCount && !isEnemyTurn)
+        if (disabledCharacters.Count == ownedCharacters && neutralPhase)
+        {
+            characterSelected = null;
+            StartCoroutine(neutralTurn());
+        }
+
+        //All characters are disabled and its not the enemies turn yet. Should start enemy turn
+        else if (disabledCharacters.Count == ownedCharacters && !isEnemyTurn)
         {
             isEnemyTurn = true;
             characterSelected = null;
@@ -185,8 +203,13 @@ public class BattleController : MonoBehaviour
         //Execute each enemy's turn
         foreach (Transform enemy in enemies.transform)
         {
+            Vector3 safeDestination = enemy.position;
+            safeDestination.x = Mathf.Clamp(safeDestination.x, minX, maxX);
+            safeDestination.y = Mathf.Clamp(safeDestination.y, minY, maxY);
+            safeDestination.z = -10f;
+            yield return StartCoroutine(Helpers.MoveTransform(worldCamera.transform, worldCamera.transform.position, safeDestination, 1f));
+
             EnemyController enemyScript = enemy.gameObject.GetComponent<EnemyController>();
-            
             pathfinder.calculateOccupiedTiles(characters, enemies);
             enemyScript.selectEnemy();
             enemyTarget = null;
@@ -451,6 +474,31 @@ public class BattleController : MonoBehaviour
         }
 
 
+    }
+    private IEnumerator neutralTurn()
+    {
+        fightScreenText.text = "Neutral Phase";
+        fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
+        yield return new WaitForSeconds(2.5f);
+        fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
+        yield return new WaitForSeconds(2f);
+
+        foreach (GameObject character in characters)
+        {
+            PlayerController characterScript = character.GetComponent<PlayerController>();
+            if (characterScript.owned)
+            {
+                Vector3 safeDestination = character.transform.position;
+                safeDestination.x = Mathf.Clamp(safeDestination.x, minX, maxX);
+                safeDestination.y = Mathf.Clamp(safeDestination.y, minY, maxY);
+                safeDestination.z = -10f;
+                yield return StartCoroutine(Helpers.MoveTransform(worldCamera.transform, worldCamera.transform.position, safeDestination, 1f));
+
+                characterScript.selectCharacter();
+                
+
+            }
+        }
     }
     private GameObject GetClosest(GameObject target, GameObject objects, List<GameObject> listOfObjects)
     {

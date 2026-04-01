@@ -454,6 +454,7 @@ public class PlayerController : MonoBehaviour
         battleController.characterSelected = gameObject;
         moveRangeCircleScript.enableMoveRange(gameObject);
         attackRangeCircleScript.enableAttackRange(gameObject);
+        effectiveAttackRangeCircleScript.enableEffectiveAttackRange(gameObject);
         if (!battleController.disabledCharacters.Contains(gameObject))
         {
             movementEnabled = true;

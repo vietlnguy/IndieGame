@@ -411,7 +411,7 @@ public class CampDialogue : MonoBehaviour
         {
             if (characterScript.knownAttacks.Count == 1) 
             {
-                newAttack = new Attack("Power Draw", "physical", 1.1f, 1.0f, 90, 0, 4, "Shoot a powerful shot at the enemy.");
+                newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, "Shoot a powerful shot at the enemy.");
                 characterScript.knownAttacks.Add(newAttack);
             }
             else if (characterScript.knownAttacks.Count == 2)

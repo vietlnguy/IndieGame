@@ -313,13 +313,14 @@ public class Chapter2 : MonoBehaviour
         GameObject mainChar = GameObject.Find("MainCharacterPrefab(Clone)");
         GameObject astrid = GameObject.Find("AstridPrefab(Clone)");
         GameObject celeste = GameObject.Find("CelestePrefab(Clone)");
-        celeste.GetComponent<SpriteRenderer>().enabled = false;
         GameObject lucas = GameObject.Find("LucasPrefab(Clone)");
-        lucas.GetComponent<SpriteRenderer>().enabled = false;
 
         //Intro sequence
         if (saveManager.loadedData.introBattleOutro == "Intro") 
         {
+            lucas.GetComponent<SpriteRenderer>().enabled = false;
+            celeste.GetComponent<SpriteRenderer>().enabled = false;
+
             //Fade Out blackwhite screen
             yield return StartCoroutine(Helpers.FadeOutCanvasGroup(blackScreen, 1f));
 
@@ -505,6 +506,9 @@ public class Chapter2 : MonoBehaviour
         {
             astrid.transform.position = new Vector3(-20.5f, -12.7f, 0f);
             mainChar.transform.position = new Vector3(-18.5f, -11f, 0f);
+            lucas.transform.position =  new Vector3(-1.5f, -16.5f, 0f);
+            celeste.transform.position = new Vector3(1f, -18f, 0f);
+
         }
 
         //Spawn enemies

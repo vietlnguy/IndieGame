@@ -38,12 +38,19 @@ public class EffectiveAttackRangeCircle : MonoBehaviour
     public void enableEffectiveAttackRange(GameObject character)
     {
 
-        gameObject.transform.position = battleController.enemySelected.transform.position;
+        gameObject.transform.position = character.transform.position;
         float radius;
         circleCollider.enabled = true;
 
-        radius = character.GetComponent<EnemyController>().attackRange + 0.9f * character.GetComponent<EnemyController>().moveRange;
-        
+        if (character.GetComponent<EnemyController>() != null)
+        {
+            radius = character.GetComponent<EnemyController>().attackRange + 0.9f * character.GetComponent<EnemyController>().moveRange;
+        }
+        else
+        {
+            radius = character.GetComponent<PlayerController>().attackRange + 0.9f * character.GetComponent<PlayerController>().moveRange;
+
+        }        
         DrawFilledCircle(radius);
         UpdateCollider(radius);
         active = true;
