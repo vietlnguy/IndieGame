@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public CharacterToolTip characterToolTipScript;
     public MoveRangeCircle moveRangeCircleScript;
     public AttackRangeCircle attackRangeCircleScript;
+    public EffectiveAttackRangeCircle effectiveAttackRangeCircleScript;
     public AttackPreview attackPreviewScript;
     public CharacterMenu characterMenuScript;
     public CharacterAssistMenu characterAssistMenuScript;
@@ -90,6 +91,7 @@ public class PlayerController : MonoBehaviour
         saveManager = FindFirstObjectByType<SaveManager>();
         moveRangeCircleScript = GameObject.Find("MoveRangeCircle").GetComponent<MoveRangeCircle>();
         attackRangeCircleScript = GameObject.Find("AttackRangeCircle").GetComponent<AttackRangeCircle>();
+        effectiveAttackRangeCircleScript = GameObject.Find("EffectiveAttackRangeCircle").GetComponent<EffectiveAttackRangeCircle>();        
         attackPreviewScript = GameObject.Find("AttackPreview").GetComponent<AttackPreview>();
         characterMenuScript = GameObject.Find("CharacterMenu").GetComponent<CharacterMenu>();
         characterAssistMenuScript = GameObject.Find("CharacterAssistMenu").GetComponent<CharacterAssistMenu>();

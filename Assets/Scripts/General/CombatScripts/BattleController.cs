@@ -116,6 +116,7 @@ public class BattleController : MonoBehaviour
                     }
                 }
             }
+            
             HandleGameLoop();
         }
 
@@ -483,9 +484,9 @@ public class BattleController : MonoBehaviour
         fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
         yield return new WaitForSeconds(2f);
 
-        foreach (GameObject character in characters)
+        foreach (Transform character in characters.transform)
         {
-            PlayerController characterScript = character.GetComponent<PlayerController>();
+            PlayerController characterScript = character.gameObject.GetComponent<PlayerController>();
             if (characterScript.owned)
             {
                 Vector3 safeDestination = character.transform.position;
@@ -496,6 +497,7 @@ public class BattleController : MonoBehaviour
 
                 characterScript.selectCharacter();
                 
+
 
             }
         }
@@ -558,6 +560,11 @@ public class BattleController : MonoBehaviour
     {
         introFinished = true;
         victoryAndSubquestBox.SetActive(true);
-        StartCoroutine(playerTurn());
+        foreach (Transform enemy in enemies.transform)
+        {
+            disabledEnemies.Add(enemy.gameObject);
+        }
+        isEnemyTurn = true;
+
     }
 }
