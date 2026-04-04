@@ -37,6 +37,9 @@ public class Character
     public List<Subquest> subquests;
     public bool owned;
     public bool ranged;
+    public bool roams;
+    public bool support;
+    
     public List<Item> inventory;
 
     [SerializeReference]
@@ -44,6 +47,7 @@ public class Character
     public Equipment weaponEquiped;
     public Equipment armorEquiped;
     public Equipment accessoryEquiped;
+
 
     public Character(string characterName, int maxHp, int maxMana, int attack, int intelligence, int defense, int resistance, int skill, int speed, int attackRange, int moveRange, bool owned, bool ranged)
     {
