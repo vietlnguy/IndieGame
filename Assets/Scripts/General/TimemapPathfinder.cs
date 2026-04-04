@@ -190,7 +190,16 @@ public class TilemapPathfinder : MonoBehaviour
     public System.Collections.IEnumerator EnemyFollowPath(GameObject enemy, Vector3 targetPos)
     {
         cancelFollow = false;
-        float moveLimit = enemy.GetComponent<EnemyController>().moveRange;
+        float moveLimit;
+        try
+        {
+            moveLimit = enemy.GetComponent<EnemyController>().moveRange;
+        }
+        catch
+        {
+            moveLimit = enemy.GetComponent<PlayerController>().moveRange;
+ 
+        }
         float distanceMoved = 0f;
         Vector3 previousPos = enemy.transform.position;
 
@@ -229,6 +238,8 @@ public class TilemapPathfinder : MonoBehaviour
             }
         }
     }
+    
+    
     public System.Collections.IEnumerator FollowPath(GameObject enemy, Vector3 targetPos)
     {
         List<Vector3> path = GetWorldPath(enemy.transform.position, targetPos);

@@ -507,7 +507,7 @@ public class BattleController : MonoBehaviour
                         if (effectiveAttackRangeCircleScript.enemiesInRange.Count <= 0) 
                         { 
                             enemyTarget = GetClosest(character.gameObject, enemies, null);
-                            yield return StartCoroutine(pathfinder.FollowPath(character.gameObject, enemyTarget.transform.position));
+                            yield return StartCoroutine(pathfinder.EnemyFollowPath(character.gameObject, enemyTarget.transform.position));
                             walkingAudio.Stop();
                             Debug.Log("No one in range to attack");
                         }
@@ -518,17 +518,17 @@ public class BattleController : MonoBehaviour
                             //Go through each character and see if any can be killed
                             foreach (GameObject enemy in effectiveAttackRangeCircleScript.enemiesInRange)
                             {
-                                PlayerController playerScript = character.GetComponent<PlayerController>();
+                                EnemyController enemyScript = character.GetComponent<EnemyController>();
 
                                 foreach (AttackMoves attack in characterScript.knownAttacks)
                                 {
                                     //Calculate damage
-                                    int[] damageArray = attackPreviewScript.calculateDamage(character.gameObject, character, attack);
+                                    int[] damageArray = attackPreviewScript.calculateDamage(character.gameObject, enemy, attack);
                                     
                                     //If can kill
-                                    if (damageArray[0] >= playerScript.currentHp && attack.manaCost <= characterScript.currentMana)
+                                    if (damageArray[0] >= enemyScript.currentHp && attack.manaCost <= characterScript.currentMana)
                                     {
-                                        enemyTarget = character;
+                                        enemyTarget = enemy;
                                         break;
                                     }
 
@@ -567,7 +567,7 @@ public class BattleController : MonoBehaviour
                             //Else attack the closest
                             if (enemyTarget == null)
                             {
-                                enemyTarget = GetClosest(enemy.gameObject, characters, null);
+                                enemyTarget = GetClosest(character.gameObject, enemies, null);
                             }
                         
                             //When target is not already in range, then move towards the target
@@ -623,17 +623,11 @@ public class BattleController : MonoBehaviour
                         
                     }
 
-                    //Enemy supports other enemies
                     else if (characterScript.support)
                     {
 
                     }
 
-                    //Enemy supports and attacks
-                    else if (characterScript.hybrid)
-                    {
-                        
-                    }
         
                 }
                 

@@ -39,7 +39,6 @@ public class Character
     public bool ranged;
     public bool roams;
     public bool support;
-    
     public List<Item> inventory;
 
     [SerializeReference]
@@ -67,6 +66,20 @@ public class Character
         knownAttacks = new List<AttackMoves>();
         inventory = new List<Item>();
         this.subquests = new List<Subquest>();
+
+        if (!owned)
+        {
+            if (characterName == "Celeste")
+            {
+                this.support = true;
+                this.roams = true;
+            }
+            else if (characterName == "Lucas")
+            {
+                this.support = false;
+                this.roams = true;
+            }
+        }
 
     }
 
