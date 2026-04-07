@@ -94,7 +94,7 @@ public class ChapterOne : MonoBehaviour {
         enemy.intelligence = 4;
         enemy.skill = 5;
         enemy.speed = 4;
-        enemy.attackRange = 1;
+        enemy.attackRange = 1.2f;
         enemy.moveRange = 4;
 
         enemy.roams = true;

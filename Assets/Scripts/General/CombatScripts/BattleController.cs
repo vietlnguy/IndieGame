@@ -142,25 +142,31 @@ public class BattleController : MonoBehaviour
     private void HandleGameLoop()
     {
         int ownedCharacters = 0;
+        int neutralCharacters = 0;
         foreach (Transform t in characters.transform)
         {
             if (t.gameObject.GetComponent<PlayerController>().owned)
             {
                 ownedCharacters++;
             }
+            else
+            {
+                neutralCharacters++;
+            }
         }
 
-        //All characters are disabled and its not the enemies turn yet. Should start enemy turn
-        if (disabledCharacters.Count == ownedCharacters && neutralParty && !isNeutralTurn)
+        //All characters are disabled and neutralParty is true and alive and not neutral phase yet -> start neutral phase
+        if (disabledCharacters.Count == ownedCharacters && neutralParty && !isNeutralTurn && neutralCharacters > 0)
         {
             characterSelected = null;
             isNeutralTurn = true;
             StartCoroutine(neutralTurn());
         }
 
-        //All characters are disabled and its not the enemies turn yet. Should start enemy turn
-        else if (disabledCharacters.Count == ownedCharacters && !isEnemyTurn)
+        //When neutralParty is true and all disabled and not enemy phase yet OR all player characters are disabled and not enemy phase yet-> start enemy phase
+        else if ((neutralParty && disabledCharacters.Count == neutralCharacters && !isEnemyTurn) || (disabledCharacters.Count == ownedCharacters && !isEnemyTurn))
         {
+
             isEnemyTurn = true;
             characterSelected = null;
             StartCoroutine(enemyTurn());
@@ -206,6 +212,7 @@ public class BattleController : MonoBehaviour
         //Execute each enemy's turn
         foreach (Transform enemy in enemies.transform)
         {
+            //Center camera on enemy
             Vector3 safeDestination = enemy.position;
             safeDestination.x = Mathf.Clamp(safeDestination.x, minX, maxX);
             safeDestination.y = Mathf.Clamp(safeDestination.y, minY, maxY);
@@ -215,9 +222,7 @@ public class BattleController : MonoBehaviour
             EnemyController enemyScript = enemy.gameObject.GetComponent<EnemyController>();
             pathfinder.calculateOccupiedTiles(characters, enemies);
             enemyScript.selectEnemy();
-            enemyTarget = null;
-
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(.75f);
 
             if (enemyScript.roams)
             {
@@ -225,87 +230,24 @@ public class BattleController : MonoBehaviour
                 //Enemy attacks player characters
                 if (!enemyScript.support)
                 {             
-                    //if no characters within the EffectiveAttackRange then should move towards closest enemy
-                    if (effectiveAttackRangeCircleScript.enemiesInRange.Count <= 0) 
-                    { 
-                        enemyTarget = GetClosest(enemy.gameObject, characters, null);
+                    enemyTarget = SetAttackTarget(enemy.gameObject, characters);
+                    
+                    //Enemy is not in range yet
+                    if (!attackRangeCircleScript.enemiesInRange.Contains(enemyTarget))
+                    {
+                        //Ranged enemies should stop movement as soon as within range to attack
+                        if (enemyScript.GetComponent<EnemyController>().ranged) { attackRangeCircleScript.enemyIsRangedAndMoving = true; }
+                        else { attackRangeCircleScript.enemyIsRangedAndMoving = false; }
+
                         yield return StartCoroutine(pathfinder.EnemyFollowPath(enemy.gameObject, enemyTarget.transform.position));
                         walkingAudio.Stop();
-                        Debug.Log("No one in range to attack");
                     }
 
-                    //Characters within EffectiveAttackRange. Should go down attack priority list to determine target.
-                    else if (effectiveAttackRangeCircleScript.enemiesInRange.Count > 0)
+                    yield return new WaitForSeconds(1f);
+
+                    //Check if enemy is in range and then attack
+                    if (attackRangeCircleScript.enemiesInRange.Contains(enemyTarget))
                     {
-                        //Go through each character and see if any can be killed
-                        foreach (GameObject character in effectiveAttackRangeCircleScript.enemiesInRange)
-                        {
-                            PlayerController playerScript = character.GetComponent<PlayerController>();
-
-                            foreach (AttackMoves attack in enemyScript.knownAttacks)
-                            {
-                                //Calculate damage
-                                int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, character, attack);
-                                
-                                //If can kill
-                                if (damageArray[0] >= playerScript.currentHp && attack.manaCost <= enemyScript.currentMana)
-                                {
-                                    enemyTarget = character;
-                                    break;
-                                }
-
-                                if (enemyTarget != null) {break;}
-                            }
-                        }
-
-                        //Go through each character and see if any can be ranged attacked
-                        if (enemyTarget == null && enemyScript.ranged) 
-                        {
-                            foreach (GameObject character in effectiveAttackRangeCircleScript.enemiesInRange)
-                            {
-                                PlayerController playerScript = character.GetComponent<PlayerController>();
-                                if (!playerScript.ranged)
-                                {
-                                    enemyTarget = character;
-                                    break;
-                                }
-                            }
-                        }
-
-                        //Go through each character and see if any can be melee attacked
-                        if (enemyTarget == null && !enemyScript.ranged)
-                        {
-                            foreach (GameObject character in effectiveAttackRangeCircleScript.enemiesInRange)
-                            {
-                                PlayerController playerScript = character.GetComponent<PlayerController>();
-                                if (playerScript.ranged)
-                                {
-                                    enemyTarget = character;
-                                    break;
-                                }
-                            }
-                        }
-                        
-                        //Else attack the closest
-                        if (enemyTarget == null)
-                        {
-                            enemyTarget = GetClosest(enemy.gameObject, characters, null);
-                        }
-                    
-                        //When target is not already in range, then move towards the target
-                        if (!attackRangeCircleScript.enemiesInRange.Contains(enemyTarget)) {
-                              
-                            //Ranged enemies should stop movement as soon as within range to attack
-                            if (enemyScript.ranged) { attackRangeCircleScript.enemyIsRangedAndMoving = true; }
-                            else { attackRangeCircleScript.enemyIsRangedAndMoving = false; }
-
-                            yield return StartCoroutine(pathfinder.EnemyFollowPath(enemy.gameObject, enemyTarget.transform.position));
-                            walkingAudio.Stop();
-                        }
-
-                        yield return new WaitForSeconds(1f);
-                        //TODO: attack indicator?
-
                         AttackMoves attackMove = null;
 
                         //Try to get killing move (mana allowing)
@@ -338,135 +280,24 @@ public class BattleController : MonoBehaviour
                                 }
                             }
                         }
-
+    
                         yield return StartCoroutine(attackPreviewScript.startEnemyAttackSequence(enemy.gameObject, enemyTarget, attackMove));
-
                     }
-                    
                 }
 
                 //Enemy supports other enemies
                 else if (enemyScript.support)
                 {
-
+                    //SetSupportTarget
                 }
 
-                //Enemy supports and attacks
-                else if (enemyScript.hybrid)
-                {
-                    
-                }
-       
+
             }
             
-            //Does roam, but still attacks those in Effective attack range. i.e. sentinels
+            //Doesn't roam, but still attacks those in Effective attack range. i.e. sentinels
             else
             {
-                if (effectiveAttackRangeCircleScript.enemiesInRange.Count != 0)
-                {
-                    //Go through each character and see if any can be killed
-                    foreach (GameObject character in effectiveAttackRangeCircleScript.enemiesInRange)
-                    {
-                        PlayerController playerScript = character.GetComponent<PlayerController>();
-
-                        foreach (AttackMoves attack in enemyScript.knownAttacks)
-                        {
-                            //Calculate damage
-                            int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, character, attack);
-                            
-                            //If can kill
-                            if (damageArray[0] >= playerScript.currentHp && attack.manaCost <= enemyScript.currentMana)
-                            {
-                                enemyTarget = character;
-                                break;
-                            }
-
-                            if (enemyTarget != null) {break;}
-                        }
-                    }
-
-                    //Go through each character and see if any can be ranged attacked
-                    if (enemyTarget == null && enemyScript.ranged) 
-                    {
-                        foreach (GameObject character in effectiveAttackRangeCircleScript.enemiesInRange)
-                        {
-                            PlayerController playerScript = character.GetComponent<PlayerController>();
-                            if (!playerScript.ranged)
-                            {
-                                enemyTarget = character;
-                                break;
-                            }
-                        }
-                    }
-
-                    //Go through each character and see if any can be melee attacked
-                    if (enemyTarget == null && !enemyScript.ranged)
-                    {
-                        foreach (GameObject character in effectiveAttackRangeCircleScript.enemiesInRange)
-                        {
-                            PlayerController playerScript = character.GetComponent<PlayerController>();
-                            if (playerScript.ranged)
-                            {
-                                enemyTarget = character;
-                                break;
-                            }
-                        }
-                    }
-                    
-                    //Else attack the closest
-                    if (enemyTarget == null)
-                    {
-                        enemyTarget = GetClosest(enemy.gameObject, null, effectiveAttackRangeCircleScript.enemiesInRange);
-                    }
                 
-                    if (!attackRangeCircleScript.enemiesInRange.Contains(enemyTarget)) {
-                            
-                        //Ranged enemies should stop movement as soon as within range to attack
-                        if (enemyScript.ranged) { attackRangeCircleScript.enemyIsRangedAndMoving = true; }
-                        else { attackRangeCircleScript.enemyIsRangedAndMoving = false; }
-
-                        yield return StartCoroutine(pathfinder.EnemyFollowPath(enemy.gameObject, enemyTarget.transform.position));
-                        walkingAudio.Stop();
-                    }
-
-                    yield return new WaitForSeconds(1f);
-                    //TODO: attack indicator?
-
-                    AttackMoves attackMove = null;
-
-                    //Try to get killing move (mana allowing)
-                    foreach (AttackMoves attack in enemyScript.knownAttacks)
-                    {
-                        //Calculate damage
-                        int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, attack);
-                        
-                        //If can kill
-                        if (damageArray[0] >= enemyTarget.GetComponent<PlayerController>().currentHp && attack.manaCost <= enemyScript.currentMana)
-                        {
-                            attackMove = attack;
-                            break;
-                        }
-                    }
-
-                    //Else get most damage move (mana allowing)
-                    if (attackMove == null)
-                    {
-                        int highestDamage = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, enemyScript.knownAttacks[0])[0];
-                        attackMove = enemyScript.knownAttacks[0];
-                        foreach (AttackMoves attack in enemyScript.knownAttacks)
-                        {
-                            //Calculate damage
-                            int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, enemyScript.knownAttacks[0]);
-
-                            if (damageArray[0] > highestDamage && attack.manaCost <= enemyScript.currentMana)
-                            {
-                                attackMove = attack;
-                            }
-                        }
-                    }
- 
-                    yield return StartCoroutine(attackPreviewScript.startEnemyAttackSequence(enemy.gameObject, enemyTarget, attackMove));
-                }
             }
 
             disabledEnemies.Add(enemy.gameObject);
@@ -488,7 +319,7 @@ public class BattleController : MonoBehaviour
         foreach (Transform character in characters.transform)
         {
             PlayerController characterScript = character.gameObject.GetComponent<PlayerController>();
-            if (characterScript.owned)
+            if (!characterScript.owned)
             {
                 Vector3 safeDestination = character.transform.position;
                 safeDestination.x = Mathf.Clamp(safeDestination.x, minX, maxX);
@@ -500,100 +331,36 @@ public class BattleController : MonoBehaviour
                 
                 if (characterScript.roams)
                 {
-
                     if (!characterScript.support)
-                    {             
-                        //if no characters within the EffectiveAttackRange then should move towards closest enemy
-                        if (effectiveAttackRangeCircleScript.enemiesInRange.Count <= 0) 
-                        { 
-                            enemyTarget = GetClosest(character.gameObject, enemies, null);
+                    {            
+                        SetAttackTarget(character.gameObject, enemies); 
+
+                        //Enemy is not in range yet
+                        if (!attackRangeCircleScript.enemiesInRange.Contains(enemyTarget))
+                        {
+                            //Ranged enemies should stop movement as soon as within range to attack
+                            if (characterScript.GetComponent<PlayerController>().ranged) { attackRangeCircleScript.enemyIsRangedAndMoving = true; }
+                            else { attackRangeCircleScript.enemyIsRangedAndMoving = false; }
+
                             yield return StartCoroutine(pathfinder.EnemyFollowPath(character.gameObject, enemyTarget.transform.position));
                             walkingAudio.Stop();
-                            Debug.Log("No one in range to attack");
                         }
 
-                        //Characters within EffectiveAttackRange. Should go down attack priority list to determine target.
-                        else if (effectiveAttackRangeCircleScript.enemiesInRange.Count > 0)
+                        yield return new WaitForSeconds(1f);
+
+                        //Check if enemy is in range and then attack
+                        if (attackRangeCircleScript.enemiesInRange.Contains(enemyTarget))
                         {
-                            //Go through each character and see if any can be killed
-                            foreach (GameObject enemy in effectiveAttackRangeCircleScript.enemiesInRange)
-                            {
-                                EnemyController enemyScript = character.GetComponent<EnemyController>();
-
-                                foreach (AttackMoves attack in characterScript.knownAttacks)
-                                {
-                                    //Calculate damage
-                                    int[] damageArray = attackPreviewScript.calculateDamage(character.gameObject, enemy, attack);
-                                    
-                                    //If can kill
-                                    if (damageArray[0] >= enemyScript.currentHp && attack.manaCost <= characterScript.currentMana)
-                                    {
-                                        enemyTarget = enemy;
-                                        break;
-                                    }
-
-                                    if (enemyTarget != null) {break;}
-                                }
-                            }
-
-                            //Go through each character and see if any can be ranged attacked
-                            if (enemyTarget == null && characterScript.ranged) 
-                            {
-                                foreach (GameObject character in effectiveAttackRangeCircleScript.enemiesInRange)
-                                {
-                                    PlayerController playerScript = character.GetComponent<PlayerController>();
-                                    if (!playerScript.ranged)
-                                    {
-                                        enemyTarget = character;
-                                        break;
-                                    }
-                                }
-                            }
-
-                            //Go through each character and see if any can be melee attacked
-                            if (enemyTarget == null && !characterScript.ranged)
-                            {
-                                foreach (GameObject character in effectiveAttackRangeCircleScript.enemiesInRange)
-                                {
-                                    PlayerController playerScript = character.GetComponent<PlayerController>();
-                                    if (playerScript.ranged)
-                                    {
-                                        enemyTarget = character;
-                                        break;
-                                    }
-                                }
-                            }
-                            
-                            //Else attack the closest
-                            if (enemyTarget == null)
-                            {
-                                enemyTarget = GetClosest(character.gameObject, enemies, null);
-                            }
-                        
-                            //When target is not already in range, then move towards the target
-                            if (!attackRangeCircleScript.enemiesInRange.Contains(enemyTarget)) {
-                                
-                                //Ranged enemies should stop movement as soon as within range to attack
-                                if (characterScript.ranged) { attackRangeCircleScript.enemyIsRangedAndMoving = true; }
-                                else { attackRangeCircleScript.enemyIsRangedAndMoving = false; }
-
-                                yield return StartCoroutine(pathfinder.EnemyFollowPath(enemy.gameObject, enemyTarget.transform.position));
-                                walkingAudio.Stop();
-                            }
-
-                            yield return new WaitForSeconds(1f);
-                            //TODO: attack indicator?
-
                             AttackMoves attackMove = null;
 
                             //Try to get killing move (mana allowing)
                             foreach (AttackMoves attack in characterScript.knownAttacks)
                             {
                                 //Calculate damage
-                                int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, attack);
+                                int[] damageArray = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, attack);
                                 
                                 //If can kill
-                                if (damageArray[0] >= enemyTarget.GetComponent<PlayerController>().currentHp && attack.manaCost <= characterScript.currentMana)
+                                if (damageArray[0] >= enemyTarget.GetComponent<EnemyController>().currentHp && attack.manaCost <= characterScript.currentMana)
                                 {
                                     attackMove = attack;
                                     break;
@@ -603,12 +370,12 @@ public class BattleController : MonoBehaviour
                             //Else get most damage move (mana allowing)
                             if (attackMove == null)
                             {
-                                int highestDamage = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, characterScript.knownAttacks[0])[0];
+                                int highestDamage = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, characterScript.knownAttacks[0])[0];
                                 attackMove = characterScript.knownAttacks[0];
                                 foreach (AttackMoves attack in characterScript.knownAttacks)
                                 {
                                     //Calculate damage
-                                    int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, characterScript.knownAttacks[0]);
+                                    int[] damageArray = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, characterScript.knownAttacks[0]);
 
                                     if (damageArray[0] > highestDamage && attack.manaCost <= characterScript.currentMana)
                                     {
@@ -616,104 +383,48 @@ public class BattleController : MonoBehaviour
                                     }
                                 }
                             }
-
-                            yield return StartCoroutine(attackPreviewScript.startEnemyAttackSequence(enemy.gameObject, enemyTarget, attackMove));
-
+        
+                            yield return StartCoroutine(attackPreviewScript.startEnemyAttackSequence(character.gameObject, enemyTarget, attackMove));
                         }
-                        
                     }
 
                     else if (characterScript.support)
                     {
-
+                        //SetSupportTarget()
                     }
 
-        
                 }
                 
-                //Does roam, but still attacks those in Effective attack range. i.e. sentinels
+                //Doesn't roam, but still attacks those in Effective attack range. i.e. sentinels
                 else
                 {
-                    if (effectiveAttackRangeCircleScript.enemiesInRange.Count != 0)
+                    SetAttackTarget(character.gameObject, enemies); 
+                    //Enemy is not in range yet
+                    if (!attackRangeCircleScript.enemiesInRange.Contains(enemyTarget))
                     {
-                        //Go through each character and see if any can be killed
-                        foreach (GameObject character in effectiveAttackRangeCircleScript.enemiesInRange)
-                        {
-                            PlayerController playerScript = character.GetComponent<PlayerController>();
+                        //Ranged enemies should stop movement as soon as within range to attack
+                        if (enemyTarget.GetComponent<EnemyController>().ranged) { attackRangeCircleScript.enemyIsRangedAndMoving = true; }
+                        else { attackRangeCircleScript.enemyIsRangedAndMoving = false; }
 
-                            foreach (AttackMoves attack in characterScript.knownAttacks)
-                            {
-                                //Calculate damage
-                                int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, character, attack);
-                                
-                                //If can kill
-                                if (damageArray[0] >= playerScript.currentHp && attack.manaCost <= characterScript.currentMana)
-                                {
-                                    enemyTarget = character;
-                                    break;
-                                }
+                        yield return StartCoroutine(pathfinder.EnemyFollowPath(character.gameObject, enemyTarget.transform.position));
+                        walkingAudio.Stop();
+                    }
 
-                                if (enemyTarget != null) {break;}
-                            }
-                        }
+                    yield return new WaitForSeconds(1f);
 
-                        //Go through each character and see if any can be ranged attacked
-                        if (enemyTarget == null && characterScript.ranged) 
-                        {
-                            foreach (GameObject character in effectiveAttackRangeCircleScript.enemiesInRange)
-                            {
-                                PlayerController playerScript = character.GetComponent<PlayerController>();
-                                if (!playerScript.ranged)
-                                {
-                                    enemyTarget = character;
-                                    break;
-                                }
-                            }
-                        }
-
-                        //Go through each character and see if any can be melee attacked
-                        if (enemyTarget == null && !characterScript.ranged)
-                        {
-                            foreach (GameObject character in effectiveAttackRangeCircleScript.enemiesInRange)
-                            {
-                                PlayerController playerScript = character.GetComponent<PlayerController>();
-                                if (playerScript.ranged)
-                                {
-                                    enemyTarget = character;
-                                    break;
-                                }
-                            }
-                        }
-                        
-                        //Else attack the closest
-                        if (enemyTarget == null)
-                        {
-                            enemyTarget = GetClosest(enemy.gameObject, null, effectiveAttackRangeCircleScript.enemiesInRange);
-                        }
-                    
-                        if (!attackRangeCircleScript.enemiesInRange.Contains(enemyTarget)) {
-                                
-                            //Ranged enemies should stop movement as soon as within range to attack
-                            if (characterScript.ranged) { attackRangeCircleScript.enemyIsRangedAndMoving = true; }
-                            else { attackRangeCircleScript.enemyIsRangedAndMoving = false; }
-
-                            yield return StartCoroutine(pathfinder.EnemyFollowPath(enemy.gameObject, enemyTarget.transform.position));
-                            walkingAudio.Stop();
-                        }
-
-                        yield return new WaitForSeconds(1f);
-                        //TODO: attack indicator?
-
+                    //Check if enemy is in range and then attack
+                    if (attackRangeCircleScript.enemiesInRange.Contains(enemyTarget))
+                    {
                         AttackMoves attackMove = null;
 
                         //Try to get killing move (mana allowing)
                         foreach (AttackMoves attack in characterScript.knownAttacks)
                         {
                             //Calculate damage
-                            int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, attack);
+                            int[] damageArray = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, attack);
                             
                             //If can kill
-                            if (damageArray[0] >= enemyTarget.GetComponent<PlayerController>().currentHp && attack.manaCost <= characterScript.currentMana)
+                            if (damageArray[0] >= enemyTarget.GetComponent<EnemyController>().currentHp && attack.manaCost <= characterScript.currentMana)
                             {
                                 attackMove = attack;
                                 break;
@@ -723,12 +434,12 @@ public class BattleController : MonoBehaviour
                         //Else get most damage move (mana allowing)
                         if (attackMove == null)
                         {
-                            int highestDamage = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, characterScript.knownAttacks[0])[0];
+                            int highestDamage = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, characterScript.knownAttacks[0])[0];
                             attackMove = characterScript.knownAttacks[0];
                             foreach (AttackMoves attack in characterScript.knownAttacks)
                             {
                                 //Calculate damage
-                                int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, characterScript.knownAttacks[0]);
+                                int[] damageArray = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, characterScript.knownAttacks[0]);
 
                                 if (damageArray[0] > highestDamage && attack.manaCost <= characterScript.currentMana)
                                 {
@@ -737,13 +448,13 @@ public class BattleController : MonoBehaviour
                             }
                         }
     
-                        yield return StartCoroutine(attackPreviewScript.startEnemyAttackSequence(enemy.gameObject, enemyTarget, attackMove));
+                        yield return StartCoroutine(attackPreviewScript.startEnemyAttackSequence(character.gameObject, enemyTarget, attackMove));
                     }
                 }
 
-                disabledEnemies.Add(enemy.gameObject);
-                characterScript.deselectEnemy();
-                enemy.gameObject.GetComponent<EnemyController>().graySpriteAndFreeze();
+                disabledCharacters.Add(character.gameObject);
+                characterScript.deselectCharacter();
+                characterScript.endTurn();
                 yield return new WaitForSeconds(1.5f);
 
 
@@ -816,4 +527,121 @@ public class BattleController : MonoBehaviour
         isEnemyTurn = true;
 
     }
+    private GameObject SetAttackTarget(GameObject attacker, GameObject enemies)
+    {
+        //Characters within EffectiveAttackRange. Should go down attack priority list to determine target.
+        if (effectiveAttackRangeCircleScript.enemiesInRange.Count > 0)
+        {
+            //Go through each character and see if any can be killed
+            foreach (GameObject enemy in effectiveAttackRangeCircleScript.enemiesInRange)
+            {   
+                try 
+                {
+                    PlayerController characterScript = attacker.gameObject.GetComponent<PlayerController>();
+                    EnemyController enemyScript = enemy.GetComponent<EnemyController>();
+                   
+                    foreach (AttackMoves attack in characterScript.knownAttacks)
+                    {
+                        //Calculate damage
+                        int[] damageArray = attackPreviewScript.calculateDamage(attacker.gameObject, enemy, attack);
+                        
+                        //If can kill
+                        if (damageArray[0] >= enemyScript.currentHp && attack.manaCost <= characterScript.currentMana)
+                        {
+                            return enemy;
+                        }
+                    }
+                }
+                catch
+                {
+                    EnemyController characterScript = attacker.gameObject.GetComponent<EnemyController>();
+                    PlayerController enemyScript = enemy.GetComponent<PlayerController>();
+                   
+                    foreach (AttackMoves attack in characterScript.knownAttacks)
+                    {
+                        //Calculate damage
+                        int[] damageArray = attackPreviewScript.calculateDamage(attacker.gameObject, enemy, attack);
+                        
+                        //If can kill
+                        if (damageArray[0] >= enemyScript.currentHp && attack.manaCost <= characterScript.currentMana)
+                        {
+                            return enemy;
+                        }
+                    }
+                }
+            }
+
+            //Go through each character and see if any can be ranged attacked
+            try
+            {
+                PlayerController characterScript = attacker.GetComponent<PlayerController>();
+
+                if (characterScript.ranged) 
+                {
+                    foreach (GameObject enemy in effectiveAttackRangeCircleScript.enemiesInRange)
+                    {
+                        EnemyController enemyScript = enemy.GetComponent<EnemyController>();
+                        if (!enemyScript.ranged)
+                        {
+                            return enemy;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                EnemyController characterScript = attacker.GetComponent<EnemyController>();
+
+                if (characterScript.ranged) 
+                {
+                    foreach (GameObject enemy in effectiveAttackRangeCircleScript.enemiesInRange)
+                    {
+                        PlayerController enemyScript = enemy.GetComponent<PlayerController>();
+                        if (!enemyScript.ranged)
+                        {
+                            return enemy;
+                        }
+                    }
+                }
+            }
+
+            //Go through each character and see if any can be melee attacked
+            try
+            {
+                PlayerController characterScript = attacker.GetComponent<PlayerController>();
+                if (!characterScript.ranged)
+                {
+                    foreach (GameObject enemy in effectiveAttackRangeCircleScript.enemiesInRange)
+                    {
+                        EnemyController enemyScript = enemy.GetComponent<EnemyController>();
+                        if (enemyScript.ranged)
+                        {
+                            return enemy;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                EnemyController characterScript = attacker.GetComponent<EnemyController>();
+                if (!characterScript.ranged)
+                {
+                    foreach (GameObject enemy in effectiveAttackRangeCircleScript.enemiesInRange)
+                    {
+                        PlayerController enemyScript = enemy.GetComponent<PlayerController>();
+                        if (enemyScript.ranged)
+                        {
+                            return enemy;
+                        }
+                    }
+                }
+            }
+            
+        }
+    
+        //No other target priority -> should just attack the closest
+        return GetClosest(attacker, enemies, null);
+                   
+    }
+
 }

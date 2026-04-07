@@ -63,6 +63,8 @@ public class PlayerController : MonoBehaviour
     public float totalManaMult;
     public List<Subquest> subquests;
     public bool owned;
+    public bool roams;
+    public bool support;
     public string title;
     public bool ranged;
     public List<string> statuses;
@@ -238,6 +240,8 @@ public class PlayerController : MonoBehaviour
         baseAttackRange = savedCharacter.baseAttackRange;
         baseMoveRange = savedCharacter.baseMoveRange;
         owned = savedCharacter.owned;
+        roams = savedCharacter.roams;
+        support = savedCharacter.support;
         ranged = savedCharacter.ranged;
         title = savedCharacter.characterName;
         knownAttacks = savedCharacter.knownAttacks;

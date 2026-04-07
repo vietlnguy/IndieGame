@@ -28,7 +28,7 @@ public class EnemyController : MonoBehaviour
     public int resistance;
     public int skill;
     public int speed;
-    public int attackRange;
+    public float attackRange;
     public int moveRange;
     public string title;
     public bool roams;

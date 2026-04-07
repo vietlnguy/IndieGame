@@ -114,13 +114,15 @@ public class AttackPreview : MonoBehaviour
             {
                 StartCoroutine(disablePreview());
             }
-            try {
+            try 
+            {
                 handleAttackSelection();
             }
             catch
             {
                 //Left blank because deselect happens first and then this errors
             }
+            
         }
 
     }
@@ -135,7 +137,7 @@ public class AttackPreview : MonoBehaviour
                 if (attackIndex == 2) { attackIndex = 0; }
                 else if (attackIndex == 3) { attackIndex = 1; }
             }
-
+            updateAttackSelection();
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
@@ -146,6 +148,7 @@ public class AttackPreview : MonoBehaviour
                 if (attackIndex == 0) { attackIndex = 2; }
                 else if (attackIndex == 1) { attackIndex = 3; }
             }
+            updateAttackSelection();
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -156,6 +159,7 @@ public class AttackPreview : MonoBehaviour
                 if (attackIndex == 1) { attackIndex = 0; }
                 else if (attackIndex == 3) { attackIndex = 2; }
             }
+            updateAttackSelection();
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
@@ -166,7 +170,11 @@ public class AttackPreview : MonoBehaviour
                 if (attackIndex == 0) { attackIndex = 1; }
                 else if (attackIndex == 2) { attackIndex = 3; }
             }
+            updateAttackSelection();
         }
+    }
+    private void updateAttackSelection()
+    {
         try 
         {
             chosenAttack = battleController.characterSelected.GetComponent<PlayerController>().knownAttacks[attackIndex];
@@ -188,8 +196,8 @@ public class AttackPreview : MonoBehaviour
             manaBlock.text = "-";
             validAttack = false;
         }
-
     }
+
     public int[] calculateDamage(GameObject attacker, GameObject defender, AttackMoves attack)
     {
         float damage = -1;
@@ -238,8 +246,9 @@ public class AttackPreview : MonoBehaviour
             }
         }
 
-        catch
+        catch (System.Exception e)
         {
+            Debug.Log(e);
             PlayerController attackerScript = attacker.GetComponent<PlayerController>();
             EnemyController defenderScript = defender.GetComponent<EnemyController>(); 
 
@@ -284,6 +293,7 @@ public class AttackPreview : MonoBehaviour
     }
     public IEnumerator enablePreview(bool isAssisting)
     {
+        updateAttackSelection();
         battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = false;
         this.isAssisting = isAssisting;
 
@@ -1053,15 +1063,16 @@ public class AttackPreview : MonoBehaviour
     }
     private IEnumerator DeathSequence(GameObject person)
     {
-        dialogueBox.SetActive(true);
-        float time = .15f;
-        float elapsed = 0f;
-        Vector2 targetPos = new Vector2(0f, -50f);
-        Vector2 startPos = new Vector2(0f, -60f); // Off-screen bottom
-
-        //Player dialogue
-        if (person.GetComponent<PlayerController>() != null)
+        if (person.GetComponent<PlayerController>() != null && person.GetComponent<PlayerController>().deathDialogue != "")
         {
+            dialogueBox.SetActive(true);
+            float time = .15f;
+            float elapsed = 0f;
+            Vector2 targetPos = new Vector2(0f, -50f);
+            Vector2 startPos = new Vector2(0f, -60f); // Off-screen bottom
+
+            //Player dialogue
+
             dialogueBoxTitle.text = person.GetComponent<PlayerController>().title;
             yield return new WaitForSeconds(.25f);
             dialogueBoxRectTransform.anchoredPosition = startPos;
@@ -1081,11 +1092,33 @@ public class AttackPreview : MonoBehaviour
             dialogueBoxRectTransform.anchoredPosition = targetPos;
             yield return StartCoroutine(TypeLine(person.GetComponent<PlayerController>().deathDialogue));
             yield return new WaitForSeconds(2f);
-        }
 
-        //Enemy dialogue
-        else
+            //Fade box out and reset text
+            elapsed = 0f;
+            while (elapsed < time)
+            {
+                elapsed += Time.deltaTime;
+                float t2 = Mathf.Clamp01(elapsed / time);
+                dialogueBoxCanvasGroup.alpha = dialogueBoxCanvasGroup.alpha = Mathf.Lerp(1, 0f, elapsed / time);
+                dialogueBoxRectTransform.anchoredPosition = Vector2.Lerp(targetPos, startPos, t2);
+                yield return null;
+            }
+            dialogueBoxCanvasGroup.alpha = 0f;
+            dialogueBoxRectTransform.anchoredPosition = startPos;
+            dialogueBoxText.text = "";
+
+            yield return new WaitForSeconds(2f);
+        }
+        
+        else if (person.GetComponent<EnemyController>() != null && person.GetComponent<EnemyController>().deathDialogue != "")
         {
+            dialogueBox.SetActive(true);
+            float time = .15f;
+            float elapsed = 0f;
+            Vector2 targetPos = new Vector2(0f, -50f);
+            Vector2 startPos = new Vector2(0f, -60f); // Off-screen bottom
+
+            //Enemy dialogue
             dialogueBoxTitle.text = person.GetComponent<EnemyController>().title;
             yield return new WaitForSeconds(.25f);
             dialogueBoxRectTransform.anchoredPosition = startPos;
@@ -1104,26 +1137,9 @@ public class AttackPreview : MonoBehaviour
             dialogueBoxCanvasGroup.alpha = 1f;
             dialogueBoxRectTransform.anchoredPosition = targetPos;
             yield return StartCoroutine(TypeLine(person.GetComponent<EnemyController>().deathDialogue));
+        
         }
-
-        yield return new WaitForSeconds(2f);
-
-        //Fade box out and reset text
-        elapsed = 0f;
-        while (elapsed < time)
-        {
-            elapsed += Time.deltaTime;
-            float t2 = Mathf.Clamp01(elapsed / time);
-            dialogueBoxCanvasGroup.alpha = dialogueBoxCanvasGroup.alpha = Mathf.Lerp(1, 0f, elapsed / time);
-            dialogueBoxRectTransform.anchoredPosition = Vector2.Lerp(targetPos, startPos, t2);
-            yield return null;
-        }
-        dialogueBoxCanvasGroup.alpha = 0f;
-        dialogueBoxRectTransform.anchoredPosition = startPos;
-        dialogueBoxText.text = "";
-
-        yield return new WaitForSeconds(2f);
-
+        
         //Destroy gameobject
         if (person.GetComponent<PlayerController>() != null)
         {
