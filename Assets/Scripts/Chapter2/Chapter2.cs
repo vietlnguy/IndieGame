@@ -92,7 +92,7 @@ public class Chapter2 : MonoBehaviour
             celeste.accessoryEquiped = new Equipment("Mana Band", "accessory", 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Stores mana! +2 max Mana.");
             saveManager.loadedData.characters.Add(celeste);
 
-            Character lucas = new Character("Lucas", 11, 7, 5, 3, 5, 5, 6, 6, 1, 3, false, false);
+            Character lucas = new Character("Lucas", 11, 7, 5, 3, 5, 5, 6, 6, 1, 5, false, false);
             lucas.knownAttacks.Add(new Attack("Double Punch", "phyiscal", 1.05f, 0, 95, 0, 0, "Punch in rapid succession."));
             lucas.inventory.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
             lucas.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
@@ -518,7 +518,7 @@ public class Chapter2 : MonoBehaviour
         }
         CreateEnemies();
 
-        yield return StartCoroutine(Helpers.FadeOutCanvasGroup(blackScreen, 0.5f));
+        yield return StartCoroutine(Helpers.FadeOutCanvasGroup(blackScreen, 1f));
         battleController.StartCombat();
         saveManager.OverwriteSave();
     }

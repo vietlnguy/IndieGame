@@ -197,7 +197,6 @@ public class AttackPreview : MonoBehaviour
             validAttack = false;
         }
     }
-
     public int[] calculateDamage(GameObject attacker, GameObject defender, AttackMoves attack)
     {
         float damage = -1;
@@ -248,7 +247,6 @@ public class AttackPreview : MonoBehaviour
 
         catch (System.Exception e)
         {
-            Debug.Log(e);
             PlayerController attackerScript = attacker.GetComponent<PlayerController>();
             EnemyController defenderScript = defender.GetComponent<EnemyController>(); 
 
@@ -1137,6 +1135,22 @@ public class AttackPreview : MonoBehaviour
             dialogueBoxCanvasGroup.alpha = 1f;
             dialogueBoxRectTransform.anchoredPosition = targetPos;
             yield return StartCoroutine(TypeLine(person.GetComponent<EnemyController>().deathDialogue));
+            
+            //Fade box out and reset text
+            elapsed = 0f;
+            while (elapsed < time)
+            {
+                elapsed += Time.deltaTime;
+                float t2 = Mathf.Clamp01(elapsed / time);
+                dialogueBoxCanvasGroup.alpha = dialogueBoxCanvasGroup.alpha = Mathf.Lerp(1, 0f, elapsed / time);
+                dialogueBoxRectTransform.anchoredPosition = Vector2.Lerp(targetPos, startPos, t2);
+                yield return null;
+            }
+            dialogueBoxCanvasGroup.alpha = 0f;
+            dialogueBoxRectTransform.anchoredPosition = startPos;
+            dialogueBoxText.text = "";
+
+            yield return new WaitForSeconds(2f);
         
         }
         

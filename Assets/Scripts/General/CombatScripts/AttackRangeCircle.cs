@@ -17,10 +17,11 @@ public class AttackRangeCircle : MonoBehaviour
     public List<GameObject> alliesInRange;
     public List<GameObject> enemiesInRange;
     public bool enemyIsRangedAndMoving = false;
-    public TilemapPathfinder pathfinder;
+    private TilemapPathfinder pathfinder;
 
     void Awake()
     {
+        pathfinder = FindFirstObjectByType<TilemapPathfinder>();
         battleController = GameObject.Find("BattleController").GetComponent<BattleController>();
         alliesInRange = new List<GameObject>();
         enemiesInRange = new List<GameObject>();

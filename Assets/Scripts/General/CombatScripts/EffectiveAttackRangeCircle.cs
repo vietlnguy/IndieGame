@@ -65,11 +65,10 @@ public class EffectiveAttackRangeCircle : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         //Character is selected and others enter AttackRange
-        if (battleController.characterSelected != null)
+        if (!battleController.isEnemyTurn)
         {
             if (other.CompareTag("enemy"))
             {
-                other.GetComponent<EnemyController>().highlightAttackable();
                 if (!enemiesInRange.Contains(other.gameObject))
                 {
                     enemiesInRange.Add(other.gameObject);
@@ -79,7 +78,6 @@ public class EffectiveAttackRangeCircle : MonoBehaviour
             {
                 if (other.gameObject != battleController.characterSelected)
                 {
-                    other.GetComponent<PlayerController>().highlightAssistable();
                     if (!alliesInRange.Contains(other.gameObject))
                     {
                         alliesInRange.Add(other.gameObject);
@@ -89,7 +87,7 @@ public class EffectiveAttackRangeCircle : MonoBehaviour
         }
 
         //Enemy is selected and others enter AttackRange
-        if (battleController.enemySelected != null && battleController.characterSelected == null)
+        else
         {
             if (other.CompareTag("enemy") && other.gameObject != battleController.enemySelected)
             {

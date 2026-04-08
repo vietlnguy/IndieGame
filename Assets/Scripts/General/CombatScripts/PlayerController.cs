@@ -440,6 +440,7 @@ public class PlayerController : MonoBehaviour
         rigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
         moveRangeCircleScript.disableMoveRange();
         attackRangeCircleScript.disableAttackRange();
+        effectiveAttackRangeCircleScript.disableEffectiveAttackRange();
         movementEnabled = false;
         battleController.characterSelected = null;
         animator.SetBool("isWalking", false);
@@ -472,6 +473,7 @@ public class PlayerController : MonoBehaviour
     {
         moveRangeCircleScript.disableMoveRange();
         attackRangeCircleScript.disableAttackRange();
+        effectiveAttackRangeCircleScript.disableEffectiveAttackRange();
         graySpriteAndFreeze();
         characterMenuScript.disableCharacterMenu();
         battleController.disabledCharacters.Add(gameObject);

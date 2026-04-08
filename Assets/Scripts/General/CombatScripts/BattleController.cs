@@ -38,7 +38,7 @@ public class BattleController : MonoBehaviour
     private InventoryMenu inventoryMenuScript;
     private CharacterInfoScreen characterInfoScript;
     private GameOver gameOverScript;
-    private int currentTurn = 1;
+    private int currentTurn = 0;
     private Coroutine enemyFollowCoroutine;
     public AudioSource walkingAudio;
     public GameObject victoryAndSubquestBox;
@@ -48,7 +48,9 @@ public class BattleController : MonoBehaviour
     public float minY;
     public float maxY;
     public bool neutralParty;
-    private bool isNeutralTurn = false;
+    public bool isNeutralTurn = false;
+    public bool isPlayerTurn = false;
+    private bool turnOngoing = false;
     
     void Awake()
     {
@@ -155,39 +157,62 @@ public class BattleController : MonoBehaviour
             }
         }
 
-        //All characters are disabled and neutralParty is true and alive and not neutral phase yet -> start neutral phase
-        if (disabledCharacters.Count == ownedCharacters && neutralParty && !isNeutralTurn && neutralCharacters > 0)
+        if (isPlayerTurn)
         {
-            characterSelected = null;
-            isNeutralTurn = true;
-            StartCoroutine(neutralTurn());
-        }
-
-        //When neutralParty is true and all disabled and not enemy phase yet OR all player characters are disabled and not enemy phase yet-> start enemy phase
-        else if ((neutralParty && disabledCharacters.Count == neutralCharacters && !isEnemyTurn) || (disabledCharacters.Count == ownedCharacters && !isEnemyTurn))
-        {
-
-            isEnemyTurn = true;
-            characterSelected = null;
-            StartCoroutine(enemyTurn());
-        }
-
-        //Start player phase
-        else if (disabledEnemies.Count == enemies.transform.childCount && isEnemyTurn)
-        {
-            isEnemyTurn = false;
-            foreach (Transform enemy in enemies.transform)
+            if (neutralParty)
             {
-                enemy.gameObject.GetComponent<EnemyController>().unhighlight();
+                if (disabledCharacters.Count == ownedCharacters && neutralCharacters > 0)
+                {
+                    characterSelected = null;
+                    isNeutralTurn = true;
+                    isPlayerTurn = false;
+                    StartCoroutine(neutralTurn());
+                }
             }
-            foreach (Transform character in characters.transform)
+            else
             {
-                character.gameObject.GetComponent<PlayerController>().unhighlight();
+                if (disabledCharacters.Count == ownedCharacters)
+                {
+                    isPlayerTurn = false;
+                    isEnemyTurn = true;
+                    characterSelected = null;
+                    StartCoroutine(enemyTurn());
+                }
             }
-            disabledEnemies.Clear();
-            disabledCharacters.Clear();
-            StartCoroutine(playerTurn());
+
         }
+        else if (isNeutralTurn && !turnOngoing)
+        {
+            //Check for when to start enemy turn
+            if (disabledCharacters.Count == neutralCharacters)
+            {
+                isEnemyTurn = true;
+                isNeutralTurn = false;
+                characterSelected = null;
+                StartCoroutine(enemyTurn());
+            }        
+        }
+        else if (isEnemyTurn && !turnOngoing)
+        {
+            //Chech for when to start player turn
+            if (disabledEnemies.Count == enemies.transform.childCount)
+            {
+                isEnemyTurn = false;
+                isPlayerTurn = true;
+                foreach (Transform enemy in enemies.transform)
+                {
+                    enemy.gameObject.GetComponent<EnemyController>().unhighlight();
+                }
+                foreach (Transform character in characters.transform)
+                {
+                    character.gameObject.GetComponent<PlayerController>().unhighlight();
+                }
+                disabledEnemies.Clear();
+                disabledCharacters.Clear();
+                StartCoroutine(playerTurn()); 
+            }
+        }
+
     }
     private IEnumerator playerTurn()
     {
@@ -201,6 +226,8 @@ public class BattleController : MonoBehaviour
     }
     private IEnumerator enemyTurn()
     {
+        turnOngoing = true;
+        disabledCharacters.Clear();
         enemyPhaseAudio.Play();
         fightScreenText.text = "Enemy Phase";
         fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
@@ -297,7 +324,57 @@ public class BattleController : MonoBehaviour
             //Doesn't roam, but still attacks those in Effective attack range. i.e. sentinels
             else
             {
+                enemyTarget = SetAttackTarget(enemy.gameObject, characters);
                 
+                //Move towards enemy in effective attack range
+                if (effectiveAttackRangeCircleScript.enemiesInRange.Contains(enemyTarget))
+                {
+                    //Ranged enemies should stop movement as soon as within range to attack
+                    if (enemyScript.GetComponent<EnemyController>().ranged) { attackRangeCircleScript.enemyIsRangedAndMoving = true; }
+                    else { attackRangeCircleScript.enemyIsRangedAndMoving = false; }
+
+                    yield return StartCoroutine(pathfinder.EnemyFollowPath(enemy.gameObject, enemyTarget.transform.position));
+                    walkingAudio.Stop();
+                }
+
+                //Check if enemy is in range and then attack
+                if (attackRangeCircleScript.enemiesInRange.Contains(enemyTarget))
+                {
+                    AttackMoves attackMove = null;
+
+                    //Try to get killing move (mana allowing)
+                    foreach (AttackMoves attack in enemyScript.knownAttacks)
+                    {
+                        //Calculate damage
+                        int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, attack);
+                        
+                        //If can kill
+                        if (damageArray[0] >= enemyTarget.GetComponent<PlayerController>().currentHp && attack.manaCost <= enemyScript.currentMana)
+                        {
+                            attackMove = attack;
+                            break;
+                        }
+                    }
+
+                    //Else get most damage move (mana allowing)
+                    if (attackMove == null)
+                    {
+                        int highestDamage = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, enemyScript.knownAttacks[0])[0];
+                        attackMove = enemyScript.knownAttacks[0];
+                        foreach (AttackMoves attack in enemyScript.knownAttacks)
+                        {
+                            //Calculate damage
+                            int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, enemyScript.knownAttacks[0]);
+
+                            if (damageArray[0] > highestDamage && attack.manaCost <= enemyScript.currentMana)
+                            {
+                                attackMove = attack;
+                            }
+                        }
+                    }
+
+                    yield return StartCoroutine(attackPreviewScript.startEnemyAttackSequence(enemy.gameObject, enemyTarget, attackMove));
+                }
             }
 
             disabledEnemies.Add(enemy.gameObject);
@@ -306,10 +383,12 @@ public class BattleController : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
         }
 
-
+        turnOngoing = false;
     }
     private IEnumerator neutralTurn()
     {
+        turnOngoing = true;
+        disabledCharacters.Clear();
         fightScreenText.text = "Neutral Phase";
         fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
         yield return new WaitForSeconds(2.5f);
@@ -333,7 +412,7 @@ public class BattleController : MonoBehaviour
                 {
                     if (!characterScript.support)
                     {            
-                        SetAttackTarget(character.gameObject, enemies); 
+                        enemyTarget = SetAttackTarget(character.gameObject, enemies); 
 
                         //Enemy is not in range yet
                         if (!attackRangeCircleScript.enemiesInRange.Contains(enemyTarget))
@@ -398,7 +477,7 @@ public class BattleController : MonoBehaviour
                 //Doesn't roam, but still attacks those in Effective attack range. i.e. sentinels
                 else
                 {
-                    SetAttackTarget(character.gameObject, enemies); 
+                    enemyTarget = SetAttackTarget(character.gameObject, enemies); 
                     //Enemy is not in range yet
                     if (!attackRangeCircleScript.enemiesInRange.Contains(enemyTarget))
                     {
@@ -452,15 +531,15 @@ public class BattleController : MonoBehaviour
                     }
                 }
 
-                disabledCharacters.Add(character.gameObject);
-                characterScript.deselectCharacter();
                 characterScript.endTurn();
+                //characterScript.deselectCharacter();
                 yield return new WaitForSeconds(1.5f);
 
 
 
             }
         }
+        turnOngoing = false;
     }
     private GameObject GetClosest(GameObject target, GameObject objects, List<GameObject> listOfObjects)
     {
@@ -520,11 +599,8 @@ public class BattleController : MonoBehaviour
     {
         introFinished = true;
         victoryAndSubquestBox.SetActive(true);
-        foreach (Transform enemy in enemies.transform)
-        {
-            disabledEnemies.Add(enemy.gameObject);
-        }
-        isEnemyTurn = true;
+        isPlayerTurn = true;
+        StartCoroutine(playerTurn());
 
     }
     private GameObject SetAttackTarget(GameObject attacker, GameObject enemies)

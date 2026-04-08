@@ -54,7 +54,7 @@ public class CharacterInfoScreen : MonoBehaviour
 
     void Awake()
     {
-        //characterMenuScript = GameObject.Find("CharacterMenu").GetComponent<CharacterMenu>();
+        characterMenuScript = GameObject.Find("CharacterMenu").GetComponent<CharacterMenu>();
     }
     void LateUpdate()
     {
