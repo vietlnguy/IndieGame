@@ -138,18 +138,4 @@ public class VictorySequence : MonoBehaviour
             child.GetComponent<EnemyController>().hoverable = false;
         }
     }
-    private void enableHoverable()
-    {
-        GameObject characters = GameObject.Find("Characters");
-        foreach (Transform child in characters.transform)
-        {
-            child.GetComponent<PlayerController>().hoverable = true;
-        }
-
-        GameObject enemies = GameObject.Find("Enemies");
-        foreach (Transform child in enemies.transform)
-        {
-            child.GetComponent<EnemyController>().hoverable = true;
-        }
-    }
 }

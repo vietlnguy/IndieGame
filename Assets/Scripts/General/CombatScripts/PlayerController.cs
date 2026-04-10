@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     public int skill;
     public int speed;
     public int attackRange;
-    public int moveRange;
+    public float moveRange;
     public int baseMaxHp;
     public int baseMaxMana;
     public int baseAttack;
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour
     public int baseSkill;
     public int baseSpeed;
     public int baseAttackRange;
-    public int baseMoveRange;
+    public float baseMoveRange;
     public int totalAttackMod;
     public int totalIntelligenceMod;
     public int totalDefenseMod;
@@ -131,7 +131,7 @@ public class PlayerController : MonoBehaviour
                 OnHoverExit();
             }
 
-            if (movementEnabled)
+            if (movementEnabled && owned)
             {
                 handleMovement();
             }
@@ -172,7 +172,7 @@ public class PlayerController : MonoBehaviour
     void OnClick()
     {
         //Intro is finished, not paused, not attack preview, not characterMenu, and not enemies turn
-        if (battleController.introFinished && !battleController.isPaused && !battleController.isEnemyTurn && !attackPreviewScript.active && !characterMenuScript.active && !inventoryMenuScript.active && !characterAssistMenuScript.active && owned)
+        if (battleController.introFinished && !battleController.isPaused && !battleController.isEnemyTurn && !battleController.isNeutralTurn && !attackPreviewScript.active && !characterMenuScript.active && !inventoryMenuScript.active && !characterAssistMenuScript.active)
         {
             //no character selected yet. Should select this character.
             if (battleController.characterSelected == null)
@@ -195,7 +195,7 @@ public class PlayerController : MonoBehaviour
             else if (battleController.characterSelected != null && battleController.characterSelected != gameObject)
             {
                 //if this character is in assistable range. Should bring up assistable UI
-                if (attackRangeCircleScript.alliesInRange.Contains(gameObject))
+                if (attackRangeCircleScript.alliesInRange.Contains(gameObject) && battleController.characterSelected.GetComponent<PlayerController>().owned)
                 {
                     walkingAudio.Stop();
                     battleController.characterSelected.GetComponent<PlayerController>().animator.SetBool("isWalking", false);

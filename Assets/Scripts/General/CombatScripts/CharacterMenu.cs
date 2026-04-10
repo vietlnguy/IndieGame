@@ -78,11 +78,10 @@ public class CharacterMenu : MonoBehaviour
                 //End turn
                 else if (index == 2)
                 {
-                    if (!battleController.disabledCharacters.Contains(battleController.characterSelected))
+                    if (!battleController.disabledCharacters.Contains(battleController.characterSelected) && battleController.characterSelected.GetComponent<PlayerController>().owned)
                     {
                         battleController.characterSelected.GetComponent<PlayerController>().endTurn();
                         selectorAudio.Play();
-
                     }
                 }
             }
@@ -93,7 +92,7 @@ public class CharacterMenu : MonoBehaviour
     {   
         yield return null;
         //Gray out EndTurn if character already ended turn
-        if (battleController.disabledCharacters.Contains(battleController.characterSelected))
+        if (battleController.disabledCharacters.Contains(battleController.characterSelected) || !battleController.characterSelected.GetComponent<PlayerController>().owned)
         {
             endTurnText.color = new Color(0f, 0f, 0f, .3f);
         }

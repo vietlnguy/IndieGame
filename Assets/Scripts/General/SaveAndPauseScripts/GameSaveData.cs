@@ -33,7 +33,7 @@ public class Character
     public int baseSkill;
     public int baseSpeed;
     public int baseAttackRange;
-    public int baseMoveRange;
+    public float baseMoveRange;
     public List<Subquest> subquests;
     public bool owned;
     public bool ranged;
@@ -48,7 +48,7 @@ public class Character
     public Equipment accessoryEquiped;
 
 
-    public Character(string characterName, int maxHp, int maxMana, int attack, int intelligence, int defense, int resistance, int skill, int speed, int attackRange, int moveRange, bool owned, bool ranged)
+    public Character(string characterName, int maxHp, int maxMana, int attack, int intelligence, int defense, int resistance, int skill, int speed, int attackRange, float moveRange, bool owned, bool ranged)
     {
         this.characterName = characterName;
         this.baseMaxHp = maxHp;

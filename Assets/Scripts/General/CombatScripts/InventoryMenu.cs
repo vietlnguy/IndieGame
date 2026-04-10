@@ -387,7 +387,8 @@ public class InventoryMenu : MonoBehaviour
         {
             battleController.characterSelected.GetComponent<PlayerController>().movementEnabled = true;
         }
-        enableHoverable();
+        Helpers.EnableCharacterHoverAndClick();
+        Helpers.EnableEnemyHoverAndClick();
     }
     public void disableRecipientMenu() {
         foreach (Transform row in recipientItems.transform)
@@ -402,7 +403,8 @@ public class InventoryMenu : MonoBehaviour
         recipientPreviewPlayerManaBar.GetComponent<RectTransform>().sizeDelta = originalHpManaBarSize;
 
         inventoryRecipientMenu.SetActive(false);
-        enableHoverable();
+        Helpers.EnableCharacterHoverAndClick();
+        Helpers.EnableEnemyHoverAndClick();
     }
     public void disableConfirmBox()
     {
@@ -759,7 +761,8 @@ public class InventoryMenu : MonoBehaviour
         itemToGive = null;
         originalGiverInventory = null;
         originalRecipientInventory = null;
-        enableHoverable();
+        Helpers.EnableCharacterHoverAndClick();
+        Helpers.EnableEnemyHoverAndClick();
     }
     public void StartFlashing(TextMeshProUGUI textComponent, TextMeshProUGUI textComponent2, float duration = 1.5f)
     {
@@ -819,19 +822,4 @@ public class InventoryMenu : MonoBehaviour
             child.GetComponent<EnemyController>().hoverable = false;
         }
     }
-    private void enableHoverable()
-    {
-        GameObject characters = GameObject.Find("Characters");
-        foreach (Transform child in characters.transform)
-        {
-            child.GetComponent<PlayerController>().hoverable = true;
-        }
-
-        GameObject enemies = GameObject.Find("Enemies");
-        foreach (Transform child in enemies.transform)
-        {
-            child.GetComponent<EnemyController>().hoverable = true;
-        }
-    }
-
 }

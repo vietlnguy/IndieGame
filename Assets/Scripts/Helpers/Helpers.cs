@@ -258,6 +258,37 @@ public static class Helpers
         sr.color = endColor;
         yield return new WaitForSeconds(1f);
     }
-
+    public static void EnableCharacterHoverAndClick()
+    {
+        GameObject characters = GameObject.Find("Characters");
+        foreach (Transform child in characters.transform)
+        {
+            child.GetComponent<PlayerController>().hoverable = true;
+        }
+    }
+    public static void EnableEnemyHoverAndClick()
+    {
+        GameObject enemies = GameObject.Find("Enemies");
+        foreach (Transform child in enemies.transform)
+        {
+            child.GetComponent<EnemyController>().hoverable = true;
+        }
+    }
+    public static void DisableCharacterHoverAndClick()
+    {
+        GameObject characters = GameObject.Find("Characters");
+        foreach (Transform child in characters.transform)
+        {
+            child.GetComponent<PlayerController>().hoverable = false;
+        }
+    }
+    public static void DisableEnemyHoverAndClick()
+    {
+        GameObject enemies = GameObject.Find("Enemies");
+        foreach (Transform child in enemies.transform)
+        {
+            child.GetComponent<EnemyController>().hoverable = false;
+        }
+    }
 
 }

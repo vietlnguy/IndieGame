@@ -13,6 +13,7 @@ public class CharacterAssistMenu : MonoBehaviour
     private BattleController battleController;
     private InventoryMenu inventoryMenuScript;
     private AttackPreview attackPreviewScript;
+    private RecruitDialogue recruitDialogueScript;
     public GameObject selector;
     public AudioSource selectorAudio;
     public AudioSource deselectAudio;
@@ -26,6 +27,7 @@ public class CharacterAssistMenu : MonoBehaviour
         battleController = GameObject.Find("BattleController").GetComponent<BattleController>();
         inventoryMenuScript = GameObject.Find("InventoryMenu").GetComponent<InventoryMenu>();
         attackPreviewScript = GameObject.Find("AttackPreview").GetComponent<AttackPreview>();
+        recruitDialogueScript = FindFirstObjectByType<RecruitDialogue>();
         gameObject.GetComponent<Canvas>().worldCamera = worldCamera;
     }
     void LateUpdate()
@@ -62,7 +64,11 @@ public class CharacterAssistMenu : MonoBehaviour
                 //TODO: Handle Talk option
                 if (index == 0)
                 {
-
+                    if (!battleController.assistableCharacterSelected.GetComponent<PlayerController>().owned)
+                    {
+                        recruitDialogueScript.Recruit(battleController.assistableCharacterSelected);
+                        disableCharacterAssistMenu();
+                    }
                 }
 
                 //TODO: Handle assist preview
@@ -106,7 +112,14 @@ public class CharacterAssistMenu : MonoBehaviour
         }
 
         //Check if character can be talked to
-        //TODO: what does this even mean
+        if (!character.GetComponent<PlayerController>().owned)
+        {
+            talkText.color = Color.white;
+        }
+        else
+        {
+            talkText.color = Color.black;
+        }
 
     }
     public void disableCharacterAssistMenu()

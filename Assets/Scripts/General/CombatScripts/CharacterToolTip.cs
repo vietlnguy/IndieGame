@@ -15,6 +15,9 @@ public class CharacterToolTip : MonoBehaviour
     public TextMeshProUGUI characterToolTipName;
     public GameObject rangedImage;
     public GameObject meleeImage;
+    public GameObject blueBackground;
+    public GameObject redBackground;
+    public GameObject yellowBackground;
 
     void Start()
     {
@@ -32,6 +35,18 @@ public class CharacterToolTip : MonoBehaviour
         try
         {
             PlayerController characterScript = character.GetComponent<PlayerController>();
+            if (characterScript.owned)
+            {
+                blueBackground.SetActive(true);
+                yellowBackground.SetActive(false);
+                redBackground.SetActive(false);
+            }
+            else
+            {
+                blueBackground.SetActive(false);
+                yellowBackground.SetActive(true);
+                redBackground.SetActive(false);
+            }
             characterToolTipHp.text = characterScript.currentHp.ToString();
             characterToolTipMaxHp.text = characterScript.maxHp.ToString();
             characterToolTipMana.text = characterScript.currentMana.ToString();
@@ -43,6 +58,9 @@ public class CharacterToolTip : MonoBehaviour
         catch
         {
             EnemyController characterScript = character.GetComponent<EnemyController>();
+            blueBackground.SetActive(false);
+            yellowBackground.SetActive(false);
+            redBackground.SetActive(true);
             characterToolTipHp.text = characterScript.currentHp.ToString();
             characterToolTipMaxHp.text = characterScript.maxHp.ToString();
             characterToolTipMana.text = characterScript.currentMana.ToString();

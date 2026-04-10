@@ -17,7 +17,7 @@ public class CampPlayerController : MonoBehaviour
     public int skill;
     public int speed;
     public int attackRange;
-    public int moveRange;
+    public float moveRange;
     public int baseMaxHp;
     public int baseMaxMana;
     public int baseAttack;
@@ -27,7 +27,7 @@ public class CampPlayerController : MonoBehaviour
     public int baseSkill;
     public int baseSpeed;
     public int baseAttackRange;
-    public int baseMoveRange;
+    public float baseMoveRange;
     public int totalAttackMod;
     public int totalIntelligenceMod;
     public int totalDefenseMod;

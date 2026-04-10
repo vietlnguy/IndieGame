@@ -5,16 +5,16 @@ using System.Collections;
 public class VictoryBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     
-    RectTransform rect;
-    Vector2 startPos;
-    Vector2 endPos;
-    Coroutine moveDownCoroutine;
-    Coroutine moveUpCoroutine;
+    private RectTransform rect;
+    private Vector2 startPos;
+    public Vector2 endPos;
+    private Coroutine moveDownCoroutine;
+    private Coroutine moveUpCoroutine;
     void Awake()
     {
         rect = GetComponent<RectTransform>();
         startPos = rect.anchoredPosition;
-        endPos = new Vector2(235, 291);
+        //endPos = new Vector2(235, 291);
     }
     public void OnPointerEnter(PointerEventData eventData)
     {

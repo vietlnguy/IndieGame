@@ -39,7 +39,6 @@ public class BattleController : MonoBehaviour
     private CharacterInfoScreen characterInfoScript;
     private GameOver gameOverScript;
     private int currentTurn = 0;
-    private Coroutine enemyFollowCoroutine;
     public AudioSource walkingAudio;
     public GameObject victoryAndSubquestBox;
     private float cameraSpeed = 10f;
@@ -96,7 +95,8 @@ public class BattleController : MonoBehaviour
         {
             if (!hoverableEnabled)
             {
-                EnableHover();
+                Helpers.EnableCharacterHoverAndClick();
+                Helpers.EnableEnemyHoverAndClick();
                 hoverableEnabled = true;
             }
 
@@ -479,7 +479,7 @@ public class BattleController : MonoBehaviour
                 {
                     enemyTarget = SetAttackTarget(character.gameObject, enemies); 
                     //Enemy is not in range yet
-                    if (!attackRangeCircleScript.enemiesInRange.Contains(enemyTarget))
+                    if (effectiveAttackRangeCircleScript.enemiesInRange.Contains(enemyTarget))
                     {
                         //Ranged enemies should stop movement as soon as within range to attack
                         if (enemyTarget.GetComponent<EnemyController>().ranged) { attackRangeCircleScript.enemyIsRangedAndMoving = true; }
@@ -587,13 +587,6 @@ public class BattleController : MonoBehaviour
     {
         currentTurn++;
         currentTurnText.text = currentTurn.ToString();
-    }
-    private void EnableHover()
-    {
-        foreach (Transform character in characters.transform)
-        {
-            character.gameObject.GetComponent<PlayerController>().hoverable = true;
-        }
     }
     public void StartCombat()
     {
