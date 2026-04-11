@@ -288,13 +288,7 @@ public class IntroController: MonoBehaviour
         
         enableVictorySubquestBoxes();
         yield return new WaitForSeconds(2f);
-        playerPhaseAudio.Play();
-        fightScreenText.text = "Player Phase";
-        fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
-        yield return new WaitForSeconds(2.5f);
-        fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
-
-        battleController.introFinished = true;
+        battleController.StartCombat();
         tutorialScript.EnableTutorial();
     }
     private IEnumerator shortSequence()
@@ -337,13 +331,7 @@ public class IntroController: MonoBehaviour
 
         enableVictorySubquestBoxes();
         yield return new WaitForSeconds(2f);
-        playerPhaseAudio.Play();
-        fightScreenText.text = "Player Phase";
-        fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
-        yield return new WaitForSeconds(2.5f);
-        fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
-
-        battleController.introFinished = true;
+        battleController.StartCombat();
         tutorialScript.EnableTutorial();
     }
 

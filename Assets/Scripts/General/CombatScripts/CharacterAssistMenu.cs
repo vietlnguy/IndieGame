@@ -101,7 +101,7 @@ public class CharacterAssistMenu : MonoBehaviour
         characterMenu.GetComponent<RectTransform>().localPosition = localPos + new Vector2(-20f, 235f);
 
         //Check if any of character attacks are support moves
-        assistText.color = new Color(.5f, .5f, .5f, .5f);
+        assistText.color = Color.black;
         foreach (AttackMoves attackMove in battleController.characterSelected.GetComponent<PlayerController>().knownAttacks)
         {
             if (attackMove is SupportMove)

@@ -178,7 +178,7 @@ public class AttackPreview : MonoBehaviour
         try 
         {
             chosenAttack = battleController.characterSelected.GetComponent<PlayerController>().knownAttacks[attackIndex];
-            calculateDamage(battleController.characterSelected, battleController.enemySelected, chosenAttack);
+            damageArray = calculateDamage(battleController.characterSelected, battleController.enemySelected, chosenAttack);
             atkBlock.text = damageArray[0].ToString();
             hitBlock.text = damageArray[1].ToString();
             critBlock.text = damageArray[2].ToString();
@@ -266,6 +266,100 @@ public class AttackPreview : MonoBehaviour
                     if (attackMove.damageType == "physical") 
                     {
                         damage = attackerScript.attack * attackMove.attackMult * attackerScript.attack * attackMove.attackMult / ((attackerScript.attack * attackMove.attackMult) + defenderScript.defense);
+                        Debug.Log(attackMove.name + ": AttackerATK(" + attackerScript.attack.ToString() + ") * AttackMoveMult(" + attackMove.attackMult.ToString() + ") ^ squared / (AttackerATK(" + attackerScript.attack.ToString() + ") * AttackMoveMult(" + attackMove.attackMult.ToString() + ")) + DefenderDEF(" + defenderScript.defense.ToString() + ") = " + damage.ToString());
+                    }
+                    else if (attackMove.damageType == "magical")
+                    {
+                        damage = attackerScript.intelligence * attackMove.intMult * attackerScript.intelligence * attackMove.intMult / ((attackerScript.intelligence * attackMove.intMult) + defenderScript.resistance);
+                    }   
+
+                    accuracy = attackMove.baseAccuracy + (attackerScript.skill - defenderScript.speed) * 2;
+                    critChance = attackMove.baseCrit + (attackerScript.skill * 0.5f);
+                }
+
+                returnArray[0] = (int)Mathf.Round(damage);
+                returnArray[1] = (int)Mathf.Round(accuracy);
+                returnArray[2] = (int)Mathf.Round(critChance);
+            }
+            else if (attack is SupportMove)
+            {
+                
+            }
+
+        }
+
+        return returnArray;
+    }
+    public int[] calculateSupport(GameObject attacker, GameObject defender, SupportMove attack)
+    {
+        float damage = -1;
+        float accuracy = 100;
+        float critChance= 0;
+        int[] returnArray = {-1, -1, -1};
+
+        try
+        {
+            EnemyController attackerScript = attacker.GetComponent<EnemyController>();
+            PlayerController defenderScript = defender.GetComponent<PlayerController>();
+
+            if (attack is Attack attackMove)
+            {
+                //TODO: Special case scenarios like Shield bash etc
+                if (attackMove.name == "Shield Bash")
+                {
+                    damage = 0;
+                    accuracy = 0;
+                    critChance = 0;
+                }
+
+                //Standard damage calculation
+                else
+                {
+                    if (attackMove.damageType == "physical") 
+                    {
+                        damage = attackerScript.attack * attackMove.attackMult * attackerScript.attack * attackMove.attackMult / ((attackerScript.attack * attackMove.attackMult) + defenderScript.defense);
+                    }
+                    else if (attackMove.damageType == "magical")
+                    {
+                        damage = attackerScript.intelligence * attackMove.intMult * attackerScript.intelligence * attackMove.intMult / ((attackerScript.intelligence * attackMove.intMult) + defenderScript.resistance);
+                    }   
+
+                    accuracy = attackMove.baseAccuracy + (attackerScript.skill - defenderScript.speed) * 2;
+                    critChance = attackMove.baseCrit + (attackerScript.skill * 0.5f);
+                }
+
+                returnArray[0] = (int)Mathf.Round(damage);
+                returnArray[1] = (int)Mathf.Round(accuracy);
+                returnArray[2] = (int)Mathf.Round(critChance);
+            }
+            else if (attack is SupportMove)
+            {
+                
+            }
+        }
+
+        catch (System.Exception e)
+        {
+            PlayerController attackerScript = attacker.GetComponent<PlayerController>();
+            EnemyController defenderScript = defender.GetComponent<EnemyController>(); 
+
+            if (attack is Attack attackMove)
+            {
+                //TODO: Special case scenarios like Shield bash etc
+                if (attackMove.name == "Shield Bash")
+                {
+                    damage = 0;
+                    accuracy = 0;
+                    critChance = 0;
+                }
+
+                //Standard damage calculation
+                else
+                {
+                    if (attackMove.damageType == "physical") 
+                    {
+                        damage = attackerScript.attack * attackMove.attackMult * attackerScript.attack * attackMove.attackMult / ((attackerScript.attack * attackMove.attackMult) + defenderScript.defense);
+                        Debug.Log(attackMove.name + ": AttackerATK(" + attackerScript.attack.ToString() + ") * AttackMoveMult(" + attackMove.attackMult.ToString() + ") ^ squared / (AttackerATK(" + attackerScript.attack.ToString() + ") * AttackMoveMult(" + attackMove.attackMult.ToString() + ")) + DefenderDEF(" + defenderScript.defense.ToString() + ") = " + damage.ToString());
                     }
                     else if (attackMove.damageType == "magical")
                     {
@@ -298,6 +392,7 @@ public class AttackPreview : MonoBehaviour
         //Update titles
         characterTitle.text = battleController.characterSelected.GetComponent<PlayerController>().title;
 
+        //Set rightside info
         if (!isAssisting) 
         { 
             enemyTitle.text = battleController.enemySelected.GetComponent<EnemyController>().title;
@@ -323,7 +418,7 @@ public class AttackPreview : MonoBehaviour
             else { previewRightMeleeImage.SetActive(true); previewRightRangedImage.SetActive(false); }
         }
 
-        //Update leftside health bars and values
+        //Set leftside info
         previewPlayerHp.text = battleController.characterSelected.GetComponent<PlayerController>().currentHp.ToString();
         previewPlayerMaxHp.text = battleController.characterSelected.GetComponent<PlayerController>().maxHp.ToString();
         previewPlayerMana.text = battleController.characterSelected.GetComponent<PlayerController>().currentMana.ToString();
@@ -435,15 +530,48 @@ public class AttackPreview : MonoBehaviour
                 critBlock.text = "-";
                 attackDescription.text = battleController.characterSelected.GetComponent<PlayerController>().knownAttacks[attackIndex].description;
             }
-
         }
 
         else
         {
-            //TODO: Assisting logic
+            //Check attack validity
+            if (battleController.characterSelected.GetComponent<PlayerController>().knownAttacks[attackIndex] is SupportMove)
+            {
+                validAttack = true;
+                damageArray = calculateSupport(battleController.characterSelected, battleController.assistableCharacterSelected, battleController.characterSelected.GetComponent<PlayerController>().knownAttacks[attackIndex]);
+                atkBlock.text = damageArray[0].ToString();
+                hitBlock.text = "100";
+                critBlock.text = "0";
+                attackDescription.text = battleController.characterSelected.GetComponent<PlayerController>().knownAttacks[attackIndex].description;
+
+                //When character is ranged, and enemy is not or vice versa
+                if ((battleController.characterSelected.GetComponent<PlayerController>().ranged && !battleController.enemySelected.GetComponent<EnemyController>().ranged) || (!battleController.characterSelected.GetComponent<PlayerController>().ranged && battleController.enemySelected.GetComponent<EnemyController>().ranged))
+                {
+                    rightsideAtkBlock.text = "-";
+                    rightsideHitBlock.text = "-";
+                    rightsideCritBlock.text = "-";
+                    rightsideAttackDescription.text = "-";
+                }
+                else
+                {
+                    enemyDamageArray = calculateDamage(battleController.enemySelected, battleController.characterSelected, battleController.enemySelected.GetComponent<EnemyController>().knownAttacks[0]);
+                    rightsideAtkBlock.text = enemyDamageArray[0].ToString();
+                    rightsideHitBlock.text = enemyDamageArray[1].ToString();
+                    rightsideCritBlock.text = enemyDamageArray[2].ToString();
+                    rightsideAttackDescription.text = battleController.enemySelected.GetComponent<EnemyController>().knownAttacks[0].description;
+
+                }
+            }
+            else
+            {
+                validAttack = false;
+                atkBlock.text = "-";
+                hitBlock.text = "-";
+                critBlock.text = "-";
+                attackDescription.text = battleController.characterSelected.GetComponent<PlayerController>().knownAttacks[attackIndex].description;
+            }
+
         }
-
-
 
         //Move UI to visible area
         if (isAssisting) { assistPreviewAudio.Play(); }
@@ -761,6 +889,9 @@ public class AttackPreview : MonoBehaviour
 
 
         }
+
+        //Update mana
+        battleController.characterSelected.GetComponent<PlayerController>().currentMana = battleController.characterSelected.GetComponent<PlayerController>().currentMana - chosenAttack.manaCost;
 
         //Reset Hp bar sizes
         battleScreenPlayerHpBar.GetComponent<RectTransform>().sizeDelta = originalBattleScreenHpBarSize;
