@@ -463,7 +463,7 @@ public class BattleController : MonoBehaviour
                                 }
                             }
         
-                            yield return StartCoroutine(attackPreviewScript.startEnemyAttackSequence(character.gameObject, enemyTarget, attackMove));
+                            yield return StartCoroutine(attackPreviewScript.startNeutralAttackSequence(character.gameObject, enemyTarget, attackMove));
                         }
                     }
 

@@ -5,6 +5,7 @@ using TMPro;
 
 public class CharacterAssistMenu : MonoBehaviour
 {
+    private SaveManager saveManager;
     public Camera worldCamera;
     private RectTransform characterMenuParentCanvasRect;
     public GameObject characterMenu;
@@ -19,6 +20,7 @@ public class CharacterAssistMenu : MonoBehaviour
     public AudioSource deselectAudio;
     public TextMeshProUGUI talkText;
     public TextMeshProUGUI assistText;
+    public TextMeshProUGUI tradeText;
 
     void Awake()
     {
@@ -29,6 +31,7 @@ public class CharacterAssistMenu : MonoBehaviour
         attackPreviewScript = GameObject.Find("AttackPreview").GetComponent<AttackPreview>();
         recruitDialogueScript = FindFirstObjectByType<RecruitDialogue>();
         gameObject.GetComponent<Canvas>().worldCamera = worldCamera;
+        saveManager = FindFirstObjectByType<SaveManager>();
     }
     void LateUpdate()
     {
@@ -84,8 +87,11 @@ public class CharacterAssistMenu : MonoBehaviour
                 //Open trading menu
                 else if (index == 2)
                 {
-                    inventoryMenuScript.enableTradingMenu();
-                    disableCharacterAssistMenu();
+                    if (battleController.assistableCharacterSelected.GetComponent<PlayerController>().owned)
+                    {
+                        inventoryMenuScript.enableTradingMenu();
+                        disableCharacterAssistMenu();
+                    }
                 }
             }
         }
@@ -112,12 +118,14 @@ public class CharacterAssistMenu : MonoBehaviour
         }
 
         //Check if character can be talked to
-        if (!character.GetComponent<PlayerController>().owned)
+        if (!character.GetComponent<PlayerController>().owned && battleController.characterSelected.GetComponent<PlayerController>().title == saveManager.loadedData.mainCharacterName)
         {
             talkText.color = Color.white;
+            tradeText.color = Color.black;
         }
         else
-        {
+        {   
+            tradeText.color = Color.white;
             talkText.color = Color.black;
         }
 

@@ -17,6 +17,7 @@ public class CharacterMenu : MonoBehaviour
     public AudioSource selectorAudio;
     public AudioSource deselectAudio;
     public TextMeshProUGUI endTurnText;
+    public TextMeshProUGUI inventoryText;
 
     void Awake()
     {
@@ -71,8 +72,11 @@ public class CharacterMenu : MonoBehaviour
                 //Open ineventory UI
                 else if (index == 1)
                 {
-                    StartCoroutine(inventoryMenuScript.enableInventoryGiverMenu(battleController.characterSelected));
-                    active = false;
+                    if (battleController.characterSelected.GetComponent<PlayerController>().owned)
+                    {
+                        StartCoroutine(inventoryMenuScript.enableInventoryGiverMenu(battleController.characterSelected));
+                        active = false;
+                    }
                 }
 
                 //End turn
@@ -94,13 +98,23 @@ public class CharacterMenu : MonoBehaviour
         //Gray out EndTurn if character already ended turn
         if (battleController.disabledCharacters.Contains(battleController.characterSelected) || !battleController.characterSelected.GetComponent<PlayerController>().owned)
         {
-            endTurnText.color = new Color(0f, 0f, 0f, .3f);
+            endTurnText.color = Color.black;
         }
         else
         {
             endTurnText.color = new Color(1f, 1f, 1f, 1f); 
         }
 
+        //Gray out inventory if character not owned
+        if (!battleController.characterSelected.GetComponent<PlayerController>().owned)
+        {
+            inventoryText.color = Color.black;
+        }
+        else
+        {
+            inventoryText.color = Color.white;
+        }
+        
         characterMenu.SetActive(true);
         active = true;
         Vector3 screenPos = RectTransformUtility.WorldToScreenPoint(worldCamera, character.transform.position);

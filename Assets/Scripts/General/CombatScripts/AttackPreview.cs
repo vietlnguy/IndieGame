@@ -695,10 +695,10 @@ public class AttackPreview : MonoBehaviour
             }
 
             //Enable the Battle screen and scale it from 1 to 0
-            Vector3 startScale = Vector3.one;
-            Vector3 endScale = Vector3.zero;
-            float elapsed = 0f;
-            float duration = .2f;
+            startScale = Vector3.one;
+            endScale = Vector3.zero;
+            elapsed = 0f;
+            duration = .2f;
             attackPanel.GetComponent<RectTransform>().localScale = startScale;
             while (elapsed < duration)
             {
@@ -788,16 +788,17 @@ public class AttackPreview : MonoBehaviour
         PlayerController defenderScript = defender.GetComponent<PlayerController>();
         EnemyController attackerScript = attacker.GetComponent<EnemyController>();
         coroutineRunning = true;
-        Vector3 startScale = Vector3.zero;
-        Vector3 endScale = Vector3.one;
-        float elapsed = 0f;
-        float duration = .2f;
-
         enemyDamageArray = calculateDamage(attacker, defender, attackSelected);
         damageArray = calculateDamage(defender, attacker, defenderScript.knownAttacks[0]);
         
-        if (PlayerPrefs.GetInt("combatAnim") == 0) 
+        
+        if (PlayerPrefs.GetInt("combatAnim") == 0)
         {
+            Vector3 startScale = Vector3.zero;
+            Vector3 endScale = Vector3.one;
+            float elapsed = 0f;
+            float duration = .2f;
+
             //Populate info
             battleScreenTransitionAudio.Play();
             battleScreenPlayerName.text = defenderScript.title;
@@ -812,7 +813,6 @@ public class AttackPreview : MonoBehaviour
             battleScreenEnemyHIT.text = enemyDamageArray[1].ToString();
             battleScreenEnemyCRIT.text = enemyDamageArray[2].ToString();
             
-
             if (attackerScript.ranged) { battleScreenRightRangedImage.SetActive(true); battleScreenRightMeleeImage.SetActive(false);}
             else { battleScreenRightRangedImage.SetActive(false); battleScreenRightMeleeImage.SetActive(true); }
             
@@ -850,112 +850,70 @@ public class AttackPreview : MonoBehaviour
             attackPanel.GetComponent<RectTransform>().localScale = endScale; // snap to final value
 
             //Attack roll sequence
-            //TODO: Play enemy attack animation
-            yield return new WaitForSeconds(3f);  
-        }
+            yield return new WaitForSeconds(1.5f); 
 
-        //Determine hit roll for enemy
-        int roll = Random.Range(0, 100);
-        if (roll <= enemyDamageArray[1])
-        {
-            //Determine crit roll for enemy
-            roll = Random.Range(0, 100);
-            if (roll <= enemyDamageArray[2])
+            if (RollEnemyAttack())
             {
-
-                Debug.Log(attackerScript.title + " crit " + defenderScript.title + " for " + (enemyDamageArray[0] * 2).ToString() + " damage.");
-                if (PlayerPrefs.GetInt("combatAnim") == 0) {
+                if (RollEnemyCrit())
+                {
                     yield return StartCoroutine(AnimateHealthDamage(enemyDamageArray[0] * 2, battleScreenPlayerHpBar, defender, battleScreenPlayerHealth));
-                }
-                defenderScript.currentHp = defenderScript.currentHp - enemyDamageArray[0] * 2; 
-            }
-            
-            else
-            {
-                Debug.Log(attackerScript.title + " hit " + defenderScript.title + " for " + enemyDamageArray[0].ToString() + " damage.");
-                if (PlayerPrefs.GetInt("combatAnim") == 0)
-                {
-                    yield return StartCoroutine(AnimateHealthDamage(enemyDamageArray[0], battleScreenPlayerHpBar, defender, battleScreenPlayerHealth));
-                }
-                defenderScript.currentHp = defenderScript.currentHp - enemyDamageArray[0]; 
-            }
-
-        }
-        else
-        {
-            //TODO: Show MISS ui
-            Debug.Log(attackerScript.title + " missed attack on " + defenderScript.title);
-
-        } 
-    
-        yield return new WaitForSeconds(0.5f);
-
-        //Play character death dialogue if necessary
-        if (defenderScript.currentHp <= 0)
-        {   
-            yield return StartCoroutine(DeathSequence(defender));
-            //TODO: Remove sprite on battle screen
-            //yield return StartCoroutine(battleController.characterSelected.GetComponent<PlayerController>().Die());
-        }
-
-        //Character attacks enemy
-        else
-        {
-            //should only attack back if able to
-            if ((defenderScript.ranged && attackerScript.ranged) || (!defenderScript.ranged && !attackerScript.ranged))
-            {
-                //Determine hit roll for character
-                roll = Random.Range(0, 100);
-                if (roll <= damageArray[1])
-                {
-                    //Determine crit roll for character
-                    roll = Random.Range(0, 100);
-                    if (roll <= damageArray[2])
-                    {
-                        Debug.Log(defenderScript.title + " crit " + attackerScript.title + " for " + (damageArray[0] * 2).ToString() + " damage.");
-                        if (PlayerPrefs.GetInt("combatAnim") == 0)
-                        {
-                            yield return StartCoroutine(AnimateHealthDamage(damageArray[0] * 2, battleScreenEnemyHpBar, attacker, battleScreenEnemyHealth));
-                        }
-                        attackerScript.currentHp = attackerScript.currentHp - damageArray[0] * 2;
-                    }
-                    else
-                    {
-                        Debug.Log(defenderScript.title + " hit " + attackerScript.title + " for " + damageArray[0].ToString() + " damage.");
-
-                        if (PlayerPrefs.GetInt("combatAnim") == 0)
-                        {
-                            yield return StartCoroutine(AnimateHealthDamage(damageArray[0], battleScreenEnemyHpBar, attacker, battleScreenEnemyHealth));
-                        }
-                        attackerScript.currentHp = attackerScript.currentHp - damageArray[0];
-                    }
-
+                    defenderScript.currentHp = defenderScript.currentHp - enemyDamageArray[0] * 2; 
                 }
                 else
                 {
-                    //TODO: Show MISS ui
-                    Debug.Log(defenderScript.title + " missed attack on " + attackerScript.title);
-                } 
-            
-                //Play enemy death dialogue if necessary
-                if (attackerScript.currentHp <= 0)
-                {   
-                    //TODO: Remove sprite on battle screen
-                    if (attackerScript.deathDialogue != "")
-                    {
-                        yield return StartCoroutine(DeathSequence(attacker));
-                    }
+                    yield return StartCoroutine(AnimateHealthDamage(enemyDamageArray[0], battleScreenPlayerHpBar, defender, battleScreenPlayerHealth));
+                    defenderScript.currentHp = defenderScript.currentHp - enemyDamageArray[0]; 
                 }
             }
+            
+            yield return new WaitForSeconds(0.5f);
+
+            //Play character death dialogue if necessary
+            if (defenderScript.currentHp <= 0)
+            {   
+                yield return StartCoroutine(DeathSequence(defender));
+                //TODO: Remove sprite on battle screen
+                //yield return StartCoroutine(battleController.characterSelected.GetComponent<PlayerController>().Die());
+            }
+
+            //Character attacks enemy
+            else
+            {
+                //should only attack back if able to
+                if ((defenderScript.ranged && attackerScript.ranged) || (!defenderScript.ranged && !attackerScript.ranged))
+                {
+
+                    if (RollAttack())
+                    {
+                        if (RollCrit())
+                        {
+                            yield return StartCoroutine(AnimateHealthDamage(damageArray[0] * 2, battleScreenEnemyHpBar, attacker, battleScreenEnemyHealth));
+                            attackerScript.currentHp = attackerScript.currentHp - damageArray[0] * 2;
+
+                        }
+                        else
+                        {
+                            yield return StartCoroutine(AnimateHealthDamage(damageArray[0], battleScreenEnemyHpBar, attacker, battleScreenEnemyHealth));
+                            attackerScript.currentHp = attackerScript.currentHp - damageArray[0];
+                        }
+                    }
+
+                    //Play enemy death dialogue if necessary
+                    if (attackerScript.currentHp <= 0)
+                    {   
+                        //TODO: Remove sprite on battle screen
+                        if (attackerScript.deathDialogue != "")
+                        {
+                            yield return StartCoroutine(DeathSequence(attacker));
+                        }
+                    }
+                }
+            
         
-    
-        }
-    
-        if (PlayerPrefs.GetInt("combatAnim") == 0)
-        {
-            //Scale Panel from 1 to 0
-            elapsed = 0f;
-            duration = .2f;
+            }
+        
+            //Enable the Battle screen and scale it from 1 to 0
+            attackPanel.GetComponent<RectTransform>().localScale = startScale;
             while (elapsed < duration)
             {
                 elapsed += Time.deltaTime;
@@ -966,22 +924,303 @@ public class AttackPreview : MonoBehaviour
                 yield return null;
             }
             attackPanel.GetComponent<RectTransform>().localScale = startScale; // snap to final value
+
+            //Reset Hp bar sizes
+            battleScreenPlayerHpBar.GetComponent<RectTransform>().sizeDelta = originalBattleScreenHpBarSize;
+            battleScreenEnemyHpBar.GetComponent<RectTransform>().sizeDelta = originalBattleScreenHpBarSize;
+
+            //Reset battlescreen info
+            battleScreenPlayerName.text = "-";
+            battleScreenPlayerHealth.text = "-";
+            battleScreenPlayerAttack.text = "-";
+            battleScreenEnemyName.text = "-";
+            battleScreenEnemyHealth.text = "-";
+            battleScreenEnemyAttack.text = "-";
+            battleScreenEnemyATK.text = "-";
+            battleScreenEnemyHIT.text = "-";
+            battleScreenEnemyCRIT.text = "-";
+
         }
+        else
+        {
+            //Attack roll sequence
+            yield return new WaitForSeconds(1.5f); 
+            if (RollEnemyAttack())
+            {
+                if (RollEnemyCrit())
+                {
+                    defenderScript.currentHp = defenderScript.currentHp - enemyDamageArray[0] * 2; 
+                }
+                else
+                {
+                    defenderScript.currentHp = defenderScript.currentHp - enemyDamageArray[0]; 
+                }
+            }
+            
+            yield return new WaitForSeconds(0.5f);
 
-        //Reset Hp bar sizes
-        battleScreenPlayerHpBar.GetComponent<RectTransform>().sizeDelta = originalBattleScreenHpBarSize;
-        battleScreenEnemyHpBar.GetComponent<RectTransform>().sizeDelta = originalBattleScreenHpBarSize;
+            //Play character death dialogue if necessary
+            if (defenderScript.currentHp <= 0)
+            {   
+                yield return StartCoroutine(DeathSequence(defender));
+                //TODO: Remove sprite on battle screen
+                //yield return StartCoroutine(battleController.characterSelected.GetComponent<PlayerController>().Die());
+            }
 
-        //Reset battlescreen info
-        battleScreenPlayerName.text = "-";
-        battleScreenPlayerHealth.text = "-";
-        battleScreenPlayerAttack.text = "-";
-        battleScreenEnemyName.text = "-";
-        battleScreenEnemyHealth.text = "-";
-        battleScreenEnemyAttack.text = "-";
-        battleScreenEnemyATK.text = "-";
-        battleScreenEnemyHIT.text = "-";
-        battleScreenEnemyCRIT.text = "-";
+            //Character attacks enemy
+            else
+            {
+                //should only attack back if able to
+                if ((defenderScript.ranged && attackerScript.ranged) || (!defenderScript.ranged && !attackerScript.ranged))
+                {
+
+                    if (RollAttack())
+                    {
+                        if (RollCrit())
+                        {
+                            yield return StartCoroutine(AnimateHealthDamage(damageArray[0] * 2, battleScreenEnemyHpBar, attacker, battleScreenEnemyHealth));
+                            attackerScript.currentHp = attackerScript.currentHp - damageArray[0] * 2;
+
+                        }
+                        else
+                        {
+                            yield return StartCoroutine(AnimateHealthDamage(damageArray[0], battleScreenEnemyHpBar, attacker, battleScreenEnemyHealth));
+                            attackerScript.currentHp = attackerScript.currentHp - damageArray[0];
+                        }
+                    }
+
+                    //Play enemy death dialogue if necessary
+                    if (attackerScript.currentHp <= 0)
+                    {   
+                        //TODO: Remove sprite on battle screen
+                        if (attackerScript.deathDialogue != "")
+                        {
+                            yield return StartCoroutine(DeathSequence(attacker));
+                        }
+                    }
+                }
+            
+        
+            }
+        
+        }
+        
+        coroutineRunning = false;
+    }
+    public IEnumerator startNeutralAttackSequence(GameObject attacker, GameObject defender, AttackMoves attackSelected)
+    {
+        EnemyController defenderScript = defender.GetComponent<EnemyController>();
+        PlayerController attackerScript = attacker.GetComponent<PlayerController>();
+        coroutineRunning = true;
+        enemyDamageArray = calculateDamage(attacker, defender, attackSelected);
+        damageArray = calculateDamage(defender, attacker, attackerScript.knownAttacks[0]);
+        
+        
+        if (PlayerPrefs.GetInt("combatAnim") == 0)
+        {
+            Vector3 startScale = Vector3.zero;
+            Vector3 endScale = Vector3.one;
+            float elapsed = 0f;
+            float duration = .2f;
+
+            //Populate leftside info
+            battleScreenTransitionAudio.Play();
+            battleScreenPlayerName.text = attackerScript.title;
+            battleScreenPlayerHealth.text = attackerScript.currentHp.ToString();
+            battleScreenPlayerHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)attackerScript.currentHp / attackerScript.maxHp, 1f);
+            battleScreenPlayerAttack.text = attackSelected.name;
+            battleScreenPlayerATK.text = damageArray[0].ToString();
+            battleScreenPlayerHIT.text = damageArray[1].ToString();
+            battleScreenPlayerCRIT.text = damageArray[2].ToString();
+
+            //Populate rightside info
+            battleScreenEnemyName.text = defenderScript.title; 
+            battleScreenEnemyHealth.text = defenderScript.currentHp.ToString();
+            battleScreenEnemyHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)defenderScript.currentHp / defenderScript.maxHp, 1f);
+ 
+            if (attackerScript.ranged) { battleScreenLeftRangedImage.SetActive(true); battleScreenLeftMeleeImage.SetActive(false);}
+            else { battleScreenLeftRangedImage.SetActive(false); battleScreenLeftMeleeImage.SetActive(true); }
+            
+            if (defenderScript.ranged) { battleScreenRightRangedImage.SetActive(true); battleScreenRightMeleeImage.SetActive(false);}
+            else { battleScreenRightRangedImage.SetActive(false); battleScreenRightMeleeImage.SetActive(true); }
+            
+
+            //Enemy is ranged and character is not, or vice versa
+            if ((attackerScript.ranged && !defenderScript.ranged) || (!attackerScript.ranged && defenderScript.ranged) )
+            {
+                battleScreenEnemyAttack.text = "-";
+                battleScreenEnemyATK.text =  "-";
+                battleScreenEnemyHIT.text =  "-";
+                battleScreenEnemyCRIT.text = "-";
+                
+            }
+            else
+            {
+                battleScreenEnemyATK.text = enemyDamageArray[0].ToString();
+                battleScreenEnemyHIT.text = enemyDamageArray[1].ToString();
+                battleScreenEnemyCRIT.text = enemyDamageArray[2].ToString();  
+                battleScreenEnemyAttack.text = defenderScript.knownAttacks[0].name;
+            }
+     
+            //Enable the Battle screen and scale it from 0 to 1
+            attackPanel.GetComponent<RectTransform>().localScale = startScale;
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
+
+                attackPanel.GetComponent<RectTransform>().localScale = Vector3.Lerp(startScale, endScale, t);
+
+                yield return null;
+            }
+            attackPanel.GetComponent<RectTransform>().localScale = endScale; // snap to final value
+
+            //Player attack roll sequence
+            yield return new WaitForSeconds(1.5f); 
+
+            if (RollAttack())
+            {
+                if (RollCrit())
+                {
+                    yield return StartCoroutine(AnimateHealthDamage(damageArray[0] * 2, battleScreenEnemyHpBar, defender, battleScreenEnemyHealth));
+                    defenderScript.currentHp = defenderScript.currentHp - damageArray[0] * 2;
+                }
+                else
+                {
+                    yield return StartCoroutine(AnimateHealthDamage(damageArray[0], battleScreenEnemyHpBar, defender, battleScreenEnemyHealth));
+                    defenderScript.currentHp = defenderScript.currentHp - damageArray[0]; 
+                }
+            }
+            
+            yield return new WaitForSeconds(0.5f);
+
+            //Play enemy death dialogue if necessary
+            if (defenderScript.currentHp <= 0)
+            {   
+                yield return StartCoroutine(DeathSequence(defender));
+                //TODO: Remove sprite on battle screen
+                //yield return StartCoroutine(battleController.characterSelected.GetComponent<PlayerController>().Die());
+            }
+
+            //Enemy attacks enemy
+            else
+            {
+                //should only attack back if able to
+                if ((attackerScript.ranged && defenderScript.ranged) || (!attackerScript.ranged && !defenderScript.ranged))
+                {
+
+                    if (RollEnemyAttack())
+                    {
+                        if (RollEnemyCrit())
+                        {
+                            yield return StartCoroutine(AnimateHealthDamage(enemyDamageArray[0] * 2, battleScreenPlayerHpBar, attacker, battleScreenPlayerHealth));
+                            attackerScript.currentHp = attackerScript.currentHp - enemyDamageArray[0] * 2;
+
+                        }
+                        else
+                        {
+                            yield return StartCoroutine(AnimateHealthDamage(enemyDamageArray[0], battleScreenPlayerHpBar, attacker, battleScreenPlayerHealth));
+                            attackerScript.currentHp = attackerScript.currentHp - enemyDamageArray[0];
+                        }
+                    }
+
+                    //Play character death dialogue if necessary
+                    if (attackerScript.currentHp <= 0)
+                    {   
+                        //TODO: Remove sprite on battle screen
+                        if (attackerScript.deathDialogue != "")
+                        {
+                            yield return StartCoroutine(DeathSequence(attacker));
+                        }
+                    }
+                }
+            
+            }
+        
+            //Enable the Battle screen and scale it from 1 to 0
+            attackPanel.GetComponent<RectTransform>().localScale = startScale;
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
+
+                attackPanel.GetComponent<RectTransform>().localScale = Vector3.Lerp(endScale, startScale, t);
+
+                yield return null;
+            }
+            attackPanel.GetComponent<RectTransform>().localScale = startScale; // snap to final value
+
+            //Reset Hp bar sizes
+            battleScreenPlayerHpBar.GetComponent<RectTransform>().sizeDelta = originalBattleScreenHpBarSize;
+            battleScreenEnemyHpBar.GetComponent<RectTransform>().sizeDelta = originalBattleScreenHpBarSize;
+
+            //Reset battlescreen info
+            battleScreenPlayerName.text = "-";
+            battleScreenPlayerHealth.text = "-";
+            battleScreenPlayerAttack.text = "-";
+            battleScreenEnemyName.text = "-";
+            battleScreenEnemyHealth.text = "-";
+            battleScreenEnemyAttack.text = "-";
+            battleScreenEnemyATK.text = "-";
+            battleScreenEnemyHIT.text = "-";
+            battleScreenEnemyCRIT.text = "-";
+
+        }
+        else
+        {
+            if (RollAttack())
+            {
+                if (RollCrit())
+                {
+                    defenderScript.currentHp = defenderScript.currentHp - damageArray[0] * 2;
+                }
+                else
+                {
+                    defenderScript.currentHp = defenderScript.currentHp - damageArray[0]; 
+                }
+            }
+            
+            yield return new WaitForSeconds(0.5f);
+
+            //Play enemy death dialogue if necessary
+            if (defenderScript.currentHp <= 0)
+            {   
+                yield return StartCoroutine(DeathSequence(defender));
+                //TODO: Remove sprite on battle screen
+                //yield return StartCoroutine(battleController.characterSelected.GetComponent<PlayerController>().Die());
+            }
+
+            //Enemy attacks enemy
+            else
+            {
+                //should only attack back if able to
+                if ((attackerScript.ranged && defenderScript.ranged) || (!attackerScript.ranged && !defenderScript.ranged))
+                {
+                    if (RollEnemyAttack())
+                    {
+                        if (RollEnemyCrit())
+                        {
+                            attackerScript.currentHp = attackerScript.currentHp - enemyDamageArray[0] * 2;
+
+                        }
+                        else
+                        {
+                            attackerScript.currentHp = attackerScript.currentHp - enemyDamageArray[0];
+                        }
+                    }
+
+                    //Play character death dialogue if necessary
+                    if (attackerScript.currentHp <= 0)
+                    {   
+                        //TODO: Remove sprite on battle screen
+                        if (attackerScript.deathDialogue != "")
+                        {
+                            yield return StartCoroutine(DeathSequence(attacker));
+                        }
+                    }
+                }
+            }
+        }
         
         coroutineRunning = false;
     }

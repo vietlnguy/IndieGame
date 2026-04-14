@@ -277,7 +277,7 @@ public class PlayerController : MonoBehaviour
         }
         else if (savedCharacter.characterName == "Lucas")
         {
-            deathDialogue = "Guh- Bummer... Looks like I won't be a legend...";
+            deathDialogue = "Guh- sorry sis.. I wasn't strong enough...";
         }
         else if (savedCharacter.characterName == "Penelope")
         {
