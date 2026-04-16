@@ -46,6 +46,9 @@ public class Chapter2 : MonoBehaviour
     public AudioSource dangerIntroAudio;
     public AudioSource doorOpenAudio;
     public CanvasGroup blackScreen;
+    private int lucasKills = 0;
+    private PlayerController lucasScript;
+    private PlayerController celesteScript;
 
     public void Awake()
     {    
@@ -90,6 +93,9 @@ public class Chapter2 : MonoBehaviour
             celeste.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
             celeste.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
             celeste.accessoryEquiped = new Equipment("Mana Band", "accessory", 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Stores mana! +2 max Mana.");
+            celeste.subquests.Add(new Subquest("Celeste1", "Don't let Celeste take any damage.", "Ask about how she became a priestess."));
+            //TODO: Add more celeste subquests
+            
             saveManager.loadedData.characters.Add(celeste);
 
             Character lucas = new Character("Lucas", 11, 7, 5, 3, 5, 5, 6, 6, 1, 5, false, false);
@@ -98,6 +104,9 @@ public class Chapter2 : MonoBehaviour
             lucas.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
             lucas.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
             lucas.accessoryEquiped = new Equipment("Gauntlets", "accessory", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary");
+            lucas.subquests.Add(new Subquest("Lucas1", "Lucas defeats 3 enemies.", "Ask about his relationship to Celeste."));
+            //TODO: Add more lucas subquests
+
             saveManager.loadedData.characters.Add(lucas);
 
         }
@@ -114,11 +123,13 @@ public class Chapter2 : MonoBehaviour
             }
             else if (character.characterName == "Celeste")
             {
-                Instantiate(celestePrefab, new Vector3(13f, -8f, 0f), Quaternion.identity, characters.transform);
+                GameObject temp = Instantiate(celestePrefab, new Vector3(13f, -8f, 0f), Quaternion.identity, characters.transform);
+                celesteScript = temp.GetComponent<PlayerController>();
             }
             else if (character.characterName == "Lucas")
             {
-                Instantiate(lucasPrefab, new Vector3(13f, -8f, 0f), Quaternion.identity, characters.transform);
+                GameObject temp = Instantiate(lucasPrefab, new Vector3(13f, -8f, 0f), Quaternion.identity, characters.transform);
+                lucasScript = temp.GetComponent<PlayerController>();
             }
         }
 
@@ -133,7 +144,7 @@ public class Chapter2 : MonoBehaviour
         //Battle controller should be abstract enough to apply to all chapters
         //Chapter specific script events happen here, and win/lose conditions
         
-        //Intro control
+        //Intro typing control
         if (intro != null)
         {
             if (Input.GetMouseButtonDown(0))
@@ -153,23 +164,40 @@ public class Chapter2 : MonoBehaviour
             }
         }
 
-        //Win condition
-        if (battleController.enemies.transform.childCount == 0 && enemiesSpawned && !victorySequenceStarted && !attackPreviewScript.coroutineRunning)
+        else 
         {
-            //Start outro scene
-            battleController.CancelEveryting();
-            victorySequence.SetActive(true);
-            StartCoroutine(victorySequence.GetComponent<VictorySequence>().Victory());
-            enemiesSpawned = false; //remove later
-            victorySequenceStarted = true;
-        }
-        
-        //Lose condition
-        if (shouldLose && !gameOver && !attackPreviewScript.coroutineRunning)
-        {
-            battleController.CancelEveryting();
-            gameOver = true;
-            StartCoroutine(gameOverScript.GameOverSequence());
+            //Check subquests
+            if (celesteScript.currentHp < celesteScript.maxHp) 
+            {
+                celesteScript.subquests[0].failed = true;
+            }
+
+            //Win condition
+            if (battleController.enemies.transform.childCount == 0 && enemiesSpawned && !victorySequenceStarted && !attackPreviewScript.coroutineRunning)
+            {
+                if (celesteScript.subquests[0].completed == false) {
+                    celesteScript.subquests[0].failed = true;
+                }
+                if (lucasScript.subquests[0].completed == false) {
+                    lucasScript.subquests[0].failed = true;
+                }
+
+                //Start outro scene
+                battleController.CancelEveryting();
+                victorySequence.SetActive(true);
+                StartCoroutine(victorySequence.GetComponent<VictorySequence>().Victory());
+                enemiesSpawned = false; //remove later
+                victorySequenceStarted = true;
+            }
+            
+            //Lose condition
+            if (shouldLose && !gameOver && !attackPreviewScript.coroutineRunning)
+            {
+                battleController.CancelEveryting();
+                gameOver = true;
+                StartCoroutine(gameOverScript.GameOverSequence());
+
+            }
 
         }
 
@@ -276,7 +304,7 @@ public class Chapter2 : MonoBehaviour
     private void HandleDeath(string name)
     {
         Debug.Log("Heard that " + name + " died!");
-        if (name == "Astrid" || name == saveManager.loadedData.mainCharacterName)
+        if (name == "Astrid" || name == saveManager.loadedData.mainCharacterName || name == "Lucas" || name == "Celeste")
         {
             shouldLose = true;
         }
@@ -294,16 +322,14 @@ public class Chapter2 : MonoBehaviour
     {
         Debug.Log("Heard that " + list[0].GetComponent<EnemyController>().title + " was killed by " + list[1].GetComponent<PlayerController>().title);
 
-        //Subquest 1: Astrid lands killing blow on boss
-        if (list[0].GetComponent<EnemyController>().boss && list[1].GetComponent<PlayerController>().title != "Astrid")
+        if (list[1].GetComponent<PlayerController>().title == "Lucas")
         {
-            //Quest failure
-            subquestsBoxScript.updateQuest("Astrid1", false, list[1]);
-        }
-        else if (list[0].GetComponent<EnemyController>().boss && list[1].GetComponent<PlayerController>().title == "Astrid")
-        {
-            //Quest success
-            subquestsBoxScript.updateQuest("Astrid1", true, list[1]);
+            lucasKills++;
+
+            if (lucasKills >= 3)
+            {
+                lucasScript.subquests[0].completed = true;
+            }
 
         }
 
@@ -522,6 +548,7 @@ public class Chapter2 : MonoBehaviour
         yield return StartCoroutine(Helpers.FadeOutCanvasGroup(blackScreen, 1f));
         battleController.StartCombat();
         saveManager.OverwriteSave();
+        intro = null;
     }
     private IEnumerator TypeLine(string line, string speaker, AudioSource audioSource, TextMeshProUGUI textBox, float textSpeed) {
         if (speaker == "Astrid")

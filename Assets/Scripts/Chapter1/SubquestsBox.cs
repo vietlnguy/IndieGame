@@ -8,8 +8,8 @@ public class SubquestsBox : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 {
     
     private RectTransform rect;
-    private Vector2 startPos;
-    private Vector2 endPos;
+    public Vector2 startPos;
+    public Vector2 endPos;
     public Image quest1ImageCheck;
     public Image quest1ImageX;
     Coroutine moveDownCoroutine;
