@@ -72,6 +72,7 @@ public class AttackPreview : MonoBehaviour
     private Vector2 originalHpManaBarSize;
     private Vector2 originalEnemyHpManaBarSize;
     private Vector2 originalBattleScreenHpBarSize;
+    private Vector2 originalBattleScreenManaBarSize;
     public int[] damageArray = {-1, -1, -1};
     public int[] enemyDamageArray = {-1, -1, -1};
     public bool isAssisting = false;
@@ -105,6 +106,7 @@ public class AttackPreview : MonoBehaviour
         originalHpManaBarSize = previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta;
         originalEnemyHpManaBarSize = previewEnemyHpBar.GetComponent<RectTransform>().sizeDelta;
         originalBattleScreenHpBarSize = battleScreenRightHpBar.GetComponent<RectTransform>().sizeDelta;
+        originalBattleScreenManaBarSize = battleScreenRightManaBar.GetComponent<RectTransform>().sizeDelta;
         
     }
     void Start()
@@ -856,6 +858,8 @@ public class AttackPreview : MonoBehaviour
             }
             attackPanel.GetComponent<RectTransform>().localScale = endScale; // snap to final value
 
+            yield return new WaitForSeconds(1.5f);
+
             //Restores hp
             if (supportMove.restoresHpOrMana == "hp")
             {
@@ -868,7 +872,7 @@ public class AttackPreview : MonoBehaviour
             }
             else if (supportMove.restoresHpOrMana == "mana")
             {
-                yield return StartCoroutine(AnimateHealthDamage(damageArray[0], battleScreenRightManaBar, battleController.assistableCharacterSelected, battleScreenRightMana));
+                yield return StartCoroutine(AnimateManaDamage(damageArray[0], battleScreenRightManaBar, battleController.assistableCharacterSelected, battleScreenRightMana));
                 battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentMana = battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentMana - damageArray[0];
                 if (battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentMana > battleController.assistableCharacterSelected.GetComponent<PlayerController>().maxMana)
                 {
@@ -879,6 +883,8 @@ public class AttackPreview : MonoBehaviour
             {
                 
             }
+
+            yield return new WaitForSeconds(1.5f);
 
             //Enable the Battle screen and scale it from 1 to 0
             startScale = Vector3.one;
@@ -1364,6 +1370,10 @@ public class AttackPreview : MonoBehaviour
         battleScreenLeftHpBar.GetComponent<RectTransform>().sizeDelta = originalBattleScreenHpBarSize;
         battleScreenRightHpBar.GetComponent<RectTransform>().sizeDelta = originalBattleScreenHpBarSize;
 
+        //Reset Mana bar sizes
+        battleScreenLeftManaBar.GetComponent<RectTransform>().sizeDelta = originalBattleScreenManaBarSize;
+        battleScreenRightManaBar.GetComponent<RectTransform>().sizeDelta = originalBattleScreenManaBarSize;
+
         //Reset battlescreen info
         battleScreenPlayerName.text = "-";
         battleScreenLeftHp.text = "-";
@@ -1435,6 +1445,10 @@ public class AttackPreview : MonoBehaviour
         battleScreenPlayerName.text = battleController.characterSelected.GetComponent<PlayerController>().title;
         battleScreenLeftHp.text = battleController.characterSelected.GetComponent<PlayerController>().currentHp.ToString();
         battleScreenLeftHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().currentHp / battleController.characterSelected.GetComponent<PlayerController>().maxHp, 1f);
+        
+        battleScreenLeftMana.text = battleController.characterSelected.GetComponent<PlayerController>().currentMana.ToString();
+        battleScreenLeftManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().currentMana / battleController.characterSelected.GetComponent<PlayerController>().maxMana, 1f);
+        
         battleScreenLeftAttack.text = chosenAttack.name;
         battleScreenLeftHIT.text = damageArray[1].ToString();
         battleScreenLeftCRIT.text = damageArray[2].ToString();
@@ -1447,7 +1461,9 @@ public class AttackPreview : MonoBehaviour
             battleScreenLeftATK.text = (-1 * damageArray[0]).ToString();
             battleScreenEnemyName.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().title;
             battleScreenRightHp.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentHp.ToString();
-            battleScreenRightHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentHp / battleController.assistableCharacterSelected.GetComponent<PlayerController>().maxHp, 1f);  
+            battleScreenRightHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentHp / battleController.assistableCharacterSelected.GetComponent<PlayerController>().maxHp, 1f);   
+            battleScreenRightMana.text = battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentMana.ToString();
+            battleScreenRightManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.assistableCharacterSelected.GetComponent<PlayerController>().currentMana / battleController.assistableCharacterSelected.GetComponent<PlayerController>().maxMana, 1f);  
             if (battleController.assistableCharacterSelected.GetComponent<PlayerController>().ranged) { battleScreenRightRangedImage.SetActive(true); battleScreenRightMeleeImage.SetActive(false);}
             else { battleScreenRightRangedImage.SetActive(false); battleScreenRightMeleeImage.SetActive(true); }
             battleScreenRightAttack.text = "-";
@@ -1461,6 +1477,9 @@ public class AttackPreview : MonoBehaviour
             battleScreenEnemyName.text = battleController.enemySelected.GetComponent<EnemyController>().title; 
             battleScreenRightHp.text = battleController.enemySelected.GetComponent<EnemyController>().currentHp.ToString();
             battleScreenRightHpBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.enemySelected.GetComponent<EnemyController>().currentHp / battleController.enemySelected.GetComponent<EnemyController>().maxHp, 1f);
+            battleScreenRightMana.text = battleController.enemySelected.GetComponent<EnemyController>().currentMana.ToString();
+            battleScreenRightManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.enemySelected.GetComponent<EnemyController>().currentMana / battleController.enemySelected.GetComponent<EnemyController>().maxMana, 1f);
+            
             if (battleController.enemySelected.GetComponent<EnemyController>().ranged) { battleScreenRightRangedImage.SetActive(true); battleScreenRightMeleeImage.SetActive(false);}
             else { battleScreenRightRangedImage.SetActive(false); battleScreenRightMeleeImage.SetActive(true); }
         
@@ -1530,6 +1549,98 @@ public class AttackPreview : MonoBehaviour
             else
             {
                 endSize = originalBattleScreenHpBarSize * temp;
+            }
+            
+            startNumber = person.GetComponent<EnemyController>().currentHp;
+            targetNumber = person.GetComponent<EnemyController>().currentHp - damage;
+            if (targetNumber > person.GetComponent<EnemyController>().maxHp)
+            {
+                targetNumber = person.GetComponent<EnemyController>().maxHp;
+            }
+            if (targetNumber < 0) { targetNumber = 0; }
+        }
+
+        // Track the current printed number
+        int currentPrintedNumber = startNumber;
+
+        // Determine direction
+        int direction = startNumber > targetNumber ? -1 : 1;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / duration;
+            rect.sizeDelta = Vector2.Lerp(startSize, endSize, t);
+            float numberLerp = Mathf.Lerp(startNumber, targetNumber, t);
+            int newNumber = direction == -1 
+                ? Mathf.FloorToInt(numberLerp)
+                : Mathf.CeilToInt(numberLerp);
+
+            if (newNumber != currentPrintedNumber)
+            {
+                currentPrintedNumber = newNumber;
+                healthText.text = currentPrintedNumber.ToString();
+            }
+
+            yield return null;
+        }
+
+        // Ensure final values are exact
+        rect.sizeDelta = endSize;
+
+        if (currentPrintedNumber != targetNumber)
+        {
+            currentPrintedNumber = targetNumber;
+        }
+    }
+    private IEnumerator AnimateManaDamage(int damage, GameObject healthBarObject, GameObject person, TextMeshProUGUI healthText)
+    {
+        RectTransform rect = healthBarObject.GetComponent<RectTransform>();
+        float duration = 1.5f;
+        float elapsed = 0f;
+        Vector2 startSize = rect.sizeDelta;
+        Vector2 endSize;
+        int startNumber = 0;
+        int targetNumber = 0;
+
+        if (person.GetComponent<PlayerController>() != null)
+        {
+            float temp = (float)(person.GetComponent<PlayerController>().currentHp - damage) / person.GetComponent<PlayerController>().maxHp;
+            if (temp > 1f)
+            {
+                endSize = originalBattleScreenManaBarSize;
+            }
+            else if (person.GetComponent<PlayerController>().currentHp - damage <= 0)
+            {
+                endSize = originalBattleScreenManaBarSize * 0f;
+            }
+            else
+            {
+                endSize = originalBattleScreenManaBarSize * temp;
+            }
+            startNumber = person.GetComponent<PlayerController>().currentHp;
+            targetNumber = person.GetComponent<PlayerController>().currentHp - damage;
+            if (targetNumber > person.GetComponent<PlayerController>().maxHp)
+            {
+                targetNumber = person.GetComponent<PlayerController>().maxHp;
+            }
+            if (targetNumber < 0) { targetNumber = 0; }
+
+        }
+        else
+        {
+            float temp = (float)(person.GetComponent<EnemyController>().currentHp - damage) / person.GetComponent<EnemyController>().maxHp;
+            if (temp > 1f)
+            {
+                endSize = originalBattleScreenManaBarSize;
+            }
+            else if (person.GetComponent<EnemyController>().currentHp - damage <= 0)
+            {
+                endSize = originalBattleScreenManaBarSize * 0f;
+            }
+            else
+            {
+                endSize = originalBattleScreenManaBarSize * temp;
             }
             
             startNumber = person.GetComponent<EnemyController>().currentHp;
