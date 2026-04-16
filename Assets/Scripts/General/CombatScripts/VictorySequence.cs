@@ -19,6 +19,7 @@ public class VictorySequence : MonoBehaviour
     public GameObject subquestEntryPrefab;
     public GameObject retryButton;
     public GameObject continueButton;
+    public GameObject grouping;
     
     void Awake()
     {
@@ -26,10 +27,11 @@ public class VictorySequence : MonoBehaviour
         checkAudios.Add(checkAudio0);
         checkAudios.Add(checkAudio1);
         checkAudios.Add(checkAudio2);
-        disableHoverable();
     }
     public IEnumerator Victory()
     {   
+        grouping.SetActive(true);
+        
         //Fade out background music
         StartCoroutine(Helpers.FadeOutAudio(GameObject.Find("CombatBackgroundAudio").GetComponent<AudioSource>(), 0.5f));
         
@@ -124,18 +126,5 @@ public class VictorySequence : MonoBehaviour
 
         rectTransform.localScale = Vector3.one;
     }
-    private void disableHoverable()
-    {
-        GameObject characters = GameObject.Find("Characters");
-        foreach (Transform child in characters.transform)
-        {
-            child.GetComponent<PlayerController>().hoverable = false;
-        }
 
-        GameObject enemies = GameObject.Find("Enemies");
-        foreach (Transform child in enemies.transform)
-        {
-            child.GetComponent<EnemyController>().hoverable = false;
-        }
-    }
 }

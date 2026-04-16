@@ -49,6 +49,7 @@ public class Chapter2 : MonoBehaviour
     private int lucasKills = 0;
     private PlayerController lucasScript;
     private PlayerController celesteScript;
+    private VictorySequence victorySequenceScript;
 
     public void Awake()
     {    
@@ -58,6 +59,7 @@ public class Chapter2 : MonoBehaviour
         characters = GameObject.Find("Characters");
         enemies = GameObject.Find("Enemies");
         pathfinder = FindFirstObjectByType<TilemapPathfinder>();
+        victorySequenceScript = FindFirstObjectByType<VictorySequence>();
 
         dialogues = new List<CharacterDialogue>();
         dialogues.Add(new CharacterDialogue(mainCharacterImage, saveManager.loadedData.mainCharacterName, new string[] {"It's been a long time since we've been back to Maplemire.", "We should try to load up on supplies, while we can.", "It's not much further til we get to the castle."}));
@@ -133,6 +135,12 @@ public class Chapter2 : MonoBehaviour
             }
         }
 
+        //Give victory sequence script a list of all subquests
+        List<Subquest> quests = new List<Subquest>();
+        quests.Add(lucasScript.subquests[0]);
+        quests.Add(celesteScript.subquests[0]);
+        victorySequenceScript.subquests = quests;
+
     }
     public void Start()
     {
@@ -184,7 +192,6 @@ public class Chapter2 : MonoBehaviour
 
                 //Start outro scene
                 battleController.CancelEveryting();
-                victorySequence.SetActive(true);
                 StartCoroutine(victorySequence.GetComponent<VictorySequence>().Victory());
                 enemiesSpawned = false; //remove later
                 victorySequenceStarted = true;

@@ -15,7 +15,7 @@ public class ChapterOne : MonoBehaviour {
     public GameOver gameOverScript;
     public AttackPreview attackPreviewScript;
     public SubquestsBox subquestsBoxScript;
-    public GameObject victorySequence;
+    public VictorySequence victorySequence;
     public GameObject mainCharacterPrefab;
     public GameObject astridPrefab;
     private GameObject characters;
@@ -39,6 +39,7 @@ public class ChapterOne : MonoBehaviour {
             }
         }
 
+        victorySequence = FindFirstObjectByType<VictorySequence>();
     }
     public void Update()
     {
@@ -51,8 +52,7 @@ public class ChapterOne : MonoBehaviour {
         {
             //Start outro scene
             battleController.CancelEveryting();
-            victorySequence.SetActive(true);
-            StartCoroutine(victorySequence.GetComponent<VictorySequence>().Victory());
+            StartCoroutine(victorySequence.Victory());
             enemiesSpawned = false; //remove later
             victorySequenceStarted = true;
         }
