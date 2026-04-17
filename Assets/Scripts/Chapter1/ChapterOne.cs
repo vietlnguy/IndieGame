@@ -19,11 +19,18 @@ public class ChapterOne : MonoBehaviour {
     public GameObject mainCharacterPrefab;
     public GameObject astridPrefab;
     private GameObject characters;
+    private PlayerController astridScript;
+    private TilemapPathfinder pathfinder;
+    
+    
+    public Image whiteScreen;
+    public AudioSource fluteAudio;
 
     public void Awake()
     {    
     
         saveManager = FindFirstObjectByType<SaveManager>();
+        pathfinder = FindFirstObjectByType<TilemapPathfinder>();
         characters = GameObject.Find("Characters");
         enemies = GameObject.Find("Enemies");
 
@@ -35,18 +42,39 @@ public class ChapterOne : MonoBehaviour {
             }
             else if (character.characterName == "Astrid")
             {
-                Instantiate(astridPrefab, new Vector3(-4.45f, -11.65f), Quaternion.identity, characters.transform);
+                GameObject temp = Instantiate(astridPrefab, new Vector3(-4.45f, -11.65f), Quaternion.identity, characters.transform);
+                astridScript = GameObject.Find("AstridPrefab(Clone)").GetComponent<PlayerController();
+
             }
         }
 
         victorySequence = FindFirstObjectByType<VictorySequence>();
+        victorySequence.subquests.Add(astridScript.subquests[0]);
+
+        //intro = StartCoroutine(Intro());
     }
     public void Update()
     {
-        //Can script reinforcements, mid combat dialogues, etc.
-        //Battle controller should be abstract enough to apply to all chapters
-        //Chapter specific script events happen here, and win/lose conditions
-        
+        //Intro typing control
+        if (intro != null)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (isTyping)
+                {
+                    StopCoroutine(typingCoroutine);
+                    typingCoroutine = null;
+                    smallDialogueTextBox.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = lineToBeTyped;
+                    typingAudio.Stop();
+                    isTyping = false;
+                }
+                else
+                {
+                    nextLine = true;
+                }
+            }
+        }
+
         //Win condition
         if (battleController.enemies.transform.childCount == 0 && enemiesSpawned && !victorySequenceStarted && !attackPreviewScript.coroutineRunning)
         {
@@ -188,16 +216,148 @@ public class ChapterOne : MonoBehaviour {
         //Subquest 1: Astrid lands killing blow on boss
         if (list[0].GetComponent<EnemyController>().boss && list[1].GetComponent<PlayerController>().title != "Astrid")
         {
-            //Quest failure
-            subquestsBoxScript.updateQuest("Astrid1", false, list[1]);
+            astridScript.subquests[0].failed = true;
         }
         else if (list[0].GetComponent<EnemyController>().boss && list[1].GetComponent<PlayerController>().title == "Astrid")
         {
-            //Quest success
-            subquestsBoxScript.updateQuest("Astrid1", true, list[1]);
-
+            astridScript.subquests[0].completed = true;
         }
 
     }
+    private IEnumerator Intro()
+    {
 
+        if (saveManager.loadedData.introBattleOutro == "Intro")
+        {
+            //Overworld movement and dialogue
+            yield return StartCoroutine(Helpers.FadeOutImageAlpha(whiteScreen, 1f));
+            yield return new WaitForSeconds(1f);
+            StartCoroutine(Helpers.FadeInAudio(fluteAudio));
+            yield return StartCoroutine(pathfinder.FollowPath(mainChar, new Vector3(-6.57f, -11.28f, 0f)));
+            yield return new WaitForSeconds(.5f);
+            doorAudio.Play();
+            yield return StartCoroutine(characterDisappear(mainChar));
+            DialogueController.GetComponent<SmallDialogue>().NextDialogue();
+            while (!dialogueFinished)
+            {
+                yield return new WaitForSeconds(1f);
+            }
+
+            //scene
+            yield return StartCoroutine(FadeScreen(blackScreen, 1f));
+            sexScreen.GetComponent<CanvasGroup>().alpha = 1f;
+            yield return StartCoroutine(UndoFade(blackScreen, 1f));
+            DialogueController.GetComponent<SmallDialogue>().NextDialogue();
+            while (!secondDialogueFinished)
+            {
+                yield return new WaitForSeconds(1f);
+            }
+
+            //In house dialogue
+            yield return StartCoroutine(FadeScreen(blackScreen, 2f));
+            sexScreen.GetComponent<CanvasGroup>().alpha = 0f;
+            houseScreen.GetComponent<CanvasGroup>().alpha = 1f;
+            yield return StartCoroutine(UndoFade(blackScreen, 1f));
+            DialogueController.GetComponent<FullBodyDialogue>().NextDialogue();
+            while (!thirdDialogueFinished)
+            {
+                yield return new WaitForSeconds(1f);
+            }
+
+            //Overworld artifact scene and dialogue
+            yield return StartCoroutine(FadeScreen(blackScreen, 2f));
+            houseScreen.GetComponent<CanvasGroup>().alpha = 0f;
+            disableCharacterImages();
+            yield return StartCoroutine(UndoFade(blackScreen, 2f));
+            artifactShineAudio.Play();
+            yield return new WaitForSeconds(4f);
+            DialogueController.GetComponent<SmallDialogue>().NextDialogue();
+            while (!fourthDialogueFinished)
+            {
+                yield return new WaitForSeconds(1f);
+            }
+
+            //In house dialogue 2
+            yield return StartCoroutine(FadeScreen(blackScreen, 2f));
+            houseScreen.GetComponent<CanvasGroup>().alpha = 1f;
+            enableCharacterImages();
+            yield return StartCoroutine(UndoFade(blackScreen, 1f));
+            DialogueController.GetComponent<FullBodyDialogue>().NextDialogue();
+            while (!fifthDialogueFinished)
+            {
+                yield return new WaitForSeconds(1f);
+            }
+            
+            //Overworld
+            yield return StartCoroutine(FadeScreen(blackScreen, 2f));
+            houseScreen.GetComponent<CanvasGroup>().alpha = 0f;
+            chapterOneScript.CreateEnemies();
+            disableCharacterImages();
+            yield return StartCoroutine(UndoFade(blackScreen, 2f));
+            doorAudio.Play();
+            yield return StartCoroutine(characterAppear(mainChar));
+            yield return new WaitForSeconds(.5f);
+            yield return StartCoroutine(pathfinder.FollowPath(mainChar, new Vector3(-7.53f, -12f, 0f)));
+            astrid.transform.position = new Vector3(-6.57f, -11.28f, 0f);
+            astrid.GetComponent<SpriteRenderer>().enabled = true;
+            yield return StartCoroutine(characterAppear(astrid));
+            yield return StartCoroutine(pathfinder.FollowPath(astrid, new Vector3(-5.66f, -12f, 0f)));
+            yield return new WaitForSeconds(.5f);
+
+            saveManager.loadedData.introBattleOutro = "Battle";
+            saveManager.OverwriteSave();
+
+            fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
+            swordClash.Play();
+            forestBattleTheme.Play();
+            yield return new WaitForSeconds(1.5f);
+            fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
+
+            
+            DialogueController.GetComponent<SmallDialogue>().NextDialogue();   
+            while (!sixthDialogueFinished)
+            {
+                yield return new WaitForSeconds(1f);
+            }
+        }
+        else if (saveManager.loadedData.introBattleOutro == "Battle")
+        {
+
+        }
+        enableVictorySubquestBoxes();
+        yield return new WaitForSeconds(2f);
+        battleController.StartCombat();
+        tutorialScript.EnableTutorial();
+    }
+    private IEnumerator TypeLine(string line, string speaker, AudioSource audioSource, TextMeshProUGUI textBox, float textSpeed) {
+        if (speaker == "Astrid")
+        {
+            audioSource.pitch = 1.2f;
+            textBox.color = new Color(1f, .75f, .79f, 1f);
+        }
+        else
+        {
+            audioSource.pitch = 1.0f;
+            textBox.color = Color.white;
+        }
+        isTyping = true;
+        audioSource.Play();
+        foreach (char c in line.ToCharArray()) {
+            textBox.text += c;
+            yield return new WaitForSeconds(textSpeed);
+        }
+        audioSource.Stop();
+        isTyping = false;
+    }
+    public struct CharacterDialogue {
+        public string[] lines;
+        public string name;
+        public GameObject characterImage;
+        public CharacterDialogue(GameObject characterImage, string name,string[] lines)
+        {
+            this.lines = lines;
+            this.name = name;
+            this.characterImage = characterImage;
+        }
+    }
 }

@@ -120,6 +120,35 @@ public static class Helpers
             1f
         );
     }
+    public static IEnumerator FadeOutImageAlpha(Image image, float duration)
+    {
+        float elapsed = 0f;
+        Color startColor = image.color;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+
+            float alpha = Mathf.Lerp(1f, 0f, elapsed / duration);
+
+            image.color = new Color(
+                startColor.r,
+                startColor.g,
+                startColor.b,
+                alpha
+            );
+
+            yield return null;
+        }
+
+        // Ensure fully transparent at end
+        image.color = new Color(
+            startColor.r,
+            startColor.g,
+            startColor.b,
+            1f
+        );
+    }
     public static IEnumerator FadeInImageAlpha(Image image, float targetAlpha, float duration)
     {
         float elapsed = 0f;
