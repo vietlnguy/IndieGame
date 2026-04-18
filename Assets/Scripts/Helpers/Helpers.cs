@@ -120,35 +120,6 @@ public static class Helpers
             1f
         );
     }
-    public static IEnumerator FadeOutImageAlpha(Image image, float duration)
-    {
-        float elapsed = 0f;
-        Color startColor = image.color;
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.deltaTime;
-
-            float alpha = Mathf.Lerp(1f, 0f, elapsed / duration);
-
-            image.color = new Color(
-                startColor.r,
-                startColor.g,
-                startColor.b,
-                alpha
-            );
-
-            yield return null;
-        }
-
-        // Ensure fully transparent at end
-        image.color = new Color(
-            startColor.r,
-            startColor.g,
-            startColor.b,
-            1f
-        );
-    }
     public static IEnumerator FadeInImageAlpha(Image image, float targetAlpha, float duration)
     {
         float elapsed = 0f;
@@ -319,5 +290,24 @@ public static class Helpers
             child.GetComponent<EnemyController>().hoverable = false;
         }
     }
+    public static void FadeSpriteToBlack(GameObject character) {
+        SpriteRenderer spriteRenderer = character.GetComponent<SpriteRenderer>();
+        spriteRenderer.enabled = true;
+        float duration = .15f;
+        Color startColor = Color.white;
+        Color endColor = Color.black;
+        float elapsed = 0f;
 
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+            spriteRenderer.color = Color.Lerp(startColor, endColor, t);
+            yield return null;
+        }
+
+        spriteRenderer.color = endColor;
+        spriteRenderer.enabled = false;
+        yield return new WaitForSeconds(1f);
+    }
 }
