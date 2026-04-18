@@ -290,7 +290,7 @@ public static class Helpers
             child.GetComponent<EnemyController>().hoverable = false;
         }
     }
-    public static void FadeSpriteToBlack(GameObject character) {
+    public static IEnumerator FadeSpriteToBlack(GameObject character) {
         SpriteRenderer spriteRenderer = character.GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = true;
         float duration = .15f;
