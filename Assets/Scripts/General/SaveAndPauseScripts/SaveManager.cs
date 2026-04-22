@@ -37,7 +37,7 @@ public class SaveManager : MonoBehaviour
     {
         PopulateSaveList();
     }
-    public void SaveGame()
+    public void SaveGame(bool overwrite)
     {
         //Create save file name
         string time = DateTime.Now.ToString("F");
@@ -45,7 +45,7 @@ public class SaveManager : MonoBehaviour
         string jsonData = JsonUtility.ToJson(loadedData, true);
         string filename = loadedData.mainCharacterName + "_" + loadedData.currentChapter + "_" + loadedData.introBattleOutro + "_" + time + ".json";
         string fullFilePath = Path.Combine(Application.persistentDataPath, filename);
-        openedSaveFilePath = fullFilePath;
+        if (overwrite) {openedSaveFilePath = fullFilePath;}
         File.WriteAllText(fullFilePath, jsonData);
     }
     public void NewSave(string mainCharacterName)
@@ -145,6 +145,12 @@ public class SaveManager : MonoBehaviour
             script.chapter = split[1];
             script.scene = split[2];
             script.timestamp = split[3];
+            if (i == 0)
+            {
+                script.ShowAutosaveText();
+            }
+
+
         }
     }
     public void UnselectOtherEntry()
@@ -157,7 +163,7 @@ public class SaveManager : MonoBehaviour
     public void OverwriteSave()
     {
         File.Delete(openedSaveFilePath);
-        SaveGame();
+        SaveGame(true);
         try {
             PopulateSaveList();
         }
@@ -166,6 +172,18 @@ public class SaveManager : MonoBehaviour
             
         }
     }
+    public void CreateSave()
+    {
+        SaveGame(false);
+        try {
+            PopulateSaveList();
+        }
+        catch
+        {
+            
+        }
+    }
+
     public void DeleteSelectedSave()
     {
         if (saveSelected != null)

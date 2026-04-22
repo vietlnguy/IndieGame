@@ -18,6 +18,7 @@ public class SaveEntry : MonoBehaviour, IPointerClickHandler
     public GameObject chapterText;
     public GameObject sceneText;
     public GameObject timestampText;
+    public GameObject autosaveObject;
 
     void Awake()
     {
@@ -45,6 +46,10 @@ public class SaveEntry : MonoBehaviour, IPointerClickHandler
             scm.UnselectOtherEntry();
             scm.saveSelected = gameObject;
         }
+    }
+    public void ShowAutosaveText()
+    {
+        autosaveObject.SetActive(true);
     }
 
 }

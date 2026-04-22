@@ -659,6 +659,7 @@ public class AttackPreview : MonoBehaviour
     public IEnumerator startAttackSequence()
     {   
         coroutineRunning = true;
+        active = false;
 
         //Don't skip animations
         if (PlayerPrefs.GetInt("combatAnim", -1) == 0)
@@ -834,6 +835,7 @@ public class AttackPreview : MonoBehaviour
     public IEnumerator startSupportSequence()
     {
         coroutineRunning = true;
+        active = false;
         SupportMove supportMove = chosenAttack as SupportMove;
 
         //Don't skip animations

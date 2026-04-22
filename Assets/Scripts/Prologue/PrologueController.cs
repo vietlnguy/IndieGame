@@ -188,6 +188,7 @@ public class PrologueController : MonoBehaviour
         yield return StartCoroutine(scm.SceneTransition(false));
         scm.loadedData.currentChapter = "Chapter 1";
         scm.loadedData.introBattleOutro = "Intro";
+        scm.OverwriteSave();
         SceneManager.LoadScene("ChapterBridge");
     }
 }

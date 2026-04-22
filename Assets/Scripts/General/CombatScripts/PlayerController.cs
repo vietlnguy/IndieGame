@@ -146,7 +146,7 @@ public class PlayerController : MonoBehaviour
     void OnHoverEnter()
 
     {
-        if (battleController.introFinished)
+        if (battleController.active)
         {
             if (!battleController.disabledCharacters.Contains(gameObject) && battleController.characterSelected == null)
             {
@@ -162,7 +162,7 @@ public class PlayerController : MonoBehaviour
     }
     void OnHoverExit()
     {
-        if (battleController.introFinished && !battleController.disabledCharacters.Contains(gameObject) && battleController.characterSelected == null)
+        if (battleController.active && !battleController.disabledCharacters.Contains(gameObject) && battleController.characterSelected == null)
         {
             spriteRenderer.color = Color.white;
         }
@@ -172,7 +172,7 @@ public class PlayerController : MonoBehaviour
     void OnClick()
     {
         //Intro is finished, not paused, not attack preview, not characterMenu, and not enemies turn
-        if (battleController.introFinished && !battleController.isPaused && !battleController.isEnemyTurn && !battleController.isNeutralTurn && !attackPreviewScript.active && !characterMenuScript.active && !inventoryMenuScript.active && !characterAssistMenuScript.active)
+        if (battleController.active && !battleController.isPaused && !battleController.isEnemyTurn && !battleController.isNeutralTurn && !attackPreviewScript.active && !characterMenuScript.active && !inventoryMenuScript.active && !characterAssistMenuScript.active)
         {
             //no character selected yet. Should select this character.
             if (battleController.characterSelected == null)

@@ -24,7 +24,7 @@ public class BattleController : MonoBehaviour
     public TextMeshProUGUI fightScreenText;
     public AudioSource playerPhaseAudio;
     public AudioSource enemyPhaseAudio;
-    public bool introFinished = false;
+    public bool active = false;
     public bool isPaused = false;
     public bool isEnemyTurn = false;
     private bool hoverableEnabled = false;
@@ -91,7 +91,7 @@ public class BattleController : MonoBehaviour
             }
         }
 
-        if (introFinished && !isPaused && !gameOverScript.active)
+        if (active && !isPaused && !gameOverScript.active)
         {
             if (!hoverableEnabled)
             {
@@ -581,6 +581,7 @@ public class BattleController : MonoBehaviour
     }
     public void CancelEveryting()
     {
+        active = false;
         StopAllCoroutines();
     }
     private void UpdateTurnNumber()
@@ -590,7 +591,7 @@ public class BattleController : MonoBehaviour
     }
     public void StartCombat()
     {
-        introFinished = true;
+        active = true;
         victoryAndSubquestBox.SetActive(true);
         isPlayerTurn = true;
         StartCoroutine(playerTurn());

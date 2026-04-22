@@ -4,16 +4,16 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
 using System.Collections.Generic;
-public class ReturnButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class NewSaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     private Image image;
-    public GameObject pauseMenu;
-    public BattleController battleController;
-    public AudioSource selectBeep;
+    private SaveManager scm;
+    public AudioSource confirmAudio;
 
     void Awake()
     {
         image = GetComponent<Image>();
+        scm = FindFirstObjectByType<SaveManager>();
     }
 
     void Start()
@@ -22,7 +22,6 @@ public class ReturnButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     void Update()
     {
-
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -35,13 +34,7 @@ public class ReturnButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     }
     public void OnPointerClick(PointerEventData eventData)
     {
-        image.color = new Color(1f, 1f, 1f);
-        selectBeep.Play();
-        if (battleController.active)
-        {
-            battleController.isPaused = false;
-        }
-
-        pauseMenu.SetActive(false);;
+        scm.CreateSave();
     }
+
 }

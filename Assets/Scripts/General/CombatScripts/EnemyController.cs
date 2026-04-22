@@ -109,7 +109,7 @@ public class EnemyController : MonoBehaviour
     }
     void OnHoverEnter()
     {
-        if (battleController.introFinished)
+        if (battleController.active)
         {
             if (!characterMenuScript.active && !attackPreviewScript.active)
             {
@@ -124,7 +124,7 @@ public class EnemyController : MonoBehaviour
     }
     public void OnClick()
     {
-        if (battleController.introFinished && !battleController.isPaused && !battleController.isEnemyTurn && !attackPreviewScript.active && !characterMenuScript.active && !characterAssistMenuScript.active && !inventoryMenuScript.active)
+        if (battleController.active && !battleController.isPaused && !battleController.isEnemyTurn && !attackPreviewScript.active && !characterMenuScript.active && !characterAssistMenuScript.active && !inventoryMenuScript.active)
         {
             //no character or enemy selected
             if (battleController.characterSelected == null && battleController.enemySelected == null)

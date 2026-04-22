@@ -149,6 +149,42 @@ public static class Helpers
             targetAlpha
         );
     }
+    public static IEnumerator FadeToBlackTransparent(GameObject character, float duration)
+    {
+        Color endColor = new Color(0f, 0f, 0f, 0f);
+        float elapsedTime = 0f; 
+
+        while (elapsedTime < duration)
+        {
+            float t = elapsedTime / duration;
+            character.GetComponent<Image>().color = Color.Lerp(new Color(1f, 1f, 1f, 1f), endColor, t);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+            character.GetComponent<Image>().color = endColor;
+    }
+    public static IEnumerator UndoFadeToBlackTransparent(GameObject character, float duration)
+    {
+        Color endColor = new Color(0f, 0f, 0f, 0f);
+        float elapsedTime = 0f; 
+
+        while (elapsedTime < duration)
+        {
+            float t = elapsedTime / duration;
+            character.GetComponent<Image>().color = Color.Lerp(endColor, new Color(1f, 1f, 1f, 1f), t);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+            character.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
+    }
+    public static void FlipRectTransformXScale(GameObject character)
+    {
+        Vector3 currentScale = character.GetComponent<RectTransform>().localScale;
+        currentScale.x *= -1f;
+        character.GetComponent<RectTransform>().localScale = currentScale;
+    }
     public static IEnumerator MoveRectTransform(GameObject obj, Vector2 startPos, Vector2 targetPos, float duration)
     {
         RectTransform rectTransform = obj.GetComponent<RectTransform>();
@@ -308,6 +344,26 @@ public static class Helpers
 
         spriteRenderer.color = endColor;
         spriteRenderer.enabled = false;
+        yield return new WaitForSeconds(1f);
+    }
+    public static IEnumerator UndoFadeSpriteToBlack(GameObject character) {
+        SpriteRenderer spriteRenderer = character.GetComponent<SpriteRenderer>();
+        spriteRenderer.enabled = true;
+        float duration = .15f;
+        Color startColor = Color.black;
+        Color endColor = Color.white;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+            spriteRenderer.color = Color.Lerp(startColor, endColor, t);
+            yield return null;
+        }
+
+        spriteRenderer.color = endColor;
+        spriteRenderer.enabled = true;
         yield return new WaitForSeconds(1f);
     }
 }
