@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 [DefaultExecutionOrder(-1)]
 public class ChapterOne : MonoBehaviour {
@@ -41,6 +42,7 @@ public class ChapterOne : MonoBehaviour {
     public Image whiteScreen;
     public Image sexScreen;
     public Image houseScreen;
+    public Image outroScreen;
     public AudioSource fluteAudio;
     public AudioSource doorAudio;
     public AudioSource doorKnockAudio;
@@ -73,7 +75,7 @@ public class ChapterOne : MonoBehaviour {
     private List<CharacterDialogue> dialogues13;
     private List<CharacterDialogue> dialogues14;
     private List<CharacterDialogue> dialogues15;
-    
+    private List<CharacterDialogue> dialogues16;
 
     public void Awake()
     {    
@@ -100,6 +102,7 @@ public class ChapterOne : MonoBehaviour {
 
         victorySequence = FindFirstObjectByType<VictorySequence>();
         victorySequence.subquests.Add(astridScript.subquests[0]);
+        VictorySubscribe();
 
         dialogues = new List<CharacterDialogue>();
         dialogues.Add(new CharacterDialogue(mainCharacterSmallPortrait, saveManager.loadedData.mainCharacterName, new string[] {"Honey, I'm back!"}));
@@ -198,12 +201,22 @@ public class ChapterOne : MonoBehaviour {
         dialogues15.Add(new CharacterDialogue(mainCharacterSmallPortrait, saveManager.loadedData.mainCharacterName, new string[] {"It's been a while since we've been in battle.", "Let's take this slowly.", "I'll charge the enemy, you support me from behind."}));
         dialogues15.Add(new CharacterDialogue(astridSmallPortrait, "Astrid", new string[] {"Let's do this!"}));
 
+        //Outro
+        dialogues16 = new List<CharacterDialogue>();
+        dialogues16.Add(new CharacterDialogue(mainCharacterLargePortrait, saveManager.loadedData.mainCharacterName, new string[] {"Phew... I don't know the last time I swung a sword.", "Or killed a man..", "It's done now, we're safe."}));
+        dialogues16.Add(new CharacterDialogue(astridLargePortrait, "Astrid", new string[]{"..."}));
+        dialogues16.Add(new CharacterDialogue(mainCharacterLargePortrait, saveManager.loadedData.mainCharacterName, new string[] {"What's wrong? Are you okay?"}));
+        dialogues16.Add(new CharacterDialogue(astridLargePortrait, "Astrid", new string[] {"What are we going to do now? We can't stay here.", "As long as I have these bracelets, we'll never be safe.","Maybe I should've just handed them over."}));
+        dialogues16.Add(new CharacterDialogue(mainCharacterLargePortrait, saveManager.loadedData.mainCharacterName, new string[] {"Absolutely not.", "We're going to speak with Lord Beesly, in town. I've known him to be an honorable man.", "He will speak to the royal envoy and fix this."}));
+        dialogues16.Add(new CharacterDialogue(astridLargePortrait, "Astrid", new string[] {"*sigh* And just as we were getting settled in..."}));
+
+
     }
     public void Start()
     {
         if (saveManager.loadedData.introBattleOutro == "Outro")
         {
-            
+            Outro();
         }
         else
         {
@@ -518,7 +531,7 @@ public class ChapterOne : MonoBehaviour {
         }
 
         saveManager.OverwriteSave();
-        
+
         //Spawn all enemies
         CreateEnemies();
 
@@ -758,6 +771,42 @@ public class ChapterOne : MonoBehaviour {
         // Ensure we land exactly on the target color
         character.GetComponent<Image>().color = endColor;
         character.transform.SetSiblingIndex(largeDialogue.transform.childCount - 2);
+    }
+    private void VictorySubscribe()
+    {
+        VictoryContinueButton.OnStartOutro += Outro;
+    }
+    private void Outro()
+    {
+        intro = StartCoroutine(OutroHelper());
+    }
+    public IEnumerator OutroHelper()
+    {   
+        saveManager.loadedData.introBattleOutro = "Outro";
+        saveManager.OverwriteSave();
+        blackScreen.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
+        whiteScreen.enabled = false;
+        outroScreen.enabled = true;
+        yield return StartCoroutine(Helpers.FadeOutImageAlpha(blackScreen, 1f));
+
+        Helpers.FlipRectTransformXScale(astridLargePortrait);
+        astridLargePortrait.GetComponent<Image>().color = new Color(0f, 0f, 0f, 0f);
+        astridLargePortrait.GetComponent<RectTransform>().anchoredPosition = new Vector2(270f, -130f);
+        mainCharacterLargePortrait.GetComponent<RectTransform>().anchoredPosition = new Vector2(-213f, -109f);      
+        mainCharacterLargePortrait.GetComponent<Image>().color = new Color(0f, 0f, 0f, 0f);
+        yield return StartCoroutine(Helpers.UndoFadeToBlackTransparent(mainCharacterLargePortrait, 0.5f));
+        yield return StartCoroutine(Helpers.UndoFadeToBlackTransparent(astridLargePortrait, 0.5f));
+
+        yield return new WaitForSeconds(1f);
+
+        yield return StartCoroutine(PlayLargeDialogue(dialogues16));
+        typingCoroutine = null;
+
+        yield return StartCoroutine(saveManager.SceneTransition(true));
+        saveManager.loadedData.currentChapter = "Chapter 2";
+        saveManager.loadedData.introBattleOutro = "Overworld";
+        saveManager.OverwriteSave();
+        SceneManager.LoadScene("Overworld");
     }
     public struct CharacterDialogue {
         public string[] lines;
