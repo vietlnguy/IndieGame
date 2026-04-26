@@ -3624,10 +3624,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 188796713}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9d8b127292679f4499c57361741c684, type: 3}
+  m_Script: {fileID: 11500000, guid: f9df9a32acba8c9449391b650b35e22f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  endPos: {x: 489, y: 285}
+  endPos: {x: 489, y: 265}
 --- !u!1 &195494942
 GameObject:
   m_ObjectHideFlags: 0
@@ -5041,7 +5041,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &310752095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11529,24 +11529,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   basicEnemyPrefab: {fileID: 987659348781326490, guid: 4585bb8388ff56f4399dfc7e32ab4e3f, type: 3}
-  battleController: {fileID: 1859551254}
-  gameOverScript: {fileID: 1127760313}
-  attackPreviewScript: {fileID: 1358832189}
-  tutorialScript: {fileID: 1124249720}
-  victorySequence: {fileID: 4424908496010928669}
   mainCharacterPrefab: {fileID: 7365784556819137381, guid: 787a9e1dc54dd124ab88bc33e274ce67, type: 3}
   astridPrefab: {fileID: 3514692152733908472, guid: 0a24a05d13054d540b40f7ae10a7df7b, type: 3}
   typingAudio: {fileID: 862253748}
-  smallDialogueTextBox: {fileID: 1175644146}
-  smallDialogueNameBox: {fileID: 1175644144}
-  largeDialogue: {fileID: 798882017}
-  largeDialogueTextBox: {fileID: 1142662537}
-  largeDialogueNameBox: {fileID: 1142662536}
-  blackScreen: {fileID: 1726919855}
-  whiteScreen: {fileID: 1333014156}
-  sexScreen: {fileID: 244992874}
-  houseScreen: {fileID: 1407903105}
-  outroScreen: {fileID: 1423993130}
   fluteAudio: {fileID: 620618713}
   doorAudio: {fileID: 389434526}
   doorKnockAudio: {fileID: 521281728}
@@ -11555,15 +11540,25 @@ MonoBehaviour:
   shineAudio: {fileID: 1623136417}
   knockbackAudio: {fileID: 54549661}
   battleMusicAudio: {fileID: 1892489003}
-  mainCharacterSmallPortrait: {fileID: 1175644145}
+  battleController: {fileID: 1859551254}
+  gameOverScript: {fileID: 1127760313}
+  attackPreviewScript: {fileID: 1358832189}
+  tutorialScript: {fileID: 1124249720}
+  victorySequence: {fileID: 4424908496010928669}
+  blackScreen: {fileID: 1726919855}
+  whiteScreen: {fileID: 1333014156}
+  sexScreen: {fileID: 244992874}
+  houseScreen: {fileID: 1407903105}
+  outroScreen: {fileID: 1423993130}
+  smallDialogueTextBox: {fileID: 1175644146}
+  smallDialogueNameBox: {fileID: 1175644144}
+  largeDialogue: {fileID: 798882017}
+  largeDialogueTextBox: {fileID: 1142662537}
+  largeDialogueNameBox: {fileID: 1142662536}
   mainCharacterLargePortrait: {fileID: 1142662533}
-  astridSmallPortrait: {fileID: 1175644145}
   astridLargePortrait: {fileID: 1142662534}
   hegsethLargePortrait: {fileID: 1142662532}
-  soldierSmallPortrait: {fileID: 1175644145}
   soldierLargePortrait: {fileID: 1142662538}
-  smallDialogueBlinker: {fileID: 1175644147}
-  largeDialogueBlinker: {fileID: 1142662535}
 --- !u!4 &662714870
 Transform:
   m_ObjectHideFlags: 0
@@ -39904,11 +39899,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6846130800374033443, guid: 697f6c79f2ca62d48b14eb333f73c430, type: 3}
   m_PrefabInstance: {fileID: 1142662531}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1142662535 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1515242899266959029, guid: 697f6c79f2ca62d48b14eb333f73c430, type: 3}
-  m_PrefabInstance: {fileID: 1142662531}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1142662536 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6346034704310466946, guid: 697f6c79f2ca62d48b14eb333f73c430, type: 3}
@@ -40331,19 +40321,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &1175644145 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8033981442038365103, guid: d26fdaa2e8de1f24f8fd990d95e00979, type: 3}
-  m_PrefabInstance: {fileID: 1175644143}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1175644146 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1282851928580049859, guid: d26fdaa2e8de1f24f8fd990d95e00979, type: 3}
-  m_PrefabInstance: {fileID: 1175644143}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1175644147 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4907100369367863604, guid: d26fdaa2e8de1f24f8fd990d95e00979, type: 3}
   m_PrefabInstance: {fileID: 1175644143}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1178853848
@@ -55683,7 +55663,6 @@ SceneRoots:
   - {fileID: 2136948553}
   - {fileID: 1366974634}
   - {fileID: 310752098}
-  - {fileID: 6261280008946689969}
   - {fileID: 1358832188}
   - {fileID: 3516372553262012087}
   - {fileID: 544247292}
@@ -55700,3 +55679,4 @@ SceneRoots:
   - {fileID: 1175644143}
   - {fileID: 1142662531}
   - {fileID: 4424908496010928668}
+  - {fileID: 6261280008946689969}

@@ -491,16 +491,18 @@ public class ChapterOne : MonoBehaviour {
             //Exit hegseth and soldier
             StartCoroutine(Helpers.FadeToBlackTransparent(hegsethLargePortrait, 0.5f));
             yield return StartCoroutine(Helpers.FadeToBlackTransparent(soldierLargePortrait, 0.5f));
+            hegsethLargePortrait.GetComponent<Image>().enabled = false;
+            soldierLargePortrait.GetComponent<Image>().enabled = false;
             yield return StartCoroutine(PlayLargeDialogue(dialogues14));
-            soldierLargePortrait.SetActive(false);
-            hegsethLargePortrait.SetActive(false);
             typingCoroutine = null;
 
             //Exit house scene
-            yield return StartCoroutine(Helpers.FadeInImageAlpha(whiteScreen, 0.5f));
+            yield return StartCoroutine(Helpers.FadeInImageAlpha(whiteScreen, 2f));
+            houseScreen.enabled = false;
             largeDialogue.SetActive(false);
         }
 
+        saveManager.loadedData.introBattleOutro = "Battle";
         saveManager.OverwriteSave();
 
         //Spawn all enemies
@@ -530,6 +532,8 @@ public class ChapterOne : MonoBehaviour {
         battleController.StartCombat();
         yield return new WaitForSeconds(2.5f);
         tutorialScript.EnableTutorial();
+
+
         
     }
     public IEnumerator OutroHelper()
@@ -649,7 +653,7 @@ public class ChapterOne : MonoBehaviour {
                 temp = GameObject.Find("MainCharacterSmallPortrait");
             }
             temp.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
-            
+
             //Fade in text box
             StartCoroutine(Helpers.MoveRectTransform(smallDialogueTextBox, smallDialogueTextBox.GetComponent<RectTransform>().anchoredPosition, smallDialogueTextBox.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, 10f), .25f));
             StartCoroutine(Helpers.FadeInCanvasGroup(smallDialogueTextBox.GetComponent<CanvasGroup>(), 0.25f));
