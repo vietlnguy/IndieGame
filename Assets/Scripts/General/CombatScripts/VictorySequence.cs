@@ -54,6 +54,7 @@ public class VictorySequence : MonoBehaviour
             //Set quest number
             Transform temp2 = temp.transform.Find("Number");
             temp2.gameObject.GetComponent<TextMeshProUGUI>().text = index.ToString() + ".";
+            index++;
         }
 
         //Scale up subquests box

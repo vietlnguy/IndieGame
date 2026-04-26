@@ -149,7 +149,7 @@ public static class Helpers
             targetAlpha
         );
     }
-    public static IEnumerator FadeToBlackTransparent(GameObject character, float duration)
+    public static IEnumerator FadeToBlackTransparent(GameObject obj, float duration)
     {
         Color endColor = new Color(0f, 0f, 0f, 0f);
         float elapsedTime = 0f; 
@@ -157,14 +157,14 @@ public static class Helpers
         while (elapsedTime < duration)
         {
             float t = elapsedTime / duration;
-            character.GetComponent<Image>().color = Color.Lerp(new Color(1f, 1f, 1f, 1f), endColor, t);
+            obj.GetComponent<Image>().color = Color.Lerp(new Color(1f, 1f, 1f, 1f), endColor, t);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-            character.GetComponent<Image>().color = endColor;
+            obj.GetComponent<Image>().color = endColor;
     }
-    public static IEnumerator UndoFadeToBlackTransparent(GameObject character, float duration)
+    public static IEnumerator UndoFadeToBlackTransparent(GameObject obj, float duration)
     {
         Color endColor = new Color(0f, 0f, 0f, 0f);
         float elapsedTime = 0f; 
@@ -172,12 +172,12 @@ public static class Helpers
         while (elapsedTime < duration)
         {
             float t = elapsedTime / duration;
-            character.GetComponent<Image>().color = Color.Lerp(endColor, new Color(1f, 1f, 1f, 1f), t);
+            obj.GetComponent<Image>().color = Color.Lerp(endColor, new Color(1f, 1f, 1f, 1f), t);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-            character.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
+            obj.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
     }
     public static void FlipRectTransformXScale(GameObject character)
     {
@@ -366,4 +366,110 @@ public static class Helpers
         spriteRenderer.enabled = true;
         yield return new WaitForSeconds(1f);
     }
+    public static IEnumerator GrayAllLargePortraits()
+    {
+        GameObject allPortraits = GameObject.Find("LargePortraits");
+
+        float duration = 0.2f;
+        float elapsed = 0f;
+        Color endColor = new Color(0.35f, 0.35f, 0.35f, 1f);
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            // Calculate the percentage of completion (0 to 1)
+            float t = elapsed / duration;
+
+            foreach (Transform childPortrait in allPortraits.transform)
+            {
+                childPortrait.gameObject.GetComponent<Image>().color = Color.Lerp(childPortrait.gameObject.GetComponent<Image>().color, endColor, t);
+            }
+
+            // Wait until the next frame
+            yield return null;
+        }
+
+        foreach (Transform childPortrait in allPortraits.transform)
+        {
+            childPortrait.gameObject.GetComponent<Image>().color = endColor;
+        }
+
+    }
+    public static IEnumerator HighlightLargePortrait(string characterName)
+    {
+        GameObject largePortraits = GameObject.Find("LargePortraits");
+        GameObject largePortrait = GameObject.Find(characterName + "LargePortrait");
+        if (largePortrait == null)
+        {
+            largePortrait = GameObject.Find("MainCharacterLargePortrait");
+        }
+
+        float duration = .2f;
+        float elapsed = 0f;
+        Color startColor = largePortrait.GetComponent<Image>().color;
+        Color endColor = Color.white;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            // Calculate the percentage of completion (0 to 1)
+            float t = elapsed / duration;
+            
+            // Apply the interpolated color
+            largePortrait.GetComponent<Image>().color = Color.Lerp(startColor, endColor, t);
+
+            // Wait until the next frame
+            yield return null;
+        }
+
+        // Ensure we land exactly on the target color
+        largePortrait.GetComponent<Image>().color = endColor;
+        largePortrait.transform.SetAsLastSibling();
+    }
+    public static void DisableAllSmallPortraits()
+    {
+        GameObject allSmallPortraits = GameObject.Find("SmallPortraits");
+        foreach (Transform childPortrait in allSmallPortraits.transform)
+        {
+            childPortrait.gameObject.GetComponent<Image>().color = new Color(0f, 0f, 0f, 0f);
+        }
+    }
+    public static IEnumerator DialogueBlinker(string size)
+    {
+        GameObject blinker = null;
+        
+        if (size == "small")
+        {
+            blinker = GameObject.Find("SmallDialogueBlinker");
+        }
+        else
+        {
+            blinker = GameObject.Find("LargeDialogueBlinker");
+        }
+
+        while (true)
+        {
+            blinker.GetComponent<Image>().color = new Color(1f ,1f ,1f ,1f);
+            yield return new WaitForSeconds(.75f);
+            blinker.GetComponent<Image>().color = new Color(0f, 0f, 0f, 0f);
+            yield return new WaitForSeconds(.75f);
+        }
+    }
+    public static void DisableBlinker(string size)
+    {
+        GameObject blinker = null;
+        
+        if (size == "small")
+        {
+            blinker = GameObject.Find("SmallDialogueBlinker");
+            blinker.GetComponent<Image>().color = new Color(0f, 0f, 0f, 0f);
+        }
+        else
+        {
+            blinker = GameObject.Find("LargeDialogueBlinker");
+            blinker.GetComponent<Image>().color = new Color(0f, 0f, 0f, 0f);
+        }
+
+    }
+
 }

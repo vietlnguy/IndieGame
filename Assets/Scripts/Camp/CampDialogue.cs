@@ -411,17 +411,17 @@ public class CampDialogue : MonoBehaviour
         {
             if (characterScript.knownAttacks.Count == 1) 
             {
-                newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, "Shoot a powerful shot at the enemy.");
+                newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, new List<string>(), "Shoot a powerful shot at the enemy.");
                 characterScript.knownAttacks.Add(newAttack);
             }
             else if (characterScript.knownAttacks.Count == 2)
             {
-                newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, "Target the enemies footing. 50% chance to cripple (Target cannot move).");
+                newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, new List<string>(), "Target the enemies footing. 50% chance to cripple (Target cannot move).");
                 characterScript.knownAttacks.Add(newAttack);                
             }
             else if (characterScript.knownAttacks.Count == 3)
             {
-                newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, "Strike with extreme precision. Always crits.");
+                newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, new List<string>(), "Strike with extreme precision. Always crits.");
                 characterScript.knownAttacks.Add(newAttack); 
             }
         }

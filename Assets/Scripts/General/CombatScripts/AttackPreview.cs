@@ -98,6 +98,7 @@ public class AttackPreview : MonoBehaviour
     public AudioSource attackWooshAudio;
     public AudioSource attackClangAudio;
     public AudioSource assistPreviewAudio;
+    public GameObject backgrounds;
     void Awake()
     {
         scm = FindFirstObjectByType<SaveManager>();
@@ -108,6 +109,14 @@ public class AttackPreview : MonoBehaviour
         originalBattleScreenHpBarSize = battleScreenRightHpBar.GetComponent<RectTransform>().sizeDelta;
         originalBattleScreenManaBarSize = battleScreenRightManaBar.GetComponent<RectTransform>().sizeDelta;
         
+        //Set battle background
+        foreach (Transform child in backgrounds.transform)
+        {
+            if (child.gameObject.name == scm.loadedData.currentChapter)
+            {
+                child.gameObject.SetActive(true);
+            }
+        }
     }
     void Start()
     {
@@ -210,13 +219,25 @@ public class AttackPreview : MonoBehaviour
             try 
             {
                 chosenAttack = battleController.characterSelected.GetComponent<PlayerController>().knownAttacks[attackIndex];
-                damageArray = calculateDamage(battleController.characterSelected, battleController.enemySelected, chosenAttack);
-                atkBlock.text = damageArray[0].ToString();
-                hitBlock.text = damageArray[1].ToString();
-                critBlock.text = damageArray[2].ToString();
-                attackDescription.text = chosenAttack.description;
-                manaBlock.text = chosenAttack.manaCost.ToString();
-                validAttack = true;
+                if (chosenAttack is Attack)
+                {
+                    damageArray = calculateDamage(battleController.characterSelected, battleController.enemySelected, chosenAttack);
+                    atkBlock.text = damageArray[0].ToString();
+                    hitBlock.text = damageArray[1].ToString();
+                    critBlock.text = damageArray[2].ToString();
+                    attackDescription.text = chosenAttack.description;
+                    manaBlock.text = chosenAttack.manaCost.ToString();
+                    validAttack = true;
+                }
+                else
+                {
+                    atkBlock.text = "-";
+                    hitBlock.text = "-";
+                    critBlock.text = "-";
+                    attackDescription.text = "-";
+                    manaBlock.text = "-";
+                    validAttack = false;
+                }
             }
             catch
             {
@@ -483,16 +504,30 @@ public class AttackPreview : MonoBehaviour
                 try
                 {
                     child2.GetComponent<TextMeshProUGUI>().text = battleController.characterSelected.GetComponent<PlayerController>().knownAttacks[index].name;
-                    if (battleController.characterSelected.GetComponent<PlayerController>().knownAttacks[index] is Attack)
+                    
+                    if (isAssisting)
                     {
-                        if (!isAssisting) { child2.GetComponent<TextMeshProUGUI>().color = new Color(1f, 1f, 1f, 1f); }
-                        else { child2.GetComponent<TextMeshProUGUI>().color = new Color(.5f, .5f, .5f, .5f); }
+                        if (battleController.characterSelected.GetComponent<PlayerController>().knownAttacks[index] is Attack)
+                        {
+                            child2.GetComponent<TextMeshProUGUI>().color = new Color(.5f, .5f, .5f, .5f);
+                        }
+                        else
+                        {
+                            child2.GetComponent<TextMeshProUGUI>().color = new Color(1f, 1f, 1f, 1f);
+                        }
                     }
-                    else if (battleController.characterSelected.GetComponent<PlayerController>().knownAttacks[index] is SupportMove)
+                    else
                     {
-                        if (!isAssisting) { child2.GetComponent<TextMeshProUGUI>().color = new Color(.5f, .5f, .5f, .5f); }
-                        else { child2.GetComponent<TextMeshProUGUI>().color = new Color(1f, 1f, 1f, 1f);  }
+                        if (battleController.characterSelected.GetComponent<PlayerController>().knownAttacks[index] is Attack)
+                        {
+                            child2.GetComponent<TextMeshProUGUI>().color = new Color(1f, 1f, 1f, 1f);
+                        }
+                        else
+                        {
+                            child2.GetComponent<TextMeshProUGUI>().color = new Color(.5f, .5f, .5f, .5f);
+                        }
                     }
+
                 }
                 catch
                 {
@@ -954,6 +989,11 @@ public class AttackPreview : MonoBehaviour
             battleScreenEnemyATK.text = enemyDamageArray[0].ToString();
             battleScreenEnemyHIT.text = enemyDamageArray[1].ToString();
             battleScreenEnemyCRIT.text = enemyDamageArray[2].ToString();
+
+            //battleScreenLeftMana.text = battleController.characterSelected.GetComponent<PlayerController>().currentMana.ToString();
+            //battleScreenLeftManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)battleController.characterSelected.GetComponent<PlayerController>().currentMana / battleController.characterSelected.GetComponent<PlayerController>().maxMana, 1f);
+            //battleScreenRightMana.text = attackerScript.currentMana.ToString();
+            //battleScreenRightManaBar.GetComponent<RectTransform>().sizeDelta *= new Vector2((float)attackerScript.currentMana / attackerScript.maxMana, 1f);  
             
             if (attackerScript.ranged) { battleScreenRightRangedImage.SetActive(true); battleScreenRightMeleeImage.SetActive(false);}
             else { battleScreenRightRangedImage.SetActive(false); battleScreenRightMeleeImage.SetActive(true); }
