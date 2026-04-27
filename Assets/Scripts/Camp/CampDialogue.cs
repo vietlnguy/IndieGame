@@ -21,6 +21,8 @@ public class CampDialogue : MonoBehaviour
     public GameObject everdellScenery;
     public GameObject astridImage;
     public GameObject mainCharacterImage;
+    public GameObject lucasImage;
+    public GameObject celesteImage;
     public GameObject characterSelected;
     private bool active = false;
     public bool nextLine = false;
@@ -150,7 +152,7 @@ public class CampDialogue : MonoBehaviour
         }
 
         //Enable the right background
-        if (scm.loadedData.currentChapter == "Chapter 2")
+        if (scm.loadedData.currentChapter == "Chapter 2" || scm.loadedData.currentChapter == "Chapter 3")
         {
             everdellScenery.SetActive(true);
         }
@@ -310,6 +312,57 @@ public class CampDialogue : MonoBehaviour
                 
             }
         }
+        else if (characterScript.title == "Lucas")
+        {
+            if (scm.loadedData.currentChapter == "Chapter 3")
+            {
+                if (!characterScript.spokenToAlready)
+                {
+                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"Hey Lucas, are you busy?", "You fought with a lot of courage back there."}));
+                    dialogues.Add(new CharacterDialogue(lucasImage, characterScript.title, new string[] {"Thanks.", "..."}));
+                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"...", "Look, I know you don't know me, and we're going to be traveling together now.", "But I promise I will do everything I can to keep you and your sister safe."}));
+                    dialogues.Add(new CharacterDialogue(lucasImage, characterScript.title, new string[] {"I appreciate it, but we won't be staying long.", "Once we talk to Lord Beesly and get this straightened out, we're going back home."}));
+                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"I understand.", "I just want you to know that you don't have to fight alone.", "I know what it's like to care deeply for someone.", "... and to lose someone you love."}));
+                    dialogues.Add(new CharacterDialogue(lucasImage, characterScript.title, new string[] {"...", "I'm sorry for your loss.", "Did you need anything else?"}));
+
+
+                }
+                else
+                {
+                    dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"Did you need something?"}));
+                }
+            
+            }
+            else if (scm.loadedData.currentChapter == "Chapter 4")
+            {
+                
+            }
+        }
+        else if (characterScript.title == "Celeste")
+        {
+            if (scm.loadedData.currentChapter == "Chapter 3")
+            {
+                if (!characterScript.spokenToAlready)
+                {
+                    dialogues.Add(new CharacterDialogue(celesteImage, characterScript.title, new string[] {"We follow your word.., let your light guide us toward salvation..."}));
+                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"Sorry to inturrept, priestess.", "I brought you some food. I thought you might be hungry after that unexpected skirmish."}));
+                    dialogues.Add(new CharacterDialogue(celesteImage, characterScript.title, new string[] {"Ah- thank you, " + scm.loadedData.mainCharacterName + "...", "Ilvera's light shines through you. I can sense it..."}));
+                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"Haha, I don't know about that.", "I've done alot of bad in my life, I guess this is my way of making amends."}));
+                    dialogues.Add(new CharacterDialogue(celesteImage, characterScript.title, new string[] {"Through Ilvera, all can be redeemed..."}));
+
+                }
+                else
+                {
+                    dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"May Ilvera guide you..."}));
+                }
+            
+            }
+            else if (scm.loadedData.currentChapter == "Chapter 4")
+            {
+                
+            }
+        }
+    
     }
     private void moveSelectorDown()
     {
@@ -439,7 +492,6 @@ public class CampDialogue : MonoBehaviour
         }
         yield return null;
     }
-
     public struct CharacterDialogue {
         public string[] lines;
         public string name;

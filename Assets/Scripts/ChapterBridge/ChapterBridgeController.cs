@@ -16,7 +16,6 @@ public class ChapterBridgeController : MonoBehaviour
         AudioListener.volume = PlayerPrefs.GetFloat("volume", 0.5f);
         scm = GameObject.Find("SaveManager").GetComponent<SaveManager>();
     }
-
     void Start()
     {
         StartCoroutine(Intro());
@@ -86,7 +85,10 @@ public class ChapterBridgeController : MonoBehaviour
             {
                 s = "The Blue-Haired Twins";
             }
-
+            else if (scm.loadedData.currentChapter == "Chapter 3")
+            {
+                s = "Lord Beesly, the Kind?";
+            }
             return s;
         }
 

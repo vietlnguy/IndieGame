@@ -22,6 +22,8 @@ public class CampController : MonoBehaviour
     public GameObject cilyScenery;
     public GameObject brunthScenery;
     public GameObject astridSpace;
+    public GameObject lucasSpace;
+    public GameObject celesteSpace;
     public GameObject pauseMenu;
     public GameObject saveMenu;
     public GameObject settingsMenu;
@@ -80,24 +82,26 @@ public class CampController : MonoBehaviour
         StartCoroutine(Helpers.FadeOutImageAlpha(blackScreen, 1f));
         yield return StartCoroutine(Helpers.FadeInAudio(backgroundAudio, 2f));
 
-        enterScreenAudio.Play();
-        campTutorial.SetActive(true);
         yield return null;
     }
     private void ChooseScenery()
     {
         if (scm.loadedData.currentChapter == "Chapter 2")
         {
+            enterScreenAudio.Play();
+            campTutorial.SetActive(true);
             everdellScenery.SetActive(true);
             backgroundAudio = everdellAudio;
             astridSpace.SetActive(true);
         }
-
-        //Anything after Chapter 2 should enable the shops
         else if (scm.loadedData.currentChapter == "Chapter 3")
         {
-            EnableShop();
-            EnableArmory();
+            everdellScenery.SetActive(true);
+            backgroundAudio = everdellAudio;
+            astridSpace.SetActive(true);
+            lucasSpace.SetActive(true);
+            celesteSpace.SetActive(true);
+
         }
         else if (scm.loadedData.currentChapter == "Chapter 4")
         {

@@ -100,7 +100,7 @@ public static class Helpers
         {
             elapsed += Time.deltaTime;
 
-            float alpha = Mathf.Lerp(0f, 1f, elapsed / duration);
+            float alpha = Mathf.Lerp(startColor.a, 1f, elapsed / duration);
 
             image.color = new Color(
                 startColor.r,
