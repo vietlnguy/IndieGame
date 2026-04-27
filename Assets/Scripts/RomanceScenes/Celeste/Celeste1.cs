@@ -27,8 +27,16 @@ public class Celeste1 : MonoBehaviour
 
         dialogues.Add(new CharacterDialogue(mcn, new string[] {"Hello, priestess. Are you busy?"}));
         dialogues.Add(new CharacterDialogue("Celeste", new string[] {"Ah- " + mcn + "... how can I help you?"}));
-        dialogues.Add(new CharacterDialogue(mcn, new string[] {"I was just wondering..", "What was your life like before you became a priestess?"}));
-        dialogues.Add(new CharacterDialogue("Celeste", new string[] {"Well..."}));
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"I was just wondering about our conversation from earlier..", "Can anyone truly be redeemed in Ilvera's light?"}));
+        dialogues.Add(new CharacterDialogue("Celeste", new string[] {"Yes.", "It does not matter how vile, how wicked, how ..lost.. one may have been.", "If you dedicate your life to good, the goddess will accept you into her embrace."}));
+        dialogues.Add(new CharacterDialogue(mcn, new string[]{"I've done more than I'm proud of.", "I was young and reckless.", "Stole from the innocent, hurt the ones I loved, and killed a few undeserving..", "Moving to the countryside was my way of starting over."}));
+        dialogues.Add(new CharacterDialogue("Celeste", new string[] {"You are not the first to confess their sins to me...", "The road to redemption is long, but you have taken the first step...", "I am no stranger to redemption...", "I too have walked the path from darkness into Ilvera's light..."}));
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"Oh, I always forget that priests have lives before being ordained.", "If I may ask, what was your life like before you became a priestess?", "I bet you still spent your time giving to the needy!"}));
+        dialogues.Add(new CharacterDialogue("Celeste", new string[] {"Aha erm-- something like that..."}));
+
+        //flashback lol
+        dialogues.Add(new CharacterDialogue("Strong Man 1", new string[] {"Mmm yeah, you like the feel of my big dick??"}))
+        dialogues.Add(new CharacterDialogue("Celeste", "Mmm fuckkk yess, it feels so good "))
 
 
     }
