@@ -566,11 +566,30 @@ public class Chapter2 : MonoBehaviour
     }
     public IEnumerator OutroHelper()
     {   
+        //Enter characters
+        List<CharacterDialogue>() outroDialogue1 = new List<CharacterDialogue>();
+        outroDialogue1.Add(saveManager.loadedData.mainCharacterName, "Looks like we managed to scare them off for now.", "Is everybody alright?");
+        outroDialogue1.Add("Celeste", "Yes... thank you for saving us...");
+        outroDialogue1.Add("Lucas", "I could've taken them, but thanks for the backup.");
+        outroDialogue1.Add("Astrid", "First home, and now this... what in the world is going on?");
+        outroDialogue1.Add(saveManager.loadedData.mainCharacterName, "Lord Beesly would've never allowed this.", "This must be a rogue group of soldiers.");
+        outroDialogue1.Add("Celeste", "I'm afraid you're mistaken... Lord Beesly has not been himself of late...");
+        outroDialogue1.Add("Lucas", "Yeah, where have you been?? Living out in the woods or somethin?", "Lord Beesly has been anything but kind.", "He's been sending out his cronies to do random searches all over town.", "This is just another one of his shakedowns.");
+        outroDialogue1.Add("Celeste", "But to attack the church...", "I fear this may only be the beginning...");
+        outroDialogue1.Add("Astrid", "Come with us!", "It's not safe here anymore.", "W");
+        outroDialogue1.Add(saveManager.loadedData.mainCharacterName, "She's right,")
+
+
+
         saveManager.loadedData.introBattleOutro = "Outro";
         saveManager.OverwriteSave();
         blackScreen.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
         outroScreen.enabled = true;
         yield return StartCoroutine(Helpers.FadeOutImageAlpha(blackScreen, 1f));
+
+
+
+
 
 
         yield return new WaitForSeconds(1f);
