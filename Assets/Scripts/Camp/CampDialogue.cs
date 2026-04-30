@@ -480,6 +480,47 @@ public class CampDialogue : MonoBehaviour
                 characterScript.knownAttacks.Add(newAttack); 
             }
         }
+        else if (sceneName.Contains("Lucas"))
+        {
+            if (sceneName == "Lucas1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, new List<string>(), "Shoot a powerful shot at the enemy.");
+                characterScript.knownAttacks.Add(newAttack);
+            }
+
+            else if (sceneName == "Lucas2" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, new List<string>(), "Target the enemies footing. 50% chance to cripple (Target cannot move).");
+                characterScript.knownAttacks.Add(newAttack);  
+            }
+
+            else if (sceneName == "Lucas3" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, new List<string>(), "Strike with extreme precision. Always crits.");
+                characterScript.knownAttacks.Add(newAttack); 
+            }
+        }
+        else if (sceneName.Contains("Celeste"))
+        {
+            if (sceneName == "Celeste1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, new List<string>(), "Shoot a powerful shot at the enemy.");
+                characterScript.knownAttacks.Add(newAttack);
+            }
+
+            else if (sceneName == "Celeste2" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, new List<string>(), "Target the enemies footing. 50% chance to cripple (Target cannot move).");
+                characterScript.knownAttacks.Add(newAttack);  
+            }
+
+            else if (sceneName == "Celeste3" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, new List<string>(), "Strike with extreme precision. Always crits.");
+                characterScript.knownAttacks.Add(newAttack); 
+            }
+        }
+        
 
         if (newAttack != null)
         {
@@ -492,6 +533,8 @@ public class CampDialogue : MonoBehaviour
             newAttackBox.SetActive(false);
 
         }
+        
+        characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained = true;
         yield return null;
     }
     public struct CharacterDialogue {

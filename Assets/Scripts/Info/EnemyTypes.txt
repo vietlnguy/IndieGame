@@ -1,0 +1,30 @@
+Enemy Types and AI control:
+
+- ranged
+- melee
+- roaming
+- support
+- hybrid
+
+When enemy is not in in range to attack anyone:
+- Should path to the closest player character
+
+
+When enemy is in range to attack (in order of precedence):
+- Should prioritize targeting players they can kill
+- Should prioritize attacking melee characters if they themselves are ranged
+- Should prioritize attacking ranged characters, if they themselves are melee.
+- Should prioritize attacking the closest enemy
+
+
+-ranged
+
+
+-melee
+ 	-same as above
+
+-support
+	-heals/buffs/cures other enemies
+
+-hybrid
+	-can attack or heals
