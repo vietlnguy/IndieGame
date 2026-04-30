@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Celeste1 : MonoBehaviour
+public class Lucas1 : MonoBehaviour
 {
     private SaveManager scm;
     private List<CharacterDialogue> dialogues;
@@ -25,37 +25,23 @@ public class Celeste1 : MonoBehaviour
         mcn = scm.loadedData.mainCharacterName;
         dialogues = new List<CharacterDialogue>();
 
-        dialogues.Add(new CharacterDialogue(mcn, new string[] {"Hello, priestess. Are you busy?"}));
-        dialogues.Add(new CharacterDialogue("Celeste", new string[] {"Ah- " + mcn + "... how can I help you?"}));
-        dialogues.Add(new CharacterDialogue(mcn, new string[] {"I was just wondering about our conversation from earlier..", "Can anyone truly be redeemed in Ilvera's light?"}));
-        dialogues.Add(new CharacterDialogue("Celeste", new string[] {"Yes.", "It does not matter how vile, how wicked, how ..lost.. one may have been.", "If you dedicate your life to good, the goddess will accept you into her embrace."}));
-        dialogues.Add(new CharacterDialogue(mcn, new string[]{"I've done more than I'm proud of.", "I was young and reckless.", "Stole from the innocent, hurt the ones I loved, and killed a few undeserving..", "Moving to the countryside was my way of starting over."}));
-        dialogues.Add(new CharacterDialogue("Celeste", new string[] {"You are not the first to confess their sins to me...", "The road to redemption is long, but you have taken the first step toward Ilvera's light..."}));
-        dialogues.Add(new CharacterDialogue(mcn, new string[] {"Truthfully, I don't know much about Ilvera...", "Please show me more."}));
-        dialogues.Add(new CharacterDialogue("Celeste", new string[] {"Gladly...", "Please meet me by the river..."}));
+        dialogues.Add(new CharacterDialogue("Lucas", new string[] {"Hiya!", "Hng!", "Hah!"}));
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"Nice, jab."}));
+        dialogues.Add(new CharacterDialogue("Lucas", new string[] {"AHH--", "Who's there?!"}));
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"It's just me.", "Sorry for startling you."}));
+        dialogues.Add(new CharacterDialogue("Lucas", new string[] {"You didn't startle me!", "I was just pretending to be suprised so that you'd let your guard down."}));
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"Of course.", "You know, I've done a bit of martial training in my life.", "I could show you a thing or two if you'd like?"}));
+        dialogues.Add(new CharacterDialogue("Lucas", new string[] {"I don't need your help to train!", "Me and sis have always survived just fine on our own."}));
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"I can see that.", "Celeste is lucky to have such a protective brother.", "She seems to appreciate all the things you do for her."}));
+        dialogues.Add(new CharacterDialogue("Lucas", new string[] {"Wait... she said that?", "...I was always worried I wasn't doing enough..."}));
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"Can I ask you something?", "How long have you and Celeste been alone?", "What happened to your parents?"}));
+        dialogues.Add(new CharacterDialogue("Lucas", new string[] {"...", "Mama and Papa died when we were young.", "It was a typical day like any other.", "Mama and Papa went to town each week to get food and supplies.", "Except this time, on their way back they were ambushed...", "By a couple of nobody bandits."}));
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"I'm sorry for your loss."}));
+        dialogues.Add(new CharacterDialogue("Lucas", new string[] {"After that, I vowed to become stronger to protect Celeste.", "To never let anything like that ever happen again to our family."}));
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"That is very brave of you.", "You and I are not very different.", "I lost a dear friend of mine not long ago.", "His name was William.", "I was reckless and selfish. It took a long time to forgive myself."}));
+        dialogues.Add(new CharacterDialogue("Lucas", new string[] {"...", "Actually.. can you show me some of those moves you were talking about?", "Let's get stronger together!", "For Mama and Papa and Celeste!", "And for your friend!"}));
+        dialogues.Add(new CharacterDialogue(mcn, new string[] {"Let's do it!", "Hiya!!!"}));
 
-        //River scene
-        dialogues.Add(new CharacterDialogue("Celeste", new string[] {"Please kneel and close your eyes...", "Ilvera is not just the goddess of the sky..", "She is the goddess of freedom.."}));
-        dialogues.Add(new CharacterDialogue("Celeste", new string[] {"Look to the sky and feel the breeze on your face.", "Feel the warmth of the sun against your skin.", "Give yourself to her..."}));
-
-        //Main character nudged between celeste breasts
-        dialogues.Add(new CharacterDialogue(mcn, new string[] {"Oh--"}));
-        dialogues.Add(new CharacterDialogue("Celeste", new string[] {"Listen all around you...", "Listen to the sound of the trees in the wind.", "She is here...", "She is everywhere..."}));
-        dialogues.Add(new CharacterDialogue(mcn, new string[] {"I can feel her..."}));
-
-        //Over the pants squeezearoo
-        dialogues.Add(new CharacterDialogue("Celeste", new string[] {"Good...", "Take a deep breath, let her essence fill your soul..",}));
-        dialogues.Add(new CharacterDialogue(mcn, new string[] {"Ungh--"}));
-        dialogues.Add(new CharacterDialogue("Celeste", new string[] {"Forget all your worries...", "Forget all of your sins of the past...", "Give yourself to Ilvera..."}));
-        dialogues.Add(new CharacterDialogue(mcn, new string[] {"Mmm-- yes..."}));
-        dialogues.Add(new CharacterDialogue("Celeste", new string[] {"Feel all of the tension inside of you...", "And when you are ready...", "...release."}));
-        
-        //Bust
-        dialogues.Add(new CharacterDialogue(mcn, new string[] {"Ahhh---"}));
-
-        dialogues.Add(new CharacterDialogue("Celeste", new string[] {"Very good...", "The goddess watches over you now.."}));
-        dialogues.Add(new CharacterDialogue(mcn, new string[] {"I feel like a weight has been lifted off my shoulders...", "Thank you, priestess.", "I look forward to learning more about Ilvera."}));
-        dialogues.Add(new CharacterDialogue("Celeste", new string[] {"Likewise.", "May she protect us til then..."}));
 
 
     }

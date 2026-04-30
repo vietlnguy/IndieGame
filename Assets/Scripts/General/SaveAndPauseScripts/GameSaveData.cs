@@ -271,6 +271,7 @@ public class Subquest
     public string sceneToLoad;
     public bool completed;
     public bool failed;
+    public bool newAttackGained;
  
     public Subquest(string sceneToLoad, string description, string campDescription)
     {
@@ -279,5 +280,6 @@ public class Subquest
         this.sceneToLoad = sceneToLoad;
         this.completed = false;
         this.failed = false;
+        this.newAttackGained = false;
     }
 }

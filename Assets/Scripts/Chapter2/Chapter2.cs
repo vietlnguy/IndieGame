@@ -135,7 +135,7 @@ public class Chapter2 : MonoBehaviour
             celeste.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
             celeste.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
             celeste.accessoryEquiped = new Equipment("Mana Band", "accessory", 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Stores mana! +2 max Mana.");
-            celeste.subquests.Add(new Subquest("Celeste1", "Don't let Celeste take any damage.", "Ask about how she became a priestess."));
+            celeste.subquests.Add(new Subquest("Celeste1", "Don't let Celeste take any damage.", "Ask to learn more about the goddess."));
             //TODO: Add more celeste subquests
             
             saveManager.loadedData.characters.Add(celeste);

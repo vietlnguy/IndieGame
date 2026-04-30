@@ -323,7 +323,7 @@ public class CampDialogue : MonoBehaviour
                     dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"...", "Look, I know you don't know me, and we're going to be traveling together now.", "But I promise I will do everything I can to keep you and your sister safe."}));
                     dialogues.Add(new CharacterDialogue(lucasImage, characterScript.title, new string[] {"I appreciate it, but we won't be staying long.", "Once we talk to Lord Beesly and get this straightened out, we're going back home."}));
                     dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"I understand.", "I just want you to know that you don't have to fight alone.", "I know what it's like to care deeply for someone.", "... and to lose someone you love."}));
-                    dialogues.Add(new CharacterDialogue(lucasImage, characterScript.title, new string[] {"...", "I'm sorry for your loss.", "Did you need anything else?"}));
+                    dialogues.Add(new CharacterDialogue(lucasImage, characterScript.title, new string[] {"...", "Did you need anything else?"}));
 
 
                 }
@@ -462,17 +462,19 @@ public class CampDialogue : MonoBehaviour
        
         if (sceneName.Contains("Astrid"))
         {
-            if (characterScript.knownAttacks.Count == 1) 
+            if (sceneName == "Astrid1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
                 newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, new List<string>(), "Shoot a powerful shot at the enemy.");
                 characterScript.knownAttacks.Add(newAttack);
             }
-            else if (characterScript.knownAttacks.Count == 2)
+
+            else if (sceneName == "Astrid2" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
                 newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, new List<string>(), "Target the enemies footing. 50% chance to cripple (Target cannot move).");
-                characterScript.knownAttacks.Add(newAttack);                
+                characterScript.knownAttacks.Add(newAttack);  
             }
-            else if (characterScript.knownAttacks.Count == 3)
+
+            else if (sceneName == "Astrid3" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
                 newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, new List<string>(), "Strike with extreme precision. Always crits.");
                 characterScript.knownAttacks.Add(newAttack); 
