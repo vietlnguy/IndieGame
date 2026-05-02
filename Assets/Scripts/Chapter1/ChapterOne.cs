@@ -310,7 +310,7 @@ public class ChapterOne : MonoBehaviour {
         enemy.support = false;
         enemy.hybrid = false;
 
-        enemy.knownAttacks.Add(new Attack("Bash", "physical", 1.0f, 1.0f, 90, 0, 0,  new List<string>(),"Bash the enemy with your weapon."));
+        enemy.knownAttacks.Add(new Attack("Bash", "physical", 1.0f, 1.0f, 90, 0, 0,  new List<Debuff>(),"Bash the enemy with your weapon."));
     }
     public void BasicRangedEnemy(float x, float y, float z)
     {
@@ -336,7 +336,7 @@ public class ChapterOne : MonoBehaviour {
         enemy.support = false;
         enemy.hybrid = false;
 
-        enemy.knownAttacks.Add(new Attack("Bow Shot", "physical", 1.0f, 1.0f, 90, 0, 0, new List<string>(), "Shoot at arrow at the enemy."));
+        enemy.knownAttacks.Add(new Attack("Bow Shot", "physical", 1.0f, 1.0f, 90, 0, 0, new List<Debuff>(), "Shoot at arrow at the enemy."));
     }
     public void BossEnemy(float x, float y, float z)
     {
@@ -361,7 +361,7 @@ public class ChapterOne : MonoBehaviour {
         enemy.ranged = false;
         enemy.boss = true;
         enemy.deathDialogue = "Gah-- I must fall back. You will regret this. King Reiss WILL have your relic...";
-        enemy.knownAttacks.Add(new Attack("Bash", "physical", 1.1f, 1.0f, 90, 0, 0, new List<string>(), "Bash the enemy with your weapon."));
+        enemy.knownAttacks.Add(new Attack("Bash", "physical", 1.1f, 1.0f, 90, 0, 0, new List<Debuff>(), "Bash the enemy with your weapon."));
 
     }
     private IEnumerator Intro()

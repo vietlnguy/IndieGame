@@ -189,9 +189,9 @@ public class Attack : AttackMoves
     public float intMult;
     public int baseAccuracy;
     public int baseCrit;
-    public List<string> debuffs;
+    public List<Debuff> debuffs;
 
-    public Attack(string name, string damageType, float attackMult, float intMult, int baseAccuracy, int baseCrit, int manaCost, List<string> debuffs, string description) : base(name, manaCost, description)
+    public Attack(string name, string damageType, float attackMult, float intMult, int baseAccuracy, int baseCrit, int manaCost, List<Debuff> debuffs, string description) : base(name, manaCost, description)
     {
         this.damageType = damageType; //physical or magical. Determines whether resisted by DEF or RES
         this.attackMult = attackMult;

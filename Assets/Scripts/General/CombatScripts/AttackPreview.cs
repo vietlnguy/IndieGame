@@ -737,6 +737,20 @@ public class AttackPreview : MonoBehaviour
                         yield return StartCoroutine(AnimateHealthDamage(damageArray[0], battleScreenRightHpBar, battleController.enemySelected, battleScreenRightHp));
                         battleController.enemySelected.GetComponent<EnemyController>().currentHp = battleController.enemySelected.GetComponent<EnemyController>().currentHp - damageArray[0];
                     }
+
+                    //Roll secondary effects
+                    try {
+                        Attack attack = chosenAttack as Attack;
+                        foreach (Debuff debuff in attack.debuffs) {
+                            if (RollDebuff(debuff.chanceToApply)) {
+                            battleController.enemySelected.GetComponent<EnemyController>().debuffs.Add(debuff);
+                        }
+                    }
+                    }
+                    catch {
+                        Debug.Log("Error trying to roll secondary effects");
+                    }
+
                 }
             }
         
@@ -1452,6 +1466,23 @@ public class AttackPreview : MonoBehaviour
         {
             //TODO: Show MISS ui
             Debug.Log("Character Missed!");
+            return false;
+        } 
+    }
+    private bool RollDebuff(int chance) {
+        
+        //Determine hit/crit roll for character
+        int roll = Random.Range(0, 100);
+        if (roll <= chance)
+        {
+            Debug.Log("Debuff success");
+            return true;
+
+        }
+        else
+        {
+            //TODO: Show MISS ui
+            Debug.Log("Debuff failed");
             return false;
         } 
     }

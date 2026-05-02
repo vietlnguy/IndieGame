@@ -141,7 +141,7 @@ public class Chapter2 : MonoBehaviour
             saveManager.loadedData.characters.Add(celeste);
 
             Character lucas = new Character("Lucas", 11, 7, 5, 3, 5, 5, 6, 6, 1, 5, false, false);
-            lucas.knownAttacks.Add(new Attack("Double Punch", "physical", 1.1f, 0, 95, 0, 0,  new List<string>(),"Punch in rapid succession."));
+            lucas.knownAttacks.Add(new Attack("Double Punch", "physical", 1.1f, 0, 95, 0, 0,  new List<Debuff>(),"Punch in rapid succession."));
             lucas.inventory.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
             lucas.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
             lucas.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
@@ -303,7 +303,7 @@ public class Chapter2 : MonoBehaviour
         enemy.support = false;
         enemy.hybrid = false;
 
-        enemy.knownAttacks.Add(new Attack("Bash", "physical", 1.0f, 1.0f, 90, 0, 0,  new List<string>(),"Bash the enemy with your weapon."));
+        enemy.knownAttacks.Add(new Attack("Bash", "physical", 1.0f, 1.0f, 90, 0, 0,  new List<Debuff>(),"Bash the enemy with your weapon."));
     }
     public void BasicRangedEnemy(float x, float y, float z)
     {
@@ -329,7 +329,7 @@ public class Chapter2 : MonoBehaviour
         enemy.support = false;
         enemy.hybrid = false;
 
-        enemy.knownAttacks.Add(new Attack("Bow Shot", "physical", 1.0f, 1.0f, 90, 0, 0,  new List<string>(),"Shoot at arrow at the enemy."));
+        enemy.knownAttacks.Add(new Attack("Bow Shot", "physical", 1.0f, 1.0f, 90, 0, 0,  new List<Debuff>(),"Shoot at arrow at the enemy."));
     }
     public void BossEnemy(float x, float y, float z)
     {
@@ -354,7 +354,7 @@ public class Chapter2 : MonoBehaviour
         enemy.ranged = false;
         enemy.boss = true;
         enemy.deathDialogue = "Gah-- I must fall back. You will regret this. King Reiss WILL have your relic...";
-        enemy.knownAttacks.Add(new Attack("Bash", "physical", 1.1f, 1.0f, 90, 0, 0,  new List<string>(),"Bash the enemy with your weapon."));
+        enemy.knownAttacks.Add(new Attack("Bash", "physical", 1.1f, 1.0f, 90, 0, 0,  new List<Debuff>(),"Bash the enemy with your weapon."));
 
     }
     private void HandleDeath(string name)
