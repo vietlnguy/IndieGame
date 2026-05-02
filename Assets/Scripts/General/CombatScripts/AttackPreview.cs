@@ -739,13 +739,24 @@ public class AttackPreview : MonoBehaviour
                     }
 
                     //Roll secondary effects
-                    try {
+                    try
+                    {
                         Attack attack = chosenAttack as Attack;
-                        foreach (Debuff debuff in attack.debuffs) {
-                            if (RollDebuff(debuff.chanceToApply)) {
-                            battleController.enemySelected.GetComponent<EnemyController>().debuffs.Add(debuff);
+                        foreach (Debuff debuff in attack.debuffs) 
+                        {
+                            if (RollDebuff(debuff.chanceToApply)) 
+                            {
+                                //Check if debuff is already on the enemy
+                                if (battleController.enemySelected.GetComponent<EnemyController>().HasDebuff(debuff)) {
+                                    battleController.enemySelected.GetComponent<EnemyController>().AddTurnsToDebuff(debuff);
+                                }
+                                else {
+                                    battleController.enemySelected.GetComponent<EnemyController>().debuffs.Add(debuff);
+                                    battleController.enemySelected.GetComponent<EnemyController>().ApplyDebuffEffects();
+                                }
+                            
+                            }
                         }
-                    }
                     }
                     catch {
                         Debug.Log("Error trying to roll secondary effects");

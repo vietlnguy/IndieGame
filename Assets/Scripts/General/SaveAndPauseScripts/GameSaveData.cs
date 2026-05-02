@@ -198,6 +198,7 @@ public class Attack : AttackMoves
         this.intMult = intMult;
         this.baseAccuracy = baseAccuracy; //base accuracy of the attack
         this.baseCrit = baseCrit; //base critical chance
+        this.debuffs = new List<Debuff>();
         this.debuffs = debuffs;
 
     }
@@ -215,6 +216,8 @@ public class SupportMove : AttackMoves
     {
         this.restoresHpOrMana = restoresHpOrMana;
         this.restorationAmount = restorationAmount;
+        this.buffs = new List<string>();
+        this.cures = new List<string>();
         this.buffs = buffs;
         this.cures = cures;
     }

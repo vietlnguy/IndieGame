@@ -29,6 +29,7 @@ public class EnemyController : MonoBehaviour
     public int skill;
     public int speed;
     public float attackRange;
+    public int unmodifiedMoveRange;
     public int moveRange;
     public string title;
     public bool roams;
@@ -204,6 +205,49 @@ public class EnemyController : MonoBehaviour
         GameObject[] list = { gameObject, killer };
         OnEnemyDied?.Invoke(list);
         Destroy(gameObject);
+    }
+    public void ApplyDebuffEffects()
+    {
+        foreach (Debuff debuff in debuffs)
+        {
+            if (debuff.name == "Crippled") {
+                moveRange = 0;
+            }
+        }
+    }
+    public bool HasDebuff(Debuff debuff) {
+        foreach (Debuff d in debuffs) {
+            if (d.name == debuff.name) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public void AddTurnsToDebuff(Debuff debuff) {
+        foreach (Debuff d in debuffs) {
+            if (d.name == debuff.name) {
+                d.turnsRemaining += debuff.turnsRemaining;
+            }
+        }
+    }
+    public void ApplyEndOfTurnEffects() {
+        foreach (Debuff debuff in debuffs) {
+            //Proc effects like poison damae
+            if (debuff.name == "Poisoned") {
+
+            }
+
+            debuff.turnsRemaining--;
+
+            //Clear effect and reset stats
+            if (debuff.turnsRemaining == 0) {
+                if (debuff.name == "Crippled") {
+                    moveRange = unmodifiedMoveRange;
+                }
+            }
+        }
+        
+        debuffs.RemoveAll(d => d.turnsRemaining <= 0);
     }
 
 }

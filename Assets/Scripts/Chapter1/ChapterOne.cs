@@ -304,6 +304,7 @@ public class ChapterOne : MonoBehaviour {
         enemy.speed = 4;
         enemy.attackRange = 1.2f;
         enemy.moveRange = 4;
+        enemy.unmodifiedMoveRange = 4;
 
         enemy.roams = true;
         enemy.ranged = false;
@@ -330,6 +331,7 @@ public class ChapterOne : MonoBehaviour {
         enemy.speed = 4;
         enemy.attackRange = 3;
         enemy.moveRange = 4;
+        enemy.unmodifiedMoveRange = 4;
 
         enemy.roams = true;
         enemy.ranged = true;
@@ -356,6 +358,7 @@ public class ChapterOne : MonoBehaviour {
         enemy.speed = 4;
         enemy.attackRange = 1;
         enemy.moveRange = 4;
+        enemy.unmodifiedMoveRange = 4;
 
         enemy.roams = false;
         enemy.ranged = false;
