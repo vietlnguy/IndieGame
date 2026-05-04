@@ -146,7 +146,7 @@ public class CampDialogue : MonoBehaviour
         {
             astridImage.SetActive(true);
         }
-        else if (characterScript.title == "Amara")
+        else if (characterScript.title == "Elani")
         {
             
         }
@@ -470,7 +470,7 @@ public class CampDialogue : MonoBehaviour
 
             else if (sceneName == "Astrid2" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, new List<Debuff>(){new Debuff("Crippled", 100, 1)}, "Target the enemies footing. 50% chance to cripple (Target cannot move).");
+                newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, new List<Debuff>(){new Debuff("Crippled", 100, 1)}, "Target the enemies footing. 100% chance to cripple.");
                 characterScript.knownAttacks.Add(newAttack); 
             }
 
@@ -484,7 +484,7 @@ public class CampDialogue : MonoBehaviour
         {
             if (sceneName == "Lucas1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, new List<Debuff>(), "Shoot a powerful shot at the enemy.");
+                newAttack = new Attack("Rapid Punch", "physical", 1.0f, 1.0f, 95, 0, 0, new List<Debuff>(), "Strike the enemy with a quick punch."); 
                 characterScript.knownAttacks.Add(newAttack);
             }
 
@@ -520,8 +520,130 @@ public class CampDialogue : MonoBehaviour
                 characterScript.knownAttacks.Add(newAttack); 
             }
         }
-        
+        else if (sceneName.Contains("Gerard"))
+        {
+           if (sceneName == "Gerard1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, new List<Debuff>(), "Shoot a powerful shot at the enemy.");
+                characterScript.knownAttacks.Add(newAttack);
+            }
 
+            else if (sceneName == "Gerard2" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, new List<Debuff>() {new Debuff("Crippled", 100, 1)}, "Target the enemies footing. 50% chance to cripple (Target cannot move).");
+                characterScript.knownAttacks.Add(newAttack);  
+            }
+
+            else if (sceneName == "Gerard3" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, new List<Debuff>(), "Strike with extreme precision. Always crits.");
+                characterScript.knownAttacks.Add(newAttack); 
+            } 
+        }
+        else if (sceneName.Contains("Penelope"))
+        {
+           if (sceneName == "Penelope1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, new List<Debuff>(), "Shoot a powerful shot at the enemy.");
+                characterScript.knownAttacks.Add(newAttack);
+            }
+
+            else if (sceneName == "Penelope2" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, new List<Debuff>() {new Debuff("Crippled", 100, 1)}, "Target the enemies footing. 50% chance to cripple (Target cannot move).");
+                characterScript.knownAttacks.Add(newAttack);  
+            }
+
+            else if (sceneName == "Penelope3" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, new List<Debuff>(), "Strike with extreme precision. Always crits.");
+                characterScript.knownAttacks.Add(newAttack); 
+            } 
+        }
+        else if (sceneName.Contains("Katherine"))
+        {
+           if (sceneName == "Katherine1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, new List<Debuff>(), "Shoot a powerful shot at the enemy.");
+                characterScript.knownAttacks.Add(newAttack);
+            }
+
+            else if (sceneName == "Katherine2" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, new List<Debuff>() {new Debuff("Crippled", 100, 1)}, "Target the enemies footing. 50% chance to cripple (Target cannot move).");
+                characterScript.knownAttacks.Add(newAttack);  
+            }
+
+            else if (sceneName == "Katherine3" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, new List<Debuff>(), "Strike with extreme precision. Always crits.");
+                characterScript.knownAttacks.Add(newAttack); 
+            } 
+        }
+        else if (sceneName.Contains("Ivy"))
+        {
+           if (sceneName == "Ivy1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, new List<Debuff>(), "Shoot a powerful shot at the enemy.");
+                characterScript.knownAttacks.Add(newAttack);
+            }
+
+            else if (sceneName == "Ivy2" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, new List<Debuff>() {new Debuff("Crippled", 100, 1)}, "Target the enemies footing. 50% chance to cripple (Target cannot move).");
+                characterScript.knownAttacks.Add(newAttack);  
+            }
+
+            else if (sceneName == "Ivy3" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, new List<Debuff>(), "Strike with extreme precision. Always crits.");
+                characterScript.knownAttacks.Add(newAttack); 
+            } 
+        }
+        else if (sceneName.Contains("Maeve"))
+        {
+           if (sceneName == "Maeve1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, new List<Debuff>(), "Shoot a powerful shot at the enemy.");
+                characterScript.knownAttacks.Add(newAttack);
+            }
+
+            else if (sceneName == "Maeve2" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, new List<Debuff>() {new Debuff("Crippled", 100, 1)}, "Target the enemies footing. 50% chance to cripple (Target cannot move).");
+                characterScript.knownAttacks.Add(newAttack);  
+            }
+
+            else if (sceneName == "Maeve3" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, new List<Debuff>(), "Strike with extreme precision. Always crits.");
+                characterScript.knownAttacks.Add(newAttack); 
+            } 
+        }   
+        else if (sceneName.Contains("Elani"))
+        {
+           if (sceneName == "Elani1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, new List<Debuff>(), "Shoot a powerful shot at the enemy.");
+                characterScript.knownAttacks.Add(newAttack);
+            }
+
+            else if (sceneName == "Elani2" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, new List<Debuff>() {new Debuff("Crippled", 100, 1)}, "Target the enemies footing. 50% chance to cripple (Target cannot move).");
+                characterScript.knownAttacks.Add(newAttack);  
+            }
+
+            else if (sceneName == "Elani3" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
+            {
+                newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, new List<Debuff>(), "Strike with extreme precision. Always crits.");
+                characterScript.knownAttacks.Add(newAttack); 
+            } 
+        }   
+        
+        
+        
+        
         if (newAttack != null)
         {
             newAttackBox.SetActive(true);

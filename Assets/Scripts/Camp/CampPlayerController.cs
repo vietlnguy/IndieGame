@@ -126,7 +126,7 @@ public class CampPlayerController : MonoBehaviour
         {
             deathDialogue = "Ah-- I suppose this is it. Stay safe everyone...";
         }
-        else if (savedCharacter.characterName == "Amara")
+        else if (savedCharacter.characterName == "Elani")
         {
             deathDialogue = "Guh- I guess my luck finally ran out...";
         }
@@ -154,7 +154,7 @@ public class CampPlayerController : MonoBehaviour
         {
             deathDialogue = "Oh- that's my blood... and I was just getting to the good part...";   
         }
-        else if (savedCharacter.characterName == "Vanessa")
+        else if (savedCharacter.characterName == "Maeve")
         {
             deathDialogue = "Ah- my time is up. I knew you'd come for me one day, Lady Death...";
         }

@@ -2,17 +2,19 @@ Player (swordsman/melee):
 - Slash
 - Charge Strike - Big damage, but always attacks second.
 - Dazing Blow - 50% to daze for 2 turns
-- Final Gambit - Boosted damage, set hp to 1.
+- Final Gambit - Huge damage but cannot act next turn.
+new Attack()
 
-Amara (dancer rogue/melee):
+
+Elani (dancer rogue/melee):
 - Backstab
-- 
-- Disarming Wink - Set Vulnerable (reduces DEF and RES)
+- Punishment - Bonus damage if enemy is buffed.
+- Babydoll Eyes - Set Vulnerable (reduces DEF and RES)
 - Climax - (Instantly kills if brought below 20% health)
 
 Astrid (ranger/ranged):
 - Bow Shot
-- Power Draw - 
+- Power Draw - Bonus damage
 - Cripple - 100% chance to cripple for one turn
 - Headshot - Guaranteed to critically strike
 
@@ -20,40 +22,40 @@ Celeste (priestess/melee):
 - Heal
 - Mana Restore - Restore target mana
 - Cure - Restores large hp and cures debuffs  
-- Ilvera's Blessing - Completely heal and boosts all stats
+- Ilvera's Protection - Completely heal/mana and set Invulnerable for 1 turn
 
 Gerard (general/melee):
 - Thrust
 - Shield Bash - Extra damage per DEF
 - Iron Will - Bonus damage if user is debuffed.
-- Unyielding - User cannot drop below 1 hp this turn..
+- Unyielding - Set Undying user cannot drop below 1 hp this turn.
 
 Ivy (nature mage/ranged):
 - Vine Lash
-- Noxious Fume - 75 percent chance to poison
+- Noxious Fumes - 75 percent chance to poison
 - Essence Drain - Restore mana equal to half damage
-- Woodland Fury - 
+- Spore Burst - Big damage if target is poisoned, removes poison.
 
 Katherine (cavalier/melee):
 - Trample
 - Flank Attack - Bonus damage if enemy cannot attack back.
 - Flame Charge - Resisted by RES rather than DEF.
-- Stampede - Summon a horde of fire horses that charge with you.
+- Stampede - Does not end turn.
 
 Lucas (pugilist/melee):
 - Double punch
-- Confusing Strike - 30% chance to confuse
+- Blurry Fist - 50% chance to confuse for 2 turns
 - Hero Spirit - Power is doubled when user is below 50%
-- Relentless Assault - 100% chance to daze and confuse
+- Intinct -  Enter flow state. Speed doubled.
 
 Penelope (instrument/ranged) :
-- Split Chord - Can heal teammate, or damage enemy
-- 
-- 
-- Withering Sound - 50% chance to wither 
+- Split Chord - Restore hp and mana
+- Power Chord - Set Charged (Next attack does double damage.)
+- Rejuvenate - Allow ally to take another turn.
+- Crecendo - Set boosted (All primary stats boosted)
 
-Vanessa (Hemomancer/ranged) :
+Maeve (Hemomancer/ranged) :
 - Blood Magik
 - Life Drain - Heal for the same amount
-- Withering Chant -
-- Beautiful Death - Instakill enemy beneath 25% health
+- Sacrifice - Transfer 25% current health to an ally.
+- Blood bomb - Lose 50% current health to do huge damage.
