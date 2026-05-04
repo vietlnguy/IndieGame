@@ -81,6 +81,8 @@ public class PlayerController : MonoBehaviour
     public string deathDialogue;
     public GameOver gameOverScript;
     public bool hoverable = false;
+    public List<Debuff> debuffs;
+    public List<Buff> buffs;
 
     void Awake()
     {
@@ -102,6 +104,8 @@ public class PlayerController : MonoBehaviour
         deselectAudio = GameObject.Find("DeselectAudio").GetComponent<AudioSource>();
         gameOverScript = GameObject.Find("GameOverScreen").GetComponent<GameOver>();
         populateCharacterData();
+        debuffs = new List<Debuff>();
+        buffs = new List<Buff>();
     }
     void Update()
     {

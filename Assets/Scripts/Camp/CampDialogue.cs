@@ -458,13 +458,13 @@ public class CampDialogue : MonoBehaviour
     private IEnumerator ShouldGainAttack()
     {
         CampPlayerController characterScript = characterSelected.GetComponent<CampPlayerController>();
-        Attack newAttack = null;
+        AttackMoves newAttack = null;
        
         if (sceneName.Contains("Astrid"))
         {
             if (sceneName == "Astrid1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, new List<Debuff>(), "Shoot a powerful shot at the enemy.");
+                newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, "Shoot a powerful shot at the enemy.");
                 characterScript.knownAttacks.Add(newAttack);
             }
 
@@ -476,7 +476,7 @@ public class CampDialogue : MonoBehaviour
 
             else if (sceneName == "Astrid3" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, new List<Debuff>(), "Strike with extreme precision. Always crits.");
+                newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, "Strike with extreme precision. Always crits.");
                 characterScript.knownAttacks.Add(newAttack); 
             }
         }
@@ -484,19 +484,19 @@ public class CampDialogue : MonoBehaviour
         {
             if (sceneName == "Lucas1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Rapid Punch", "physical", 1.0f, 1.0f, 95, 0, 0, new List<Debuff>(), "Strike the enemy with a quick punch."); 
+                newAttack = new Attack("Unseen Fist", "physical", 1.1f, 1.0f, 75, 0, 6, new List<Debuff>{new Debuff("Confused", 50, 2)}, "Confuse the enemy with a flurry of strikes. 50% chance to confuse.");                
                 characterScript.knownAttacks.Add(newAttack);
             }
 
             else if (sceneName == "Lucas2" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, new List<Debuff>(), "Target the enemies footing. 50% chance to cripple (Target cannot move).");
+                newAttack = new Attack("Underdog Spirit", "physical", 1.5f, 1.0f, 75, 0, 6, "Deals double damage if user is below 50% Max HP.");
                 characterScript.knownAttacks.Add(newAttack);  
             }
 
             else if (sceneName == "Lucas3" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, new List<Debuff>(), "Strike with extreme precision. Always crits.");
+                newAttack = new Attack("Killer Instinct", "physical", 2f, 1.0f, 85, 0, 8, new List<Buff>(){new Buff("Flowing", 100, 2)}, "Enter a flow state.");
                 characterScript.knownAttacks.Add(newAttack); 
             }
         }
@@ -504,19 +504,19 @@ public class CampDialogue : MonoBehaviour
         {
             if (sceneName == "Celeste1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, new List<Debuff>(), "Shoot a powerful shot at the enemy.");
+                newAttack = new SupportMove("Mana Restore", 4, "mana", 5, "Restores mana to target. Scales with INT.");
                 characterScript.knownAttacks.Add(newAttack);
             }
 
             else if (sceneName == "Celeste2" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, new List<Debuff>() {new Debuff("Crippled", 100, 1)}, "Target the enemies footing. 50% chance to cripple (Target cannot move).");
+                newAttack = new SupportMove("Cure", 4, "hp", 10, new List<string>(){"all"}, "Restores mana to target. Scales with INT.");
                 characterScript.knownAttacks.Add(newAttack);  
             }
 
             else if (sceneName == "Celeste3" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, new List<Debuff>(), "Strike with extreme precision. Always crits.");
+                newAttack = new SupportMove("Ilvera's Protection", 10, "both", 1000, new List<Buff>(){new Buff("Blessed", 100, 1)}, "Call on the goddess to protect an ally.");
                 characterScript.knownAttacks.Add(newAttack); 
             }
         }
@@ -524,19 +524,19 @@ public class CampDialogue : MonoBehaviour
         {
            if (sceneName == "Gerard1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, new List<Debuff>(), "Shoot a powerful shot at the enemy.");
+                newAttack = new Attack("Shield Bash", "physical", 1.3f, 1.0f, 90, 0, 4, "Does bonus damage based on user's DEF.");
                 characterScript.knownAttacks.Add(newAttack);
             }
 
             else if (sceneName == "Gerard2" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, new List<Debuff>() {new Debuff("Crippled", 100, 1)}, "Target the enemies footing. 50% chance to cripple (Target cannot move).");
+                newAttack = new Attack("Resiliant Slam", "physical", 1.5f, 1.0f, 75, 0, 6, "Does bonus damage if user is debuffed.");
                 characterScript.knownAttacks.Add(newAttack);  
             }
 
             else if (sceneName == "Gerard3" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, new List<Debuff>(), "Strike with extreme precision. Always crits.");
+                newAttack = new Attack("Last Stand", "physical", 1.5f, 1.0f, 60, 100, 10, new List<Buff>(){new Buff("Undying", 100, 1)}, "Make a heroic last stand.");
                 characterScript.knownAttacks.Add(newAttack); 
             } 
         }
@@ -544,19 +544,20 @@ public class CampDialogue : MonoBehaviour
         {
            if (sceneName == "Penelope1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, new List<Debuff>(), "Shoot a powerful shot at the enemy.");
+                //newAttack = new SupportMove("Split Chord", 2, "both", 4, "Strum your harp to restore hp and mana to an ally. Scales with INT.");
+                newAttack = new SupportMove("Power Chord", 5, "neither", 0, new List<Buff>(){new Buff("Charged", 100, 1)}, "Strum a gnarly chord. Your ally's next attack will do double damage.");
                 characterScript.knownAttacks.Add(newAttack);
             }
 
             else if (sceneName == "Penelope2" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, new List<Debuff>() {new Debuff("Crippled", 100, 1)}, "Target the enemies footing. 50% chance to cripple (Target cannot move).");
+                newAttack = new SupportMove("Rejuvenate", 4, "neither", 0, "Energize your ally with the sound of music. They may take another turn.");
                 characterScript.knownAttacks.Add(newAttack);  
             }
 
             else if (sceneName == "Penelope3" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, new List<Debuff>(), "Strike with extreme precision. Always crits.");
+                newAttack = new SupportMove("Crecendo", 8, "neither", 0, new List<Buff>(){new Buff("Invigorated", 100, 2)}, "Inspire your ally with angelic music. Boosts all primary stats.");
                 characterScript.knownAttacks.Add(newAttack); 
             } 
         }

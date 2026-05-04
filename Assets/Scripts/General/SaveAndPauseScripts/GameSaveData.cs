@@ -190,8 +190,9 @@ public class Attack : AttackMoves
     public int baseAccuracy;
     public int baseCrit;
     public List<Debuff> debuffs;
+    public List<Buff> buffs;
 
-    public Attack(string name, string damageType, float attackMult, float intMult, int baseAccuracy, int baseCrit, int manaCost, List<Debuff> debuffs, string description) : base(name, manaCost, description)
+    public Attack(string name, string damageType, float attackMult, float intMult, int baseAccuracy, int baseCrit, int manaCost, string description) : base(name, manaCost, description)
     {
         this.damageType = damageType; //physical or magical. Determines whether resisted by DEF or RES
         this.attackMult = attackMult;
@@ -199,8 +200,29 @@ public class Attack : AttackMoves
         this.baseAccuracy = baseAccuracy; //base accuracy of the attack
         this.baseCrit = baseCrit; //base critical chance
         this.debuffs = new List<Debuff>();
+        this.buffs = new List<Buff>();
+    }
+    public Attack(string name, string damageType, float attackMult, float intMult, int baseAccuracy, int baseCrit, int manaCost, List<Debuff> debuffs,  string description) : base(name, manaCost, description)
+    {
+        this.damageType = damageType; //physical or magical. Determines whether resisted by DEF or RES
+        this.attackMult = attackMult;
+        this.intMult = intMult;
+        this.baseAccuracy = baseAccuracy; //base accuracy of the attack
+        this.baseCrit = baseCrit; //base critical chance
+        this.debuffs = new List<Debuff>();
+        this.buffs = new List<Buff>();
         this.debuffs = debuffs;
-
+    }
+    public Attack(string name, string damageType, float attackMult, float intMult, int baseAccuracy, int baseCrit, int manaCost, List<Buff> buffs,  string description) : base(name, manaCost, description)
+    {
+        this.damageType = damageType; //physical or magical. Determines whether resisted by DEF or RES
+        this.attackMult = attackMult;
+        this.intMult = intMult;
+        this.baseAccuracy = baseAccuracy; //base accuracy of the attack
+        this.baseCrit = baseCrit; //base critical chance
+        this.debuffs = new List<Debuff>();
+        this.buffs = new List<Buff>();
+        this.buffs = buffs;
     }
 }
 
@@ -209,17 +231,41 @@ public class SupportMove : AttackMoves
 {
     public string restoresHpOrMana;
     public int restorationAmount;
-    public List<string> buffs;
+    public List<Buff> buffs;
     public List<string> cures;
     
-    public SupportMove(string name, int manaCost, string restoresHpOrMana, int restorationAmount, List<string> buffs, List<string> cures, string description) : base(name, manaCost, description)
+    public SupportMove(string name, int manaCost, string restoresHpOrMana, int restorationAmount, List<Buff> buffs, List<string> cures, string description) : base(name, manaCost, description)
     {
         this.restoresHpOrMana = restoresHpOrMana;
         this.restorationAmount = restorationAmount;
-        this.buffs = new List<string>();
+        this.buffs = new List<Buff>();
         this.cures = new List<string>();
         this.buffs = buffs;
         this.cures = cures;
+    }
+    public SupportMove(string name, int manaCost, string restoresHpOrMana, int restorationAmount, string description) : base(name, manaCost, description)
+    {
+        this.restoresHpOrMana = restoresHpOrMana;
+        this.restorationAmount = restorationAmount;
+        this.buffs = new List<Buff>();
+        this.cures = new List<string>();
+    }
+    public SupportMove(string name, int manaCost, string restoresHpOrMana, int restorationAmount, List<string> cures, string description) : base(name, manaCost, description)
+    {
+        this.restoresHpOrMana = restoresHpOrMana;
+        this.restorationAmount = restorationAmount;
+        this.buffs = new List<Buff>();
+        this.cures = new List<string>();
+        this.cures = cures;
+    }
+    public SupportMove(string name, int manaCost, string restoresHpOrMana, int restorationAmount, List<Buff> buffs, string description) : base(name, manaCost, description)
+    {
+        this.restoresHpOrMana = restoresHpOrMana;
+        this.restorationAmount = restorationAmount;
+        this.buffs = new List<Buff>();
+        this.cures = new List<string>();
+        this.buffs = buffs;
+
     }
 }
 
