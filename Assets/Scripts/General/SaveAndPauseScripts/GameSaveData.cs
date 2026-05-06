@@ -8,6 +8,7 @@ public class GameSaveData
     public string currentChapter;
     public string introBattleOutro;
     public string mainCharacterName;
+    public bool campTrainingAllowed = false;
     public List<Character> characters;
     public List<Equipment> supplyEquipment;
     public List<Item> supplyItems;

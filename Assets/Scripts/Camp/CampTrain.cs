@@ -3,14 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 
-public class CampAssistMenu : MonoBehaviour
+public class CampTrain : MonoBehaviour
 {
     private Camera worldCamera;
     private RectTransform characterMenuParentCanvasRect;
     public GameObject characterMenu;
     public bool active = false;
     private int index = 0;
-    private SaveManager saveManager;
     private CampController campControllerScript;
     private InventoryMenu inventoryMenuScript;
     private CampInfoScreen campInfoScript;
@@ -21,7 +20,6 @@ public class CampAssistMenu : MonoBehaviour
     public AudioSource selectorAudio;
     public AudioSource deselectAudio;
     public GameObject characterSelected;
-    public TextMeshProUGUI trainText;
 
 
     void Awake()
@@ -35,8 +33,6 @@ public class CampAssistMenu : MonoBehaviour
         campControllerScript = FindFirstObjectByType<CampController>();
         campTrainScript = FindFirstObjectByType<CampTrain>();
         gameObject.GetComponent<Canvas>().worldCamera = worldCamera;
-        saveManager = FindFirstObjectByType<SaveManager>();
-
     }
     void LateUpdate()
     {
@@ -44,7 +40,7 @@ public class CampAssistMenu : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Q))
             {
-                disableCharacterAssistMenu();
+                disableTrainingMenu();
 
             }
             //Move the selector
@@ -68,77 +64,16 @@ public class CampAssistMenu : MonoBehaviour
             //Make selection
             else if (Input.GetKeyDown(KeyCode.Space))
             {
-                //TODO: Handle Talk option
-                if (index == 0)
-                {
-                    active = false;
-                    StartCoroutine(campDialogueScript.EnableDialogueWindow(characterSelected));
-                }
-
-                //Open info screen
-                else if (index == 1)
-                {
-                    active = false;
-                    StartCoroutine(campInfoScript.enableCharacterInfo(characterSelected));
-                }
-
-                //Open trading menu
-                else if (index == 2)
-                {
-                    campTradeScript.enableTradingMenu(characterSelected);
-                    active = false;
-                }
-
-                //Open equipment menu
-                else if (index == 3)
-                {
-                    active = false;
-                    campTradeScript.enableEquipmentMenu(characterSelected);
-                }
-
-                //Open supply menu
-                else if (index == 4)
-                {
-                    campTradeScript.enableSupplyMenu(characterSelected);
-                    active = false;
-                }
-                
-                //Open training menu
-                else if (index == 5 && saveManager.loadedData.campTrainingAllowed)
-                {
-                    campTrainScript.enableTrainingMenu(characterSelected);
-                    active = false;
-                }
-            
             }
         }
     }
-    public void enableCharacterAssistMenu(GameObject character)
+    public void enableTrainingMenu(GameObject character)
     {
-        //Set position of UI panel
-        characterMenu.SetActive(true);
-        characterSelected = character;
-        active = true;
-        Vector3 screenPos = RectTransformUtility.WorldToScreenPoint(worldCamera, character.transform.position);
-        Vector2 localPos;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(characterMenuParentCanvasRect, screenPos, worldCamera, out localPos);
-        characterMenu.GetComponent<RectTransform>().localPosition = localPos + new Vector2(-20f, 200f);
-        campControllerScript.movementEnabled = false;
-
-        //Enable training
-        if (saveManager.loadedData.campTrainingAllowed)
-        {
-            trainText.color = Color.white;
-        }
-
 
     }
-    public void disableCharacterAssistMenu()
+    public void disableTrainingMenu()
     {
-        deselectAudio.Play();
-        characterMenu.SetActive(false);
-        active = false;
-        campControllerScript.movementEnabled = true;
+
     }
     private void moveSelectorDown()
     {

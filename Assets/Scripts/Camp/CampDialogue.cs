@@ -454,9 +454,14 @@ public class CampDialogue : MonoBehaviour
         yield return StartCoroutine(Helpers.FadeOutImageAlpha(blackScreen, 1f));
         yield return StartCoroutine(ShouldGainAttack());
 
+        if (sceneName == "Lucas1" && !scm.loadedData.campTrainingAllowed)
+        {
+            yield return StartCoroutine(CampTrainingSequence());
+        }
     }
     private IEnumerator ShouldGainAttack()
     {
+        active = false;
         CampPlayerController characterScript = characterSelected.GetComponent<CampPlayerController>();
         AttackMoves newAttack = null;
        
@@ -565,19 +570,19 @@ public class CampDialogue : MonoBehaviour
         {
            if (sceneName == "Katherine1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, new List<Debuff>(), "Shoot a powerful shot at the enemy.");
+                newAttack = new Attack("Flank", "physical", 1.5f, 1.0f, 90, 0, 4, "Does bonus damage to enemies that can't attack back.");
                 characterScript.knownAttacks.Add(newAttack);
             }
 
             else if (sceneName == "Katherine2" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, new List<Debuff>() {new Debuff("Crippled", 100, 1)}, "Target the enemies footing. 50% chance to cripple (Target cannot move).");
+                newAttack = new Attack("Flame Charge", "magical", 1.5f, 1.0f, 75, 0, 6, "Resisted by RES rather than DEF.");
                 characterScript.knownAttacks.Add(newAttack);  
             }
 
             else if (sceneName == "Katherine3" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, new List<Debuff>(), "Strike with extreme precision. Always crits.");
+                newAttack = new Attack("Stampede", "physical", 1.5f, 1.0f, 85, 0, 6, "Does not end turn.");
                 characterScript.knownAttacks.Add(newAttack); 
             } 
         }
@@ -585,19 +590,19 @@ public class CampDialogue : MonoBehaviour
         {
            if (sceneName == "Ivy1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, new List<Debuff>(), "Shoot a powerful shot at the enemy.");
+                newAttack = new Attack("Noxious Fumes", "magical", 1.0f, 1.2f, 90, 0, 4, new List<Debuff>(){new Debuff("Poisoned", 75, 5)}, "Summon toxic fumes to poison the enemy. 75% chance to poison.");
                 characterScript.knownAttacks.Add(newAttack);
             }
 
             else if (sceneName == "Ivy2" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, new List<Debuff>() {new Debuff("Crippled", 100, 1)}, "Target the enemies footing. 50% chance to cripple (Target cannot move).");
+                newAttack = new Attack("Essence Drain", "magical", 1.0f, 1.5f, 75, 0, 5, "Restore mana equal to damage dealt.");
                 characterScript.knownAttacks.Add(newAttack);  
             }
 
             else if (sceneName == "Ivy3" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, new List<Debuff>(), "Strike with extreme precision. Always crits.");
+                newAttack = new Attack("Spore Burst", "magical", 1.0f, 2.0f, 80, 0, 10, new List<Debuff>(), "Does bonus damage if target is poisoned. Removes poison.");
                 characterScript.knownAttacks.Add(newAttack); 
             } 
         }
@@ -605,19 +610,19 @@ public class CampDialogue : MonoBehaviour
         {
            if (sceneName == "Maeve1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, new List<Debuff>(), "Shoot a powerful shot at the enemy.");
+                newAttack = new Attack("Life Drain", "magical", 1.0f, 1.2f, 90, 0, 4, "Heal for half the damage dealt.");
                 characterScript.knownAttacks.Add(newAttack);
             }
 
             else if (sceneName == "Maeve2" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, new List<Debuff>() {new Debuff("Crippled", 100, 1)}, "Target the enemies footing. 50% chance to cripple (Target cannot move).");
+                newAttack = new SupportMove("Sacrifice", 4, "hp", 5,"Transfer 25% of your health to an ally.");
                 characterScript.knownAttacks.Add(newAttack);  
             }
 
             else if (sceneName == "Maeve3" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, new List<Debuff>(), "Strike with extreme precision. Always crits.");
+                newAttack = new Attack("Blood Bomb", "magical", 1.0f, 2.0f, 80, 0, 10, "Sacrifice 50% current health to do huge damage.");
                 characterScript.knownAttacks.Add(newAttack); 
             } 
         }   
@@ -625,26 +630,23 @@ public class CampDialogue : MonoBehaviour
         {
            if (sceneName == "Elani1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Power Draw", "physical", 1.5f, 1.0f, 90, 0, 4, new List<Debuff>(), "Shoot a powerful shot at the enemy.");
+                newAttack = new Attack("Punishment", "physical", 1.5f, 1.0f, 90, 0, 4, "Bonus damage against targets that have a buff.");
                 characterScript.knownAttacks.Add(newAttack);
             }
 
             else if (sceneName == "Elani2" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Ankle Snare", "physical", 1.1f, 1.0f, 75, 0, 6, new List<Debuff>() {new Debuff("Crippled", 100, 1)}, "Target the enemies footing. 50% chance to cripple (Target cannot move).");
+                newAttack = new Attack("Babydoll Eyes", "physical", 1.3f, 1.0f, 75, 0, 6, new List<Debuff>() {new Debuff("Vulnerable", 100, 2)}, "Enemy lowers their gaurd. Set Vulnerable for 2 turns.");
                 characterScript.knownAttacks.Add(newAttack);  
             }
 
             else if (sceneName == "Elani3" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Headshot", "physical", 1.5f, 1.0f, 60, 100, 10, new List<Debuff>(), "Strike with extreme precision. Always crits.");
+                newAttack = new Attack("Climax", "physical", 1.5f, 1.0f, 70, 0, 10, new List<Debuff>(), "The dramatic kind. If target is brought below 20% max HP, target dies.");
                 characterScript.knownAttacks.Add(newAttack); 
             } 
         }   
-        
-        
-        
-        
+                
         if (newAttack != null)
         {
             newAttackBox.SetActive(true);
@@ -658,7 +660,22 @@ public class CampDialogue : MonoBehaviour
         }
         
         characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained = true;
+        active = true;
         yield return null;
+    }
+    private IEnumerator CampTrainingSequence()
+    {
+        active = false;
+        newAttackBox.SetActive(true);
+        newAttackBoxName.text = "Camp Feature Unlocked!";
+        newAttackBoxText.text = "Training";
+        gainedNewAttackAudio.Play();
+
+        yield return new WaitForSeconds(4f);
+        newAttackBox.SetActive(false);
+        scm.loadedData.campTrainingAllowed = true;
+        active = true;
+
     }
     public struct CharacterDialogue {
         public string[] lines;
