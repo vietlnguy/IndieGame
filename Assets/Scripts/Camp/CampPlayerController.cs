@@ -4,7 +4,7 @@ using TMPro;
 using System.Collections.Generic;
 public class CampPlayerController : MonoBehaviour
 {
-    
+    public int pointsAvailable;
     private SaveManager scm;
     public int currentHp;
     public int maxHp;
@@ -121,6 +121,7 @@ public class CampPlayerController : MonoBehaviour
         armorEquiped = savedCharacter.armorEquiped;
         accessoryEquiped = savedCharacter.accessoryEquiped;
         subquests = savedCharacter.subquests;
+        pointsAvailable = savedCharacter.pointsAvailable;
         
         if (savedCharacter.characterName == "Astrid")
         {

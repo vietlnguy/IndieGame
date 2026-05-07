@@ -106,7 +106,7 @@ public class CampAssistMenu : MonoBehaviour
                 //Open training menu
                 else if (index == 5 && saveManager.loadedData.campTrainingAllowed)
                 {
-                    campTrainScript.enableTrainingMenu(characterSelected);
+                    StartCoroutine(campTrainScript.EnableTrainingMenu(characterSelected));
                     active = false;
                 }
             

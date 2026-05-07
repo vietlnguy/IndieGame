@@ -47,6 +47,7 @@ public class Character
     public Equipment weaponEquiped;
     public Equipment armorEquiped;
     public Equipment accessoryEquiped;
+    public int pointsAvailable = 5;
 
 
     public Character(string characterName, int maxHp, int maxMana, int attack, int intelligence, int defense, int resistance, int skill, int speed, int attackRange, float moveRange, bool owned, bool ranged)

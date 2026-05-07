@@ -471,5 +471,17 @@ public static class Helpers
         }
 
     }
-
+    public static IEnumerator FlashTextColor(TextMeshProUGUI text, Color endColor, float speed)
+    {
+        Color startColor = text.color;
+        while (true)
+        {
+            // Mathf.PingPong moves back and forth between 0 and 1
+            float t = Mathf.PingPong(Time.time * speed, 1.0f);
+            
+            text.color = Color.Lerp(startColor, endColor, t);
+            
+            yield return null;
+        }
+    }
 }
