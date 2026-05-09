@@ -7,25 +7,24 @@ using System;
 
 public class CampTrain : MonoBehaviour
 {
-    private Camera worldCamera;
-    private RectTransform characterMenuParentCanvasRect;
-    public GameObject characterMenu;
+    private SaveManager scm;
+    private CampPlayerController characterScript;
     public bool active = false;
     private bool statSelected = false;
     private int index = 0;
     private int leftRightIndex = 0;
     public AudioSource selectorAudio;
     public AudioSource deselectAudio;
-    public GameObject selector;
     public Image blackScreen;
+    public GameObject selector;
     public GameObject mainCharacterImage;
-    private SaveManager scm;
     public GameObject sceneries;
     public GameObject portraits;
     public GameObject trainingWindow;
     public GameObject topArrow;
     public GameObject bottomArrow;
-    private CampPlayerController characterScript;
+    public GameObject dialogueBox;
+    public TextMeshProUGUI dialogueBoxText;
     private int originalAtk;
     private int originalInt;
     private int originalDef;
@@ -44,10 +43,32 @@ public class CampTrain : MonoBehaviour
     public TextMeshProUGUI manaStat;
     public TextMeshProUGUI pointsAvailableText;
     private Coroutine flashCoroutine;
+    private List<string> astridDialogueOptions;
+    private List<string> penelopeDialogueOptions;
+    private List<string> lucasDialogueOptions;
+    private List<string> celesteDialogueOptions;
+    private List<string> gerardDialogueOptions;
+    private List<string> katherineDialogueOptions;
+    private List<string> ivyDialogueOptions;
+    private List<string> maeveDialogueOptions;
+    private List<string> elaniDialogueOptions;
+    private List<string> mainCharacterDialogueOptions;
+
 
     void Awake()
     {
         scm = FindFirstObjectByType<SaveManager>();
+
+        astridDialogueOptions = new List<string>() {"To protect everyone..", "I hope we get through this soon.", "Strength through precision.", "Take aim, breath, and release.", "I have to do my part."};
+        penelopeDialogueOptions = new List<string>() {"Let's not work too hard..", "I can't only rely on Gerard and Katherine.", "And I just took a bath..", "Yipee!", "Princesses can be strong too!"};
+        lucasDialogueOptions = new List<string>() {"This is gonna be easy!", "Gotta make sis proud.", "I feel stronger already!", "Piece of cake!", "For mom and dad..."};
+        celesteDialogueOptions = new List<string>() {"Ilvera guide me...", "In the name of the goddess..", "May the light flow through me.", "I feel blessed.", "Do no harm."};
+        gerardDialogueOptions = new List<string>() {"Hmph.", "On my honor.", "I will do my duty.", ""};
+        katherineDialogueOptions = new List<string>() {""};
+        ivyDialogueOptions = new List<string>() {};
+        maeveDialogueOptions = new List<string>() {};
+        elaniDialogueOptions = new List<string>() {};
+        mainCharacterDialogueOptions = new List<string>() {};
     }
     void LateUpdate()
     {
@@ -123,7 +144,8 @@ public class CampTrain : MonoBehaviour
                     bottomArrow.SetActive(false);
                     topArrow.SetActive(false);
                     StopCoroutine(flashCoroutine);
-                    GetStatText().color = Color.white;
+
+                    SetTextColor();
 
                 } 
             }
@@ -176,6 +198,14 @@ public class CampTrain : MonoBehaviour
         yield return StartCoroutine(Helpers.FadeOutImageAlpha(blackScreen, 1f));
         active = true;
 
+        yield return new WaitForSeconds(1f);
+
+        //Text box
+        DetermineText();
+        StartCoroutine(Helpers.MoveRectTransform(dialogueBox, dialogueBox.GetComponent<RectTransform>().anchoredPosition, dialogueBox.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, 10f), .25f));
+        StartCoroutine(Helpers.FadeInCanvasGroup(dialogueBox.GetComponent<CanvasGroup>(), 0.25f));
+
+
     }
     public IEnumerator DisableTrainingMenu()
     {
@@ -187,6 +217,10 @@ public class CampTrain : MonoBehaviour
         DisableAllPortraits();
         ResetSelectorPosition();
         statSelected = false;
+        active = false;
+        dialogueBox.GetComponent<CanvasGroup>().alpha = 0;
+
+        yield return StartCoroutine(Helpers.FadeOutImageAlpha(blackScreen, 1f));
 
     }
     private void MoveSelectorDown()
@@ -241,11 +275,144 @@ public class CampTrain : MonoBehaviour
     }
     private void PutPointIntoStat()
     {
+        if (leftRightIndex == 0)
+        {
+            if (index == 0)
+            {
+                characterScript.baseMaxHp += 2;
+                hpStat.text = characterScript.baseMaxHp.ToString();
+            }
+            else if (index == 1)
+            {
+                characterScript.baseAttack++;
+                atkStat.text = characterScript.baseAttack.ToString();
+            }
+            else if (index == 2)
+            {
+                characterScript.baseIntelligence++;
+                intStat.text = characterScript.baseIntelligence.ToString();
+            }
+            else if (index == 3)
+            {
+                characterScript.baseDefense++;
+                defStat.text = characterScript.baseDefense.ToString();
+            }
+
+        }
+        else if (leftRightIndex == 1)
+        {
+            if (index == 0)
+            {
+                characterScript.baseMaxMana += 2;
+                manaStat.text = characterScript.baseMaxMana.ToString();
+            }
+            else if (index == 1)
+            {
+                characterScript.baseSpeed++;
+                spdStat.text = characterScript.baseSpeed.ToString();
+            }
+            else if (index == 2)
+            {
+                characterScript.baseSkill++;
+                sklStat.text = characterScript.baseSkill.ToString();
+            }
+            else if (index == 3)
+            {
+                characterScript.baseResistance++;
+                resStat.text = characterScript.baseResistance.ToString();
+            }
+
+        } 
         
+        characterScript.pointsAvailable--;
+        pointsAvailableText.text = characterScript.pointsAvailable.ToString();
     }
     private void RemovePointFromStat()
     {
+        if (leftRightIndex == 0)
+        {
+            if (index == 0)
+            {
+                if (characterScript.baseMaxHp > originalHp)
+                {
+                    characterScript.baseMaxHp -= 2;
+                    hpStat.text = characterScript.baseMaxHp.ToString();
+                    characterScript.pointsAvailable++;
+                }
+
+            }
+            else if (index == 1)
+            {
+                if (characterScript.baseAttack > originalAtk)
+                {
+                    characterScript.baseAttack--;
+                    atkStat.text = characterScript.baseAttack.ToString();
+                    characterScript.pointsAvailable++;        
+                }
+
+            }
+            else if (index == 2)
+            {
+                if (characterScript.baseIntelligence > originalInt)
+                {
+                    characterScript.baseIntelligence--;
+                    intStat.text = characterScript.baseIntelligence.ToString();
+                    characterScript.pointsAvailable++;
+                }
+            }
+            else if (index == 3)
+            {
+                if (characterScript.baseDefense > originalDef)
+                {
+                    characterScript.baseDefense--;
+                    defStat.text = characterScript.baseDefense.ToString();
+                    characterScript.pointsAvailable++;
+                }
+            }
+
+        }
+        else if (leftRightIndex == 1)
+        {
+            if (index == 0)
+            {
+                if (characterScript.baseMaxMana > originalMana)
+                {
+                    characterScript.baseMaxMana -= 2;
+                    manaStat.text = characterScript.baseMaxMana.ToString();
+                    characterScript.pointsAvailable++;
+                }
+            }
+            else if (index == 1)
+            {
+                if (characterScript.baseSpeed > originalSpd)
+                {
+                    characterScript.baseSpeed--;
+                    spdStat.text = characterScript.baseSpeed.ToString();
+                    characterScript.pointsAvailable++;
+                }
+            }
+            else if (index == 2)
+            {
+                if (characterScript.baseSkill > originalSkl)
+                {
+                    characterScript.baseSkill--;
+                    sklStat.text = characterScript.baseSkill.ToString();
+                    characterScript.pointsAvailable++;
+                }
+            }
+            else if (index == 3)
+            {
+                if (characterScript.baseResistance > originalRes)
+                {
+                    characterScript.baseResistance--;
+                    resStat.text = characterScript.baseResistance.ToString();
+                    characterScript.pointsAvailable++;
+                }
+            }
+
+        } 
         
+        pointsAvailableText.text = characterScript.pointsAvailable.ToString();
     }
     private void PopulateStats()
     {
@@ -314,5 +481,151 @@ public class CampTrain : MonoBehaviour
         } 
 
         return null;
+    }
+    private void SetTextColor()
+    {
+        if (leftRightIndex == 0)
+        {
+            if (index == 0)
+            {
+                if (characterScript.baseMaxHp > originalHp)
+                {
+                    GetStatText().color = Color.blue;
+                }
+                else
+                {
+                    GetStatText().color = Color.white;
+                }
+
+            }
+            else if (index == 1)
+            {
+                if (characterScript.baseAttack > originalAtk)
+                {
+                    GetStatText().color = Color.blue;
+                }
+                else
+                {
+                    GetStatText().color = Color.white;
+                }
+            }
+            else if (index == 2)
+            {
+                if (characterScript.baseIntelligence > originalInt)
+                {
+                    GetStatText().color = Color.blue;
+                }
+                else
+                {
+                    GetStatText().color = Color.white;
+                }                
+            }
+            else if (index == 3)
+            {
+                if (characterScript.baseDefense > originalDef)
+                {
+                    GetStatText().color = Color.blue;
+                }
+                else
+                {
+                    GetStatText().color = Color.white;
+                }   
+            }
+
+        }
+        else if (leftRightIndex == 1)
+        {
+            if (index == 0)
+            {
+                if (characterScript.baseMaxMana > originalMana)
+                {
+                    GetStatText().color = Color.blue;
+                }
+                else
+                {
+                    GetStatText().color = Color.white;
+                }
+            }
+            else if (index == 1)
+            {
+                if (characterScript.baseSpeed > originalSpd)
+                {
+                    GetStatText().color = Color.blue;
+                }
+                else
+                {
+                    GetStatText().color = Color.white;
+                }
+            }
+            else if (index == 2)
+            {
+                if (characterScript.baseSkill > originalSkl)
+                {
+                    GetStatText().color = Color.blue;
+                }
+                else
+                {
+                    GetStatText().color = Color.white;
+                }
+            }
+            else if (index == 3)
+            {
+                if (characterScript.baseResistance > originalRes)
+                {
+                    GetStatText().color = Color.blue;
+                }
+                else
+                {
+                    GetStatText().color = Color.white;
+                }
+            }
+
+        } 
+    }
+    private void DetermineText()
+    {
+        if (characterScript.title == "Astrid")
+        {
+            
+        }
+        else if (characterScript.title == "Penelope")
+        {
+            
+        }
+        else if (characterScript.title == "Gerard")
+        {
+            
+        }
+        else if (characterScript.title == "Katherine")
+        {
+            
+        }
+        else if (characterScript.title == "Lucas")
+        {
+            
+        }
+        else if (characterScript.title == "Celeste")
+        {
+            
+        }
+        else if (characterScript.title == "Ivy")
+        {
+            
+        }
+        else if (characterScript.title == "Maeve")
+        {
+            
+        }
+        else if (characterScript.title == "Elani")
+        {
+            
+        }
+        else
+        {
+            
+        }
+
+
+
     }
 }
