@@ -63,12 +63,12 @@ public class CampTrain : MonoBehaviour
         penelopeDialogueOptions = new List<string>() {"Let's not work too hard..", "I can't only rely on Gerard and Katherine.", "And I just took a bath..", "Yipee!", "Princesses can be strong too!"};
         lucasDialogueOptions = new List<string>() {"This is gonna be easy!", "Gotta make sis proud.", "I feel stronger already!", "Piece of cake!", "For mom and dad..."};
         celesteDialogueOptions = new List<string>() {"Ilvera guide me...", "In the name of the goddess..", "May the light flow through me.", "I feel blessed.", "Do no harm."};
-        gerardDialogueOptions = new List<string>() {"Hmph.", "On my honor.", "I will do my duty.", ""};
-        katherineDialogueOptions = new List<string>() {""};
+        gerardDialogueOptions = new List<string>() {"Hmph.", "On my honor.", "As duty commands..", "Consider it done.", "For the princess.."};
+        katherineDialogueOptions = new List<string>() {};
         ivyDialogueOptions = new List<string>() {};
         maeveDialogueOptions = new List<string>() {};
         elaniDialogueOptions = new List<string>() {};
-        mainCharacterDialogueOptions = new List<string>() {};
+        mainCharacterDialogueOptions = new List<string>() {"Can never be too prepared.", "Gotta stay sharp.", "Let's do this!", "Hm, what should I train next?", "Can't fall behind."};
     }
     void LateUpdate()
     {
@@ -205,7 +205,10 @@ public class CampTrain : MonoBehaviour
         StartCoroutine(Helpers.MoveRectTransform(dialogueBox, dialogueBox.GetComponent<RectTransform>().anchoredPosition, dialogueBox.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, 10f), .25f));
         StartCoroutine(Helpers.FadeInCanvasGroup(dialogueBox.GetComponent<CanvasGroup>(), 0.25f));
 
+        yield return new WaitForSeconds(1.5f);
 
+        StartCoroutine(Helpers.MoveRectTransform(dialogueBox, dialogueBox.GetComponent<RectTransform>().anchoredPosition, dialogueBox.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, -10f), .25f));
+        StartCoroutine(Helpers.FadeOutCanvasGroup(dialogueBox.GetComponent<CanvasGroup>(), 0.25f));
     }
     public IEnumerator DisableTrainingMenu()
     {
@@ -586,43 +589,43 @@ public class CampTrain : MonoBehaviour
     {
         if (characterScript.title == "Astrid")
         {
-            
+            dialogueBoxText.text = astridDialogueOptions[UnityEngine.Random.Range(0, 5)];
         }
         else if (characterScript.title == "Penelope")
         {
-            
+            dialogueBoxText.text = penelopeDialogueOptions[UnityEngine.Random.Range(0, 5)]; 
         }
         else if (characterScript.title == "Gerard")
         {
-            
+            dialogueBoxText.text = gerardDialogueOptions[UnityEngine.Random.Range(0, 5)]; 
         }
         else if (characterScript.title == "Katherine")
         {
-            
+            dialogueBoxText.text = katherineDialogueOptions[UnityEngine.Random.Range(0, 5)];
         }
         else if (characterScript.title == "Lucas")
         {
-            
+            dialogueBoxText.text = lucasDialogueOptions[UnityEngine.Random.Range(0, 5)];       
         }
         else if (characterScript.title == "Celeste")
         {
-            
+            dialogueBoxText.text = celesteDialogueOptions[UnityEngine.Random.Range(0, 5)];  
         }
         else if (characterScript.title == "Ivy")
         {
-            
+            dialogueBoxText.text = ivyDialogueOptions[UnityEngine.Random.Range(0, 5)];   
         }
         else if (characterScript.title == "Maeve")
         {
-            
+            dialogueBoxText.text = ivyDialogueOptions[UnityEngine.Random.Range(0, 5)];
         }
         else if (characterScript.title == "Elani")
         {
-            
+            dialogueBoxText.text = elaniDialogueOptions[UnityEngine.Random.Range(0, 5)];
         }
         else
         {
-            
+            dialogueBoxText.text = mainCharacterDialogueOptions[UnityEngine.Random.Range(0, 5)];
         }
 
 
