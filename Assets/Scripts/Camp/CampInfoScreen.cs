@@ -51,6 +51,7 @@ public class CampInfoScreen : MonoBehaviour
     private CampAssistMenu campAssistMenuScript;
     public AudioSource bookOpenAudio;
     public AudioSource bookCloseAudio;
+    public GameObject relationshipHearts;
 
     void Awake()
     {
@@ -337,13 +338,26 @@ public class CampInfoScreen : MonoBehaviour
         resStat.text = characterScript.baseResistance.ToString();
         spdStat.text = characterScript.baseSpeed.ToString();
 
+        //Populate Relationship
+        for (int i = 0; i < 3; i++)
+        {
+            if (characterScript.subquests[i].completed)
+            {
+                relationshipHearts.transform.GetChild(i).GetChild(0).gameObject.SetActive(false);
+                relationshipHearts.transform.GetChild(i).GetChild(1).gameObject.SetActive(true);
+            }
+            else
+            {
+                relationshipHearts.transform.GetChild(i).GetChild(0).gameObject.SetActive(true);
+                relationshipHearts.transform.GetChild(i).GetChild(1).gameObject.SetActive(false);
+            }
+        }
 
         if (characterScript.totalAttackMod != 0)
         {
             if (characterScript.totalAttackMod > 0) { atkModText.text = "+" + characterScript.totalAttackMod.ToString(); mtcScript.Flash(atkModText, "blue");}
             else { atkModText.text = "-" + characterScript.totalAttackMod.ToString(); mtcScript.Flash(atkModText, "red"); }
         }
-
 
         //Update Descriptions
         updateStatsDescription();

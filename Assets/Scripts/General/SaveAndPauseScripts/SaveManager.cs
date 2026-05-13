@@ -71,6 +71,8 @@ public class SaveManager : MonoBehaviour
         astrid.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
         astrid.accessoryEquiped = new Equipment("Power Bracelet", "accessory", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Tingles with power. +1 ATK.");
         astrid.subquests.Add(new Subquest("Astrid1", "Astrid lands the killing blow on the boss.", "Discuss the power of the bracelets."));
+        astrid.subquests.Add(new Subquest("Astrid2", "Placeholder.", "Placeholder description."));
+        astrid.subquests.Add(new Subquest("Astrid3", "Placeholder.", "Placeholder description."));
         dataToSave.characters.Add(mainCharacter);
         dataToSave.characters.Add(astrid);
 

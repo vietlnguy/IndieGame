@@ -309,7 +309,21 @@ public class CampDialogue : MonoBehaviour
             }
             else if (scm.loadedData.currentChapter == "Chapter 3")
             {
-                
+                if (!characterScript.spokenToAlready)
+                {
+                    dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"I'm glad Lucas and Celeste are staying with us, despite the circumstances."}));
+                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"Can't stand to look at me anymore?"}));
+                    dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"I'm serious!"}));
+                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"Sorry.."}));
+                    dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"Its okay.", "And yes now I can finally have another lady to talk to."}));
+                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"Hey!"}));
+                    dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"Did you need anything else?"}));
+
+                }
+                else
+                {
+                    dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"Hi, dear. Did you need something?"}));
+                }  
             }
         }
         else if (characterScript.title == "Lucas")
@@ -674,6 +688,7 @@ public class CampDialogue : MonoBehaviour
         yield return new WaitForSeconds(4f);
         newAttackBox.SetActive(false);
         scm.loadedData.campTrainingAllowed = true;
+        campAssistMenuScript.trainText.color = Color.white;
         active = true;
 
     }

@@ -9,6 +9,8 @@ public class CampTrain : MonoBehaviour
 {
     private SaveManager scm;
     private CampPlayerController characterScript;
+    private CampAssistMenu campAssistMenuScript;
+    public ConfirmTrainButton confirmTrainButtonScript;
     public bool active = false;
     private bool statSelected = false;
     private int index = 0;
@@ -33,6 +35,7 @@ public class CampTrain : MonoBehaviour
     private int originalSpd;
     private int originalHp;
     private int originalMana;
+    private int originalPoints;
     public TextMeshProUGUI atkStat;
     public TextMeshProUGUI intStat;
     public TextMeshProUGUI defStat;
@@ -54,10 +57,10 @@ public class CampTrain : MonoBehaviour
     private List<string> elaniDialogueOptions;
     private List<string> mainCharacterDialogueOptions;
 
-
-    void Awake()
+    void Start()
     {
         scm = FindFirstObjectByType<SaveManager>();
+        campAssistMenuScript = FindFirstObjectByType<CampAssistMenu>();
 
         astridDialogueOptions = new List<string>() {"To protect everyone..", "I hope we get through this soon.", "Strength through precision.", "Take aim, breath, and release.", "I have to do my part."};
         penelopeDialogueOptions = new List<string>() {"Let's not work too hard..", "I can't only rely on Gerard and Katherine.", "And I just took a bath..", "Yipee!", "Princesses can be strong too!"};
@@ -76,7 +79,7 @@ public class CampTrain : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.Q))
             {
-                StartCoroutine(DisableTrainingMenu());
+                StartCoroutine(DisableTrainingMenu(true));
             }
             
             //Move the selector
@@ -157,6 +160,18 @@ public class CampTrain : MonoBehaviour
     {
         yield return StartCoroutine(Helpers.FadeInImageAlpha(blackScreen, 1f));
 
+        try { StopCoroutine(flashCoroutine); }
+        catch {}
+
+        hpStat.color = Color.white;
+        manaStat.color = Color.white;
+        atkStat.color = Color.white;
+        intStat.color = Color.white;
+        resStat.color = Color.white;
+        defStat.color = Color.white;
+        spdStat.color = Color.white;
+        sklStat.color = Color.white;
+
         characterScript = character.GetComponent<CampPlayerController>();
 
         //Enable the right character image
@@ -193,24 +208,22 @@ public class CampTrain : MonoBehaviour
         //Store original stats
         StoreOriginalStats();
 
-        pointsAvailableText.text = characterScript.pointsAvailable.ToString();
-
         yield return StartCoroutine(Helpers.FadeOutImageAlpha(blackScreen, 1f));
         active = true;
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
 
         //Text box
         DetermineText();
         StartCoroutine(Helpers.MoveRectTransform(dialogueBox, dialogueBox.GetComponent<RectTransform>().anchoredPosition, dialogueBox.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, 10f), .25f));
         StartCoroutine(Helpers.FadeInCanvasGroup(dialogueBox.GetComponent<CanvasGroup>(), 0.25f));
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
 
         StartCoroutine(Helpers.MoveRectTransform(dialogueBox, dialogueBox.GetComponent<RectTransform>().anchoredPosition, dialogueBox.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, -10f), .25f));
         StartCoroutine(Helpers.FadeOutCanvasGroup(dialogueBox.GetComponent<CanvasGroup>(), 0.25f));
     }
-    public IEnumerator DisableTrainingMenu()
+    public IEnumerator DisableTrainingMenu(bool reset)
     {
         yield return StartCoroutine(Helpers.FadeInImageAlpha(blackScreen, 1f));
 
@@ -219,11 +232,21 @@ public class CampTrain : MonoBehaviour
         DisableAllScenery();
         DisableAllPortraits();
         ResetSelectorPosition();
+        ResetIndexes();
         statSelected = false;
         active = false;
+        bottomArrow.SetActive(false);
+        topArrow.SetActive(false);
+
+        if (reset)
+        {
+            ResetStatsAndPoints();
+        }
+
         dialogueBox.GetComponent<CanvasGroup>().alpha = 0;
 
         yield return StartCoroutine(Helpers.FadeOutImageAlpha(blackScreen, 1f));
+        campAssistMenuScript.active = true;
 
     }
     private void MoveSelectorDown()
@@ -261,6 +284,11 @@ public class CampTrain : MonoBehaviour
     private void ResetSelectorPosition()
     {
         selector.GetComponent<RectTransform>().anchoredPosition = new Vector2(-268f, 100f);
+    }
+    private void ResetIndexes()
+    {
+        index = 0;
+        leftRightIndex = 0;
     }
     private void DisableAllScenery()
     {
@@ -329,6 +357,7 @@ public class CampTrain : MonoBehaviour
         
         characterScript.pointsAvailable--;
         pointsAvailableText.text = characterScript.pointsAvailable.ToString();
+        confirmTrainButtonScript.Activate();
     }
     private void RemovePointFromStat()
     {
@@ -427,6 +456,7 @@ public class CampTrain : MonoBehaviour
         spdStat.text = characterScript.baseSpeed.ToString();
         hpStat.text = characterScript.baseMaxHp.ToString();
         manaStat.text = characterScript.baseMaxMana.ToString();
+        pointsAvailableText.text = characterScript.pointsAvailable.ToString();
     }
     private void StoreOriginalStats()
     {
@@ -438,6 +468,7 @@ public class CampTrain : MonoBehaviour
         originalSpd =  characterScript.baseSpeed;
         originalHp = characterScript.baseMaxHp;
         originalMana = characterScript.baseMaxMana;
+        originalPoints = characterScript.pointsAvailable;
     }
     private TextMeshProUGUI GetStatText()
     {
@@ -630,5 +661,46 @@ public class CampTrain : MonoBehaviour
 
 
 
+    }
+    private void ResetStatsAndPoints()
+    {
+        characterScript.baseAttack = originalAtk;
+        characterScript.baseIntelligence = originalInt;
+        characterScript.baseDefense = originalDef;
+        characterScript.baseResistance = originalRes;
+        characterScript.baseSkill = originalSkl;
+        characterScript.baseSpeed = originalSpd;
+        characterScript.pointsAvailable = originalPoints;
+        characterScript.baseMaxHp = originalHp;
+        characterScript.baseMaxMana = originalMana;
+    }
+    public void UndoPoints()
+    {
+        characterScript.baseAttack = originalAtk;
+        characterScript.baseIntelligence = originalInt;
+        characterScript.baseDefense = originalDef;
+        characterScript.baseResistance = originalRes;
+        characterScript.baseSkill = originalSkl;
+        characterScript.baseSpeed = originalSpd;
+        characterScript.pointsAvailable = originalPoints;
+        characterScript.baseMaxHp = originalHp;
+        characterScript.baseMaxMana = originalMana;
+        characterScript.pointsAvailable = originalPoints;
+        
+        hpStat.color = Color.white;
+        manaStat.color = Color.white;
+        atkStat.color = Color.white;
+        intStat.color = Color.white;
+        resStat.color = Color.white;
+        defStat.color = Color.white;
+        spdStat.color = Color.white;
+        sklStat.color = Color.white;
+
+
+        PopulateStats();
+    }
+    public void ConfirmTrain()
+    {
+        StartCoroutine(DisableTrainingMenu(false));
     }
 }

@@ -33,6 +33,7 @@ public class Chapter2 : MonoBehaviour
     private GameObject mainCharacterObject;
     private GameObject astridObject;
     public GameObject camera;
+    public GameObject victoryAndSubquestBox;
     public Image subquest1X;
     public Image subquest1Check;
     public Image subquest2X;
@@ -136,6 +137,8 @@ public class Chapter2 : MonoBehaviour
             celeste.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
             celeste.accessoryEquiped = new Equipment("Mana Band", "accessory", 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Stores mana! +2 max Mana.");
             celeste.subquests.Add(new Subquest("Celeste1", "Don't let Celeste take any damage.", "Ask to learn more about the goddess."));
+            celeste.subquests.Add(new Subquest("Celeste2", "Placeholder.", "Placeholder description."));
+            celeste.subquests.Add(new Subquest("Celeste3", "Placeholder", "Placeholder description."));
             //TODO: Add more celeste subquests
             
             saveManager.loadedData.characters.Add(celeste);
@@ -147,6 +150,8 @@ public class Chapter2 : MonoBehaviour
             lucas.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
             lucas.accessoryEquiped = new Equipment("Gauntlets", "accessory", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary");
             lucas.subquests.Add(new Subquest("Lucas1", "Lucas slays at least 2 enemies.", "Ask about his relationship to Celeste."));
+            lucas.subquests.Add(new Subquest("Lucas2", "Placeholder.", "Placeholder description."));
+            lucas.subquests.Add(new Subquest("Lucas3", "PLaceholder.", "Placeholder description."));
             //TODO: Add more lucas subquests
 
             saveManager.loadedData.characters.Add(lucas);
@@ -522,6 +527,7 @@ public class Chapter2 : MonoBehaviour
     //Should rarely change
     private void Outro()
     {
+        victoryAndSubquestBox.SetActive(false);
         intro = StartCoroutine(OutroHelper());
     }
     private void VictorySubscribe()

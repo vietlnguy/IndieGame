@@ -227,7 +227,9 @@ public class AttackPreview : MonoBehaviour
                     critBlock.text = damageArray[2].ToString();
                     attackDescription.text = chosenAttack.description;
                     manaBlock.text = chosenAttack.manaCost.ToString();
-                    validAttack = true;
+                    if (battleController.characterSelected.GetComponent<PlayerController>().currentMana >= chosenAttack.manaCost) { validAttack = true;}
+                    else { validAttack = false; }
+                    
                 }
                 else
                 {
@@ -717,13 +719,16 @@ public class AttackPreview : MonoBehaviour
                 yield return null;
             }
             attackPanel.GetComponent<RectTransform>().localScale = endScale; // snap to final value
-
+            
+                        
             if (isAssisting)
             {
                 
             }
             else
             {
+                yield return StartCoroutine(AnimateManaDamage(chosenAttack.manaCost, battleScreenLeftManaBar, battleController.characterSelected, battleScreenLeftMana));
+                
                 if (RollAttack())
                 {
                     if (RollCrit())
@@ -877,7 +882,6 @@ public class AttackPreview : MonoBehaviour
         
         }
 
-    
         //Update mana
         battleController.characterSelected.GetComponent<PlayerController>().currentMana = battleController.characterSelected.GetComponent<PlayerController>().currentMana - chosenAttack.manaCost;
 
@@ -1025,7 +1029,6 @@ public class AttackPreview : MonoBehaviour
             
             if (defenderScript.ranged) { battleScreenLeftRangedImage.SetActive(true); battleScreenLeftMeleeImage.SetActive(false);}
             else { battleScreenLeftRangedImage.SetActive(false); battleScreenLeftMeleeImage.SetActive(true); }
-            
 
             //Enemy is ranged and character is not, or vice versa
             if ((attackerScript.ranged && !defenderScript.ranged) || (!attackerScript.ranged && defenderScript.ranged) )
@@ -1059,6 +1062,7 @@ public class AttackPreview : MonoBehaviour
             //Attack roll sequence
             yield return new WaitForSeconds(1.5f); 
 
+            yield return StartCoroutine(AnimateManaDamage(attackSelected.manaCost, battleScreenRightManaBar, attacker, battleScreenRightMana));
             if (RollEnemyAttack())
             {
                 if (RollEnemyCrit())
@@ -1131,6 +1135,16 @@ public class AttackPreview : MonoBehaviour
                 yield return null;
             }
             attackPanel.GetComponent<RectTransform>().localScale = startScale; // snap to final value
+
+            //Play enemy death dialogue if necessary
+            if (attackerScript.currentHp <= 0)
+            {   
+                //TODO: Remove sprite on battle screen
+                if (attackerScript.deathDialogue != "")
+                {
+                    yield return StartCoroutine(DeathSequence(attacker));
+                }
+            }
 
             //Reset Hp bar sizes
             battleScreenLeftHpBar.GetComponent<RectTransform>().sizeDelta = originalBattleScreenHpBarSize;
@@ -1284,6 +1298,8 @@ public class AttackPreview : MonoBehaviour
 
             //Player attack roll sequence
             yield return new WaitForSeconds(1.5f); 
+
+            yield return StartCoroutine(AnimateManaDamage(chosenAttack.manaCost, battleScreenLeftManaBar, attacker, battleScreenLeftMana));
 
             if (RollAttack())
             {
@@ -1689,12 +1705,12 @@ public class AttackPreview : MonoBehaviour
 
         if (person.GetComponent<PlayerController>() != null)
         {
-            float temp = (float)(person.GetComponent<PlayerController>().currentHp - damage) / person.GetComponent<PlayerController>().maxHp;
+            float temp = (float)(person.GetComponent<PlayerController>().currentMana - damage) / person.GetComponent<PlayerController>().maxMana;
             if (temp > 1f)
             {
                 endSize = originalBattleScreenManaBarSize;
             }
-            else if (person.GetComponent<PlayerController>().currentHp - damage <= 0)
+            else if (person.GetComponent<PlayerController>().currentMana - damage <= 0)
             {
                 endSize = originalBattleScreenManaBarSize * 0f;
             }
@@ -1702,23 +1718,23 @@ public class AttackPreview : MonoBehaviour
             {
                 endSize = originalBattleScreenManaBarSize * temp;
             }
-            startNumber = person.GetComponent<PlayerController>().currentHp;
-            targetNumber = person.GetComponent<PlayerController>().currentHp - damage;
-            if (targetNumber > person.GetComponent<PlayerController>().maxHp)
+            startNumber = person.GetComponent<PlayerController>().currentMana;
+            targetNumber = person.GetComponent<PlayerController>().currentMana - damage;
+            if (targetNumber > person.GetComponent<PlayerController>().maxMana)
             {
-                targetNumber = person.GetComponent<PlayerController>().maxHp;
+                targetNumber = person.GetComponent<PlayerController>().maxMana;
             }
             if (targetNumber < 0) { targetNumber = 0; }
 
         }
         else
         {
-            float temp = (float)(person.GetComponent<EnemyController>().currentHp - damage) / person.GetComponent<EnemyController>().maxHp;
+            float temp = (float)(person.GetComponent<EnemyController>().currentMana - damage) / person.GetComponent<EnemyController>().maxMana;
             if (temp > 1f)
             {
                 endSize = originalBattleScreenManaBarSize;
             }
-            else if (person.GetComponent<EnemyController>().currentHp - damage <= 0)
+            else if (person.GetComponent<EnemyController>().currentMana - damage <= 0)
             {
                 endSize = originalBattleScreenManaBarSize * 0f;
             }
@@ -1727,11 +1743,11 @@ public class AttackPreview : MonoBehaviour
                 endSize = originalBattleScreenManaBarSize * temp;
             }
             
-            startNumber = person.GetComponent<EnemyController>().currentHp;
-            targetNumber = person.GetComponent<EnemyController>().currentHp - damage;
-            if (targetNumber > person.GetComponent<EnemyController>().maxHp)
+            startNumber = person.GetComponent<EnemyController>().currentMana;
+            targetNumber = person.GetComponent<EnemyController>().currentMana - damage;
+            if (targetNumber > person.GetComponent<EnemyController>().maxMana)
             {
-                targetNumber = person.GetComponent<EnemyController>().maxHp;
+                targetNumber = person.GetComponent<EnemyController>().maxMana;
             }
             if (targetNumber < 0) { targetNumber = 0; }
         }

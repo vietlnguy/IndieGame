@@ -378,8 +378,10 @@ public class BattleController : MonoBehaviour
             }
 
             disabledEnemies.Add(enemy.gameObject);
+            enemyScript.ApplyEndOfTurnEffects();
             enemyScript.deselectEnemy();
             enemy.gameObject.GetComponent<EnemyController>().graySpriteAndFreeze();
+
             yield return new WaitForSeconds(1.5f);
         }
 

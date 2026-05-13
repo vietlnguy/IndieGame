@@ -31,6 +31,7 @@ public class ChapterOne : MonoBehaviour {
     private GameObject enemies; 
     private GameObject mainCharacterObject;
     private GameObject astridObject;
+    public GameObject victoryAndSubquestBox;
 
     //Audios
     public AudioSource typingAudio;
@@ -596,6 +597,7 @@ public class ChapterOne : MonoBehaviour {
     //Should rarely have to update
     private void Outro()
     {
+        victoryAndSubquestBox.SetActive(false);
         intro = StartCoroutine(OutroHelper());
     }
     private void VictorySubscribe()

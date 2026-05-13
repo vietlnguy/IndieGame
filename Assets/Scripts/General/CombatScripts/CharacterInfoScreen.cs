@@ -14,6 +14,7 @@ public class CharacterInfoScreen : MonoBehaviour
     public AudioSource selectorAudio;
     public AudioSource deselectAudio;
     public GameObject blackScreen;
+    public GameObject relationshipHearts;
     public TextMeshProUGUI characterNameText;
     public TextMeshProUGUI hpStat;
     public TextMeshProUGUI manaStat;
@@ -337,6 +338,20 @@ public class CharacterInfoScreen : MonoBehaviour
         resStat.text = characterScript.baseResistance.ToString();
         spdStat.text = characterScript.baseSpeed.ToString();
 
+        //Populate Relationship
+        for (int i = 0; i < 3; i++)
+        {
+            if (characterScript.subquests[i].completed)
+            {
+                relationshipHearts.transform.GetChild(i).GetChild(0).gameObject.SetActive(false);
+                relationshipHearts.transform.GetChild(i).GetChild(1).gameObject.SetActive(true);
+            }
+            else
+            {
+                relationshipHearts.transform.GetChild(i).GetChild(0).gameObject.SetActive(true);
+                relationshipHearts.transform.GetChild(i).GetChild(1).gameObject.SetActive(false);
+            }
+        }
 
         if (characterScript.totalAttackMod != 0)
         {
