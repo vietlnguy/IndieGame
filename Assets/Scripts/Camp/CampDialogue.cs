@@ -503,7 +503,7 @@ public class CampDialogue : MonoBehaviour
         {
             if (sceneName == "Lucas1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Unseen Fist", "physical", 1.1f, 1.0f, 75, 0, 6, new List<Debuff>{new Debuff("Confused", 50, 2)}, "Confuse the enemy with a flurry of strikes. 50% chance to confuse.");                
+                newAttack = new Attack("Unseen Fist", "physical", 1.1f, 1.0f, 75, 0, 6, new List<Debuff>{new Debuff("Confused", 50, 2)}, "Confuse the enemy with a flurry of strikes. 50% chance to confuse for 2 turns.");                
                 characterScript.knownAttacks.Add(newAttack);
             }
 

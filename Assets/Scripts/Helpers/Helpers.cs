@@ -484,4 +484,17 @@ public static class Helpers
             yield return null;
         }
     }
+    public static float CalculateCrit(float skill, float moveBase)
+    {
+        float k = 100f;          // Skill level at which you get half the MaxBonus
+        float maxBonus = 45f;    // Skill can add up to 45% crit chance
+        
+        // Calculate the contribution from the Skill stat
+        float skillContribution = (skill / (skill + k)) * maxBonus;
+        
+        // Sum them up
+        float finalChance = moveBase + skillContribution;
+        
+        return Mathf.Clamp(finalChance, 0f, 100f);
+    }
 }

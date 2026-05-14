@@ -279,6 +279,16 @@ public class AttackPreview : MonoBehaviour
                 //Standard damage calculation
                 else
                 {
+                    //Factor in debuffs
+                    int attackerATK = attackerScript.debuffs.Any(debuff => debuff.Name == "Dazed") ? attackerScript.attack : attackerScript.attack * .67f;
+                    int attackerINT = attackerScript.debuffs.Any(debuff => debuff.Name == "Dazed") ? attackerScript.intelligence : attackerScript.intelligence * .67f;
+                    int attackerSKL = attackerScript.debuffs.Any(debuff => debuff.Name == "Confused") ? attackerScript.attack : attackerScript.attack * .67f;
+                    
+                    //Factor in buffs
+                    int defenderDEF = 
+                    int defendeerRES;
+                    int defenderSPD;
+
                     if (attackMove.damageType == "physical") 
                     {
                         damage = attackerScript.attack * attackMove.attackMult * attackerScript.attack * attackMove.attackMult / ((attackerScript.attack * attackMove.attackMult) + defenderScript.defense);
@@ -288,18 +298,17 @@ public class AttackPreview : MonoBehaviour
                         damage = attackerScript.intelligence * attackMove.intMult * attackerScript.intelligence * attackMove.intMult / ((attackerScript.intelligence * attackMove.intMult) + defenderScript.resistance);
                     }   
 
-                    accuracy = attackMove.baseAccuracy + (attackerScript.skill - defenderScript.speed) * 2;
-                    critChance = attackMove.baseCrit + (attackerScript.skill * 0.5f);
+
+
+                    accuracy = attackMove.baseAccuracy * (attackerScript.skill / defenderScript.speed);
+                    critChance = Helpers.CalculateCrit(attackerScript.skill, attackMove.baseCrit)
                 }
 
                 returnArray[0] = (int)Mathf.Round(damage);
                 returnArray[1] = (int)Mathf.Round(accuracy);
                 returnArray[2] = (int)Mathf.Round(critChance);
             }
-            else if (attack is SupportMove)
-            {
-                
-            }
+
         }
 
         catch (System.Exception e)
