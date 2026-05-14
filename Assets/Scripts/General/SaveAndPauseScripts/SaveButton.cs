@@ -13,7 +13,7 @@ public class SaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     void Awake()
     {
         image = GetComponent<Image>();
-        saveManager = FindFirstObjectByType<SaveManager>();
+        saveManager = FindAnyObjectByType<SaveManager>();
     }
 
     void Start()

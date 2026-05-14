@@ -13,7 +13,7 @@ public class ConfirmAttackButton : MonoBehaviour, IPointerEnterHandler, IPointer
     void Awake()
     {
         image = GetComponent<Image>();
-        scm = FindFirstObjectByType<SaveManager>();
+        scm = FindAnyObjectByType<SaveManager>();
     }
 
     public void OnPointerEnter(PointerEventData eventData)

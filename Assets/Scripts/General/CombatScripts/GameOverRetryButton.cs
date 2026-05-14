@@ -12,7 +12,7 @@ public class GameOverRetryButton : MonoBehaviour, IPointerEnterHandler, IPointer
     void Awake()
     {
         image = GetComponent<Image>();
-        saveManager = FindFirstObjectByType<SaveManager>();
+        saveManager = FindAnyObjectByType<SaveManager>();
         confirmationAudio = GetComponent<AudioSource>();
     }
 

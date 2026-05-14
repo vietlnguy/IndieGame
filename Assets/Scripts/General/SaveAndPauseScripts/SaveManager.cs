@@ -232,7 +232,7 @@ public class SaveManager : MonoBehaviour
     public IEnumerator SceneTransition(bool showSaved)
     {
         //Fade out all audios
-        AudioSource[] sources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        AudioSource[] sources = FindObjectsByType<AudioSource>();
         foreach (AudioSource source in sources)
         {
             StartCoroutine(FadeOut(source));

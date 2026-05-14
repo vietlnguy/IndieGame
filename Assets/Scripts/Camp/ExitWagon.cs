@@ -11,8 +11,8 @@ public class ExitWagon : MonoBehaviour
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
-        cmc = FindFirstObjectByType<CampMoveCircle>();
-        scm = FindFirstObjectByType<SaveManager>();
+        cmc = FindAnyObjectByType<CampMoveCircle>();
+        scm = FindAnyObjectByType<SaveManager>();
     }
     private void OnMouseDown()
     {

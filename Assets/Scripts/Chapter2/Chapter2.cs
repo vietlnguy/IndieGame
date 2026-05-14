@@ -79,11 +79,11 @@ public class Chapter2 : MonoBehaviour
     {    
 
         AudioListener.volume = PlayerPrefs.GetFloat("volume", 0.5f);
-        saveManager = FindFirstObjectByType<SaveManager>();
+        saveManager = FindAnyObjectByType<SaveManager>();
         characters = GameObject.Find("Characters");
         enemies = GameObject.Find("Enemies");
-        pathfinder = FindFirstObjectByType<TilemapPathfinder>();
-        victorySequenceScript = FindFirstObjectByType<VictorySequence>();
+        pathfinder = FindAnyObjectByType<TilemapPathfinder>();
+        victorySequenceScript = FindAnyObjectByType<VictorySequence>();
 
         dialogues = new List<CharacterDialogue>();
         dialogues.Add(new CharacterDialogue(saveManager.loadedData.mainCharacterName, new string[] {"It's been a long time since we've been back to Maplemire.", "We should try to load up on supplies, while we can.", "It's not much further til we get to the castle."}));

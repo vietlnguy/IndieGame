@@ -90,8 +90,8 @@ public class ChapterOne : MonoBehaviour {
     public void Awake()
     {    
     
-        saveManager = FindFirstObjectByType<SaveManager>();
-        pathfinder = FindFirstObjectByType<TilemapPathfinder>();
+        saveManager = FindAnyObjectByType<SaveManager>();
+        pathfinder = FindAnyObjectByType<TilemapPathfinder>();
         characters = GameObject.Find("Characters");
         enemies = GameObject.Find("Enemies");
 
@@ -110,7 +110,7 @@ public class ChapterOne : MonoBehaviour {
             }
         }
 
-        victorySequence = FindFirstObjectByType<VictorySequence>();
+        victorySequence = FindAnyObjectByType<VictorySequence>();
         victorySequence.subquests.Add(astridScript.subquests[0]);
         VictorySubscribe();
 

@@ -103,9 +103,9 @@ public class CampTrade : MonoBehaviour
 
     void Awake()
     {
-        scm = FindFirstObjectByType<SaveManager>();
-        campAssistMenuScript = FindFirstObjectByType<CampAssistMenu>();
-        campControllerScript = FindFirstObjectByType<CampController>();
+        scm = FindAnyObjectByType<SaveManager>();
+        campAssistMenuScript = FindAnyObjectByType<CampAssistMenu>();
+        campControllerScript = FindAnyObjectByType<CampController>();
         originalHpManaBarSize = previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta;
         itemToGive = null;
     }

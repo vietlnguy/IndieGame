@@ -12,7 +12,7 @@ public class GameOver : MonoBehaviour {
 
     public void Awake()
     {
-        saveManager = FindFirstObjectByType<SaveManager>();
+        saveManager = FindAnyObjectByType<SaveManager>();
     }
     public void Update()
     {
@@ -23,7 +23,7 @@ public class GameOver : MonoBehaviour {
         active = true;
         yield return new WaitForSeconds(.5f);
         //Fade out all audios
-        AudioSource[] sources = FindObjectsByType<AudioSource>(FindObjectsSortMode.None);
+        AudioSource[] sources = FindObjectsByType<AudioSource>();
         foreach (AudioSource source in sources)
         {
             StartCoroutine(FadeOut(source));

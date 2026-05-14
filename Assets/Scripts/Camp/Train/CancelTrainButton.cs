@@ -10,7 +10,7 @@ public class CancelTrainButton : MonoBehaviour, IPointerEnterHandler, IPointerEx
     void Awake()
     {
         image = GetComponent<Image>();
-        campTrainScript = FindFirstObjectByType<CampTrain>();
+        campTrainScript = FindAnyObjectByType<CampTrain>();
     }
 
     public void OnPointerEnter(PointerEventData eventData)

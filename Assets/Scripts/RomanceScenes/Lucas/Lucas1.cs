@@ -21,7 +21,7 @@ public class Lucas1 : MonoBehaviour
     
     void Awake()
     {
-        scm = FindFirstObjectByType<SaveManager>();
+        scm = FindAnyObjectByType<SaveManager>();
         mcn = scm.loadedData.mainCharacterName;
         dialogues = new List<CharacterDialogue>();
 
@@ -111,7 +111,7 @@ public class Lucas1 : MonoBehaviour
     }
     private void EndCutscene()
     {
-        FindFirstObjectByType<CampDialogue>().Resume();
+        FindAnyObjectByType<CampDialogue>().Resume();
     }
     private IEnumerator TypeLine(string line, string speaker, AudioSource audioSource, TextMeshProUGUI textBox, float textSpeed) {
         if (speaker == "Celeste")

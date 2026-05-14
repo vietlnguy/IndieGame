@@ -64,8 +64,8 @@ public class CampPlayerController : MonoBehaviour
     void Awake()
     {
         scm = GameObject.Find("SaveManager").GetComponent<SaveManager>();
-        campMoveCircleScript = FindFirstObjectByType<CampMoveCircle>();
-        campAssistMenuScript = FindFirstObjectByType<CampAssistMenu>();
+        campMoveCircleScript = FindAnyObjectByType<CampMoveCircle>();
+        campAssistMenuScript = FindAnyObjectByType<CampAssistMenu>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         populateCharacterData();
     }

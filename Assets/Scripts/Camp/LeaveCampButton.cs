@@ -12,7 +12,7 @@ public class LeaveCampButton : MonoBehaviour, IPointerEnterHandler, IPointerExit
     void Awake()
     {
         image = GetComponent<Image>();
-        exitWagon = FindFirstObjectByType<ExitWagon>();
+        exitWagon = FindAnyObjectByType<ExitWagon>();
     }
 
     public void OnPointerEnter(PointerEventData eventData)

@@ -55,7 +55,7 @@ public class CampInfoScreen : MonoBehaviour
 
     void Awake()
     {
-        campAssistMenuScript = FindFirstObjectByType<CampAssistMenu>();
+        campAssistMenuScript = FindAnyObjectByType<CampAssistMenu>();
     }
     void LateUpdate()
     {

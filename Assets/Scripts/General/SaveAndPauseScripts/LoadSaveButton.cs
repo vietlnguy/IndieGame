@@ -13,7 +13,7 @@ public class LoadSaveButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     void Awake()
     {
         image = GetComponent<Image>();
-        scm = FindFirstObjectByType<SaveManager>();
+        scm = FindAnyObjectByType<SaveManager>();
     }
 
     void Start()

@@ -23,8 +23,8 @@ public class RecruitDialogue : MonoBehaviour
 
     void Awake()
     {
-        saveManager = FindFirstObjectByType<SaveManager>();
-        battleController = FindFirstObjectByType<BattleController>();
+        saveManager = FindAnyObjectByType<SaveManager>();
+        battleController = FindAnyObjectByType<BattleController>();
     }
 
     void Update()

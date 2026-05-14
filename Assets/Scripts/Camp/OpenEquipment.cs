@@ -11,10 +11,10 @@ public class OpenEquipment : MonoBehaviour
     void Awake()
     {
         sr = GetComponent<SpriteRenderer>();
-        cmc = FindFirstObjectByType<CampMoveCircle>();
-        cam = FindFirstObjectByType<CampAssistMenu>();
-        ct = FindFirstObjectByType<CampTrade>();
-        campControllerScript = FindFirstObjectByType<CampController>();
+        cmc = FindAnyObjectByType<CampMoveCircle>();
+        cam = FindAnyObjectByType<CampAssistMenu>();
+        ct = FindAnyObjectByType<CampTrade>();
+        campControllerScript = FindAnyObjectByType<CampController>();
     }
     private void OnMouseDown()
     {

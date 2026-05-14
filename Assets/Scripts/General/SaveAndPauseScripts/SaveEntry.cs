@@ -27,7 +27,7 @@ public class SaveEntry : MonoBehaviour, IPointerClickHandler
 
     void Start()
     {
-        scm = FindFirstObjectByType<SaveManager>();
+        scm = FindAnyObjectByType<SaveManager>();
         characterText.GetComponent<TextMeshProUGUI>().text = characterName;
         chapterText.GetComponent<TextMeshProUGUI>().text = chapter;
         sceneText.GetComponent<TextMeshProUGUI>().text = scene;

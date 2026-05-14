@@ -21,7 +21,7 @@ public class AttackRangeCircle : MonoBehaviour
 
     void Awake()
     {
-        pathfinder = FindFirstObjectByType<TilemapPathfinder>();
+        pathfinder = FindAnyObjectByType<TilemapPathfinder>();
         battleController = GameObject.Find("BattleController").GetComponent<BattleController>();
         alliesInRange = new List<GameObject>();
         enemiesInRange = new List<GameObject>();

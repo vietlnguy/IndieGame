@@ -47,8 +47,8 @@ public class CampDialogue : MonoBehaviour
 
     void Awake()
     {
-        scm = FindFirstObjectByType<SaveManager>();
-        campAssistMenuScript = FindFirstObjectByType<CampAssistMenu>();
+        scm = FindAnyObjectByType<SaveManager>();
+        campAssistMenuScript = FindAnyObjectByType<CampAssistMenu>();
         dialogues = new List<CharacterDialogue>();
     }
     void Update()

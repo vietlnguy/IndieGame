@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
         walkingAudio = GameObject.Find("WalkingAudio").GetComponent<AudioSource>();
         battleController = GameObject.Find("BattleController").GetComponent<BattleController>();
         characterToolTipScript = GameObject.Find("CharacterInfoToolTip").GetComponent<CharacterToolTip>();
-        saveManager = FindFirstObjectByType<SaveManager>();
+        saveManager = FindAnyObjectByType<SaveManager>();
         moveRangeCircleScript = GameObject.Find("MoveRangeCircle").GetComponent<MoveRangeCircle>();
         attackRangeCircleScript = GameObject.Find("AttackRangeCircle").GetComponent<AttackRangeCircle>();
         effectiveAttackRangeCircleScript = GameObject.Find("EffectiveAttackRangeCircle").GetComponent<EffectiveAttackRangeCircle>();        

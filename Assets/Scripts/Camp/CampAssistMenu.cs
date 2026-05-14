@@ -29,13 +29,13 @@ public class CampAssistMenu : MonoBehaviour
         worldCamera = Camera.main;
         characterMenuParentCanvasRect = GetComponent<RectTransform>();
         //inventoryMenuScript = GameObject.Find("InventoryMenu").GetComponent<InventoryMenu>();
-        campInfoScript = FindFirstObjectByType<CampInfoScreen>();
-        campTradeScript = FindFirstObjectByType<CampTrade>();
-        campDialogueScript = FindFirstObjectByType<CampDialogue>();
-        campControllerScript = FindFirstObjectByType<CampController>();
-        campTrainScript = FindFirstObjectByType<CampTrain>();
+        campInfoScript = FindAnyObjectByType<CampInfoScreen>();
+        campTradeScript = FindAnyObjectByType<CampTrade>();
+        campDialogueScript = FindAnyObjectByType<CampDialogue>();
+        campControllerScript = FindAnyObjectByType<CampController>();
+        campTrainScript = FindAnyObjectByType<CampTrain>();
         gameObject.GetComponent<Canvas>().worldCamera = worldCamera;
-        saveManager = FindFirstObjectByType<SaveManager>();
+        saveManager = FindAnyObjectByType<SaveManager>();
 
     }
     void LateUpdate()

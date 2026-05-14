@@ -59,8 +59,8 @@ public class CampTrain : MonoBehaviour
 
     void Start()
     {
-        scm = FindFirstObjectByType<SaveManager>();
-        campAssistMenuScript = FindFirstObjectByType<CampAssistMenu>();
+        scm = FindAnyObjectByType<SaveManager>();
+        campAssistMenuScript = FindAnyObjectByType<CampAssistMenu>();
 
         astridDialogueOptions = new List<string>() {"To protect everyone..", "I hope we get through this soon.", "Strength through precision.", "Take aim, breath, and release.", "I have to do my part."};
         penelopeDialogueOptions = new List<string>() {"Let's not work too hard..", "I can't only rely on Gerard and Katherine.", "And I just took a bath..", "Yipee!", "Princesses can be strong too!"};

@@ -101,7 +101,7 @@ public class AttackPreview : MonoBehaviour
     public GameObject backgrounds;
     void Awake()
     {
-        scm = FindFirstObjectByType<SaveManager>();
+        scm = FindAnyObjectByType<SaveManager>();
         battleController = GameObject.Find("BattleController").GetComponent<BattleController>();
         attackSelectorInitialPos = attackSelector.GetComponent<RectTransform>().anchoredPosition;
         originalHpManaBarSize = previewPlayerHpBar.GetComponent<RectTransform>().sizeDelta;
@@ -353,8 +353,8 @@ public class AttackPreview : MonoBehaviour
                 }
 
                 returnArray[0] = (int)Mathf.Round(damage);
-                returnArray[1] = (int)Mathf.Round(accuracy);
-                returnArray[2] = (int)Mathf.Round(critChance);
+                returnArray[1] = (accuracy > 100) ? 100 : (int)Mathf.Round(accuracy);
+                returnArray[2] = (critChance > 100) ? 100 : (int)Mathf.Round(critChance);
             }
 
         }
