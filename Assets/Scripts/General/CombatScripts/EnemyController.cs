@@ -46,6 +46,7 @@ public class EnemyController : MonoBehaviour
     public bool hoverable = true;
     public GameObject bossIconPrefab;
     public List<Debuff> debuffs;
+    public List<Buff> buffs;
 
     void Awake()
     {
@@ -64,6 +65,7 @@ public class EnemyController : MonoBehaviour
         deselectAudio = GameObject.Find("DeselectAudio").GetComponent<AudioSource>();
         gameOverScript = GameObject.Find("GameOverScreen").GetComponent<GameOver>();
         debuffs = new List<Debuff>();
+        buffs = new List<Buff>();
 
     }
     void Start()

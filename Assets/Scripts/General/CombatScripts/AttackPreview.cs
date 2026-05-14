@@ -279,29 +279,77 @@ public class AttackPreview : MonoBehaviour
                 //Standard damage calculation
                 else
                 {
-                    //Factor in debuffs
-                    int attackerATK = attackerScript.debuffs.Any(debuff => debuff.Name == "Dazed") ? attackerScript.attack : attackerScript.attack * .67f;
-                    int attackerINT = attackerScript.debuffs.Any(debuff => debuff.Name == "Dazed") ? attackerScript.intelligence : attackerScript.intelligence * .67f;
-                    int attackerSKL = attackerScript.debuffs.Any(debuff => debuff.Name == "Confused") ? attackerScript.attack : attackerScript.attack * .67f;
+                    //Factor in attacker buffs/debuffs
+                    float attackerATK = attackerScript.attack;
+                    float attackerINT = attackerScript.intelligence;
+                    float attackerSKL = attackerScript.skill;
+
+                    foreach (Debuff d in attackerScript.debuffs)
+                    {
+                        if (d.name == "Dazed")
+                        {
+                            attackerATK = attackerATK * 0.67f;
+                            attackerINT = attackerINT * 0.67f;
+                        }
+                        if (d.name == "Confused")
+                        {
+                            attackerSKL = attackerSKL * 0.67f;
+                        }
+                    }
+                    foreach (Buff b in attackerScript.buffs)
+                    {
+                        if (b.name == "Invigorated")
+                        {
+                            attackerATK = attackerATK * 1.5f;
+                            attackerINT = attackerINT * 1.5f;
+                        }
+                        if (b.name == "Flowing")
+                        {
+                            attackerSKL = attackerSKL * 1.5f;
+                        }
+                    }
                     
-                    //Factor in buffs
-                    int defenderDEF = 
-                    int defendeerRES;
-                    int defenderSPD;
+                    //Factor in defender buffs/debuffs
+                    float defenderDEF = defenderScript.defense;
+                    float defenderRES = defenderScript.resistance;
+                    float defenderSPD = defenderScript.speed;
+
+                    foreach (Debuff d in defenderScript.debuffs)
+                    {
+                        if (d.name == "Vulnerable")
+                        {
+                            defenderDEF = defenderDEF * 0.67f;
+                            defenderRES = defenderRES * 0.67f;
+                        }
+                        if (d.name == "Slowed")
+                        {
+                            defenderSPD = defenderSPD * 0.67f;
+                        }
+                    }
+                    foreach (Buff b in defenderScript.buffs)
+                    {
+                        if (b.name == "Invigorated")
+                        {
+                            defenderDEF = defenderDEF * 1.5f;
+                            defenderRES = defenderRES * 1.5f;
+                        }
+                        if (b.name == "Flowing")
+                        {
+                            attackerSKL = attackerSKL * 1.5f;
+                        }
+                    }
 
                     if (attackMove.damageType == "physical") 
                     {
-                        damage = attackerScript.attack * attackMove.attackMult * attackerScript.attack * attackMove.attackMult / ((attackerScript.attack * attackMove.attackMult) + defenderScript.defense);
+                        damage = attackerATK * attackMove.attackMult * attackerATK * attackMove.attackMult / ((attackerATK * attackMove.attackMult) + defenderDEF);
                     }
                     else if (attackMove.damageType == "magical")
                     {
-                        damage = attackerScript.intelligence * attackMove.intMult * attackerScript.intelligence * attackMove.intMult / ((attackerScript.intelligence * attackMove.intMult) + defenderScript.resistance);
+                        damage = attackerINT * attackMove.intMult * attackerINT * attackMove.intMult / ((attackerINT * attackMove.intMult) + defenderRES);
                     }   
 
-
-
-                    accuracy = attackMove.baseAccuracy * (attackerScript.skill / defenderScript.speed);
-                    critChance = Helpers.CalculateCrit(attackerScript.skill, attackMove.baseCrit)
+                    accuracy = attackMove.baseAccuracy * (attackerSKL / defenderSPD);
+                    critChance = Helpers.CalculateCrit(attackerSKL, attackMove.baseCrit);
                 }
 
                 returnArray[0] = (int)Mathf.Round(damage);
@@ -329,28 +377,84 @@ public class AttackPreview : MonoBehaviour
                 //Standard damage calculation
                 else
                 {
+                    //Factor in attacker buffs/debuffs
+                    float attackerATK = attackerScript.attack;
+                    float attackerINT = attackerScript.intelligence;
+                    float attackerSKL = attackerScript.skill;
+
+                    foreach (Debuff d in attackerScript.debuffs)
+                    {
+                        if (d.name == "Dazed")
+                        {
+                            attackerATK = attackerATK * 0.67f;
+                            attackerINT = attackerINT * 0.67f;
+                        }
+                        if (d.name == "Confused")
+                        {
+                            attackerSKL = attackerSKL * 0.67f;
+                        }
+                    }
+                    foreach (Buff b in attackerScript.buffs)
+                    {
+                        if (b.name == "Invigorated")
+                        {
+                            attackerATK = attackerATK * 1.5f;
+                            attackerINT = attackerINT * 1.5f;
+                        }
+                        if (b.name == "Flowing")
+                        {
+                            attackerSKL = attackerSKL * 1.5f;
+                        }
+                    }
+                    
+                    //Factor in defender buffs/debuffs
+                    float defenderDEF = defenderScript.defense;
+                    float defenderRES = defenderScript.resistance;
+                    float defenderSPD = defenderScript.speed;
+
+                    foreach (Debuff d in defenderScript.debuffs)
+                    {
+                        if (d.name == "Vulnerable")
+                        {
+                            defenderDEF = defenderDEF * 0.67f;
+                            defenderRES = defenderRES * 0.67f;
+                        }
+                        if (d.name == "Slowed")
+                        {
+                            defenderSPD = defenderSPD * 0.67f;
+                        }
+                    }
+                    foreach (Buff b in defenderScript.buffs)
+                    {
+                        if (b.name == "Invigorated")
+                        {
+                            defenderDEF = defenderDEF * 1.5f;
+                            defenderRES = defenderRES * 1.5f;
+                        }
+                        if (b.name == "Flowing")
+                        {
+                            attackerSKL = attackerSKL * 1.5f;
+                        }
+                    }
+
                     if (attackMove.damageType == "physical") 
                     {
-                        damage = attackerScript.attack * attackMove.attackMult * attackerScript.attack * attackMove.attackMult / ((attackerScript.attack * attackMove.attackMult) + defenderScript.defense);
-                        Debug.Log(attackMove.name + ": AttackerATK(" + attackerScript.attack.ToString() + ") * AttackMoveMult(" + attackMove.attackMult.ToString() + ") ^ squared / (AttackerATK(" + attackerScript.attack.ToString() + ") * AttackMoveMult(" + attackMove.attackMult.ToString() + ")) + DefenderDEF(" + defenderScript.defense.ToString() + ") = " + damage.ToString());
+                        damage = attackerATK * attackMove.attackMult * attackerATK * attackMove.attackMult / ((attackerATK * attackMove.attackMult) + defenderDEF);
                     }
                     else if (attackMove.damageType == "magical")
                     {
-                        damage = attackerScript.intelligence * attackMove.intMult * attackerScript.intelligence * attackMove.intMult / ((attackerScript.intelligence * attackMove.intMult) + defenderScript.resistance);
+                        damage = attackerINT * attackMove.intMult * attackerINT * attackMove.intMult / ((attackerINT * attackMove.intMult) + defenderRES);
                     }   
 
-                    accuracy = attackMove.baseAccuracy + (attackerScript.skill - defenderScript.speed) * 2;
-                    critChance = attackMove.baseCrit + (attackerScript.skill * 0.5f);
+                    accuracy = attackMove.baseAccuracy * (attackerSKL / defenderSPD);
+                    critChance = Helpers.CalculateCrit(attackerSKL, attackMove.baseCrit);
                 }
 
                 returnArray[0] = (int)Mathf.Round(damage);
                 returnArray[1] = (int)Mathf.Round(accuracy);
                 returnArray[2] = (int)Mathf.Round(critChance);
             }
-            else if (attack is SupportMove)
-            {
-                
-            }
+
 
         }
 

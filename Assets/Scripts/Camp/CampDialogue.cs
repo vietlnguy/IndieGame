@@ -543,7 +543,7 @@ public class CampDialogue : MonoBehaviour
         {
            if (sceneName == "Gerard1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Triumphant Shout", "physical", 1.5f, 1.0f, 75, 0, 6, new List<Debuff>(){"Taunted"} "Does bonus damage if user is debuffed.");
+                newAttack = new Attack("Triumphant Shout", "physical", 1.5f, 1.0f, 75, 0, 6, new List<Debuff>(){new Debuff("Taunted", 75, 1)}, "Taunts the enemy. Forced to attack closest.");
                 characterScript.knownAttacks.Add(newAttack);
             }
 
