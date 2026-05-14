@@ -59,7 +59,13 @@ public class SaveManager : MonoBehaviour
 
         //Populate character data
         Character mainCharacter = new Character(mainCharacterName, 12, 8, 8, 4, 5, 5, 6, 6, 1, 5, true, false);
-        mainCharacter.knownAttacks.Add(new Attack("Slash", "physical", 1.0f, 1.0f, 90, 0, 0,  new List<Debuff>(),"Slash with your sword."));
+
+        //Testing attacks
+        //mainCharacter.knownAttacks.Add(new Attack("Slash", "physical", 1.0f, 1.0f, 90, 0, 0,"Slash with your sword."));
+        mainCharacter.knownAttacks.Add(new Attack("Unseen Fist", "physical", 1.1f, 1.0f, 75, 0, 6, new List<Debuff>{new Debuff("Confused", 50, 2)}, "Confuse the enemy with a flurry of strikes. 50% chance to confuse for 2 turns"));
+        
+
+
         mainCharacter.inventory.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
         mainCharacter.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
         mainCharacter.armorEquiped = new Equipment("Leather", "armor", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "For unexpected adventures. +2 Max HP.");

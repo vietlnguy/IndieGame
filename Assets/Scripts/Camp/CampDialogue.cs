@@ -543,13 +543,13 @@ public class CampDialogue : MonoBehaviour
         {
            if (sceneName == "Gerard1" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Shield Bash", "physical", 1.3f, 1.0f, 90, 0, 4, "Does bonus damage based on user's DEF.");
+                newAttack = new Attack("Triumphant Shout", "physical", 1.5f, 1.0f, 75, 0, 6, new List<Debuff>(){"Taunted"} "Does bonus damage if user is debuffed.");
                 characterScript.knownAttacks.Add(newAttack);
             }
 
             else if (sceneName == "Gerard2" && !characterSelected.GetComponent<CampPlayerController>().subquests[dialogueIndex].newAttackGained)
             {
-                newAttack = new Attack("Resiliant Slam", "physical", 1.5f, 1.0f, 75, 0, 6, "Does bonus damage if user is debuffed.");
+                newAttack = new Attack("Shield Bash", "physical", 1.3f, 1.0f, 90, 0, 4, "Does bonus damage based on user's DEF.");
                 characterScript.knownAttacks.Add(newAttack);  
             }
 

@@ -370,7 +370,9 @@ public class ChapterOne : MonoBehaviour {
     }
     private IEnumerator Intro()
     {
-
+        //REMOVE AFTER TESTING
+        saveManager.loadedData.introBattleOutro = "Battle";
+        
         if (saveManager.loadedData.introBattleOutro == "Intro")
         {
 
