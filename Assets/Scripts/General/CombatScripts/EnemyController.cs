@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 using System.Collections;
+using System.Linq;
 
 public class EnemyController : MonoBehaviour
 {
@@ -232,11 +233,11 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
-    public void ApplyEndOfTurnEffects() {
+    public IEnumerator ApplyEndOfTurnEffects() {
         foreach (Debuff debuff in debuffs) {
             //Proc effects like poison damae
             if (debuff.name == "Poisoned") {
-
+                yield return StartCoroutine(PoisonAnimation());
             }
 
             debuff.turnsRemaining--;
@@ -250,6 +251,45 @@ public class EnemyController : MonoBehaviour
         }
         
         debuffs.RemoveAll(d => d.turnsRemaining <= 0);
+        
+        yield return null;
+    }
+    public IEnumerator PoisonAnimation()
+    {
+
+        //Highlight purple
+        //Play bubbly sound
+        //Bubble animation?
+
+        //Doesn't have Invincibility
+        if (!buffs.Any(buff => buff.name == "Invicible"))
+        {
+
+            //If poison damage will kill
+            if ((int)(currentHp - maxHp * 0.2f) <= 0)
+            {
+                //Check if has steadfast
+                if (buffs.Any(buff => buff.name == "Steadfast"))
+                {
+                    currentHp = 1;
+                }
+
+                //Play death 
+                else
+                {
+                    currentHp = 0;
+                    yield return StartCoroutine(attackPreviewScript.DeathSequence(gameObject));
+                }
+            }
+
+            //Else take damage
+            else
+            {
+                currentHp = (int)(currentHp - maxHp * 0.2f);
+            }
+
+        }
+
     }
 
 }

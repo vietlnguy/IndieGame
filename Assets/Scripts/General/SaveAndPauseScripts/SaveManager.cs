@@ -61,8 +61,8 @@ public class SaveManager : MonoBehaviour
         Character mainCharacter = new Character(mainCharacterName, 12, 8, 8, 4, 5, 5, 6, 6, 1, 5, true, false);
 
         //Testing attacks
-        //mainCharacter.knownAttacks.Add(new Attack("Slash", "physical", 1.0f, 1.0f, 90, 0, 0,"Slash with your sword."));
-        mainCharacter.knownAttacks.Add(new Attack("Unseen Fist", "physical", 1.1f, 1.0f, 75, 0, 6, new List<Debuff>{new Debuff("Confused", 50, 2)}, "Confuse the enemy with a flurry of strikes. 50% chance to confuse for 2 turns"));
+        mainCharacter.knownAttacks.Add(new Attack("Slash", "physical", 1.0f, 1.0f, 90, 0, 0,"Slash with your sword."));
+        mainCharacter.knownAttacks.Add(new Attack("Triumphant Shout", "physical", 1.5f, 1.0f, 75, 0, 6, new List<Debuff>(){new Debuff("Taunted", 100, 1)}, "Taunts the enemy. Forced to attack closest."));
         
 
 

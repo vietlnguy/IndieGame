@@ -312,7 +312,8 @@ public class ChapterOne : MonoBehaviour {
         enemy.support = false;
         enemy.hybrid = false;
 
-        enemy.knownAttacks.Add(new Attack("Bash", "physical", 1.0f, 1.0f, 90, 0, 0,  new List<Debuff>(),"Bash the enemy with your weapon."));
+        enemy.knownAttacks.Add(new Attack("Triumphant Shout", "physical", 1.5f, 1.0f, 100, 0, 0, new List<Debuff>(){new Debuff("Taunted", 100, 1)}, "Taunts the enemy. Forced to attack closest."));
+        //enemy.knownAttacks.Add(new Attack("Bash", "physical", 1.0f, 1.0f, 90, 0, 0,  new List<Debuff>(),"Bash the enemy with your weapon."));
     }
     public void BasicRangedEnemy(float x, float y, float z)
     {

@@ -626,7 +626,7 @@ public class InventoryMenu : MonoBehaviour
         //End turn
         disableConfirmBox();
         disableGiverMenu(false);
-        battleController.characterSelected.GetComponent<PlayerController>().endTurn();
+        yield return StartCoroutine(battleController.characterSelected.GetComponent<PlayerController>().endTurn());
 
     }
     private IEnumerator animateHealthOrManaBars(string type, int startNumber, int endNumber)

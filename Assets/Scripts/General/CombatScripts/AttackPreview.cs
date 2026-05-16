@@ -451,8 +451,8 @@ public class AttackPreview : MonoBehaviour
                 }
 
                 returnArray[0] = (int)Mathf.Round(damage);
-                returnArray[1] = (int)Mathf.Round(accuracy);
-                returnArray[2] = (int)Mathf.Round(critChance);
+                returnArray[1] = (accuracy > 100) ? 100 : (int)Mathf.Round(accuracy);
+                returnArray[2] = (critChance > 100) ? 100 : (int)Mathf.Round(critChance);
             }
 
 
@@ -860,6 +860,8 @@ public class AttackPreview : MonoBehaviour
                     try
                     {
                         Attack attack = chosenAttack as Attack;
+                        
+                        //Try apply debuffs to defender
                         foreach (Debuff debuff in attack.debuffs) 
                         {
                             if (RollDebuff(debuff.chanceToApply)) 
@@ -867,14 +869,43 @@ public class AttackPreview : MonoBehaviour
                                 //Check if debuff is already on the enemy
                                 if (battleController.enemySelected.GetComponent<EnemyController>().HasDebuff(debuff)) {
                                     battleController.enemySelected.GetComponent<EnemyController>().AddTurnsToDebuff(debuff);
+                                    
                                 }
                                 else {
                                     battleController.enemySelected.GetComponent<EnemyController>().debuffs.Add(debuff);
                                     battleController.enemySelected.GetComponent<EnemyController>().ApplyDebuffEffects();
+
+                                    //Recalculate damage
+                                    if (debuff.name == "Dazed" || debuff.name == "Confused")
+                                    {
+                                        if ((battleController.enemySelected.GetComponent<EnemyController>().ranged && battleController.characterSelected.GetComponent<PlayerController>().ranged) || (!battleController.enemySelected.GetComponent<EnemyController>().ranged && !battleController.characterSelected.GetComponent<PlayerController>().ranged))
+                                        {
+                                            enemyDamageArray = calculateDamage(battleController.enemySelected, battleController.characterSelected, battleController.enemySelected.GetComponent<EnemyController>().knownAttacks[0]);
+                                            battleScreenEnemyATK.text = enemyDamageArray[0].ToString();
+                                            battleScreenEnemyHIT.text = enemyDamageArray[1].ToString();
+                                            battleScreenEnemyCRIT.text = enemyDamageArray[2].ToString();
+                                            battleScreenEnemyATK.color = Color.red;
+                                            battleScreenEnemyHIT.color = Color.red;
+                                            battleScreenEnemyCRIT.color = Color.red;
+                                        }
+                                    }
+    
                                 }
-                            
+
+                                //TODO: Play debuff animation
+                                if (debuff.name == "Dazed") {}
+                                if (debuff.name == "Confused") {}
+                                if (debuff.name == "Vulnerable") {}
+                                if (debuff.name == "Slowed") {}
+                                if (debuff.name == "Crippled") {}
+                                if (debuff.name == "Poisoned") {}
+                                if (debuff.name == "Taunted") {}
                             }
                         }
+
+                        //Try apply buffs to attacker
+
+
                     }
                     catch {
                         Debug.Log("Error trying to roll secondary effects");
@@ -882,7 +913,9 @@ public class AttackPreview : MonoBehaviour
 
                 }
             }
-        
+
+            yield return new WaitForSeconds(2f);
+
             //Play enemy death dialogue if necessary
             if (battleController.enemySelected.GetComponent<EnemyController>().currentHp <= 0)
             {   
@@ -957,12 +990,69 @@ public class AttackPreview : MonoBehaviour
                 {
                     if (RollCrit())
                     {
+                        //When combat animation is on then animate health bar
                         battleController.enemySelected.GetComponent<EnemyController>().currentHp = battleController.enemySelected.GetComponent<EnemyController>().currentHp - damageArray[0] * 2;
                     }
                     else
                     {
                         battleController.enemySelected.GetComponent<EnemyController>().currentHp = battleController.enemySelected.GetComponent<EnemyController>().currentHp - damageArray[0];
                     }
+
+                    //Roll secondary effects
+                    try
+                    {
+                        Attack attack = chosenAttack as Attack;
+                        
+                        //Try apply debuffs to defender
+                        foreach (Debuff debuff in attack.debuffs) 
+                        {
+                            if (RollDebuff(debuff.chanceToApply)) 
+                            {
+                                //Check if debuff is already on the enemy
+                                if (battleController.enemySelected.GetComponent<EnemyController>().HasDebuff(debuff)) {
+                                    battleController.enemySelected.GetComponent<EnemyController>().AddTurnsToDebuff(debuff);
+                                    
+                                }
+                                else {
+                                    battleController.enemySelected.GetComponent<EnemyController>().debuffs.Add(debuff);
+                                    battleController.enemySelected.GetComponent<EnemyController>().ApplyDebuffEffects();
+
+                                    //Recalculate damage
+                                    if (debuff.name == "Dazed" || debuff.name == "Confused")
+                                    {
+                                        if ((battleController.enemySelected.GetComponent<EnemyController>().ranged && battleController.characterSelected.GetComponent<PlayerController>().ranged) || (!battleController.enemySelected.GetComponent<EnemyController>().ranged && !battleController.characterSelected.GetComponent<PlayerController>().ranged))
+                                        {
+                                            enemyDamageArray = calculateDamage(battleController.enemySelected, battleController.characterSelected, battleController.enemySelected.GetComponent<EnemyController>().knownAttacks[0]);
+                                            battleScreenEnemyATK.text = enemyDamageArray[0].ToString();
+                                            battleScreenEnemyHIT.text = enemyDamageArray[1].ToString();
+                                            battleScreenEnemyCRIT.text = enemyDamageArray[2].ToString();
+                                            battleScreenEnemyATK.color = Color.red;
+                                            battleScreenEnemyHIT.color = Color.red;
+                                            battleScreenEnemyCRIT.color = Color.red;
+                                        }
+                                    }
+    
+                                }
+
+                                //TODO: Play debuff animation
+                                if (debuff.name == "Dazed") {}
+                                if (debuff.name == "Confused") {}
+                                if (debuff.name == "Vulnerable") {}
+                                if (debuff.name == "Slowed") {}
+                                if (debuff.name == "Crippled") {}
+                                if (debuff.name == "Poisoned") {}
+                                if (debuff.name == "Taunted") {}
+                            }
+                        }
+
+                        //Try apply buffs to attacker
+
+
+                    }
+                    catch {
+                        Debug.Log("Error trying to roll secondary effects");
+                    }
+
                 }
             }
         
@@ -1004,7 +1094,7 @@ public class AttackPreview : MonoBehaviour
 
         if (battleController.characterSelected != null)
         {
-            battleController.characterSelected.GetComponent<PlayerController>().endTurn();
+            yield return StartCoroutine(battleController.characterSelected.GetComponent<PlayerController>().endTurn());
         }
 
         coroutineRunning = false;
@@ -1098,20 +1188,23 @@ public class AttackPreview : MonoBehaviour
         chosenAttack = null;
         if (battleController.characterSelected != null)
         {
-            battleController.characterSelected.GetComponent<PlayerController>().endTurn();
+            yield return StartCoroutine(battleController.characterSelected.GetComponent<PlayerController>().endTurn());
         }
         coroutineRunning = false;
     }
     public IEnumerator startEnemyAttackSequence(GameObject attacker, GameObject defender, AttackMoves attackSelected)
     {
+        battleScreenLeftATK.color = Color.white;
+        battleScreenLeftHIT.color = Color.white;
+        battleScreenLeftCRIT.color = Color.white;
         PlayerController defenderScript = defender.GetComponent<PlayerController>();
         EnemyController attackerScript = attacker.GetComponent<EnemyController>();
         coroutineRunning = true;
         enemyDamageArray = calculateDamage(attacker, defender, attackSelected);
         damageArray = calculateDamage(defender, attacker, defenderScript.knownAttacks[0]);
         
-        
-        if (PlayerPrefs.GetInt("combatAnim") == 0)
+        //Don't skip animations
+        if (PlayerPrefs.GetInt("combatAnim", -1) == 0)
         {
             Vector3 startScale = Vector3.zero;
             Vector3 endScale = Vector3.one;
@@ -1188,6 +1281,61 @@ public class AttackPreview : MonoBehaviour
                     yield return StartCoroutine(AnimateHealthDamage(enemyDamageArray[0], battleScreenLeftHpBar, defender, battleScreenLeftHp));
                     defenderScript.currentHp = defenderScript.currentHp - enemyDamageArray[0]; 
                 }
+            
+                //Roll secondary effects
+                try
+                {
+                    Attack attack = attackSelected as Attack;
+                    
+                    //Try apply debuffs to defender
+                    foreach (Debuff debuff in attack.debuffs) 
+                    {
+                        if (RollDebuff(debuff.chanceToApply)) 
+                        {
+                            //Check if debuff is already on the enemy
+                            if (defenderScript.HasDebuff(debuff)) {
+                                defenderScript.AddTurnsToDebuff(debuff);
+                                
+                            }
+                            else {
+                                defenderScript.debuffs.Add(debuff);
+                                defenderScript.ApplyDebuffEffects();
+
+                                //Recalculate damage
+                                if (debuff.name == "Dazed" || debuff.name == "Confused")
+                                {
+                                    if ((attackerScript.ranged && defenderScript.ranged) || (!attackerScript.ranged && !defenderScript.ranged))
+                                    {
+                                        damageArray = calculateDamage(defender, attacker, defenderScript.knownAttacks[0]);
+                                        battleScreenLeftATK.text = damageArray[0].ToString();
+                                        battleScreenLeftHIT.text = damageArray[1].ToString();
+                                        battleScreenLeftCRIT.text = damageArray[2].ToString();
+                                        battleScreenLeftATK.color = Color.red;
+                                        battleScreenLeftHIT.color = Color.red;
+                                        battleScreenLeftCRIT.color = Color.red;
+                                    }
+                                }
+
+                            }
+
+                            //TODO: Play debuff animation
+                            if (debuff.name == "Dazed") {}
+                            if (debuff.name == "Confused") {}
+                            if (debuff.name == "Vulnerable") {}
+                            if (debuff.name == "Slowed") {}
+                            if (debuff.name == "Crippled") {}
+                            if (debuff.name == "Poisoned") {}
+                            if (debuff.name == "Taunted") {}
+                        }
+                    }
+
+                    //Try apply buffs to attacker
+
+                    }
+                    catch {
+                        Debug.Log("Error trying to roll secondary effects");
+                    }
+            
             }
             
             yield return new WaitForSeconds(0.5f);
@@ -1653,6 +1801,10 @@ public class AttackPreview : MonoBehaviour
     }
     private void PopulateBattleScreenInfo()
     {
+        battleScreenEnemyATK.color = Color.white;
+        battleScreenEnemyHIT.color = Color.white;
+        battleScreenEnemyCRIT.color = Color.white;
+
         //Populate leftside info
         battleScreenTransitionAudio.Play();
         battleScreenPlayerName.text = battleController.characterSelected.GetComponent<PlayerController>().title;
@@ -1898,7 +2050,7 @@ public class AttackPreview : MonoBehaviour
             currentPrintedNumber = targetNumber;
         }
     }
-    private IEnumerator DeathSequence(GameObject person)
+    public IEnumerator DeathSequence(GameObject person)
     {
         if (person.GetComponent<PlayerController>() != null && person.GetComponent<PlayerController>().deathDialogue != "")
         {

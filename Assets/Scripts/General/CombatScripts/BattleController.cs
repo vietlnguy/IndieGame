@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using System.Linq;
 
 public class BattleController : MonoBehaviour
 {
@@ -157,7 +158,7 @@ public class BattleController : MonoBehaviour
             }
         }
 
-        if (isPlayerTurn)
+        if (isPlayerTurn && !turnOngoing)
         {
             if (neutralParty)
             {
@@ -216,12 +217,93 @@ public class BattleController : MonoBehaviour
     }
     private IEnumerator playerTurn()
     {
+        turnOngoing = true;
         playerPhaseAudio.Play();
         UpdateTurnNumber();
         fightScreenText.text = "Player Phase";
         fightScreen.GetComponent<CanvasGroup>().alpha = 1f;
         yield return new WaitForSeconds(2.5f);
         fightScreen.GetComponent<CanvasGroup>().alpha = 0f;
+
+        //Taunted characters automatically attack closest
+        foreach (Transform character in characters.transform)
+        {
+            if (character.gameObject.GetComponent<PlayerController>().debuffs.Any(debuff => debuff.name == "Taunted") && character.gameObject.GetComponent<PlayerController>().owned)
+            {
+                PlayerController characterScript = character.gameObject.GetComponent<PlayerController>();
+
+                Vector3 safeDestination = character.transform.position;
+                safeDestination.x = Mathf.Clamp(safeDestination.x, minX, maxX);
+                safeDestination.y = Mathf.Clamp(safeDestination.y, minY, maxY);
+                safeDestination.z = -10f;
+                yield return StartCoroutine(Helpers.MoveTransform(worldCamera.transform, worldCamera.transform.position, safeDestination, 0.5f));
+
+                characterScript.selectCharacter();
+                
+                enemyTarget = SetAttackTarget(character.gameObject, enemies); 
+
+                //Enemy is not in range yet
+                if (!attackRangeCircleScript.enemiesInRange.Contains(enemyTarget))
+                {
+                    //Ranged enemies should stop movement as soon as within range to attack
+                    if (characterScript.GetComponent<PlayerController>().ranged) { attackRangeCircleScript.enemyIsRangedAndMoving = true; }
+                    else { attackRangeCircleScript.enemyIsRangedAndMoving = false; }
+
+                    yield return StartCoroutine(pathfinder.EnemyFollowPath(character.gameObject, enemyTarget.transform.position));
+                    walkingAudio.Stop();
+                }
+
+                yield return new WaitForSeconds(1f);
+
+                //Check if enemy is in range and then attack
+                if (attackRangeCircleScript.enemiesInRange.Contains(enemyTarget) && !characterScript.support)
+                {
+                    AttackMoves attackMove = null;
+
+                    //Try to get killing move (mana allowing)
+                    foreach (AttackMoves attack in characterScript.knownAttacks)
+                    {
+                        //Calculate damage
+                        int[] damageArray = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, attack);
+                        
+                        //If can kill
+                        if (damageArray[0] >= enemyTarget.GetComponent<EnemyController>().currentHp && attack.manaCost <= characterScript.currentMana)
+                        {
+                            attackMove = attack;
+                            break;
+                        }
+                    }
+
+                    //Else get most damage move (mana allowing)
+                    if (attackMove == null)
+                    {
+                        int highestDamage = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, characterScript.knownAttacks[0])[0];
+                        attackMove = characterScript.knownAttacks[0];
+                        foreach (AttackMoves attack in characterScript.knownAttacks)
+                        {
+                            //Calculate damage
+                            int[] damageArray = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, characterScript.knownAttacks[0]);
+
+                            if (damageArray[0] > highestDamage && attack.manaCost <= characterScript.currentMana)
+                            {
+                                attackMove = attack;
+                            }
+                        }
+                    }
+
+                    yield return StartCoroutine(attackPreviewScript.startNeutralAttackSequence(character.gameObject, enemyTarget, attackMove));
+                }
+                
+                yield return StartCoroutine(characterScript.endTurn());
+                //characterScript.deselectCharacter();
+                yield return new WaitForSeconds(1.5f);
+
+
+            }
+        }
+
+        turnOngoing = false;
+
         
     }
     private IEnumerator enemyTurn()
@@ -378,7 +460,7 @@ public class BattleController : MonoBehaviour
             }
 
             disabledEnemies.Add(enemy.gameObject);
-            enemyScript.ApplyEndOfTurnEffects();
+            yield return StartCoroutine(enemyScript.ApplyEndOfTurnEffects());
             enemyScript.deselectEnemy();
             enemy.gameObject.GetComponent<EnemyController>().graySpriteAndFreeze();
 
@@ -533,7 +615,7 @@ public class BattleController : MonoBehaviour
                     }
                 }
 
-                characterScript.endTurn();
+                yield return StartCoroutine(characterScript.endTurn());
                 //characterScript.deselectCharacter();
                 yield return new WaitForSeconds(1.5f);
 
@@ -601,8 +683,28 @@ public class BattleController : MonoBehaviour
     }
     private GameObject SetAttackTarget(GameObject attacker, GameObject enemies)
     {
+        //if player taunted
+        if (attacker.GetComponent<PlayerController>() != null)
+        {
+            PlayerController temp = attacker.GetComponent<PlayerController>();
+            if (temp.debuffs.Any(debuff => debuff.name == "Taunted"))
+            {
+                return GetClosest(attacker, enemies, null);
+            }
+        }
+
+        //if enemy taunted
+        else if (attacker.GetComponent<EnemyController>() != null)
+        {
+            EnemyController temp = attacker.GetComponent<EnemyController>();
+            if (temp.debuffs.Any(debuff => debuff.name == "Taunted"))
+            {
+                return GetClosest(attacker, enemies, null);
+            }
+        }
+
         //Characters within EffectiveAttackRange. Should go down attack priority list to determine target.
-        if (effectiveAttackRangeCircleScript.enemiesInRange.Count > 0)
+        else if (effectiveAttackRangeCircleScript.enemiesInRange.Count > 0)
         {
             //Go through each character and see if any can be killed
             foreach (GameObject enemy in effectiveAttackRangeCircleScript.enemiesInRange)

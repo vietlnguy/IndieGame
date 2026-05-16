@@ -84,7 +84,7 @@ public class CharacterMenu : MonoBehaviour
                 {
                     if (!battleController.disabledCharacters.Contains(battleController.characterSelected) && battleController.characterSelected.GetComponent<PlayerController>().owned)
                     {
-                        battleController.characterSelected.GetComponent<PlayerController>().endTurn();
+                        StartCoroutine(battleController.characterSelected.GetComponent<PlayerController>().endTurn());
                         selectorAudio.Play();
                     }
                 }

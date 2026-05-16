@@ -86,7 +86,7 @@ public class RecruitDialogue : MonoBehaviour
         UpdateOwnership(name);
         Helpers.EnableCharacterHoverAndClick();
         Helpers.EnableEnemyHoverAndClick();
-        battleController.characterSelected.GetComponent<PlayerController>().endTurn();
+        yield return StartCoroutine(battleController.characterSelected.GetComponent<PlayerController>().endTurn());
         battleController.neutralParty = false;
     }
     private void UpdateOwnership(string name)

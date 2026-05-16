@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 using System;
+using System.Linq;
 
 public class PlayerController : MonoBehaviour
 {
@@ -83,6 +85,7 @@ public class PlayerController : MonoBehaviour
     public bool hoverable = false;
     public List<Debuff> debuffs;
     public List<Buff> buffs;
+    public float unmodifiedMoveRange;
 
     void Awake()
     {
@@ -243,6 +246,7 @@ public class PlayerController : MonoBehaviour
         baseSpeed = savedCharacter.baseSpeed;
         baseAttackRange = savedCharacter.baseAttackRange;
         baseMoveRange = savedCharacter.baseMoveRange;
+        unmodifiedMoveRange = baseMoveRange;
         owned = savedCharacter.owned;
         roams = savedCharacter.roams;
         support = savedCharacter.support;
@@ -473,7 +477,7 @@ public class PlayerController : MonoBehaviour
             rigidBody.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
         }
     }
-    public void endTurn()
+    public IEnumerator endTurn()
     {
         moveRangeCircleScript.disableMoveRange();
         attackRangeCircleScript.disableAttackRange();
@@ -484,9 +488,94 @@ public class PlayerController : MonoBehaviour
         battleController.characterSelected = null;
         originalPosition = transform.position;
         movementEnabled = false;
+        yield return StartCoroutine(ApplyEndOfTurnEffects());
+        yield return null;
     }
     public void Die()
     {
         OnCharacterDied?.Invoke(title);
     }
+    public void ApplyDebuffEffects()
+    {
+        foreach (Debuff debuff in debuffs)
+        {
+            if (debuff.name == "Crippled") {
+                moveRange = 0;
+            }
+        }
+    }
+    public bool HasDebuff(Debuff debuff) {
+        foreach (Debuff d in debuffs) {
+            if (d.name == debuff.name) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public void AddTurnsToDebuff(Debuff debuff) {
+        foreach (Debuff d in debuffs) {
+            if (d.name == debuff.name) {
+                d.turnsRemaining += debuff.turnsRemaining;
+            }
+        }
+    }
+    public IEnumerator ApplyEndOfTurnEffects() {
+        foreach (Debuff debuff in debuffs) {
+            //Proc effects like poison damae
+            if (debuff.name == "Poisoned") {
+                yield return StartCoroutine(PoisonAnimation());
+            }
+
+            debuff.turnsRemaining--;
+
+            //Clear effect and reset stats
+            if (debuff.turnsRemaining == 0) {
+                if (debuff.name == "Crippled") {
+                    moveRange = unmodifiedMoveRange;
+                }
+            }
+        }
+        
+        debuffs.RemoveAll(d => d.turnsRemaining <= 0);
+        
+        yield return null;
+    }
+    public IEnumerator PoisonAnimation()
+    {
+
+        //Highlight purple
+        //Play bubbly sound
+        //Bubble animation?
+
+        //Doesn't have Invincibility
+        if (!buffs.Any(buff => buff.name == "Invicible"))
+        {
+
+            //If poison damage will kill
+            if ((int)(currentHp - maxHp * 0.2f) <= 0)
+            {
+                //Check if has steadfast
+                if (buffs.Any(buff => buff.name == "Steadfast"))
+                {
+                    currentHp = 1;
+                }
+
+                //Play death 
+                else
+                {
+                    currentHp = 0;
+                    yield return StartCoroutine(attackPreviewScript.DeathSequence(gameObject));
+                }
+            }
+
+            //Else take damage
+            else
+            {
+                currentHp = (int)(currentHp - maxHp * 0.2f);
+            }
+
+        }
+
+    }
+
 }
