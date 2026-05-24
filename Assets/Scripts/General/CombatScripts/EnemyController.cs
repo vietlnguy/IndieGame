@@ -218,6 +218,13 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
+    public void ApplyBuffEffects()
+    {
+        foreach (Buff buff in buffs)
+        {
+            
+        }
+    }
     public bool HasDebuff(Debuff debuff) {
         foreach (Debuff d in debuffs) {
             if (d.name == debuff.name) {
@@ -230,6 +237,21 @@ public class EnemyController : MonoBehaviour
         foreach (Debuff d in debuffs) {
             if (d.name == debuff.name) {
                 d.turnsRemaining += debuff.turnsRemaining;
+            }
+        }
+    }
+    public bool HasBuff(Buff buff) {
+        foreach (Buff d in buffs) {
+            if (d.name == buff.name) {
+                return true;
+            }
+        }
+        return false;
+    }
+    public void AddTurnsToBuff(Buff buff) {
+        foreach (Buff d in buffs) {
+            if (d.name == buff.name) {
+                d.turnsRemaining += buff.turnsRemaining;
             }
         }
     }
@@ -249,8 +271,15 @@ public class EnemyController : MonoBehaviour
                 }
             }
         }
-        
         debuffs.RemoveAll(d => d.turnsRemaining <= 0);
+        
+        foreach (Buff buff in buffs) {
+            
+            if (buff.name != "Charged") {
+                buff.turnsRemaining--;
+            }
+        }
+        buffs.RemoveAll(d => d.turnsRemaining <= 0);
         
         yield return null;
     }

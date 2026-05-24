@@ -264,7 +264,7 @@ public class BattleController : MonoBehaviour
                     foreach (AttackMoves attack in characterScript.knownAttacks)
                     {
                         //Calculate damage
-                        int[] damageArray = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, attack);
+                        int[] damageArray = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, attack as Attack);
                         
                         //If can kill
                         if (damageArray[0] >= enemyTarget.GetComponent<EnemyController>().currentHp && attack.manaCost <= characterScript.currentMana)
@@ -277,12 +277,12 @@ public class BattleController : MonoBehaviour
                     //Else get most damage move (mana allowing)
                     if (attackMove == null)
                     {
-                        int highestDamage = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, characterScript.knownAttacks[0])[0];
+                        int highestDamage = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, characterScript.knownAttacks[0] as Attack)[0];
                         attackMove = characterScript.knownAttacks[0];
                         foreach (AttackMoves attack in characterScript.knownAttacks)
                         {
                             //Calculate damage
-                            int[] damageArray = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, characterScript.knownAttacks[0]);
+                            int[] damageArray = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, characterScript.knownAttacks[0] as Attack);
 
                             if (damageArray[0] > highestDamage && attack.manaCost <= characterScript.currentMana)
                             {
@@ -291,7 +291,7 @@ public class BattleController : MonoBehaviour
                         }
                     }
 
-                    yield return StartCoroutine(attackPreviewScript.startNeutralAttackSequence(character.gameObject, enemyTarget, attackMove));
+                    yield return StartCoroutine(attackPreviewScript.startAttackSequence(character.gameObject, enemyTarget, attackMove as Attack, "left"));
                 }
                 
                 yield return StartCoroutine(characterScript.endTurn());
@@ -363,7 +363,7 @@ public class BattleController : MonoBehaviour
                         foreach (AttackMoves attack in enemyScript.knownAttacks)
                         {
                             //Calculate damage
-                            int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, attack);
+                            int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, attack as Attack);
                             
                             //If can kill
                             if (damageArray[0] >= enemyTarget.GetComponent<PlayerController>().currentHp && attack.manaCost <= enemyScript.currentMana)
@@ -376,12 +376,12 @@ public class BattleController : MonoBehaviour
                         //Else get most damage move (mana allowing)
                         if (attackMove == null)
                         {
-                            int highestDamage = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, enemyScript.knownAttacks[0])[0];
+                            int highestDamage = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, enemyScript.knownAttacks[0] as Attack)[0];
                             attackMove = enemyScript.knownAttacks[0];
                             foreach (AttackMoves attack in enemyScript.knownAttacks)
                             {
                                 //Calculate damage
-                                int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, enemyScript.knownAttacks[0]);
+                                int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, enemyScript.knownAttacks[0] as Attack);
 
                                 if (damageArray[0] > highestDamage && attack.manaCost <= enemyScript.currentMana)
                                 {
@@ -390,7 +390,7 @@ public class BattleController : MonoBehaviour
                             }
                         }
     
-                        yield return StartCoroutine(attackPreviewScript.startEnemyAttackSequence(enemy.gameObject, enemyTarget, attackMove));
+                        yield return StartCoroutine(attackPreviewScript.startAttackSequence(enemy.gameObject, enemyTarget, attackMove as Attack, "right"));
                     }
                 }
 
@@ -428,7 +428,7 @@ public class BattleController : MonoBehaviour
                     foreach (AttackMoves attack in enemyScript.knownAttacks)
                     {
                         //Calculate damage
-                        int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, attack);
+                        int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, attack as Attack);
                         
                         //If can kill
                         if (damageArray[0] >= enemyTarget.GetComponent<PlayerController>().currentHp && attack.manaCost <= enemyScript.currentMana)
@@ -441,12 +441,12 @@ public class BattleController : MonoBehaviour
                     //Else get most damage move (mana allowing)
                     if (attackMove == null)
                     {
-                        int highestDamage = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, enemyScript.knownAttacks[0])[0];
+                        int highestDamage = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, enemyScript.knownAttacks[0] as Attack)[0];
                         attackMove = enemyScript.knownAttacks[0];
                         foreach (AttackMoves attack in enemyScript.knownAttacks)
                         {
                             //Calculate damage
-                            int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, enemyScript.knownAttacks[0]);
+                            int[] damageArray = attackPreviewScript.calculateDamage(enemy.gameObject, enemyTarget, enemyScript.knownAttacks[0] as Attack);
 
                             if (damageArray[0] > highestDamage && attack.manaCost <= enemyScript.currentMana)
                             {
@@ -455,7 +455,7 @@ public class BattleController : MonoBehaviour
                         }
                     }
 
-                    yield return StartCoroutine(attackPreviewScript.startEnemyAttackSequence(enemy.gameObject, enemyTarget, attackMove));
+                    yield return StartCoroutine(attackPreviewScript.startAttackSequence(enemy.gameObject, enemyTarget, attackMove as Attack, "right"));
                 }
             }
 
@@ -520,7 +520,7 @@ public class BattleController : MonoBehaviour
                             foreach (AttackMoves attack in characterScript.knownAttacks)
                             {
                                 //Calculate damage
-                                int[] damageArray = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, attack);
+                                int[] damageArray = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, attack as Attack);
                                 
                                 //If can kill
                                 if (damageArray[0] >= enemyTarget.GetComponent<EnemyController>().currentHp && attack.manaCost <= characterScript.currentMana)
@@ -533,12 +533,12 @@ public class BattleController : MonoBehaviour
                             //Else get most damage move (mana allowing)
                             if (attackMove == null)
                             {
-                                int highestDamage = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, characterScript.knownAttacks[0])[0];
+                                int highestDamage = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, characterScript.knownAttacks[0] as Attack)[0];
                                 attackMove = characterScript.knownAttacks[0];
                                 foreach (AttackMoves attack in characterScript.knownAttacks)
                                 {
                                     //Calculate damage
-                                    int[] damageArray = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, characterScript.knownAttacks[0]);
+                                    int[] damageArray = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, characterScript.knownAttacks[0] as Attack);
 
                                     if (damageArray[0] > highestDamage && attack.manaCost <= characterScript.currentMana)
                                     {
@@ -547,7 +547,7 @@ public class BattleController : MonoBehaviour
                                 }
                             }
         
-                            yield return StartCoroutine(attackPreviewScript.startNeutralAttackSequence(character.gameObject, enemyTarget, attackMove));
+                            yield return StartCoroutine(attackPreviewScript.startAttackSequence(character.gameObject, enemyTarget, attackMove as Attack, "left"));
                         }
                     }
 
@@ -584,7 +584,7 @@ public class BattleController : MonoBehaviour
                         foreach (AttackMoves attack in characterScript.knownAttacks)
                         {
                             //Calculate damage
-                            int[] damageArray = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, attack);
+                            int[] damageArray = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, attack as Attack);
                             
                             //If can kill
                             if (damageArray[0] >= enemyTarget.GetComponent<EnemyController>().currentHp && attack.manaCost <= characterScript.currentMana)
@@ -597,12 +597,12 @@ public class BattleController : MonoBehaviour
                         //Else get most damage move (mana allowing)
                         if (attackMove == null)
                         {
-                            int highestDamage = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, characterScript.knownAttacks[0])[0];
+                            int highestDamage = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, characterScript.knownAttacks[0] as Attack)[0];
                             attackMove = characterScript.knownAttacks[0];
                             foreach (AttackMoves attack in characterScript.knownAttacks)
                             {
                                 //Calculate damage
-                                int[] damageArray = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, characterScript.knownAttacks[0]);
+                                int[] damageArray = attackPreviewScript.calculateDamage(character.gameObject, enemyTarget, characterScript.knownAttacks[0] as Attack);
 
                                 if (damageArray[0] > highestDamage && attack.manaCost <= characterScript.currentMana)
                                 {
@@ -611,7 +611,7 @@ public class BattleController : MonoBehaviour
                             }
                         }
     
-                        yield return StartCoroutine(attackPreviewScript.startEnemyAttackSequence(character.gameObject, enemyTarget, attackMove));
+                        yield return StartCoroutine(attackPreviewScript.startAttackSequence(character.gameObject, enemyTarget, attackMove as Attack, "left"));
                     }
                 }
 
@@ -717,7 +717,7 @@ public class BattleController : MonoBehaviour
                     foreach (AttackMoves attack in characterScript.knownAttacks)
                     {
                         //Calculate damage
-                        int[] damageArray = attackPreviewScript.calculateDamage(attacker.gameObject, enemy, attack);
+                        int[] damageArray = attackPreviewScript.calculateDamage(attacker.gameObject, enemy, attack as Attack);
                         
                         //If can kill
                         if (damageArray[0] >= enemyScript.currentHp && attack.manaCost <= characterScript.currentMana)
@@ -734,7 +734,7 @@ public class BattleController : MonoBehaviour
                     foreach (AttackMoves attack in characterScript.knownAttacks)
                     {
                         //Calculate damage
-                        int[] damageArray = attackPreviewScript.calculateDamage(attacker.gameObject, enemy, attack);
+                        int[] damageArray = attackPreviewScript.calculateDamage(attacker.gameObject, enemy, attack as Attack);
                         
                         //If can kill
                         if (damageArray[0] >= enemyScript.currentHp && attack.manaCost <= characterScript.currentMana)
