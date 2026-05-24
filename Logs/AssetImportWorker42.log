@@ -1,0 +1,466 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C" at "2026-05-24T17:27:55.6987653Z"
+Built from '6000.4/staging' branch; Version is '6000.4.6f1 (0b051c2e5d54) revision 722204'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) Core' Language: 'en' Physical Memory: 16328 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-05-24T17:27:55Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.4.6f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker42
+-projectPath
+C:/Users/viet_/projects/IndieGame
+-logFile
+Logs/AssetImportWorker42.log
+-srvPort
+55644
+-licensingIpc
+LicenseClient-YJ9lqjR03NSlFhmCLJW0C
+-force-d3d12
+-job-worker-count
+7
+-background-job-worker-count
+8
+-gc-helper-count
+1
+-name
+AssetImport
+Successfully changed project path to: C:/Users/viet_/projects/IndieGame
+C:/Users/viet_/projects/IndieGame
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+Player connection [17428]  Target information:
+
+Player connection [17428]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 926814717 [EditorId] 926814717 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [17428] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [17428] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 7
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 8.12 ms, found 5 plugins.
+Initialize engine version: 6000.4.6f1 (0b051c2e5d54)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/viet_/projects/IndieGame/Assets
+Forcing GfxDevice: Direct3D 12
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+d3d12: failed to query info queue interface (0x80004002).
+Direct3D:
+    Version:         Direct3D 12 [level 12.2]
+    Renderer:        NVIDIA GeForce RTX 5060 (ID=0x2d05)
+    Vendor:          NVIDIA
+    VRAM:            7896 MB
+    App VRAM Budget: 7128 MB
+    Driver:          32.0.15.9186
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.18.1'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C"
+[Licensing::IpcConnector] LicenseClient-YJ9lqjR03NSlFhmCLJW0C channel disconnected successfully.
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6" at "2026-05-24T17:27:56.9276295Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 21616, path: "C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.1+9fbee8e
+  Session Id:              36f3d176d81c4c7f801849f6b203920e
+  Correlation Id:          6ee9a46e6e322a471cdfaf940074b321
+  External correlation Id: 1562517466832157366
+  Machine Id:              VXbwn5JDHcloYK9lppscF5+D9fo=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-viet_-6000.4.6" (connect: 0.00s, validation: 0.00s, handshake: 0.01s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6-notifications" at "2026-05-24T17:27:56.937278Z"
+[Licensing::Module] Licensing Background thread has ended after 1.24s
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56544
+CodeReloadManager initialized
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002494 seconds.
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.528 seconds
+Domain Reload Profiling: 1152ms
+	BeginReloadAssembly (164ms)
+	RebuildCommonClasses (49ms)
+	RebuildNativeTypeToScriptingClass (19ms)
+	initialDomainReloadingComplete (88ms)
+	LoadAllAssembliesAndSetupDomain (303ms)
+		LoadAssemblies (161ms)
+		AnalyzeDomain (289ms)
+			TypeCache.Refresh (288ms)
+				TypeCache.ScanAssembly (267ms)
+	FinalizeReload (529ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (65ms)
+			BeforeProcessingInitializeOnLoad (128ms)
+			ProcessInitializeOnLoadAttributes (144ms)
+			ProcessInitializeOnLoadMethodAttributes (95ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 2475357296229-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
+Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Animation.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Animation.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Aseprite.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Aseprite.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Common.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Common.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.PixelPerfect.Editor.Tests.dll at Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Psdimporter.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Psdimporter.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.SpriteShape.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.SpriteShape.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.BurstCompatibilityGen.dll at Library/ScriptAssemblies/Unity.Collections.BurstCompatibilityGen.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.DocCodeSamples.dll at Library/ScriptAssemblies/Unity.Collections.DocCodeSamples.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.PerformanceTests.dll at Library/ScriptAssemblies/Unity.Collections.PerformanceTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.Tests.dll at Library/ScriptAssemblies/Unity.Collections.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.Tests.Playmode.dll at Library/ScriptAssemblies/Unity.Collections.Tests.Playmode.dll not valid. Loading of assembly skipped.
+Assembly Unity.InputSystem.IntegrationTests.dll at Library/ScriptAssemblies/Unity.InputSystem.IntegrationTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Mathematics.Tests.dll at Library/ScriptAssemblies/Unity.Mathematics.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Nuget.Mono-Cecil.dll at Library/ScriptAssemblies/Unity.Nuget.Mono-Cecil.dll not valid. Loading of assembly skipped.
+Assembly Unity.PathTracing.Editor.Tests.dll at Library/ScriptAssemblies/Unity.PathTracing.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.PathTracing.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.PathTracing.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Core.Editor.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Core.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Universal.Config.Editor.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Config.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Universal.Editor.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Universal.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Searcher.EditorTests.dll at Library/ScriptAssemblies/Unity.Searcher.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.ShaderGraph.Editor.Tests.dll at Library/ScriptAssemblies/Unity.ShaderGraph.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.UnifiedRayTracing.Editor.Tests.dll at Library/ScriptAssemblies/Unity.UnifiedRayTracing.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+Native extension for WindowsStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  4.736 seconds
+Domain Reload Profiling: 5763ms
+	BeginReloadAssembly (297ms)
+		DisableScriptedObjects (8ms)
+		CreateAndSetChildDomain (41ms)
+	RebuildCommonClasses (37ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (83ms)
+	LoadAllAssembliesAndSetupDomain (598ms)
+		LoadAssemblies (469ms)
+		AnalyzeDomain (281ms)
+			TypeCache.Refresh (199ms)
+				TypeCache.ScanAssembly (181ms)
+			BuildScriptInfoCaches (68ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (4737ms)
+		SetupLoadedEditorAssemblies (0ms)
+			BeforeProcessingInitializeOnLoad (152ms)
+			ProcessInitializeOnLoadAttributes (3687ms)
+			ProcessInitializeOnLoadMethodAttributes (160ms)
+			AfterProcessingInitializeOnLoad (6ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 2.23 ms, found 5 plugins.
+Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7408 unused Assets / (5.8 MB). Loaded Objects now: 8249.
+Memory consumption went from 182.9 MB to 177.1 MB.
+Total: 10.864900 ms (FindLiveObjects: 1.674900 ms CreateObjectMapping: 1.071500 ms MarkObjects: 5.181600 ms  DeleteObjects: 2.934400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 756635.101944 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-ancient-ruins-activating.png
+  importAddress: Guid(8a2e797139b3ae7429fd3c57f1c7724f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-ancient-ruins-activating.png using Guid(8a2e797139b3ae7429fd3c57f1c7724f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'e17d11416e66eda26a034d84315d23f0') in 0.1285793 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c6be0845bca66e858d58fc74097df443 DependenciesID=596eadfbb84d01c83668a1656cc560ba StaticDependenciesID=ce0f212a4c57b96713c919cffc4c2da7 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-highlands-activating.png
+  importAddress: Guid(58030b3d96a604d47b60296b0c18df63) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-highlands-activating.png using Guid(58030b3d96a604d47b60296b0c18df63) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a937133f04fabce55f4f8424dbb06bb7') in 0.041934 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7d192e768ce17945a0d5c1861604ed8c DependenciesID=637e915361b1b4396bb125db6bcbe43d StaticDependenciesID=f05dd3a45c1f208ed3555ba95f5e10ca 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-volcano-activated-loop.png
+  importAddress: Guid(96b0d490b6e74954e84df2c902e3128e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-volcano-activated-loop.png using Guid(96b0d490b6e74954e84df2c902e3128e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '5d444a990fc117f4160471735f45938b') in 0.0490395 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c2984aaa6fbc69bd1f4e22e9a9fe111d DependenciesID=1dd5d57842ffb536f85741456c2330ad StaticDependenciesID=e1460f3273ee3e44f46ed3cf2ef5acd6 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-crypt-deactivating.png
+  importAddress: Guid(f18ba9b0f9f40b04d88219070ff3bc89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-crypt-deactivating.png using Guid(f18ba9b0f9f40b04d88219070ff3bc89) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ac3a08fcf1b99c5d9ee421413cc839c4') in 0.0748374 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ddc8aa937ff00aa4f06e850a7a0257c0 DependenciesID=f514fafefb703ffdc102b28a6b33d66c StaticDependenciesID=08213bf411b37a04d827279b905044a3 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-volcano-deactivating.png
+  importAddress: Guid(3c37fa1ac9922ab44bd85ff14be85c89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-volcano-deactivating.png using Guid(3c37fa1ac9922ab44bd85ff14be85c89) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '1601fac5d3bdc975419c9b22ae67344e') in 0.036131 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0092d12574adbb1129837efc263c931d DependenciesID=aeb93aed4d78ac82811ca6af55c07bae StaticDependenciesID=7ed04da270c5a3c0e571637373cd2cab 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000093 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-crypt-activating.png
+  importAddress: Guid(84087521ee119de4097f2bfd86f4ed5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-crypt-activating.png using Guid(84087521ee119de4097f2bfd86f4ed5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '6023d8da6172637391bffcfecc5e4fdb') in 0.0386969 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=dd45c31cde9be938613596be001fb1c9 DependenciesID=3239b27e8492eb688286257458851981 StaticDependenciesID=474e9ff83ec60a5b87b71c6091e279e9 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.976486 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-ancient-ruins-activating.png
+  importAddress: Guid(8a2e797139b3ae7429fd3c57f1c7724f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-ancient-ruins-activating.png using Guid(8a2e797139b3ae7429fd3c57f1c7724f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'f7b8bd6fcbdf3feffc04408aa5da3476') in 0.3634665 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1de5e195eab713ea80267878bed1a707 DependenciesID=4b7ce00fba712e80afde9d666fc1d5da StaticDependenciesID=dc66e2e2b88e98c7589bcfc9c4000cde 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-grassland2-deactivating.png
+  importAddress: Guid(05a7ac4c2245b214dbec876b7bc83ae6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-grassland2-deactivating.png using Guid(05a7ac4c2245b214dbec876b7bc83ae6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '33c54b7e4a04d4f9193cb1019db555cf') in 0.0781893 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=22d0e5f13b6736aa2165bebd6afa7c08 DependenciesID=95a94fea0efc8e5b7c16734f05069ee3 StaticDependenciesID=1e168f4edcf3ef643543f1d20e1ed0eb 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-cemetery-deactivating.png
+  importAddress: Guid(757b259118daa874d9ea61b1a03aa098) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-cemetery-deactivating.png using Guid(757b259118daa874d9ea61b1a03aa098) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0283b6c5a6a91329798bf6b04796dc0e') in 0.0430728 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ecf34c06ccffad8837de4df97e371ff0 DependenciesID=a92681a4bc1183e1f9001fa8060ecd25 StaticDependenciesID=f1704ab53a0bfd68f90574bb93c29643 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-grassland2-activated-loop.png
+  importAddress: Guid(22eaea9fc2eeef145a317a7549e8562a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-grassland2-activated-loop.png using Guid(22eaea9fc2eeef145a317a7549e8562a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9ad38909695cf76c9ec9ac4124f7d401') in 0.0627617 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c983fc3ad3e2e3b289d4ca7fb30e2f38 DependenciesID=37f7b0cdc47727ac1e593b6f2b400dd1 StaticDependenciesID=a8733ba503c8962a4fd08b3f7e0fa092 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-sewers-activating.png
+  importAddress: Guid(20ae3a337da75f34fb1928617cecaf3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-sewers-activating.png using Guid(20ae3a337da75f34fb1928617cecaf3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'af4cbab044ead57b7ee73cf385595550') in 0.0691373 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5f978ee85a0f17383fe42ebf847a4400 DependenciesID=0c28dc7d93a50b5733a12322f730e0be StaticDependenciesID=32973e4602527860d2c1baf1e752995e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-crypt-activated-loop.png
+  importAddress: Guid(271c10b87ead20940bed5ddc38973b65) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-crypt-activated-loop.png using Guid(271c10b87ead20940bed5ddc38973b65) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '7f590231a24b43a25cf95b31433685a8') in 0.1660349 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=93cf2c8be5980288a83317ae8441c555 DependenciesID=023a2299b9c9e76e6c5415d4f94e5f78 StaticDependenciesID=f70f3e913d8f28d65d6a436fd5be6f59 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-cemetery-activated-loop.png
+  importAddress: Guid(19fed6a35c4c7184295789024250ef04) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-cemetery-activated-loop.png using Guid(19fed6a35c4c7184295789024250ef04) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '58da13fadf7208deb002036d65de261c') in 0.0362973 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=acfa3382f3d58d4ced633fb76c14271f DependenciesID=eaea8230e0f3d60cd84f50c0d65d6ccb StaticDependenciesID=16c941221580b2922ac9c3e0843e68f0 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-old-prison-activated-loop.png
+  importAddress: Guid(e5b197231c4371c45b6079ec7929b133) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-old-prison-activated-loop.png using Guid(e5b197231c4371c45b6079ec7929b133) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '9bc5aba28592986fb9b30f7994befc1e') in 0.0406485 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=94b54d301a0723af6a6ec7ba3eb56f3a DependenciesID=2a89dacc48934f57aed86608f485f496 StaticDependenciesID=8ddab39646f739ad674c48457976859c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-village-activating.png
+  importAddress: Guid(f14bd161dec147e46abdaccdf350f6d0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-village-activating.png using Guid(f14bd161dec147e46abdaccdf350f6d0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '3b67f22526da649fbd224ab799f0ad09') in 0.0264763 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=818f024117e1501684c1dfb2661e48ba DependenciesID=cd02bd663630189748def27bc3e33eca StaticDependenciesID=905220e0971b6399edf447e8a7ce9684 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-volcano-activated-loop.png
+  importAddress: Guid(96b0d490b6e74954e84df2c902e3128e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-volcano-activated-loop.png using Guid(96b0d490b6e74954e84df2c902e3128e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '35a8b854a4487ec512fc604a0d1d5993') in 0.0251077 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6e004c682475a855ceb684340bdac6d3 DependenciesID=13482cdccf934658999d25898a09dd00 StaticDependenciesID=0878e61cb2fabd3b0cda4549acaa3274 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-old-prison-activating.png
+  importAddress: Guid(255bd79be7f96d04ea8cebd3e88ebc17) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-old-prison-activating.png using Guid(255bd79be7f96d04ea8cebd3e88ebc17) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '9a94907be69f73e8f4dd03e0ec0a8662') in 0.0262782 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5da754a4fdb740c05360efd48c194f32 DependenciesID=9892ef66e451b062a71c57ef9c59a26a StaticDependenciesID=f569f495c118a1852c6622412c01e2d3 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-desert-activated-loop.png
+  importAddress: Guid(de90de3d8ee73994cb5e42005f9645ca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-desert-activated-loop.png using Guid(de90de3d8ee73994cb5e42005f9645ca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ecaa292c78e72e2edf757cd3a24b58fa') in 0.0244442 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=048dcf522fe3c80c124ebfe0d8116c98 DependenciesID=b238cfc3537f1ab8b74cbd38a0ad93ef StaticDependenciesID=571a4519033bb6f24fbe7e2e78a4adf0 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-cemetery-activating.png
+  importAddress: Guid(d133a4561cbfdc34da4f58e945fa3240) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-cemetery-activating.png using Guid(d133a4561cbfdc34da4f58e945fa3240) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '08b2188014559997d15f3e2c84ad38f9') in 0.0374168 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=89df275270d5ee9aa805a738b3d8b1fb DependenciesID=7377bddc67c9ee0a4e4265794f23f1cb StaticDependenciesID=388ef6f27c9bc52b8e530de12f412d3e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-old-prison-deactivating.png
+  importAddress: Guid(822bd227bdde80546be17326355ecebf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-old-prison-deactivating.png using Guid(822bd227bdde80546be17326355ecebf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '269a373eccca90a15e2c564887fd855f') in 0.0362585 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c20875fdcf8ea6b81feda5daf0557c92 DependenciesID=1bcc40d48d0f96ff4c8285892f16121c StaticDependenciesID=b808a3013799cc5664eaf847793c30b9 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-village-activating.png
+  importAddress: Guid(f14bd161dec147e46abdaccdf350f6d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-village-activating.png using Guid(f14bd161dec147e46abdaccdf350f6d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '836d662226972c47f8fa25a60210930c') in 0.0399952 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=964c3d74b4a868dddad721aa65563222 DependenciesID=74bad2a00009f65dff4e51abc2856f0e StaticDependenciesID=b1f341f9cc3c4150142bc7368134c819 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-grassland2-activating.png
+  importAddress: Guid(ac67d08f38f73004194f57c5a8b37e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-grassland2-activating.png using Guid(ac67d08f38f73004194f57c5a8b37e7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '3f959f1a1628fd4b0ca28324d6693261') in 0.0347619 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=878f0f61073a7b9488aa5dcbd4d30df7 DependenciesID=d282495505bad0958e574ace0030b815 StaticDependenciesID=43e3e22bed3576582d99afba6e15bbeb 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 3319.579270 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Ritual site-anim2-out.png
+  importAddress: Guid(898b9bc91dfeeda4e81f2e1f91e27ea2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Ritual site-anim2-out.png using Guid(898b9bc91dfeeda4e81f2e1f91e27ea2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '7671fe98f191d85ce0392c26c9fb33ed') in 0.2344654 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6ecee416bfc271cd5ebe083a4909c511 DependenciesID=68a6328292b703794364d1489032346d StaticDependenciesID=626b1ec968abbe1c749a5d1c55ee704b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Ritual site-anim3-loop.png
+  importAddress: Guid(a23b4c46c470830449d47e8a12188d3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Ritual site-anim3-loop.png using Guid(a23b4c46c470830449d47e8a12188d3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd6bc330cb99d7699702fa9897f1a4b6d') in 0.0955263 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=655318d3de4cf7e4652e539e4b7d26fb DependenciesID=7d2e126572ed4c4ba8e45b99ea1de058 StaticDependenciesID=b36c160ae7bf62185329390a9750da4a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 22
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/shrine or fountain 160x128-on flat surface.png
+  importAddress: Guid(6f307acf3296897409222578daebe443) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/shrine or fountain 160x128-on flat surface.png using Guid(6f307acf3296897409222578daebe443) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'bd1b6f2038a4297222b69e4ebb4e48ad') in 0.0511844 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c7862c9e389547579d15d20061f8ad8b DependenciesID=22232dbfc1c955e61257e973ac6c6fb6 StaticDependenciesID=03834376c672b31a09fdb19270749542 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/waterfall-structure.png
+  importAddress: Guid(617e7a79bb1f0a8488f739c9a8d5f4e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/waterfall-structure.png using Guid(617e7a79bb1f0a8488f739c9a8d5f4e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '520c0b5ce64e369c6e15385084e20ce5') in 0.0492671 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5f28463020572e7686a324c857a6b1dd DependenciesID=004bc9d85bafdb6090c57859244bde48 StaticDependenciesID=98629ce40bb773b34c91a4b284c07dbd 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/shrine or fountain 160x128-on grass.png
+  importAddress: Guid(cf4c151717f7ed04c88699cb15b9f2d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/shrine or fountain 160x128-on grass.png using Guid(cf4c151717f7ed04c88699cb15b9f2d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd0b8f3ba14046d36333e8d300b85e11c') in 0.0563618 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d04df7a76d3e2319601a6dd0fd41b8c3 DependenciesID=6ba3f53f99d5af18c6fa8d6853b3f983 StaticDependenciesID=3913612fd1bbf9ecbe12e10954823b07 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/waterfall-structure-gate-closing.png
+  importAddress: Guid(f43a013e62c354646af75dec58778545) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/waterfall-structure-gate-closing.png using Guid(f43a013e62c354646af75dec58778545) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '3e0cf3279241041e18e8450d1626ce7e') in 0.0525407 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a98a515b6d30f752e87d394e3dae289c DependenciesID=d82125b2c36d3b1a5efd7b396b8dc492 StaticDependenciesID=9ef9227c12ce1a58046cb37cbe8cd1a0 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

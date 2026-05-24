@@ -1,0 +1,908 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.4/staging' branch; Version is '6000.4.6f1 (0b051c2e5d54) revision 722204'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) Core' Language: 'en' Physical Memory: 16328 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C" at "2026-05-24T17:15:03.2327039Z"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-05-24T17:15:03Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.4.6f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker37
+-projectPath
+C:/Users/viet_/projects/IndieGame
+-logFile
+Logs/AssetImportWorker37.log
+-srvPort
+55644
+-licensingIpc
+LicenseClient-YJ9lqjR03NSlFhmCLJW0C
+-force-d3d12
+-job-worker-count
+7
+-background-job-worker-count
+8
+-gc-helper-count
+1
+-name
+AssetImport
+Successfully changed project path to: C:/Users/viet_/projects/IndieGame
+C:/Users/viet_/projects/IndieGame
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+Player connection [34176]  Target information:
+
+Player connection [34176]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 1636750634 [EditorId] 1636750634 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [34176] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [34176] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 7
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 3.93 ms, found 5 plugins.
+Initialize engine version: 6000.4.6f1 (0b051c2e5d54)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/viet_/projects/IndieGame/Assets
+Forcing GfxDevice: Direct3D 12
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+d3d12: failed to query info queue interface (0x80004002).
+Direct3D:
+    Version:         Direct3D 12 [level 12.2]
+    Renderer:        NVIDIA GeForce RTX 5060 (ID=0x2d05)
+    Vendor:          NVIDIA
+    VRAM:            7896 MB
+    App VRAM Budget: 7128 MB
+    Driver:          32.0.15.9186
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56988
+CodeReloadManager initialized
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.18.1'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C"
+[Licensing::IpcConnector] LicenseClient-YJ9lqjR03NSlFhmCLJW0C channel disconnected successfully.
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6" at "2026-05-24T17:15:04.4353839Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 21616, path: "C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.1+9fbee8e
+  Session Id:              337df1f35c8a4d2397b23b7ea5de49c4
+  Correlation Id:          6ee9a46e6e322a471cdfaf940074b321
+  External correlation Id: 4965090691411622095
+  Machine Id:              VXbwn5JDHcloYK9lppscF5+D9fo=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-viet_-6000.4.6" (connect: 0.00s, validation: 0.00s, handshake: 0.01s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6-notifications" at "2026-05-24T17:15:04.4460958Z"
+[Licensing::Module] Licensing Background thread has ended after 1.21s
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001638 seconds.
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.512 seconds
+Domain Reload Profiling: 1095ms
+	BeginReloadAssembly (169ms)
+	RebuildCommonClasses (55ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (74ms)
+	LoadAllAssembliesAndSetupDomain (268ms)
+		LoadAssemblies (163ms)
+		AnalyzeDomain (254ms)
+			TypeCache.Refresh (252ms)
+				TypeCache.ScanAssembly (225ms)
+	FinalizeReload (513ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (49ms)
+			BeforeProcessingInitializeOnLoad (106ms)
+			ProcessInitializeOnLoadAttributes (134ms)
+			ProcessInitializeOnLoadMethodAttributes (114ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 2475357296229-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
+Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Animation.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Animation.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Aseprite.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Aseprite.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Common.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Common.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.PixelPerfect.Editor.Tests.dll at Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Psdimporter.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Psdimporter.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.SpriteShape.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.SpriteShape.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.BurstCompatibilityGen.dll at Library/ScriptAssemblies/Unity.Collections.BurstCompatibilityGen.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.DocCodeSamples.dll at Library/ScriptAssemblies/Unity.Collections.DocCodeSamples.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.PerformanceTests.dll at Library/ScriptAssemblies/Unity.Collections.PerformanceTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.Tests.dll at Library/ScriptAssemblies/Unity.Collections.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.Tests.Playmode.dll at Library/ScriptAssemblies/Unity.Collections.Tests.Playmode.dll not valid. Loading of assembly skipped.
+Assembly Unity.InputSystem.IntegrationTests.dll at Library/ScriptAssemblies/Unity.InputSystem.IntegrationTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Mathematics.Tests.dll at Library/ScriptAssemblies/Unity.Mathematics.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Nuget.Mono-Cecil.dll at Library/ScriptAssemblies/Unity.Nuget.Mono-Cecil.dll not valid. Loading of assembly skipped.
+Assembly Unity.PathTracing.Editor.Tests.dll at Library/ScriptAssemblies/Unity.PathTracing.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.PathTracing.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.PathTracing.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Core.Editor.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Core.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Universal.Config.Editor.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Config.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Universal.Editor.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Universal.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Searcher.EditorTests.dll at Library/ScriptAssemblies/Unity.Searcher.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.ShaderGraph.Editor.Tests.dll at Library/ScriptAssemblies/Unity.ShaderGraph.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.UnifiedRayTracing.Editor.Tests.dll at Library/ScriptAssemblies/Unity.UnifiedRayTracing.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+Refreshing native plugins compatible for Editor in 2.10 ms, found 5 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Refreshing native plugins compatible for Editor in 2.98 ms, found 5 plugins.
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.010 seconds
+Domain Reload Profiling: 2066ms
+	BeginReloadAssembly (205ms)
+		DisableScriptedObjects (7ms)
+		CreateAndSetChildDomain (36ms)
+	RebuildCommonClasses (50ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (85ms)
+	LoadAllAssembliesAndSetupDomain (703ms)
+		LoadAssemblies (432ms)
+		AnalyzeDomain (377ms)
+			TypeCache.Refresh (269ms)
+				TypeCache.ScanAssembly (238ms)
+			BuildScriptInfoCaches (88ms)
+			ResolveRequiredComponents (17ms)
+	FinalizeReload (1010ms)
+		SetupLoadedEditorAssemblies (0ms)
+			BeforeProcessingInitializeOnLoad (179ms)
+			ProcessInitializeOnLoadAttributes (449ms)
+			ProcessInitializeOnLoadMethodAttributes (157ms)
+			AfterProcessingInitializeOnLoad (7ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Refreshing native plugins compatible for Editor in 2.43 ms, found 5 plugins.
+Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7408 unused Assets / (5.7 MB). Loaded Objects now: 8249.
+Memory consumption went from 182.9 MB to 177.2 MB.
+Total: 15.229600 ms (FindLiveObjects: 1.108900 ms CreateObjectMapping: 0.421800 ms MarkObjects: 8.971100 ms  DeleteObjects: 4.724400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 755858.043219 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations2_1.png
+  importAddress: Guid(15752e0d9aa80174fa42e190e776c90c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations2_1.png using Guid(15752e0d9aa80174fa42e190e776c90c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '1b8f5b3bb3508293e5ad66134c44cc4d') in 0.0907812 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f31c5a364a1d1ca487b2ceb96c5b3d9e DependenciesID=eb08be52ef36af76017da682ad331661 StaticDependenciesID=a8befcfc5f5157ec279f89bfccfac7dc 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_2.png
+  importAddress: Guid(5fcd44bab9b83884697f091e5a2e2364) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_2.png using Guid(5fcd44bab9b83884697f091e5a2e2364) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a5a97be08075636ad29e5a1be324a6c1') in 0.018097 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=11b9a0a30d218dc69a69440a0104d9cd DependenciesID=b3cc695d756a25309dcd0a122e7892e8 StaticDependenciesID=5674bc4e45ef3d69236ba5d2bb0666bb 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/shrubs_0.png
+  importAddress: Guid(ed650223731cde442abdf28e2eb6f8fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/shrubs_0.png using Guid(ed650223731cde442abdf28e2eb6f8fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '1e77df1600d7a40b26a21c935c681f9d') in 0.0167016 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=fc9d1eb8e18fc4e6a42fe854a8e47f86 DependenciesID=476bbfc7457e07059a0d767a29958eb7 StaticDependenciesID=efc7765896fe14dcdb1411537fbf542a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/rocks_6.png
+  importAddress: Guid(97d27601c8304ce47b8ad5a2d2d4111a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/rocks_6.png using Guid(97d27601c8304ce47b8ad5a2d2d4111a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'f844755b4d2d004e9ce2c8146e4f822d') in 0.0192584 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4c0f354b910803cc03dda7a963d443cc DependenciesID=9f558d97091dfc36801ba1aa45d14085 StaticDependenciesID=24962d3a71e13a44c274825f3fbe8677 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations3_30.png
+  importAddress: Guid(12b093ebbb0eab042b4d236b48176929) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations3_30.png using Guid(12b093ebbb0eab042b4d236b48176929) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c0de33b4b2afb9e79f65427f70cd99ff') in 0.0174435 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e95597173f374026102ede03d14a3874 DependenciesID=381094d78f07ab19558c6f0c6b748ecb StaticDependenciesID=9c1fd27768b7e88de05f65c131ab8f15 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_45.png
+  importAddress: Guid(6242e15c204371141ad664e45ae7bebe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_45.png using Guid(6242e15c204371141ad664e45ae7bebe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b09c4196f3dd6478f5c375d604c0bbfb') in 0.0222011 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=09510f808a90f6200835ff432b8f3873 DependenciesID=39bfa86f35e9fc6f52cb31c0b2dd366d StaticDependenciesID=cd941abe3442361073dea8627291305c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations3_20.png
+  importAddress: Guid(041b1dd4915944f4199839c6eac04f0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations3_20.png using Guid(041b1dd4915944f4199839c6eac04f0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '09120c6abd403cec81c32407c2792c25') in 0.0182859 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0e0ee59501464f8a8642c1b39fe60fe4 DependenciesID=0286e9e14ee286f4615c513022618a23 StaticDependenciesID=d3c2152f2865e956d1776dd8dfd4bea9 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_13.png
+  importAddress: Guid(96d7a87c19a0aae4f878547ac2ae1509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_13.png using Guid(96d7a87c19a0aae4f878547ac2ae1509) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c68623a1d59a423e4f5421156709cad8') in 0.0200775 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1dc22d05c4247fa04fb06ea1ae72dc43 DependenciesID=d4f316174be6a1cba91bf004c88f2350 StaticDependenciesID=66cc2cdb5d503a936224f8b9032f59fc 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_27.png
+  importAddress: Guid(1d356061e80e28e46ade76fc8f187932) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_27.png using Guid(1d356061e80e28e46ade76fc8f187932) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a5e4aa574cdbf852f145ab16f8f7592d') in 0.0172438 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=31249474a9b497168b79f7840cb76b3a DependenciesID=6a736a6c2b44e81cf6c0bcafcec478c7 StaticDependenciesID=d19d9cd5247387902aca50a7a5af9654 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/ancient stones_23.png
+  importAddress: Guid(06a5312819d1cea48a589f1879832b6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/ancient stones_23.png using Guid(06a5312819d1cea48a589f1879832b6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '4d7d2d5b3a612979cc31f56c166f8f6f') in 0.0169517 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d9f29ce5f49b7b520e58f3edaaba2da6 DependenciesID=7a11a06a9057a198c57cd8d4203af886 StaticDependenciesID=c3b3e42e0f5fa9062e5c385b9a5a2ec1 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations2_38.png
+  importAddress: Guid(8ebef467344a55d4baded9e8e58c9fe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations2_38.png using Guid(8ebef467344a55d4baded9e8e58c9fe0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '7ce9bee5b9261954790e88cb0775ed79') in 0.0165134 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3bff39e1b6b603b164212e109b79925c DependenciesID=f9bd1397153f0e33a438eaa1ce21eec2 StaticDependenciesID=df408c13541e8b2b7472b8ed9538696c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/generic structure_10.png
+  importAddress: Guid(f83c6b4954e8ed9468a770ce92f8f72e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/generic structure_10.png using Guid(f83c6b4954e8ed9468a770ce92f8f72e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '49601bfc98ce3f50bfc5bdc10d51857e') in 0.0206976 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2278ae808e1d979c36cf381d3f1d27ae DependenciesID=3022c7d27acb4cce606c5c78193867fe StaticDependenciesID=36f185f2d0ff2fd26abfd45916fa54db 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/golden chalice 64x64-spirits-less shiny-frame6.png
+  importAddress: Guid(5095cfc18bc72e548aec3e636ec525f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/golden chalice 64x64-spirits-less shiny-frame6.png using Guid(5095cfc18bc72e548aec3e636ec525f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '7f9b71307461db2d4f2d66aa3a79168e') in 0.0178347 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=955b61ec5db25946ef6660669c621f49 DependenciesID=216682ef4c8761f5544b2f939ba4c0d6 StaticDependenciesID=c680f2153201ca5e387a83aa7b6b96cb 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations2_40.png
+  importAddress: Guid(093d19e900383634385065f7740af159) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations2_40.png using Guid(093d19e900383634385065f7740af159) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '5b0bce31e48d975b8ab8e69336323089') in 0.0164835 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=76ac207efe9f49b70033b8988aaaf63f DependenciesID=ec6f266bb88820284e180aa43b369558 StaticDependenciesID=7acfa28fffad2cd1b63ab20dddb1acce 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations1_24.png
+  importAddress: Guid(697ef7cff7d6317448f0c3dadb7a5d64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations1_24.png using Guid(697ef7cff7d6317448f0c3dadb7a5d64) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '64d7268a070eb55cfe12333cb32845f4') in 0.0186004 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=bd61f3fce17b57ddd5f02c2fdaa4ea43 DependenciesID=fcc3e47d9507f1a259371fd7622834cb StaticDependenciesID=68ac5d2167fb5cfc528866cb91899422 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/shrubs_3.png
+  importAddress: Guid(b1636575f583e3343bd2623d13f2fce1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/shrubs_3.png using Guid(b1636575f583e3343bd2623d13f2fce1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'fafa369a3473a230e89c1a703a9601c9') in 0.0186263 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=198293eaf2483f7633867603b3e06edf DependenciesID=fe1bf16e4d15590a558d8200a8a6d582 StaticDependenciesID=c325b10885089be42a19c7491e10cfab 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/bushes_4.png
+  importAddress: Guid(3af36447b3fd7164f817111ba548fc66) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/bushes_4.png using Guid(3af36447b3fd7164f817111ba548fc66) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '348234ec3d6351d282aa761e2607be31') in 0.0176323 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0f71f5c34ded737dd941f0fc8be0e2f1 DependenciesID=ffadd424ec21fbd85a8c1e700611c218 StaticDependenciesID=d667c4884c4c59c998f16b2fc0604438 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations3_1.png
+  importAddress: Guid(cc841140cfba21249b377f3e7d8febfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations3_1.png using Guid(cc841140cfba21249b377f3e7d8febfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '092a1aabf8eeed97a1c672bfbce04fb9') in 0.017848 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7a85d550d9b15bf336b9d556866209bb DependenciesID=c41cd236f5ef81db0ccd86a2f2ac480f StaticDependenciesID=3bb4e0b88ca686937721bbd7023460db 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/golden chalice 64x64-spirits-less shiny-frame1.png
+  importAddress: Guid(9aee0d307fe8c30429945b79b13a9837) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/golden chalice 64x64-spirits-less shiny-frame1.png using Guid(9aee0d307fe8c30429945b79b13a9837) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'fbfa6bfd4418370201e5d4cf78e98d36') in 0.022388 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2151907bbf5ddae847d9e3a9c1290b3b DependenciesID=068a0d4ad77113b02c4f9b49f173b094 StaticDependenciesID=a02f0fefe8ca5e39eef9d5ba506a838f 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/generic structure_1.png
+  importAddress: Guid(a81403385a1c6f24d968e7fc81d9f000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/generic structure_1.png using Guid(a81403385a1c6f24d968e7fc81d9f000) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'be2b796d4c9a661050ac00a609bc4050') in 0.0190455 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ce40a55c7144830f65e3f9d140006210 DependenciesID=e6a7b2ca0f2b908e1eeb95c679e4d0a5 StaticDependenciesID=5d96bec16faa13770b8b2759ff6710b9 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/tall dry grass ish_21.png
+  importAddress: Guid(c96d8fc687d083041a77a2fb311f59eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/tall dry grass ish_21.png using Guid(c96d8fc687d083041a77a2fb311f59eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '7b66fea56bccb74d3ff884f93ee503c7') in 0.0146154 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3825d00b3414c151595908c7e75795cd DependenciesID=f3cdcfa948b5120742ff3cf8b726edd7 StaticDependenciesID=0a5cf99eda5c03dff37284f83b5b6a62 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations2_3.png
+  importAddress: Guid(14b4501548636be45a368d25f94226ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations2_3.png using Guid(14b4501548636be45a368d25f94226ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c4dc1b643a5728ccb363d69b601d62ef') in 0.0164739 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=54177b98da8b863bc1a8be4852a3d93c DependenciesID=fa1815f2ce243f731ac944c82c99c28b StaticDependenciesID=5e7ae61b25a1a2f2533eb5c6859031a4 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_22.png
+  importAddress: Guid(bf07dc9c191961243ad55de5153b3789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_22.png using Guid(bf07dc9c191961243ad55de5153b3789) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '7bf64e3f037ce419f16e3e8159713a2e') in 0.0168449 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c5f74fb0ce20a1efedbf00964c7278e8 DependenciesID=e2914457a53abfb472f13d9816fd82a1 StaticDependenciesID=5122764b2dcde8590a5065ac8aa77776 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations3_2.png
+  importAddress: Guid(ba076a78ee2b81644991eb8b60602db4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations3_2.png using Guid(ba076a78ee2b81644991eb8b60602db4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '27ad6112248db186201550db28ec8e65') in 0.0188844 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=af6c924e1da651ab14939a51028dc0ed DependenciesID=7ddcee8423c4411452c68081c96a2ecd StaticDependenciesID=a7867f3bcc065d94537528fc6febae8b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_42.png
+  importAddress: Guid(df6996da9b6aa944f9b69305b11bf6fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_42.png using Guid(df6996da9b6aa944f9b69305b11bf6fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9e497ee1dcd0753a3fdc2ebea7642678') in 0.017318 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d00d8aa25f0aa9a692ab5f29355eb2ba DependenciesID=bb73e89ec0436734a301eaa9ce6145df StaticDependenciesID=f0c29a014bd570e5c2c2a7a0d6209ec2 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/ancient stones_4.png
+  importAddress: Guid(e2773444a12cf67489f6ed89851caf06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/ancient stones_4.png using Guid(e2773444a12cf67489f6ed89851caf06) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '108cf1285daf82b7ff274224e0057229') in 0.0184129 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c609c3a92b12bbadc76363d51726e3f8 DependenciesID=3e2fa6adabe2426cec2ff3d3aa6ff312 StaticDependenciesID=e9fd30e294ef63073dad8787e246afa1 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/ancient stones_21.png
+  importAddress: Guid(c13fc4565d45a934ca95f830bc3a98fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/ancient stones_21.png using Guid(c13fc4565d45a934ca95f830bc3a98fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '31bb12d8d047ec025672e67840f0a69e') in 0.0182506 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=74d3692e0dda3d29e50c35c0e759eb65 DependenciesID=24f55b58f151fbcebb67c63ec5681474 StaticDependenciesID=3c5bc30c78f5e7676e9fb2b0d1f6d855 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_18.png
+  importAddress: Guid(a5b848d77b0dc6246810cac4ee9782a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_18.png using Guid(a5b848d77b0dc6246810cac4ee9782a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'af9b2b2117f10fd69200cdbedd16bdcf') in 0.0193826 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=01c968341a699f15967e9a757879acce DependenciesID=fb00a9a481ea4c00fdc081e35d67e8a3 StaticDependenciesID=6c4fe4332b7dfc28c76abf54839ee227 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/stone pillars88 - 1 with shadow.png
+  importAddress: Guid(78c22ec19aa770c48b00b2197f2ffee2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/stone pillars88 - 1 with shadow.png using Guid(78c22ec19aa770c48b00b2197f2ffee2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '159ad171ea498167e393e4ceb1efad00') in 0.0171769 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=249edf6aaf456365655b9f73e8a7f42b DependenciesID=67177e97e11452f1e54d4547ebe27ed7 StaticDependenciesID=730ff2c0eeab3d09d1be0d40c311cc00 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths_7.png
+  importAddress: Guid(503526dad4935e94191a1bca03077fda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths_7.png using Guid(503526dad4935e94191a1bca03077fda) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '4b8db3a13082f2cca4477b889a65f160') in 0.0179235 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=882a9efea1c6d9141f1de70577622f31 DependenciesID=25eb431bec1b8786dd2f293eeab6ec03 StaticDependenciesID=22e85a1bf24669e2fe9bb3f567c5fc10 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/generic structure_22.png
+  importAddress: Guid(ca729cdcaf44b1643bf1682f5218a4f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/generic structure_22.png using Guid(ca729cdcaf44b1643bf1682f5218a4f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '79231c69ce348fe1bc997d6a5a6235f8') in 0.0192267 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6d933eae46fcdefbe61ced1c629b312f DependenciesID=f3a4c1494bccd894824c73651ae892de StaticDependenciesID=8bd8fd0b50fa5a792e15ce55fb9f0e46 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_31.png
+  importAddress: Guid(9d8e21ba5d0534a49bbe46473e68f1ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_31.png using Guid(9d8e21ba5d0534a49bbe46473e68f1ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'f3b50bca31d05565e62d9ff1bd60ed8a') in 0.0187513 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=26bfc9fb1675225d644d66fdccfaafcb DependenciesID=f9a444b0e4cfdf15b66fd5089eb1947d StaticDependenciesID=9585f56f517b464c4d296972472037a6 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/pillars and generic support3__14.png
+  importAddress: Guid(4b9d7d947926974419edb1cffe7fd344) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/pillars and generic support3__14.png using Guid(4b9d7d947926974419edb1cffe7fd344) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '4b4cd6d27352a1f49e05ae981753bd64') in 0.0185236 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=296d72cb34aca50b15dcc1a2ad5c3546 DependenciesID=5f70221c6ee11cf386d94eddd142c047 StaticDependenciesID=99c9c14610be9f53be4bc8528450c135 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations1_0.png
+  importAddress: Guid(de26f209c540ef24da01b9e31e2fdb22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations1_0.png using Guid(de26f209c540ef24da01b9e31e2fdb22) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '1f3da14775299cee04ecb2506dc9e8b6') in 0.0200659 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=df43eeed83742bc66557e2195de66255 DependenciesID=93a8a4945292ab2fb293e0b81bdaa0b8 StaticDependenciesID=cc07cd57f6c0567e822730eb2b924726 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/golden chalice 64x64-spirits-less shiny-frame2.png
+  importAddress: Guid(81f452ee9758c7e4781a24feae5c235a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/golden chalice 64x64-spirits-less shiny-frame2.png using Guid(81f452ee9758c7e4781a24feae5c235a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '1da1f9acb31bc9c5b0da9610fec68453') in 0.0230049 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=dd78ca85f929de327f684dd04948a94e DependenciesID=dccdea03a03cc33039459883da9b41e0 StaticDependenciesID=50ad9654e5c2aa2088e1a654c2aa439b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/rocks_26.png
+  importAddress: Guid(0784eabf31b7c5d4c88ab5f92dee32e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/rocks_26.png using Guid(0784eabf31b7c5d4c88ab5f92dee32e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '8de568c521bf81e3b9bccf26c93c940f') in 0.0166101 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9429062b39bb58d053765f142893efd0 DependenciesID=745b32ae82ad2013ed4a83321ed6472b StaticDependenciesID=4dbe182cc5000e23e80b76db41a26c71 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/rocks_2.png
+  importAddress: Guid(e6723252ea11e56488af0ef45ed4709a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/rocks_2.png using Guid(e6723252ea11e56488af0ef45ed4709a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '433557f7702780302588554b18bb272e') in 0.0147786 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f5b8d66f9716267049ba28b8f6c21201 DependenciesID=1e4af9fe75c6aa543ab9f080a0c511b5 StaticDependenciesID=556772ddbdd3fed306211bfdf6dc8a6e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/generic_estructure2_2.png
+  importAddress: Guid(4f54144bcfb2a5d409d0fad63dd4d923) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/generic_estructure2_2.png using Guid(4f54144bcfb2a5d409d0fad63dd4d923) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '983929de1bbad6594964739cd440cb21') in 0.0168546 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8238ea4e2d8a53a07fc0d3025ee1bdae DependenciesID=2eb335709bb60c248edfef462f380935 StaticDependenciesID=0dfe5d5ef28359c2875eb90e5b27a19d 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/ancient stones_20.png
+  importAddress: Guid(378066cc2e8f07a4bae84afe0cf7b0ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/ancient stones_20.png using Guid(378066cc2e8f07a4bae84afe0cf7b0ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'f72e4ce22c5bc3e66d909d42664e5cf9') in 0.0176599 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=06156bb00b4b5b87a1c86cd0b7c53242 DependenciesID=aa6a83844bd8a3d1442c45d78b655acb StaticDependenciesID=baf8b7137b4cbbe46dcad0f03ded5b89 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/flooded gras details_4.png
+  importAddress: Guid(1b9751dcb7385ce45813229fa1109d28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/flooded gras details_4.png using Guid(1b9751dcb7385ce45813229fa1109d28) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd903702dfda91d31f22d6c400dc8811f') in 0.0226222 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c015162e96ac373b7a552b9c38e038d9 DependenciesID=8e822091eefc35c9fe0e93bc7907c411 StaticDependenciesID=ea96d67c65669575fc8162a62a1e354e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/golden chalice 64x64-no spirits-frame8.png
+  importAddress: Guid(250104aece87aa145a7dd898f6b4f4ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/golden chalice 64x64-no spirits-frame8.png using Guid(250104aece87aa145a7dd898f6b4f4ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'e75715f9b12c41cc2ce2a9c0988c2e49') in 0.0153665 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8871c70f7b1f2dc40924ab2e9909e8fb DependenciesID=2c7a4926198c6cc0c6d35a2e8402fc1c StaticDependenciesID=03832ea093870288194e6c45ad147191 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/ancient stones_19.png
+  importAddress: Guid(e4061d0b61f64c04cbf4fb7fbabf4ae1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/ancient stones_19.png using Guid(e4061d0b61f64c04cbf4fb7fbabf4ae1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9cd874f172a68543856f0c9624c8b3fa') in 0.0163389 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c36414dec1649281953e8453f3a2f3b2 DependenciesID=e9a2e4f82d02543f19e852730ed74fff StaticDependenciesID=a2851c19060f0187b1a148bbe4e3d4b5 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations3_3.png
+  importAddress: Guid(b29c0ca29f8b71d4ab12858cf2b844d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations3_3.png using Guid(b29c0ca29f8b71d4ab12858cf2b844d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '91a522f171960e4abd9d0ccb168bc39c') in 0.0173554 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f355e2e454314b755c7aed96784f4a00 DependenciesID=94855a07baaeafc689bb78776f7099f3 StaticDependenciesID=fad94d3249b1553843a0260ff5091a16 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/flooded gras details_5.png
+  importAddress: Guid(53c503ad9e379ed4b9ccee3887f2a84f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/flooded gras details_5.png using Guid(53c503ad9e379ed4b9ccee3887f2a84f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '1709aff55bfac64417f16ca2662e233a') in 0.0260194 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=fdcc9aff7ad7ea16878a0d027a1381de DependenciesID=74bbdcc7ab3f15e66dcb9776dbcc1d6c StaticDependenciesID=7763c8964d7496763eebb97d135ef56e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/tall dry grass ish_15.png
+  importAddress: Guid(519c0fd88afcdbb488edad4aa617e992) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/tall dry grass ish_15.png using Guid(519c0fd88afcdbb488edad4aa617e992) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '212fb1862ce0deb8aa10dea2dedbdc06') in 0.0176995 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=994711970b048372ad1f4a476e8e3881 DependenciesID=849921cb66b5f1f3ba05bbf1692f147a StaticDependenciesID=3927e12f59878ce152722ed46e0a7618 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations4_10.png
+  importAddress: Guid(0fa20802f9d44264b93651cefc126567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations4_10.png using Guid(0fa20802f9d44264b93651cefc126567) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '472085898fc09689e0cb8026dae4910d') in 0.0156371 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=fa746b7f5e907ee0aa93966df03b17ee DependenciesID=62a79ad715a1e1a42bbb6552bd9cc942 StaticDependenciesID=8535356e3fbf628b6e48344aa599118d 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/ancient stones_6.png
+  importAddress: Guid(d5ad06db10cd45c4b9cc0f8404093ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/ancient stones_6.png using Guid(d5ad06db10cd45c4b9cc0f8404093ecb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '4fa07bfdbc978033eabf22bab170359d') in 0.0180439 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5e3504b952842d04ed408fb6f9b3f369 DependenciesID=11af45192afa3e5cd38fbcb2e1ab2b27 StaticDependenciesID=f8566bd8ac06a0effaa8e0d54f806e99 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/flooded gras details_2.png
+  importAddress: Guid(40d17cd8e3daedc46aa402c97c9d0a70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/flooded gras details_2.png using Guid(40d17cd8e3daedc46aa402c97c9d0a70) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b327e490eaeab2fbc009b6cf597182a6') in 0.0267049 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2e2243208616b260825feac93639992d DependenciesID=f172fd1c399732434fb581dee87a2c63 StaticDependenciesID=306fb429193cd5028f92d06e9f9eaaff 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/trees_10.png
+  importAddress: Guid(700bb88c760f5184aa7d172bfe7dc46c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/trees_10.png using Guid(700bb88c760f5184aa7d172bfe7dc46c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a4c66620852f4473e0ca288ca4548c37') in 0.0197703 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ddb780585b67a5eafa4e550773873281 DependenciesID=dd2cc213d720bdf9b14cfe5794659b1c StaticDependenciesID=3899f2c4df76ea111534cdeefc950c4b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations2_47.png
+  importAddress: Guid(74ad8b82911362d42b8a24574239f1d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations2_47.png using Guid(74ad8b82911362d42b8a24574239f1d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '086a2106af2487845805427eb1c1f69d') in 0.0187013 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7389d6321081a04bf1bac0c0a626d015 DependenciesID=d193f51417ae337b7af2543e5ba85903 StaticDependenciesID=575d0e48ebf3364b3c1f4ade99ef469b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/ancient stones_15.png
+  importAddress: Guid(64e4f7b39b51d9b418850f9cb506d0c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/ancient stones_15.png using Guid(64e4f7b39b51d9b418850f9cb506d0c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b111fa1e6634063e6cf5c5baafcf3fa9') in 0.0169423 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a5ca05b9b7c8171bd5218f46c37fa075 DependenciesID=965a71efccc0901075db806a653dd97c StaticDependenciesID=697839503970d8e38ad9dc84446684ad 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations4_0.png
+  importAddress: Guid(5e962abbb4486b8479478f7df878c153) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations4_0.png using Guid(5e962abbb4486b8479478f7df878c153) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9f891de8e3896cace3e9eaa0b81354e2') in 0.0185095 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=24ec68dc587f2d297428d63243b3c0ef DependenciesID=32a316e2d50d727c17ad4b1d0c44b77f StaticDependenciesID=4f5d05ec3e7bd66422677051a78064f3 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations2_19.png
+  importAddress: Guid(5789c08e2030c684b949a1c53554c88d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations2_19.png using Guid(5789c08e2030c684b949a1c53554c88d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c5ac2e6391d1b6f2ac67282aaf3b39ce') in 0.0263467 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2086560776b0c61f2d37f11e1e8c18b9 DependenciesID=2f312d16c1d53c753fdc6a134379079e StaticDependenciesID=97680bc8073c6a4304e1be2bc700d25b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/rocks_36.png
+  importAddress: Guid(ffbbaa4ca4a32b44ba3fad2c7a2b0b91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/rocks_36.png using Guid(ffbbaa4ca4a32b44ba3fad2c7a2b0b91) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a4b8f7cc38c6ed07588df595a19cee6c') in 0.0160293 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c549c33b9e29b2c04e1979af08e18f56 DependenciesID=ce574524175ed1f05a046922506bce8c StaticDependenciesID=66987b4d2e83cd9f0eb709a04612aaef 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/rocks_3.png
+  importAddress: Guid(995fa9714541bd440a9f6e224ed281ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/rocks_3.png using Guid(995fa9714541bd440a9f6e224ed281ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '4fd1fc499f9ab428eb1f879b85834e02') in 0.01995 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2cb5b7c57b96ba92fe8196c4c7e7ec61 DependenciesID=b4371667455032858f836cda8a72fd1d StaticDependenciesID=d8cf0d0ac9aad7a44d64c35be374c7aa 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/giant statues-feet-1-on flat surface.png
+  importAddress: Guid(74d7ad508415fbe45899267a95007dc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/giant statues-feet-1-on flat surface.png using Guid(74d7ad508415fbe45899267a95007dc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '233ff11473080bb8f8d484121f3901fb') in 0.017132 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=443ab7753986445dd01a56864f42f4d4 DependenciesID=efcd0b3e504bdaaf28ae090d61cf1723 StaticDependenciesID=45424506d9b3512e4cd99d73a26d5f21 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/tall dry grass ish_32.png
+  importAddress: Guid(bfb12f71116860941aa98db2bb65b60f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/tall dry grass ish_32.png using Guid(bfb12f71116860941aa98db2bb65b60f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '60f34ec9ba50580167b17c8ab1dea5f6') in 0.017913 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=245c56165a278554beff8ee30fe411f1 DependenciesID=bf4c29fe8f343cf3c1604e3a6001e3b2 StaticDependenciesID=e8b3dd8c9336da48cff7a51b9a9b32e1 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations3_28.png
+  importAddress: Guid(b50ea288945c8d4428ae22b6a8f633f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations3_28.png using Guid(b50ea288945c8d4428ae22b6a8f633f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '72578896136bc9a184f35cc9de70b4f8') in 0.0167494 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0f47ebe823a835bc16689cf320ab0443 DependenciesID=d193190a5d8a0999854de24e281a6978 StaticDependenciesID=dac4d9a77b437c78c1c4282493b73ce1 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations1_23.png
+  importAddress: Guid(c80c26ac488def8479bfbc0a30bd907e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations1_23.png using Guid(c80c26ac488def8479bfbc0a30bd907e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '2e7a9a1d8060600e97209f437f722294') in 0.0437265 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5e510d8ddfc571a297a51e3c7c752ae6 DependenciesID=5310c40d19df43a3e4ee379313aebdb6 StaticDependenciesID=7d51a4645ea387ef3b2c6c49b078d648 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations2_15.png
+  importAddress: Guid(eda147b018dc2fc4f8fb2b0050667631) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations2_15.png using Guid(eda147b018dc2fc4f8fb2b0050667631) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '98428ccf2999f38cbe852f86151ff1b4') in 0.0218182 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ac16be0ed20ff54fa47e527dbd03d567 DependenciesID=7b8adbc359e68037c06116ad9d9d5778 StaticDependenciesID=083751afb05b7d1f5fcbbb264c7acb59 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations4_4.png
+  importAddress: Guid(af6d560b9f1c05541b76f1fae9dd2822) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations4_4.png using Guid(af6d560b9f1c05541b76f1fae9dd2822) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b730f6b3ac73f0d2896a15cfa9d4f5d2') in 0.0172133 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9b19705e4614e408a3366691e98056aa DependenciesID=64fd3576a175ee3fb0a27190fab3630a StaticDependenciesID=457b4d2bd61a8e18bc0d3d1045b2d7c8 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations1_6.png
+  importAddress: Guid(d28b17ea137fb6d40a812ea69cb7ba90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations1_6.png using Guid(d28b17ea137fb6d40a812ea69cb7ba90) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0226b1a753dccbb0ef042b3f67c57a58') in 0.0162572 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=bed479aa08f29457f4faa58d2da83fc7 DependenciesID=c8af3c56644315bc44a09123b32003a6 StaticDependenciesID=9b1aa24a5f2531f4a75b90237cb5388c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations25_25.png
+  importAddress: Guid(4e02835c1625e114eb2595e98c05f2cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations25_25.png using Guid(4e02835c1625e114eb2595e98c05f2cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c3de2bef1dd16b9a9b70fa87c43f2651') in 0.0168694 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c17f873a20a61a95f8d6d884505cf82f DependenciesID=f5256e763e2368646c3940699eda2416 StaticDependenciesID=5bf6244a7b310377add077d4d1fddd2d 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_24.png
+  importAddress: Guid(858f00e96114f774d8f7a32e0eb47681) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_24.png using Guid(858f00e96114f774d8f7a32e0eb47681) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd2c4fc71e608e43d80a370646cc9fc08') in 0.0194389 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f1f64556702b4e4cf2e24d26652808b4 DependenciesID=7b317449bca477ca2f8099d6d5e4a6ee StaticDependenciesID=1ac918085455e984dc95ef80d98c5bb1 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/rocks_16.png
+  importAddress: Guid(67b469e55dbfc3942b4a1c12f371333a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/rocks_16.png using Guid(67b469e55dbfc3942b4a1c12f371333a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'fbb3f35b6efcf7bc2086c9f8b7c0adb2') in 0.0198585 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3acf78b4ca5beef620fcd401b37d73d1 DependenciesID=f4a8df1a475ef403532cbf725f50baf1 StaticDependenciesID=f8d87b1b50a897d97c3a4b52e2f2352d 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_5.png
+  importAddress: Guid(a3b2f953800325446b077f9204e7dda3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_5.png using Guid(a3b2f953800325446b077f9204e7dda3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'cbe5384fff3ac3ff2a39bbd8fcbd18fd') in 0.0181884 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6ab9a7708ae132146b30f35fbe5586b7 DependenciesID=d861dbf830b6800439de9b6ee5d596ea StaticDependenciesID=f55f1bf0905516f764a334c02b174c62 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/generic structure_12.png
+  importAddress: Guid(6f0b4a7d9cc91d045a79202cac94be9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/generic structure_12.png using Guid(6f0b4a7d9cc91d045a79202cac94be9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'adc62c4111f920a4bf5136a843780a99') in 0.0202303 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=92eeb8a7c32341fb0d4a4fa94d96a7c1 DependenciesID=c451225487f8bfb5afd1bbf5990ce442 StaticDependenciesID=2f0703ffea3c99aad8dbcdd83130b56c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/ancient stones_11.png
+  importAddress: Guid(1c684e2806920f04293c3620b0f813de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/ancient stones_11.png using Guid(1c684e2806920f04293c3620b0f813de) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '69cc24dda00070db664119fb0fd9f3b3') in 0.017571 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=62de0b274bc1c904755bfd4b24acc11c DependenciesID=e66d3e57d23054b5d0ead3777bb3b6b0 StaticDependenciesID=20fe3422fbaf13062e4a1fb7213a299f 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/pillars and generic support3__25.png
+  importAddress: Guid(e93ee44daf2a8a841b8568bf3d8e456c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/pillars and generic support3__25.png using Guid(e93ee44daf2a8a841b8568bf3d8e456c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd7bf606af49ef1d17d14c83a15064a4e') in 0.0195218 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8ea4cd96bc95eed6d9d25c1aeb2c87bf DependenciesID=7d74f6440b20882dee1b46c5fb71b862 StaticDependenciesID=4c91ea6b315c5f83013c3b85559e3130 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations2_26.png
+  importAddress: Guid(94c31111ea266e34c8d4f98584ebb2e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations2_26.png using Guid(94c31111ea266e34c8d4f98584ebb2e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c770f13a54fe669160d08e73fbd67cf7') in 0.0162659 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=46dbe22d9837de9ca593c3b8765e6aae DependenciesID=80f7d32b2390cdc33b4ba6a4874ce80a StaticDependenciesID=b380fa890810dc2c23d77d62835e0131 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/golden chalice 64x64-no spirits-less shiny-frame6.png
+  importAddress: Guid(4c0ada1597bac214b9130ebcc94a47d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/golden chalice 64x64-no spirits-less shiny-frame6.png using Guid(4c0ada1597bac214b9130ebcc94a47d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '5783728a339393b24c7ba3ad3c86776d') in 0.0158242 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c0b49b55010b3d4a4ee881eedf703856 DependenciesID=1468916fd7c1d6531065f0cfc6b58d5c StaticDependenciesID=d21fb568097ca1e6fd686372a51021c2 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/generic structure_7.png
+  importAddress: Guid(54f9c9779382613449d8e3ecb5c6a432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/generic structure_7.png using Guid(54f9c9779382613449d8e3ecb5c6a432) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'f71398cc1a053f1789532b280d111a1f') in 0.019296 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d12dc84b2b8280e01959acaa6af1369c DependenciesID=1ef4332f22794b3f2731bc9d4d794ed0 StaticDependenciesID=38833c0871d66966ac146562a661760d 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/rocks_23.png
+  importAddress: Guid(166e6ba75947f0b4da43b4ba365cd404) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/rocks_23.png using Guid(166e6ba75947f0b4da43b4ba365cd404) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '6bb633b62fdb479897000baa070150d4') in 0.0190412 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3544086fdf068a08eb71b9fb6d927c05 DependenciesID=b979a5cf074ff0d32cad3a75451d920d StaticDependenciesID=75366f198911ad78be1d899a8c5f78a6 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/generic structure2-statue_2.png
+  importAddress: Guid(b09b5c94a6391d3499273eba49988fed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/generic structure2-statue_2.png using Guid(b09b5c94a6391d3499273eba49988fed) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '32eafe819c8ed2695954e19e9e9b616c') in 0.0212637 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=35d5ceb7f4265a22d69b9571958e453e DependenciesID=8d270f94bba5af78bde22515b61f80e8 StaticDependenciesID=e3c2fc9c894923d026fcfc51194ca00a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations4_8.png
+  importAddress: Guid(52f976dcd3aafaf43acfd4e8b952d1fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/vegetations4_8.png using Guid(52f976dcd3aafaf43acfd4e8b952d1fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'e7471e4044d8c55492b419341589ee16') in 0.0181333 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9ec96df8ff712fbb26a8da89d436e787 DependenciesID=d8f7fff2342bf8112d72eaa25bc3e26d StaticDependenciesID=cf7cda524cf57ab6ed719e8232624aaa 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/pillars and generic support3__17.png
+  importAddress: Guid(9b510efd08a54754c830f525e5cb8da3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/pillars and generic support3__17.png using Guid(9b510efd08a54754c830f525e5cb8da3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '710313ec5a749dbad080788fbea3622f') in 0.0197035 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7e90414754048a95f0b1a43c60aa01e5 DependenciesID=1e376e1bc6b0aeb46a2dd6f17021624c StaticDependenciesID=dcc3de25215a4537ab51a449c22c3181 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_41.png
+  importAddress: Guid(bc8fc21ee6546ab4ab1e01a685813b55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_41.png using Guid(bc8fc21ee6546ab4ab1e01a685813b55) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'fe6c73c73765d29fd4b6e32c28f4d7ce') in 0.017768 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=521aa89ea1222d18a54a1f212f2f21e7 DependenciesID=363b1a4ccdf0f0ee7f0cf43d0e10583b StaticDependenciesID=2b1a391c39ac0c44837d0753bfd1ec57 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/generic_estructure2_6.png
+  importAddress: Guid(496a1665d7a4de343a1370c23802cb7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/generic_estructure2_6.png using Guid(496a1665d7a4de343a1370c23802cb7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ebeb2c907c4539f06728f6181d2c138a') in 0.0205552 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cd2868ba366ada6bf98b0d20218d9116 DependenciesID=8f24b11959736ee13000eacae223ab02 StaticDependenciesID=963ff281a3ea1b019358777ce2d43524 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_21.png
+  importAddress: Guid(adf192ef4ebd96c479da7565bebf2d68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/little stones to create paths-a bit taller_21.png using Guid(adf192ef4ebd96c479da7565bebf2d68) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b0b170f86fb3bf1e3477a68a244e2740') in 0.0173156 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5d3e1b032b4b5266613de286f2e9d1e1 DependenciesID=fe87e3892abebcb784aea8ef839fbc68 StaticDependenciesID=897b0705ee5e57c23a2bcf45f2c67e39 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/trees with separated shadows
+  importAddress: Guid(37dd940a7f2a4a942bb6d77a576baa91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/trees with separated shadows using Guid(37dd940a7f2a4a942bb6d77a576baa91) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '64c4dcde67b6e16fd81efa8e97b1daee') in 0.0006741 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ef41296ba803d66cedd8fb612bcf5e71 DependenciesID=084a0c5099d0f82363ad58df6480a74b StaticDependenciesID=cd427b9e282069797538073afb71ff57 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/trees with separated shadows/Atlas-Props - Copia.aseprite
+  importAddress: Guid(9598dc1fd2d28f34382f6054e8d7bcee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/trees with separated shadows/Atlas-Props - Copia.aseprite using Guid(9598dc1fd2d28f34382f6054e8d7bcee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a1786522cbbe84f9ecad1327aa7433b1') in 0.8661329 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=950de96517b72cba90750e748cea3b61 DependenciesID=012d5c1dcc07a9a5fd1bf483cd11c288 StaticDependenciesID=86e258f26082d95bb9a1cdebfb2ac0c0 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 176
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/generic_estructure2_3.png
+  importAddress: Guid(0a8df5c536071394b9984c9896358621) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/generic_estructure2_3.png using Guid(0a8df5c536071394b9984c9896358621) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '263cbae2162fbd6de83af652b40d60e4') in 0.0182952 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f648618ece0302f93e82bdce70891f4a DependenciesID=5b513af16401610e5b96a7a8fff0793f StaticDependenciesID=8e318d7fea392da0ca80cb25bfab6e7e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/ancient stones_14.png
+  importAddress: Guid(03ee3aab2b58eb24284d4f59d968eeab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/atlas-props-individual sprites/ancient stones_14.png using Guid(03ee3aab2b58eb24284d4f59d968eeab) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '01789101615c074d3052d42f437428ee') in 0.0162525 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=26cab896f3b8a2284e19dcc661def026 DependenciesID=509127c5af29f2418b60b6ce8058a145 StaticDependenciesID=0587c683027052735841ff3ad93b68f2 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
