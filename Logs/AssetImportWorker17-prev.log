@@ -1,11 +1,11 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.4/staging' branch; Version is '6000.4.6f1 (0b051c2e5d54) revision 722204'; Using compiler version '194234433'; Build Type 'Release'
 OS: 'Windows 11  (10.0.26200) Core' Language: 'en' Physical Memory: 16328 MB
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C" at "2026-05-24T20:52:11.2067444Z"
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C" at "2026-05-24T21:39:40.4504256Z"
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-05-24T20:52:11Z
+Date: 2026-05-24T21:39:40Z
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.4.6f1\Editor\Unity.exe
@@ -19,7 +19,7 @@ C:/Users/viet_/projects/IndieGame
 -logFile
 Logs/AssetImportWorker17.log
 -srvPort
-59470
+49337
 -licensingIpc
 LicenseClient-YJ9lqjR03NSlFhmCLJW0C
 -force-d3d12
@@ -68,12 +68,12 @@ C:/Users/viet_/projects/IndieGame
     "memorysetup-job-temp-allocator-block-size=2097152"
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
-Player connection [25316]  Target information:
+Player connection [35032]  Target information:
 
-Player connection [25316]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 1633737996 [EditorId] 1633737996 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [35032]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 2323469486 [EditorId] 2323469486 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [25316] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [25316] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [35032] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [35032] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -85,7 +85,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 4.78 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 5.26 ms, found 5 plugins.
 Initialize engine version: 6000.4.6f1 (0b051c2e5d54)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/viet_/projects/IndieGame/Assets
@@ -103,29 +103,29 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56932
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56344
 CodeReloadManager initialized
+Begin MonoManager ReloadAssembly
 [Licensing::Client] Error: HandshakeResponse reported an error:
 	ResponseCode: 505
 	ResponseStatus: Unsupported protocol version '1.18.1'.
 [Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C"
 [Licensing::IpcConnector] LicenseClient-YJ9lqjR03NSlFhmCLJW0C channel disconnected successfully.
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6" at "2026-05-24T20:52:12.1872142Z"
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 38888, path: "C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6" at "2026-05-24T21:39:41.603698Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 26580, path: "C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.18.1+9fbee8e
-  Session Id:              1e4e696a07664503af0ebb0db04dc698
-  Correlation Id:          80b9f657bf28d723df5cabe3c05f3d9a
-  External correlation Id: 3275759058905337965
+  Session Id:              522e202a0fd64bcb9a31b6986a23455c
+  Correlation Id:          b4010a6d77bef2cb518ef9ab1e8a3dbc
+  External correlation Id: 5368226243766287931
   Machine Id:              VXbwn5JDHcloYK9lppscF5+D9fo=
 [Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-viet_-6000.4.6" (connect: 0.00s, validation: 0.00s, handshake: 0.01s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6-notifications" at "2026-05-24T20:52:12.1960701Z"
-[Licensing::Module] Licensing Background thread has ended after 0.99s
-Begin MonoManager ReloadAssembly
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6-notifications" at "2026-05-24T21:39:41.6135838Z"
+[Licensing::Module] Licensing Background thread has ended after 1.16s
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001341 seconds.
+Registered in 0.002516 seconds.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
@@ -133,23 +133,23 @@ Package Manager log level set to [2]
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.375 seconds
-Domain Reload Profiling: 782ms
-	BeginReloadAssembly (120ms)
-	RebuildCommonClasses (35ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (64ms)
-	LoadAllAssembliesAndSetupDomain (176ms)
-		LoadAssemblies (116ms)
-		AnalyzeDomain (168ms)
-			TypeCache.Refresh (167ms)
-				TypeCache.ScanAssembly (154ms)
-	FinalizeReload (376ms)
+- Finished resetting the current domain, in  0.463 seconds
+Domain Reload Profiling: 999ms
+	BeginReloadAssembly (161ms)
+	RebuildCommonClasses (59ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (76ms)
+	LoadAllAssembliesAndSetupDomain (223ms)
+		LoadAssemblies (156ms)
+		AnalyzeDomain (213ms)
+			TypeCache.Refresh (212ms)
+				TypeCache.ScanAssembly (197ms)
+	FinalizeReload (465ms)
 		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (38ms)
-			BeforeProcessingInitializeOnLoad (80ms)
-			ProcessInitializeOnLoadAttributes (100ms)
-			ProcessInitializeOnLoadMethodAttributes (83ms)
+			InitializePlatformSupportModulesInManaged (49ms)
+			BeforeProcessingInitializeOnLoad (94ms)
+			ProcessInitializeOnLoadAttributes (127ms)
+			ProcessInitializeOnLoadMethodAttributes (98ms)
 ========================================================================
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
@@ -198,621 +198,156 @@ Assembly Unity.UnifiedRayTracing.Editor.Tests.dll at Library/ScriptAssemblies/Un
 Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
 Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
 Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
-Refreshing native plugins compatible for Editor in 2.22 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 3.28 ms, found 5 plugins.
 Native extension for WindowsStandalone target not found
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-Refreshing native plugins compatible for Editor in 2.74 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 2.58 ms, found 5 plugins.
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.102 seconds
-Domain Reload Profiling: 2252ms
-	BeginReloadAssembly (207ms)
+- Finished resetting the current domain, in  0.973 seconds
+Domain Reload Profiling: 2038ms
+	BeginReloadAssembly (215ms)
 		DisableScriptedObjects (6ms)
-		CreateAndSetChildDomain (38ms)
-	RebuildCommonClasses (35ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (73ms)
-	LoadAllAssembliesAndSetupDomain (823ms)
-		LoadAssemblies (485ms)
-		AnalyzeDomain (427ms)
-			TypeCache.Refresh (309ms)
-				TypeCache.ScanAssembly (280ms)
-			BuildScriptInfoCaches (98ms)
-			ResolveRequiredComponents (17ms)
-	FinalizeReload (1103ms)
+		CreateAndSetChildDomain (39ms)
+	RebuildCommonClasses (40ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (85ms)
+	LoadAllAssembliesAndSetupDomain (710ms)
+		LoadAssemblies (469ms)
+		AnalyzeDomain (353ms)
+			TypeCache.Refresh (257ms)
+				TypeCache.ScanAssembly (234ms)
+			BuildScriptInfoCaches (79ms)
+			ResolveRequiredComponents (15ms)
+	FinalizeReload (973ms)
 		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (3ms)
-			BeforeProcessingInitializeOnLoad (199ms)
-			ProcessInitializeOnLoadAttributes (521ms)
-			ProcessInitializeOnLoadMethodAttributes (160ms)
-			AfterProcessingInitializeOnLoad (7ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
+			BeforeProcessingInitializeOnLoad (189ms)
+			ProcessInitializeOnLoadAttributes (438ms)
+			ProcessInitializeOnLoadMethodAttributes (137ms)
+			AfterProcessingInitializeOnLoad (6ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-Refreshing native plugins compatible for Editor in 2.04 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 2.58 ms, found 5 plugins.
 Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7408 unused Assets / (5.7 MB). Loaded Objects now: 8249.
-Memory consumption went from 183.1 MB to 177.3 MB.
-Total: 9.799700 ms (FindLiveObjects: 1.107500 ms CreateObjectMapping: 0.595400 ms MarkObjects: 5.669200 ms  DeleteObjects: 2.425200 ms)
+Unloading 7408 unused Assets / (5.5 MB). Loaded Objects now: 8249.
+Memory consumption went from 181.2 MB to 175.7 MB.
+Total: 12.038000 ms (FindLiveObjects: 1.197800 ms CreateObjectMapping: 0.682100 ms MarkObjects: 5.528700 ms  DeleteObjects: 4.626600 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 768893.837450 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/floating land shadow tileset.png
-  importAddress: Guid(66d2826b5dd94504299bb9e3e887c74b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/floating land shadow tileset.png using Guid(66d2826b5dd94504299bb9e3e887c74b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '03f72e2cacde7d9c2e886a9cb8bde4bc') in 0.1098394 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7f34a13b05cab344fd48f59820668a9b DependenciesID=5d638305b30721d83678cc6f5c31d851 StaticDependenciesID=188d8b94032863700969871586b6dee3 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tormented souls tile-3-64x64px.png
-  importAddress: Guid(60857291bafc1c44a8225cef937e4795) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tormented souls tile-3-64x64px.png using Guid(60857291bafc1c44a8225cef937e4795) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '1237e9f96df75da11c5c28bb3cc4aa71') in 0.0218295 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9bcac23c848b88cd4a9dbc53734ddea2 DependenciesID=44853b088188a52191dc26dccb0db4c4 StaticDependenciesID=156e6c9fcb69612f2cdfff8b7102a18b 
+  Time since last request: 771740.839355 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_0.asset
+  importAddress: Guid(c23acf6b69bc94d4bb36972b91d66c3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_0.asset using Guid(c23acf6b69bc94d4bb36972b91d66c3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c93f330100eebabc4e9c0149a3f9cfae') in 0.080244 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=30c065a46890a3e4657c8906413d6476 DependenciesID=bd50108987a5521e89b11c74d4f2b2e9 StaticDependenciesID=6b9723f5369cfba7c9626233d34d0693 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tormented souls tile-2-64x64px.png
-  importAddress: Guid(dba512248dbb5ff43bbc981926894728) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tormented souls tile-2-64x64px.png using Guid(dba512248dbb5ff43bbc981926894728) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b40ae2c12890923805a7a33210fb8dbf') in 0.0185273 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=635bf76e4b41d626c613142890a271ba DependenciesID=81956f68858a1d5efa37105027816f74 StaticDependenciesID=42e1759188f01f4cfac6639e57ce1f8c 
+  Time since last request: 0.000045 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_12.asset
+  importAddress: Guid(cb63db3832d50f249b732a185e3181cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_12.asset using Guid(cb63db3832d50f249b732a185e3181cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'f540c05c4a466b6e24995364fe1d68e5') in 0.0324279 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=353f613ce30365ba8ef900ecc2c3512a DependenciesID=c9dae700d4c3ad84706f7e9935c05900 StaticDependenciesID=b6f1f1587549cc90e11cc7448078da2c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_34.asset
+  importAddress: Guid(c8ba472ebee2dca4eae878e153f3dccd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_34.asset using Guid(c8ba472ebee2dca4eae878e153f3dccd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ea86016ac6ac5ce1d0dfa3d74bbc69db') in 0.0263168 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0634076583a8c1913cb2a5bed8ec41b6 DependenciesID=3feb3d0ab78a4f065b5ec73cb7e7fad1 StaticDependenciesID=236f1c2bf57b634d32ef1e6b377e1343 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000023 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tormented souls tile-1-64x64px.png
-  importAddress: Guid(d3a43a358eaa8c144b8b946ae943852c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tormented souls tile-1-64x64px.png using Guid(d3a43a358eaa8c144b8b946ae943852c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '87abf1ba396606ed78a47fe7d014297f') in 0.0203173 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=680b7978d8e3ae64ef952b655c9a92d9 DependenciesID=1f1af0a324c53e03255c255659b3c55a StaticDependenciesID=9219f084ccf0ebaaaa978f4883c078ea 
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_40.asset
+  importAddress: Guid(3da5478ed355b8048afd46a457677b5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_40.asset using Guid(3da5478ed355b8048afd46a457677b5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a67f4dbc740779f6fae6523108d3c81c') in 0.032294 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=baa2c861611aaf209640b31e4256fef4 DependenciesID=4cb4bf2e16e1071a3908a95af2e7da86 StaticDependenciesID=39f9facc81b5787d6d1845cecba641d2 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_41.asset
+  importAddress: Guid(a372fc9c01c6e374cb240b63b0d277e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_41.asset using Guid(a372fc9c01c6e374cb240b63b0d277e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '763f82413a7c7d7b6b506094d23f3d07') in 0.0284979 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=efaa085d3ee1e51e8bfbc1f249882a21 DependenciesID=67f2ea1a3fd311a1e598646f024edc29 StaticDependenciesID=7264698827a7967df9edd18b080f74fb 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_28.asset
+  importAddress: Guid(c5b8a87b0e2bf9e4fbf8ee109eff8a32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_28.asset using Guid(c5b8a87b0e2bf9e4fbf8ee109eff8a32) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '078fabd8f46feddbc15f810b8e34b26d') in 0.0305099 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8d6a4839fb035602cfb6836035e67ef6 DependenciesID=912225b207a3ab7c7af524268d0f4ce1 StaticDependenciesID=11012570231df9b83907e9d6f45aa373 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_15.asset
+  importAddress: Guid(a21a2bc89abc7d64e95a0ba0c4bdd117) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_15.asset using Guid(a21a2bc89abc7d64e95a0ba0c4bdd117) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '49d76877dad231fef823a3e389f677b4') in 0.0316042 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ef5c39439cd89fdaabbd4a141edb41a0 DependenciesID=e9751fc0bd6323cf652e496d8ef0d8d6 StaticDependenciesID=3de4f773f3e6ce41605b423f0e18842d 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_49.asset
+  importAddress: Guid(4b711d143469b4f4fbaa3b382de1a404) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_49.asset using Guid(4b711d143469b4f4fbaa3b382de1a404) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '77c7f3274708ca83242588f9540448b8') in 0.0285702 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4556de5f23928743a96e239facfbc602 DependenciesID=d370253e63d5a25c74df6928f8793f66 StaticDependenciesID=95cbe1d477280ef097c789d92f28c67a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_33.asset
+  importAddress: Guid(2a6565d60c902bf42a9542f14649aab7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_33.asset using Guid(2a6565d60c902bf42a9542f14649aab7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '8f3dc265f418c3e06623a39b991ae9e5') in 0.0270021 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8dedc958d4180cbb99dfc9d94ed93bc9 DependenciesID=ba265767c79ecc0a529beedc32ba5d1e StaticDependenciesID=1d493267c85d689bdfb7540895aa6a3a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_23.asset
+  importAddress: Guid(b47e2171bb901ad48a5efc76dcf98f18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_23.asset using Guid(b47e2171bb901ad48a5efc76dcf98f18) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd20b1d3c937e9bba5fda453999a01b9a') in 0.0302876 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3e63907b52373609eaf17c4e63c6b17d DependenciesID=962cbbbf62bb6c7b6ec2e12ccbb83e0a StaticDependenciesID=14269199325ffcab4d5ca80439620521 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_18.asset
+  importAddress: Guid(f1d961f2e8b0dba47b1c5b24d8b74562) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_18.asset using Guid(f1d961f2e8b0dba47b1c5b24d8b74562) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'bc255f3d3fe6d84fba3c8729d3538571') in 0.0257765 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=10d3179091160ad85d78066d1be5b3d6 DependenciesID=91a09747e3a1b193ba26de0526becac3 StaticDependenciesID=d1216e25c64f5f566b720c3b03a73729 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_6.asset
+  importAddress: Guid(d69e5591896edfb40a708a8aa3128433) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_6.asset using Guid(d69e5591896edfb40a708a8aa3128433) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'fdc9bfab1215a5a140e27a290957e29c') in 0.0253299 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0ccd8d872ca0bf4a013d8ae777ee2cc7 DependenciesID=ba036e538e2008a1555abdfd8f634d29 StaticDependenciesID=b237b1b29c8f37e8c9e49272074da99f 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_42.asset
+  importAddress: Guid(ec4c85046cf8bd6498d00ecd84991a65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_42.asset using Guid(ec4c85046cf8bd6498d00ecd84991a65) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '126fbc507336a7092901c5532fb9e1e0') in 0.0286607 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cdfdbbdf07fbaab669078c419c03e605 DependenciesID=320c1300b035159b72527d0aeb8111ea StaticDependenciesID=5d22952fe6f3e27be64cc93161387eaa 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000021 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/lavafall-spritesheet-16frames.png
-  importAddress: Guid(f3a6c6b38b347b144842f63a28c42302) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/lavafall-spritesheet-16frames.png using Guid(f3a6c6b38b347b144842f63a28c42302) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0f0768a6bd422ed4239dd771f66c2faa') in 0.0792195 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=36eb605299c10d0691e90bc0f5b6f2ce DependenciesID=0f326c3cf02a4a12d06ec40b30c8c5f0 StaticDependenciesID=5c63e73bcabd57727f7233afe0c1847c 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 19
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.833094 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/lava passage spritesheet.png
-  importAddress: Guid(bf8641a6f7130314c8b350037346fe8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/lava passage spritesheet.png using Guid(bf8641a6f7130314c8b350037346fe8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9d9041037fa84c2d41974dc011af7589') in 0.0835728 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a8747fd2ee15883bfbba5f0b6ebf8143 DependenciesID=5bab826e6fb2d45a171be81f778b9c44 StaticDependenciesID=0ee7fc36bd7c5b4e885d27edacce3f95 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tormented souls tile-4-64x64px.png
-  importAddress: Guid(f7f12ae02454a8c4bb5cde367471f164) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tormented souls tile-4-64x64px.png using Guid(f7f12ae02454a8c4bb5cde367471f164) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '4136cea82f4fe2b3e796c80b7ea5f902') in 0.0287384 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=96d62598e9048072d023e8e44ab84b5e DependenciesID=6c5e4ca664fd2c43430917f6e5e75b08 StaticDependenciesID=649253a76f19dfd2ff1ec34c36e57977 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000047 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/lavafal-for Tiled-spritesheet-16frames.png
-  importAddress: Guid(780a826ed5db9304582a73cde483d19d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/lavafal-for Tiled-spritesheet-16frames.png using Guid(780a826ed5db9304582a73cde483d19d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '541dc2eb699346699569134d68a90bdb') in 0.0555713 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5c31fb10001f0da3cfd2801553d4f75d DependenciesID=7d9c8eb956933c62d2d07543255bff7f StaticDependenciesID=aea084dd05bde6282db67798cb4ca227 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 19
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/platform1-no lava integration.png
-  importAddress: Guid(fda00827a21c81947a52a395493be292) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/platform1-no lava integration.png using Guid(fda00827a21c81947a52a395493be292) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '68dc1e49ad17d086a5dc443898ea8acb') in 0.0719522 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8a32fd43c33c31336b17c06b5b1928fa DependenciesID=6acee4895446e9f2eb62f6ebed1c0220 StaticDependenciesID=f4257c496fbfe80117a94f21d11b98d8 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tormented souls tile-5-64x64px.png
-  importAddress: Guid(cda58670da6486c46a6546ceaed755f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tormented souls tile-5-64x64px.png using Guid(cda58670da6486c46a6546ceaed755f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9bc0e132b5fc38f51a12ca7a64d19a93') in 0.0180456 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=23a4ab54d4aaf92dfdf7ee3cc8e6ed42 DependenciesID=bc6471a9622aa1ebb3bde0dda81f05e5 StaticDependenciesID=88a5b46461232a6fd94c3835a2c59c01 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.265916 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tormented souls tile-5-64x64px.png
-  importAddress: Guid(cda58670da6486c46a6546ceaed755f3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tormented souls tile-5-64x64px.png using Guid(cda58670da6486c46a6546ceaed755f3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '36d98ce0d3ddad34f3b45646dbd5ae5e') in 0.1214995 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b590088bfe8448b1b9ab0bc66149a036 DependenciesID=869c132266358e027d3151f4a597b359 StaticDependenciesID=17bc9a21abdf6efa6e0c143b3d602147 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/platform2.png
-  importAddress: Guid(1f7c8f1fbdc7c4940a0279bd3759f5b0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/platform2.png using Guid(1f7c8f1fbdc7c4940a0279bd3759f5b0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'af5c8e84a8c2ce6394ad5ec08cae18c1') in 0.029699 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=08de25666733628aa35ebb778c89f1b3 DependenciesID=47bc2f5bb73d5f6d161ac45d5cda767d StaticDependenciesID=6b37250f307a5bdaba6c3503401b8279 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/lava passage spritesheet.png
-  importAddress: Guid(bf8641a6f7130314c8b350037346fe8b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/lava passage spritesheet.png using Guid(bf8641a6f7130314c8b350037346fe8b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c9153a4b8d3d03c1ba0d2b3760c67cc5') in 0.0303535 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=65b4299d464f7af123978da3dc401908 DependenciesID=1d251c471c825a56a74bc47a258b52cd StaticDependenciesID=010c6dc0bbaa301d4595750464509d21 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tileset.png
-  importAddress: Guid(966d00655f990be4a862da944e1c136b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tileset.png using Guid(966d00655f990be4a862da944e1c136b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '5114ab5668db96e2e14c2189d9d379b3') in 0.1569074 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=63516515ce06cc7b72fb447fc3efb710 DependenciesID=465870b979a2bb95b470b69a9feec083 StaticDependenciesID=761dafe7476e261738e7541baceb7388 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 218
-
-========================================================================
-Received Import Request.
-  Time since last request: 264.512946 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/blood to grass2.png
-  importAddress: Guid(d5ef8a0827ff3344795bdd5042d97f64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/blood to grass2.png using Guid(d5ef8a0827ff3344795bdd5042d97f64) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'bc51b16bc29fc4a76b5645089bc2826f') in 0.0451662 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=31d94ac0498a9d7f69dfd880e4465f25 DependenciesID=144202b881786e29f61421c1515db09d StaticDependenciesID=0f95790109091b9d44889a674e455fef 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/full tile water.png
-  importAddress: Guid(a94da1c2c31fe5c4693304365d66cdc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/full tile water.png using Guid(a94da1c2c31fe5c4693304365d66cdc0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c998c2112b306519995940dcbe00a2ee') in 0.0163605 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=93bc4f993f4c180a319d0c4d6776da94 DependenciesID=874821b9831574d22f21957d55aff619 StaticDependenciesID=6fa57b9a8c07abf9a5e0714f8ebd0eb9 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass-light to mid tone.png
-  importAddress: Guid(4bc2bde44e6b8f4439e6176786f7ee06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass-light to mid tone.png using Guid(4bc2bde44e6b8f4439e6176786f7ee06) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a9c21c250bb096cf398eca7b2399b8f8') in 0.0253016 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=904748626a882746687783e63e76af6a DependenciesID=c57ada4e367807f410940e4230b33874 StaticDependenciesID=d8aa066fc486184dec0110b5376b94f9 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass2 to water.png
-  importAddress: Guid(41baff6e3312faf4d976905d567cd17e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass2 to water.png using Guid(41baff6e3312faf4d976905d567cd17e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b93c769e0123f1594f142336ec5ab0b1') in 0.0359781 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5884ac13d63e46e28a0e123dbb56378e DependenciesID=c4c0fd1f50ca2bfe002c1d8b6e88991b StaticDependenciesID=b890fff1455a1e426699ae7e616fa00c 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/plat-1T-blood flooded ground-stairs1.png
-  importAddress: Guid(eb5ddfa387c3b614ebbb235ac45f9a8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/plat-1T-blood flooded ground-stairs1.png using Guid(eb5ddfa387c3b614ebbb235ac45f9a8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '74d330ee86db4e4a9b9d9ad12a3a4c12') in 0.0287461 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=03fb51d50c8eeb52cd26a9a054cb0650 DependenciesID=8d760e0a13861617c40a7ad966f8ebfc StaticDependenciesID=909f3fdab09348d134e8ce3d21073a33 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass-dark-transp.png
-  importAddress: Guid(e5f1c8409b567aa4c803373ff589632e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass-dark-transp.png using Guid(e5f1c8409b567aa4c803373ff589632e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'e47306a80163594c24d7ae9f5a03ab11') in 0.1060251 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2ec430371b8c87642a54ea105972c99b DependenciesID=219d03725f142345f2d0215ee8992e9e StaticDependenciesID=2d058df1ff93101daa2e6a73ea6f29dd 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 17
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/plat-1T-flooded ground.png
-  importAddress: Guid(f2f82b0563d282142bf1d66b7dd24cfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/plat-1T-flooded ground.png using Guid(f2f82b0563d282142bf1d66b7dd24cfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '70de18f1b120aeed95f1ecd5bef10f88') in 0.0295284 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=45c1e773e9691a3f28bb7b4e26a089d4 DependenciesID=fd0ae8133d60a0cc52253dd7f1ea4532 StaticDependenciesID=57b65a747760aecf92b775431ab6ee3d 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/plat-1T-flooded ground-stairs2.png
-  importAddress: Guid(218c843c90e858a4a906d353d26bb9b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/plat-1T-flooded ground-stairs2.png using Guid(218c843c90e858a4a906d353d26bb9b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '2a4be8dc3629ff0d5add3f9a8721caac') in 0.0300592 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=018bdc853576580b7d1592ca9093eada DependenciesID=1c91ae7ac1d60b4b314ea8f2ef800d7c StaticDependenciesID=287cd312d1f0e5f1c809747674921bd1 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass-mid tone-transp.png
-  importAddress: Guid(98ff08ae71096fc47bc9dd7f668c100f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass-mid tone-transp.png using Guid(98ff08ae71096fc47bc9dd7f668c100f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '6e8135982581e0d889a9ad0f53680911') in 0.0662075 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=63f356b71486c232c970914014b96f78 DependenciesID=72ae86b58cf7291bb121ab8f4d3e4174 StaticDependenciesID=c0b2d93b84ed1238b2dd0e02a0d2dc56 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 18
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/plat-1T-flooded ground-stairs1.png
-  importAddress: Guid(8ce024f4fe169b94a811f0804534f7a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/plat-1T-flooded ground-stairs1.png using Guid(8ce024f4fe169b94a811f0804534f7a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a79043b9ad91e51d3f3e8f48fe9983c2') in 0.0285111 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=792cdce8324b95e6c73b3565d3f19f42 DependenciesID=9edd7d94adfcb98ba7ce8547afa02365 StaticDependenciesID=d0f64f25399ab6f7dee1084420bee2bb 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000063 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass-dark to mid tone.png
-  importAddress: Guid(36e74c9d283e8cd4891a69f053566d52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass-dark to mid tone.png using Guid(36e74c9d283e8cd4891a69f053566d52) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'aae63da5286f57f9be39ccde87cd267e') in 0.0384911 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=78de9b08dad9144b899eb31bf81e5fe1 DependenciesID=80c6ca3042daa1361f668583681fbc94 StaticDependenciesID=8b96028985404bee2d9de1465622a604 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/platform-flooded ground-full tile water.png
-  importAddress: Guid(aeb039c66ffe13043bef016d3f591b41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/platform-flooded ground-full tile water.png using Guid(aeb039c66ffe13043bef016d3f591b41) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '67c44fd4c36c2133b9b6639123ed8d8f') in 0.0620461 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6234601e7599b1afe3bb43462f82b575 DependenciesID=d095dd7122cc32aea00bd084235f8dad StaticDependenciesID=51c85ce41224edb4d0148c5827847c5c 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/flooded grass2.png
-  importAddress: Guid(a08e284eef9f09c4687452e8df5d914f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/flooded grass2.png using Guid(a08e284eef9f09c4687452e8df5d914f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '2afae8ebad8c582454542ce8ba517d78') in 0.5047046 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=099536367537db8c7fa3bdc4cc395d77 DependenciesID=85ef9861c8f5031d2f5c4fa43866d26d StaticDependenciesID=430aeb097669fdcd9f593c78fd4f70b5 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 209
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000043 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/stone ground-grass-transp.png
-  importAddress: Guid(0cdadf5c5275a27478f9350898e16d18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/stone ground-grass-transp.png using Guid(0cdadf5c5275a27478f9350898e16d18) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '56189561d53969ff4617ea8e75370af8') in 0.0765114 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=197e9c17124b7c8325933c7f3622218a DependenciesID=50c91a503a84548f7b29a8acdda66dea StaticDependenciesID=9ed7aab20c099ae98c8126c7c6aeef9b 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 19
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/flooded grass1.png
-  importAddress: Guid(fba364dfed451064b80ba2a000089ce9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/flooded grass1.png using Guid(fba364dfed451064b80ba2a000089ce9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '5550c17c70485ff442b21cf03d7bb536') in 0.3679899 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=379905ad5d268bf7fa48f10fd23579b3 DependenciesID=d7c90c92c050db06c552218bab9a3461 StaticDependenciesID=013d27437f341cc10f6f9ef2ef725c5e 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 179
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/Tileset-Animated Terrains-8 frames.png
-  importAddress: Guid(364c900ff1d495e4a852b91b60c649f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/Tileset-Animated Terrains-8 frames.png using Guid(364c900ff1d495e4a852b91b60c649f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '626d4bc86f5be026215463a0ef2567fa') in 0.1341223 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6b060cf5fef2a9d5061692e24b3dfd6d DependenciesID=fd149c70c86d1d0bc774a2e375950aa5 StaticDependenciesID=5494c1a266b6dfc2a35c8008820ee444 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000105 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/Tileset-Animated Terrains2-8 frames.png
-  importAddress: Guid(6ba33a20b1d8e3d4b8050e4b7dc423e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/Tileset-Animated Terrains2-8 frames.png using Guid(6ba33a20b1d8e3d4b8050e4b7dc423e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '36f9c66f6c86c7c881e4aedb3bbed05f') in 0.0583226 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7c313f69035efff80970110e43421058 DependenciesID=a1504872668e750f78c5fa2c211683e0 StaticDependenciesID=b434acbe1612e74f7e2cf27715c87d85 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass1 to water.png
-  importAddress: Guid(f96a7ca37fb12384d98306e330c7136d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass1 to water.png using Guid(f96a7ca37fb12384d98306e330c7136d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ef7f381cbb8a7dea5f8fb8f5b36a9951') in 0.0295522 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=26e5e3736b8e0f448f23d77347a57baf DependenciesID=cab789cd394838b0a0df8fc62f940a06 StaticDependenciesID=43b44d15abbf1de55a60cf9eb28d9fc2 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/Tileset-Terrain2.png
-  importAddress: Guid(b2678ef80af67eb45b28b00ae4b2e663) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/Tileset-Terrain2.png using Guid(b2678ef80af67eb45b28b00ae4b2e663) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '394563d3610ff08b947afa0ae482d7f8') in 0.6151572 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e5761b05dc52e294d60c9ee5c6ad34ac DependenciesID=0679f2882375a500c8b59c87b4dcd5a3 StaticDependenciesID=fc50966e67655562d1417da19581c9ae 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 217
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/little fountain2 by the wall-Blood.png
-  importAddress: Guid(758fd97d8e38d5f40b4fbb49f161a890) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/little fountain2 by the wall-Blood.png using Guid(758fd97d8e38d5f40b4fbb49f161a890) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '264530fd51f5c8b6cf860d60ccc7fa7d') in 0.0228659 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8c7e948213350f9daf23d31747598f9e DependenciesID=b71bf3b6fd132d958c699b755287d4c1 StaticDependenciesID=3e9d33b26e81a7a4ba59ff2910bb8d02 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/stone ground2-transp.png
-  importAddress: Guid(3c83c281a48cbc74d96e181726cd5cc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/stone ground2-transp.png using Guid(3c83c281a48cbc74d96e181726cd5cc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '337e9b9b624031beed07bd4e60a77181') in 0.1057003 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=75fd2204c0b5c7aa6466d636963c6dee DependenciesID=f697e81f48114f7e4199f64811d32d4f StaticDependenciesID=4844ce998bf43420fee3a95f57efc8bb 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 40
-
-========================================================================
-Received Import Request.
-  Time since last request: 38.774706 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/AncientRuins_TilePalette.prefab
-  importAddress: Guid(efc114d54693ae1408e252b3f4278cea) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/AncientRuins_TilePalette.prefab using Guid(efc114d54693ae1408e252b3f4278cea) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '5c2e96f2e649f3665fadab9e086962d2') in 0.0353925 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=506465a60cf0112a29de0af2d35c3d88 DependenciesID=15aa8256b3a24126813fb9b604991570 StaticDependenciesID=d7901e7a4ff964d7c7ca56572469c357 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 23.198988 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-1-premade corners.png
-  importAddress: Guid(0b62ece2ee9453148ad0a83b492595f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-1-premade corners.png using Guid(0b62ece2ee9453148ad0a83b492595f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '8e9f2cb928acb1b8b4bc819d0dafd9fb') in 0.0631296 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8be2069744b8e9276826e8f657898823 DependenciesID=565bec78d39db9a0f9986c8783c2535c StaticDependenciesID=88642f588f1da6b532f226df160b1ecc 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.145502 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-3 - 3 tiles tall.png
-  importAddress: Guid(2f21ac9583248644387a5f76ea079f22) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-3 - 3 tiles tall.png using Guid(2f21ac9583248644387a5f76ea079f22) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '89b119e84eca77c68f0cb3be607d8875') in 0.0472786 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=91e0eb43f4965016edadb8f1583e3eb3 DependenciesID=95a3104cc0f28d5cae2a8940b3a34bf1 StaticDependenciesID=d6392153ddbc03087a9037fdcd89d203 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-5 - 2 tiles tall.png
-  importAddress: Guid(8039b6f554a0fe7409077e65e88a0f85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-5 - 2 tiles tall.png using Guid(8039b6f554a0fe7409077e65e88a0f85) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ba58a1d9037fafeb931ca81c8ab8cd55') in 0.0465633 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=840fa98378eee6d4e81efba9342f19b4 DependenciesID=0d48ef829954ec91e001511d181ae313 StaticDependenciesID=f69967d47f1b892b6a89b31d4d6112ce 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-5-4-premade corners.png
-  importAddress: Guid(d867f7f595250224ab1b713b1e6a386c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-5-4-premade corners.png using Guid(d867f7f595250224ab1b713b1e6a386c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '07663da1208dcd6852b632dd5543b3f3') in 0.0508973 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=550df1f9327b658df72062df5e35d89b DependenciesID=f3ce5b73773fa8b45f663cfa5d916253 StaticDependenciesID=f9d234df0baf5df63452ff1be70ff30d 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000068 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-4 - 3 tiles tall.png
-  importAddress: Guid(a26e62e5ea47d444cb0e159c161c01e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-4 - 3 tiles tall.png using Guid(a26e62e5ea47d444cb0e159c161c01e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '546956db2dd3dab67989ca2f6db5f693') in 0.0527975 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=29346bbba292a517fe2747cc8f3617b2 DependenciesID=14cb9a60108bcd7c19e9a5dfe4b7adc8 StaticDependenciesID=9c59a3b0f07bc9cfbd386accd7487799 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.930627 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-7-premade corners.png
-  importAddress: Guid(4d9e8fa11977838478b5fb35fb926ead) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-7-premade corners.png using Guid(4d9e8fa11977838478b5fb35fb926ead) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '890a6b3c9749ad2aeaea6f220a5dc2a4') in 0.0410489 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4d68fda208b1c89af9c49c9181a2d137 DependenciesID=a8ac8325cf055aff059cd9cd1a06dcd0 StaticDependenciesID=45ee5becf4b628b3053d19b5e2289e6d 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall2-1T-blood flooded ground-stairs.png
-  importAddress: Guid(bdf9119a7ca8fbc40908201dccfac48c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall2-1T-blood flooded ground-stairs.png using Guid(bdf9119a7ca8fbc40908201dccfac48c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c6f9885d0ad851a0cd9f4a51dd04ed56') in 0.0237113 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f4dd04979e14c6aedf78457a8c1590f6 DependenciesID=002f670610c042615e68e557b82dd311 StaticDependenciesID=8db1b73f51606d4d32c2dbf823395585 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/water to grass2.png
-  importAddress: Guid(e89579375ca639f4fbe6f0f96dc03ead) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/water to grass2.png using Guid(e89579375ca639f4fbe6f0f96dc03ead) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'dfde5d4f9b9799169be6c1bc5a266246') in 0.0192496 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=fbb65686fcb738f04ee81028f9edc51b DependenciesID=b24bdff704b1b900ccc26774bf11354d StaticDependenciesID=58365ba7eb4d5798ad949b095e901b31 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall9-update2.0-3 tiles tall.png
-  importAddress: Guid(c047292d128c5ce4ab1a787c90a42a08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall9-update2.0-3 tiles tall.png using Guid(c047292d128c5ce4ab1a787c90a42a08) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '2e2809dbefcab0eea36d8975b50d18f9') in 0.0710302 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=64db3c75948851278ed953e7177f02ed DependenciesID=0c11524214887cf1f6ee30bd83aa702c StaticDependenciesID=19942c5640099019d0e14e4415a57581 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 19
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.653287 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/flooded grass-full tiles variations.png
-  importAddress: Guid(b6b7a10d24bc6e34184a5b8004d64faf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/flooded grass-full tiles variations.png using Guid(b6b7a10d24bc6e34184a5b8004d64faf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b9ee138b62d9e7cfb7a2b7b84246e10d') in 0.0226251 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1edb6ff854fcbab9c7551dea8b15dee4 DependenciesID=69c38b125fcfd1f1296c994084a503a8 StaticDependenciesID=f8984c31fc512dfb4c03ffd481ae4c17 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass-dark to extra dark.png
-  importAddress: Guid(06a8744d592125a49bd062bc751d2dae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass-dark to extra dark.png using Guid(06a8744d592125a49bd062bc751d2dae) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '50b385f0e8447afc0b3cd6592158df8d') in 0.0199251 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=34bee38f6c4ed940160b36ee294879ea DependenciesID=116fcc6819f601ceb75b5b1887b45ca4 StaticDependenciesID=cfb497a7d467943aa38df9052d30e53d 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-2-premade corners.png
-  importAddress: Guid(908dca27f3bb26e478f4f9936d920918) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-2-premade corners.png using Guid(908dca27f3bb26e478f4f9936d920918) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a20c7927bc57459fd58e9e866c17103b') in 0.0462823 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=753edd36a31434fc9c698f9e0812766f DependenciesID=baf59116739c09fec7372a16a563d582 StaticDependenciesID=965616a984e0406e962d3bc5768aa920 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/plat-1T-blood flooded ground-stairs1.png
-  importAddress: Guid(eb5ddfa387c3b614ebbb235ac45f9a8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/plat-1T-blood flooded ground-stairs1.png using Guid(eb5ddfa387c3b614ebbb235ac45f9a8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '160278b030c692a793ae87dedd563bed') in 0.0253532 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d98996a8d469a18da9887d6b39b223f9 DependenciesID=0fb65bf809d97a03955babb775c57835 StaticDependenciesID=08a0e48437bd9a5c5bc7d09fbc12d618 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000052 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/Tileset-Terrain.png
-  importAddress: Guid(209199055aebab149823687ad9aecf76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/Tileset-Terrain.png using Guid(209199055aebab149823687ad9aecf76) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '502dd5defe6fae7782cd58b7fb147ea2') in 0.3780488 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=352e269ce0b56b0d8eb0aaff90e78686 DependenciesID=837fb877e296d4d99b51047f675dec6b StaticDependenciesID=c9f3ed2ccbb41d65dc7c6d214b78914c 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 198
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-3-premade corners.png
-  importAddress: Guid(cd6d737b56882be41835465beb627186) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-3-premade corners.png using Guid(cd6d737b56882be41835465beb627186) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '1ce34c4979eabbf161860142fef25f8a') in 0.045234 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=77cea0bf9a217294defdb8f5e16ff000 DependenciesID=d3107bd164ee09235177e75aea7bf923 StaticDependenciesID=e0b8d389d2125dcb06f09ec50da470d0 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-5-3-premade corners.png
-  importAddress: Guid(bfa64f5103a60ea419092bd35b93d5b7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-5-3-premade corners.png using Guid(bfa64f5103a60ea419092bd35b93d5b7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '18c184c75f2f16cbac52eb09bc3140a8') in 0.0283885 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2c5f6fb1906b8de1a92a47dfdbe18566 DependenciesID=bec429b4f2629dabf3c2f8035055c3f9 StaticDependenciesID=8a489dcde1452b114f67dbfc94640b56 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/Tileset-Terrain.png
-  importAddress: Guid(209199055aebab149823687ad9aecf76) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/Tileset-Terrain.png using Guid(209199055aebab149823687ad9aecf76) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '495385a20d13c7528aa398db10e9199b') in 0.1710436 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5de0e3823a5f7ae4ef3e5cf819718e07 DependenciesID=d3c3df20f305a2eafe118e182ba8baae StaticDependenciesID=5186ceb53ff130abd523f4492b703144 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 198
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/waterfall.png
-  importAddress: Guid(a4cca6d8ca3160546a26f4ec4e8e0531) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/waterfall.png using Guid(a4cca6d8ca3160546a26f4ec4e8e0531) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'be1b8023998806ed5387cb01fef80901') in 0.0192569 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d83978bba8cfcef075d677adc280f0d3 DependenciesID=27750a3a1f9801b5eb4d809604ee0eab StaticDependenciesID=17267f675006ba9dccf1e42a6a6772c5 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass1 to water.png
-  importAddress: Guid(f96a7ca37fb12384d98306e330c7136d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass1 to water.png using Guid(f96a7ca37fb12384d98306e330c7136d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '5a2b20fe6c430166adfe5b40b4bb6151') in 0.0258841 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=19f13fb5cd1c711157c66d63856af8ca DependenciesID=bcdbcaa6440fad7123f274a9e994bea2 StaticDependenciesID=0ffad970e0f92049375c61780fe2371d 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass-extra dark to dark.png
-  importAddress: Guid(c2d5b64103b4a944d8cb44ef31252463) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass-extra dark to dark.png using Guid(c2d5b64103b4a944d8cb44ef31252463) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'e957f4fa997a793b0a8fe76d6ea54eee') in 0.0175182 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cbce46e374b2bafe88e62a7084db0b09 DependenciesID=1fdd8d7b9cfb8add044213057b330163 StaticDependenciesID=144e6e3fb15447f97dbc81241fe366ee 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass-dark-transp.png
-  importAddress: Guid(e5f1c8409b567aa4c803373ff589632e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass-dark-transp.png using Guid(e5f1c8409b567aa4c803373ff589632e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '99a1e2dcea22fb9a0a3424d9bf01a6cc') in 0.0292281 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=32b0e3e8cf8fdd1768bacef082f8e3ca DependenciesID=338b9e2f56827cecc83d9780a4fd7c9f StaticDependenciesID=cf7ef5af95a5abe541579f37d4985008 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 17
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/little fountain2 by the wall-Blood.png
-  importAddress: Guid(758fd97d8e38d5f40b4fbb49f161a890) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/little fountain2 by the wall-Blood.png using Guid(758fd97d8e38d5f40b4fbb49f161a890) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b1577fdd2346454d50e82ca82ca578c8') in 0.0220849 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c588af962027c5df3b3b56c54d5a67aa DependenciesID=ce9c59f45ba927c54768aadefa5cf9e4 StaticDependenciesID=754398644b0da02bda29681853ff5409 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/Tileset-Terrain2.png
-  importAddress: Guid(b2678ef80af67eb45b28b00ae4b2e663) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/Tileset-Terrain2.png using Guid(b2678ef80af67eb45b28b00ae4b2e663) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '5c26000d14e3b06e459ca511523f83b1') in 0.1723014 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a18202cf53f3b1873032f60ae37b6e07 DependenciesID=0a79281cd4602ea446cc6c8b66c24a9d StaticDependenciesID=abe1958da39b601ea326cfa868d73030 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 217
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/Tileset-Animated Terrains-8 frames.png
-  importAddress: Guid(364c900ff1d495e4a852b91b60c649f6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/Tileset-Animated Terrains-8 frames.png using Guid(364c900ff1d495e4a852b91b60c649f6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '6d70e1be814a9fd05a69d2ad59600034') in 0.0322687 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d7164d6f0b58ab2ee3e78f1604c29d4b DependenciesID=dc7e57ee8eebdbefa0f5a30310bc3860 StaticDependenciesID=5f4d53c302a292711ca9eee1fa5c5a40 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass-extra dark-transp.png
-  importAddress: Guid(c48797472a27f044381cf9e170f4e80c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass-extra dark-transp.png using Guid(c48797472a27f044381cf9e170f4e80c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '2e887e3578de321d4339e995adbcd7d6') in 0.0441847 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=387285afcd5983aaec61fea44f770fc7 DependenciesID=1f2d44a3291605be4c81448b65a988d7 StaticDependenciesID=35244a7540720a4e78d41a0e0fd2a44d 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 17
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/Tileset-Animated Terrains-16 frames.png
-  importAddress: Guid(e1fb1799196f35941865109d45a73a52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/Tileset-Animated Terrains-16 frames.png using Guid(e1fb1799196f35941865109d45a73a52) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '966cc9450161aabef54b8d3210392e90') in 0.6595295 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=de022764caa94691569b2090cb11473c DependenciesID=76218d93c4dc5f9b734ec7c4123e0ad8 StaticDependenciesID=14e960a93de1a5e6e69e4a14c6fd68ef 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 374
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass-extra dark to dark.png
-  importAddress: Guid(c2d5b64103b4a944d8cb44ef31252463) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass-extra dark to dark.png using Guid(c2d5b64103b4a944d8cb44ef31252463) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '5e171e4a22f9b2f00a4a86f6d2d0560a') in 0.022263 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8877d82582e96e1566e1cf7246e140ff DependenciesID=75bd7e220d649735d99aca06d6b2aa04 StaticDependenciesID=bd7e3e2e5816dd33d2c3add28810cb96 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/stone ground-transp.png
-  importAddress: Guid(d3004a198e13b4745a4cebd10d5c93d3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/stone ground-transp.png using Guid(d3004a198e13b4745a4cebd10d5c93d3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '54b181dc12d64649d8aa6381ac8315b6') in 0.0402785 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7e53f858441a7b23c03dada586c39c10 DependenciesID=99e43b863636344daadfef02517ee2ee StaticDependenciesID=1e94a99ef3698d9b7706005d97f5f97e 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 23
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-4-premade corners.png
-  importAddress: Guid(b81be0a2b992cf3409d8082b2068ed87) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-4-premade corners.png using Guid(b81be0a2b992cf3409d8082b2068ed87) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '9163730672eca6e834288b368f64979f') in 0.0316171 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ce61973cc982460c73fb47ef6cdc7c6b DependenciesID=56a7907dc49ca3e3cf55ba82f7a8fe3b StaticDependenciesID=d07ff8122c08715a0246a74a2e692d62 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000064 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/little fountain2 by the wall-Water.png
-  importAddress: Guid(a32ff41b88993d04b82c676b6a8804bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/little fountain2 by the wall-Water.png using Guid(a32ff41b88993d04b82c676b6a8804bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '3920021d80e2d29343098c65913c0610') in 0.0114673 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=02c00bb7f276a8e6f056a8135f703f99 DependenciesID=8d871c87e6f066b2292682adfd353ea6 StaticDependenciesID=07f9ce118493af192708e9b0774cf563 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass-light to mid tone.png
-  importAddress: Guid(4bc2bde44e6b8f4439e6176786f7ee06) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/grass-light to mid tone.png using Guid(4bc2bde44e6b8f4439e6176786f7ee06) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd27f24307508431e80ec4bed83bb29d0') in 0.0218904 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3a9212fa599bbe7a3f6b5a32e2bd2649 DependenciesID=6997b54f7dcf86e4df930e548605bcdc StaticDependenciesID=7a063ec54c6067338211de162b622679 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/little fountain2 by the wall-Blood.png
-  importAddress: Guid(758fd97d8e38d5f40b4fbb49f161a890) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/little fountain2 by the wall-Blood.png using Guid(758fd97d8e38d5f40b4fbb49f161a890) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '29379540c16c1a3150b6c337aea5f5ff') in 0.0099534 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8c7e948213350f9daf23d31747598f9e DependenciesID=c0cfc8b76004ced1422747928ea5fca1 StaticDependenciesID=b70ead8ca0934cd86fbaee58279c7172 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-3 - 3 tiles tall.png
-  importAddress: Guid(2f21ac9583248644387a5f76ea079f22) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-3 - 3 tiles tall.png using Guid(2f21ac9583248644387a5f76ea079f22) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '0e267e3d0274eaed309f4afb4a81f738') in 0.0296844 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7fd8c50cd56929fb6d126e4586c28be9 DependenciesID=0547f20faa57823edc814a81f8b18b5c StaticDependenciesID=86b31d842b38880ecc3c2bf6ff5d2ff9 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/little fountain1 by the wall-Blood.png
-  importAddress: Guid(60922d5476b029a4ba2958af18fc8da5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/little fountain1 by the wall-Blood.png using Guid(60922d5476b029a4ba2958af18fc8da5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'e1e2f421f86c55edf120adbff18de63f') in 0.0117234 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=112dc924260151ba907dfd6bc2bfbbb5 DependenciesID=9520400cbb2191598e275a5493ef1dae StaticDependenciesID=b193d8340c5eff5525bfe23593d13e24 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-5-premade corners.png
-  importAddress: Guid(f15839228446f6a41af990b370a56765) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/wall-5-premade corners.png using Guid(f15839228446f6a41af990b370a56765) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '30deaf53d450523e1401751f656f1c32') in 0.0403447 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=72d3208f96c95bda6df3c9e5864d3cd7 DependenciesID=c22c6522ad0e1b8693a7b452934c4944 StaticDependenciesID=751cea947e23a3ba490149e8ac50a4a3 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000056 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/water to grass1.png
-  importAddress: Guid(27af42240958d084298ead0fefe4b0f6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Tilesets/water to grass1.png using Guid(27af42240958d084298ead0fefe4b0f6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a2f5166c3aa1bc79d66e82c3db2d0d93') in 0.0153673 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=834d1a0920e073a20c16d0710fffe727 DependenciesID=ec8968bf7f3e7a14b17b90e65d032dc6 StaticDependenciesID=e94ad56d5457fc870f0bb1e39fb8c91a 
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_29.asset
+  importAddress: Guid(4f66c5b6f54d1f14fa371ff00a918e75) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_29.asset using Guid(4f66c5b6f54d1f14fa371ff00a918e75) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '1006d6516dee471211bdb007de4d133a') in 0.0272432 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a94451e92d9a8f5af38e4a0e163ac62e DependenciesID=22c8343e039132547d7a85922cbb49d4 StaticDependenciesID=98c733f9e7a5f1102350c699fef2ea03 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout

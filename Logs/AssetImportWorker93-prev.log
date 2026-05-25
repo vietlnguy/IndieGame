@@ -1,0 +1,641 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.4/staging' branch; Version is '6000.4.6f1 (0b051c2e5d54) revision 722204'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) Core' Language: 'en' Physical Memory: 16328 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C" at "2026-05-25T15:52:29.056814Z"
+System  architecture: x64
+Process architecture: x64
+Date: 2026-05-25T15:52:29Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.4.6f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker93
+-projectPath
+C:/Users/viet_/projects/IndieGame
+-logFile
+Logs/AssetImportWorker93.log
+-srvPort
+49337
+-licensingIpc
+LicenseClient-YJ9lqjR03NSlFhmCLJW0C
+-force-d3d12
+-job-worker-count
+7
+-background-job-worker-count
+8
+-gc-helper-count
+1
+-name
+AssetImport
+Successfully changed project path to: C:/Users/viet_/projects/IndieGame
+C:/Users/viet_/projects/IndieGame
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+Player connection [8248]  Target information:
+
+Player connection [8248]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 3255265339 [EditorId] 3255265339 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [8248] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [8248] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 7
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.18.1'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C"
+[Licensing::IpcConnector] LicenseClient-YJ9lqjR03NSlFhmCLJW0C channel disconnected successfully.
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6" at "2026-05-25T15:52:30.3469296Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 26580, path: "C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.1+9fbee8e
+  Session Id:              6e262b506db54f82bf240f8d91826ebf
+  Correlation Id:          b4010a6d77bef2cb518ef9ab1e8a3dbc
+  External correlation Id: 1496870199836741651
+  Machine Id:              VXbwn5JDHcloYK9lppscF5+D9fo=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-viet_-6000.4.6" (connect: 0.00s, validation: 0.03s, handshake: 0.02s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6-notifications" at "2026-05-25T15:52:30.4044529Z"
+[Licensing::Module] Licensing Background thread has ended after 1.35s
+Refreshing native plugins compatible for Editor in 815.78 ms, found 5 plugins.
+Initialize engine version: 6000.4.6f1 (0b051c2e5d54)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/viet_/projects/IndieGame/Assets
+Forcing GfxDevice: Direct3D 12
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+d3d12: failed to query info queue interface (0x80004002).
+Direct3D:
+    Version:         Direct3D 12 [level 12.2]
+    Renderer:        NVIDIA GeForce RTX 5060 (ID=0x2d05)
+    Vendor:          NVIDIA
+    VRAM:            7896 MB
+    App VRAM Budget: 7128 MB
+    Driver:          32.0.15.9186
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56220
+CodeReloadManager initialized
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.315012 seconds.
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.553 seconds
+Domain Reload Profiling: 1666ms
+	BeginReloadAssembly (184ms)
+		CreateAndSetChildDomain (4ms)
+	RebuildCommonClasses (59ms)
+	RebuildNativeTypeToScriptingClass (14ms)
+	initialDomainReloadingComplete (409ms)
+	LoadAllAssembliesAndSetupDomain (444ms)
+		LoadAssemblies (176ms)
+		AnalyzeDomain (433ms)
+			TypeCache.Refresh (430ms)
+				TypeCache.ScanAssembly (408ms)
+	FinalizeReload (555ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (50ms)
+			BeforeProcessingInitializeOnLoad (104ms)
+			ProcessInitializeOnLoadAttributes (165ms)
+			ProcessInitializeOnLoadMethodAttributes (128ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 2475357296229-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
+Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Animation.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Animation.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Aseprite.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Aseprite.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Common.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Common.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.PixelPerfect.Editor.Tests.dll at Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Psdimporter.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Psdimporter.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.SpriteShape.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.SpriteShape.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.BurstCompatibilityGen.dll at Library/ScriptAssemblies/Unity.Collections.BurstCompatibilityGen.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.DocCodeSamples.dll at Library/ScriptAssemblies/Unity.Collections.DocCodeSamples.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.PerformanceTests.dll at Library/ScriptAssemblies/Unity.Collections.PerformanceTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.Tests.dll at Library/ScriptAssemblies/Unity.Collections.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.Tests.Playmode.dll at Library/ScriptAssemblies/Unity.Collections.Tests.Playmode.dll not valid. Loading of assembly skipped.
+Assembly Unity.InputSystem.IntegrationTests.dll at Library/ScriptAssemblies/Unity.InputSystem.IntegrationTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Mathematics.Tests.dll at Library/ScriptAssemblies/Unity.Mathematics.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Nuget.Mono-Cecil.dll at Library/ScriptAssemblies/Unity.Nuget.Mono-Cecil.dll not valid. Loading of assembly skipped.
+Assembly Unity.PathTracing.Editor.Tests.dll at Library/ScriptAssemblies/Unity.PathTracing.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.PathTracing.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.PathTracing.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Core.Editor.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Core.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Universal.Config.Editor.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Config.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Universal.Editor.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Universal.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Searcher.EditorTests.dll at Library/ScriptAssemblies/Unity.Searcher.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.ShaderGraph.Editor.Tests.dll at Library/ScriptAssemblies/Unity.ShaderGraph.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.UnifiedRayTracing.Editor.Tests.dll at Library/ScriptAssemblies/Unity.UnifiedRayTracing.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+Refreshing native plugins compatible for Editor in 6.78 ms, found 5 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Refreshing native plugins compatible for Editor in 2.49 ms, found 5 plugins.
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  4.119 seconds
+Domain Reload Profiling: 15230ms
+	BeginReloadAssembly (233ms)
+		DisableScriptedObjects (8ms)
+		CreateAndSetChildDomain (40ms)
+	RebuildCommonClasses (52ms)
+	RebuildNativeTypeToScriptingClass (16ms)
+	initialDomainReloadingComplete (8483ms)
+	LoadAllAssembliesAndSetupDomain (2325ms)
+		LoadAssemblies (2060ms)
+		AnalyzeDomain (386ms)
+			TypeCache.Refresh (258ms)
+				TypeCache.ScanAssembly (238ms)
+			BuildScriptInfoCaches (109ms)
+			ResolveRequiredComponents (16ms)
+	FinalizeReload (4120ms)
+		SetupLoadedEditorAssemblies (0ms)
+			BeforeProcessingInitializeOnLoad (204ms)
+			ProcessInitializeOnLoadAttributes (3471ms)
+			ProcessInitializeOnLoadMethodAttributes (195ms)
+			AfterProcessingInitializeOnLoad (9ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 2.19 ms, found 5 plugins.
+Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7408 unused Assets / (6.1 MB). Loaded Objects now: 8249.
+Memory consumption went from 241.2 MB to 235.0 MB.
+Total: 13.011900 ms (FindLiveObjects: 1.571900 ms CreateObjectMapping: 0.754700 ms MarkObjects: 6.274200 ms  DeleteObjects: 4.408600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 837763.535278 seconds.
+  path: Assets/Scenes/Chapter 4.unity
+  importAddress: Guid(ed1079dd187e48d48bd260ab927fa77a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Chapter 4.unity using Guid(ed1079dd187e48d48bd260ab927fa77a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'cbcef9305a2ef8c9ccadd5dd60fe3afa') in 0.0298892 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=65be1171e87100f40b8388c8bcdad76e DependenciesID=a93ea813c3c5f15748009afbf224c571 StaticDependenciesID=13812a5d250093699efd29c37c316ed7 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.651273 seconds.
+  path: Assets/Scenes/Chapter4.unity
+  importAddress: Guid(60e8d7cc4cafadc4aacd2c1145e9eb05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Chapter4.unity using Guid(60e8d7cc4cafadc4aacd2c1145e9eb05) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd2fd918fc7d6746da7c65f53a8c4181e') in 0.0011792 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=31d428ac14850b279a12ecc6eeb19f65 DependenciesID=6639bb9b4640a5b86b5995c2751e8701 StaticDependenciesID=8fae15a07cc36deed90a1ea141697c8c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.707695 seconds.
+  path: Assets/Scenes/Chapter 4.unity
+  importAddress: Guid(ed1079dd187e48d48bd260ab927fa77a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scenes/Chapter 4.unity using Guid(ed1079dd187e48d48bd260ab927fa77a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '9a7fe3841f5f5017f8d1c7f482143d0d') in 0.111283 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=afbaf43e69c8b5aca78c2b70118b7f25 DependenciesID=04216e7b1f5b4e97a9fd682be8f902af StaticDependenciesID=98f07b2eec9e0f572bdfeea59de82830 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.511020 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles
+  importAddress: Guid(f60324eb3bb38ab4985045eca7de69f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles using Guid(f60324eb3bb38ab4985045eca7de69f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '1defb9fe8de6b22ce1bdecf082816b9e') in 0.000778 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2d59c4b38f06c5257343986f223a9c5a DependenciesID=eab70df4064e8a5bc2acecf7e72eb3fc StaticDependenciesID=2094d474f37e8285f05c210db7eb481e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.196431 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_0.asset
+  importAddress: Guid(2e91cdb1e63a8ae4499445f75275df5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_0.asset using Guid(2e91cdb1e63a8ae4499445f75275df5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9cb24de4b1de62106e0aedf5325bbc69') in 0.2021753 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d973e595342748f36d0587c3f2960b15 DependenciesID=dcccfdfe5b2b409ba5d41b74b742e566 StaticDependenciesID=833272e1fe6dc3bf4cfa735871b4892a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_8.asset
+  importAddress: Guid(c7765da2fa78d4d43b647dcc7a4fdc03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_8.asset using Guid(c7765da2fa78d4d43b647dcc7a4fdc03) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'dee710b740eeda2bb5186c5b59c30db5') in 0.0221609 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a312f4c6bdb59a8ed85e36ff7a6f7b0d DependenciesID=be40c461b63f773f96a55a2c5e7d50c8 StaticDependenciesID=a47fd6af2d2c5c46ae8a833491c27883 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_13.asset
+  importAddress: Guid(00b61af0c52b1e2478efb9e49b4ff49f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_13.asset using Guid(00b61af0c52b1e2478efb9e49b4ff49f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '6356cafb8d8530505dd8c501058f9fa0') in 0.0168886 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=41f3f024d59377965ee879ae05872659 DependenciesID=18845981db28191871cbe4c6e7e78568 StaticDependenciesID=4d0802142d6e2fa3b211a5f220c2c0f8 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_27.asset
+  importAddress: Guid(46ce64ea5c0283540a1b77dc23fc42d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_27.asset using Guid(46ce64ea5c0283540a1b77dc23fc42d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '093b0081ed7b10d35f0f28fd4bd1fe4a') in 0.0147684 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c880342f83e020b0deb99d52f5dc2ad0 DependenciesID=8b7c4048a79259502d88657f70f32656 StaticDependenciesID=f31924bc07cbd9376ee5bd532fbb6910 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_33.asset
+  importAddress: Guid(3c206704fd651724a949da1090d3fbde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_33.asset using Guid(3c206704fd651724a949da1090d3fbde) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '504a972ebc26046fc621761621e5efc8') in 0.0149489 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7e3056270e0f150a68dbe1337ef37b54 DependenciesID=ecd02c79cdf4c4d45d0ea732731a74f4 StaticDependenciesID=6c44c0609c80b21e74fe172756779d71 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_42.asset
+  importAddress: Guid(dd16d1f3fac0af247b2a3a4383af7b9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_42.asset using Guid(dd16d1f3fac0af247b2a3a4383af7b9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'eb8fc3124d47e277b0480c8a24a8ba50') in 0.0155827 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=22e6b750b15ddea31027a6d446e443be DependenciesID=b007f2eab6ceb4015b42899b59201727 StaticDependenciesID=4f9d106a563a92227d92efc94dddd58e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_41.asset
+  importAddress: Guid(af55519d07ba94c4295faf98b5db06b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_41.asset using Guid(af55519d07ba94c4295faf98b5db06b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '4158cc1d2ece4e0f60829001a60c8374') in 0.0206893 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=76628fc274fa0558a4ad8d83903d76e4 DependenciesID=6c2e78e5690f6ef0bdfc4e2cdcec0974 StaticDependenciesID=2717cf99a03ad4883327c5300bb4087f 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_31.asset
+  importAddress: Guid(2ff7bc2b580c03744881d8562083ab91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_31.asset using Guid(2ff7bc2b580c03744881d8562083ab91) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd2421cc843cdb43a8f732424e5f03f4d') in 0.0148206 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=dcb5c69c01059c5100fafc78f94ce95d DependenciesID=0433138da282a57512063ec0c4ef27c4 StaticDependenciesID=f34809521e1b117fc08994f4a3b46db1 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_19.asset
+  importAddress: Guid(41d8651f32670b042be165e931d1cdf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_19.asset using Guid(41d8651f32670b042be165e931d1cdf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'e84d12abf9b37e046f2e55beddd612bb') in 0.0152434 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e85e1bd5254f6f12293a77594f0108b0 DependenciesID=bb4cc9ea6003450f9eeb657260ae0c17 StaticDependenciesID=dde1bf8b56dfa66ff7edd68b392e5d00 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_3.asset
+  importAddress: Guid(69500baf59111ae4cbd1066359152a56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_3.asset using Guid(69500baf59111ae4cbd1066359152a56) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'e1fcde82e47dba448f0936e317328740') in 0.0181489 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1064b782157ddfe0aa8042758ac66ae2 DependenciesID=d3b5f764c7e061bc906d45fdf4ea849e StaticDependenciesID=4a24d326a75f33e4301e984c80c580df 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_4.asset
+  importAddress: Guid(953e47590c97fa74bab631330a6df88d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_4.asset using Guid(953e47590c97fa74bab631330a6df88d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '69ec8146214f04b63613d32d64c436b0') in 0.0172778 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=868de869e317c7263111973478123e92 DependenciesID=db8a1baecc003e24bf828fd13c12d794 StaticDependenciesID=f90d1e498ed0e8d9249ebac277c807e4 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_43.asset
+  importAddress: Guid(9010c90fcf6c60943a95193528d013a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_43.asset using Guid(9010c90fcf6c60943a95193528d013a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0e9b479f17ecfc84b1f447f0f32716e8') in 0.0165409 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=64f7b8bb6036a64c47692b3c872b68f0 DependenciesID=93c65c1e6bde8601ebce1884e784ddbb StaticDependenciesID=523a834c96fb4cb85c445ebfabedaf10 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_40.asset
+  importAddress: Guid(09e7efdcb5487dd4591d721fd33c64b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_40.asset using Guid(09e7efdcb5487dd4591d721fd33c64b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9b92c1a717249d86d3ac756c7f0fd2a3') in 0.0180983 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d466ff63e10b2406adc49981a7510708 DependenciesID=0ca1293c4c6a4da9e5326dfa20f6d830 StaticDependenciesID=8b38be6aacd06ac090e6c8bb963386c3 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_24.asset
+  importAddress: Guid(b3d5bbb69116cab40b768d97c3f1c473) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_24.asset using Guid(b3d5bbb69116cab40b768d97c3f1c473) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a8824dd97c8f80fe378609df0e8a523b') in 0.0233107 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0681b6fd00babf74c012c046d9846316 DependenciesID=6c149b221f2717c3d85e6ff7ba515e69 StaticDependenciesID=e1075b51eab498145877e371f286ca67 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_36.asset
+  importAddress: Guid(582f87633db7b474bb2e6fd1a264d427) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_36.asset using Guid(582f87633db7b474bb2e6fd1a264d427) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c3e6c5308f093a6c9f63e47e697a0852') in 0.0101619 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=239dae7c77d757cd69c3a0275ec2360d DependenciesID=26c9e1c00d20a16cf0e903dcf215573f StaticDependenciesID=f28f56b2596b683a06e52596cf9834c2 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_10.asset
+  importAddress: Guid(8b0c35f27c25adb409097d0dc432cd40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_10.asset using Guid(8b0c35f27c25adb409097d0dc432cd40) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'adcad4aef5ffa8e808a59ea75b657b31') in 0.0281462 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9c84cb6bf47feda792f89824c9a4c7d3 DependenciesID=bbe29baea5c8b0661e71bbfb55fe6f84 StaticDependenciesID=50cf867a53f05ade53f815a7871a0dfe 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_32.asset
+  importAddress: Guid(f4e9d9c3b7a72984cb42f0d680b6c2a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_32.asset using Guid(f4e9d9c3b7a72984cb42f0d680b6c2a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ccdb4237d43f29986d58bfa82950f606') in 0.0289761 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=dfc94950c6520e53c87bb9cc87d23c41 DependenciesID=0e27a7cf93ec96ae3f1a46baf340faf3 StaticDependenciesID=94bf882421281bacd94df0a789a8a277 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_22.asset
+  importAddress: Guid(67f0368fc40a0434e9a35ec3d5b5bb27) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_22.asset using Guid(67f0368fc40a0434e9a35ec3d5b5bb27) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0c38321ae7f8fb2d5c9fd756c5adf819') in 0.0192784 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e9e1ee2057eb44e0b7f9ef0f354adc56 DependenciesID=0f44f072e50cded22856fc15b042768e StaticDependenciesID=513a64ca5f3d323aa03870409ddebe4c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_21.asset
+  importAddress: Guid(e91edff98c97f8c48bc98bc3dd9d9cbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_21.asset using Guid(e91edff98c97f8c48bc98bc3dd9d9cbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '095040f0369aba319b9cd4b0a22f1619') in 0.0085748 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=351897df37e031bf6cbcb283a18c2eb4 DependenciesID=9b788c55b741520d735269806df45d4d StaticDependenciesID=1b782f6307527c010b72095a2136df66 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_5.asset
+  importAddress: Guid(4b4cafe6519b24c44840fd36cff2af89) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_5.asset using Guid(4b4cafe6519b24c44840fd36cff2af89) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'cae37b2f101d20904005b985822f0300') in 0.018309 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=66f20fc8405c937c84aa488ac1741a65 DependenciesID=60a4d08431907575ee2b1db2585fc732 StaticDependenciesID=5670795b52186e99beb4141ff7b7776a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_25.asset
+  importAddress: Guid(11295b206cc43fd40815ac7f30de5e82) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_25.asset using Guid(11295b206cc43fd40815ac7f30de5e82) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '8ba762c64324f74d99ef7878101e2889') in 0.0160237 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b46b80ed7b4f7e7af9599b0d1c43aeb3 DependenciesID=4da94a58de70197e25fee595404ca5cd StaticDependenciesID=56002ff3bb7f941838a7ffc3485079ea 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_18.asset
+  importAddress: Guid(967e548cbd86e4744ab93dd470e73a78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_18.asset using Guid(967e548cbd86e4744ab93dd470e73a78) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '44542b0dafc781dc77d6e9e9d3989b65') in 0.0147704 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3c7407fe9ef2d4fec813e75d62b7f29d DependenciesID=48445c1489db2f9a6d13ce42277eb6c2 StaticDependenciesID=9a45a786055a96358a95a7bdd6d84c75 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.221063 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_44.asset
+  importAddress: Guid(7d67d54afe6a361479e666a49590fcf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_44.asset using Guid(7d67d54afe6a361479e666a49590fcf9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '8b468cebc1e1115a4113566aebec9b49') in 0.0209514 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5a310999620678351ff7adb1f545be7c DependenciesID=47bb4fe7c1e7214a5d0c984e16c00db5 StaticDependenciesID=82cd79a7165a598a635196a62f51dabc 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_46.asset
+  importAddress: Guid(28f39bc4aec473544a317e062d3aa6f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_46.asset using Guid(28f39bc4aec473544a317e062d3aa6f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '6e894cffba2f44b0364f841fad5ce5cd') in 0.0186437 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c3a883d507a9102be5472287f06b4c71 DependenciesID=8d7b676910fa762074a706e3da521174 StaticDependenciesID=e4bdf6a80533a02f61082f4e7f6f94a4 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_50.asset
+  importAddress: Guid(e8331257319bc844391dc06768b638f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_50.asset using Guid(e8331257319bc844391dc06768b638f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '7093c263ad72b70d5a68d0acb076324e') in 0.0135298 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ac5cb84f5566f59d1519da36151039d6 DependenciesID=1a4e1b5374d81580558bcecc36d2b654 StaticDependenciesID=caff2ad642b8375359c0ac8809579263 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_57.asset
+  importAddress: Guid(79a8bef2190326f42956748fb129b1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_57.asset using Guid(79a8bef2190326f42956748fb129b1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '518b9483673ee41a03692daa8458d4f4') in 0.0149362 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9cbd5d1584085a4ea97ec3cf356cd4a0 DependenciesID=191434f0a0f98022b58a2f99c255d9c7 StaticDependenciesID=dae8885b1e981e41f955ee82a4dd309f 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_63.asset
+  importAddress: Guid(45488b21eadfc0c4bb5c6c389192cdb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_63.asset using Guid(45488b21eadfc0c4bb5c6c389192cdb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '94366ef4cb5609cff4de697c3f7b05d2') in 0.0153702 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b39a723e0191c158eb1cb2d113f14a5a DependenciesID=60e4c9969aea77c40496fbea2be6c363 StaticDependenciesID=7173dc30ee4c50582f8530dbcbfd63c6 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_72.asset
+  importAddress: Guid(c01eda5d3ab1eba4bb8148ce46718699) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_72.asset using Guid(c01eda5d3ab1eba4bb8148ce46718699) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '7c30731c1521e33ee593f2166c94fe8c') in 0.0165055 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=523bfc32d6187d34f264c76da907b1f9 DependenciesID=27cc7ddec579895f3036a657963ced91 StaticDependenciesID=6c9f5d3e3eba297b4a7817084429ae9f 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_76.asset
+  importAddress: Guid(824d7bd6308145445a109901c763c62a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_76.asset using Guid(824d7bd6308145445a109901c763c62a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c2eee9a227ca04cf1e48a4e6ad1afaf6') in 0.0161794 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3afc4ce0ae30b262c978358368f0594d DependenciesID=c2d17ce366160eea4a4ef5137b98d189 StaticDependenciesID=37d30821c8cba1b5790c73b776d31d2b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_83.asset
+  importAddress: Guid(035e43372b9df824cae74467b67e768c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_83.asset using Guid(035e43372b9df824cae74467b67e768c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'bedb3ab56db7ce8492567afc30de3561') in 0.0165548 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8e2c0ae68bcf7e2777a38072a9a1d49a DependenciesID=3676c504500c990a799dc5c97f97c634 StaticDependenciesID=77c199bcc4cf8ed2b8377f943227a419 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_68.asset
+  importAddress: Guid(fe093c5f7b3a6394c9f27e03975dd5bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_68.asset using Guid(fe093c5f7b3a6394c9f27e03975dd5bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '321cf992567b4d22e3695a6c3c58319d') in 0.0172173 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b1527b128b24b7668645ccaf73b7f51c DependenciesID=c7ba5aff09a86e9df11863f3a768a4fe StaticDependenciesID=3517a58a50d1cf613af82ffe490250ac 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_84.asset
+  importAddress: Guid(6b207171a20bf1c41a4a53457e09fdfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_84.asset using Guid(6b207171a20bf1c41a4a53457e09fdfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '003713595f3cc86382b872985adebcb2') in 0.0176016 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0808858e456e6b8c59e7cab8be3aebe2 DependenciesID=e8fd66b924b88cfd2a128d647b60b126 StaticDependenciesID=2baeff6d674150db806252cf1c47dc65 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_53.asset
+  importAddress: Guid(a415522bd2cdaa343ad4f5ffb40b42e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_53.asset using Guid(a415522bd2cdaa343ad4f5ffb40b42e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'bcb15cf4815cdfe58be480db9ccddb12') in 0.0152616 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b39121f5ba4bd9eae947209b2e8c9788 DependenciesID=72020e4b52ee9edce298e015680ae9b3 StaticDependenciesID=1a0ee62621c166e013db24c256092f85 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_60.asset
+  importAddress: Guid(9a26763d612504c49a90817d685c6aa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_60.asset using Guid(9a26763d612504c49a90817d685c6aa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b373341e12cdc66063687e25bb001fcb') in 0.0133369 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=686326be6a203e9213acd58949cc722a DependenciesID=78b4d988d4087e65ffd79234ac467da8 StaticDependenciesID=0bffe8d09116deda7c8e898ef447a44f 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_51.asset
+  importAddress: Guid(b794c512551680d43811f70150d707be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_51.asset using Guid(b794c512551680d43811f70150d707be) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'efd788f4c6165f796e7572a337bbdd9f') in 0.0104135 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f65120e13e6013ef46884cc66373161c DependenciesID=4badf0c8d01dd8cb1fa18c16703636e7 StaticDependenciesID=37e1f89664cabab52861dff3f80fa038 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_79.asset
+  importAddress: Guid(bd1ffabb42c579749bbac51d3a65f93c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_79.asset using Guid(bd1ffabb42c579749bbac51d3a65f93c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '1cb453f17dc763a440f254cc933029ee') in 0.0192124 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1d8fd6e03e505edb4de0e1897e57da4c DependenciesID=dcbbe482e5130fc194db7f9860c89625 StaticDependenciesID=822fe29cd60ae270328a1140aeb22b4d 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_62.asset
+  importAddress: Guid(62ffb7e8b3a2f524a9ae1ca2075314fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_62.asset using Guid(62ffb7e8b3a2f524a9ae1ca2075314fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd4a1a5a361f4aebc5e7757d4ba82a83f') in 0.0171895 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=25b78da5354aa5af36b8b69b64bbcf12 DependenciesID=b7294b87f05b98c21a200bc49fc9c1bf StaticDependenciesID=95d0b50a3ed083fd3015e60f82521227 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_58.asset
+  importAddress: Guid(5002c8503b9fd2b458ebfdaf86709e65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_58.asset using Guid(5002c8503b9fd2b458ebfdaf86709e65) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'dd37f223ad0ffc0a61219cbf55fdbaf6') in 0.0131858 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f08792f858a8e887b14aef8815dd3c16 DependenciesID=1f8a68c3919a02417a11dd88d1b373e8 StaticDependenciesID=92c84ed52d0cfe8e0f06ae396ad1bd39 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_81.asset
+  importAddress: Guid(a6af89432de00ef498255792965009ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_81.asset using Guid(a6af89432de00ef498255792965009ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a02f5d46d643928ca9ae4db7de4d7617') in 0.0192592 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ab64acdd4d2a550c968e72cf8fc497b1 DependenciesID=04bee0702d6d5e50e98631942618c351 StaticDependenciesID=209c91690b9fb014515d79b73da8ce8f 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_77.asset
+  importAddress: Guid(503a893a66100fa48af210ba98096c0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_77.asset using Guid(503a893a66100fa48af210ba98096c0b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9d0f50faa09799a7ca66b7848ae9046f') in 0.0110408 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c5cdbd1f40526de522e06955739c04d7 DependenciesID=e7bcf7f8396045eae3ee83157bb4486c StaticDependenciesID=45661979025e5ce0d3162b47f85eb1ab 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_86.asset
+  importAddress: Guid(628c8ce9315857b4bbceda7aa22148a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_86.asset using Guid(628c8ce9315857b4bbceda7aa22148a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9fe8c28f20281f15b2baf0c1efa83e93') in 0.0167564 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=12476c0322a10f1695050353209cedcd DependenciesID=cf3991dbe09f69f98f7f858599cf43ed StaticDependenciesID=b0b3f5aeefaa786a75993c90dbe613f7 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_47.asset
+  importAddress: Guid(b47fa22f25c2f9442af9d0ad55ee1689) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_47.asset using Guid(b47fa22f25c2f9442af9d0ad55ee1689) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a6193371a4096c70d276290484e707d4') in 0.0164811 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a99c112fab03fa9f3e4fc0d46c4b39c3 DependenciesID=5a54e3711f6315b7a34178a64cecabb0 StaticDependenciesID=1eecfd8cb4a2518b07e42a81bd0ca4b4 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_88.asset
+  importAddress: Guid(b5ae93204d85c3040ab9b31cedd62656) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_88.asset using Guid(b5ae93204d85c3040ab9b31cedd62656) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c7faaa908a9a42fd5e6d926cfe219573') in 0.0102593 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=068f9b11102ca47ddc6dd82629a77444 DependenciesID=15e7cd162850ffd7b636f476423bc55e StaticDependenciesID=dcce7672af288da1bf5e5b6b99a754df 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_71.asset
+  importAddress: Guid(3eefa05c3a035574f9d038e46fcebe34) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_71.asset using Guid(3eefa05c3a035574f9d038e46fcebe34) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0412f38260a87576d36963d3f65af3cd') in 0.0141014 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e872a3958483a913f9ae8ab7c3ff8d74 DependenciesID=fa76075d5f4f9f1961dcba0461046d93 StaticDependenciesID=3b475c4a85a956856a84cffcf6a15274 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_74.asset
+  importAddress: Guid(066c2ba3f08c7cd46a397e7fcfde6744) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/castle_interriors_74.asset using Guid(066c2ba3f08c7cd46a397e7fcfde6744) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '68dd05085fb0a0e6a3c5095731cd8881') in 0.0138828 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b4c9ea5f419290ec4ada807947ab7855 DependenciesID=f408178de637a748dff4b94d4d565c6a StaticDependenciesID=117326e0dcf28128998713f88a82d049 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.011678 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/Szadi_Desert.prefab
+  importAddress: Guid(b48f178dbf29e3a429356e8c61ee9a60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/Szadi_Desert.prefab using Guid(b48f178dbf29e3a429356e8c61ee9a60) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c76dfdd86f1e5776bdfa705dd0945cb3') in 28.8066383 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=63a6549b161861e6b833f3185dfc8257 DependenciesID=cfc5dedbd5d26866572b92ca9a61d610 StaticDependenciesID=10705fcce55b5041d6429d2a7059e8c7 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10904
+

@@ -1,0 +1,500 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.4/staging' branch; Version is '6000.4.6f1 (0b051c2e5d54) revision 722204'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C" at "2026-05-25T01:02:16.8597196Z"
+OS: 'Windows 11  (10.0.26200) Core' Language: 'en' Physical Memory: 16328 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-05-25T01:02:16Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.4.6f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker68
+-projectPath
+C:/Users/viet_/projects/IndieGame
+-logFile
+Logs/AssetImportWorker68.log
+-srvPort
+49337
+-licensingIpc
+LicenseClient-YJ9lqjR03NSlFhmCLJW0C
+-force-d3d12
+-job-worker-count
+7
+-background-job-worker-count
+8
+-gc-helper-count
+1
+-name
+AssetImport
+Successfully changed project path to: C:/Users/viet_/projects/IndieGame
+C:/Users/viet_/projects/IndieGame
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+Player connection [1996]  Target information:
+
+Player connection [1996]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 3370693784 [EditorId] 3370693784 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [1996] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [1996] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 7
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 6.53 ms, found 5 plugins.
+Initialize engine version: 6000.4.6f1 (0b051c2e5d54)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/viet_/projects/IndieGame/Assets
+Forcing GfxDevice: Direct3D 12
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+d3d12: failed to query info queue interface (0x80004002).
+Direct3D:
+    Version:         Direct3D 12 [level 12.2]
+    Renderer:        NVIDIA GeForce RTX 5060 (ID=0x2d05)
+    Vendor:          NVIDIA
+    VRAM:            7896 MB
+    App VRAM Budget: 7128 MB
+    Driver:          32.0.15.9186
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.18.1'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C"
+[Licensing::IpcConnector] LicenseClient-YJ9lqjR03NSlFhmCLJW0C channel disconnected successfully.
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6" at "2026-05-25T01:02:18.2682406Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 26580, path: "C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.1+9fbee8e
+  Session Id:              539b4315d38540b393014444eb732445
+  Correlation Id:          b4010a6d77bef2cb518ef9ab1e8a3dbc
+  External correlation Id: 7420828087127105319
+  Machine Id:              VXbwn5JDHcloYK9lppscF5+D9fo=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-viet_-6000.4.6" (connect: 0.00s, validation: 0.00s, handshake: 0.01s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6-notifications" at "2026-05-25T01:02:18.2786435Z"
+[Licensing::Module] Licensing Background thread has ended after 1.42s
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56876
+CodeReloadManager initialized
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002021 seconds.
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.491 seconds
+Domain Reload Profiling: 1007ms
+	BeginReloadAssembly (139ms)
+	RebuildCommonClasses (42ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (85ms)
+	LoadAllAssembliesAndSetupDomain (237ms)
+		LoadAssemblies (136ms)
+		AnalyzeDomain (226ms)
+			TypeCache.Refresh (224ms)
+				TypeCache.ScanAssembly (202ms)
+	FinalizeReload (492ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (47ms)
+			BeforeProcessingInitializeOnLoad (102ms)
+			ProcessInitializeOnLoadAttributes (126ms)
+			ProcessInitializeOnLoadMethodAttributes (116ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 2475357296229-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
+Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Animation.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Animation.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Aseprite.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Aseprite.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Common.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Common.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.PixelPerfect.Editor.Tests.dll at Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Psdimporter.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Psdimporter.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.SpriteShape.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.SpriteShape.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.BurstCompatibilityGen.dll at Library/ScriptAssemblies/Unity.Collections.BurstCompatibilityGen.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.DocCodeSamples.dll at Library/ScriptAssemblies/Unity.Collections.DocCodeSamples.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.PerformanceTests.dll at Library/ScriptAssemblies/Unity.Collections.PerformanceTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.Tests.dll at Library/ScriptAssemblies/Unity.Collections.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.Tests.Playmode.dll at Library/ScriptAssemblies/Unity.Collections.Tests.Playmode.dll not valid. Loading of assembly skipped.
+Assembly Unity.InputSystem.IntegrationTests.dll at Library/ScriptAssemblies/Unity.InputSystem.IntegrationTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Mathematics.Tests.dll at Library/ScriptAssemblies/Unity.Mathematics.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Nuget.Mono-Cecil.dll at Library/ScriptAssemblies/Unity.Nuget.Mono-Cecil.dll not valid. Loading of assembly skipped.
+Assembly Unity.PathTracing.Editor.Tests.dll at Library/ScriptAssemblies/Unity.PathTracing.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.PathTracing.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.PathTracing.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Core.Editor.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Core.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Universal.Config.Editor.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Config.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Universal.Editor.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Universal.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Searcher.EditorTests.dll at Library/ScriptAssemblies/Unity.Searcher.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.ShaderGraph.Editor.Tests.dll at Library/ScriptAssemblies/Unity.ShaderGraph.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.UnifiedRayTracing.Editor.Tests.dll at Library/ScriptAssemblies/Unity.UnifiedRayTracing.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+Refreshing native plugins compatible for Editor in 2.07 ms, found 5 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Refreshing native plugins compatible for Editor in 3.11 ms, found 5 plugins.
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  4.481 seconds
+Domain Reload Profiling: 5734ms
+	BeginReloadAssembly (244ms)
+		DisableScriptedObjects (8ms)
+		CreateAndSetChildDomain (46ms)
+	RebuildCommonClasses (43ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (176ms)
+	LoadAllAssembliesAndSetupDomain (777ms)
+		LoadAssemblies (572ms)
+		AnalyzeDomain (337ms)
+			TypeCache.Refresh (238ms)
+				TypeCache.ScanAssembly (218ms)
+			BuildScriptInfoCaches (83ms)
+			ResolveRequiredComponents (14ms)
+	FinalizeReload (4481ms)
+		SetupLoadedEditorAssemblies (0ms)
+			BeforeProcessingInitializeOnLoad (189ms)
+			ProcessInitializeOnLoadAttributes (3843ms)
+			ProcessInitializeOnLoadMethodAttributes (234ms)
+			AfterProcessingInitializeOnLoad (7ms)
+		AwakeInstancesAfterBackupRestoration (8ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
+Refreshing native plugins compatible for Editor in 4.37 ms, found 5 plugins.
+Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7408 unused Assets / (6.5 MB). Loaded Objects now: 8249.
+Memory consumption went from 200.3 MB to 193.8 MB.
+Total: 17.107200 ms (FindLiveObjects: 1.459800 ms CreateObjectMapping: 0.924900 ms MarkObjects: 8.808000 ms  DeleteObjects: 5.911900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 783895.873523 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Szadi_Harbor.prefab
+  importAddress: Guid(132ff4c56ecda5748bc7a46fb2e635f4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Szadi_Harbor.prefab using Guid(132ff4c56ecda5748bc7a46fb2e635f4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '3073f813c33d841dfdb43825d7781a4b') in 0.1550059 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cac467ea06857bf9836210ad041b9698 DependenciesID=215732f654e4476792437f5983c9d272 StaticDependenciesID=21a06f37060fa732749d8566894330b5 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 10.190976 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/_old_version
+  importAddress: Guid(d4f9c46984c73c14caf41f0e3f7804cd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/_old_version using Guid(d4f9c46984c73c14caf41f0e3f7804cd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'e42a9f2c63ee8b41eb3f7dab8ecd3110') in 0.0159407 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d39bc12b105e41c270049d01eb4fff50 DependenciesID=f3f6e711a5503e089e9699aa9089cd2c StaticDependenciesID=54ef80e467109131cec291f03f79e8f6 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated/tree2C_ss.png
+  importAddress: Guid(38b7423842f524a498293a713124d51e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated/tree2C_ss.png using Guid(38b7423842f524a498293a713124d51e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '6a79efa41a796d85a892058d6876c8a9') in 0.0805099 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c9566a47b6322bfd8273138b2297af44 DependenciesID=02f2d67dba085a128b4e91caa1194b76 StaticDependenciesID=3847a6a2c974c58b8e48937cc52e0651 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated/Water_tafle_3B.anim
+  importAddress: Guid(eab33f8d95f08444090c07984a20687f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated/Water_tafle_3B.anim using Guid(eab33f8d95f08444090c07984a20687f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '9632c806b57c5e5dfc3b14b98a2de617') in 0.0208378 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=09f6617fb535aac956f655fb6437f94c DependenciesID=d2ff5a5e81067b709f3db3c4182c3ecb StaticDependenciesID=fed831be30c29a78a4062b255bc6f64a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated/tree1A_ss.png
+  importAddress: Guid(8f88bf83447be794da268866aefe68b4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated/tree1A_ss.png using Guid(8f88bf83447be794da268866aefe68b4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '8b3b52c39359f4ce4fc4268aa32b4e82') in 0.036093 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=44678797cd57f53c34b17a979e1ea4fa DependenciesID=7862cf987405ae4769bbebdf7a7e4500 StaticDependenciesID=2200a82786500f791d352b94e0ff83da 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/decorative.png
+  importAddress: Guid(f813840ad462b9940b7edb4f80572005) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/decorative.png using Guid(f813840ad462b9940b7edb4f80572005) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '3be01faad6b1f90e4d2455baf907d613') in 0.0217681 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8fe4269dc9e1663bfd7515cb37a1644e DependenciesID=5fbd34f1a673893fee6daf5fe9e81ab3 StaticDependenciesID=7035daa1ec0f56a5af2a6b9fa7f2c593 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000065 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated/tree2A_ss.png
+  importAddress: Guid(5678ea30ea306ac41a18fc1f2fcf7b22) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated/tree2A_ss.png using Guid(5678ea30ea306ac41a18fc1f2fcf7b22) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'e07c82c251ddf7d1eaf9bf7f38759a7b') in 0.0382602 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9f3e6545ec7b470e1330d17bf415e44e DependenciesID=ccb2e423a2ffb04bff6f67307733c469 StaticDependenciesID=d92bc60216601cc301fb03958e7d6cc5 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated/Water_tafle_2B_0.controller
+  importAddress: Guid(e5ff9156955b19a4ba26c7b13ba881d7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated/Water_tafle_2B_0.controller using Guid(e5ff9156955b19a4ba26c7b13ba881d7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ccd6df790ca114d32fb2b157fc7551c1') in 0.0147772 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d4fb33f4b336ead736da2c753c8e130d DependenciesID=86c7e480e751a91688fb7458b1657feb StaticDependenciesID=a44250d7d3974928553437c7403e7672 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated/Water_tafle_1A.png
+  importAddress: Guid(baa2f3d3ec4f7f5438ece4e53796956b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated/Water_tafle_1A.png using Guid(baa2f3d3ec4f7f5438ece4e53796956b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '1220521bee20ad2d5bf2053d7cdb148f') in 0.0519064 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f6bbc02022695cb0cd97b49a4a98c187 DependenciesID=4df48609766f0f53624d087f20e3dfb9 StaticDependenciesID=8b626c47ba56adb1be90e914d738b848 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated/Tree_3A.anim
+  importAddress: Guid(68892723b208d8247be5db65653ce311) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated/Tree_3A.anim using Guid(68892723b208d8247be5db65653ce311) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c79ea344fc45ae5bb2aab570421a23e0') in 0.0164156 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f40c6ebf4dfc0962847bc48d5ff9e402 DependenciesID=5e9c875a4253efa513f24ffc85559436 StaticDependenciesID=1f95ffd88e7d9c93e66c8f449b4cc034 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated/tree2A_ss_0.controller
+  importAddress: Guid(6107c4e116a5499479a9835a2a989915) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated/tree2A_ss_0.controller using Guid(6107c4e116a5499479a9835a2a989915) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '7aa68cb7a792f1e6066d37acf5af2a65') in 0.0128266 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0d60d75d7f3e415d956e7bc0827bfc5c DependenciesID=5a966ea3c4ec921d944b170505a3c603 StaticDependenciesID=cc19fd51665d594d423c2696ba57b518 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated/tree2D_ss.png
+  importAddress: Guid(ce4fadadea90192479ea8d5a62540ff1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated/tree2D_ss.png using Guid(ce4fadadea90192479ea8d5a62540ff1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '4fc635886631fd386efc93519b4e33f5') in 0.0431302 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9bcf875bca47cc037d4d5219aefb28d7 DependenciesID=191643290efc13ad3c7ce066fe6a3e6a StaticDependenciesID=872bf95107c6ae648ae017417a3b62fa 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated/Tree_3D.anim
+  importAddress: Guid(61503b092bac646489a5a0ba568aa498) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated/Tree_3D.anim using Guid(61503b092bac646489a5a0ba568aa498) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b500094686e107259e4badfea9e456ea') in 0.0165028 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8dd77ac257903e8603ce82472b47d437 DependenciesID=990d4fd364adf541af663bdf121b72b3 StaticDependenciesID=9925ed4773a0532a385894513b4838fc 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated/tree3A_ss.png
+  importAddress: Guid(7f9e3f63c2196d34d83d77eeee3a4a1d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated/tree3A_ss.png using Guid(7f9e3f63c2196d34d83d77eeee3a4a1d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '673a977d99dc418ce49b80e7890ada25') in 0.0412226 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0a40aab1f874614c9464a775aaf50617 DependenciesID=6c977684251e3637a9cc1b6dc6181578 StaticDependenciesID=9a656f989383f909aacdd140650d0735 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated/tree3B_ss_0.controller
+  importAddress: Guid(258627d93fcbe4149ac3754036602074) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated/tree3B_ss_0.controller using Guid(258627d93fcbe4149ac3754036602074) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c16845ba028acf8d832a853b25c36edc') in 0.0142297 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6db00d3a5cce6cbdf5252517e4a27d59 DependenciesID=0152163d3c0e17ad0d71d4372ce5a3ef StaticDependenciesID=de6b541a7ed5d288bfb8cd7fc098c706 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/_old_version/Animated/Water_LayerB_ef.anim
+  importAddress: Guid(c2b0640f890b59640b0108864317fec1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/_old_version/Animated/Water_LayerB_ef.anim using Guid(c2b0640f890b59640b0108864317fec1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '010b47bde2acea8794acf4db8e39a5dc') in 0.0128469 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=273c66ddca225c9dff3b5111365f208f DependenciesID=eae73e35118d7f88f393d71398237f7d StaticDependenciesID=99c5914593dbb3a11670448d0f16e61c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated/Tree_1C.anim
+  importAddress: Guid(da27c19f35c0d954cb4f421d384bb15f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated/Tree_1C.anim using Guid(da27c19f35c0d954cb4f421d384bb15f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b3022bd00dda9fc080e235d39c40fe98') in 0.014277 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7c2c44f67508aa26e37159c6279f6671 DependenciesID=47723b21f43513c3eb0bbe6d98f2e81f StaticDependenciesID=53e1284021331c691168ca463beae70a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/decorative_nograss.png
+  importAddress: Guid(11f4db7d7ee8ce5489ca45b51983ff88) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/decorative_nograss.png using Guid(11f4db7d7ee8ce5489ca45b51983ff88) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd6031d3d708095b8a556790043f9f938') in 0.021248 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=66c8674a8be6226a086cf86b24fcaf29 DependenciesID=f173dadafaf8f1f01735a038f94b3975 StaticDependenciesID=ce961ba3459cd6f8662d1c273680176a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/_old_version/Animated/water_layerB_ef.png
+  importAddress: Guid(4f255f74797d29543a895cf2aeb643ac) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/_old_version/Animated/water_layerB_ef.png using Guid(4f255f74797d29543a895cf2aeb643ac) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '3bf8bc9c34c7af9d4e6210bc0c334fee') in 0.0368815 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2fc2630a068ad92dfa41064f01deb82e DependenciesID=a1fa6f998583181cc9686fe175883846 StaticDependenciesID=0a452c4b8749930c9cec5cfc323f975f 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/_old_version/Animated/water_layerA_0.controller
+  importAddress: Guid(cc2367ba4a4d1d14aabe18130ff8a515) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/_old_version/Animated/water_layerA_0.controller using Guid(cc2367ba4a4d1d14aabe18130ff8a515) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'cfc50f2aecbf2fc348dc68d12ebde51a') in 0.012103 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3f48a0817f3008a8a68c37ae92671647 DependenciesID=1d689baa6a18fd04f9dd97b953d0e6c2 StaticDependenciesID=c164f898c4ad6482964ba6c9db53c18a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000091 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated/Water_tafle_1A_0.controller
+  importAddress: Guid(d661b763f4c00d844b92c789eae903db) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated/Water_tafle_1A_0.controller using Guid(d661b763f4c00d844b92c789eae903db) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '1d2a20df4a51d186103eff33171c65ed') in 0.0160297 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d7bebf0728ff377a4428faa1a47f91a3 DependenciesID=6c56cbe30c36b4b439043446415abd9a StaticDependenciesID=33a4bb0fee055bb950f3260b1361db40 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated/tree3C_ss.png
+  importAddress: Guid(1a4c90ceaf50d134cbab1306fe39e64d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated/tree3C_ss.png using Guid(1a4c90ceaf50d134cbab1306fe39e64d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '95396aeff39d6034dcddb078af7c2183') in 0.0361554 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=37bdceff789416bfa1b7455ade9c9cfa DependenciesID=62f91f87a7e4177489e966eeaca9e5b3 StaticDependenciesID=61b8107345247f5fa4aeb5c4c5b46d10 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated/Water_tafle_4B_0.controller
+  importAddress: Guid(a93f33f08b92a784b8afe487cebaa0a5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated/Water_tafle_4B_0.controller using Guid(a93f33f08b92a784b8afe487cebaa0a5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '9f373c48aa59c04e683fda4e641782e6') in 0.0174556 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6d57a43dbb888f20c19c240ab47e9184 DependenciesID=02cd110b0e3a9e9904be57976293fc71 StaticDependenciesID=06da0ce4ba672315fb9d0504a0403517 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated/Water_tafle_3B.png
+  importAddress: Guid(ba4953c4091f4f6438f4471547368150) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated/Water_tafle_3B.png using Guid(ba4953c4091f4f6438f4471547368150) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '8944523fa6357c0ffba474db345c959e') in 0.0494313 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7eaa6cfdbc33edb3b295a71dade21953 DependenciesID=7dd61e43f14f51c1a33d9c7718f52d58 StaticDependenciesID=396b51d64a2245fd7a663e638b1f8f64 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated/Water_tafle_3B_0.controller
+  importAddress: Guid(9af92d175ca12174fa02493316f219d5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated/Water_tafle_3B_0.controller using Guid(9af92d175ca12174fa02493316f219d5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '66b5d123cb8a9410fe5da7612e9c637a') in 0.0127082 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=94e879134f17293d3923ac6ee1990344 DependenciesID=36cc53dd0aacb9d48059b97087f239e0 StaticDependenciesID=39194cddaff6817778d7254bef93e4a3 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Scenes/Demo.unity
+  importAddress: Guid(ea254500bfc850c41a7c66ff76554382) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Scenes/Demo.unity using Guid(ea254500bfc850c41a7c66ff76554382) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ba8f8cff852e8d8f2227e2660f880f40') in 0.0132909 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6efab02a26fd2361d6cffa81728e8d54 DependenciesID=b3646fe2f44c202e1bfd5314b1f1fcf6 StaticDependenciesID=96ec1cbb886298e700cb91d41751fd8a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated/tree1C_ss_0.controller
+  importAddress: Guid(705d8902a4195ca4499d998bbca83422) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated/tree1C_ss_0.controller using Guid(705d8902a4195ca4499d998bbca83422) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '36ff7130c06236e456020ce6e71ca357') in 0.0120913 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=66e384b7f45e0dbb0785b68596ba6393 DependenciesID=98886e9e156068fc3787e79c90470504 StaticDependenciesID=dc86c91c057d9fd1fe6778897e31565e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/_old_version/Animated/water_layerA_ef.png
+  importAddress: Guid(61a7301a1994a304a9ef79ac361f8e4a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/_old_version/Animated/water_layerA_ef.png using Guid(61a7301a1994a304a9ef79ac361f8e4a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '14dd7afb9b58d9bb151af7ea5840fce1') in 0.0381273 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=96676614737bb6fd3c55482e05e907ec DependenciesID=141593be30bc352800f05b4b30cca243 StaticDependenciesID=1b63e49fa4b21f960715d6c5fd8b7351 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated/Tree_2D.anim
+  importAddress: Guid(5114ffc3891bf7c4c892d399fc609303) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated/Tree_2D.anim using Guid(5114ffc3891bf7c4c892d399fc609303) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '770d9d5c5bb4f1649251fc496c4d2075') in 0.0151759 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=dd74360cc26432a2a219178998d3b68d DependenciesID=dd89e3a082a75584b81e20df5cfc6008 StaticDependenciesID=7e223bdcefd1c5502abfb6ee406d164d 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/MainLev2.0.png
+  importAddress: Guid(f4de40c3e26e66042af0784b20feda18) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/MainLev2.0.png using Guid(f4de40c3e26e66042af0784b20feda18) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '9426f362f869cb9dc0e71468f076ea55') in 0.0253295 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e190e9493593ef6b5e1d35b7484dd17a DependenciesID=295c0b4735b3008bbaf2ceaf471d20d6 StaticDependenciesID=fde08c5d4ebb6485cf9d621fc59f6377 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated
+  importAddress: Guid(0f01254ecba55c1499efa120843320ea) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated using Guid(0f01254ecba55c1499efa120843320ea) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f5efab78294375d754bef29d10f8a501') in 0.011609 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e11a661ce47eaf073a8713431824a4a3 DependenciesID=5a95319ea5e88812f9d749236f19b615 StaticDependenciesID=0d09ddfbf731de2deec6264893ee4455 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Environments/SzadiArt/Ruins/Animated/tree1D_ss_0.controller
+  importAddress: Guid(9dd41cb9ca5629b45ac4fd21ed879c7a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Ruins/Animated/tree1D_ss_0.controller using Guid(9dd41cb9ca5629b45ac4fd21ed879c7a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'cb74a6161db77bc8987e17966cb317be') in 0.013255 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9c072920c61d913579508c433dff5bb6 DependenciesID=c689c164060f3177d03e13dec5f8bb85 StaticDependenciesID=e2d01430943f2aab13be0ee791fbf89c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

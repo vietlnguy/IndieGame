@@ -1,11 +1,11 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.4/staging' branch; Version is '6000.4.6f1 (0b051c2e5d54) revision 722204'; Using compiler version '194234433'; Build Type 'Release'
 OS: 'Windows 11  (10.0.26200) Core' Language: 'en' Physical Memory: 16328 MB
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C" at "2026-05-24T20:41:02.2988367Z"
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C" at "2026-05-24T21:28:37.5255846Z"
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-05-24T20:41:02Z
+Date: 2026-05-24T21:28:37Z
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.4.6f1\Editor\Unity.exe
@@ -19,7 +19,7 @@ C:/Users/viet_/projects/IndieGame
 -logFile
 Logs/AssetImportWorker10.log
 -srvPort
-59470
+49337
 -licensingIpc
 LicenseClient-YJ9lqjR03NSlFhmCLJW0C
 -force-d3d12
@@ -68,12 +68,12 @@ C:/Users/viet_/projects/IndieGame
     "memorysetup-job-temp-allocator-block-size=2097152"
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
-Player connection [41676]  Target information:
+Player connection [22676]  Target information:
 
-Player connection [41676]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 2570960014 [EditorId] 2570960014 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [22676]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 448031083 [EditorId] 448031083 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [41676] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [41676] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [22676] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [22676] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -85,7 +85,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 5.89 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 10.75 ms, found 5 plugins.
 Initialize engine version: 6000.4.6f1 (0b051c2e5d54)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/viet_/projects/IndieGame/Assets
@@ -103,29 +103,29 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56388
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56064
 CodeReloadManager initialized
-Begin MonoManager ReloadAssembly
 [Licensing::Client] Error: HandshakeResponse reported an error:
 	ResponseCode: 505
 	ResponseStatus: Unsupported protocol version '1.18.1'.
 [Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C"
 [Licensing::IpcConnector] LicenseClient-YJ9lqjR03NSlFhmCLJW0C channel disconnected successfully.
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6" at "2026-05-24T20:41:03.6445308Z"
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 38888, path: "C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6" at "2026-05-24T21:28:38.5503348Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 26580, path: "C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.18.1+9fbee8e
-  Session Id:              cbda4ea0715949e5b316ce68e0da82ea
-  Correlation Id:          80b9f657bf28d723df5cabe3c05f3d9a
-  External correlation Id: 4822037895664037587
+  Session Id:              4df8ad17fe564bc68515dd7982f233f6
+  Correlation Id:          b4010a6d77bef2cb518ef9ab1e8a3dbc
+  External correlation Id: 1747596655280610281
   Machine Id:              VXbwn5JDHcloYK9lppscF5+D9fo=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-viet_-6000.4.6" (connect: 0.00s, validation: 0.00s, handshake: 0.01s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6-notifications" at "2026-05-24T20:41:03.6547294Z"
-[Licensing::Module] Licensing Background thread has ended after 1.36s
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-viet_-6000.4.6" (connect: 0.00s, validation: 0.00s, handshake: 0.00s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6-notifications" at "2026-05-24T21:28:38.556758Z"
+[Licensing::Module] Licensing Background thread has ended after 1.03s
+Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002058 seconds.
+Registered in 0.001579 seconds.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
@@ -133,23 +133,23 @@ Package Manager log level set to [2]
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.443 seconds
-Domain Reload Profiling: 1078ms
-	BeginReloadAssembly (186ms)
-	RebuildCommonClasses (60ms)
-	RebuildNativeTypeToScriptingClass (16ms)
-	initialDomainReloadingComplete (77ms)
-	LoadAllAssembliesAndSetupDomain (295ms)
-		LoadAssemblies (180ms)
-		AnalyzeDomain (286ms)
-			TypeCache.Refresh (285ms)
-				TypeCache.ScanAssembly (266ms)
-	FinalizeReload (445ms)
+- Finished resetting the current domain, in  0.690 seconds
+Domain Reload Profiling: 1341ms
+	BeginReloadAssembly (126ms)
+	RebuildCommonClasses (36ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (68ms)
+	LoadAllAssembliesAndSetupDomain (409ms)
+		LoadAssemblies (123ms)
+		AnalyzeDomain (401ms)
+			TypeCache.Refresh (400ms)
+				TypeCache.ScanAssembly (381ms)
+	FinalizeReload (692ms)
 		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (42ms)
-			BeforeProcessingInitializeOnLoad (94ms)
-			ProcessInitializeOnLoadAttributes (129ms)
-			ProcessInitializeOnLoadMethodAttributes (89ms)
+			InitializePlatformSupportModulesInManaged (45ms)
+			BeforeProcessingInitializeOnLoad (89ms)
+			ProcessInitializeOnLoadAttributes (107ms)
+			ProcessInitializeOnLoadMethodAttributes (376ms)
 ========================================================================
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
@@ -198,1349 +198,205 @@ Assembly Unity.UnifiedRayTracing.Editor.Tests.dll at Library/ScriptAssemblies/Un
 Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
 Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
 Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
-Refreshing native plugins compatible for Editor in 2.17 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 2.99 ms, found 5 plugins.
 Native extension for WindowsStandalone target not found
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-Refreshing native plugins compatible for Editor in 2.20 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 2.83 ms, found 5 plugins.
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.860 seconds
-Domain Reload Profiling: 1685ms
-	BeginReloadAssembly (171ms)
-		DisableScriptedObjects (6ms)
-		CreateAndSetChildDomain (31ms)
+- Finished resetting the current domain, in  1.859 seconds
+Domain Reload Profiling: 2984ms
+	BeginReloadAssembly (185ms)
+		DisableScriptedObjects (5ms)
+		CreateAndSetChildDomain (30ms)
 	RebuildCommonClasses (37ms)
-	RebuildNativeTypeToScriptingClass (12ms)
-	initialDomainReloadingComplete (74ms)
-	LoadAllAssembliesAndSetupDomain (530ms)
-		LoadAssemblies (346ms)
-		AnalyzeDomain (270ms)
-			TypeCache.Refresh (186ms)
-				TypeCache.ScanAssembly (166ms)
-			BuildScriptInfoCaches (71ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (180ms)
+	LoadAllAssembliesAndSetupDomain (712ms)
+		LoadAssemblies (521ms)
+		AnalyzeDomain (292ms)
+			TypeCache.Refresh (198ms)
+				TypeCache.ScanAssembly (180ms)
+			BuildScriptInfoCaches (80ms)
 			ResolveRequiredComponents (11ms)
-	FinalizeReload (860ms)
+	FinalizeReload (1860ms)
 		SetupLoadedEditorAssemblies (0ms)
-			BeforeProcessingInitializeOnLoad (158ms)
-			ProcessInitializeOnLoadAttributes (400ms)
-			ProcessInitializeOnLoadMethodAttributes (136ms)
-			AfterProcessingInitializeOnLoad (6ms)
+			BeforeProcessingInitializeOnLoad (161ms)
+			ProcessInitializeOnLoadAttributes (1326ms)
+			ProcessInitializeOnLoadMethodAttributes (174ms)
+			AfterProcessingInitializeOnLoad (7ms)
 		AwakeInstancesAfterBackupRestoration (6ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-Refreshing native plugins compatible for Editor in 2.18 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 2.39 ms, found 5 plugins.
 Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 7408 unused Assets / (5.7 MB). Loaded Objects now: 8249.
-Memory consumption went from 181.3 MB to 175.7 MB.
-Total: 9.984300 ms (FindLiveObjects: 1.093100 ms CreateObjectMapping: 0.387000 ms MarkObjects: 4.824500 ms  DeleteObjects: 3.677800 ms)
+Memory consumption went from 184.8 MB to 179.2 MB.
+Total: 10.386200 ms (FindLiveObjects: 1.162800 ms CreateObjectMapping: 0.549100 ms MarkObjects: 5.857500 ms  DeleteObjects: 2.813800 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 768218.602929 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/Tileset-Terrain.png
-  importAddress: Guid(44f2e3db7b6f3ff479846ebcaec1673f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/Tileset-Terrain.png using Guid(44f2e3db7b6f3ff479846ebcaec1673f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ee1a44a9fd868b86d161c22c295c706a') in 1.3171089 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b20ef9d5b02f84164663926d01977309 DependenciesID=dd67ec7a92b04286723fc74a7ed9baa7 StaticDependenciesID=19597d6635b4c6c5883d2f56a576a574 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 477
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.858272 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/Tileset-Terrain2.png
-  importAddress: Guid(c7b7236c4070ce84da47e979e2a8e69e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/Tileset-Terrain2.png using Guid(c7b7236c4070ce84da47e979e2a8e69e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '609e6992521b1fee5e05b9ce80c177e1') in 0.6638051 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0d7c55761feb80d2b11e6a0b07e47120 DependenciesID=643af13e021e6a56b665548d10b434d9 StaticDependenciesID=eae4072bfcf63d3cd61f4f2934d87f61 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 277
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-water.png
-  importAddress: Guid(ca7ed090a6452d641b1656ca5e0205b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-water.png using Guid(ca7ed090a6452d641b1656ca5e0205b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '7e388d23fb02b4be384695485fbb0cf3') in 0.058134 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cd212230ec737800dbf717a024df74ba DependenciesID=d58fbeecc8f4d40e08f4cc83974f3241 StaticDependenciesID=1914c0471a8e68f11a70e634e4d233bf 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000058 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-water-premade corners.png
-  importAddress: Guid(30bcf596574715e4ca835c52807e1f3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-water-premade corners.png using Guid(30bcf596574715e4ca835c52807e1f3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '89a862999263514c3301034e81b6a62a') in 0.0433491 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c2f4f573546aedba8067a35db42e5901 DependenciesID=eea18b353a16035501ddabd8e869edc3 StaticDependenciesID=7a24ab43c125974938cc3abd02efc9f7 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-2-no water-premade corners.png
-  importAddress: Guid(c2a874b357d518541964b022c643648f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-2-no water-premade corners.png using Guid(c2a874b357d518541964b022c643648f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '809616a887d0a79b2aed01431cf00beb') in 0.1333934 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4a6622627493abc5b887be52da7eed29 DependenciesID=ee924c4d0eb6ae94d54bd9bbb3ab9a8d StaticDependenciesID=1b9f8859c1981e03a522ae3d071045b8 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-water-premade corners.png
-  importAddress: Guid(e733ab51ce7f1af45b9c8aad41cf8d10) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-water-premade corners.png using Guid(e733ab51ce7f1af45b9c8aad41cf8d10) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '673db27ea0804b981d850d1831264af6') in 0.0266438 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4d9762b1277a611dcdce5b676ce4708f DependenciesID=3d0bf8eacdbb698e3b88e745e61f0f23 StaticDependenciesID=53d9e2b1ddaac94fc9e177ead077aee7 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000047 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-no water- 3 tiles tall.png
-  importAddress: Guid(1b85906762b737343880bd643c5178aa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-no water- 3 tiles tall.png using Guid(1b85906762b737343880bd643c5178aa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f196a5c6a0aeff497f47cd167619dbd2') in 0.0373097 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6f4d38ea673dec92872b52bff466cf91 DependenciesID=97b56966f3862b4b34575136afa7c3cd StaticDependenciesID=5b6f30bc231b107fee8d7e5b58c51927 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-transp-premade corners.png
-  importAddress: Guid(8c210752d28ab9142bad13c82cedfd66) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-transp-premade corners.png using Guid(8c210752d28ab9142bad13c82cedfd66) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '63198afb6996caca12bc24c9b00480e1') in 0.0226729 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=25cfbeadf7e634935415f8c77520b1ed DependenciesID=c0bbdb24c589fe0ab8308b3ff833be31 StaticDependenciesID=6e08b963bf26bb5dc2d95a1dcda361e7 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-water.png
-  importAddress: Guid(ca7ed090a6452d641b1656ca5e0205b2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-water.png using Guid(ca7ed090a6452d641b1656ca5e0205b2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '6f684fff28f187b541f1a9b61d3cdba7') in 0.0276306 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=afa9aa17b24f5ef4bdadcb8b3c445195 DependenciesID=1f0a41c16d5f229f25af6b481a01cbe0 StaticDependenciesID=4995596eca0fe7b687934a672c8fdaca 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-2-water-premade corners.png
-  importAddress: Guid(7b32e8af6f1a04341bc4df72e3d1a27c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-2-water-premade corners.png using Guid(7b32e8af6f1a04341bc4df72e3d1a27c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ded574973b2949cc7b9486244450b1a8') in 0.0301714 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8a3b4f45a1be3431a6890f4468c7ab35 DependenciesID=674da269ed39f2deb5ae389e0017b234 StaticDependenciesID=a8c0ef07ad4ab50010bf2f6d2154035c 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000048 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-no water- 3 tiles tall.png
-  importAddress: Guid(5939e818c88b8ec40a40b53ac22e44d7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-no water- 3 tiles tall.png using Guid(5939e818c88b8ec40a40b53ac22e44d7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c3b1c0bdd854a921c96f5b9f063b6691') in 0.035314 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d6fb62b3e3d9d1de7b32a6aeaab4e38f DependenciesID=47adb09e7c57400bfdac9d38480552b1 StaticDependenciesID=a5be2ada07c5ee47876b01c596957cab 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-water-premade corners.png
-  importAddress: Guid(e733ab51ce7f1af45b9c8aad41cf8d10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-water-premade corners.png using Guid(e733ab51ce7f1af45b9c8aad41cf8d10) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0bde266c03ecfd89000d79dde06a63b5') in 0.0521066 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=108c25dd2e49f94be147749f824db1c7 DependenciesID=8a885176bf0cbaed8b906b5ff02cc8f3 StaticDependenciesID=34df113f56b58d237a2a18b928b49793 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-water.png
-  importAddress: Guid(5583223714d7b2b4ebf1ceffee572aef) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-water.png using Guid(5583223714d7b2b4ebf1ceffee572aef) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c13f3859eb232e17da4ec4fcbd48081a') in 0.0248092 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a3c9afecafbc50bcdc00a2f0d93c427e DependenciesID=d5d04ab16ef4b5019631cd9cd6825332 StaticDependenciesID=ab3a49638574929bd48380555ebf121a 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-water-transp-premade corners.png
-  importAddress: Guid(7af02d9bda4ba114e9379e85d0458639) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-water-transp-premade corners.png using Guid(7af02d9bda4ba114e9379e85d0458639) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'e087bf01842f20ba874d7048476b993a') in 0.0327167 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2000a70236393e71b8539e953c9e3804 DependenciesID=f2af8334ba9b84d5d0268a8626c60462 StaticDependenciesID=5b972768d2eb7685c4df68835f68ce69 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-no water-premade corners.png
-  importAddress: Guid(42bf8efc920dc644f8959b9812a9c31f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-no water-premade corners.png using Guid(42bf8efc920dc644f8959b9812a9c31f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '6ca93f40df44fb90d82611498911b22d') in 0.0300217 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4877ac4779ecf411e0dedd5d703c6770 DependenciesID=8ee7f24393efb037ff6fe96275c120e1 StaticDependenciesID=cd1dd0b5155859eaa4fc5bd149c9004c 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/watter-around wall3.png
-  importAddress: Guid(a8fa72f850812cb4893695c1a6d666d6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/watter-around wall3.png using Guid(a8fa72f850812cb4893695c1a6d666d6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '4bb78e05cdbbf085b0b0eb6f7eff22c7') in 0.039944 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d987b267800204e319d89683cefbb53a DependenciesID=586b3dab4fc046f37cdbe44cd4ac0830 StaticDependenciesID=0a0623cacaded28807eefa81c35ed487 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 35
-
-========================================================================
-Received Import Request.
-  Time since last request: 52.540326 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Premade_houses.png
-  importAddress: Guid(9ba5ef5dccc1ec447820de34c3bb881d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Premade_houses.png using Guid(9ba5ef5dccc1ec447820de34c3bb881d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '8b0a022f0adce0b7a62b476d6733353a') in 0.1366396 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=be199d6d948d4c67c95570054b9de9b7 DependenciesID=7cffecce99a7cca7f4bddd2d6d336cb7 StaticDependenciesID=a3efc401d7d98216f600e3fe498ac168 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/side_roofs_details_extrusion.png
-  importAddress: Guid(d4bd94e963225d34ea373949ab10d48e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/side_roofs_details_extrusion.png using Guid(d4bd94e963225d34ea373949ab10d48e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '3213d168278b2470e15dd5f76d702f56') in 0.7642062 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6cf7899dc5305c8b3b11078226f221fe DependenciesID=38fc08a95a88bac95746eccc421bdd8e StaticDependenciesID=61f67fbfe07731e9655a570213a869da 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 250
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000051 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/walls3.png
-  importAddress: Guid(8e950a961c6b71c4e993326e3595ceb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/walls3.png using Guid(8e950a961c6b71c4e993326e3595ceb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '43e1430994d81b6176c6ff0759124677') in 0.5330889 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c503a46acf0efa109ffc4f31620c5fcf DependenciesID=5a94d2b43eb1a42b9714512bc024df97 StaticDependenciesID=3fe0f8305927b57d09a22dc8c97ea0f5 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 198
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/side_roofs_details_extrusion2.png
-  importAddress: Guid(238a450e17b5a5843a0f2c4e68718e6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/side_roofs_details_extrusion2.png using Guid(238a450e17b5a5843a0f2c4e68718e6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c61ca38340cfe5777bc48a0274396368') in 1.1265361 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=eed70646902620295f2112d5aee9d420 DependenciesID=5aeb7241381a3d17022cf4ce3685bd0c StaticDependenciesID=c5bc95865a01b5d0a2b67d8f32d682ff 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 411
-
-========================================================================
-Received Import Request.
-  Time since last request: 16.372737 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Premade_houses.png
-  importAddress: Guid(9ba5ef5dccc1ec447820de34c3bb881d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Premade_houses.png using Guid(9ba5ef5dccc1ec447820de34c3bb881d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b87cbe757338a113daaaf811c0a65e5f') in 0.1300344 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0ce691dc4035a3ccb3bbd07b40be32f4 DependenciesID=38648836a09c4c76229e7d53e61a306e StaticDependenciesID=f69beeb373567ae556fe5af190a6754a 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.546159 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Premade_houses3.png
-  importAddress: Guid(bb23d6d8aaa86f8498492fc651747748) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Premade_houses3.png using Guid(bb23d6d8aaa86f8498492fc651747748) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c19f9727a56f8a5c5c5dbb25eeb5e27f') in 0.0566296 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=62e9d6de50a5c76ebe296e7c94e5ac1a DependenciesID=ca59985dba5f6f168aa67e7c08bfb560 StaticDependenciesID=4d3cac16f52b79bec9432d7bce7b3a94 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 22
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Premade_houses.png
-  importAddress: Guid(9ba5ef5dccc1ec447820de34c3bb881d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Premade_houses.png using Guid(9ba5ef5dccc1ec447820de34c3bb881d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'bd935a02d1975aa9775055438bde9da0') in 0.0584725 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e25691742f25ae58f117389465d084bb DependenciesID=480a007f0ade187ecaefcade9ab3f9ee StaticDependenciesID=7a4e96a806596314f6c9a466497f1b13 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
-
-========================================================================
-Received Import Request.
-  Time since last request: 65.517903 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/roofs1_intersections_wall-width10.png
-  importAddress: Guid(1188746b3edf0ea4f97b3154dfd5e0e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/roofs1_intersections_wall-width10.png using Guid(1188746b3edf0ea4f97b3154dfd5e0e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '26760ca5970b700d607de52b9439ef6a') in 0.1630873 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7478968145e4349a5c88d0790b90d10f DependenciesID=398273bb9e52bba065cdae948b2d2272 StaticDependenciesID=307bbdc72f8908b44b974f3f2beb4b80 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 54
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000052 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/side_roofs_details_extrusion.png
-  importAddress: Guid(d4bd94e963225d34ea373949ab10d48e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/side_roofs_details_extrusion.png using Guid(d4bd94e963225d34ea373949ab10d48e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '896dddd25c9cdabf1ba3b4e2ce857bc7') in 0.6238602 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b202887d28b5e007e70c49cf37c8347b DependenciesID=def662d1a9861adb79aca5b26b0620ae StaticDependenciesID=dc2ceaf17bcd49bcb733df87b29255cd 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 250
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Update 1.2 - recolored roof.png
-  importAddress: Guid(f72599814414c80469a8b2bbf50ec0ba) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Update 1.2 - recolored roof.png using Guid(f72599814414c80469a8b2bbf50ec0ba) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'fa54b7b352ab0a4d5aef9bd409e87957') in 0.1020747 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=47693468f6f680fe7215f33049190c53 DependenciesID=c5c825ef7c0a6de7387da0b57be543f0 StaticDependenciesID=00a1429c3799b6b82571f0a3cc9e9858 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 95
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000047 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/walls1.png
-  importAddress: Guid(6bf5f5a49c26aea4d9d31f655e9ba142) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/walls1.png using Guid(6bf5f5a49c26aea4d9d31f655e9ba142) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c03254c00927179beea868b246ed7f13') in 0.311167 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=11366854048cc2ae8d1b3c5988c5ad76 DependenciesID=b287b41eeb9a73e17002e4c106a306fc StaticDependenciesID=5875244e29a5e7ae03428066305fad35 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 318
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000054 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/walls2.png
-  importAddress: Guid(674926761444c44419853336936c8069) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/walls2.png using Guid(674926761444c44419853336936c8069) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'e5f7f1b2b1367ef8be8cda8aa637622b') in 0.2179002 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=fcf84127974affed6d08b59fb845af9e DependenciesID=3c06fbaf27186a05e2518f4a01a5aa62 StaticDependenciesID=16e293577dc98b819a513822069d713b 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 199
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000043 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/walls2.png
-  importAddress: Guid(674926761444c44419853336936c8069) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/walls2.png using Guid(674926761444c44419853336936c8069) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '512e7fcb3e9495617c6e3921ce3839a7') in 0.5319568 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5ad619aaf4b26ace3daf70ebbbba5208 DependenciesID=1076a4b1f38f3df2436cae35ceefa8f9 StaticDependenciesID=d9f411abb28b74efea819f7cb5274312 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 199
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/walls3.png
-  importAddress: Guid(8e950a961c6b71c4e993326e3595ceb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/walls3.png using Guid(8e950a961c6b71c4e993326e3595ceb4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'deec46c1906bf7151e72459cacc84560') in 0.5588177 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c41da34825b455d98eaa4177ae36542f DependenciesID=3e361944fd1a22fc8f7ae354497714dc StaticDependenciesID=b444ecf80618ed5007a0dafc6089b106 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 198
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/roofs2.png
-  importAddress: Guid(2e7a259727621a44caf77608aea561b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/roofs2.png using Guid(2e7a259727621a44caf77608aea561b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '2d778bb504770cfa813d4ce7210b2cee') in 0.4987387 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d9d0a86bc828ea57085fef2daed29ad5 DependenciesID=ffeff367c50b6ad3d6dfcb16507b9392 StaticDependenciesID=28d67180b5f3f7ce58aecefb8820e1c4 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 203
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/walls5.png
-  importAddress: Guid(d7a271b34ddc3c44e80e8a24fb5b068a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/walls5.png using Guid(d7a271b34ddc3c44e80e8a24fb5b068a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a576703d17e030fe90874812798e8d98') in 0.4092984 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=68d877ca28af68108f9696d25fc7c64d DependenciesID=cf9ae562126c3b482cdc91f2c545037b StaticDependenciesID=eed18cea1aa42b9879e3f1ef42bab76b 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 198
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000064 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/roofs2_intersections_wall-width10.png
-  importAddress: Guid(d4c631f06c6c29e43bfeaa5124963c1e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/roofs2_intersections_wall-width10.png using Guid(d4c631f06c6c29e43bfeaa5124963c1e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '62297967d243b7b24648331192a02bdf') in 0.0894171 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a1e5f19dc80f7fe136b4219c7caab85e DependenciesID=ae75a1aff974876cd19557ba525c0ac1 StaticDependenciesID=ecf7ecdfe865281c170175f521aa5be3 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 69
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/roofs1_intersections_wall-width10.png
-  importAddress: Guid(1188746b3edf0ea4f97b3154dfd5e0e1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/roofs1_intersections_wall-width10.png using Guid(1188746b3edf0ea4f97b3154dfd5e0e1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '52ac3b6f6b803e3f54db578c039bab2a') in 0.0806756 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=edd57140906b40e82f6f52e2874978dd DependenciesID=d369e32a88ec1c0664eaf255af465bbe StaticDependenciesID=fd0887b3a047570898275f53707e82b6 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 54
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/walls4.png
-  importAddress: Guid(29e5902a7a267884f8d2ab8488b9fd7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/walls4.png using Guid(29e5902a7a267884f8d2ab8488b9fd7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'df89062463faa5087fab76f4bc87b5e2') in 0.3834394 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=bd34674aff752adddd8f9fea70325b04 DependenciesID=d00db812d51c75845d36c09906ba96ea StaticDependenciesID=f801a5355a8a46a4d4157975942211d1 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 198
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000052 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/walls-floor1.png
-  importAddress: Guid(27dad34338686884fa7262aad481334e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/walls-floor1.png using Guid(27dad34338686884fa7262aad481334e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'fae7e3f89fd97bce13753349ae5ff53d') in 0.4510148 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f4ac36aa6040539913675ce320a4980f DependenciesID=bb37883bef06504222ae992c25a04e7b StaticDependenciesID=9a1de3e48789d52eefa4c6b178d0ed95 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 199
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Update 1.2 - recolored roof.png
-  importAddress: Guid(f72599814414c80469a8b2bbf50ec0ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Update 1.2 - recolored roof.png using Guid(f72599814414c80469a8b2bbf50ec0ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '87582f7aeb8673ec53495bc6715b44b7') in 0.1828965 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=93ed0792ee30c5a57763270039426119 DependenciesID=84f3a28db56553ee465197692535d89b StaticDependenciesID=7391f120e49fa6555b0c61808eca4db0 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 95
-
-========================================================================
-Received Import Request.
-  Time since last request: 53.086586 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Animated stuff/chimney-smoke-chiminey 2 - dark smoke.png
-  importAddress: Guid(4cc6b30c52f06d64e864f26897695dc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Animated stuff/chimney-smoke-chiminey 2 - dark smoke.png using Guid(4cc6b30c52f06d64e864f26897695dc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '13b75d7a2a9de3684b4848f743e3398a') in 0.1161099 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=51761465b15fa4c40d34f8dbed728967 DependenciesID=40c2cc07abce7201e74c21f892fd583d StaticDependenciesID=6bd4022435fe0477a746cfd41af360a6 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 40
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Animated stuff/Windmill_anim.png
-  importAddress: Guid(81118388d5d46e843a559a2549a8b1f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Animated stuff/Windmill_anim.png using Guid(81118388d5d46e843a559a2549a8b1f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '46d2dbb5f93d330565875c2c24c1e6c1') in 0.0727671 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3c13aec5c4d31dbabdd03b3d347d479a DependenciesID=77f53a9f8769fbe93877cf6b806f5f79 StaticDependenciesID=4f1b2bb7e0c0db3d3af47458b43ba5d9 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 18
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Animated stuff/watermill_no water-fx.png
-  importAddress: Guid(2e72c373f6e749546b9cb9e54ffdf0f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Animated stuff/watermill_no water-fx.png using Guid(2e72c373f6e749546b9cb9e54ffdf0f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'e77f00111aa1b1a5046ab24dd228e1f9') in 0.045609 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9525a6369dc202e7d9279ab08c05124f DependenciesID=356d8a6d1676f7457f1ba75ae1cbdd77 StaticDependenciesID=9817bf6635602872460cc3a0fb1e4765 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.624045 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Animated stuff/chimney-smoke-chiminey 2 - white smoke.png
-  importAddress: Guid(5b1d41d89c3dde042add56238a2e491b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Animated stuff/chimney-smoke-chiminey 2 - white smoke.png using Guid(5b1d41d89c3dde042add56238a2e491b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'be6780c6c8cd22d9373aeccdacb80c56') in 0.0906203 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=fcbd0722e2e258c17e4c017b20c3031e DependenciesID=e942464c90b75946b04d39e1f8e48c50 StaticDependenciesID=5ab21bf500986634cffc943f570e0fc2 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 40
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Animated stuff/watermill_with-fx.png
-  importAddress: Guid(761493b60a9684b4db19be83930fa98c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Animated stuff/watermill_with-fx.png using Guid(761493b60a9684b4db19be83930fa98c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '4287a0cfb1d489240f9e86eb277c2ff9') in 0.0447359 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ed018c1c4d452a0293f428b53863b91c DependenciesID=24a48b7828ca507de81eb6d904d5e77b StaticDependenciesID=57b05e43b9de47f6f27c79c8b8bb0532 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Animated stuff/Windmill_.png
-  importAddress: Guid(88cc2427223666146801e8eccb0fe922) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Animated stuff/Windmill_.png using Guid(88cc2427223666146801e8eccb0fe922) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9d003d75dbf9ca1e50fec1a8e077c161') in 0.0202746 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=25412ea9c069c1af8b2728032a5efba4 DependenciesID=7381a1c6be06c3ec016738d9fada6683 StaticDependenciesID=a2f584625e44b3ddfeea0b8b8e97b8ac 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.503431 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Animated stuff/wind-cartoonish-fx-288X64- 48frames.png
-  importAddress: Guid(f7cc12f353da1dc418ed20324b44c73d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Animated stuff/wind-cartoonish-fx-288X64- 48frames.png using Guid(f7cc12f353da1dc418ed20324b44c73d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '35832023f537bb5bf6f9d3c7d8adae1b') in 0.0533855 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=51e9b30b85ac5d40479131449a762f83 DependenciesID=80e6a456bce66ef4f268331c3b0cc24a StaticDependenciesID=6c0080747f18383bf9cce8716209e39b 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 46
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Animated stuff/chimney-smoke-chiminey 2 - white smoke.png
-  importAddress: Guid(5b1d41d89c3dde042add56238a2e491b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Animated stuff/chimney-smoke-chiminey 2 - white smoke.png using Guid(5b1d41d89c3dde042add56238a2e491b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ca33391d980146760005afddf71c0b70') in 0.0502604 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f1409c9b0f7662f9ca1459631c744382 DependenciesID=323f2db586f82849c97429dad062706d StaticDependenciesID=1d79f152d253d8d67343856eb0c98596 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 40
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Animated stuff/watermill_with-fx_simpler.png
-  importAddress: Guid(3bc4ea2e838faa0488f3888ce9eb4b2c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Animated stuff/watermill_with-fx_simpler.png using Guid(3bc4ea2e838faa0488f3888ce9eb4b2c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '5669da294b416179fbeebf4685629ee0') in 0.0297351 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d8b10b0133059a28a1029a5e59baa20c DependenciesID=10b5471378bb195f9f694f64188c4638 StaticDependenciesID=b950aa230ff6ea5fa138051aa3683467 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.469970 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_2.png
-  importAddress: Guid(1ad36b9793f44e74fa66fb7644fb740c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_2.png using Guid(1ad36b9793f44e74fa66fb7644fb740c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '6f7f15d8df6478ba26ce7a8dfed1cdd9') in 0.0141337 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5795721ff14ac5e9893f774e3c65548c DependenciesID=878609bcb3ca577cf608d1c04e719ce5 StaticDependenciesID=1501f1463ebeb5a5ea69255973067f08 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_5.png
-  importAddress: Guid(d0c1f16790cf1014aa440cfb1d61448a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_5.png using Guid(d0c1f16790cf1014aa440cfb1d61448a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'f86948fc3df1b6ec39ecd1179b8c7717') in 0.0194081 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8c7f130e72232aa94b21f44580d904e4 DependenciesID=6bd6967292d8343c0aeb0fa00da12b85 StaticDependenciesID=a6e20730a92e1af2c95ac3cba4d6c478 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_10.png
-  importAddress: Guid(fc973cad35a3965479da4a9f60436152) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_10.png using Guid(fc973cad35a3965479da4a9f60436152) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '1d7a44d52615f1dac94e4f55b936a8cd') in 0.0181244 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=06fc331d5dbcda835839c315fc5e5650 DependenciesID=a746c81abe364867629c0399b8486d64 StaticDependenciesID=00d0be88bcf65819e1eff10c05a0c519 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_0.png
-  importAddress: Guid(400ad5ec5ab040a45ad240707795cedc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_0.png using Guid(400ad5ec5ab040a45ad240707795cedc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a302817e1da849266e892a5fcfb165b8') in 0.019494 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=905b274a0b56393778c09980ecf0050e DependenciesID=4abee15fe8062ae88c14f4b017e0a184 StaticDependenciesID=f63a9a0cd58f994cbc7d21e2be05093c 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_3.png
-  importAddress: Guid(2e020b6de4a25d1459fe6154696f99c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_3.png using Guid(2e020b6de4a25d1459fe6154696f99c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b52b865fd91601a91a7b097f75136e66') in 0.0203878 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5d4ab69abffb02898f12158744f1f729 DependenciesID=d9c78d3b5ad5279eae8b887ab62e3593 StaticDependenciesID=625ce60721aaa2d17bc4ab25d0e80124 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_12.png
-  importAddress: Guid(b595723590ae488469eb1aa28e004ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_12.png using Guid(b595723590ae488469eb1aa28e004ea6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'f6a5623aa2ab4c085bda1345002f2b1b') in 0.0135422 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ebda6911318de67711c0737b2d9c7147 DependenciesID=cd5e93dc3019c8961d30811dd33b9cb5 StaticDependenciesID=8cb7fdb351e4bcea9e4af58d015be351 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_5.png
-  importAddress: Guid(4ef2b3613b9593e408b04b3b7a1d1ac1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_5.png using Guid(4ef2b3613b9593e408b04b3b7a1d1ac1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '1cbc090191deedf7131803c5b8ce6a9a') in 0.017772 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3cf61c5d115e978b4cb28a2800c62b4b DependenciesID=41e68142d7bc201a1c9f0aa3208af628 StaticDependenciesID=b5bce71f5821cef959c60b4fac60754d 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_5.png
-  importAddress: Guid(2c907dcbdc6aae145992ba13436b8c91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_5.png using Guid(2c907dcbdc6aae145992ba13436b8c91) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'f28da6c0b9de6e0f5e60c31cef272d67') in 0.0208947 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6e8389b082d7968cf6cd542d29416625 DependenciesID=9bae5ee534b8ca2935455808d81b7747 StaticDependenciesID=a6ac44de9088dc793e4c5f21bb64db5e 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_13.png
-  importAddress: Guid(e39e51e5c94b2284f95b3ca54a9af32c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_13.png using Guid(e39e51e5c94b2284f95b3ca54a9af32c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0eec729790e0a9c26242b931f55020ac') in 0.0248658 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=866cfee6aaf3b418b65a544315aca153 DependenciesID=b718dc305c02ae2dfcee06162b25f6bc StaticDependenciesID=0981254029e9e2b5c67df2bc2a49256b 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_14.png
-  importAddress: Guid(7b35d0ebf76a54a42bf848a7ddca1767) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_14.png using Guid(7b35d0ebf76a54a42bf848a7ddca1767) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ad92e940350bf1872a0c460be2a0fa51') in 0.0212941 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9ce6242f438f94a8fa8d54779e5707e2 DependenciesID=7521130a6bbf377bd8e521a465383a4f StaticDependenciesID=589c31f1169ef184b57f12c4498e8982 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_4.png
-  importAddress: Guid(aa99525091ae5b94881604a480045928) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_4.png using Guid(aa99525091ae5b94881604a480045928) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '4b73d14a0296ecb1e787a80a3d4cd31f') in 0.0173696 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0b73c4a587446f796ca8650c337a9d18 DependenciesID=990dc9a67dca670f555b34dd8ab32c36 StaticDependenciesID=69873e893086bcc3d298a2421a5b4070 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_2.png
-  importAddress: Guid(4aa9f9b15b2c2144fac3e43853d79b1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_2.png using Guid(4aa9f9b15b2c2144fac3e43853d79b1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '3763d4d15524c2210dbb52200c9fb30c') in 0.019065 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c3de9b60cc3bc035c54cf4b57c157933 DependenciesID=fdbbea0db7f2ab822c847928e8f005a1 StaticDependenciesID=7d41f36036370363a403af1b5cf6f798 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_16.png
-  importAddress: Guid(0a6cd8f68376c7041b7c05c8043bc0d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_16.png using Guid(0a6cd8f68376c7041b7c05c8043bc0d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'f494fbfd63bec27554e3e4a136259b95') in 0.0143165 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3dae8908d11b0f99a784e801f511ded6 DependenciesID=8ac19f1722122b4da2fb90052a8d77d2 StaticDependenciesID=9d62626a3c06304de1f537becbd1c700 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.950822 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-stairs_2.png
-  importAddress: Guid(4de51290f3cac2d4494613b9c7741929) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-stairs_2.png using Guid(4de51290f3cac2d4494613b9c7741929) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c533f7f82b5ce9e0801a026fb75fd755') in 0.0180657 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=73341ce66d97a4701b896af9db14b157 DependenciesID=7ea4957b01c27769e334b57ae8c0b0c4 StaticDependenciesID=7f7b5599deef6b0f0dcce2c2f8f3182f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors_0__20.png
-  importAddress: Guid(f4ad6456887f1994591d0ee6ec46aed2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors_0__20.png using Guid(f4ad6456887f1994591d0ee6ec46aed2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '90ed4c5a5584582dd5d843f40f9840b3') in 0.0168858 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3076a7b190f20b790ae718bf375f5930 DependenciesID=ba808d5b9a90dce65ae17056a68af489 StaticDependenciesID=7b8a247a0e48ac1d1cce95b7b8131cdd 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors_0__22.png
-  importAddress: Guid(3d705d564ea17664ba47d4bd64f39637) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors_0__22.png using Guid(3d705d564ea17664ba47d4bd64f39637) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '75f0c42af455c4d4effcbd91f792fc99') in 0.0180521 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=091a442e68e4014fbd2f28ac633bead6 DependenciesID=1db19c0c5219722c69c57bdd38d807be StaticDependenciesID=04a007ab6b37257dab77507d21c85da1 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/flowers_plants_5.png
-  importAddress: Guid(2e5fa46b6e9c4f14b9744e7db736ee87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/flowers_plants_5.png using Guid(2e5fa46b6e9c4f14b9744e7db736ee87) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b0c2533dd842cdc2fd4f4e7a9b657fe8') in 0.0196131 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c7f06f429fd42b4be8b097108f643ff0 DependenciesID=d4c173dc44885c99af9540b11ce4555b StaticDependenciesID=ad60f8aa9f54a4e988345204efdae9e0 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/flowers_plants_10.png
-  importAddress: Guid(90faa920691c69b4b8693a5f4cebdb18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/flowers_plants_10.png using Guid(90faa920691c69b4b8693a5f4cebdb18) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b87e36f9834798283fa45078005af1af') in 0.0170762 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0822797b75e5633c2b30e07b7e684c12 DependenciesID=416b7f75c07b0b1f1d63504ccaf95f39 StaticDependenciesID=67ec4f7606781c65d95ed38f147a0f68 
+  Time since last request: 771113.365937 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_106.asset
+  importAddress: Guid(892a124a2c9aa7c44a8a5d5b133c1e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_106.asset using Guid(892a124a2c9aa7c44a8a5d5b133c1e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '48e6ed63cad4632466e3f0495a1973aa') in 0.09154 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=98315aae75c2ef9ba3550c664acf46f9 DependenciesID=48e74a822c615b030830b0fe2bee42c8 StaticDependenciesID=7453497deb9f233ccbd5ba9837981153 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000026 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch-stairs_0.png
-  importAddress: Guid(d9983b31df347fd408abd107641582c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch-stairs_0.png using Guid(d9983b31df347fd408abd107641582c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ced65caef2d963f4820c8f4e22f08efa') in 0.0172914 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8a6dccd53c670495ff5ab36eb9f4de18 DependenciesID=4aae96f30e282aecbcb3ff00219b56cd StaticDependenciesID=ae25c31987003fd8cd93fcb91b6ca9f2 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch-stairs-carpet.png
-  importAddress: Guid(95684abe66f27964c88730e9e258e4be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch-stairs-carpet.png using Guid(95684abe66f27964c88730e9e258e4be) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '09dbd25d25df9b9424c4346a10949ebe') in 0.0200428 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=652f13f99d457a845b26363ac71c57b1 DependenciesID=6910b7dcfc484ecea0a7d6c6e51a0e03 StaticDependenciesID=d9baa98b70efe88d2eba9c265715bbca 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/flowers_plants_7.png
-  importAddress: Guid(0d14e746b7115d346b5981635cfa7918) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/flowers_plants_7.png using Guid(0d14e746b7115d346b5981635cfa7918) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '507b5946e127c5d49c6957f3c39c5a1a') in 0.0190919 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=63c95f08f98c3ca6e0f3573b3faec4ae DependenciesID=16e93592c61789418b6c0090bcbf4c0c StaticDependenciesID=1be9bb9b3d882ec5da0594adc23f0618 
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_134.asset
+  importAddress: Guid(a71d6658b010d3c44b9d2037d85a45d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_134.asset using Guid(a71d6658b010d3c44b9d2037d85a45d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd8120aa494c2db4e7417b239b77d8857') in 0.0257822 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=24025b58a8d05a668c58c15c7cd94410 DependenciesID=6d41c1b86ea3d03d08e63e6eccad3a1b StaticDependenciesID=abb3a80e0e644d3cfa11762336554997 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000028 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch-stairs_2-fence.png
-  importAddress: Guid(3c2551085758469418e7c1dd3b3d30f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch-stairs_2-fence.png using Guid(3c2551085758469418e7c1dd3b3d30f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'de28f5b180294d5b33c298605b01e079') in 0.0154693 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ae97a8f27efb66e09df2613a7a726473 DependenciesID=f603c78e63dde57ce4f739aa11d8cab7 StaticDependenciesID=4a6187ba39352bedc0d00896c22164a7 
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_148.asset
+  importAddress: Guid(bd07469f0eb71d24e82c7d88c3062c57) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_148.asset using Guid(bd07469f0eb71d24e82c7d88c3062c57) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '612020c0746fcbfd3043246cdb488b75') in 0.0265632 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=172798b115f15a5911c05ef5e87f895f DependenciesID=6eea8834d085d69a4351d61ea21e8dc6 StaticDependenciesID=a93f8a13e99564ca6c50b63e19954bbe 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.057649 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch-stairs_5-fence.png
-  importAddress: Guid(0a185e7264386d54e9db2a05048c509c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch-stairs_5-fence.png using Guid(0a185e7264386d54e9db2a05048c509c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '697d024f7d830407fc7531d6fa818339') in 0.0181473 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c896db5b1bb107b3109bb4148764d4c1 DependenciesID=0604c8858ce044acbd6e16b7d661636a StaticDependenciesID=c9a9d61ad1165c55b712df32932806b7 
+  Time since last request: 0.000026 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_147.asset
+  importAddress: Guid(228b70e68d4d093488a0545179e826a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_147.asset using Guid(228b70e68d4d093488a0545179e826a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '4d721fe71796badd0edce67c06fa1426') in 0.0255898 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a27033bc3a4b1c277456dd913120de53 DependenciesID=2868028d323b9a784e045325a385ba70 StaticDependenciesID=49b963dd9d071a5f6f509c95c49bb653 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch_2.png
-  importAddress: Guid(37c88a3da582a204ca6d3037e15196e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch_2.png using Guid(37c88a3da582a204ca6d3037e15196e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '85d260e52fd8faaa454abce8e9b0829e') in 0.0206822 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2579e57d6225b077429d13f3163f2593 DependenciesID=e797834ba99be6a1d51d4ebf2890b509 StaticDependenciesID=13fb3c237f806c004799552f22a41826 
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_122.asset
+  importAddress: Guid(ca2fbced562871b4d860b1280dbbba05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_122.asset using Guid(ca2fbced562871b4d860b1280dbbba05) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '437a62257d6f5664694dc67827d8ff0b') in 0.026461 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0381500724cc99d51f97d30396eb05b2 DependenciesID=dd361597e53603ebd28e15b4aade277a StaticDependenciesID=d2e9ccd47c34023be2140ee8182074b2 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch_8.png
-  importAddress: Guid(1597ad0e12e646a49a98d0621e0e1194) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch_8.png using Guid(1597ad0e12e646a49a98d0621e0e1194) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '4d7093a6502e480b2126b85e1e22627d') in 0.0173545 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=babd7cac6764aa5bbda2d75a73877947 DependenciesID=d976776a86e44bf63abd112d1bf4f1bc StaticDependenciesID=ed8a264f5b714a5af47cdb89908ab9ca 
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_124.asset
+  importAddress: Guid(095e27a9768e9bb40aa70d9dd87b61bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_124.asset using Guid(095e27a9768e9bb40aa70d9dd87b61bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '44093697393d9c42203d7ef45719aed8') in 0.0291096 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5ad69f14c4551e53c3f026b8fed3c062 DependenciesID=4dd35b95b5fbcc932b9e0658a14fd758 StaticDependenciesID=3449ffdc3f1780e5a0c344294e714732 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/supports_2.png
-  importAddress: Guid(f1c7bf8024652a34c997606309c31a20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/supports_2.png using Guid(f1c7bf8024652a34c997606309c31a20) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c4d13ef4bfbe3de8d7dcae5107cb7cbc') in 0.016228 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5e20d61be5c15f5ca6a7581164cc26a4 DependenciesID=d7a86afa8ac13c05bede445ddde839df StaticDependenciesID=a304c74efd53cc0cc20eaa42a1ecd8ac 
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_144.asset
+  importAddress: Guid(b155b396b8a1f224fb798941ff54ff61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_144.asset using Guid(b155b396b8a1f224fb798941ff54ff61) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b66611c5ef136626c79e552418cf533f') in 0.0259172 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=302c7bf5a5f43b9b05ebb064ba6e3c96 DependenciesID=c106132fc1071d6a81a1489d840fa423 StaticDependenciesID=0645e0c4f1bfb98e4a87c0ed3d0424c3 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/tufts-of-grass-roof_1.png
-  importAddress: Guid(48ae1a9a4a9b93d4aa164fbe0e56e922) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/tufts-of-grass-roof_1.png using Guid(48ae1a9a4a9b93d4aa164fbe0e56e922) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '89317745db8c3c6374a850b95615e1fb') in 0.0191517 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8d1658693bf2bab0f23f07b8119ae357 DependenciesID=13b4a6fefa33bbbbd845faa4ba2ec202 StaticDependenciesID=df93312fa2fe208144ed4950a7eb3888 
+  Time since last request: 0.000025 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_135.asset
+  importAddress: Guid(4471335c52aa79548974a72c45ad37aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_135.asset using Guid(4471335c52aa79548974a72c45ad37aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0c93502138ba5d883f7fbdce6052ae5b') in 0.0311081 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3da6b4c025657ae99c818e6bf0eec687 DependenciesID=f64dcd97f07b23412da9ddb85eb389a2 StaticDependenciesID=c0c8fd80137a6e845b4707ff27a341ce 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_155.asset
+  importAddress: Guid(de2a847cba8b2e641b636a6b8f496438) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_155.asset using Guid(de2a847cba8b2e641b636a6b8f496438) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd0a94e225b1a27520ada60054a5110f7') in 0.0273378 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ca411597c6df36eea1615dfc88275e69 DependenciesID=cbf45c014d54fd427a78a35717d2032e StaticDependenciesID=d9ab9a22e24cb6204544ff789df51358 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_142.asset
+  importAddress: Guid(27a9eece44ae1314f8cd10a79c0483d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_142.asset using Guid(27a9eece44ae1314f8cd10a79c0483d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c6746b4eb749a69ae71371f1a3b41410') in 0.0250672 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ea9b3a8738d87565f496789aba3404f9 DependenciesID=f903f79d5d4e5f52017fe1b41453f983 StaticDependenciesID=82fd3ca5a698bea76d6935516b0a65ce 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_121.asset
+  importAddress: Guid(24259421e87b8144aa2276fbd52003bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_121.asset using Guid(24259421e87b8144aa2276fbd52003bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '4f2fd34a6b26d35cc5ec0d4401329a9c') in 0.0211358 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=46500fdf12d9f7dc698b538231a75ba9 DependenciesID=f6001b064abc79dbbafff3ccd9d5f915 StaticDependenciesID=1eed432157c47de6b45b115a615f5fa2 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_125.asset
+  importAddress: Guid(cbfdcafdde748904c8c196c7f6fe3efe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_125.asset using Guid(cbfdcafdde748904c8c196c7f6fe3efe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '6b5d87490bbd0bdfa63461a1c7d1fe08') in 0.025154 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=35e647990b9886a63d3cf1d7156c08a1 DependenciesID=7acb795da217064500919d8eb0e51ab5 StaticDependenciesID=9cf483d1dbac32591715404811a67ce0 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.016178 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_158.asset
+  importAddress: Guid(681e76d39467b9e4ab7496d0d564a733) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_158.asset using Guid(681e76d39467b9e4ab7496d0d564a733) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '551ba658b7bb41b0a60091316e099453') in 0.025012 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ce83019f819026286675270df25406fd DependenciesID=e367b890446e3bd483d7e026a7c343f8 StaticDependenciesID=bc998129b13ecd5257fe49191f7cbea5 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000023 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/tufts-of-grass-roof_8.png
-  importAddress: Guid(008f4007d52d8b143998ab690046bc02) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/tufts-of-grass-roof_8.png using Guid(008f4007d52d8b143998ab690046bc02) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0c3255d419e1a9f2e29c6eb018f0cfc9') in 0.0206895 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b1baf52134cb747a69005a95bce3d9c7 DependenciesID=18e9a5192548340fb07f17aeee39d07b StaticDependenciesID=bdd5e5a2b54eed1a668d9772b7082863 
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_164.asset
+  importAddress: Guid(d8ffa1baf74efc44bad7f651dc8519b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_164.asset using Guid(d8ffa1baf74efc44bad7f651dc8519b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '970d5ea36cc28495e9acba15ff86b523') in 0.0326577 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c01da24a1b4f96b81e9689cb4342879d DependenciesID=780e81ae22c9da2471df2d4e0b809946 StaticDependenciesID=2394c436e5b0932f8a1e72424240468f 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/tufts-of-grass_2.png
-  importAddress: Guid(0b93cda41f86909438f2f56e1bca3c8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/tufts-of-grass_2.png using Guid(0b93cda41f86909438f2f56e1bca3c8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9943465a9bee4f2c179def93ef569219') in 0.0268962 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6beb0d41d770ab2009e3508450162a6b DependenciesID=5936c037c4aa2d8b8ebf0fdba54549d1 StaticDependenciesID=183d2e6d7fcb61ccd0b9990259b42aec 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  Time since last request: 163.521873 seconds.
+  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/FullscreenInvertColors.mat
+  importAddress: Guid(78a08787ca30045abb69f6f7dd878e09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/FullscreenInvertColors.mat using Guid(78a08787ca30045abb69f6f7dd878e09) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '6357e62f26a0579f6c23461ba47693e0') in 1.2607322 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f33ce35bfbfb6cfe1bef9c5925f69fd7 DependenciesID=42367c8193d54f301d2e1f3e40d2fa0a StaticDependenciesID=eaf5d14f50100270f6bc1713310649a4 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000085 seconds.
+  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/SpriteMask-Default.mat
+  importAddress: Guid(15d0c3709176029428a0da2f8cecf0b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/SpriteMask-Default.mat using Guid(15d0c3709176029428a0da2f8cecf0b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '5edf1bb5329dd6bad0df78a5f2202515') in 0.0277488 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=108035e92aa92438b8762cbecc9a6b8d DependenciesID=3a5441a1fb18e799f84319144f347a39 StaticDependenciesID=ccdcea236cb2f0f60fe52ce4850b3039 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Mesh2D-Unlit-Default.mat
+  importAddress: Guid(71942363c5608a64bb62421349d39c9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/Mesh2D-Unlit-Default.mat using Guid(71942363c5608a64bb62421349d39c9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '552ce35a0d1e64a9793106ffc856c79e') in 0.0318549 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7dd42929a02100f0d4010651ecb936d6 DependenciesID=d972ab537a3214e3e65838e059f60a8a StaticDependenciesID=ea74592af9ec3779ea5934adc6d0ccf5 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Unlit-Default.mat
+  importAddress: Guid(9dfc825aed78fcd4ba02077103263b40) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Unlit-Default.mat using Guid(9dfc825aed78fcd4ba02077103263b40) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '059cb6a7ccf3397842648dc2222f3884') in 0.0247212 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5863480d54557a1f258040cce25d7c24 DependenciesID=9652d5ee60e8fdfe5b6621691cb7d64d StaticDependenciesID=ef9fcdf1979bdca913290e0af378ea5c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat
+  importAddress: Guid(a97c105638bdf8b4a8650670310a4cd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat using Guid(a97c105638bdf8b4a8650670310a4cd3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b7281821e69d3365706771496c202e83') in 0.0141836 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=848ea01d200145639fc1afc0f5aebc50 DependenciesID=6e2dfc7d1a0866296785a39652e5b29d StaticDependenciesID=b5d50dd01e70dcc64c50db3aad8639e7 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000045 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/tufts-of-grass-roof_5.png
-  importAddress: Guid(aaf4696fda4ecf74fbab7ffdf5951410) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/tufts-of-grass-roof_5.png using Guid(aaf4696fda4ecf74fbab7ffdf5951410) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '5d99396884e35e1539f3fd6fd51e1f1e') in 0.0159299 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a594984ceabe33647f03c9338c9ac757 DependenciesID=4e5922cc249663ce14813e33e398985c StaticDependenciesID=0d104c1d2d222d4b62bd829fc5d1336a 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/tufts-of-grass_9.png
-  importAddress: Guid(9776f41b5d28bd34f9096069e6538570) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/tufts-of-grass_9.png using Guid(9776f41b5d28bd34f9096069e6538570) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'af80a1984110e35c5a5da2cd069aab3f') in 0.0158604 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cee61439e0d44e55d0275ef8539060a9 DependenciesID=fe4c491a9d69943eb605b7f5ba056233 StaticDependenciesID=7f98f53ceb5d0815da3366f50771ac4e 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-2_21.png
-  importAddress: Guid(e21423fe564be464ebe2336d58e6cfa9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-2_21.png using Guid(e21423fe564be464ebe2336d58e6cfa9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'e10d06ba2ecb1cb9b4461aab21e0f80c') in 0.0211464 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=045375b3e40638749d39339188083e2b DependenciesID=0be4e77b7044a78f1643e8406a77b8c6 StaticDependenciesID=84166696142e3945d083ccf0f7f0d8e5 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_10.png
-  importAddress: Guid(1460df35727971549ba772090c2775b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_10.png using Guid(1460df35727971549ba772090c2775b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c78ef1419c5e5eefa51d60d50cfa25d6') in 0.0142134 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=63c41e4103a1ba7920dbb8663b87949a DependenciesID=7752c9f5f2f50e31ab9399af1f91c5f4 StaticDependenciesID=bb55698a34d692a90db58b1df0c21686 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_18.png
-  importAddress: Guid(ea1008e6696805b4989a6778b6ce4e3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_18.png using Guid(ea1008e6696805b4989a6778b6ce4e3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ec41cc4d9aba4837fc3de2bee25bbb9b') in 0.0191931 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b859b263519c1ba0e7ed94f787dcc2f6 DependenciesID=b9b756fb3c9795067b0d39fcad09d0f9 StaticDependenciesID=d57bef80deee9e94c3cf588fbcb8143f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-17_17.png
-  importAddress: Guid(b86cf483412bcfe428ce7dbfd2028d25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-17_17.png using Guid(b86cf483412bcfe428ce7dbfd2028d25) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '4a9005875f280af417811a70166b0444') in 0.0162244 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d77f913371c28874ef161d183878cf49 DependenciesID=9dc4ce16e791b56874a0beb4bded58d1 StaticDependenciesID=17d2411d6c46fa1546d3f2a160e86d2a 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/tufts-of-grass_12.png
-  importAddress: Guid(c39d3ccb28ad07e4da19bcf681c5b9c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/tufts-of-grass_12.png using Guid(c39d3ccb28ad07e4da19bcf681c5b9c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd973e79319e02fbde846b8704255d2bc') in 0.0157635 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=aca483427a5fd9a3d155fd481e2ae6b6 DependenciesID=ad35d6545a484a662fb989ccf4dc71fe StaticDependenciesID=fc3b0f5324b9fe293b9b3c553602fd70 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_20.png
-  importAddress: Guid(2956cba2fe209f847b3804ebcb82b4da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_20.png using Guid(2956cba2fe209f847b3804ebcb82b4da) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '2a59c6e83004b73ae4068443b4937892') in 0.0194023 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7f5c87f643772b6bac449e31981b8b44 DependenciesID=9a1ae9d7727e10f9ba52eeab4545cf8f StaticDependenciesID=3cd09f1b932aec499989e46c226cfc4b 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/supports_3.png
-  importAddress: Guid(b07be77b2ff01c64caf32442608c1b4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/supports_3.png using Guid(b07be77b2ff01c64caf32442608c1b4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'eb5e49c530147ff35d448e3c0c4d2600') in 0.0175999 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=500ce891a8efd5962ed7044720fa6263 DependenciesID=2bfc5707759a3592a616a523b68284c2 StaticDependenciesID=f0331b2967904107ec5c70d282fcda28 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-12_12.png
-  importAddress: Guid(f37a197cfdee3f044805bc6f157cd77e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-12_12.png using Guid(f37a197cfdee3f044805bc6f157cd77e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '6b186dc8f65dc27409ffd574195a131a') in 0.0216362 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f99d8999dc8cd0454eab7e39d7be9508 DependenciesID=e9e62b849038214e5a305381dfea6e5a StaticDependenciesID=d548f83f2cbfa797caa44adafeea3ca0 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/sign_1.png
-  importAddress: Guid(609bdbec52464854e812d26dac4ee7c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/sign_1.png using Guid(609bdbec52464854e812d26dac4ee7c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '2c7d5ec0b17f7c204f4465980d23703e') in 0.0205855 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cc2b6e0fed3f67948af87acd76ccdafd DependenciesID=71603fd23ef7bc3d119b376a615963aa StaticDependenciesID=ae1b5072b3a446e69e7cca67797607c6 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 9.625475 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_0.png
-  importAddress: Guid(ab7d5d8affb056645a8e1f899c4132c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_0.png using Guid(ab7d5d8affb056645a8e1f899c4132c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '1e4809c908636af012f58a4e7f10ecfc') in 0.0230929 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=444ddafbc0b0b50894a64b1bc96d386d DependenciesID=de1aafdb7a15b4eff6cdef8deefbaab5 StaticDependenciesID=5629dfa2549b33f4d4e03df23e2024ba 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_18.png
-  importAddress: Guid(ea1008e6696805b4989a6778b6ce4e3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_18.png using Guid(ea1008e6696805b4989a6778b6ce4e3a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a9ca82bbebcaf5a63479865e85531b67') in 0.018129 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9f3ad6b989b6b8bde94e9a18ca7180ba DependenciesID=ceb774e634bce9b60ff9d7ed4755bf34 StaticDependenciesID=140b32180b763800c2fb8ef8add1a14c 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_6.png
-  importAddress: Guid(f5105918417fdf44290976dfaf1296e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_6.png using Guid(f5105918417fdf44290976dfaf1296e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '2fb98ada21e8f91fe36b7c139fdeb14f') in 0.0182875 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c7ee4ebeca22240cca348bc8ff80b1c1 DependenciesID=bc8cf9acdf12deb2426a28a25b163d2d StaticDependenciesID=398caddc47204a7c926725d72e7406f3 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_19.png
-  importAddress: Guid(706f0ed8b18419f44bee261a310d7f7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_19.png using Guid(706f0ed8b18419f44bee261a310d7f7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ec9f644725a94554ca3bc0a47d289076') in 0.0162562 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=042765ee4684e9ed5cead3038609cbde DependenciesID=85c233a874b4845ada9588834ea0bfda StaticDependenciesID=26fc1979b8163c094786f4f931fe6b32 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_20.png
-  importAddress: Guid(2956cba2fe209f847b3804ebcb82b4da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_20.png using Guid(2956cba2fe209f847b3804ebcb82b4da) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b30727e7ac09abe4e97868916beb1fa7') in 0.0154997 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cccdcd9ec470ce1ae5a9a539162f2548 DependenciesID=2e7de9d374bb5799d54534ad1469420c StaticDependenciesID=c18aeb803f1e6257a6444fd2fb7b508f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_17.png
-  importAddress: Guid(affea9e96e61f69449d8a82fb9122ad0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_17.png using Guid(affea9e96e61f69449d8a82fb9122ad0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'abda623571156afb3449b4001208cf28') in 0.0167102 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=88e5162f4bbf3418e39de6095ed4f767 DependenciesID=eda184204cd8a9a7d54d81714764bdfc StaticDependenciesID=c7429b9682f31af333bee1df7219ce96 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-12_12.png
-  importAddress: Guid(f37a197cfdee3f044805bc6f157cd77e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-12_12.png using Guid(f37a197cfdee3f044805bc6f157cd77e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd0f1e57fc3ae309d0175194f2aa0745c') in 0.0159202 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1fd70ff91e226ded4ca7d9e9a63a4e8b DependenciesID=502b1a256cf138eca38045ddd966699e StaticDependenciesID=bfd9ceee7441e41ae279aa47147d5b8e 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.375832 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/flowers_plants_3.png
-  importAddress: Guid(6f94cfce10c0f4444a1b7e6dcfa01c33) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/flowers_plants_3.png using Guid(6f94cfce10c0f4444a1b7e6dcfa01c33) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b25708435643c7c47f971875fb965fa6') in 0.0173255 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=44358499b9b8718c4cea9e76c65e1e0a DependenciesID=2480f207c7baa5131785a5b8ba994f8c StaticDependenciesID=75d9b91e07b4fb3dc8a0d1acd186767f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-0_24.png
-  importAddress: Guid(a9caa26c651793145b223d5e4d5165a8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-0_24.png using Guid(a9caa26c651793145b223d5e4d5165a8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'fbef72cf339fed40288cee8030a7a908') in 0.0183241 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=348e66775d1ddb8e5b278f3a9eb7b827 DependenciesID=fc43b7e2b5d3fe3285a8499ee4963a05 StaticDependenciesID=591c3a33c122f4ed85f81dab498dc3af 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-0_21.png
-  importAddress: Guid(519ed7114a7ff364eb8e43ab9402f64c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-0_21.png using Guid(519ed7114a7ff364eb8e43ab9402f64c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '392250cefcf8d958341a0fc3c91c0332') in 0.0160207 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5c3840da4cdb939017ea7b13e695bf4d DependenciesID=ee580ef16725b445901e5a9992805089 StaticDependenciesID=94bd4aead8279d7453eb3a13edef63b3 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/lamp_4.png
-  importAddress: Guid(634306ce83ebe184c8fe57e0455aefd7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/lamp_4.png using Guid(634306ce83ebe184c8fe57e0455aefd7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '501adedf46cc64b1d523eb7920023a54') in 0.0156748 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=32314fb48d07065db4e8813e7dc636c1 DependenciesID=ffa19488ee350af9727a79a69a071407 StaticDependenciesID=f7d3ae2e705d370414bdf337e0321437 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/flowers_plants_5.png
-  importAddress: Guid(2e5fa46b6e9c4f14b9744e7db736ee87) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/flowers_plants_5.png using Guid(2e5fa46b6e9c4f14b9744e7db736ee87) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'e3b296cf1fdb5ac94ecd8542500e070a') in 0.016514 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0ec23c12fa1f30c518d22080d49f0936 DependenciesID=5a723ccb6396f307df43e8f86a17b632 StaticDependenciesID=2101e7ccfd47eb739d08c67e5c7c3976 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_1.png
-  importAddress: Guid(17749106b6400994f8dc770b93b9d16b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_1.png using Guid(17749106b6400994f8dc770b93b9d16b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '24f42b01e03a193e75a9dbe24a278b90') in 0.015522 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=af7e6d577c240560f41bf13ccf577a15 DependenciesID=8daa45efeb43942340be322638463437 StaticDependenciesID=93639833d45632b1176d01ee244ce621 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/tufts-of-grass-roof_6.png
-  importAddress: Guid(336ebf9a8b812534d94d4ffe5e6b8a0b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/tufts-of-grass-roof_6.png using Guid(336ebf9a8b812534d94d4ffe5e6b8a0b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'abb19e04c663234bdeae39e982637c55') in 0.016815 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3c88805277711935459243268fb9ae3c DependenciesID=16cdaf3f02117c44d1e715b0d4455285 StaticDependenciesID=c6cc7b6fd8007802302b3f78c49984f8 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-0_5.png
-  importAddress: Guid(844d7c82aa33d164393b4ab08aea62f9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-0_5.png using Guid(844d7c82aa33d164393b4ab08aea62f9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a6262f24b7ff8996f093a43f7c66a71d') in 0.0164478 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=17899ec5f5bce872f8ce07215ce794be DependenciesID=93c071b43920708175abb75348ec71e6 StaticDependenciesID=f4326f2df15a8eeb960dcd6e168c1421 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/flowers_plants_1.png
-  importAddress: Guid(645db65c0fed3b841b611f73a0914af1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/flowers_plants_1.png using Guid(645db65c0fed3b841b611f73a0914af1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '076ae56d37b9366643ca580088595682') in 0.0195857 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b6daa808c0e42c798954c16829913c87 DependenciesID=8ef2c0f9b04531d6d2cafb4fc25b8401 StaticDependenciesID=4e289734b8b87e0ec0de27c0226e8b46 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-0_16.png
-  importAddress: Guid(7ce9edb426ede28479b92e33951c9aa2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-0_16.png using Guid(7ce9edb426ede28479b92e33951c9aa2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '03854cff38076ce44318d2109baf461d') in 0.0152364 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=346dece34f8e4bb69f0ec2a97f0f8fab DependenciesID=bb764711df656a2d146344dff885597a StaticDependenciesID=bd0da04a5b6882cd7bc6b7e723feeaed 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/sign_0.png
-  importAddress: Guid(0e1c68aff97a12548810141ba1d0df86) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/sign_0.png using Guid(0e1c68aff97a12548810141ba1d0df86) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '5a2d00b4741dde8eecaf0e44d72a22e4') in 0.0163226 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3c27857386610d9b7b53a17138a6e929 DependenciesID=089bab15e3b2bec3d4129e4df1e9b3f4 StaticDependenciesID=3d053409e50312a7be5b19b01243861e 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/tufts-of-grass-roof_3.png
-  importAddress: Guid(d0788a2e69883df4ba45b66f6b05a31d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/tufts-of-grass-roof_3.png using Guid(d0788a2e69883df4ba45b66f6b05a31d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '76614756e334db20ff6c442dcaebb937') in 0.0149424 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b07c71a2a030d18334d4c6d16def76dc DependenciesID=a0844d275cd0c80591dd6321e81f8212 StaticDependenciesID=b4b016bd7f825e37b6212b2e339859db 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000053 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/supports_0.png
-  importAddress: Guid(bda764f7a6c1cd44ca02cf0129eccaf0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/supports_0.png using Guid(bda764f7a6c1cd44ca02cf0129eccaf0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ab08c39af5ee8cd6b427e629e453a793') in 0.0135142 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f93223ecd9ba011ceb87bab960d37201 DependenciesID=1b80fdf99e22d6e79e1edd46e3041bc2 StaticDependenciesID=56df77424f3faea09dea503690d3815e 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-1_13.png
-  importAddress: Guid(fd8a2524a5f61f74996885743ef62860) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-1_13.png using Guid(fd8a2524a5f61f74996885743ef62860) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '345c493751acfa390742f204164e752c') in 0.0158398 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=765db3e4ac2ab5d42d2665c15cdc4e45 DependenciesID=ab2733ffb49e1e286e99024b6fd7c555 StaticDependenciesID=00539faf51dc3400c6d57249d73a7e6a 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_12.png
-  importAddress: Guid(b595723590ae488469eb1aa28e004ea6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_12.png using Guid(b595723590ae488469eb1aa28e004ea6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f4af06f06467c2dd2b77e87d912d60c1') in 0.0153928 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=92e14cf077c6ccf0ace2fcc262021c82 DependenciesID=86956c1b122146543db2213e7e8c8ac4 StaticDependenciesID=dc952dcb23cffc368b1063fbdf31f204 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch_4.png
-  importAddress: Guid(c3489d8956dbca848a19b22344f271d8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch_4.png using Guid(c3489d8956dbca848a19b22344f271d8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '07ea0e0c948367cf109ed5c0ba693766') in 0.0193362 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e5645bd9d7ef7caa5a97d50cdc4c9711 DependenciesID=a409a93fcb09e486c2294a06c20ef678 StaticDependenciesID=0c1763f4860f6db0b5db3743ad7f45ae 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-2_4.png
-  importAddress: Guid(8fa0fe887fcc61e4285f2a80fad82c86) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-2_4.png using Guid(8fa0fe887fcc61e4285f2a80fad82c86) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd88d2d281e5531ff98cf5736125a24f9') in 0.0163198 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4532c4d93a20327c3a90a462a8e3ffb1 DependenciesID=6488d5926d20264666072682b89ca676 StaticDependenciesID=a4e36fcb09b9d52bb8cb8fd1d0287cd8 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-1_1.png
-  importAddress: Guid(82e71205b8fe96f47b09aa805520e9f3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-1_1.png using Guid(82e71205b8fe96f47b09aa805520e9f3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd5b1a601ae7b0f8e1fc2f30ae2f74160') in 0.0160141 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8646bb5325d87b6ecfbb595b7c8ce491 DependenciesID=70e4d0354added66be96c708c9419fcd StaticDependenciesID=e6dc5aa3de8f765f880bccfb4994b594 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_12.png
-  importAddress: Guid(10e18cf49c26f6246bd68f267647edcf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_12.png using Guid(10e18cf49c26f6246bd68f267647edcf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b37fc48c7ed9b7e0570f31ee8dca5d4f') in 0.0157127 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=be03305f798cc1b4045a914c273251d5 DependenciesID=a274e0b041301d22511234478cf67fd4 StaticDependenciesID=2e83bd988f03eeb8e34c2d3d10cd190d 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-0_18.png
-  importAddress: Guid(0db55dc42127f3743986e90524b37050) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-0_18.png using Guid(0db55dc42127f3743986e90524b37050) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a072ac86a7f0bfc2ecc4b0c492f90b78') in 0.0178345 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=609a44daf18ec60f5c3ac072efce402c DependenciesID=89b9193e7492354cfaeb46b7b6fdf471 StaticDependenciesID=ad57082bb53923ade4754441fc2bc09b 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_4.png
-  importAddress: Guid(c57382318613aec409d5cbaa0af423ee) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_4.png using Guid(c57382318613aec409d5cbaa0af423ee) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '97e092614241dda3d5c483d6509b522a') in 0.0142692 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=717add830356dad4dd66363ed447ffcf DependenciesID=6a42b8f0af8f49f693191a19c9299b76 StaticDependenciesID=f01fe0b839a917edd4ea7189156ac72d 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/flowers_plants_4.png
-  importAddress: Guid(4034d7555c73ad44e9eea592680b2343) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/flowers_plants_4.png using Guid(4034d7555c73ad44e9eea592680b2343) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f8050b9162651411f490f9386a2cafa5') in 0.0191703 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=54c4ffbadb436d2b75d73d7eeac4d6e9 DependenciesID=3276c7756b2040fd06f04b71809bbd88 StaticDependenciesID=3a5b70c64c53b0221209a779a816c417 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch-stairs_5.png
-  importAddress: Guid(036263b1c9c144941965deedc25b23c6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch-stairs_5.png using Guid(036263b1c9c144941965deedc25b23c6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'bef560a36018583ab69824c7b6a0f910') in 0.019365 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=77622ccf74a1219b382687286ebd043b DependenciesID=2bc5580fa6000006e1c3bffed9d56328 StaticDependenciesID=bd439be7133044c394e726fa9a728733 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_7.png
-  importAddress: Guid(a42f34e624f4dae418c48cdbd60d5c13) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_7.png using Guid(a42f34e624f4dae418c48cdbd60d5c13) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '701f6f96ce73fbef175bcc9f41e700f2') in 0.0150859 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=acd2e327f4c70487cbb718741529e378 DependenciesID=6b8d5f0002fa96a6cc0308474d7e3e26 StaticDependenciesID=33aa485e4151afe6f5c7aa782644d6c3 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/lamp_0.png
-  importAddress: Guid(4b7f608229ab8ba4e9a67dc9f99d6ab8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/lamp_0.png using Guid(4b7f608229ab8ba4e9a67dc9f99d6ab8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '38dd6f547948eeaf5a63a9dd0cf3c550') in 0.0143657 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5358257d75af9639f408596e7497ba1e DependenciesID=952d87b59153466fc4335d9da2717cbf StaticDependenciesID=3a6e92abe8d166e94011e698d66a6d71 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-1_8.png
-  importAddress: Guid(0b0ec63f45e1fcf4ca839a328e6153f9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-1_8.png using Guid(0b0ec63f45e1fcf4ca839a328e6153f9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'e7e0861bef726c879189d8a90395d676') in 0.0177194 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=caa335dc30cc2b32629492b78612024b DependenciesID=4011d36bf18d51bd5cc575268df8bb9e StaticDependenciesID=01f7701de1c27a941dbe7a1cd651c19f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_15.png
-  importAddress: Guid(161fcef6001602a45985784a37e9e005) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_15.png using Guid(161fcef6001602a45985784a37e9e005) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ae82699bf5da0430bfb61a776f435177') in 0.0158391 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=14eef167fa08a580896d9190a409ab3a DependenciesID=48be37fa2e6e01aa3b06bb4c60bc3563 StaticDependenciesID=90362e1a888b3b19621b910e3aab19d2 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch_2.png
-  importAddress: Guid(37c88a3da582a204ca6d3037e15196e7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch_2.png using Guid(37c88a3da582a204ca6d3037e15196e7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '8acacf603837c42661e99f58b068a59b') in 0.0158102 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ef8773f56ff4060aa9d3ad9c65a57975 DependenciesID=c84e061075d53138467b848664c90bd7 StaticDependenciesID=fcaaae63144637540204fa54b58213fe 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_12.png
-  importAddress: Guid(20079dbbfb1eb0145a5f1b892754232c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_12.png using Guid(20079dbbfb1eb0145a5f1b892754232c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'e918e5f8d0a5c920d5711353a71f61ad') in 0.0162987 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=eca0a6be8edf69df254ff58015785571 DependenciesID=b7f0131a4c67d51159094a9bc8ad3d84 StaticDependenciesID=11a14721d619db8604b9d5df5225cbbf 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-0_6.png
-  importAddress: Guid(5852472913c7c604aae19ca26bd19514) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-0_6.png using Guid(5852472913c7c604aae19ca26bd19514) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '109186f58d8f4f40d65a2727304dfea3') in 0.0190839 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0ae931f46a3134846598618f9835710e DependenciesID=8f13f086dcc0de5a4dda74016567a00b StaticDependenciesID=93d2660410258b3cf3219b1cb9193f1f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-2_3.png
-  importAddress: Guid(29921e18ff7dddb45a03c5d109148682) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-2_3.png using Guid(29921e18ff7dddb45a03c5d109148682) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '2bba2c640ec611985e7fbbbebe17da2d') in 0.0132543 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=dfde6da065c76f8dc5d63a412a8465e1 DependenciesID=6e259fd5b81f71821c6f4e4a97bd8140 StaticDependenciesID=834605c7fb3992d7e272de63bed268c0 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-1_2.png
-  importAddress: Guid(3d2c32f38190d4742a2acc3bef69df2d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-1_2.png using Guid(3d2c32f38190d4742a2acc3bef69df2d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '0a2e3339f381711756c27bee0c8c042b') in 0.0156696 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ddeb043f28487431bff6e12edfd34970 DependenciesID=006f0bd3186e26f7f4612dbbe140b684 StaticDependenciesID=9add74572b113995939f02075f237159 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_1.png
-  importAddress: Guid(29250d2c64ba8ac4d8611691b6d34847) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_1.png using Guid(29250d2c64ba8ac4d8611691b6d34847) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'e8b28d2cf6663d954b0b3325a762c9ac') in 0.019124 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ba9c4236e0e4e7a5f18779c93a9ec4f0 DependenciesID=d98a729504db157a0ff735a9b098e0bf StaticDependenciesID=654e1f344c135ea3adb6602a1a48ba80 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_5.png
-  importAddress: Guid(d0c1f16790cf1014aa440cfb1d61448a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_5.png using Guid(d0c1f16790cf1014aa440cfb1d61448a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '0de00a1f220e7018bf931eb91278ef4d') in 0.0166618 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=dfeb555d7d13ab59d3a7b1b00773925a DependenciesID=fd653a213d1896601354d12d0ce7bcfc StaticDependenciesID=f2b3ae721eb84934d72ed458f2f18174 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000043 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_4.png
-  importAddress: Guid(8a35b3ffb5fb5c4419dc665ca4a9d02c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_4.png using Guid(8a35b3ffb5fb5c4419dc665ca4a9d02c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '3d0880cf3860dfc9252cd585a7347228') in 0.0166008 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=dc75f6bb1fc1bcc701ae2830a693b7be DependenciesID=4a5d35831ed7e9552da9b06cf2b05ce0 StaticDependenciesID=96b02f1959f66a091e6626ccc1102ec5 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch-stairs_4-fence.png
-  importAddress: Guid(0881ad1329bbc6544ac2e9d1432dac32) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch-stairs_4-fence.png using Guid(0881ad1329bbc6544ac2e9d1432dac32) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '61517d8d7433dc33e11a6f149bc96607') in 0.0173614 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7dd68719070d2e223f85b81841ecb6ed DependenciesID=f6d904ffd12909ab0c72e63e73ef7fb2 StaticDependenciesID=13b72ee6c673252978b6ca6fe26c0ae0 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_7.png
-  importAddress: Guid(44fcfdeae00300049a50eeff04980a75) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_7.png using Guid(44fcfdeae00300049a50eeff04980a75) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a6b6f6dfc83d52cc3a5342910ac181d4') in 0.017422 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d3d41d0b1d6d3a3a5027ea921fd1b1fa DependenciesID=4559d0ae460a197de622df5fa7d04ca9 StaticDependenciesID=f8af9ca10d4892c78554f65fc939e2d9 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/lamp_1.png
-  importAddress: Guid(6f6a5247d89df1f44b428f9ef7cf9cff) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/lamp_1.png using Guid(6f6a5247d89df1f44b428f9ef7cf9cff) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '0c47a3d642d5f8261da31d15ea89d32c') in 0.0170478 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9d5998539b5277b0096c1fd1feba9427 DependenciesID=d8a4218366279dd6540b04a7f4bf80fd StaticDependenciesID=182238b209615f81594769e928576cfc 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-1_15.png
-  importAddress: Guid(ea7160efdfe50d64cb6c85b814124404) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-1_15.png using Guid(ea7160efdfe50d64cb6c85b814124404) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'dd62997cee3998ce1eb927c5a66051c8') in 0.0151089 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ad2fe214e7dec571fdd6cc5d017bc755 DependenciesID=ec7731377d8c298725a6ee115bbd1f20 StaticDependenciesID=fa5ec338daa835796aa6615d6784c341 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors_0__19.png
-  importAddress: Guid(806db044dbc2f1a45b79b2f4e6fbcfc8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors_0__19.png using Guid(806db044dbc2f1a45b79b2f4e6fbcfc8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a575bcba9a15fc87bbaa539ab04eeb24') in 0.0146543 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b6030b51764e4d202abfa0d0070e8bb0 DependenciesID=1cda1653c836d0bc8ff6735a5f706919 StaticDependenciesID=da5a2c4f20dec2b22b9ec96a6df00993 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-2_22.png
-  importAddress: Guid(cabd799f11b08dd4a8e8db714b0fcd3d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-2_22.png using Guid(cabd799f11b08dd4a8e8db714b0fcd3d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b530247e687e8ce8887f5c8144df72a8') in 0.0146053 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=50280815413deb714eb92d89371b6330 DependenciesID=fec44f951358253e9018f74d836f0447 StaticDependenciesID=a20cbcab92e0ed79e7d372ac2671a53a 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_0.png
-  importAddress: Guid(546aacbceaf0899479ae295fa940be6e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_0.png using Guid(546aacbceaf0899479ae295fa940be6e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c1cd10cf1b8af0adbcad329928595f47') in 0.0174704 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7bc8871cb37faff61f13e93d9be1b483 DependenciesID=49e06267863b12bb2ddef3a9d75fd40c StaticDependenciesID=b6f039c44ee27a0fbccb34fe45ca0e50 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_1.png
-  importAddress: Guid(e925f2ac1fcdb964792de9e7274b33c9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_1.png using Guid(e925f2ac1fcdb964792de9e7274b33c9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b0e0b33828038d9f7b4d7ee8074e82df') in 0.0162949 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d801d931270e0dbc802e5722edf3405a DependenciesID=2a5cc954acfc75cf350c5ee5b41b4ce9 StaticDependenciesID=48c5c1c96c9518936671539e4af3299f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-1_4.png
-  importAddress: Guid(0fe72a48d642b6f47b6e60722339ec0f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-1_4.png using Guid(0fe72a48d642b6f47b6e60722339ec0f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '24fd022661f7af08b8f7649bec5bebe9') in 0.0149884 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4e11619690cebca37ad9d1a6ba05c2e2 DependenciesID=a699c85e7f0494cfdb54f2dfeb58e952 StaticDependenciesID=755409542873c671222b7f508b40ef2d 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-stairs_2.png
-  importAddress: Guid(4de51290f3cac2d4494613b9c7741929) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-stairs_2.png using Guid(4de51290f3cac2d4494613b9c7741929) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'db7ac1b863af09e338c7fc455ac53f26') in 0.0147623 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9a80673ccfda4ada56f555d165e0f987 DependenciesID=3451256157b60fdf98ca2d36cb4211b0 StaticDependenciesID=e6ef6300bcce4c88a0e9ff15aef3ae5a 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/sign_1.png
-  importAddress: Guid(609bdbec52464854e812d26dac4ee7c9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/sign_1.png using Guid(609bdbec52464854e812d26dac4ee7c9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '69c2e0bce52cb37b60ca5cbdc5f0e0b2') in 0.0160877 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7ad89a16c3b386aef4a1d0c51066d98b DependenciesID=220990b1c6cab3f0293bd0c8b4d7dd47 StaticDependenciesID=da334f4f543f8f7b65f36d5b220e6e14 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/lamp_5.png
-  importAddress: Guid(0c85ee4f97e6bbb4d9c6ee7e8fcda27c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/lamp_5.png using Guid(0c85ee4f97e6bbb4d9c6ee7e8fcda27c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'fe5bfede10920ccd3fde58e0974fa560') in 0.0156686 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ba4b474d05237da26bdfd8963456b43e DependenciesID=fe2ab091c6bf8070ca909c5cf87aec09 StaticDependenciesID=c35dc1f65266421cf46ee236e0124e10 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch_8.png
-  importAddress: Guid(1597ad0e12e646a49a98d0621e0e1194) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/porch_8.png using Guid(1597ad0e12e646a49a98d0621e0e1194) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '8ca87f41d0af0c686201aef5ea0cc924') in 0.0180095 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6fb0b23a0aeec5844cb6c6b9982ddda7 DependenciesID=49f939983f104aa97558ba545023a02f StaticDependenciesID=71065585136e42a41146d141fa542e8b 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_0.png
-  importAddress: Guid(9bfe986c2b9b6314699e8eeeb44e834a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_0.png using Guid(9bfe986c2b9b6314699e8eeeb44e834a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'e55088db3ea1d64eb5fe2b02db216b70') in 0.0168896 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b266f67239a839f61ff7da41e87ba695 DependenciesID=107f7d3b48b13c551e09cba07b65b550 StaticDependenciesID=e3da4e17763a97039944962336b4551d 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_9.png
-  importAddress: Guid(bea8a988399da004ba26d7e0fec13216) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_9.png using Guid(bea8a988399da004ba26d7e0fec13216) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd7c3caff098f5d3eafa7f2b0ac2d004e') in 0.0150938 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3d20116a56563acd4a66d218e868acbc DependenciesID=d156d74b6debca133332a0ea94ceb5ad StaticDependenciesID=7f7976e351aabda1e10a87db843324fd 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_5.png
-  importAddress: Guid(a6a218a908ee70f428c2a6a314797799) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_5.png using Guid(a6a218a908ee70f428c2a6a314797799) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'e25788e2fbb03c0d6e20789aab94d958') in 0.0168581 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=228e25d83d9a97d84f821d2d0a785743 DependenciesID=37c7d9ad24eeb6e675f1572a4a420d43 StaticDependenciesID=9d09259356f702b01314eaeaa12845ad 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-2_16.png
-  importAddress: Guid(4ca0203b6d269f54c80eecd8ca9630c6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-2_16.png using Guid(4ca0203b6d269f54c80eecd8ca9630c6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '0bbfd5982eb57c0513f85a624a3b963a') in 0.0175494 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8794a27dfe2c335b0443bec6f546ef1f DependenciesID=bcb55d028e59971c441e04c612cfec84 StaticDependenciesID=440cd99b8c385c10b9c71899d6bbec02 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-0_3.png
-  importAddress: Guid(c42e77f5a54f3ce4f9e89f38731e523c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-0_3.png using Guid(c42e77f5a54f3ce4f9e89f38731e523c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '1e3f15283df1a7933dfa99413f752491') in 0.0148312 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=06b6bef5f91397b78c62fc34a1437cc9 DependenciesID=a68c7083423e31e507deb9f25374e73f StaticDependenciesID=d06753ef32bd468a67cd4f602d031465 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-0_23.png
-  importAddress: Guid(8fc6499cf89e443449b5c99fdb5dfc2b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-0_23.png using Guid(8fc6499cf89e443449b5c99fdb5dfc2b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '565f29e5b878c805e6030a4ff662ad1a') in 0.0153526 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=bffdae049eb0dc3bbdb80dd120da5ca8 DependenciesID=43e1b5d4c686a8085d771a4e40276a75 StaticDependenciesID=c4159687da228668f2ae2891c2aae8a2 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/tufts-of-grass_21.png
-  importAddress: Guid(cf37426eef3aad542bee063edf0b185f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/tufts-of-grass_21.png using Guid(cf37426eef3aad542bee063edf0b185f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '487d65efa89828a2bfeb32da5aef7412') in 0.0182591 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e0c1400b78d2081f1cf3d8495c9329c4 DependenciesID=e604eed6af35e70b97c79eed27ea844b StaticDependenciesID=e8debccbafb42bc6be9805258560697b 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_3.png
-  importAddress: Guid(2e020b6de4a25d1459fe6154696f99c0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_3.png using Guid(2e020b6de4a25d1459fe6154696f99c0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '287a41d2eba39ba6ce5c7d33d0bda592') in 0.0170303 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d1d60bb99f33df07db754fe77a277710 DependenciesID=2d5a3ee9d0280ee2fe3408b2ece6e572 StaticDependenciesID=d7e626da47ee3794e4915bdcab33b7bc 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_2.png
-  importAddress: Guid(f87ab1c15829e9b4dbe6d0557f00c132) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/windows-3_2.png using Guid(f87ab1c15829e9b4dbe6d0557f00c132) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '790bdecee17da2caf08657ea15928cb5') in 0.0163545 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=874c8b392559a564c5ab67285d6b26aa DependenciesID=a29b1d5ce43a88ad82a8e1ece0b7d8aa StaticDependenciesID=8400147779973c1a5412218a54f76e19 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_3.png
-  importAddress: Guid(5321a1fd42be7244fb6ae7135266d610) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_3.png using Guid(5321a1fd42be7244fb6ae7135266d610) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '7e1fee8d5cfea690333322260cdade76') in 0.0162341 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5a00a3854d1e0f715e10259f79104d81 DependenciesID=090a0a7fc86f7325dec47942f353058f StaticDependenciesID=33d20bdd19ba5a583e0bb506e79abf3c 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 22.978852 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_3.png
-  importAddress: Guid(5321a1fd42be7244fb6ae7135266d610) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_3.png using Guid(5321a1fd42be7244fb6ae7135266d610) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '741b309d425e94fe1424347f698d1aae') in 0.0221395 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=287b35724ce4329e0eafb2679f19761d DependenciesID=ce259bedc3ce852bc51d074da6a83ac1 StaticDependenciesID=8aa083efcd22ba011ae18c2bc2db7bad 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_7.png
-  importAddress: Guid(6ee0efef830643049b05ee4bfcf30e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_7.png using Guid(6ee0efef830643049b05ee4bfcf30e5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'dce589b0c018a5baf1ca7a0640039d00') in 0.0184183 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a24d87d6f6bd9e5a132bca29cbe89e62 DependenciesID=0664a37338c194e4c9cef2e9c5d4d038 StaticDependenciesID=f1ed4a3cc0137b301fdb4516a179bc2c 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_6.png
-  importAddress: Guid(eca52ba3645830c4b82a03c45b3a1c4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_6.png using Guid(eca52ba3645830c4b82a03c45b3a1c4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '6ef0c662fbd09dc512f02cf44f84289a') in 0.0184066 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c9a81be580cce7cfe4dd0b6772d3cab7 DependenciesID=09576f7aec357184bb5d42ed6f4d5fe0 StaticDependenciesID=ecefec863c57f4d530c5f7c285c368a6 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_13.png
-  importAddress: Guid(e39e51e5c94b2284f95b3ca54a9af32c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_13.png using Guid(e39e51e5c94b2284f95b3ca54a9af32c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '842f101badfc71ca569bea4a22422e44') in 0.0163998 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=facd44d608b1c846509a82239e59deda DependenciesID=65277d4a430693008cc6a05fd8a1db0b StaticDependenciesID=cdfde469e3f57deb6a0070191f9af05a 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000031 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_4.png
-  importAddress: Guid(c57382318613aec409d5cbaa0af423ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_4.png using Guid(c57382318613aec409d5cbaa0af423ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd49cd0ba47a226e35739cacdcd927282') in 0.0169952 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1a112b0be89081a3b246837ced6af6b4 DependenciesID=26237287b3234a23739e280bc6f3c2ab StaticDependenciesID=ed47cf8a3246a45381c1ab20eb2e2ee8 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_13.png
-  importAddress: Guid(36e5dfdf082d4ae4d945ac1068aef837) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_13.png using Guid(36e5dfdf082d4ae4d945ac1068aef837) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '43e2d7f885085d0dc47e8aa5850cc019') in 0.0184403 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8a9097fe217f22eab4e5406623ce2498 DependenciesID=d27c2c98242800d97e3b2a8f8a9d396a StaticDependenciesID=87b63f2def30ad0cb39811a2628f5f1d 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_2.png
-  importAddress: Guid(0f3675a8934865742b6b2261504871a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_2.png using Guid(0f3675a8934865742b6b2261504871a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '344e1f119ba4108cdacbdaacdc6fbf71') in 0.0171313 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2c42cfd2d6ca033ae4be0ead6f6c6418 DependenciesID=96e5faaca92ba23a453e2a2582456209 StaticDependenciesID=f62aebfa9877eefecb8a73b3e8ad0f3e 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_10.png
-  importAddress: Guid(1e99456f92b48c54da739082ab8a423b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_10.png using Guid(1e99456f92b48c54da739082ab8a423b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c99786f4f88db615e20c43314fa46abf') in 0.0165392 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=86389106124b66179b50bec8f20fc9d8 DependenciesID=b798a06037728329d49f6b438ff011db StaticDependenciesID=6d01e87379063ea6675e57eda8fbc07d 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_6.png
-  importAddress: Guid(b51768c3f3b9b714181d22cb525bb66d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-v_6.png using Guid(b51768c3f3b9b714181d22cb525bb66d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd0aeaac373a65616576a898bc1ae0d95') in 0.0167916 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1bf6cebbf09ad721140d1b8db2421a0f DependenciesID=5e3e34162b040cfca72968d28c372614 StaticDependenciesID=d5387060603b1039c07f6500cb97605b 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_9.png
-  importAddress: Guid(df1adeec9bf89ef409ca28fb2b4c5f6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_9.png using Guid(df1adeec9bf89ef409ca28fb2b4c5f6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ddb02102c01d30de6e8609cffe762a7d') in 0.0200253 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=239c75238c029b94fdf697e115897392 DependenciesID=db0ef2ac70befb96f66b5acef37b2509 StaticDependenciesID=dd6944d119ad078fd585e889f494754c 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_5.png
-  importAddress: Guid(d0c1f16790cf1014aa440cfb1d61448a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/chimney-h_5.png using Guid(d0c1f16790cf1014aa440cfb1d61448a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '3dda3573777fe19cfb0fef6ea2102aaa') in 0.0167844 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7a74d39eddc46e47380ad513781b43f5 DependenciesID=6105334424ba62e820964a3ad377fdfe StaticDependenciesID=0b10c66de309e2e8e4db38814cedd9e3 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_17.png
-  importAddress: Guid(db91a451150b9ea4e9902c2316713270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Decorations_sprites/doors-0_17.png using Guid(db91a451150b9ea4e9902c2316713270) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '87a8451d5d835ca0dd1d040a6ef1954a') in 0.017302 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d7e29cfba3b0f274de377e8b7e48d68a DependenciesID=30cb1852a6e2d0f78820732444b8f09f StaticDependenciesID=501ced826fb1da83e11eac37bed74a43 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+  path: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Mesh2D-Lit-Default.mat
+  importAddress: Guid(9452ae1262a74094f8a68013fbcd1834) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.render-pipelines.universal/Runtime/Materials/Mesh2D-Lit-Default.mat using Guid(9452ae1262a74094f8a68013fbcd1834) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0c155de4b7f3d7d80e7b030b4ad18f54') in 0.0234491 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ba7fc51168193705fab4a90bc2d0d9c2 DependenciesID=2bbd211022c673cb2ac98ec23d9cec8e StaticDependenciesID=7e1065973ff1799403be70009b5ec903 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
