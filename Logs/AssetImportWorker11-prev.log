@@ -1,11 +1,11 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.4/staging' branch; Version is '6000.4.6f1 (0b051c2e5d54) revision 722204'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C" at "2026-05-24T21:28:37.5375347Z"
 OS: 'Windows 11  (10.0.26200) Core' Language: 'en' Physical Memory: 16328 MB
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C" at "2026-05-24T20:41:02.2856287Z"
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-05-24T20:41:02Z
+Date: 2026-05-24T21:28:37Z
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.4.6f1\Editor\Unity.exe
@@ -19,7 +19,7 @@ C:/Users/viet_/projects/IndieGame
 -logFile
 Logs/AssetImportWorker11.log
 -srvPort
-59470
+49337
 -licensingIpc
 LicenseClient-YJ9lqjR03NSlFhmCLJW0C
 -force-d3d12
@@ -68,12 +68,12 @@ C:/Users/viet_/projects/IndieGame
     "memorysetup-job-temp-allocator-block-size=2097152"
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
-Player connection [32664]  Target information:
+Player connection [38464]  Target information:
 
-Player connection [32664]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 2228968137 [EditorId] 2228968137 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [38464]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 383860298 [EditorId] 383860298 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [32664] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [32664] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [38464] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [38464] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -85,7 +85,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 6.64 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 10.77 ms, found 5 plugins.
 Initialize engine version: 6000.4.6f1 (0b051c2e5d54)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/viet_/projects/IndieGame/Assets
@@ -99,33 +99,33 @@ Direct3D:
     VRAM:            7896 MB
     App VRAM Budget: 7128 MB
     Driver:          32.0.15.9186
-Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56364
 [Licensing::Client] Error: HandshakeResponse reported an error:
 	ResponseCode: 505
 	ResponseStatus: Unsupported protocol version '1.18.1'.
 [Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C"
 [Licensing::IpcConnector] LicenseClient-YJ9lqjR03NSlFhmCLJW0C channel disconnected successfully.
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6" at "2026-05-24T20:41:03.6281092Z"
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 38888, path: "C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6" at "2026-05-24T21:28:38.5105074Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 26580, path: "C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56436
 CodeReloadManager initialized
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.18.1+9fbee8e
-  Session Id:              95092804558c48eb9c240e54e3c90a11
-  Correlation Id:          80b9f657bf28d723df5cabe3c05f3d9a
-  External correlation Id: 731858945407866977
+  Session Id:              b4a5f835e17e4b6f824caf54d0a7a0b4
+  Correlation Id:          b4010a6d77bef2cb518ef9ab1e8a3dbc
+  External correlation Id: 1663817785764490207
   Machine Id:              VXbwn5JDHcloYK9lppscF5+D9fo=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-viet_-6000.4.6" (connect: 0.00s, validation: 0.02s, handshake: 0.01s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6-notifications" at "2026-05-24T20:41:03.6534112Z"
-[Licensing::Module] Licensing Background thread has ended after 1.37s
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-viet_-6000.4.6" (connect: 0.00s, validation: 0.05s, handshake: 0.01s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6-notifications" at "2026-05-24T21:28:38.570341Z"
+[Licensing::Module] Licensing Background thread has ended after 1.03s
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001666 seconds.
+Registered in 0.001521 seconds.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
@@ -133,23 +133,23 @@ Package Manager log level set to [2]
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.431 seconds
-Domain Reload Profiling: 987ms
-	BeginReloadAssembly (163ms)
-	RebuildCommonClasses (53ms)
-	RebuildNativeTypeToScriptingClass (17ms)
-	initialDomainReloadingComplete (87ms)
-	LoadAllAssembliesAndSetupDomain (233ms)
-		LoadAssemblies (158ms)
-		AnalyzeDomain (224ms)
-			TypeCache.Refresh (223ms)
-				TypeCache.ScanAssembly (207ms)
-	FinalizeReload (433ms)
+- Finished resetting the current domain, in  0.693 seconds
+Domain Reload Profiling: 1311ms
+	BeginReloadAssembly (119ms)
+	RebuildCommonClasses (36ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (65ms)
+	LoadAllAssembliesAndSetupDomain (386ms)
+		LoadAssemblies (115ms)
+		AnalyzeDomain (377ms)
+			TypeCache.Refresh (376ms)
+				TypeCache.ScanAssembly (362ms)
+	FinalizeReload (694ms)
 		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (47ms)
-			BeforeProcessingInitializeOnLoad (94ms)
-			ProcessInitializeOnLoadAttributes (121ms)
-			ProcessInitializeOnLoadMethodAttributes (81ms)
+			InitializePlatformSupportModulesInManaged (44ms)
+			BeforeProcessingInitializeOnLoad (85ms)
+			ProcessInitializeOnLoadAttributes (111ms)
+			ProcessInitializeOnLoadMethodAttributes (376ms)
 ========================================================================
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
@@ -198,389 +198,157 @@ Assembly Unity.UnifiedRayTracing.Editor.Tests.dll at Library/ScriptAssemblies/Un
 Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
 Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
 Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
-Refreshing native plugins compatible for Editor in 2.75 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 4.54 ms, found 5 plugins.
 Native extension for WindowsStandalone target not found
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-Refreshing native plugins compatible for Editor in 3.02 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 2.95 ms, found 5 plugins.
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.850 seconds
-Domain Reload Profiling: 1683ms
-	BeginReloadAssembly (173ms)
+- Finished resetting the current domain, in  1.828 seconds
+Domain Reload Profiling: 2915ms
+	BeginReloadAssembly (190ms)
 		DisableScriptedObjects (5ms)
-		CreateAndSetChildDomain (34ms)
-	RebuildCommonClasses (40ms)
-	RebuildNativeTypeToScriptingClass (13ms)
-	initialDomainReloadingComplete (76ms)
-	LoadAllAssembliesAndSetupDomain (530ms)
-		LoadAssemblies (347ms)
-		AnalyzeDomain (271ms)
-			TypeCache.Refresh (184ms)
-				TypeCache.ScanAssembly (167ms)
-			BuildScriptInfoCaches (74ms)
-			ResolveRequiredComponents (11ms)
-	FinalizeReload (850ms)
+		CreateAndSetChildDomain (37ms)
+	RebuildCommonClasses (36ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (156ms)
+	LoadAllAssembliesAndSetupDomain (694ms)
+		LoadAssemblies (516ms)
+		AnalyzeDomain (279ms)
+			TypeCache.Refresh (194ms)
+				TypeCache.ScanAssembly (176ms)
+			BuildScriptInfoCaches (71ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (1828ms)
 		SetupLoadedEditorAssemblies (0ms)
-			BeforeProcessingInitializeOnLoad (151ms)
-			ProcessInitializeOnLoadAttributes (396ms)
-			ProcessInitializeOnLoadMethodAttributes (127ms)
-			AfterProcessingInitializeOnLoad (8ms)
-		AwakeInstancesAfterBackupRestoration (7ms)
+			BeforeProcessingInitializeOnLoad (163ms)
+			ProcessInitializeOnLoadAttributes (1312ms)
+			ProcessInitializeOnLoadMethodAttributes (174ms)
+			AfterProcessingInitializeOnLoad (7ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-Refreshing native plugins compatible for Editor in 2.02 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 2.82 ms, found 5 plugins.
 Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7408 unused Assets / (5.3 MB). Loaded Objects now: 8249.
-Memory consumption went from 181.0 MB to 175.7 MB.
-Total: 9.215800 ms (FindLiveObjects: 0.876100 ms CreateObjectMapping: 0.331800 ms MarkObjects: 5.570000 ms  DeleteObjects: 2.436000 ms)
+Unloading 7408 unused Assets / (5.8 MB). Loaded Objects now: 8249.
+Memory consumption went from 185.0 MB to 179.1 MB.
+Total: 11.658400 ms (FindLiveObjects: 1.160900 ms CreateObjectMapping: 1.140700 ms MarkObjects: 5.236800 ms  DeleteObjects: 4.118200 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 768218.520750 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets
-  importAddress: Guid(51673f23c458c244f8ae0dbf0c7ceed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets using Guid(51673f23c458c244f8ae0dbf0c7ceed0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '2f8ae6e63a55bcd082d7adcfc3d499a5') in 0.0199628 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b622f9561857c055c9f84947d2567ebf DependenciesID=a080157597b2ce8cf990c17a11074ac0 StaticDependenciesID=35d1552ca93021c618e5759ac94d6530 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/Animated sewage water tiles (full tile).png
-  importAddress: Guid(632c83fd296c8a445bc01421cd0e985c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/Animated sewage water tiles (full tile).png using Guid(632c83fd296c8a445bc01421cd0e985c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a09c8e18557b7f33ccb032c328d58649') in 0.0824419 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a9f4780b25488ae5981c80284d04169e DependenciesID=dd0f5a5d9c8cb92a0ab9d8fc1567ab3f StaticDependenciesID=6f8057441bf2d5c82555073c08cd2fcc 
+  Time since last request: 771113.365286 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_104.asset
+  importAddress: Guid(4c150d2f144d58044afea9fda418f996) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_104.asset using Guid(4c150d2f144d58044afea9fda418f996) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '1cd9df208c4658a949ca768449238810') in 0.09205 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ef473ff4b2da5fc32cb2ad14ba83cd69 DependenciesID=b8815c54179ce1f03fcc099b54712f7b StaticDependenciesID=6958f437af3b43728abc7692337e2914 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-2-water-premade corners.png
-  importAddress: Guid(7b32e8af6f1a04341bc4df72e3d1a27c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-2-water-premade corners.png using Guid(7b32e8af6f1a04341bc4df72e3d1a27c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0752225ca68ed65f1a625ee48bccf9e7') in 0.0559696 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4d0aa832e8972aa67e109de401be1b91 DependenciesID=ad1634dcd9bf0096f8ddfc28e153f5f5 StaticDependenciesID=f1c7a2ef554ba4c6f141b603ec3edab8 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000052 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-no water- 3 tiles tall.png
-  importAddress: Guid(5939e818c88b8ec40a40b53ac22e44d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-no water- 3 tiles tall.png using Guid(5939e818c88b8ec40a40b53ac22e44d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a3cc00f40159ee91256f75f2ff617105') in 0.0497159 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=fe5f7e0871fa1380c9cdd524b33f9ff8 DependenciesID=671642bddd1fac742a26893c6f8a5232 StaticDependenciesID=ae3fb54ccf949ad5505c58c5c18856d4 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-premade corners.png
-  importAddress: Guid(83a98d71540257f42a597dfc1802120d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-premade corners.png using Guid(83a98d71540257f42a597dfc1802120d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '915cf2b196547fc13a60a06a76ac1798') in 0.0475159 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0d3569febff539dbf6134a2672e01d3b DependenciesID=7a682321b6f64131b3cf507d360cb827 StaticDependenciesID=c9b4e995a43a28e9f80fe396fa17276a 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-1-no water-transparent.png
-  importAddress: Guid(27f7217698e451f4aa8b4a85493b5bde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-1-no water-transparent.png using Guid(27f7217698e451f4aa8b4a85493b5bde) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a2357a6f7577074c4c8e12cef781d90a') in 0.0519179 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4993adaca105a210eb707416f045c1b8 DependenciesID=d8f38b1de140c89f4e07161df42fb654 StaticDependenciesID=5b80698ba7341bc8a7f06a9fb222c934 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-1- inner orientation-no water.png
-  importAddress: Guid(cafe4883d592c074ab503eaed8e61a16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-1- inner orientation-no water.png using Guid(cafe4883d592c074ab503eaed8e61a16) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '04c7b81da212953f26decfc2afcce634') in 0.0181962 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9917aca26adc3b51bfafbce760ebbae7 DependenciesID=a20c0244da7f239cc2c5a02477290521 StaticDependenciesID=fafe31749ff64242de0a7a2a1809680d 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/watter-around curved walls.png
-  importAddress: Guid(b74aa62f5468f0347816fb2456896d0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/watter-around curved walls.png using Guid(b74aa62f5468f0347816fb2456896d0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '492f5f6b4c76ae52cc41766a851ca793') in 0.0700613 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4fa6b34421d31d410405520652774272 DependenciesID=7c1f1105cbada4003549daffde139fe0 StaticDependenciesID=bfa1cd6a844b220ae49fd5c3b874a8ec 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000027 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-no water-premade corners.png
-  importAddress: Guid(1fad1aeb57bca6d49bf21c3d49577a03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-no water-premade corners.png using Guid(1fad1aeb57bca6d49bf21c3d49577a03) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '4846bfaff03aa1055936aa9dd236b588') in 0.0523727 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=fd4f427408da917750a6020989695cb0 DependenciesID=8b6a6ee82af072b34ad693eca05be165 StaticDependenciesID=e313c7170f30c48c30fc9aec7b34849f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000057 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/watter-around wall3.png
-  importAddress: Guid(a8fa72f850812cb4893695c1a6d666d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/watter-around wall3.png using Guid(a8fa72f850812cb4893695c1a6d666d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '186ebd47b2fa241a8c4efb55009f2ae2') in 0.0984195 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4b5e2354f1ff2f39916a3b1a92962996 DependenciesID=5f419993e88e53e04029ee9d17fbf839 StaticDependenciesID=d1be666c3e41ef243c66dd6032247b00 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 35
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000069 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-2-water.png
-  importAddress: Guid(db426ec0512775c45b641f61956a96da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-2-water.png using Guid(db426ec0512775c45b641f61956a96da) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '950bebd817394ee0da30adad59e8910b') in 0.0437299 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=07aacf709a124dc82fefd9bc42d1603b DependenciesID=b298edd3748e7d006cb701aa5eac8535 StaticDependenciesID=5f9420ad5ecd6244d91511a92b825a62 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-2-no water-premade corners.png
-  importAddress: Guid(c2a874b357d518541964b022c643648f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-2-no water-premade corners.png using Guid(c2a874b357d518541964b022c643648f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b7cb680402d8f13b449e3c07336f1452') in 0.0452464 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=834f5ef877e098c5c7156a4b16d0f1a4 DependenciesID=d54f949782f052f5356e879fd84a6c47 StaticDependenciesID=89d9239eeb11f2383a3e4d43a6225c21 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-water-transp-premade corners.png
-  importAddress: Guid(7af02d9bda4ba114e9379e85d0458639) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-water-transp-premade corners.png using Guid(7af02d9bda4ba114e9379e85d0458639) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'aa147bbc0d06e96073f19be64fda911f') in 0.0477524 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4f08c173c014b50e93eae2ff14ffdffd DependenciesID=abf448ce7b1d717ece7936cf40bf6657 StaticDependenciesID=2d5636a0493207dfd57cfe861ba42b64 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.833363 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/Animated sewage water tiles (full tile).png
-  importAddress: Guid(632c83fd296c8a445bc01421cd0e985c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/Animated sewage water tiles (full tile).png using Guid(632c83fd296c8a445bc01421cd0e985c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0ac11449ef7e3050304679029b101334') in 0.0207423 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c3f25fd49a8a1bbb2ad9d585fd064a00 DependenciesID=b122964513c151668413baa7dcc323f6 StaticDependenciesID=b832773a2e8c2a973c476f319dfc191a 
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_137.asset
+  importAddress: Guid(3f3c8073ba2d5ff418d57800bed72df8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_137.asset using Guid(3f3c8073ba2d5ff418d57800bed72df8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b7deccec39301d6559ffff009a5d79bb') in 0.0251466 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c341bc56e2b62b64e0e74dd4501e8099 DependenciesID=301fc1fed6d8d97dcacbc6c91c892fe1 StaticDependenciesID=870cc287317cfc91d220dc17130c928e 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.076266 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/deep water.png
-  importAddress: Guid(8cae064ebd7d3f7419fd20684d625357) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/deep water.png using Guid(8cae064ebd7d3f7419fd20684d625357) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '23dff346ac04b40483ae86c8fe6192b0') in 0.0653795 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7bd19c816c79f73a7aff85e2c8c06bdf DependenciesID=07b4e653770b35fdd5c43f026fe2bfab StaticDependenciesID=a56c413fda9587ce2a2dded62f36d2d5 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 18
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-1- inner orientation-water.png
-  importAddress: Guid(48dc60fab68354e4380c6d64587a5b9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-1- inner orientation-water.png using Guid(48dc60fab68354e4380c6d64587a5b9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'aaa6f91322ed78538d4320978efb250b') in 0.0185706 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c57fd55382a5ccfbaaa5c438213e8a1b DependenciesID=436a19c6a2875aaac3e98bccd87833d5 StaticDependenciesID=20530d29cd706ee8b3ddf389def30046 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-premade corners.png
-  importAddress: Guid(83a98d71540257f42a597dfc1802120d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-premade corners.png using Guid(83a98d71540257f42a597dfc1802120d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'f95ddf8f1ee347219b518423f7ca9596') in 0.0375632 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=da04a176ffc3453a66a515ecdd79fd3f DependenciesID=69a3249313a2ba13ae114c7a324d7ba1 StaticDependenciesID=5f68f4872a700c08e3ffeb095b3e4e16 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-1-no water-transparent.png
-  importAddress: Guid(27f7217698e451f4aa8b4a85493b5bde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-1-no water-transparent.png using Guid(27f7217698e451f4aa8b4a85493b5bde) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '3343d8d9b0932f022553eb6d22f7ade6') in 0.0345502 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=33a525a96b53970c740a563eb03ac096 DependenciesID=1b00d76770fb0a5b65590964f4c4de54 StaticDependenciesID=fea42993432faf5490d446806d6145ff 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-no water- 3 tiles tall.png
-  importAddress: Guid(5939e818c88b8ec40a40b53ac22e44d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-no water- 3 tiles tall.png using Guid(5939e818c88b8ec40a40b53ac22e44d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '3fb337e62d314de67ace94d34b6f69b9') in 0.0397301 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d650cc641317aa8da45c58030aa4e1fe DependenciesID=b32dc033b2b199cef19cb2d35b32d42c StaticDependenciesID=acf3d10eead5b6a0665a0d583c08dac6 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-1- inner orientation-no water.png
-  importAddress: Guid(cafe4883d592c074ab503eaed8e61a16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-1- inner orientation-no water.png using Guid(cafe4883d592c074ab503eaed8e61a16) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'bc0065c59d62ded1e918a44a9a75cc34') in 0.0211227 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cf88a7896b62356f14a2b6aca709e3e5 DependenciesID=a7d7f88b7000aa24ef7888543f247d68 StaticDependenciesID=d8d0d40ae272fb17a3a6a1dffcc2bc44 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/watter-around curved walls.png
-  importAddress: Guid(b74aa62f5468f0347816fb2456896d0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/watter-around curved walls.png using Guid(b74aa62f5468f0347816fb2456896d0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '2573b44b9cc1a46b323529c154f13533') in 0.0521293 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=282b0d58e7e80c7a614efecaca98dd66 DependenciesID=ca658f5f91408d327bc6f32d07a29698 StaticDependenciesID=69c6660d215b0d8d83fa941a90737a12 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-no water-premade corners.png
-  importAddress: Guid(1fad1aeb57bca6d49bf21c3d49577a03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-no water-premade corners.png using Guid(1fad1aeb57bca6d49bf21c3d49577a03) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '44e9bdccdc0cc5d7e4fe208d0e740156') in 0.0441247 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9b7ff43b21c5074528146c5f38bb019f DependenciesID=f5478fbf8ff9362a596e67dd1a17203c StaticDependenciesID=141e6fa7c7adb22c5cf60071cf7ba561 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/watter-around wall3.png
-  importAddress: Guid(a8fa72f850812cb4893695c1a6d666d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/watter-around wall3.png using Guid(a8fa72f850812cb4893695c1a6d666d6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a37fef300de5d2644b462e96d0362563') in 0.0694535 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a83f75c0af77f1e345449eb49bf6d658 DependenciesID=919c3aee1b58f451e8efe60a9e30a68b StaticDependenciesID=fd94d39da27259aeedae28713e047997 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 35
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-2-water.png
-  importAddress: Guid(db426ec0512775c45b641f61956a96da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-2-water.png using Guid(db426ec0512775c45b641f61956a96da) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '432610ed090a3a7dc2210c735deb736f') in 0.0358108 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ee08865b8cce543128a157c7d3ef4f9f DependenciesID=03292b58fdcb58ade8627be2b4525ed3 StaticDependenciesID=40f01d394c5cfc9cb8a5600acd4f49e2 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-premade corners.png
-  importAddress: Guid(83a98d71540257f42a597dfc1802120d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-premade corners.png using Guid(83a98d71540257f42a597dfc1802120d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b1a025c2d2212b50ab03203d0c282da2') in 0.1404525 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5599b7fa3f81b494b82133511d8759ca DependenciesID=754f31b234b9ee3db0d2585efe8bf030 StaticDependenciesID=5885b24723a1e7b45c059d9cc6b2d581 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000056 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-water-premade corners.png
-  importAddress: Guid(a323ab732eeb04a4a87983905868c485) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-water-premade corners.png using Guid(a323ab732eeb04a4a87983905868c485) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ccdd737ee689932c048b8a7541f8ee19') in 0.0310303 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5f76bfdb65c5383141290716e8bf94d6 DependenciesID=d1730e22135cf30cdf19991e1fa08690 StaticDependenciesID=1283522a7324273431a4dd21b7f37757 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000023 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-2-no water-premade corners.png
-  importAddress: Guid(bf2f2034a028d09468366e5efcf8d43b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-2-no water-premade corners.png using Guid(bf2f2034a028d09468366e5efcf8d43b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c375fa6b74991c313e044f660d62a3ed') in 0.0308564 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9e00e2d36aeb873f4b3305d36ce468e1 DependenciesID=0309ab1a3409b8e72b24e8e6eeb3d790 StaticDependenciesID=cb22020c041e92ec71da8291de7160ff 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_154.asset
+  importAddress: Guid(aa4563623789e8c4b9e5678f5b3df295) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_154.asset using Guid(aa4563623789e8c4b9e5678f5b3df295) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '05fe0955707c1df528213d0afb14d52c') in 0.0209416 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9e764f444ee64bf71d4cd3fe0cd8feda DependenciesID=1f0615eeed8b1be1611a4ec2880567a2 StaticDependenciesID=fc77dd42b14e5714810cc607b6c9c89c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/watter-around straight walls.png
-  importAddress: Guid(d3784cc51e665274db6c2b4f182454fa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/watter-around straight walls.png using Guid(d3784cc51e665274db6c2b4f182454fa) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '014672c3053e6eda0d79bac60c6a750f') in 0.0442656 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=44f62352e54b52b4b71296f2a9aacf8c DependenciesID=d1bc8417f2435f02694b7c6ecc9f9084 StaticDependenciesID=79737399d6f01bc9b6537706c2a9e56a 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 32
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_117.asset
+  importAddress: Guid(440fef564d2af504e94a66b3dab6f1b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_117.asset using Guid(440fef564d2af504e94a66b3dab6f1b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '57bc273812ec9a8df495b761760cc325') in 0.026613 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=17fbafb4062a61c049714b728d6a2155 DependenciesID=6e5ec1cf84ab3f80c718c756b0dfb4a1 StaticDependenciesID=0ebd521e56bae7b1be16fbc92c23f5c3 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-1-no water-transparent.png
-  importAddress: Guid(27f7217698e451f4aa8b4a85493b5bde) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-1-no water-transparent.png using Guid(27f7217698e451f4aa8b4a85493b5bde) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b8972d1f97c801c347d3b63bc3aba783') in 0.0265093 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=90270b792476d6dd6d1e32de65df04e7 DependenciesID=ecae926f785bc1ccc0fd2ffc0ef2f5ae StaticDependenciesID=66fa62a00c8ad39bc948fb9639ad35ec 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_153.asset
+  importAddress: Guid(cae232ea42654cb4a8dac630ed538ab3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_153.asset using Guid(cae232ea42654cb4a8dac630ed538ab3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '174ca62a03f2173724b05ec8de35b920') in 0.0273484 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9c7975362f1e9789f2cb4e84e31ce2a7 DependenciesID=8a04035e199efd4b264488f0ae02836f StaticDependenciesID=fd1cde2de32c7494a307691ef9cf82e4 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000053 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-water-transparent.png
-  importAddress: Guid(aa4aee38c4c5f194eb011080c04da8d9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-3-water-transparent.png using Guid(aa4aee38c4c5f194eb011080c04da8d9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c638ce27d96df62b7b28ab2398a59bb7') in 0.0314543 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8c6714bac8288790cdaec761ea3351d8 DependenciesID=7aec3cd89798f45896bd4560235022ca StaticDependenciesID=cc55e0760402aa9cc5bc3f27a4ce60f6 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_109.asset
+  importAddress: Guid(d2a188c734c81cd4094f726f9e565fd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_109.asset using Guid(d2a188c734c81cd4094f726f9e565fd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c6b40d5df02fb098225e273c8e15e33e') in 0.0291196 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=23ad608739060ea5910028db910627bc DependenciesID=15d721b8c79c623f6c654235365c3bb8 StaticDependenciesID=cb641266e735cce7f40c1f7666b68139 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-2-water.png
-  importAddress: Guid(84881890608fd45408a7d22ebbad54ab) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-2-water.png using Guid(84881890608fd45408a7d22ebbad54ab) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'cf070d2906aa169a8a9d2998e7f50ba9') in 0.0295669 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=da6cff1a8e0aa43a924a85c598e57bf5 DependenciesID=edf1ab6e3256b2db8893088df53c0271 StaticDependenciesID=fe6a2d6d7f55880447c89013d8a7ee69 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_120.asset
+  importAddress: Guid(d6b8173130ff3fc428d8e8b7202844c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_120.asset using Guid(d6b8173130ff3fc428d8e8b7202844c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'e43623865a29aea49bf91cc25462eb1d') in 0.0246674 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=429c2aab2f6729b051a17c2f6735f5c6 DependenciesID=20ad77008f185a9dbc7c3b97982fd2e7 StaticDependenciesID=c6c9fa34787446269648b7ca372c41e3 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-2-no water-premade corners.png
-  importAddress: Guid(c2a874b357d518541964b022c643648f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-2-2-no water-premade corners.png using Guid(c2a874b357d518541964b022c643648f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '362f750d312edd1bf994dd97402dbdc8') in 0.0395602 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3ac4d9fd6c5cc5c46a49c59d22960a7d DependenciesID=b799a6d37c80a585adbe55ec60770cef StaticDependenciesID=57fc9918b8ef8736304f8b53144339cd 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_128.asset
+  importAddress: Guid(ad2d8cdaa156952408ed32311350e30f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_128.asset using Guid(ad2d8cdaa156952408ed32311350e30f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c9a66c45c4eb33f3bef3740281b4222f') in 0.0225731 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f0b2fcb9cfc92c1a8788a0a6978952f9 DependenciesID=7cffd5776086ba3cf8a7ec660ccb73c9 StaticDependenciesID=213fd681ddc0a29d7de24d3ffb22477e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/watter-around straight walls.png
-  importAddress: Guid(d3784cc51e665274db6c2b4f182454fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/watter-around straight walls.png using Guid(d3784cc51e665274db6c2b4f182454fa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'f1ec8bb2e7f393e597f71c84b8d19e8a') in 0.0919195 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c485a187506d0a255c3e5746f4d9a0f3 DependenciesID=6d8359f2e8bbab2e607c7595df0ca9ee StaticDependenciesID=83e53a42b427e32c3a325c7f3aecc426 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 32
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_133.asset
+  importAddress: Guid(00e49774ae59f4a418833de452c5eeae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_133.asset using Guid(00e49774ae59f4a418833de452c5eeae) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '3d669f76e0f6480f3b1c0036a986866c') in 0.0229517 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=df5418af98a6e8b50e7b3789dd1606e5 DependenciesID=411455ab47c4a4db6b2b928618ca66f0 StaticDependenciesID=e0f974b226ff2ffc0e195816ab996956 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-water-premade corners.png
-  importAddress: Guid(a323ab732eeb04a4a87983905868c485) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-water-premade corners.png using Guid(a323ab732eeb04a4a87983905868c485) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9dd7ed1a7dea3fdd8529c75c83cff6d3') in 0.0416003 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f7e0d80a679d6afd81cb50532e096d2d DependenciesID=b02d483525166a1f2b1f63763abc6f97 StaticDependenciesID=1e6e58f58728e6e67e8bbbbdfaab8010 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 14
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_130.asset
+  importAddress: Guid(469bea02550b7ba44ba87cbfb46b28cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_130.asset using Guid(469bea02550b7ba44ba87cbfb46b28cb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9d48e187350c767b0e1c678236ca9ad1') in 0.0293964 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d3f720e09d6c4728ab906c4e2ac4ca7d DependenciesID=905106dc8f3b12d47cdc5f1276643871 StaticDependenciesID=b5f3e90678021d09edd2dfc468f94687 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-2-no water- 3 tiles tall.png
-  importAddress: Guid(ff1479cdbae464a4e8418e89d7d72e33) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Sewers/EPIC RPG World - Sewers V1.5/Tilesets/wall-1-2-no water- 3 tiles tall.png using Guid(ff1479cdbae464a4e8418e89d7d72e33) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '98028370af7512c6c9c99c9de32d366b') in 0.0260454 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b59a01d0d8407b128d2ad82f5d242010 DependenciesID=24ec3e160c3af85ef925f9249ae98a22 StaticDependenciesID=1b811965c406617fbf2d38453c764c57 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_126.asset
+  importAddress: Guid(7ec1ccfe737b4174db40d064c93b7063) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_126.asset using Guid(7ec1ccfe737b4174db40d064c93b7063) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9c44d6127ef32779528f385a4a985f6a') in 0.0272318 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b97973a4e9a4ad20aa58b251c3ad659e DependenciesID=4d3cc507907bd0b780e3f44e0632b5de StaticDependenciesID=1165bd92decf1dada356d23971b102f5 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 50.062770 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village
-  importAddress: Guid(54a9c54e38e138b4d92b64d30f6bdef2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village using Guid(54a9c54e38e138b4d92b64d30f6bdef2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'cd534c3f9d02a2c7f48707202355d4ed') in 0.005663 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=fe74f2330d905326eff81df782164e77 DependenciesID=9ef15a18888a3c86fb6c39ffd786f97d StaticDependenciesID=f830814d66a6fa9e79cfe58953e01f7a 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+  Time since last request: 0.000032 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_118.asset
+  importAddress: Guid(38aa8590476d3c848900fe816f5011f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_118.asset using Guid(38aa8590476d3c848900fe816f5011f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '43da72263228c997e2701fb5854217f9') in 0.0261058 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=57fe18afe92eff4069a428996ab80fd8 DependenciesID=6d2ddc13760fc8682a1a26cd35ee3a26 StaticDependenciesID=601ee8c8ab533d72fa6104113d5d3d17 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.789356 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1
-  importAddress: Guid(7ec8541e3bc4d464e84f9192792fa4cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1 using Guid(7ec8541e3bc4d464e84f9192792fa4cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '7a51612f541b35cb08cf00b72b543d3f') in 0.0007367 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b9eb26da3dedca87ee97c2e32f01c32f DependenciesID=743b9aa364cae2ba265d82e47089602c StaticDependenciesID=1334813cfe9bba490483998c6a8f40bf 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+  Time since last request: 1.012654 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_156.asset
+  importAddress: Guid(b9e3b5dcdee44cb43be5f4aa5ff87d55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_156.asset using Guid(b9e3b5dcdee44cb43be5f4aa5ff87d55) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9ecba6ce7a13088d55b83f8d3d0e29f4') in 0.0261663 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5f58962cad572e24806d81b12fc7320b DependenciesID=03126562eaaf75dc9771ac429211e3d0 StaticDependenciesID=80215875f3edf9ca370838da0ca40b54 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.519188 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings
-  importAddress: Guid(5fb1c78b1f6f28a478e17f720b29cca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings using Guid(5fb1c78b1f6f28a478e17f720b29cca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b212ee60b1855d32b395f6cf00936203') in 0.0008303 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=fcfeb9d92e789aff69e3e916958cadd4 DependenciesID=78125b441c0fa801b9261932cb539111 StaticDependenciesID=6410c3d90ec08834aafb5c81eea33ce3 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.033378 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/decorations.png
-  importAddress: Guid(8c8f617c603fbf648853f27a5bd73bac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/decorations.png using Guid(8c8f617c603fbf648853f27a5bd73bac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '2de9dfa2a3c97199e9fea0ef9b84ae71') in 1.2151131 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ed933975b542b1058bd78fb42daf0976 DependenciesID=fa98062e0636631a59163f3199327105 StaticDependenciesID=d6f26730eb3f7ca582f61469ab482c0f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 412
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/roofs1.png
-  importAddress: Guid(7eec95b923e7bc74d8adb4035952e5f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/roofs1.png using Guid(7eec95b923e7bc74d8adb4035952e5f7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd960de68fcf35126ade498b82b80d9b7') in 0.6043565 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=fe29d6c286112cc4e640022b9ec78d08 DependenciesID=9c43b622158066ca106fa8e9919cd000 StaticDependenciesID=cc52dd69eab25750cffae9a8728febc7 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 231
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000071 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/walls4.png
-  importAddress: Guid(29e5902a7a267884f8d2ab8488b9fd7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/walls4.png using Guid(29e5902a7a267884f8d2ab8488b9fd7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '39f6391dd78032179f92835c0e8a8c33') in 0.6099288 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=949e1d49f17682653dc13d038ba0dbd8 DependenciesID=8556154fc1637a6852921676e477e8b5 StaticDependenciesID=107e443fe50e8a78fc67129a6f2f7b7d 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 198
-
-========================================================================
-Received Import Request.
-  Time since last request: 16.312031 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/decorations.png
-  importAddress: Guid(8c8f617c603fbf648853f27a5bd73bac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/decorations.png using Guid(8c8f617c603fbf648853f27a5bd73bac) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c5fc84107d5948fbdb8006ad5278d31a') in 0.7722458 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=27090e08df8bba70bdaad278a982d5c2 DependenciesID=e67fcb5c915d2ff1e8840e6d644204b8 StaticDependenciesID=73ec1e8c7ef65ac40ef471f1cc2da250 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 412
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.083322 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Premade_houses4.png
-  importAddress: Guid(569cfcb8a9cd6aa43b67f9545c4b5d05) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/buildings/Premade_houses4.png using Guid(569cfcb8a9cd6aa43b67f9545c4b5d05) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '0733ca767e559d7a0dd41f8e5e3162f1') in 0.0781624 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=32da462fecc8b3672085eac40cba0f1d DependenciesID=a3996a18051b1a1b8a507178a0950d2a StaticDependenciesID=cf197106238b3277bb8c7ef1e3cfc506 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 26
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_160.asset
+  importAddress: Guid(2cf6105bf9fd391469c83de663af1478) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Tilesets/tiles/Tileset-Terrain_160.asset using Guid(2cf6105bf9fd391469c83de663af1478) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '35525c39652b9d44bc39329c0020f871') in 0.0323779 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e7d2a8406d2ddb6af20823cc050d1f83 DependenciesID=1d37b287c200d735d72a8522b372f393 StaticDependenciesID=c73e5fa09f67c030a7c277a4fd907d8e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server

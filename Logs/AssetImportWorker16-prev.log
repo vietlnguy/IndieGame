@@ -1,11 +1,11 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.4/staging' branch; Version is '6000.4.6f1 (0b051c2e5d54) revision 722204'; Using compiler version '194234433'; Build Type 'Release'
 OS: 'Windows 11  (10.0.26200) Core' Language: 'en' Physical Memory: 16328 MB
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C" at "2026-05-24T20:52:11.1942372Z"
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C" at "2026-05-24T21:39:40.4631391Z"
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-05-24T20:52:11Z
+Date: 2026-05-24T21:39:40Z
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.4.6f1\Editor\Unity.exe
@@ -19,7 +19,7 @@ C:/Users/viet_/projects/IndieGame
 -logFile
 Logs/AssetImportWorker16.log
 -srvPort
-59470
+49337
 -licensingIpc
 LicenseClient-YJ9lqjR03NSlFhmCLJW0C
 -force-d3d12
@@ -68,12 +68,12 @@ C:/Users/viet_/projects/IndieGame
     "memorysetup-job-temp-allocator-block-size=2097152"
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
-Player connection [11044]  Target information:
+Player connection [20420]  Target information:
 
-Player connection [11044]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 1041647373 [EditorId] 1041647373 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [20420]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 2945672948 [EditorId] 2945672948 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [11044] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [11044] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [20420] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [20420] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -85,7 +85,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 4.89 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 6.65 ms, found 5 plugins.
 Initialize engine version: 6000.4.6f1 (0b051c2e5d54)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/viet_/projects/IndieGame/Assets
@@ -103,29 +103,29 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56064
-CodeReloadManager initialized
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56772
 [Licensing::Client] Error: HandshakeResponse reported an error:
 	ResponseCode: 505
 	ResponseStatus: Unsupported protocol version '1.18.1'.
 [Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C"
 [Licensing::IpcConnector] LicenseClient-YJ9lqjR03NSlFhmCLJW0C channel disconnected successfully.
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6" at "2026-05-24T20:52:12.1927363Z"
-Begin MonoManager ReloadAssembly
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 38888, path: "C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6" at "2026-05-24T21:39:41.6076655Z"
+CodeReloadManager initialized
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 26580, path: "C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.18.1+9fbee8e
-  Session Id:              fe325b8e5e754d94baed42b03915c94c
-  Correlation Id:          80b9f657bf28d723df5cabe3c05f3d9a
-  External correlation Id: 5513257869386590598
+  Session Id:              4261f9afa7d24fc68c11c97491ee0be4
+  Correlation Id:          b4010a6d77bef2cb518ef9ab1e8a3dbc
+  External correlation Id: 8566538604608393030
   Machine Id:              VXbwn5JDHcloYK9lppscF5+D9fo=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-viet_-6000.4.6" (connect: 0.01s, validation: 0.00s, handshake: 0.01s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6-notifications" at "2026-05-24T20:52:12.1990879Z"
-[Licensing::Module] Licensing Background thread has ended after 1.01s
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-viet_-6000.4.6" (connect: 0.00s, validation: 0.00s, handshake: 0.01s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6-notifications" at "2026-05-24T21:39:41.6160033Z"
+[Licensing::Module] Licensing Background thread has ended after 1.15s
+Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001871 seconds.
+Registered in 0.001600 seconds.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
@@ -133,23 +133,23 @@ Package Manager log level set to [2]
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.376 seconds
-Domain Reload Profiling: 783ms
-	BeginReloadAssembly (120ms)
-	RebuildCommonClasses (35ms)
-	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (65ms)
-	LoadAllAssembliesAndSetupDomain (175ms)
-		LoadAssemblies (116ms)
-		AnalyzeDomain (167ms)
-			TypeCache.Refresh (166ms)
-				TypeCache.ScanAssembly (152ms)
-	FinalizeReload (378ms)
+- Finished resetting the current domain, in  0.462 seconds
+Domain Reload Profiling: 992ms
+	BeginReloadAssembly (152ms)
+	RebuildCommonClasses (49ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (71ms)
+	LoadAllAssembliesAndSetupDomain (242ms)
+		LoadAssemblies (148ms)
+		AnalyzeDomain (233ms)
+			TypeCache.Refresh (232ms)
+				TypeCache.ScanAssembly (215ms)
+	FinalizeReload (464ms)
 		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (37ms)
-			BeforeProcessingInitializeOnLoad (79ms)
-			ProcessInitializeOnLoadAttributes (103ms)
-			ProcessInitializeOnLoadMethodAttributes (83ms)
+			InitializePlatformSupportModulesInManaged (45ms)
+			BeforeProcessingInitializeOnLoad (102ms)
+			ProcessInitializeOnLoadAttributes (128ms)
+			ProcessInitializeOnLoadMethodAttributes (93ms)
 ========================================================================
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
@@ -198,133 +198,157 @@ Assembly Unity.UnifiedRayTracing.Editor.Tests.dll at Library/ScriptAssemblies/Un
 Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
 Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
 Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
-Refreshing native plugins compatible for Editor in 2.55 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 2.68 ms, found 5 plugins.
 Native extension for WindowsStandalone target not found
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-Refreshing native plugins compatible for Editor in 2.07 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 2.42 ms, found 5 plugins.
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.120 seconds
-Domain Reload Profiling: 2225ms
-	BeginReloadAssembly (179ms)
-		DisableScriptedObjects (6ms)
-		CreateAndSetChildDomain (33ms)
-	RebuildCommonClasses (36ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (77ms)
-	LoadAllAssembliesAndSetupDomain (802ms)
-		LoadAssemblies (437ms)
-		AnalyzeDomain (449ms)
-			TypeCache.Refresh (330ms)
-				TypeCache.ScanAssembly (296ms)
-			BuildScriptInfoCaches (101ms)
-			ResolveRequiredComponents (16ms)
-	FinalizeReload (1121ms)
+- Finished resetting the current domain, in  0.985 seconds
+Domain Reload Profiling: 1993ms
+	BeginReloadAssembly (195ms)
+		DisableScriptedObjects (5ms)
+		CreateAndSetChildDomain (37ms)
+	RebuildCommonClasses (42ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (89ms)
+	LoadAllAssembliesAndSetupDomain (665ms)
+		LoadAssemblies (446ms)
+		AnalyzeDomain (315ms)
+			TypeCache.Refresh (227ms)
+				TypeCache.ScanAssembly (203ms)
+			BuildScriptInfoCaches (73ms)
+			ResolveRequiredComponents (12ms)
+	FinalizeReload (985ms)
 		SetupLoadedEditorAssemblies (0ms)
-			BeforeProcessingInitializeOnLoad (196ms)
-			ProcessInitializeOnLoadAttributes (511ms)
-			ProcessInitializeOnLoadMethodAttributes (168ms)
-			AfterProcessingInitializeOnLoad (10ms)
-		AwakeInstancesAfterBackupRestoration (8ms)
+			BeforeProcessingInitializeOnLoad (191ms)
+			ProcessInitializeOnLoadAttributes (443ms)
+			ProcessInitializeOnLoadMethodAttributes (135ms)
+			AfterProcessingInitializeOnLoad (6ms)
+		AwakeInstancesAfterBackupRestoration (7ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-Refreshing native plugins compatible for Editor in 2.17 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 2.12 ms, found 5 plugins.
 Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7408 unused Assets / (5.6 MB). Loaded Objects now: 8249.
-Memory consumption went from 181.0 MB to 175.3 MB.
-Total: 10.125500 ms (FindLiveObjects: 1.197100 ms CreateObjectMapping: 0.566900 ms MarkObjects: 5.756600 ms  DeleteObjects: 2.602200 ms)
+Unloading 7408 unused Assets / (5.8 MB). Loaded Objects now: 8249.
+Memory consumption went from 181.3 MB to 175.5 MB.
+Total: 10.155100 ms (FindLiveObjects: 0.854700 ms CreateObjectMapping: 0.365200 ms MarkObjects: 6.242900 ms  DeleteObjects: 2.689700 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 768893.846903 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/lava passage spritesheet.png
-  importAddress: Guid(bf8641a6f7130314c8b350037346fe8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/lava passage spritesheet.png using Guid(bf8641a6f7130314c8b350037346fe8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c055e426cf455c75bc02e1e1e5eeda59') in 0.1246487 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b8ba08bb3d7812ae2de0884f255ed06b DependenciesID=be008abb96e811cc8d8a85f8793af844 StaticDependenciesID=be077caf466c8b071d369f55037540fd 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tormented souls tile-4-64x64px.png
-  importAddress: Guid(f7f12ae02454a8c4bb5cde367471f164) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tormented souls tile-4-64x64px.png using Guid(f7f12ae02454a8c4bb5cde367471f164) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '7707cdc1c16c6da1d6c1cf75d0529fd7') in 0.0191418 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cf24d0a0cab4f386c9b71ede25c2ab2a DependenciesID=4b506e65e3e50384bd38f4814fecd1ba StaticDependenciesID=1b2cc1afce8633ccf72f9e2abfcfb8a3 
+  Time since last request: 771740.840327 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_2.asset
+  importAddress: Guid(60bcd7021f3ee1f4181131bcd7f90e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_2.asset using Guid(60bcd7021f3ee1f4181131bcd7f90e43) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '99fd87e2908cf74327045644c13662fb') in 0.0867964 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b0f471ecb644e29a6363b84a9f0d3458 DependenciesID=6c5253e3ec40513e8967fff7614f4525 StaticDependenciesID=0db832e0bb8fe9d409212981caf6c833 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000039 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tileset.png
-  importAddress: Guid(966d00655f990be4a862da944e1c136b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tileset.png using Guid(966d00655f990be4a862da944e1c136b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '02426d8d3a4dea047a74d440d162071b') in 0.5517776 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=722ecaf18361223fa918678242fa7a8f DependenciesID=f11caae9287d0f226dba512d37dc2b6d StaticDependenciesID=69acb62de9a3ee91e85e94a64af6e7e9 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 218
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.479875 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/lava passage spritesheet-revealing anim.png
-  importAddress: Guid(be0ba082c397fd44995e94d6ac60913e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/lava passage spritesheet-revealing anim.png using Guid(be0ba082c397fd44995e94d6ac60913e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'e34cebd43cd5b9465da2d204f87347d6') in 0.0261116 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=01837b538c81b03cdebfe031f4c0fd6e DependenciesID=1c589d7c10788269f0d7af150922e82a StaticDependenciesID=811a929930da8713a0c168df3216984a 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000174 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tormented souls tile-3-64x64px.png
-  importAddress: Guid(60857291bafc1c44a8225cef937e4795) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tormented souls tile-3-64x64px.png using Guid(60857291bafc1c44a8225cef937e4795) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ce6d2d34248fe7d5a8ce0a63fc0c3802') in 0.0305865 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9dc7a74107332bd36bcca96fd98e8490 DependenciesID=a9bc29607cd2a7bb713415debff91f4b StaticDependenciesID=3a7196180453ea707daf7cbfa5788b00 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/platform1.png
-  importAddress: Guid(880f1240a09d8f64c943b685a387df4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/platform1.png using Guid(880f1240a09d8f64c943b685a387df4a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '902e37e5487f8d00dba78b7194fa4228') in 0.0456511 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a89932eeaf9a3c790b9156b30ec4c3e7 DependenciesID=b9704e8788c053c6956942682829aa4c StaticDependenciesID=6f38a0b7255c966a85e567198c649dd9 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000076 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tormentend souls - all spritesheets.png
-  importAddress: Guid(08ad63bad44ee85499717b3118837d51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tormentend souls - all spritesheets.png using Guid(08ad63bad44ee85499717b3118837d51) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'e86402ba7b8d8424d9fc81e06ccd1a64') in 0.1631484 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=392ce0fd67a9215db5a4f2fd51f74cf4 DependenciesID=1d9ac3df64db51edcf55a56b5413912c StaticDependenciesID=49e891fb7ad1f37c4dcffe6a9e8948e0 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 68
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.273666 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tormented souls tile-1-64x64px.png
-  importAddress: Guid(d3a43a358eaa8c144b8b946ae943852c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/tormented souls tile-1-64x64px.png using Guid(d3a43a358eaa8c144b8b946ae943852c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '304175078b75ce81c4ab884bf42182f9') in 0.1216004 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=897509d345697da6c2adbca9e111e6e2 DependenciesID=0f1bb0afea4c88d8136aac8968b75d06 StaticDependenciesID=034916414288608b4f621a34db292a24 
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_30.asset
+  importAddress: Guid(5bff762750a8143448a5b1e3eff8850e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_30.asset using Guid(5bff762750a8143448a5b1e3eff8850e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '1192a793acbb73d29b92f677b682c728') in 0.0337323 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=83adde279c2e4bfbf42751d99d3d585b DependenciesID=6ea1616858b4231bb09fd464c3443782 StaticDependenciesID=84c3d820bc8ef098024208aa71803d27 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000030 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/floating land shadow tileset.png
-  importAddress: Guid(66d2826b5dd94504299bb9e3e887c74b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/floating land shadow tileset.png using Guid(66d2826b5dd94504299bb9e3e887c74b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '2932a1147770dd14609ec447d0f8ffd8') in 0.0216804 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=48047cd750b9edcc7ba18b85d40c8bbd DependenciesID=1b8230e7c579c0c01d2f445103fe9ffa StaticDependenciesID=95a1ed5bc213eebae6c20962cfbd3000 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/animated lava river with light fx spritesheet.png
-  importAddress: Guid(f723eb8510c8c754cbe735bab744f193) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/animated lava river with light fx spritesheet.png using Guid(f723eb8510c8c754cbe735bab744f193) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'af19e56d19db87a7d044efdfb0f52ba0') in 0.0284946 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=99f13ceea82e2da16a920e2331449225 DependenciesID=9bf5c98990810aca85c2e71b7eb45224 StaticDependenciesID=49be14fcffdc5a6d1c7f853d4c0a410b 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_32.asset
+  importAddress: Guid(7dd9b77853e5f7443a4fc9def3dab3f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_32.asset using Guid(7dd9b77853e5f7443a4fc9def3dab3f5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ad5823699a00ad7ede341dbeea8a82ba') in 0.0255236 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=bab912708add911f4dfb00b9b7551a10 DependenciesID=0c3dc63920bcfb2af8bafe11ede6d2e9 StaticDependenciesID=949639341cdcefa0c02eff262a07758c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000023 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/platform1.png
-  importAddress: Guid(880f1240a09d8f64c943b685a387df4a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Volcano/Epic RPG World - Volcano V1.6/Tilesets/platform1.png using Guid(880f1240a09d8f64c943b685a387df4a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '6a9b95976547d6b93c5a259c3d69a26e') in 0.0277469 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ce69c501ec103336ba4983c2dc66e3a9 DependenciesID=99596787a0ed683e6c6f2f65ac359997 StaticDependenciesID=193bd39cf1adce5b49a997acc18426d3 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 11
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_47.asset
+  importAddress: Guid(bead99df4c918c04d8672d81d30e6580) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_47.asset using Guid(bead99df4c918c04d8672d81d30e6580) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '49d44fef1b2c9e39e08bc244e0b6c21c') in 0.0305952 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3d0f2541104f2299ca4151db8860050b DependenciesID=5d2da67354422cc519876fec41b40e49 StaticDependenciesID=13a5778528ba03d4f4db559b83e2191b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_25.asset
+  importAddress: Guid(1078d56446d70dc4d99b16b2e7fc46d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_25.asset using Guid(1078d56446d70dc4d99b16b2e7fc46d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '949848c5f36dd1b40b92a7e1b004f1c5') in 0.0292104 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9a02caa217be4e4b65b1c72df992df6d DependenciesID=9d22af78b02439f3eeda9b0a0762fd6e StaticDependenciesID=d3d5c9c7ece315f8d32f415791cf5fbb 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_7.asset
+  importAddress: Guid(6dbab3145347ccb4fa6f46cc29262bdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_7.asset using Guid(6dbab3145347ccb4fa6f46cc29262bdd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '6c38eb0a46b895aab52f5f94936f47f9') in 0.0330041 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=870cde695e48437fa1b77ee48c45ca8a DependenciesID=6f0651aa7cc1eba6ddea3a5c4ffd2d29 StaticDependenciesID=594d7934faf68f39a12119aff270b390 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_31.asset
+  importAddress: Guid(9898a265f44120d40aba9472525426d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_31.asset using Guid(9898a265f44120d40aba9472525426d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '19577ae0b990d292e1e99a822e17b6ef') in 0.0284149 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=bcff042bb853ab31cd37e213db8d1ff6 DependenciesID=fcb676ee161e9ae3bd79c22fe227793a StaticDependenciesID=3f4647950b471041ca237d560b97c178 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_24.asset
+  importAddress: Guid(54b2601a58214d94b8cdd305648b9351) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_24.asset using Guid(54b2601a58214d94b8cdd305648b9351) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b42fba81fb79845ead081363ae938729') in 0.0291633 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0fef895eda5ee3e0cbd88b221dabc722 DependenciesID=59c8614fa9d97bd61100f77310fbc326 StaticDependenciesID=3341d71c6beb295f3d5887bd46c89724 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_4.asset
+  importAddress: Guid(a80a8a0b3f4d9b24c92a045bb273a1fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_4.asset using Guid(a80a8a0b3f4d9b24c92a045bb273a1fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0af2d6060dd72322346ad823f35afe69') in 0.030599 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=188ff0d583c9d150b635e223f43d936e DependenciesID=7d5379ff2df1320d2d1f6b44e6f675c6 StaticDependenciesID=10122579c9b600d0cb8b20e7b94cbfa0 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_21.asset
+  importAddress: Guid(1f57b4874a9712c4abe7ea82d474f24b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_21.asset using Guid(1f57b4874a9712c4abe7ea82d474f24b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9bd4488adf9ae7e483c8a533f38badf1') in 0.0280166 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d0a693700dbf4cfb5c30987befe135c3 DependenciesID=64b9d07723eaf3589effea79b30a2761 StaticDependenciesID=9c6d82e2a87d004b564bac50243b2e1b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_16.asset
+  importAddress: Guid(79c220c1ffb274a4eb138229e0cf417e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_16.asset using Guid(79c220c1ffb274a4eb138229e0cf417e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '701d1309e134149b815b326b47d5fd2f') in 0.0257749 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=315054563ff05cc00bb91690122c1211 DependenciesID=f0673bc0d71a0e80ffb87d704f77488a StaticDependenciesID=90e7492792d247ab753f88aaf0757cb6 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_9.asset
+  importAddress: Guid(c998f2adacee5df4eb2de60ad70ca842) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_9.asset using Guid(c998f2adacee5df4eb2de60ad70ca842) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '522e33482c38d03425eb7ae156a0d14b') in 0.0281104 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2227d0be7671ca9ec0f6cbd3eb642c27 DependenciesID=cf009a13994fd5aca4bb196b64016328 StaticDependenciesID=7145cf2000d2de1bce9e672bf0459c8d 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_17.asset
+  importAddress: Guid(db7433e4c6353494ca94cae8279fc5e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_17.asset using Guid(db7433e4c6353494ca94cae8279fc5e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c4f1e150fce2c948ea19b364e2b50299') in 0.0335477 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=dfd77ab2d7e8b7e395d58759158bedf4 DependenciesID=f670dc2fffb90809c686d6a9466195b8 StaticDependenciesID=23511cd1db270edc7bfaee9540aa70c0 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_11.asset
+  importAddress: Guid(602853238c6e8264b9d4e2ab92b9eec6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Tileset-Terrain_11.asset using Guid(602853238c6e8264b9d4e2ab92b9eec6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'bc823315d8795d8519b541b212961911') in 0.0271916 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cad90eeb55254af85febae22637ac07c DependenciesID=e3c37a10fdf5e2de3dc9713538970611 StaticDependenciesID=c50449b99e29152d474efe6c453bbeaa 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
