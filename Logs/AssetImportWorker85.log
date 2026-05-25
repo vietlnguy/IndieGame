@@ -1,0 +1,852 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.4/staging' branch; Version is '6000.4.6f1 (0b051c2e5d54) revision 722204'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) Core' Language: 'en' Physical Memory: 16328 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C" at "2026-05-25T01:47:12.077234Z"
+System  architecture: x64
+Process architecture: x64
+Date: 2026-05-25T01:47:12Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.4.6f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker85
+-projectPath
+C:/Users/viet_/projects/IndieGame
+-logFile
+Logs/AssetImportWorker85.log
+-srvPort
+49337
+-licensingIpc
+LicenseClient-YJ9lqjR03NSlFhmCLJW0C
+-force-d3d12
+-job-worker-count
+7
+-background-job-worker-count
+8
+-gc-helper-count
+1
+-name
+AssetImport
+Successfully changed project path to: C:/Users/viet_/projects/IndieGame
+C:/Users/viet_/projects/IndieGame
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+Player connection [8868]  Target information:
+
+Player connection [8868]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 3759709740 [EditorId] 3759709740 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [8868] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [8868] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 7
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 6.94 ms, found 5 plugins.
+Initialize engine version: 6000.4.6f1 (0b051c2e5d54)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/viet_/projects/IndieGame/Assets
+Forcing GfxDevice: Direct3D 12
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+d3d12: failed to query info queue interface (0x80004002).
+Direct3D:
+    Version:         Direct3D 12 [level 12.2]
+    Renderer:        NVIDIA GeForce RTX 5060 (ID=0x2d05)
+    Vendor:          NVIDIA
+    VRAM:            7896 MB
+    App VRAM Budget: 7128 MB
+    Driver:          32.0.15.9186
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.18.1'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C"
+[Licensing::IpcConnector] LicenseClient-YJ9lqjR03NSlFhmCLJW0C channel disconnected successfully.
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6" at "2026-05-25T01:47:13.1617422Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 26580, path: "C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.1+9fbee8e
+  Session Id:              9df9b664331d488991d20b5fa42fa3d4
+  Correlation Id:          b4010a6d77bef2cb518ef9ab1e8a3dbc
+  External correlation Id: 5828834912201801997
+  Machine Id:              VXbwn5JDHcloYK9lppscF5+D9fo=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-viet_-6000.4.6" (connect: 0.00s, validation: 0.00s, handshake: 0.01s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6-notifications" at "2026-05-25T01:47:13.170353Z"
+[Licensing::Module] Licensing Background thread has ended after 1.09s
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56464
+CodeReloadManager initialized
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001397 seconds.
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.404 seconds
+Domain Reload Profiling: 892ms
+	BeginReloadAssembly (150ms)
+	RebuildCommonClasses (41ms)
+	RebuildNativeTypeToScriptingClass (15ms)
+	initialDomainReloadingComplete (79ms)
+	LoadAllAssembliesAndSetupDomain (202ms)
+		LoadAssemblies (147ms)
+		AnalyzeDomain (193ms)
+			TypeCache.Refresh (191ms)
+				TypeCache.ScanAssembly (175ms)
+	FinalizeReload (405ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (41ms)
+			BeforeProcessingInitializeOnLoad (86ms)
+			ProcessInitializeOnLoadAttributes (114ms)
+			ProcessInitializeOnLoadMethodAttributes (80ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 2475357296229-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
+Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Animation.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Animation.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Aseprite.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Aseprite.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Common.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Common.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.PixelPerfect.Editor.Tests.dll at Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Psdimporter.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Psdimporter.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.SpriteShape.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.SpriteShape.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.BurstCompatibilityGen.dll at Library/ScriptAssemblies/Unity.Collections.BurstCompatibilityGen.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.DocCodeSamples.dll at Library/ScriptAssemblies/Unity.Collections.DocCodeSamples.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.PerformanceTests.dll at Library/ScriptAssemblies/Unity.Collections.PerformanceTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.Tests.dll at Library/ScriptAssemblies/Unity.Collections.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.Tests.Playmode.dll at Library/ScriptAssemblies/Unity.Collections.Tests.Playmode.dll not valid. Loading of assembly skipped.
+Assembly Unity.InputSystem.IntegrationTests.dll at Library/ScriptAssemblies/Unity.InputSystem.IntegrationTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Mathematics.Tests.dll at Library/ScriptAssemblies/Unity.Mathematics.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Nuget.Mono-Cecil.dll at Library/ScriptAssemblies/Unity.Nuget.Mono-Cecil.dll not valid. Loading of assembly skipped.
+Assembly Unity.PathTracing.Editor.Tests.dll at Library/ScriptAssemblies/Unity.PathTracing.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.PathTracing.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.PathTracing.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Core.Editor.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Core.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Universal.Config.Editor.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Config.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Universal.Editor.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Universal.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Searcher.EditorTests.dll at Library/ScriptAssemblies/Unity.Searcher.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.ShaderGraph.Editor.Tests.dll at Library/ScriptAssemblies/Unity.ShaderGraph.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.UnifiedRayTracing.Editor.Tests.dll at Library/ScriptAssemblies/Unity.UnifiedRayTracing.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+Refreshing native plugins compatible for Editor in 2.28 ms, found 5 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Refreshing native plugins compatible for Editor in 2.37 ms, found 5 plugins.
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  3.577 seconds
+Domain Reload Profiling: 4532ms
+	BeginReloadAssembly (202ms)
+		DisableScriptedObjects (5ms)
+		CreateAndSetChildDomain (37ms)
+	RebuildCommonClasses (40ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (77ms)
+	LoadAllAssembliesAndSetupDomain (624ms)
+		LoadAssemblies (427ms)
+		AnalyzeDomain (306ms)
+			TypeCache.Refresh (215ms)
+				TypeCache.ScanAssembly (197ms)
+			BuildScriptInfoCaches (75ms)
+			ResolveRequiredComponents (13ms)
+	FinalizeReload (3577ms)
+		SetupLoadedEditorAssemblies (0ms)
+			BeforeProcessingInitializeOnLoad (161ms)
+			ProcessInitializeOnLoadAttributes (3060ms)
+			ProcessInitializeOnLoadMethodAttributes (152ms)
+			AfterProcessingInitializeOnLoad (7ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Refreshing native plugins compatible for Editor in 2.46 ms, found 5 plugins.
+Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7408 unused Assets / (5.3 MB). Loaded Objects now: 8249.
+Memory consumption went from 241.2 MB to 235.8 MB.
+Total: 9.466500 ms (FindLiveObjects: 1.116300 ms CreateObjectMapping: 0.403300 ms MarkObjects: 5.250800 ms  DeleteObjects: 2.693800 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 786617.277645 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_31.asset
+  importAddress: Guid(6a7f1720c0e966840bf35a5e141e00a8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_31.asset using Guid(6a7f1720c0e966840bf35a5e141e00a8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'cd02f0cbc3969531d12b68b4ca84dfe1') in 0.1040733 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b2821bed7882fa7f27b8ef7c936a4e55 DependenciesID=738035e067e6fdabd01cc6251db08038 StaticDependenciesID=6b56b2300201f6a8fc822bab59f610d4 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_97.asset
+  importAddress: Guid(ba8a845a604606348a1f6868c9384bee) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_97.asset using Guid(ba8a845a604606348a1f6868c9384bee) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '79392c08a6586a89b5e60989eb715ff2') in 0.0141965 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=dd7a9e46b0ee45bd385a237c94f8128d DependenciesID=8dc9c77a0288d91082b699ae9127196e StaticDependenciesID=c922848ca63519370df15d9e4bb53269 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_247.asset
+  importAddress: Guid(912bd9fc16872da4bbd6961ee1c78bdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_247.asset using Guid(912bd9fc16872da4bbd6961ee1c78bdf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '3de957bb5204739b36d8640c8e152689') in 0.0152169 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1eecaf1b617c4db7af7fbf5660f87d00 DependenciesID=61b358769619c5d5fdd618df60577fb0 StaticDependenciesID=1af862f9797be17cd0f62886c7fc4a29 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_94.asset
+  importAddress: Guid(51a1476ff5496824ea5c22da73c44711) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_94.asset using Guid(51a1476ff5496824ea5c22da73c44711) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'cc2a4ef7a9f45b2c360fa6aa8e3f3329') in 0.0127734 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8dbf1260190f74c1dd562e0595b44246 DependenciesID=3db6e9b7f4c86d9a50881be44195396d StaticDependenciesID=ba5b93bd159436554f4011bd90275490 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_145.asset
+  importAddress: Guid(56e6aabee90573b4cab967bdb687393d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_145.asset using Guid(56e6aabee90573b4cab967bdb687393d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '1ccc5bb254b5d8e061aceb1a8f811d31') in 0.0116191 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f51046c1fde9d30534dab8c5d9f6e932 DependenciesID=440dfb0b370f5dbb3e51a51889d98c25 StaticDependenciesID=0e3a7a898998ccd5ae2ccb699b747a39 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_160.asset
+  importAddress: Guid(dc0c5912b6a8a0840a95637a6a943683) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_160.asset using Guid(dc0c5912b6a8a0840a95637a6a943683) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '3ff295cf19fe8919985533680eab31c9') in 0.0131527 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=17dda01c7229495e77af5bc9ce41c36f DependenciesID=df7fa228dcf709dafb6ba03d8953c694 StaticDependenciesID=a509caea990b65d69403d88b2cb297f3 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_272.asset
+  importAddress: Guid(2d5c86fc692f10f4da6a6f7890e87079) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_272.asset using Guid(2d5c86fc692f10f4da6a6f7890e87079) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f3cec282f0731b0d79b7db0fa722744e') in 0.0118194 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=470910bec43ffedde21dd78f1a42a04b DependenciesID=509ee4bfbc7af3c524e3de821bb37912 StaticDependenciesID=7491d23a55e3fbb4da08a1a4ff094935 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_60.asset
+  importAddress: Guid(0e5310cff888d4e43b360a7fcbdb5ed3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_60.asset using Guid(0e5310cff888d4e43b360a7fcbdb5ed3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '3cd9238e6603b7d34860c34351d814b6') in 0.0123008 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=08602a8beca3471d7547f487f0be6ce0 DependenciesID=234f9f5bdc53ffcdef03c457b1d6301c StaticDependenciesID=8750138c49870d1f327809b11698d1fc 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_266.asset
+  importAddress: Guid(8d94c80217cea6640a31abce11e9c2ce) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_266.asset using Guid(8d94c80217cea6640a31abce11e9c2ce) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '63a3f19abdb273f57dd818f207b7a6c5') in 0.0102551 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8978e8f23d69bf6aac3d911cbb3dc0d2 DependenciesID=69a554192fd584eb628aad97c6523056 StaticDependenciesID=682098cfd4dcd518104aee1d761e1b79 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_143.asset
+  importAddress: Guid(7f48482e8ad74844da28d670c9c408f6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_143.asset using Guid(7f48482e8ad74844da28d670c9c408f6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '140c41a1b8bfe0d975e2802174029ff9') in 0.0112686 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e657edca7678aa7c21c8a7e8be9fcc36 DependenciesID=b807acc48893f7c5cc67751a1a744432 StaticDependenciesID=3a1480f949b8b45378ace07b40d3fdfa 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_27.asset
+  importAddress: Guid(b895994add5809440ab458d2b7ad6ae6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_27.asset using Guid(b895994add5809440ab458d2b7ad6ae6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '2b1d51d2fdfc2a7ee1ca4a0d87ee1070') in 0.0136786 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a7abe6f90e480e3dbcc3a27c09b910bd DependenciesID=83850fcddbbf6a5170c4ef06254758af StaticDependenciesID=73658a2149c1a82aab0fa4ce1dae2806 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_52.asset
+  importAddress: Guid(fc3c4da8b849cc344ad691b6368aa636) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_52.asset using Guid(fc3c4da8b849cc344ad691b6368aa636) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'db64fb09c7ef19526daff57bb789f3e5') in 0.0126529 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=042f2f434259fcf94f69d03be8a7e7a8 DependenciesID=7f9157e5a2334476bce6cf770cf6f473 StaticDependenciesID=6f1b5e66fc22ad29f37ab105acc4a80a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_44.asset
+  importAddress: Guid(7417e90d22df1cc4e94db7958df14f67) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_44.asset using Guid(7417e90d22df1cc4e94db7958df14f67) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '71dff7426153d18b7483a750759db55a') in 0.0106091 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4d948c42f7b3140d1d390e429dfbe2d0 DependenciesID=108aac1f7bf52630132776dfa775f2e8 StaticDependenciesID=5d8cb393c8c2e7646e7df2735c6425c4 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_72.asset
+  importAddress: Guid(4c8b1064baac5674787d35df00693042) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_72.asset using Guid(4c8b1064baac5674787d35df00693042) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'fd9f903b40251609d1fa57d5ef561830') in 0.0130463 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d5db807892385342648411dd884a7ce8 DependenciesID=2ef628e3fd604b348580ba76e4511a4d StaticDependenciesID=c8b072b580c22db7dd9fabbdb804e519 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_294.asset
+  importAddress: Guid(e640f1a27600a204c839c8a70e936b9b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_294.asset using Guid(e640f1a27600a204c839c8a70e936b9b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '50d2d1f6395a594a14218c228bfc0a35') in 0.0142599 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1dc1e785ba60b97c212ea52be57ef279 DependenciesID=fbe4d9ef1a3edd21e4c76d793c04ffab StaticDependenciesID=64f2cfcb2072471900dfeddffda10db9 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_122.asset
+  importAddress: Guid(a4463ec210fd0a5498da8b86c4a4b1a8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_122.asset using Guid(a4463ec210fd0a5498da8b86c4a4b1a8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '51c32f87e6850f8acbb64fd9ca58afe9') in 0.0144409 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=671b0c2baf37762e1dd313a0d97ab1a8 DependenciesID=0ffe12a494f7565e81df86ccb90bfe9e StaticDependenciesID=1537866e9ec6c7a746402628d0db24ef 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_184.asset
+  importAddress: Guid(80bd58f0159415c41a09adbbcb4442b2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_184.asset using Guid(80bd58f0159415c41a09adbbcb4442b2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd5be8f5b2c6109910325bb73595d660a') in 0.0143741 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a92e95272f850cc2929ec516f022de62 DependenciesID=a26bc8908235c591578c407f3d71b6e3 StaticDependenciesID=7453f552df218026918078cf3b8a4651 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_30.asset
+  importAddress: Guid(83b1b9b06941c6340a2f01bbfbf5297b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_30.asset using Guid(83b1b9b06941c6340a2f01bbfbf5297b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '382d6e11ed28706ac1a025b07851a312') in 0.012147 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=da78da781968aa58439c076b824379bd DependenciesID=72c2bf67c2b4e32895698ddac927c727 StaticDependenciesID=4da11d70d9ce6e56992069c06bf33552 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_40.asset
+  importAddress: Guid(0889683faef2bf649a38abae56cb90f6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_40.asset using Guid(0889683faef2bf649a38abae56cb90f6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '30a2f29dff9fb385248ef85538c9ba97') in 0.0126726 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ad04fd18db676a2d080bf3dbdab106b1 DependenciesID=4d6b045b0e94f243d5e5b3850af6d225 StaticDependenciesID=6f4e8ea278eacbf63bcac3eb62bb0098 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_116.asset
+  importAddress: Guid(d208a4b9fdc78ec41b451ab1528e7945) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_116.asset using Guid(d208a4b9fdc78ec41b451ab1528e7945) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '6cc1a9c365c610bc61b209971d7a3cb8') in 0.013316 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=74f6ee768c5b0b9b95634145eb0cb394 DependenciesID=53c123f4efc640422fcc1f9daa44c0ca StaticDependenciesID=d1c4389a6ef6dbd9738ed8185df2ed43 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_149.asset
+  importAddress: Guid(c67bbfdb630ddd949b6646e1835b73b7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_149.asset using Guid(c67bbfdb630ddd949b6646e1835b73b7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '220b2ba41e8e3526805566a844acbb9b') in 0.0122505 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2444f800070a5724928c03790e9aa310 DependenciesID=83e5892e54ff3300eb3b264fcec74b73 StaticDependenciesID=2cb7a27e5272058cb95e66534f2e11b2 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_84.asset
+  importAddress: Guid(a0fda0a66dc69bc45b8b0921da793f85) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_84.asset using Guid(a0fda0a66dc69bc45b8b0921da793f85) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '24313794990eb2d739a78e0d30ad378e') in 0.0108519 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=563e33248788e59dabab6ea307a99b30 DependenciesID=44bbe10e37a5254b170689207b02ffa2 StaticDependenciesID=ceb8174095ef7d087f292370bb6c7aa9 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_235.asset
+  importAddress: Guid(ed6a597727ef58f45a11247cc171b360) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_235.asset using Guid(ed6a597727ef58f45a11247cc171b360) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ebdbd1f67ff8c91ec70a58543e6067e8') in 0.0103014 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=842f53464af837a0194db127d8de589e DependenciesID=c447f9d22ef348fc2033aa11d5b1817a StaticDependenciesID=2934875422499afc23b19244fc175915 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_183.asset
+  importAddress: Guid(1243c004ccaeeda4d8faf2e38f0b6e44) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_183.asset using Guid(1243c004ccaeeda4d8faf2e38f0b6e44) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '5290f65b1daef7fa6b8c59c53719f8b1') in 0.0124212 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=48336f8f650b69b42f773d5c83496a13 DependenciesID=ff72381e62717af70d9b8979122c4857 StaticDependenciesID=ad0dea80c3bcdec7b50b98845011d46a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_152.asset
+  importAddress: Guid(3c4158fc4b075ba41b9d7a161fc0c421) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_152.asset using Guid(3c4158fc4b075ba41b9d7a161fc0c421) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '7d61fbbe986a2b3a1ffea83645affc73') in 0.0251513 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6ff3721dd4cae3d9591b0aa32c692d38 DependenciesID=9bfb0e878e857171a583a3df3fb19e8a StaticDependenciesID=e7badc6ee05ed867d427c7da8489b571 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_216.asset
+  importAddress: Guid(472eb42215257dd4598ce5483bd7f743) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_216.asset using Guid(472eb42215257dd4598ce5483bd7f743) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'aa4113d070f11e5cf93bc9271148d15a') in 0.0111914 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f1bdafcc5b4017fad751f420013268f8 DependenciesID=9c06631a8ac5bb015ad5a54ab2455f9d StaticDependenciesID=32e5ff16c25524bcc635f34481a0549d 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_227.asset
+  importAddress: Guid(371ed5a707960564e8df2caffe7bf751) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_227.asset using Guid(371ed5a707960564e8df2caffe7bf751) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ecc239b6aea18ef7a36add9a716b728e') in 0.0125427 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6efdf394dfef4ed793fc120e59842698 DependenciesID=737d3bb943348d25cd5cde40fbec529e StaticDependenciesID=736d8eac1c45c259ff62c2ad5e464ec5 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_19.asset
+  importAddress: Guid(80321ae98c91ab143a3befb391214e40) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_19.asset using Guid(80321ae98c91ab143a3befb391214e40) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd2f90a4c7a23de9f73432117c5cc417a') in 0.011127 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d6949ce1e464bc14903c9fb1b61db24d DependenciesID=536efc61148956c185157d80c037f7b5 StaticDependenciesID=8a5039b7e7776c53484b97011c943a12 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_221.asset
+  importAddress: Guid(460ad8e375b4132458be7149d0473abe) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_221.asset using Guid(460ad8e375b4132458be7149d0473abe) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '5e3c6c0c631e592db926f3af9059e1e7') in 0.0123713 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=daea62b33ba3823f52c94913ccbf8e88 DependenciesID=3e861832ad593dfe89954d128c4dcbc9 StaticDependenciesID=2e92b53ccecf3dd54bf834e0c555a874 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_3.asset
+  importAddress: Guid(f570d874ca950544b85f9e6899fb95e4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_3.asset using Guid(f570d874ca950544b85f9e6899fb95e4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '5a3cce71f7b845f55fbd3b4c9409140e') in 0.0119789 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cc8824611ee2e1bf9e2454af0ac22629 DependenciesID=ca4d82eabc672f45998af79b2e573b26 StaticDependenciesID=a31c5dee5638ede41b680e819d5cd6c3 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_7.asset
+  importAddress: Guid(7e02dc91f4e53d8498914dce6f00c822) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_7.asset using Guid(7e02dc91f4e53d8498914dce6f00c822) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'cef9184afaa9381c97d225bdbea8579a') in 0.0111617 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=934c871e916f989a0bebb05a0ee96d0c DependenciesID=2839f9e73b44ff0e39795b9a2f319311 StaticDependenciesID=a2d5a3fbdeebb92272a85150ca4413a6 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_42.asset
+  importAddress: Guid(16c88b0e879a30e458c2c906d3a90375) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_42.asset using Guid(16c88b0e879a30e458c2c906d3a90375) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c793d1fba6d15d324cac21751428c645') in 0.0110088 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=eeb3e2e63e3406c102cb1db993a773b4 DependenciesID=52d8fdef5efebdcf81ad6fd38665c3f5 StaticDependenciesID=16d008ecfaefc561b538ba59038bab10 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_165.asset
+  importAddress: Guid(1a1604d719cd57c4696cccfe23827926) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_165.asset using Guid(1a1604d719cd57c4696cccfe23827926) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '0e40e4364aab8bd012a4bc6f0214f02d') in 0.0141398 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=307e07537bf4489baca1a41cdc36b387 DependenciesID=6b4e3ac32120d8763af0f6c124655df0 StaticDependenciesID=f3c1c7fcde0ca005399e779b2465c8f3 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_156.asset
+  importAddress: Guid(81c1917160ad0c34d8d37e81c871eaf0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_156.asset using Guid(81c1917160ad0c34d8d37e81c871eaf0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'fd4349f92c7e28fe018b449cbc2c63db') in 0.010775 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9b0096cf9fcf6386353d92ffff120a9c DependenciesID=eee6a1175e41d3d13d5fe8c71bbf8bae StaticDependenciesID=bfb2634a5d4f761472fb14413885f973 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_289.asset
+  importAddress: Guid(2521f5811cc8a2c41bbb4d566f4eb8eb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_289.asset using Guid(2521f5811cc8a2c41bbb4d566f4eb8eb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '9a0a0b6818c7c62be9a7e4e707bf0e0f') in 0.0120709 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=db812f4513f3e2771a103377360dcaef DependenciesID=1e129c04ab35971c5b7f442f1e3089d2 StaticDependenciesID=65fffb55f4b1d845306d6282011f6395 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_225.asset
+  importAddress: Guid(27c6ba4a354c6064b84f70173936d369) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_225.asset using Guid(27c6ba4a354c6064b84f70173936d369) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '7c7d49b5f4841b5e058a58d82523487d') in 0.0124196 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=56e83dc1d1d5a90d06166811e19dcefc DependenciesID=f1bd013006a7846fcd6d7ced5f61b525 StaticDependenciesID=10690735db60b8a0ae2407e7ebea1342 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_217.asset
+  importAddress: Guid(1c8b36f896125414abfad777c0b99591) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_217.asset using Guid(1c8b36f896125414abfad777c0b99591) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '61096b2af0364d31da3d62fe8d6be299') in 0.0125015 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=45122b1391a92de2289d9213201924af DependenciesID=9b5f417fb6777a5d2d044adc9195bb9b StaticDependenciesID=12da8021d7aa3cae61c4b56a6548e53c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_254.asset
+  importAddress: Guid(4a3b26ad16868a343871e23b72210a64) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_254.asset using Guid(4a3b26ad16868a343871e23b72210a64) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a5dbe3cd5da276b33f51d7bea8650bce') in 0.0134347 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b56b70df19cf1a3f9c0546eca8df2322 DependenciesID=f1bc034b1984a3909f94faae07c56ffd StaticDependenciesID=eefbf7ac22ce20378ad0b004af778952 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_174.asset
+  importAddress: Guid(6574c01a551a47f40a511da3dbd5c7c5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_174.asset using Guid(6574c01a551a47f40a511da3dbd5c7c5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '5be220cfa2272cfc561974ea55db153f') in 0.0133719 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=00a3e25814af6e3ca0cb7d5e32d9ed60 DependenciesID=ef3b5c294c285bc36bdde9afdfb39c7b StaticDependenciesID=f7113cdd6ec63649545c31ae8000e47f 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_85.asset
+  importAddress: Guid(ae2511651970a454a9a7532eeabcf1c4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_85.asset using Guid(ae2511651970a454a9a7532eeabcf1c4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '7a7e7f78dc917a9e73ba13bbca25a710') in 0.0121463 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f3bd21d91d4eb7c3c6936f059fc1bd84 DependenciesID=ddbef3f3f73ec70fda4e340d91fc5e43 StaticDependenciesID=a4c1a83cec92d78ec36e680d9ce0d29e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_218.asset
+  importAddress: Guid(a8bf3049b4d87d74ea950b4078fcbd8a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_218.asset using Guid(a8bf3049b4d87d74ea950b4078fcbd8a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd0099e7e359e471410cbd447a6a0c0f5') in 0.0117083 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2f770ee788dd2ccd31c94ee99ee51ca7 DependenciesID=738ea673fa320ec6a2b929d51ce5a569 StaticDependenciesID=cc3f9e9ebb6f41d749d209ea57796664 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_305.asset
+  importAddress: Guid(e7807d68d79d96843b8e58c98b800cf4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_305.asset using Guid(e7807d68d79d96843b8e58c98b800cf4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '26c53112e6acb12d95381d9515b37405') in 0.0128524 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=67ddd701a9bb2ce099565f8189e4b9f4 DependenciesID=46b550913a85985329544ac9dccba2d3 StaticDependenciesID=b286149811448c6c18a9bfebca87f24c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_238.asset
+  importAddress: Guid(4fa7f3d59590f1c458abd50e0c495c0f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_238.asset using Guid(4fa7f3d59590f1c458abd50e0c495c0f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '8f37e9ce5ad81b80987f15a3265945ed') in 0.0130787 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=59b3857cf9680288f5059d39f6bdf0fe DependenciesID=3b8ad7c377af258fccae777770dce4b5 StaticDependenciesID=4664c6a0c51bf3de56028bcc613d375e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_214.asset
+  importAddress: Guid(6a3a82e23c93c25438f7e8eda49d92e5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_214.asset using Guid(6a3a82e23c93c25438f7e8eda49d92e5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b92725063e44679ac5996b93aa80298d') in 0.0132837 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6bd051afecb7c8823bcf6a92229a3b9a DependenciesID=a10b81e08d01568c99806726cc8486b1 StaticDependenciesID=106528f971fb691130749eb430911765 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_111.asset
+  importAddress: Guid(0aa1f0a3da617a1448b761835425f38a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_111.asset using Guid(0aa1f0a3da617a1448b761835425f38a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '8425f8f9651ad0b4199dfdf69bc76d55') in 0.0123852 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4b83f12d3ddc149ed3b9474a59cbcddd DependenciesID=47832bbc5a74502aca667994e8a3892f StaticDependenciesID=ddd841074414a3c36e47d213d9cfb991 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_46.asset
+  importAddress: Guid(2b43c979866e7ff47934b566494b0610) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_46.asset using Guid(2b43c979866e7ff47934b566494b0610) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f9f65c0a5107f5c96b3be837d483dab5') in 0.0121578 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f19cff4f313b162a598d72702ae74c7a DependenciesID=fd7a740853c46b726079271e5dc4edc9 StaticDependenciesID=eae48c1a2546d6e20ba59d874c2ff388 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_204.asset
+  importAddress: Guid(00d09ccc82777a44a81f12b29871d45c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_204.asset using Guid(00d09ccc82777a44a81f12b29871d45c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '985ef53faeec5a707db56db45650fd21') in 0.0137065 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=77d29d411ca2fd3cbf07928be42d75d3 DependenciesID=65c369591312a12102a5f8d7de1faf37 StaticDependenciesID=f8daa213b12c936b4f817a9f5c5d1998 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_303.asset
+  importAddress: Guid(4924f463444019a49849cde3294414bd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_303.asset using Guid(4924f463444019a49849cde3294414bd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '63d5b959d584ce74a6d6c13d93a3368a') in 0.0170783 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=aedd2bf780626760071e20b69f5c2522 DependenciesID=322664fbb22a6db7cad0dcbc4597b535 StaticDependenciesID=907aab96b1942243e85fa4b7b398d84a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_1.asset
+  importAddress: Guid(5754031796a242940848e84762b10af6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_1.asset using Guid(5754031796a242940848e84762b10af6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '5cb296043ed664cedcdf84dfdf2529a8') in 0.0156898 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a09f33b0bcc3f78bb8b670ec69fe9472 DependenciesID=8db1747fd88a8bcde6727296bebde98d StaticDependenciesID=a98f3fa4f93c8f33db9f127ad4de81a0 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_45.asset
+  importAddress: Guid(e91400f2d4be2f34197aaf0dab1ae591) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_45.asset using Guid(e91400f2d4be2f34197aaf0dab1ae591) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f28889352f679aceed15620ace5c52ef') in 0.0112801 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c86ccea0972a21225edd6668532f3f6b DependenciesID=74098795cf6b147d1575bfe3aecaf0d1 StaticDependenciesID=a7531e20a2ac354fa9c86673a82530a7 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_113.asset
+  importAddress: Guid(7d91ab8b0055e3c43b807af5de4e4b2e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_113.asset using Guid(7d91ab8b0055e3c43b807af5de4e4b2e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '42134a22e490a4bb133dfb8b0478b01b') in 0.0137959 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cc4f711fce558774496fa8b4fae272a5 DependenciesID=82c3ca70e3e74da01593cb5189187ffa StaticDependenciesID=ccfafdcd16931a2c2b3e5f6f2418ad25 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_176.asset
+  importAddress: Guid(b137a116c1d95124d9cabdb32d55bc10) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_176.asset using Guid(b137a116c1d95124d9cabdb32d55bc10) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '7fc27bc672d1fb33773eb7e7fdaf7dcc') in 0.0137365 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=47cd4744ed902ae022f661126fc161a2 DependenciesID=53ce6ca6fff8ae9d8920993ed10a36f9 StaticDependenciesID=740a29ea244ea1e12cc9ed41d630b229 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_26.asset
+  importAddress: Guid(e14d78c1813c914469ac0b12efe74cbe) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_26.asset using Guid(e14d78c1813c914469ac0b12efe74cbe) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a598663096b82c80cc616267fcd1fe63') in 0.0115182 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cf8df44946c28cf8dbf7429c744a07aa DependenciesID=0c46ee6583edcdaff448ef0266ff13aa StaticDependenciesID=498220cd912280b7b89b7349b50a6709 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_220.asset
+  importAddress: Guid(3a94542c2ec15514c9f569f0c13fa0b6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_220.asset using Guid(3a94542c2ec15514c9f569f0c13fa0b6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '6a45f8b7a91cef745f8d6eda31306e35') in 0.0111399 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=62953a71162d9f34406a4bea951451f4 DependenciesID=0a8e9c593b1c673a70b24bc87b053e2c StaticDependenciesID=3cb20f67961c5df4d48ba97026d73a00 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_255.asset
+  importAddress: Guid(2a45dc02c8167ce4d826944d86cfa1ea) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_255.asset using Guid(2a45dc02c8167ce4d826944d86cfa1ea) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ce33959d1c63ea5e2dc261ad64fefa01') in 0.0116271 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e7f0dbd3e76d8a15cd420366a5f3f279 DependenciesID=0c8c655a32b193faeabd98888b9814cf StaticDependenciesID=5a2cbf767c4d0dac1066a9d9c582aa10 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_287.asset
+  importAddress: Guid(0c7a8ac2ddd0a524babd82299ec14f81) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_287.asset using Guid(0c7a8ac2ddd0a524babd82299ec14f81) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'aa4a85fe3e8023c74b7aaee173617e84') in 0.0125577 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=08f3c8dd8cfa2aa3881899d3f866275c DependenciesID=476b5647123ecc52ac09679afa51da7b StaticDependenciesID=4a27860882ccd40ee80033d5ba155e8c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_102.asset
+  importAddress: Guid(d32fd12baf4cc9042ba5f4724a6833a3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_102.asset using Guid(d32fd12baf4cc9042ba5f4724a6833a3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '81886e2e9c17c31f12d7e989d67037f7') in 0.011983 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=dc127b613c06f5a019fe1f2a768ea740 DependenciesID=0141e19bc3c68432367aaacbdff3b600 StaticDependenciesID=df986155eb8c5d3ebcc4d524814dd188 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_284.asset
+  importAddress: Guid(2d571e7390d0dcb4399642ef66fed3c5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_284.asset using Guid(2d571e7390d0dcb4399642ef66fed3c5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '05066e85e7410218957cef9477ded418') in 0.0118147 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2c537404ba95683c1fbc586b547d65b9 DependenciesID=ceeb716527c17e58f9fa3a671525144c StaticDependenciesID=61ba6ca94ba82b348ce8af03500b5f31 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_82.asset
+  importAddress: Guid(46b917f4a14e7214d8681753e112ccdb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_82.asset using Guid(46b917f4a14e7214d8681753e112ccdb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '44a8b491bdb426c6592bd204b6e6109f') in 0.0125829 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c8c4811221948543a3184f5f2107437d DependenciesID=f2f3f85bb2ca5c975b3205d7786cdb14 StaticDependenciesID=3f6e8fea6c0972cf07e5f4ff0e04d86d 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_177.asset
+  importAddress: Guid(eedcde1e73574954f819ed0912310a0f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_177.asset using Guid(eedcde1e73574954f819ed0912310a0f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'edadaab7b175fb4ae1cbe497253e9d1a') in 0.0132454 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=db3e4f796f214e8ea5614825b9af459c DependenciesID=c809d8bd932f1c6d907b1965cabae5d9 StaticDependenciesID=6e4530fa30ceb75fe3a0af3d7e887cbc 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_213.asset
+  importAddress: Guid(735be81ca56e67b488e8c3cb95beacf2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_213.asset using Guid(735be81ca56e67b488e8c3cb95beacf2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '1e055463e5a74b3271321b7c6e458196') in 0.0114024 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=60492e823e8ae8584e08963bc08e651a DependenciesID=08362f2897414e47132e23bb0c65e423 StaticDependenciesID=9d8634a6e61c7472c90d0915d3affe1b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_246.asset
+  importAddress: Guid(25965cf05b76d46418d8a84d089ec8db) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_246.asset using Guid(25965cf05b76d46418d8a84d089ec8db) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a596a5e6d607e5bfc7270d3481f8db51') in 0.0122381 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b6f08dc21ea0405a5dd7832022536b53 DependenciesID=66fe6aec7a376ef30893a681cb192aac StaticDependenciesID=3925ecba0e308b56f3b3d67907474698 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_190.asset
+  importAddress: Guid(bf6b9e3753ee9bd4484efc04fa4f6d54) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_190.asset using Guid(bf6b9e3753ee9bd4484efc04fa4f6d54) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ad8a0941e8340f78a71f1ae12864d279') in 0.0127021 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=55d8821f075c5f976e85e81ffc9074f1 DependenciesID=78ea7fa0acd078d78efbbd80888b27b6 StaticDependenciesID=45424175e9f9edd4629177627b5d8a18 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_271.asset
+  importAddress: Guid(274f78c643e8cae40978a2f70e77c329) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_271.asset using Guid(274f78c643e8cae40978a2f70e77c329) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '77aef8d2fd6e1b6028dabc0f792affa1') in 0.0122054 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=787f92cd1a7cc2ace752eceaf04adfd7 DependenciesID=c7ed37850849a45968d26eb21ee9ea36 StaticDependenciesID=bb9c6cb86a089b9ae285e78744b0175f 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_140.asset
+  importAddress: Guid(c024c697f78b1de41bd6ad7da82d0f77) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_140.asset using Guid(c024c697f78b1de41bd6ad7da82d0f77) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '3509b1b2014c2839aa9b0df2dee0e98f') in 0.0114668 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7f77128070cc8b3eea855e0a0155949c DependenciesID=40758b95ee2e3e8b2a471c56321e3fdd StaticDependenciesID=acff612f10e1d3ac65c27d9d92f30e77 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_173.asset
+  importAddress: Guid(0feb9cec9060f504e92ce7dca2c38558) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_173.asset using Guid(0feb9cec9060f504e92ce7dca2c38558) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '3f228c98ac544da7782eac78555800ab') in 0.0131829 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3c0f0c64114316314c615ca77e395ae8 DependenciesID=288bea766844da6957775487d69927ba StaticDependenciesID=e6589eff47780648c1a99e24b22a78fa 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_195.asset
+  importAddress: Guid(6651fc8b7fc6c624d9916d384405692e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_195.asset using Guid(6651fc8b7fc6c624d9916d384405692e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '47d7b8be0eeea558afcb49b95e015ec7') in 0.0126705 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=952b92aa5888bfe2553bea9fbe053e58 DependenciesID=8bd23e600068f4944a70fffb9875d9fa StaticDependenciesID=5d5a910247d5caecc4f3c78974a912e6 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_203.asset
+  importAddress: Guid(ce08a121147afd94d98a3d50432bfb7d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_203.asset using Guid(ce08a121147afd94d98a3d50432bfb7d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '782cdf68cb498bb3664fbd3e975185ea') in 0.0119357 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=456418761fe88f45337c2362d80e15ba DependenciesID=66c7b84a5379441d8c830c49bb7515ba StaticDependenciesID=69818662a90939d560d2e45f0f5592a9 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_69.asset
+  importAddress: Guid(97e518e340b52f143aff5e224c5289de) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_69.asset using Guid(97e518e340b52f143aff5e224c5289de) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '3e2ec6520f8cd1112e71a3b1b1746f72') in 0.0137523 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=930378070c2f1336483fd755e3ad6c3f DependenciesID=423bae4780ad9e5c300fa0890cddc6d2 StaticDependenciesID=13030fc55515a40532969d8603f0133a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_88.asset
+  importAddress: Guid(deda47e4cec24204fa8f515938cbef23) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_88.asset using Guid(deda47e4cec24204fa8f515938cbef23) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'cfb8708758fb4f6a238c77ff00f87ddf') in 0.0126053 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=00d3e660c4db234b0c38f32b8bf69be1 DependenciesID=cb8515574e9988bdb9c515eff4f17cfb StaticDependenciesID=86c5d90b5963ad4304e46496fd12421b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_87.asset
+  importAddress: Guid(7cd45571807e66a4b8af4c118bff67bf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_87.asset using Guid(7cd45571807e66a4b8af4c118bff67bf) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '276fccc438c8f1cd54ffd64d1b702702') in 0.0244106 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ef0050c6101a059d977cd45795df4472 DependenciesID=166ad3a88010f6c7c816c0896c273c1b StaticDependenciesID=0dec66fe950b47ba0027ee34e9dd0cf5 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_159.asset
+  importAddress: Guid(c64efe5c8f565b64a808af7a07e42283) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_159.asset using Guid(c64efe5c8f565b64a808af7a07e42283) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd624c8969a7c10f32516c7efb04119e1') in 0.0124241 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=521da4e0131e2ddf6eacbaef0b2e60ac DependenciesID=d1611d0df005abca5d75bbcb08822def StaticDependenciesID=cecb6197a3c31b5f6512ee433c40ee38 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_14.asset
+  importAddress: Guid(edb420fbc4311f5489379b871b454f4a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_14.asset using Guid(edb420fbc4311f5489379b871b454f4a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '2d49269aa112c5a6213e91d87e9fff92') in 0.018483 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e18e5844861c0215b3c0ccab6c1ddc85 DependenciesID=ab9030d4e5a9b12b30fae20102919d76 StaticDependenciesID=8f3c2974c710d78faae5fd9559dbce7e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_38.asset
+  importAddress: Guid(bfe32b12c5891ab4cbf1c0930fa43ae9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_38.asset using Guid(bfe32b12c5891ab4cbf1c0930fa43ae9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '10bf24e32a60a943b4c2ed572febf4f3') in 0.014786 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f15c0cd4637cc919b37a02c141bcf940 DependenciesID=c534fbcaa4313c5c74980a1db00e7485 StaticDependenciesID=a1918d8c6005e5894a0b51e893525d96 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_6.asset
+  importAddress: Guid(4455989d6ed3a5f42be01cfea1f03602) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_6.asset using Guid(4455989d6ed3a5f42be01cfea1f03602) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '8e474874b75c5ff7cd28227b4fda8b9e') in 0.0149771 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3f87130c0273fb7d451373af5c28dd2a DependenciesID=bfb8bcee210769129d878cf42ad0d8d5 StaticDependenciesID=d036bec8e5adc975f6ca35f481c23119 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_63.asset
+  importAddress: Guid(bc667f7428c973f48b2886ce8c7a4b50) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/SzadiArt/Harbor/Tiles/Harbor_63.asset using Guid(bc667f7428c973f48b2886ce8c7a4b50) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '00004f83fd90d51dc02b2cb6132d8521') in 0.0116823 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9064e4ba47356075caa5f4740323e69c DependenciesID=cab071d369624ec4a190adda64babd4a StaticDependenciesID=8ecde8afe120523092a83a3ecdc64477 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
