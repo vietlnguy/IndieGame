@@ -1,0 +1,1143 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.4/staging' branch; Version is '6000.4.6f1 (0b051c2e5d54) revision 722204'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) Professional' Language: 'en' Physical Memory: 32694 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User" at "2026-05-27T03:10:51.0208386Z"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-05-27T03:10:51Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.4.6f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker5
+-projectPath
+C:/Projects/Gamedev/Unity/IndieGame
+-logFile
+Logs/AssetImportWorker5.log
+-srvPort
+56673
+-licensingIpc
+LicenseClient-User
+-force-d3d12
+-job-worker-count
+7
+-background-job-worker-count
+8
+-gc-helper-count
+1
+-name
+AssetImport
+Successfully changed project path to: C:/Projects/Gamedev/Unity/IndieGame
+C:/Projects/Gamedev/Unity/IndieGame
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 34028, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+Player connection [29356]  Target information:
+
+Player connection [29356]  * "[IP] 10.0.0.190 [Port] 0 [Flags] 2 [Guid] 3275546816 [EditorId] 3275546816 [Version] 1048832 [Id] WindowsEditor(7,GlaDOS) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+[Licensing::Client] Error: Unexpected message Type: ApiErrorResponse, expected: HandshakeResponse
+Player connection [29356] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [29356] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 7
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 193.59 ms, found 5 plugins.
+Initialize engine version: 6000.4.6f1 (0b051c2e5d54)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Projects/Gamedev/Unity/IndieGame/Assets
+Forcing GfxDevice: Direct3D 12
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+d3d12: failed to query info queue interface (0x80004002).
+Direct3D:
+    Version:         Direct3D 12 [level 12.2]
+    Renderer:        NVIDIA GeForce RTX 3060 Ti (ID=0x2489)
+    Vendor:          NVIDIA
+    VRAM:            8024 MB
+    App VRAM Budget: 7256 MB
+    Driver:          32.0.15.9186
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56788
+CodeReloadManager initialized
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.315654 seconds.
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.405 seconds
+Domain Reload Profiling: 3087ms
+	BeginReloadAssembly (353ms)
+	RebuildCommonClasses (523ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (383ms)
+	LoadAllAssembliesAndSetupDomain (1411ms)
+		LoadAssemblies (349ms)
+		AnalyzeDomain (1403ms)
+			TypeCache.Refresh (1401ms)
+				TypeCache.ScanAssembly (1057ms)
+	FinalizeReload (406ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (42ms)
+			BeforeProcessingInitializeOnLoad (79ms)
+			ProcessInitializeOnLoadAttributes (116ms)
+			ProcessInitializeOnLoadMethodAttributes (88ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Error: Timed-out after 30.00s, waiting for HandshakeResponse
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-User"
+[Licensing::IpcConnector] LicenseClient-User channel disconnected successfully.
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User-6000.4.6" at "2026-05-27T03:11:21.1121912Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 41756, path: "C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.1+9fbee8e
+  Session Id:              0eccace46c404661a9fd36acd6390887
+  Correlation Id:          071979463d88e1c7cf3cfce4f71e6990
+  External correlation Id: 2333239304745109896
+  Machine Id:              2FPQyYLp1jEolOlDYTlN0FjGPb0=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-User-6000.4.6" (connect: 0.00s, validation: 0.00s, handshake: 0.06s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User-6000.4.6-notifications" at "2026-05-27T03:11:21.1741798Z"
+[Licensing::Module] Licensing Background thread has ended after 30.15s
+[Licensing::Module] Licensing is initialized (took 12.58s).
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: F4-PUNX-AMD4-49GE-6GAD-XXXX
+  Product: Unity Personal
+  Type: ULF
+  Expiration: Unlimited
+Assembly Assembly-CSharp-Editor-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor-firstpass.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-Editor.dll at Library/ScriptAssemblies/Assembly-CSharp-Editor.dll not valid. Loading of assembly skipped.
+Assembly Assembly-CSharp-firstpass.dll at Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll not valid. Loading of assembly skipped.
+Assembly DocCodeExamples.dll at Library/ScriptAssemblies/DocCodeExamples.dll not valid. Loading of assembly skipped.
+Assembly TestNewCustomAssembly.dll at Library/ScriptAssemblies/TestNewCustomAssembly.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Animation.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Animation.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Aseprite.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Aseprite.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Common.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Common.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.PixelPerfect.Editor.Tests.dll at Library/ScriptAssemblies/Unity.2D.PixelPerfect.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Psdimporter.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Psdimporter.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Sprite.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Sprite.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.SpriteShape.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.SpriteShape.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.2D.Tilemap.Package.EditorTests.dll at Library/ScriptAssemblies/Unity.2D.Tilemap.Package.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.BurstCompatibilityGen.dll at Library/ScriptAssemblies/Unity.Collections.BurstCompatibilityGen.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.DocCodeSamples.dll at Library/ScriptAssemblies/Unity.Collections.DocCodeSamples.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.PerformanceTests.dll at Library/ScriptAssemblies/Unity.Collections.PerformanceTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.Tests.dll at Library/ScriptAssemblies/Unity.Collections.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Collections.Tests.Playmode.dll at Library/ScriptAssemblies/Unity.Collections.Tests.Playmode.dll not valid. Loading of assembly skipped.
+Assembly Unity.InputSystem.IntegrationTests.dll at Library/ScriptAssemblies/Unity.InputSystem.IntegrationTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Mathematics.Tests.dll at Library/ScriptAssemblies/Unity.Mathematics.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Editor.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Multiplayer.Center.Tests.dll at Library/ScriptAssemblies/Unity.Multiplayer.Center.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Nuget.Mono-Cecil.dll at Library/ScriptAssemblies/Unity.Nuget.Mono-Cecil.dll not valid. Loading of assembly skipped.
+Assembly Unity.PathTracing.Editor.Tests.dll at Library/ScriptAssemblies/Unity.PathTracing.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.PathTracing.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.PathTracing.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Core.Editor.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Core.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Universal.Config.Editor.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Config.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Universal.Editor.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.RenderPipelines.Universal.Runtime.Tests.dll at Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.Searcher.EditorTests.dll at Library/ScriptAssemblies/Unity.Searcher.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly Unity.ShaderGraph.Editor.Tests.dll at Library/ScriptAssemblies/Unity.ShaderGraph.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Editor.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.TextMeshPro.Tests.dll at Library/ScriptAssemblies/Unity.TextMeshPro.Tests.dll not valid. Loading of assembly skipped.
+Assembly Unity.UnifiedRayTracing.Editor.Tests.dll at Library/ScriptAssemblies/Unity.UnifiedRayTracing.Editor.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
+Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
+Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
+Refreshing native plugins compatible for Editor in 2.50 ms, found 5 plugins.
+Native extension for WindowsStandalone target not found
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+Refreshing native plugins compatible for Editor in 2.72 ms, found 5 plugins.
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.959 seconds
+Domain Reload Profiling: 24939ms
+	BeginReloadAssembly (12767ms)
+		DisableScriptedObjects (5ms)
+		CreateAndSetChildDomain (31ms)
+	RebuildCommonClasses (37ms)
+	RebuildNativeTypeToScriptingClass (13ms)
+	initialDomainReloadingComplete (8566ms)
+	LoadAllAssembliesAndSetupDomain (2597ms)
+		LoadAssemblies (2154ms)
+		AnalyzeDomain (545ms)
+			TypeCache.Refresh (469ms)
+				TypeCache.ScanAssembly (455ms)
+			BuildScriptInfoCaches (63ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (959ms)
+		SetupLoadedEditorAssemblies (0ms)
+			BeforeProcessingInitializeOnLoad (148ms)
+			ProcessInitializeOnLoadAttributes (501ms)
+			ProcessInitializeOnLoadMethodAttributes (127ms)
+			AfterProcessingInitializeOnLoad (9ms)
+		AwakeInstancesAfterBackupRestoration (5ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 2.77 ms, found 5 plugins.
+Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 7408 unused Assets / (5.9 MB). Loaded Objects now: 8249.
+Memory consumption went from 243.0 MB to 237.2 MB.
+Total: 9.724200 ms (FindLiveObjects: 0.827900 ms CreateObjectMapping: 0.509900 ms MarkObjects: 5.600700 ms  DeleteObjects: 2.783600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1145943.730646 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/portal-village-activated-loop.png
+  importAddress: Guid(1679e3a3625be1544896c683dd604d51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/portal-village-activated-loop.png using Guid(1679e3a3625be1544896c683dd604d51) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '7122ba11e6c2fea9bd82dda6cdef2d6e') in 0.100832 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0c014c53d9e6da92c232b9815e010313 DependenciesID=fccaaa79b78eef1b5742c16b64d73c62 StaticDependenciesID=e2c44d575299d38021ac4cdaaf1f1cc3 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/portal-village-deactivating.png
+  importAddress: Guid(38425d8b40f958641a6cd15b7ac029bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/portal-village-deactivating.png using Guid(38425d8b40f958641a6cd15b7ac029bc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a9bb9d332a9098ef39ed3bb9b22260c1') in 0.0301886 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=05cf54dfd1aa04acddde60f30f39ee03 DependenciesID=f1ad7b2957882fa17b053c684c9d27c8 StaticDependenciesID=f430f6340123eaa4412b274e5cfb658a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-village-activating.png
+  importAddress: Guid(f14bd161dec147e46abdaccdf350f6d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-village-activating.png using Guid(f14bd161dec147e46abdaccdf350f6d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '3bcab58e3b730aa115bfcbb7ef9fcce5') in 0.0315569 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=524d74abe6d6583ff405b9e979ccc7a5 DependenciesID=68392d6103b5b050913a30239167b43c StaticDependenciesID=b5ec3acf2e58b5b12f3bc52234c256e2 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-village-activated-loop.png
+  importAddress: Guid(075a89a415bc51e44ae327bc779e13f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-village-activated-loop.png using Guid(075a89a415bc51e44ae327bc779e13f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '40d92438c75957b1da3d3d8c5eb7fc79') in 0.0276015 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e7a367e6fd0f68f706648ebe3ce02d45 DependenciesID=013aa618933fa7bc7f8e9c791734508e StaticDependenciesID=6366a95894e5ad195cfb7ebcb9a98eb0 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/portal-village-activating.png
+  importAddress: Guid(7c9f17b0ae39b334db81312732e11e26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/portal-village-activating.png using Guid(7c9f17b0ae39b334db81312732e11e26) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '88f1c4aaa9fdc2b4c3fab9d457e29301') in 0.0432567 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c7399aba6128c86ecc26046eec672d55 DependenciesID=a0b65b700e6b33fea584de8a635fac55 StaticDependenciesID=9f5b318f38b9eed21e05b7bbfeab6dd2 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.729840 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-village-deactivating.png
+  importAddress: Guid(410f10743f1baa14081fa5301a1a7d69) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Ancient Ruins/ERW - Ancient Ruins V 2.2.1/Props/animated/Portal/on grass/portal-village-deactivating.png using Guid(410f10743f1baa14081fa5301a1a7d69) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '7b59cbdd47e071c4bc45ba4e2d7af708') in 0.0277705 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=bc765db844ff7ed8ca010c02efd0e890 DependenciesID=61aa6c49974ea09a410e519299e033cb StaticDependenciesID=0bc13194334faadde8135101c2d7a698 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.137035 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/male/skin1/villager-base-death.png
+  importAddress: Guid(170ca3cc615506744a547eb73a036ae2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/male/skin1/villager-base-death.png using Guid(170ca3cc615506744a547eb73a036ae2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'adcfa175d59b4f319e3a589a5a850753') in 0.0615244 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0e30c586bf590ab8257cf189394d8aa9 DependenciesID=0a6661b9047d8c656d1c52eb3909fbbf StaticDependenciesID=d03cb4a7a70f104cdf0ccea6d1a0994a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 22
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/male/skin2/villager-base-death.png
+  importAddress: Guid(de176d577e5ed2541bdbff8c0b70b6d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/male/skin2/villager-base-death.png using Guid(de176d577e5ed2541bdbff8c0b70b6d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0b36efca671508f360c42ebb9998449f') in 0.0434629 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6b3f31e0d2ad6ce2888828ea46ef0919 DependenciesID=73cfb6994439f8c6567e6937b2694ec5 StaticDependenciesID=e31aae09ad9519d13068e973e48fc940 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 22
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/female/skin2/villager-base-death.png
+  importAddress: Guid(5383bb4347fa42f4a8284aec08ed8978) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/female/skin2/villager-base-death.png using Guid(5383bb4347fa42f4a8284aec08ed8978) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9c651ebffb4426f2839f555a1eae8df9') in 0.053416 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=718eab845100d60f047ca5546cb118e4 DependenciesID=967e9f398c534d88a790acf55bc932d4 StaticDependenciesID=7eb4e06b3a130ca3b33e657d8fd65f22 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 22
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/female/skin1/villager-base-death.png
+  importAddress: Guid(18bded7b180d4324aae58ae3fe69178a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/female/skin1/villager-base-death.png using Guid(18bded7b180d4324aae58ae3fe69178a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '3b15565d65fb737b04e0970d16efb593') in 0.0366335 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=53be337b2f0e8855e464389d2dff60b5 DependenciesID=3dbfba1c782e45e6354bed4116a0a158 StaticDependenciesID=155d87112f49545d9beb5d2cf1702832 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 22
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.712729 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/male/skin1/villager-base-hurt.png
+  importAddress: Guid(e6aa33607aee6a046ac3168cd51d01aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/male/skin1/villager-base-hurt.png using Guid(e6aa33607aee6a046ac3168cd51d01aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'e01564badd46c53f40478eb364dd805b') in 0.0242359 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=547b59d77f25b09328f3b97e44b239ea DependenciesID=cf0ebcad810e1a3ddaee35ed989d9616 StaticDependenciesID=4d3b579c7edf520f946093ed116543bd 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 9.569254 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/tilesets and props/tilesets.png
+  importAddress: Guid(51305a21ad6c4364eaf3d764c58a3eb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/tilesets and props/tilesets.png using Guid(51305a21ad6c4364eaf3d764c58a3eb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'f653cb7bf5c8ff5bb399d0e6b86a490d') in 0.5524771 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=212d2858016086aa822e23f0f9daca1a DependenciesID=d511ed20b98f8f6bb17f08963829f9a6 StaticDependenciesID=d412c49382f08303161ee39b4449a9cf 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 275
+
+========================================================================
+Received Import Request.
+  Time since last request: 701.940606 seconds.
+  path: Assets/Environments/SzadiArt/Houses/Sliced/Exterriors/Roofs/FL_Houses_ext_roofsA1.png
+  importAddress: Guid(1b54255460c15b946804df63076557b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Houses/Sliced/Exterriors/Roofs/FL_Houses_ext_roofsA1.png using Guid(1b54255460c15b946804df63076557b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'bc19a750ccdd9a05c2468f8c9f7b1f51') in 0.149299 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=80ab970cfffe6c4134da957d2eadbafa DependenciesID=ff31a2f0d28214280c6c1e7c21092616 StaticDependenciesID=c9f2bbf1e47d862fe81bccae5a3ecef6 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 42
+
+========================================================================
+Received Import Request.
+  Time since last request: 396.158799 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame1.png
+  importAddress: Guid(0b1dcdfd0d118ff46b11ad2b0e7dc121) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame1.png using Guid(0b1dcdfd0d118ff46b11ad2b0e7dc121) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '449c6d0bce210610ee7a39e211ca8b21') in 0.019892 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=95c8b7b6abe52c5bb925247d2dfd5aad DependenciesID=6ba322a2701f7d3a9d073615bff3f530 StaticDependenciesID=15666afa10fda29dfaa629fa911926bc 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame2.png
+  importAddress: Guid(6d4b06904ea29f14cb1ee51706898eca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame2.png using Guid(6d4b06904ea29f14cb1ee51706898eca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ebc18a62f0e7353ffcb13cf28861db27') in 0.0166336 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=78a890c9a8fa076dd3c46122f4aca54b DependenciesID=e52690dbbaa7ef4fe5f0cfd0de44606c StaticDependenciesID=b39c7c0c362aac4e8c2ecd1b56cba079 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame8.png
+  importAddress: Guid(2e47fa7e72119eb48b91234c0b6fc4e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame8.png using Guid(2e47fa7e72119eb48b91234c0b6fc4e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd6de500da184e277809b34405f4652ad') in 0.0185691 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8145e55bce9f584574a3cdd033293668 DependenciesID=3aa2f2a55257359562d4c8ce14c4278a StaticDependenciesID=211b6aaaac4f03b3bca3f14f89ea0ff6 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame3.png
+  importAddress: Guid(f7b0065231704e047bc8ab1030977249) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame3.png using Guid(f7b0065231704e047bc8ab1030977249) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '654d572f3cfa7c8caca9baddf8201783') in 0.0177187 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0f9c1730c2a2f86f0065cdc0e4b4250e DependenciesID=a06aa4a81099fc04a2fb8a8939b899b5 StaticDependenciesID=13f203b0878f25c726bd45292c322ae9 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame4.png
+  importAddress: Guid(6e74e80fe6fe7114da468af43070a645) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame4.png using Guid(6e74e80fe6fe7114da468af43070a645) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9ba509653198c4981b0cc2141f2a5d18') in 0.0209571 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=21c1b37937a96d019aa389de93cedeef DependenciesID=0df5b7293a948cb695807a1de948adc8 StaticDependenciesID=5c1e419aced8e0cf461e514cf3e77464 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.484471 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame10.png
+  importAddress: Guid(957dffdd04eba934b80c783560449fd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame10.png using Guid(957dffdd04eba934b80c783560449fd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '6046230676f425af01220abcf7cae5ed') in 0.018309 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c29cae8c9c1b875851f125968fd810de DependenciesID=867fdd455de8f801e695a019aab76f04 StaticDependenciesID=470e7cb81dd10b0cf771174b3c8d86eb 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame13.png
+  importAddress: Guid(f342108f31da97e4696462a23764545a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame13.png using Guid(f342108f31da97e4696462a23764545a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '70d4d4a5ba6a9c035c89b47694e3c3b5') in 0.0169116 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=db081f7f88ca5d6153c281765997ff3c DependenciesID=3bb2d7ff93a1ead81568b70f7d51c889 StaticDependenciesID=3d67c431c5e7660ac3c8d63fa18daa2e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame14.png
+  importAddress: Guid(5c8942d0cad87fb43b060b65e7468bdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame14.png using Guid(5c8942d0cad87fb43b060b65e7468bdc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '00f60263b1be329813be25156e9f509e') in 0.0160994 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=84ddb6a6379cde44688ba3b48bc32282 DependenciesID=f7eaba5f9d7d988b530aab6c73ffd895 StaticDependenciesID=f42cba37627e4b80958abb30dab84f17 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame16.png
+  importAddress: Guid(76f2d6276b4002940b3a3458d4c6166d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame16.png using Guid(76f2d6276b4002940b3a3458d4c6166d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'e9576990e63feb8089630be50e82c2aa') in 0.0158572 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=62ff8266b785cc8dc86f512caf54d791 DependenciesID=0c1f396268fdc075ac8bab344fa05c09 StaticDependenciesID=620f78623f0fb618544d24877492c949 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame18.png
+  importAddress: Guid(822b8f730f646d1468f30140679eca5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame18.png using Guid(822b8f730f646d1468f30140679eca5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '94974ae186b136dac38ba78026086dd1') in 0.0153331 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=777a501189a8c1af3dfb239bef2b95ad DependenciesID=b9b4b7808fcc51da89726f885311945c StaticDependenciesID=ef5ffdda4b7857e784599219380e16ef 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame21.png
+  importAddress: Guid(8e0296fe4b1db7f449cee9d0a4bcc2d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame21.png using Guid(8e0296fe4b1db7f449cee9d0a4bcc2d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '75d3a0d3a7a427502fb63eb473370d9f') in 0.0145818 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c04113691f91cc63b6e515e28a07a6cd DependenciesID=d5be3d8519879d9e814132dac9c22af9 StaticDependenciesID=f96a5fdec319350c3ada21f0c92ff743 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame19.png
+  importAddress: Guid(64a62b269831fa04c9ae81a55143df09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame19.png using Guid(64a62b269831fa04c9ae81a55143df09) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a7ee3624cad7ae5803dc44f967d37efc') in 0.0144958 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b7d6fb516cecd03d3a5297ef804fb831 DependenciesID=ba2dc84cf877ea5114cde0188a3835c4 StaticDependenciesID=5a183151efda0907b04dea00e8bb7023 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame20.png
+  importAddress: Guid(59a4c6efc35356d4fa436995af0a2f91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame20.png using Guid(59a4c6efc35356d4fa436995af0a2f91) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '8be04410d8b5efb295c081411e48157d') in 0.0146172 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=dffc3c657c2fc7f300015a59d1232aab DependenciesID=eb8bfc6d6acd808bb141446257d69093 StaticDependenciesID=446af2215e0fcd94244dd609f9debcc3 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.960446 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame25.png
+  importAddress: Guid(94365cf3d50610344898ccc276a0f43b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame25.png using Guid(94365cf3d50610344898ccc276a0f43b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b9ce4afa5050814aeaff0afe63941e8e') in 0.0142256 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e256d87e8f26338ba8f5d3fa78a4c3bb DependenciesID=1ac3dbe554cfafbae63a1b57308819ae StaticDependenciesID=2f793d02e630e33390051da080b142e0 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame28.png
+  importAddress: Guid(c01d12d2d7f52f44891d643e49e51a4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame28.png using Guid(c01d12d2d7f52f44891d643e49e51a4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '3d9b1bfe61a43806f68ea4f81b426368') in 0.0164369 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=195504e86010b7c99e12526ef1f5d532 DependenciesID=7a99618b6c40589fa61bdbcc0dea5d25 StaticDependenciesID=db93716abaa7ef8a062eba6bce98b199 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame1.png
+  importAddress: Guid(12e2e218f39eefc43ac6e94ec065ba4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame1.png using Guid(12e2e218f39eefc43ac6e94ec065ba4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '44f4ddcf16b5a12df465377b992dcea5') in 0.0188013 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=dbffbecdf423df32938a8ba88e25da18 DependenciesID=e4f81f8048faf0c2988f7baa11f3398c StaticDependenciesID=fe4c271e787f838ffaa56f36c23ffe52 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame11.png
+  importAddress: Guid(7946cb8fcf4bd81408282999e5c4ab16) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame11.png using Guid(7946cb8fcf4bd81408282999e5c4ab16) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '89ca945ec4a0da6954cf60e3d1a4236a') in 0.0179923 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=22eccd5ae94e27385ed9890a8e639e33 DependenciesID=159d62f8b01a00eb4079f8c5860c5be3 StaticDependenciesID=8d5bf2c3ae0e99ad668ef785e1f1b99f 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame5.png
+  importAddress: Guid(18ed7b86ffcc1d748b1cd63ea523c20c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame5.png using Guid(18ed7b86ffcc1d748b1cd63ea523c20c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '8280f547302f08e4e6d8aec5ab5216a9') in 0.0180133 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4e2a0c4a96debbcf28e4515ed5b9e970 DependenciesID=f9719962622508240abd5a6efe796cb9 StaticDependenciesID=53725c47395f2e26be9c225cd9a0d2f5 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame4.png
+  importAddress: Guid(77d88574f208e444db5da86465d8bf1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame4.png using Guid(77d88574f208e444db5da86465d8bf1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'e2058a3e047024043602bd14470f13b9') in 0.0191768 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0a55f64febc41c7be1260e1d82e286ed DependenciesID=723cd4b3fd81af9819eebb83538a4894 StaticDependenciesID=98068c1f04b0da879d4170c7157cfeaf 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame10.png
+  importAddress: Guid(73e51ad75e9d7bd47b93ec189023c030) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame10.png using Guid(73e51ad75e9d7bd47b93ec189023c030) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '251cfa9a36d27d2dd63ec4050b5c2c86') in 0.0222574 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=90b7c3c9c981b30a030046e072fd89b7 DependenciesID=013cd392173b8702d8c1ab79039b8d73 StaticDependenciesID=eddc3c8907859bbbf9dd79c40647f0e8 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame6.png
+  importAddress: Guid(ad7738354ef4c25489ca0ed38775b29e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame6.png using Guid(ad7738354ef4c25489ca0ed38775b29e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '386260d1a6fdc5e48f9a0b4ef5503369') in 0.0222708 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2e922b4cb548bc81479e21b28d8062fd DependenciesID=2ec620c90a19573444a5beac18970dec StaticDependenciesID=e1fd82d2fdf6981115e83fb85596a25b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame26.png
+  importAddress: Guid(689856df127828d4fbe5d969be0c4931) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_empty_frame26.png using Guid(689856df127828d4fbe5d969be0c4931) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '1568f0170f87adaa322905d8842a5fa7') in 0.0184373 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cd9d87781fe02a36dddae0d00d0605e2 DependenciesID=edcfd7613529456fb8a260d3244989d6 StaticDependenciesID=ab890dce9e3c6730de23fb16bc093933 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame3.png
+  importAddress: Guid(974a637b55ee80049a19fa66e1937760) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame3.png using Guid(974a637b55ee80049a19fa66e1937760) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '8ded541d23f441f577730bfb579b9920') in 0.0199422 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c519afcb09d07a28ce2f3aa97eb980a7 DependenciesID=d633b0e9d58239e154d950d70e55c8dc StaticDependenciesID=42800af2d8f07838cea098043563607e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.206738 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame15.png
+  importAddress: Guid(dfe7db47ee237554897c0944c72b101e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame15.png using Guid(dfe7db47ee237554897c0944c72b101e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b2bd5bfd9f2c7b06bead0218e37e4365') in 0.0135658 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=52cd18bd26e4a7294aaf6f2754019ced DependenciesID=d1cabfe285cf8b145bbeeb260e49046e StaticDependenciesID=8b3ac3366c14bc4c25c062c5df0adb57 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame18.png
+  importAddress: Guid(80eb8fb7f29a70247a85118e66a9348c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame18.png using Guid(80eb8fb7f29a70247a85118e66a9348c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '8970a731edc664e99098954a5c6c4ec9') in 0.0155605 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=32eb7003959808b094ce60306ff4453b DependenciesID=df1622fe1a0fd93beaaaa98d40ef4ea4 StaticDependenciesID=860c455b9c4230fc004cd0003e73cffe 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame21.png
+  importAddress: Guid(c96cd58c09a88df48a1d83ef03f44f38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame21.png using Guid(c96cd58c09a88df48a1d83ef03f44f38) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '2d369f5af709af3e396a75384b327a4f') in 0.014028 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=992ee200ad375e638ff7dc129abaf5c4 DependenciesID=8aca487516af08de7fb75255b71d8c1e StaticDependenciesID=804748262b1a992ab621167fb7aaa811 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame23.png
+  importAddress: Guid(762bae7f9a7977340918b89a9041137d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame23.png using Guid(762bae7f9a7977340918b89a9041137d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0c37c0fcfb1877b8f53c5103b607e93e') in 0.0138898 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d3b0fd4fc7deb0b572a80c83b0b79d72 DependenciesID=f8556d0871b5ff96ced64f53b99932c3 StaticDependenciesID=50f227fcb84a1f1a2ea39304dc5e1ea2 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame20.png
+  importAddress: Guid(12fbfce903220044eaf4ccad2bd9d12c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame20.png using Guid(12fbfce903220044eaf4ccad2bd9d12c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '03a448e3b8ba01ee4a513bd2379b9b71') in 0.0146186 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2c057a3bd5b4c407ca7b270265ca9a8b DependenciesID=24dbe2a2bfd58b9bd79dc63ba7da9984 StaticDependenciesID=f5c4784f1f936551f58d0434e45baf26 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.595858 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame25.png
+  importAddress: Guid(27a75be02bd3d414cbc520020713ab76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame25.png using Guid(27a75be02bd3d414cbc520020713ab76) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '366c4c99614de6d088d89d6b2d9baff5') in 0.0141029 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=78da50afba4bf9bcff391e6746f751d3 DependenciesID=b8fe9b8c00cc78fa994955b80ae6a9ca StaticDependenciesID=9e280635807a3917025ef478aa2f3366 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame28.png
+  importAddress: Guid(c5842c138294a3a49b3bd8803bce5666) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame28.png using Guid(c5842c138294a3a49b3bd8803bce5666) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '7afc163419109a8b19e45b2961a6d333') in 0.0125975 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3f3ff8e839a5a49af5c2bd0a21ad8a95 DependenciesID=95210f754a41ccd2c67c08b408765101 StaticDependenciesID=5a8add362dd5a6b498c8f65fb7cadcc8 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame27.png
+  importAddress: Guid(c9b6d1e23405cea4c9d6a763800d581b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/water well_water_frame27.png using Guid(c9b6d1e23405cea4c9d6a763800d581b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'cd5defca60b80878776fe5621944e8b7') in 0.0137702 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=29c3bcfaebf3e93f92e0a7e7547078f0 DependenciesID=6ac3b6936da5c72287935dcfd1bb6523 StaticDependenciesID=25eb512b34157022da769733d18318ad 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.375476 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell - broken.png
+  importAddress: Guid(55be95d617707d045a6b69ed99f75bbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell - broken.png using Guid(55be95d617707d045a6b69ed99f75bbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '616acdf27a18370d840aaf30056c1c8b') in 0.0156966 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=feb294629cdfaeeb718fea74aebc8893 DependenciesID=ac31e51253349a314e31b51d46aa833e StaticDependenciesID=1218476c90209572367815d421bf97f3 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell - broken - no grass - no grass.png
+  importAddress: Guid(f758030e3cbf6594bb9a8443976ec1b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell - broken - no grass - no grass.png using Guid(f758030e3cbf6594bb9a8443976ec1b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c562c91c54e2726b2013548562f7d6a6') in 0.0174685 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=68767d5fa0734e49d69c0925fb1553f1 DependenciesID=fe2cbb38bedc0ffa44f8fb8010e4cdac StaticDependenciesID=9102204761cdc1900600a07a7257c6c1 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.281241 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell - no support - no grass.png
+  importAddress: Guid(0e875472f9131eb498a120f4e8be98ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell - no support - no grass.png using Guid(0e875472f9131eb498a120f4e8be98ba) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd0397f183395cdf5e4510db1fbafcab1') in 0.0159129 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e4801c09c24e1ea5c78c8a9aa53c6bb3 DependenciesID=0f783b9d81ab7e75cc29716f017b72c1 StaticDependenciesID=692f7dae85fc7c608c9147eb5826e8f8 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell - rope.png
+  importAddress: Guid(e48f002d6ebd9b54e9c1cf12bcd78309) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell - rope.png using Guid(e48f002d6ebd9b54e9c1cf12bcd78309) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '24ac29f26e28b42907a04523836793d7') in 0.0152601 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cef746525f91ba10a588a5eab54c294e DependenciesID=87de0942119bd3fa9b28b65b5f5cdd17 StaticDependenciesID=331d7b9799f5e558f30c9e70a5d5b983 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell - roof.png
+  importAddress: Guid(b45512766a3f7ed4c8b7077848e2d451) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell - roof.png using Guid(b45512766a3f7ed4c8b7077848e2d451) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '794edb47961e70d223166ee0f1068f55') in 0.0148947 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2b4b37cbab4fafca3c8a1405bfc1c81f DependenciesID=554bb9ce9097463189c321e40a3cee66 StaticDependenciesID=f1e4c81e0a08b2b6a12fd197c4985593 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.352409 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell - rope - to place the roof - no grass.png
+  importAddress: Guid(a6e7e2427ce0b5e47920e4dd7fbd8fc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell - rope - to place the roof - no grass.png using Guid(a6e7e2427ce0b5e47920e4dd7fbd8fc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c094034763eab1a7a9f7e1bbcc384bee') in 0.0176753 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9cc6e59c0842fabd647abdd1087e3461 DependenciesID=3278b549f6ea82d6bf3a5ec656c37e42 StaticDependenciesID=e8a1755c82e62badcafc8e1c48ae3431 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell 2 - broken.png
+  importAddress: Guid(459bd33b28a8be245a9d3e2d05c3ebc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell 2 - broken.png using Guid(459bd33b28a8be245a9d3e2d05c3ebc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '6151c5697c5279f945e175da6ee756ea') in 0.0152595 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=56663843dd30fee9308f2175cba9b617 DependenciesID=990d7de73f3c68d684647d8e00776fa9 StaticDependenciesID=def4d8836b8dcec3df9d1d72ad2fe246 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell 2 - no rope - no grass.png
+  importAddress: Guid(f08de7ceb60567c4480c0b47e82997fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell 2 - no rope - no grass.png using Guid(f08de7ceb60567c4480c0b47e82997fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd4e94fb43bcde17bdcc9b80f949b00df') in 0.0180252 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5d9d22f71c2c444bb333bfcc5f2e0019 DependenciesID=16ba76c38ed3294dc4a9c3cbdaef7515 StaticDependenciesID=68e46a64e8a24a425c1793f0a82ed8de 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell 2 - support only - no grass.png
+  importAddress: Guid(f47c6441a586ad94e9e371eeeee8e278) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell 2 - support only - no grass.png using Guid(f47c6441a586ad94e9e371eeeee8e278) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '8e2fb1c781cd98a3c98ecb5a39153f43') in 0.0171751 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=54a950cecfe79d02e973774786e772b4 DependenciesID=b127ccbd551e00b21474e91560088441 StaticDependenciesID=09c73d61c139c04e837c76c2951bbae1 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell 2 - rope.png
+  importAddress: Guid(d29b4d3520dac6242b2b1baf87c5d41b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell 2 - rope.png using Guid(d29b4d3520dac6242b2b1baf87c5d41b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd3e10e3347813f2dd3c11ea9789d3b94') in 0.0194336 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b902a219e56c7881529ee9e211e603f6 DependenciesID=280fb0d192fb6f4c2141be9ed7368478 StaticDependenciesID=444b42b2bcfeb3a505e8f2932da57ffe 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell 2 - no support - no grass.png
+  importAddress: Guid(8968e242dc6020a4ea72f77f18e19609) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell 2 - no support - no grass.png using Guid(8968e242dc6020a4ea72f77f18e19609) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '86e4f4f0b58ad2785478c8c320972897') in 0.0179402 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c271f564b7fdb998ec639e16bbb9e9d5 DependenciesID=33407cc138b050a05bd3032b1e194286 StaticDependenciesID=574ec0a4cb62e15d22d3e7b4882b574a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell 2 - no support.png
+  importAddress: Guid(cc6ef82d3c0b0964eaec1565f5645756) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/waterwell 2 - no support.png using Guid(cc6ef82d3c0b0964eaec1565f5645756) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '382f6988c36819d5eebb0e10220229c2') in 0.0155747 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=54bd9c23f4579d4ca3bd983ce3a8b168 DependenciesID=a81fdefbb564ca2f477d8732fb17ea59 StaticDependenciesID=efff6cf244ec30af6ac7e731949118eb 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.534930 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/waterwell_1.png
+  importAddress: Guid(0adce6e167bf84a43926eaaacda13955) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v1/EPIC RPG World Pack - Grass Land V. 1.6/Props/Atlas-Props-individual sprites/waterwell_1.png using Guid(0adce6e167bf84a43926eaaacda13955) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '5b26270f941061b9d73277c335e2c1d4') in 0.0148509 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=fcf5df44cb8430e0428b67c59eba4fc2 DependenciesID=79becd1bebe3a9dca21f5e5d24ad2612 StaticDependenciesID=44a2487fdacc32c4471c0ac0ad5ad0b9 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Desert/Epic RPG World - Desert V1.4/props/props-sprites/well_0.png
+  importAddress: Guid(7d7bdfdd25732694d9ca07d9b061bb19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Desert/Epic RPG World - Desert V1.4/props/props-sprites/well_0.png using Guid(7d7bdfdd25732694d9ca07d9b061bb19) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd881f4127a1f32ad3db64e796bef02ea') in 0.0206067 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9e522ff30b5da4da9adaab179f2aa198 DependenciesID=2cf6d23e2ffda9e694c2bee756601665 StaticDependenciesID=58b8504256c4e968f18c60b2728865a5 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 116.461787 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/Materials/waterwell - no rope - to place the roof.mat
+  importAddress: Guid(fcb20fa9a05fbda4095045bd0f0a58f6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/Materials/waterwell - no rope - to place the roof.mat using Guid(fcb20fa9a05fbda4095045bd0f0a58f6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b0a0e319f7390aed1d05492431983343') in 0.0652029 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=112c8a1dc036ba9d72bee721a93d7794 DependenciesID=2eade7664ddbd5693c940f12ef623841 StaticDependenciesID=8e61d1e8971b97248a49c1e060a5e360 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 70.911646 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/male/by parts/villager-body-cloth1-death.png
+  importAddress: Guid(723b305629b9b2b408bbdcd9a385186b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/male/by parts/villager-body-cloth1-death.png using Guid(723b305629b9b2b408bbdcd9a385186b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9f53b42b8d0521d0e2ecb068443f7ea7') in 0.0661818 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=de8cd8c7f53eb4648d62b1ca7e963e12 DependenciesID=732c19bfd61a5088afbccb6d94573133 StaticDependenciesID=1f9298f90fb741f4cf391f2533c0f158 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 22
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/female/by parts/villager-body-cloth1-hurt.png
+  importAddress: Guid(57cc4d8b2eda5ff4cbd4d834710e3f9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/female/by parts/villager-body-cloth1-hurt.png using Guid(57cc4d8b2eda5ff4cbd4d834710e3f9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '7f8275d484569cf7a862ed05b5aa50a7') in 0.0509688 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3d97be5b19f133723aa4fa1f26c1f00f DependenciesID=7af8c2e5606701d75afcd206c11525f4 StaticDependenciesID=a4592b09c836f1c109794841c7d1ee37 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/male/by parts/villager-body-cloth1-idle.png
+  importAddress: Guid(dcd5c76aeaef14543a1c9a02b7e8b252) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/male/by parts/villager-body-cloth1-idle.png using Guid(dcd5c76aeaef14543a1c9a02b7e8b252) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'af91a84163804fe9dd1de4f85704c684') in 0.0562534 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2db437668391453b476b5dbeaf3390f5 DependenciesID=87e3e8c0fb40f0befbaa633063162909 StaticDependenciesID=6b4287a2a1e0b02eba80708c9f3b2a63 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.813581 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/female/skin2/villager-base-walk.png
+  importAddress: Guid(5b707ce5c2a36914d9f932ea8c68fc05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/female/skin2/villager-base-walk.png using Guid(5b707ce5c2a36914d9f932ea8c68fc05) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ae03fdbe0dfd4b36b22412e66bba9762') in 0.0495701 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1d1f8c7d245a1f7fb0aa909f40fdcab6 DependenciesID=24fbd39dc513ac2b6f4e41dba8547d65 StaticDependenciesID=3811906ad91388e89e78892b14cf801b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.571502 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/female/skin1/villager-base-idle.png
+  importAddress: Guid(01896e87f8b1630419e8e84bc28be423) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/female/skin1/villager-base-idle.png using Guid(01896e87f8b1630419e8e84bc28be423) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'fec0dc9fcba992b6c5badd5c0c6e78cb') in 0.046336 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f1a9ba9fe74a8db966547b1ed9369e50 DependenciesID=30a991f1139e4c68da4a6365a1979bda StaticDependenciesID=00a876784f76a43d4c7b41a9a19d4076 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/female/skin2/villager-base-idle.png
+  importAddress: Guid(092a682cf98843b45a66e808332cb2c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Village/Epic RPG World - The Village V2.1/NPCs/villager/female/skin2/villager-base-idle.png using Guid(092a682cf98843b45a66e808332cb2c4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '386bf6656c8c90044afc3d8b23f66a6b') in 0.0423112 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=789000beb8758a2ba663392efd524b5c DependenciesID=fdbdc2fd21e7616cec2dfba8ee5eb74c StaticDependenciesID=45d1d8ed7a5fdb967ffa5f61f36f279e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 12
+
+========================================================================
+Received Import Request.
+  Time since last request: 63.880440 seconds.
+  path: Assets/Environments/SzadiArt/Houses/Anim/FL_Houses_candle3.png
+  importAddress: Guid(71bcf160624964948bb51b2fc43fa1cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Houses/Anim/FL_Houses_candle3.png using Guid(71bcf160624964948bb51b2fc43fa1cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ea88d53cafa2b0af6608411f95bda26c') in 0.0276554 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=30f05454f7dff46beab543e97062d065 DependenciesID=f9afdb67a165b57180c04129f2c0bfa7 StaticDependenciesID=2bd422772eeb3ed0803a095351a86cd5 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/SzadiArt/Houses/Anim/FL_Houses_candle4.png
+  importAddress: Guid(07e44b9e0c3867d4e8b26ea406a8efbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Houses/Anim/FL_Houses_candle4.png using Guid(07e44b9e0c3867d4e8b26ea406a8efbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'e673b2030c5d5e3366bd9cbec8d28518') in 0.020753 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=33b4535c009e29bf6c52642063b99421 DependenciesID=13b5b13f20707ab36ac9a834215a5ba2 StaticDependenciesID=467cea102656deaa33f563a6fa9c1f10 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Environments/SzadiArt/Houses/_PSD/Interriors/Anim/FL_Houses_candle5.psd
+  importAddress: Guid(31d7f2fbaefd0394488c83327196da88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Houses/_PSD/Interriors/Anim/FL_Houses_candle5.psd using Guid(31d7f2fbaefd0394488c83327196da88) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '699150e8c229be977137d53104850589') in 0.0210923 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a8999be8cb8f9cc120da064040e631d4 DependenciesID=412b58598c55c041a248723031a86ec0 StaticDependenciesID=e3cdcd0256ed56425063be0674821f20 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.673760 seconds.
+  path: Assets/Environments/SzadiArt/Houses/_PSD/FL_Houses_decoratives.psd
+  importAddress: Guid(e6599f1580e56cf4198c4469402d6345) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Houses/_PSD/FL_Houses_decoratives.psd using Guid(e6599f1580e56cf4198c4469402d6345) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '6875cf2c63cc59951a26b93008dc67ff') in 0.7263704 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=416ce77a42c257cfbbb94aea30244817 DependenciesID=403c920056e3db33e49edd41d29b8b4d StaticDependenciesID=4e102f845e1e0b746471496ec1a4dda5 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 336
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.835379 seconds.
+  path: Assets/Environments/SzadiArt/Houses/Sliced/Exterriors/FL_Houses_ext_building elements.png
+  importAddress: Guid(757c2889efb228b419e401d78dd8ce11) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Houses/Sliced/Exterriors/FL_Houses_ext_building elements.png using Guid(757c2889efb228b419e401d78dd8ce11) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '6a1e87881214976269591fa802aa5aad') in 0.6093508 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=14188eced5e0b2f31f89dae0421e16be DependenciesID=b081726e78e495acba284c25e65d6a0c StaticDependenciesID=22ba9843b6f0e8dd958fa072e9bb9315 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 262
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_405.asset
+  importAddress: Guid(e06c00dd2bd38cf4ebe4c6fd86c95cfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_405.asset using Guid(e06c00dd2bd38cf4ebe4c6fd86c95cfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '02cd0400ef33da1bc4b2dd2124cff541') in 0.0337097 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=28a21e67d2451ff4f71fc130480e96af DependenciesID=bd8a0ab09b5b79f16ba6905631220796 StaticDependenciesID=efa65136799cda5900f17e41a9dee159 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_398.asset
+  importAddress: Guid(378cc33d7a939f243b361820439d97ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_398.asset using Guid(378cc33d7a939f243b361820439d97ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '677835bce2b586ef72e73103c3fb02fe') in 0.0156003 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=51228a130d6d43d7c5a64c7d172718f2 DependenciesID=628c80be98f5ee299f52a7668f38706d StaticDependenciesID=a9287de01d004985953a4df04cc04bf2 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/SzadiArt/Houses/Sliced/Exterriors/Roofs/FL_Houses_ext_side_Roofs.png
+  importAddress: Guid(9c27f85535279b3479da09f530fbfece) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Houses/Sliced/Exterriors/Roofs/FL_Houses_ext_side_Roofs.png using Guid(9c27f85535279b3479da09f530fbfece) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '59fc8750b55886be5ebc2d484304bfda') in 0.3013749 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=646b10f213f61c82bf70e9ad778228bf DependenciesID=8d7b1a193856fa1c948b6a0d87bdacd1 StaticDependenciesID=c546a7d09c4898c9a44834a9a3717249 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 109
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_401.asset
+  importAddress: Guid(9bb9119c2915f354290c94f614221972) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_401.asset using Guid(9bb9119c2915f354290c94f614221972) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'e413dac94c422e05b4a63376d95c671e') in 0.0155815 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c2509b41445b93aa02e120aca708a29d DependenciesID=3f111ab4355333d7c2ab83d104ad7173 StaticDependenciesID=d30f8bbfcbd470905d829ce6da253f34 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_406.asset
+  importAddress: Guid(c8d24e0774de0c74cb6cf1144026dbbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_406.asset using Guid(c8d24e0774de0c74cb6cf1144026dbbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '011bd0cedb2aa9aa7f6be460078c16dc') in 0.0144026 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f595afa68f59f613a9af8ba6516d12c9 DependenciesID=e41c360980fd0da2d4ff90bbedc05a66 StaticDependenciesID=a0a6f040c595c713a2de574a022811b7 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_394.asset
+  importAddress: Guid(6335228b1cd445745a60208f3e7a1e4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_394.asset using Guid(6335228b1cd445745a60208f3e7a1e4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b9c841d51ff054be00d25a61c81b3504') in 0.0104335 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5352b508965f460b211a5dec230bb154 DependenciesID=ae702f52b8bed94529190bca2444ae57 StaticDependenciesID=11762834611f1e40c4c33b6d83778a10 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_622.asset
+  importAddress: Guid(4767910d826f2434a8856158df99bf14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_622.asset using Guid(4767910d826f2434a8856158df99bf14) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '736cdbd5dbfc2f40447ef29d87060b4e') in 0.0173831 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=59b1f24204beb7211dce8aefbdc70be1 DependenciesID=fa312a0d1df228e160e5ae6632d1fd6f StaticDependenciesID=b113e3e2eac4711255665f5dd81e567a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_612.asset
+  importAddress: Guid(053253175a0632b4aa63f27900ad2e3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_612.asset using Guid(053253175a0632b4aa63f27900ad2e3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '27ac2231b34f12c65ef69cdce1e4ea67') in 0.0175072 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=23aedacaed4a6f77ec44ce3583396a26 DependenciesID=24f37201c85fe7111baa1d4c40764f29 StaticDependenciesID=7391791754436dabff013270168f2013 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_411.asset
+  importAddress: Guid(448b373ba4a6354469becb69e77c8ca5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_411.asset using Guid(448b373ba4a6354469becb69e77c8ca5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '4c9d47ef791d823d737d17d4dbc50e36') in 0.0155665 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=953df5f201979c5603793a85196c9c72 DependenciesID=944e9e3482617330e68fff4bf137e431 StaticDependenciesID=32981e3c2beeaadf18dd538462ca8627 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_614.asset
+  importAddress: Guid(c7c82dbf77545e1439ff2e9bbd4bfa5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_614.asset using Guid(c7c82dbf77545e1439ff2e9bbd4bfa5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '19365916837cf1a62f2511faf8122838') in 0.016802 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a25f10a72a68d849bdd05b425bad5185 DependenciesID=aba1193df39b2d7d0a96057cdbac93fe StaticDependenciesID=07b76d8afeda7158772498e1fd7298d1 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_609.asset
+  importAddress: Guid(e7ab3b26770d44b4c9a3caa034643fd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_609.asset using Guid(e7ab3b26770d44b4c9a3caa034643fd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ac79668b68b6f4c92e78400f4a72bffe') in 0.0175227 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4f942cf801931f5800245b7ef662da1e DependenciesID=08c466b3ba64316a5b716061743f67e2 StaticDependenciesID=ca728729f58c49494f9fc4eb0f979c83 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_618.asset
+  importAddress: Guid(1318c457f7b567f47886b6e2cc23ed5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_618.asset using Guid(1318c457f7b567f47886b6e2cc23ed5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '3ca2c833f2cea01312413be31cbf4d58') in 0.0158598 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c33b1495fc4bcbbe4af9e3a1be94d2ba DependenciesID=31a6b5323aff69d89b77426df98f02a7 StaticDependenciesID=266d64ad536c7308db2a494d54defbd3 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_395.asset
+  importAddress: Guid(5c27134e78c29f04e9a3ac62a3099f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_395.asset using Guid(5c27134e78c29f04e9a3ac62a3099f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9a783966cd049a30443cce14148319d8') in 0.0149076 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e6d6df3b28c36e49d64c858a4327afb3 DependenciesID=a20655592d77070324d289ab28fd636b StaticDependenciesID=52e631d542e4da970bdf882a466075b3 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/SzadiArt/Houses/Sliced/Exterriors/Roofs/FL_Houses_ext_roofsB.png
+  importAddress: Guid(daeec46b1d9e61944bd25ed14d46c2dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Houses/Sliced/Exterriors/Roofs/FL_Houses_ext_roofsB.png using Guid(daeec46b1d9e61944bd25ed14d46c2dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '7445a775c78e34cbac9295b6ef9ae958') in 0.0795327 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d8da28544e7a7a60299387f7062eac28 DependenciesID=e5045e5ddafcb64d1497ccf08c16efc5 StaticDependenciesID=40bd609fbebc9fe02cef4708e5e16b35 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 31
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/SzadiArt/Houses/Sliced/Interriors/Furnitures/FL_Houses_int_FurnituresB.png
+  importAddress: Guid(9a5bb371d85254a46b19b3390e0705fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Houses/Sliced/Interriors/Furnitures/FL_Houses_int_FurnituresB.png using Guid(9a5bb371d85254a46b19b3390e0705fd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '4707c8485782161576c3d928b287ae41') in 0.5316569 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=34213455f0ff8f42c929cff28dfe10de DependenciesID=11433eaa145fa9e18495c0d1654d14e3 StaticDependenciesID=9deb9241a664980f677a9eedf4d60493 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 333
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/SzadiArt/Houses/_PSD/Interriors/Furnitures/FL_Houses_int_small_objects.psd
+  importAddress: Guid(c858885a472d54f489e0080e04cba851) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Houses/_PSD/Interriors/Furnitures/FL_Houses_int_small_objects.psd using Guid(c858885a472d54f489e0080e04cba851) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '36912556e741413cf7666cccbbe1b161') in 0.4862158 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=eb25ede5715d35c9668fcecccd4fa81d DependenciesID=dcf3480035c2c8fb1039400d1fe24e5a StaticDependenciesID=4ab634cf2cfc06a0096828b86a3b2ea4 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 354
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_605.asset
+  importAddress: Guid(9b0d8b127d90633458a65dcb86cf71c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_605.asset using Guid(9b0d8b127d90633458a65dcb86cf71c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '2680f16622fc44657cad2dd85adb6d1c') in 0.0074727 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=51175be12a651794f422fa99242c145c DependenciesID=65e7b217918cf4cde8f6d5a17fa50183 StaticDependenciesID=0973c4d663d288c476af2f0e1b0ce1b3 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/SzadiArt/Houses/Sliced/Interriors/Walls/FL_Houses_int_WallsA5.png
+  importAddress: Guid(2001f64c18491fc4893fb648812fd314) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Houses/Sliced/Interriors/Walls/FL_Houses_int_WallsA5.png using Guid(2001f64c18491fc4893fb648812fd314) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c56b0ba1a7208d6bd2ab3ee4f8c3e101') in 0.61839 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=53632744990b6f7294744a6178fd38d4 DependenciesID=1ebb913caa1054c1ced7c5c651558408 StaticDependenciesID=b7b5f12a592f8b5519fc6c38b62f2a6d 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 545
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_413.asset
+  importAddress: Guid(314acc1facc181a4aab0edfc75216989) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_413.asset using Guid(314acc1facc181a4aab0edfc75216989) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ff8c6ff43035968ea794c360d5c6b610') in 0.0136422 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=646c9bfbfde04ef9403a984d78592b67 DependenciesID=dfbc9cdd311e99c71018f6645fc32697 StaticDependenciesID=c5600f0fa3dbc53709c37ed7a9f88d09 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_608.asset
+  importAddress: Guid(9641170b78ce13b4ab24c65b7fc0c9d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_608.asset using Guid(9641170b78ce13b4ab24c65b7fc0c9d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '90eb42618a34c72418465f10abd290b5') in 0.0126014 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=987560a04653dc372a9feebe1456469f DependenciesID=911df3602af0d195479ce251f0842c98 StaticDependenciesID=da9682838b5678f18478b2e5083bca1b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/SzadiArt/Houses/_PSD/Exterriors/Roofs/FL_Houses_ext_side_Roofs.psd
+  importAddress: Guid(9e3cd683157731a439058ade96d08543) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Houses/_PSD/Exterriors/Roofs/FL_Houses_ext_side_Roofs.psd using Guid(9e3cd683157731a439058ade96d08543) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9d2b2edc89ada001dbcf91b9533ce23d') in 0.1693112 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=71490aedc87ef4064be8fc96c43c97e4 DependenciesID=ce45e3333eefaf961110f0def1883943 StaticDependenciesID=f529df30a9f0a92e73d2907b4618efbe 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 110
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/SzadiArt/Houses/_PSD/Interriors/Walls/FL_Houses_int_WallsB5.psd
+  importAddress: Guid(36d88924ac9e8ce4d84a2ef66a130a99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Houses/_PSD/Interriors/Walls/FL_Houses_int_WallsB5.psd using Guid(36d88924ac9e8ce4d84a2ef66a130a99) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '76c5c0c53e6a27d2ae7a9d926a138885') in 0.0197042 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2d5465b90dd4a60fd4030b33a83f3013 DependenciesID=150ca6fd93a27952967bedb562f30b0a StaticDependenciesID=16b5bf0501264994b64058d584bd2c05 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors.png
+  importAddress: Guid(215afb35b9f70e54b901ff79167f7bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors.png using Guid(215afb35b9f70e54b901ff79167f7bad) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '71f89bd206e2fb82d9996c1ee8f5d242') in 0.7710303 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7635364d6567e4b6752785000160ef88 DependenciesID=0cbb97e73de387adc60abac9c51aa090 StaticDependenciesID=39784bf2598eeb1a06e8f45d154bc7dc 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 703
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_403.asset
+  importAddress: Guid(e6f4a5109ba583d4f9f1b373dea234b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_403.asset using Guid(e6f4a5109ba583d4f9f1b373dea234b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '6d1559f754c50a09d559cd7a93802836') in 0.0154298 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1a8b0c6f679f57a59b2d24ef8b3df60b DependenciesID=3ba7511cadfc8d9981b81f7d66aa40d2 StaticDependenciesID=2ae021790683f9b65dae8cc9d62d8819 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_616.asset
+  importAddress: Guid(7d914bc50b37ead4caeece2df992042a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_616.asset using Guid(7d914bc50b37ead4caeece2df992042a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '8027922109127d451ae8c900ab0b0506') in 0.0131793 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e6dad7ad47da0b64f3e411a7539cfc20 DependenciesID=c71e30b35a138026f423ea933c65ec48 StaticDependenciesID=d56752e688d3957f1bb0f4bba94faf0e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_604.asset
+  importAddress: Guid(aa26123cb0fe03f459b33c8e06f3584b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_604.asset using Guid(aa26123cb0fe03f459b33c8e06f3584b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '1fbf9cb4b11894494187055b6e6fff96') in 0.0132051 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e5003aea4461d29f7bcbced47ee3956b DependenciesID=ef33115055d3f97c866a8d4f7fc329bb StaticDependenciesID=1368d4ac8efa8f79c41336a7b4fea7e7 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_606.asset
+  importAddress: Guid(c616fb1edab2f3c4695d7ab14d92c523) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_606.asset using Guid(c616fb1edab2f3c4695d7ab14d92c523) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0cd75770b0f75375fb85a7a6397150fc') in 0.0157507 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9cf364f3b196742edf8a0b31112c3c78 DependenciesID=a066c79326536c5e96104ac456b0d3f5 StaticDependenciesID=cbb620486e38f6900c2f002c5b8b37a3 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/SzadiArt/Houses/Anim/FL_Houses_torch.png
+  importAddress: Guid(49c3fb2e83de95e49bde90a3937693c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Houses/Anim/FL_Houses_torch.png using Guid(49c3fb2e83de95e49bde90a3937693c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'bb72e0492efb8c946b50b225071b4140') in 0.0251776 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4f109d1760bbd396c91fd45de8802247 DependenciesID=cdbd7dd6ed350452ffb8756929ae1fc9 StaticDependenciesID=0e3c03df900d1c88071424b9e7c45941 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_404.asset
+  importAddress: Guid(5c42a6d5fa74a904c8877f638436c2c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_404.asset using Guid(5c42a6d5fa74a904c8877f638436c2c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0cb7a3170f29e71be151cff54662d32f') in 0.0127303 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f341aa0bf712e262877eb7ff512fa3a2 DependenciesID=7ec6f7c2511bdfdaa19ad935f9529977 StaticDependenciesID=a53c37522d4f1a1cbb4bc2e2e6fb5509 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Environments/SzadiArt/Houses
+  importAddress: Guid(fb8dd140b0acba745aa94a6ad5977ab3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Houses using Guid(fb8dd140b0acba745aa94a6ad5977ab3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '3b2443d35189111ee8383c4bf3bc2ba3') in 0.0007155 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=df9f396a8dd10214231120c1ce9c73fd DependenciesID=0d9ab00874f22273f0a7fb14f0bf6136 StaticDependenciesID=eb9d52ae88dbeaf5ce7b3a75be5886bf 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 0
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_619.asset
+  importAddress: Guid(36c60bfe226f34a40ad164f35005d849) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Desert/Tiles/houses_interriors_619.asset using Guid(36c60bfe226f34a40ad164f35005d849) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '2eedf1b04ae320080b785614f15f5ad3') in 0.0134423 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d92daf6483e1f23fc726539e6f1d27cf DependenciesID=bfaf590f72cc9b3cf027b5134c56c6fe StaticDependenciesID=c7c65a8be8c475cf098baaaaaa95bb5b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/SzadiArt/Houses/smallobj.png
+  importAddress: Guid(b434c3d272204b94cb4d7e54aa1bea0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Houses/smallobj.png using Guid(b434c3d272204b94cb4d7e54aa1bea0c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0fefdde3d95e4429750807a8b405041b') in 0.1372106 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=028b197f3661e5884c8b0529f3704cd7 DependenciesID=a49906b3cddceeff2c02f91c529efff9 StaticDependenciesID=ed2eda2b21fda13ed2ff5cff504e2b90 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 81
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/SzadiArt/Houses/houses_outside_shadows.png
+  importAddress: Guid(2aac6e945cc245d4e8ef5a393fe615f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Houses/houses_outside_shadows.png using Guid(2aac6e945cc245d4e8ef5a393fe615f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c482e62701304e7bd2c0334e274a5819') in 0.191738 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d95d17f2dea6fe145358418144619a68 DependenciesID=e234ea39aeabde9614907ff8ecf23cf5 StaticDependenciesID=098da4c4c2e28f47349b27871b6d9a82 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 117
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/SzadiArt/Houses/Sliced/Interriors/Walls/FL_Houses_int_WallsB1.png
+  importAddress: Guid(5825c62f7b093584e89e9a8899e231d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Houses/Sliced/Interriors/Walls/FL_Houses_int_WallsB1.png using Guid(5825c62f7b093584e89e9a8899e231d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '2162a61a1d3e978ceb7b2a2612c0db28') in 1.061879 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d27470839da40895939d4b9463a7ec73 DependenciesID=4471c6405afe3e28263ec15dedea49e4 StaticDependenciesID=dafe3401b3400c286ab142b242f8ee08 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 872
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/SzadiArt/Houses/Anim/FL_Houses_candle1.png
+  importAddress: Guid(ceac1239aa5bd7c41bc163f2d173a7a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Houses/Anim/FL_Houses_candle1.png using Guid(ceac1239aa5bd7c41bc163f2d173a7a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c668a80f70e4d7b45fbfa2cb98137c32') in 0.0214802 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=123f4ffb67497b72607ce4e72f21d59f DependenciesID=5e559b8157c78cd02a0160d695d0cf62 StaticDependenciesID=a6d0934540960b95a371efcdf23ea885 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Environments/SzadiArt/Houses/Sliced/Interriors/Floors/FL_Houses_int_Floors.png
+  importAddress: Guid(e94859f9817875345974b534345ed030) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/SzadiArt/Houses/Sliced/Interriors/Floors/FL_Houses_int_Floors.png using Guid(e94859f9817875345974b534345ed030) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'e3b5fac6dfd402696a44cbbdbdb7461c') in 1.0469122 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0b26b5c4586f9c2c2446b6957ccf7f6f DependenciesID=59080009ff17bf918072c727ff850dbc StaticDependenciesID=eea1bdf55287ecdb53c4bc7279ccd1f2 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 885
+
+========================================================================
+Received Import Request.
+  Time since last request: 1312.007196 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/hole- transparency.png
+  importAddress: Guid(ec4ff1c1a2755204b8aa3db36175077a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/hole- transparency.png using Guid(ec4ff1c1a2755204b8aa3db36175077a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '82adbb339c953b2e3f2de16efdc056d4') in 0.0516123 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a72ef79750543dc532c7deb8b5e9604a DependenciesID=5b5b5a4f2b4115e553d53189b2db8442 StaticDependenciesID=e9024288389e00308bb937f75419c8a6 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tileset-Terrain.png
+  importAddress: Guid(80e524ff755e01b42ab451d929ef93d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tileset-Terrain.png using Guid(80e524ff755e01b42ab451d929ef93d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '757252be9b6a3b8ad5e69baa7815ea0a') in 3.5466861 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=00ab19037c3d85848c1842c5639cd894 DependenciesID=bd868662b3057e2959b95c24eaf6fc5d StaticDependenciesID=dd03861be17921c940249af5edcb198b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2906
+
+========================================================================
+Received Import Request.
+  Time since last request: 188.087111 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/woodplank4.png
+  importAddress: Guid(b741039c11430cf409b37de9a33b788f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/woodplank4.png using Guid(b741039c11430cf409b37de9a33b788f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '073677dca2d1b8d2ac2358f09f073d71') in 0.0161606 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=57f4c4eb7b572470214f59a5c3b313c7 DependenciesID=9c81d7e519229c0b0986ce28fc97cea6 StaticDependenciesID=3a5033474996f536f70598fd713c1fb6 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/woodplank6.png
+  importAddress: Guid(6a8c6e5abf63618489af759ae421255e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/woodplank6.png using Guid(6a8c6e5abf63618489af759ae421255e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c0cfc188cfbaab0a2828651141f6b022') in 0.0361367 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=37bbf17db132d4b46c6c3d58224a67b9 DependenciesID=f5820a7261d3d8993c72a5f3c4d78179 StaticDependenciesID=8566535bd6c1248d0d9c618de49607a2 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/woodplank7.png
+  importAddress: Guid(21a704a09830a40478c8777562dcd6ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/woodplank7.png using Guid(21a704a09830a40478c8777562dcd6ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'e2928833efc14a517889e43cbc51b5c9') in 0.0160565 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=64fa90dd93f9613c3fa0cf1884b4b8a2 DependenciesID=2e97a8e5c2a98e12136803b1025e07e0 StaticDependenciesID=15f9e1834085a99f1e5c80ef992d9e04 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/woodplank8.png
+  importAddress: Guid(c7d15b0df48b4644b9a0de26f1a07b13) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet1-sprites/woodplank8.png using Guid(c7d15b0df48b4644b9a0de26f1a07b13) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '01e6b57972924be933796850b40fc283') in 0.0152516 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=50b00ea229516fbeeffa598d12cbb7ed DependenciesID=446f4a278c4fd9a6ccdb459470498ee1 StaticDependenciesID=9440cff0e329946ecf648d2d33ff5daf 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

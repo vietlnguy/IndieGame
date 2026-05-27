@@ -1,12 +1,12 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.4/staging' branch; Version is '6000.4.6f1 (0b051c2e5d54) revision 722204'; Using compiler version '194234433'; Build Type 'Release'
 OS: 'Windows 11  (10.0.26200) Professional' Language: 'en' Physical Memory: 32694 MB
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User" at "2026-05-27T03:33:11.9940876Z"
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User" at "2026-05-27T15:53:07.9801033Z"
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-05-27T03:33:11Z
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 34028, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
+Date: 2026-05-27T15:53:07Z
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 10244, path: "C:/Program Files/Unity Hub/UnityLicensingClient_V1/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Error: Unexpected message Type: ApiErrorResponse, expected: HandshakeResponse
 
@@ -22,7 +22,7 @@ C:/Projects/Gamedev/Unity/IndieGame
 -logFile
 Logs/AssetImportWorker7.log
 -srvPort
-56673
+56576
 -licensingIpc
 LicenseClient-User
 -force-d3d12
@@ -71,12 +71,12 @@ C:/Projects/Gamedev/Unity/IndieGame
     "memorysetup-job-temp-allocator-block-size=2097152"
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
-Player connection [21280]  Target information:
+Player connection [12992]  Target information:
 
-Player connection [21280]  * "[IP] 10.0.0.190 [Port] 0 [Flags] 2 [Guid] 2471075052 [EditorId] 2471075052 [Version] 1048832 [Id] WindowsEditor(7,GlaDOS) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [12992]  * "[IP] 10.0.0.190 [Port] 0 [Flags] 2 [Guid] 1630662826 [EditorId] 1630662826 [Version] 1048832 [Id] WindowsEditor(7,GlaDOS) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [21280] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [21280] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [12992] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [12992] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -88,7 +88,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 5.34 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 4.68 ms, found 5 plugins.
 Initialize engine version: 6000.4.6f1 (0b051c2e5d54)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Projects/Gamedev/Unity/IndieGame/Assets
@@ -106,12 +106,12 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56736
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56320
 CodeReloadManager initialized
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002541 seconds.
+Registered in 0.001940 seconds.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
@@ -119,23 +119,23 @@ Package Manager log level set to [2]
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.398 seconds
-Domain Reload Profiling: 834ms
-	BeginReloadAssembly (130ms)
-	RebuildCommonClasses (36ms)
-	RebuildNativeTypeToScriptingClass (11ms)
-	initialDomainReloadingComplete (74ms)
-	LoadAllAssembliesAndSetupDomain (184ms)
-		LoadAssemblies (125ms)
-		AnalyzeDomain (176ms)
-			TypeCache.Refresh (174ms)
-				TypeCache.ScanAssembly (158ms)
-	FinalizeReload (399ms)
+- Finished resetting the current domain, in  0.405 seconds
+Domain Reload Profiling: 839ms
+	BeginReloadAssembly (123ms)
+	RebuildCommonClasses (35ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (66ms)
+	LoadAllAssembliesAndSetupDomain (196ms)
+		LoadAssemblies (119ms)
+		AnalyzeDomain (187ms)
+			TypeCache.Refresh (185ms)
+				TypeCache.ScanAssembly (172ms)
+	FinalizeReload (406ms)
 		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (43ms)
-			BeforeProcessingInitializeOnLoad (79ms)
-			ProcessInitializeOnLoadAttributes (105ms)
-			ProcessInitializeOnLoadMethodAttributes (84ms)
+			InitializePlatformSupportModulesInManaged (41ms)
+			BeforeProcessingInitializeOnLoad (81ms)
+			ProcessInitializeOnLoadAttributes (116ms)
+			ProcessInitializeOnLoadMethodAttributes (81ms)
 ========================================================================
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
@@ -144,19 +144,19 @@ Begin MonoManager ReloadAssembly
 [Licensing::Client] Error: Timed-out after 30.00s, waiting for HandshakeResponse
 [Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-User"
 [Licensing::IpcConnector] LicenseClient-User channel disconnected successfully.
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User-6000.4.6" at "2026-05-27T03:33:42.0323661Z"
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 41756, path: "C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User-6000.4.6" at "2026-05-27T15:53:38.0146044Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 36912, path: "C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.18.1+9fbee8e
-  Session Id:              46e61c22fb9148c796c2afdd20e5d3b4
-  Correlation Id:          071979463d88e1c7cf3cfce4f71e6990
-  External correlation Id: 1184469408951374891
+  Session Id:              5e6e0c56a34341bdb9e241bc116cfb12
+  Correlation Id:          f42d1331a09e3c5a36159068958b68a5
+  External correlation Id: 1955819812993180608
   Machine Id:              2FPQyYLp1jEolOlDYTlN0FjGPb0=
 [Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-User-6000.4.6" (connect: 0.00s, validation: 0.00s, handshake: 0.01s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User-6000.4.6-notifications" at "2026-05-27T03:33:42.0405898Z"
-[Licensing::Module] Licensing Background thread has ended after 30.05s
-[Licensing::Module] Licensing is initialized (took 27.79s).
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-User-6000.4.6-notifications" at "2026-05-27T15:53:38.0224655Z"
+[Licensing::Module] Licensing Background thread has ended after 30.04s
+[Licensing::Module] Licensing is initialized (took 27.98s).
 [Licensing::Client] Successfully resolved entitlement details
 [Licensing::Module] License group:
   Id: F4-PUNX-AMD4-49GE-6GAD-XXXX
@@ -201,45 +201,1285 @@ Assembly Unity.UnifiedRayTracing.Editor.Tests.dll at Library/ScriptAssemblies/Un
 Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
 Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
 Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
-Refreshing native plugins compatible for Editor in 2.54 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 2.87 ms, found 5 plugins.
 Native extension for WindowsStandalone target not found
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-Refreshing native plugins compatible for Editor in 2.68 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 2.64 ms, found 5 plugins.
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.916 seconds
-Domain Reload Profiling: 29582ms
-	BeginReloadAssembly (27971ms)
+- Finished resetting the current domain, in  0.894 seconds
+Domain Reload Profiling: 29695ms
+	BeginReloadAssembly (28151ms)
 		DisableScriptedObjects (5ms)
-		CreateAndSetChildDomain (30ms)
-	RebuildCommonClasses (36ms)
+		CreateAndSetChildDomain (34ms)
+	RebuildCommonClasses (32ms)
 	RebuildNativeTypeToScriptingClass (10ms)
-	initialDomainReloadingComplete (83ms)
-	LoadAllAssembliesAndSetupDomain (564ms)
-		LoadAssemblies (403ms)
-		AnalyzeDomain (255ms)
-			TypeCache.Refresh (179ms)
-				TypeCache.ScanAssembly (163ms)
+	initialDomainReloadingComplete (75ms)
+	LoadAllAssembliesAndSetupDomain (532ms)
+		LoadAssemblies (368ms)
+		AnalyzeDomain (253ms)
+			TypeCache.Refresh (178ms)
+				TypeCache.ScanAssembly (162ms)
 			BuildScriptInfoCaches (63ms)
-			ResolveRequiredComponents (12ms)
-	FinalizeReload (917ms)
+			ResolveRequiredComponents (10ms)
+	FinalizeReload (894ms)
 		SetupLoadedEditorAssemblies (0ms)
-			BeforeProcessingInitializeOnLoad (159ms)
-			ProcessInitializeOnLoadAttributes (462ms)
-			ProcessInitializeOnLoadMethodAttributes (128ms)
+			BeforeProcessingInitializeOnLoad (144ms)
+			ProcessInitializeOnLoadAttributes (473ms)
+			ProcessInitializeOnLoadMethodAttributes (116ms)
 			AfterProcessingInitializeOnLoad (9ms)
 		AwakeInstancesAfterBackupRestoration (5ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.01 seconds
-Refreshing native plugins compatible for Editor in 2.81 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 3.35 ms, found 5 plugins.
 Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7408 unused Assets / (6.0 MB). Loaded Objects now: 8249.
-Memory consumption went from 239.2 MB to 233.2 MB.
-Total: 10.252000 ms (FindLiveObjects: 0.867100 ms CreateObjectMapping: 1.033700 ms MarkObjects: 5.282900 ms  DeleteObjects: 3.066400 ms)
+Unloading 7408 unused Assets / (5.7 MB). Loaded Objects now: 8250.
+Memory consumption went from 244.6 MB to 238.9 MB.
+Total: 9.733300 ms (FindLiveObjects: 0.908500 ms CreateObjectMapping: 0.589000 ms MarkObjects: 5.259000 ms  DeleteObjects: 2.975000 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1191485.232494 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/Dragon - grass - tail - 4.png
+  importAddress: Guid(28fcedf32475cdf479a3e8c7335d28ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/Dragon - grass - tail - 4.png using Guid(28fcedf32475cdf479a3e8c7335d28ae) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'f198a1b4ad0d2d117955e6494d081a29') in 0.0773289 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0ea07d3f269284a22da9678fd1e5a06a DependenciesID=97edd9b4bc44785eb77774e1eea53e13 StaticDependenciesID=e32eea9971738fcb255d54d6d7097e5b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/Dragon - entire skeleton body.png
+  importAddress: Guid(2032649010e28f14bbc17a101ef64a91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/Dragon - entire skeleton body.png using Guid(2032649010e28f14bbc17a101ef64a91) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '5618b047a4f30e0b7906d761806ece66') in 0.0248686 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=75f750be7afedd20657e8000250cd993 DependenciesID=666d7054951cd5d43988812a8333905e StaticDependenciesID=7dd39ce5c0f1d05b4a383079e3ea0024 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/Dragon - grass - tail - 2.png
+  importAddress: Guid(7ecb0ea2f9a932947862e9f82901b74c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/Dragon - grass - tail - 2.png using Guid(7ecb0ea2f9a932947862e9f82901b74c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ccedc0ef611304720b583ae7825e285c') in 0.0319999 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3c519d958b583a16e9430a35f74369b5 DependenciesID=9bad940d44594ac97a78325cadf69b15 StaticDependenciesID=beed2117a49759a8b7b485f532fb0114 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 6
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/mine - broken rails.png
+  importAddress: Guid(eb5207d2c400a9743a81faf7ddef5662) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/mine - broken rails.png using Guid(eb5207d2c400a9743a81faf7ddef5662) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'dd8387c0914f6da2574d506ae779de22') in 0.0261157 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b2f57bdc669fab0318f3e5f809639a9e DependenciesID=98f91c40ad9b99dcce25c6842be8e545 StaticDependenciesID=7d23d7aea82818b12b2e3168a963a5c4 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/stone bridge - horizontal - 3.png
+  importAddress: Guid(0577f181a2328ba49a565abbd2b081e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/stone bridge - horizontal - 3.png using Guid(0577f181a2328ba49a565abbd2b081e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '7faf92965d8d13a553898e08b60a00e5') in 0.0238677 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=85d880e35af74da5f1d03811a99b269e DependenciesID=5d86bda82ad1978d9a198e222315a166 StaticDependenciesID=e1dc64084ad1ba84a015e98f118c8cbf 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/Dragon - skull.png
+  importAddress: Guid(ca6d778591a793c439fec862de7b02ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/Dragon - skull.png using Guid(ca6d778591a793c439fec862de7b02ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd0f0fa0912edbdbde2351d1ebeb34a4d') in 0.0205016 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=75b42666f411839783e3d35ffe003ce8 DependenciesID=7bbd197e217634856140cf90a5c09026 StaticDependenciesID=271d37614be628ab0261b7f1ef3271bb 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/stone bridge - vertical - 1.png
+  importAddress: Guid(3335621d62619534b81a170ba1de8cc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/stone bridge - vertical - 1.png using Guid(3335621d62619534b81a170ba1de8cc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ae49c52385679d72cff5c8c719f04e82') in 0.0193964 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=bbe2f514164937359a21fc14c5d6d365 DependenciesID=fc890aa070be15676e94b41eecc4abd5 StaticDependenciesID=b78f3b19981d44c2786c983375a5e462 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/Dragon - bone1.png
+  importAddress: Guid(041db709e66dfa243b2958773aec4a71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/Dragon - bone1.png using Guid(041db709e66dfa243b2958773aec4a71) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'abf59a4da09daaa5faee26f72ee2e92c') in 0.0175757 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=30f114b9bf2abfde05d95407e2118a79 DependenciesID=e3bfa1acc292c9ef70c0931361f2c9c6 StaticDependenciesID=1323a6181f878d96be1122513ea5451d 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/stone bridge - horizontal - 1.png
+  importAddress: Guid(fde3d2b6b5f14af49a2869da5cb26799) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/stone bridge - horizontal - 1.png using Guid(fde3d2b6b5f14af49a2869da5cb26799) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '6fcbd46a022a30bcd71dbcd0a1ccabab') in 0.0182572 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c836ce1b6b170132eac300c3c16c1a36 DependenciesID=f7c1e611395bd9dfaf14dbba889d843e StaticDependenciesID=fd29f6d969ba70155d9dca34ecaa9cfe 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.311832 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/wooden bridge - front rope - 1.png
+  importAddress: Guid(7177e61bc5685f240ac97b6570245726) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/wooden bridge - front rope - 1.png using Guid(7177e61bc5685f240ac97b6570245726) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '791e10446fba15afeb0a6288262dfb7d') in 0.0138463 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f36ba614307d8d64f68b4ae2e405b706 DependenciesID=d369a995c02ccd40b78e99e91719da58 StaticDependenciesID=a5f56072bf2c6222a7236bb3ce10e8ad 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/wooden bridge - front rope - 5.png
+  importAddress: Guid(1d0a76bde68525640b5d8ce96dbf0af7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/wooden bridge - front rope - 5.png using Guid(1d0a76bde68525640b5d8ce96dbf0af7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b68b65a78c94ff83159504209e7c462a') in 0.0135537 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f6c8741b29e0f5ccba404ae6904e45bf DependenciesID=c3a30ffdd0ab98256c27dabf70c00c1c StaticDependenciesID=929cef29b0429a3143d1067ae546940b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.346975 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/wooden bridge - mid  tiles - 1.png
+  importAddress: Guid(6293424cbf91cd54ca0eb756e21312fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/wooden bridge - mid  tiles - 1.png using Guid(6293424cbf91cd54ca0eb756e21312fc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '19756f08404de65d258441b17e795940') in 0.0152808 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=922c5cd6143487e5db025a00ecaf4c50 DependenciesID=a5c9cd4dafb9f0f4983777b7f7e9faf3 StaticDependenciesID=beabb75414be5556b1fceab714cfdb3a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/wooden bridge - mid  tiles - 5.png
+  importAddress: Guid(ace2e9ad15596c2469011d6e9be835a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet3-sprites/wooden bridge - mid  tiles - 5.png using Guid(ace2e9ad15596c2469011d6e9be835a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '487a1b4bec9612c9515b73a9dccf86bd') in 0.0157907 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e1f8796d01e9546559baf3c70184592d DependenciesID=d8cc82cdb483dd2f2aef4d14b80c7ec3 StaticDependenciesID=fd31a1974f51929166787166fbbaa028 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.970037 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-broccoli_2.png
+  importAddress: Guid(342b4fcde51b6014ebf224c382e3ed52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-broccoli_2.png using Guid(342b4fcde51b6014ebf224c382e3ed52) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '3f3f88505279cba5c6cc5b279eaf32cf') in 0.0146124 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=237c6fee2921d2e3581ddf5d751b055d DependenciesID=84c95bf3fda663c7b96b7fd0eb2a3bd3 StaticDependenciesID=54e264d128e1dadfbc5bfcb486e07ea4 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-broccoli_6.png
+  importAddress: Guid(e125e5964033ad64fa4c31bb3f8df46d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-broccoli_6.png using Guid(e125e5964033ad64fa4c31bb3f8df46d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd9916b0da0b68e11ce54f6adf01f0657') in 0.0142594 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f412c63a70d509ac7bae6cd1f55664f8 DependenciesID=3ae23389914543d57df0a6f76337c1d5 StaticDependenciesID=9f2c9f85b6bdc5cdb4c3829e719b12e5 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-carrot_2.png
+  importAddress: Guid(269ecfd2f71caa745baea2ef7a2ed478) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-carrot_2.png using Guid(269ecfd2f71caa745baea2ef7a2ed478) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd539e4a6f2d466fa41619de223860c8e') in 0.018674 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8624746b41697870db51607f4c4d5d68 DependenciesID=ad630af700ce3d9308d65618dd5cdabf StaticDependenciesID=a3919cb30e428bd403be9ff377beec17 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-cauliflower_1.png
+  importAddress: Guid(b4fbe0b82edf85d418f4ec2835b942ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-cauliflower_1.png using Guid(b4fbe0b82edf85d418f4ec2835b942ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '23c27830e7854129df96b486ee452c80') in 0.0352902 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e1e2ab0d7cceb893fec3306f41267133 DependenciesID=162f200bae853c8542649759f2df1e4e StaticDependenciesID=b26b7dcea97ccbd0d5d321db9348a160 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-coffee bean_0.png
+  importAddress: Guid(2b98eb788bbd110499aacb37a0a583aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-coffee bean_0.png using Guid(2b98eb788bbd110499aacb37a0a583aa) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ecbc5d62fa951d091a173cf30621b4c9') in 0.0273478 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0740ca27a18dd982cf709485f51cba8d DependenciesID=3777109277e2c957b14bdb5ad5bb80a2 StaticDependenciesID=7e169bff3f1f9635b180fccf64f21efb 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-coffee bean_1.png
+  importAddress: Guid(43e45ae6373c55746843ddd633978b94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-coffee bean_1.png using Guid(43e45ae6373c55746843ddd633978b94) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '42466fa61cc7fc7a0ac400f259c2bb03') in 0.0216875 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=385c0497270dcc0d7880dfeb4ccec30f DependenciesID=116f0208eb84c326636c132c04412227 StaticDependenciesID=4727305b48c47820ea2bbc5294433859 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-cauliflower_7.png
+  importAddress: Guid(fc375b21c80d9cd47894327aea34cc44) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-cauliflower_7.png using Guid(fc375b21c80d9cd47894327aea34cc44) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '47e76e7092d9893d1cc49151e9e756a1') in 0.0195501 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8f64aea33340ee6e6c3a20d8e7703bb3 DependenciesID=2c5a2023173219a7af70715fc8b0ffd8 StaticDependenciesID=565f42c9479f03ca195094dc2c716b49 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-green bean_5.png
+  importAddress: Guid(5ded53514cac0a442b8d4ee3568c8fe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-green bean_5.png using Guid(5ded53514cac0a442b8d4ee3568c8fe7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c711818f351cbca7a91b791f3c2a6b71') in 0.0177207 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2f5ac3ee1b8865e23d6bc5a598f277ee DependenciesID=2080bbfb1ac2ad65dbe2d4f82d052b41 StaticDependenciesID=72a2c72dcf780e4e444094a205f46d4f 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-hot pepper_4.png
+  importAddress: Guid(ab1e5c63d1fe57049b304dfed9b7a573) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-hot pepper_4.png using Guid(ab1e5c63d1fe57049b304dfed9b7a573) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ad91c8b5d7a76ef55156dbece5cef471') in 0.0191936 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=481021189778e29bf3d1d766d93e0c42 DependenciesID=2ec39ee0d6c2aec43801065c93613d95 StaticDependenciesID=e489fc0f0adca4b5b79b0a113440656f 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-hot pepper_6.png
+  importAddress: Guid(8cbff8fea0d01c944af6de68812af923) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-hot pepper_6.png using Guid(8cbff8fea0d01c944af6de68812af923) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '7f141fb0ba06b6d2ad8eacc8b2d03290') in 0.0155041 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=540ebbb362d80a9034ef157bbb5896fc DependenciesID=833f38ae8b288e0ac796235c53ea2187 StaticDependenciesID=7d0d63b6d8b5350d76763a80b65332dd 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-melon_2.png
+  importAddress: Guid(985d9eb5bf655524f9f4b7ce23215635) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-melon_2.png using Guid(985d9eb5bf655524f9f4b7ce23215635) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '2893e8bac1a7b7ab045d4b82d7ee067b') in 0.0145864 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5a3376d79be8de3eaa852a917b0eb8a8 DependenciesID=276f3a6f93e2c5ce684b4660a6ad1186 StaticDependenciesID=c8343bf37325996080359a025470c425 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-hot pepper_5.png
+  importAddress: Guid(281c9498d38a64744a02afa3a140bad4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-hot pepper_5.png using Guid(281c9498d38a64744a02afa3a140bad4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '141caa4ff4bfc65aac01e7edf0565d03') in 0.0140392 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f650a3484601077270daa092dd0ab96b DependenciesID=51f3839529325a9eb37c66fb5181567b StaticDependenciesID=69ce90313a18c1e7810db4d7246a2c8b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-melon_3.png
+  importAddress: Guid(a86a80058c26f04489262ecbcd4c2eb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-melon_3.png using Guid(a86a80058c26f04489262ecbcd4c2eb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '3edceb22a3dc9ce60ff33e73b274a44d') in 0.0140683 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e1308306da178232c75c35a9c4edeb39 DependenciesID=3ea56b0aea9d59acc5cba9f41de97468 StaticDependenciesID=5a2d1f75666acbed2a19ecf763632d5a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.299023 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-parsnip_3.png
+  importAddress: Guid(0bdbb488533a6e74fa36cca20f914f93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-parsnip_3.png using Guid(0bdbb488533a6e74fa36cca20f914f93) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '205fbfa4dd132e38fef5ffa6f662f9c2') in 0.0136512 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d47777c73dc0b0c077f602b8525f31b0 DependenciesID=8fdc651556bd437a1cb60faed72a9155 StaticDependenciesID=3d5d410b006f102170d8bd217277a1ab 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-parsnip_7.png
+  importAddress: Guid(11b2f27261112314c9b06533d248fc15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-parsnip_7.png using Guid(11b2f27261112314c9b06533d248fc15) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '86961140fb819951e59c445c29a09cb2') in 0.0147299 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=58d7d3e65e9a4d2126c88f6e37066167 DependenciesID=7f7a942704bafbeba94611112240fd64 StaticDependenciesID=cfc0e8f77024c5ef5df6be7605af2ef2 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.114200 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-potato_5.png
+  importAddress: Guid(15668bd45c8c66b43865313c83c68348) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-potato_5.png using Guid(15668bd45c8c66b43865313c83c68348) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'f79862fa70f21a34414a609992691d34') in 0.0161205 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1d9371ec0ab5e9af688d182fb10eb9ee DependenciesID=21987bab26d2b4b085d25549478516ca StaticDependenciesID=4da47261c3c011cc08bb710e87b79ff0 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-pumpkin_1.png
+  importAddress: Guid(5ca2491d55c2dc940b64a71cee492572) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-pumpkin_1.png using Guid(5ca2491d55c2dc940b64a71cee492572) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ba4a631acdd231006f75c4938458113f') in 0.0174028 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=bf33194c6e250c9f6de9bad5d18cc2fa DependenciesID=020e7430041f4418ec874ac76296bb95 StaticDependenciesID=0048d505751dcce0a8dbcbdf03a7ea8b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-radish_3.png
+  importAddress: Guid(b4a56e873c86d644e872dc3ffff1f032) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-radish_3.png using Guid(b4a56e873c86d644e872dc3ffff1f032) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'eb0446f1f200955ff82b98e4ca5ddf38') in 0.0275451 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=20da9fdaebb4ac0bb71d5e2843484759 DependenciesID=59cd40213e8f6fc306deb4d0ffb149d6 StaticDependenciesID=a6e9d5c5f982906a1bc0e40480dee894 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-pumpkin_4.png
+  importAddress: Guid(484ad0585e5683840a7a51e2ace45196) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-pumpkin_4.png using Guid(484ad0585e5683840a7a51e2ace45196) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '773f62ce765d4f6d4fe21d16f267b3e0') in 0.0307806 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5dda33c89b4dd083578ef4b5e7e0f528 DependenciesID=90a601f0a01bca81e77b5c66e28ac82b StaticDependenciesID=ea41932a351e2491f99d9d24f16816a9 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-pumpkin_6.png
+  importAddress: Guid(39c97d146101bf843a6d466a7f7a83a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-pumpkin_6.png using Guid(39c97d146101bf843a6d466a7f7a83a9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '38ac8c1a468c0ee926732513149d2c10') in 0.0303115 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c5cc7306098b7c5798072ed9ff9c4695 DependenciesID=3b91f780ab6fd5af4ef38bed52a7d8f7 StaticDependenciesID=8607c417e62f6e791ce44e27a74ba113 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.011367 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-red cabagge_1.png
+  importAddress: Guid(fa07f6b7f5481bf489c5417e28e162c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-red cabagge_1.png using Guid(fa07f6b7f5481bf489c5417e28e162c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a494a941140dabb5084b46f11439df5b') in 0.0133741 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=55757ef8bfb20dc60616e1c767fefd2c DependenciesID=3768724b00fbb5fabfee4e69d66ef1c8 StaticDependenciesID=da2f2267a550dbba791d2f418e657a90 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-red cabagge_5.png
+  importAddress: Guid(cda4a4613212d8c4f8a566f73eae8b09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-red cabagge_5.png using Guid(cda4a4613212d8c4f8a566f73eae8b09) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'bda3a64f499212f1c588ce3fe15c80ec') in 0.0245069 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=369d77181b5b8929c4fc76d62552a1ce DependenciesID=3873e585f67862bb7f638f6e9f198b87 StaticDependenciesID=6b582c7cbff6f90e02aa8364e9d2c7b7 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-artichoke.png
+  importAddress: Guid(95abcfc0c52a5fe4bb7f8ad82e8f2268) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-artichoke.png using Guid(95abcfc0c52a5fe4bb7f8ad82e8f2268) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b20e420c9e25c1dba2e28c0120c504d2') in 0.0150376 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6c6e24a060d02cee67412399d0cc2ab6 DependenciesID=2191781c42fa5c329c8e6fadd24db0ee StaticDependenciesID=1ceffce8857014d71f2f3c5b2135b722 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-broccoli.png
+  importAddress: Guid(e6192d29d3f3a8d4a873886f470c1eb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-broccoli.png using Guid(e6192d29d3f3a8d4a873886f470c1eb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '4192cc4047a4828b2b63556e3eb6efa1') in 0.0157043 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6b5214a10686d0b48e2ae31b7c1b26aa DependenciesID=4bddc578c4c612c9857df900df2b509a StaticDependenciesID=e7939aada72414603099f58cef964e98 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-potato.png
+  importAddress: Guid(93b589f2792db414f89804984de2cc4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-potato.png using Guid(93b589f2792db414f89804984de2cc4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0d9e536962428147ee07466548aee7af') in 0.0134901 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=73d0f1c3dbe96176c8b375c2f2da3eff DependenciesID=2ae01fc3297f7876fc3b8d1bace54bb6 StaticDependenciesID=5501f208ce4ca6b9d8f60c428714c46a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed boxes-bok choy.png
+  importAddress: Guid(d76818da3b28ae841bbd6f43b69e3916) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed boxes-bok choy.png using Guid(d76818da3b28ae841bbd6f43b69e3916) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '642d370c87cc3af10c3d736b26759981') in 0.0271656 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c74dde936443a5bab5fcfdd1009e4793 DependenciesID=aad3d62ec3f6230204f06766fb8c0ca6 StaticDependenciesID=4177bb56b4cd43fcb0a02f896771db02 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-red cabagge.png
+  importAddress: Guid(5d5057285bd9de042b56fd1b03dd12b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-red cabagge.png using Guid(5d5057285bd9de042b56fd1b03dd12b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '4060dcba5222925b32285ab263949cdb') in 0.027647 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=69dc086d3b22c0f5f86c724eaafe7043 DependenciesID=5fc7f7d46df8b44933a0b37c0452a24d StaticDependenciesID=ccd376ad09ee9f8f3dc0d5a906c03eb4 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-radish.png
+  importAddress: Guid(b393eb141325824499a779807a522c20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-radish.png using Guid(b393eb141325824499a779807a522c20) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b4cb9f17c0ff14a44ca0504d22d18ab1') in 0.0234548 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=199649f67053affc822f3dfa7329b03d DependenciesID=c19f966f64c827c4edc7ea364a0c150d StaticDependenciesID=96de990789c551d49b13f5ff49d93993 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-melon.png
+  importAddress: Guid(6b4ec7f63dede054c90e9949afe8b785) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-melon.png using Guid(6b4ec7f63dede054c90e9949afe8b785) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '44956857000e0074d4e9d82513d93277') in 0.0261384 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=15e919a8008f3d62bfc63e8407f40973 DependenciesID=a74872f57645db3292b7bc04a16711c3 StaticDependenciesID=3acd6ff7770e1feea8dd9cef4d3badf9 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.738529 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed boxes-hot pepper.png
+  importAddress: Guid(2758e0e1eef002842b56beab6aef3543) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed boxes-hot pepper.png using Guid(2758e0e1eef002842b56beab6aef3543) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '00347fdf8dcb2fa6756d8890b7caa5a2') in 0.013615 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=0fafb051ff6c8962f7bb03ddfdea289c DependenciesID=170215244261c535e7aa10186e10c300 StaticDependenciesID=0bf3bb5b4d2375df9977839d6cf6151c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed boxes-pumpkin.png
+  importAddress: Guid(a1b7050a8c999dd43abc979d0200367c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed boxes-pumpkin.png using Guid(a1b7050a8c999dd43abc979d0200367c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '3a331a7e37ba266e607eb826f04d1c34') in 0.027808 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=459d278133036daaac03170f0bfae1ca DependenciesID=00c6be684a622c5197e80d3bdf57692b StaticDependenciesID=33244be3f27806b829c72fba32a74dd2 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 18.465694 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed boxes-wheat.png
+  importAddress: Guid(3bbc5ce1eee0b2f47a10e2a39b000ef6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed boxes-wheat.png using Guid(3bbc5ce1eee0b2f47a10e2a39b000ef6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'f87578c4d43c1263fb0f991aa7bb6c81') in 0.0141748 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b933ad6366ebf050a8e24426e46a27f6 DependenciesID=ba5d5fe6f5b9a05a3b95a80499b2ad90 StaticDependenciesID=0f671123ca08bd78ba4cc545627f746f 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-strawberry_3.png
+  importAddress: Guid(95bd7fd2ff27dad439a2ffc09fa911e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-strawberry_3.png using Guid(95bd7fd2ff27dad439a2ffc09fa911e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '24040fc2eccd8314a44bbb7436eaf996') in 0.0418038 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b49e76ecc14c2f81fc9bc9e975bb15e8 DependenciesID=04f7fb6992648b902738541135392d3c StaticDependenciesID=2aa3e815d3635611c6e53bbf1b26f467 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.354773 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-tomato_1.png
+  importAddress: Guid(b9a9b001bd9451449aebea9ad76b4b67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-tomato_1.png using Guid(b9a9b001bd9451449aebea9ad76b4b67) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '73c58f960be0608a193b713d16244c46') in 0.0179238 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ca23c380bee8155f20712e4fe342146c DependenciesID=b0669e6a008286ff662001c2a25b277e StaticDependenciesID=dc5787c0ff875d2827b69a2f07028b45 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-tomato_5.png
+  importAddress: Guid(9a7b4cae8f540bd4d8cd3def10ba7257) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-tomato_5.png using Guid(9a7b4cae8f540bd4d8cd3def10ba7257) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '9b769ef71b8bb039591e620c7eafbc4d') in 0.0178487 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f954eae16f406206cae0ce531fceded0 DependenciesID=8464f050304515bb41a32304242c71f8 StaticDependenciesID=5ee5be7236de51a409ce33c5e45f2fb6 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-wheat_4.png
+  importAddress: Guid(df0c22beb58388541bc7cc9373372824) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-wheat_4.png using Guid(df0c22beb58388541bc7cc9373372824) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '2c64576d4fa6c66742693b19ae7db901') in 0.0260624 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=02ca1bee9f8b5c8ebdd72cf5ef1c0ab7 DependenciesID=9ef3e0e7dfb29e763c12f8b2b16fe296 StaticDependenciesID=703644a80212871aeef611334374efef 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-wheat_6.png
+  importAddress: Guid(480222d92a00c7c488d30976d42a7e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-wheat_6.png using Guid(480222d92a00c7c488d30976d42a7e98) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '16b7f99abdba5bd86cdf0529b32062c2') in 0.0306694 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=32ea131816ec9dea5c741c07d17193c9 DependenciesID=fdb27ed9ccd9feff6fc23c974ee512f9 StaticDependenciesID=ecea22f1f187fea3505fac0602dfd662 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-wheat_1.png
+  importAddress: Guid(69f709b577e5cf94c91048de4f0117c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-wheat_1.png using Guid(69f709b577e5cf94c91048de4f0117c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '55188843361c01f858841ac21de38327') in 0.0349465 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5fe526f2d86ed000f68fa1f75d225f95 DependenciesID=a800aacb405f05470c8727bdea830354 StaticDependenciesID=2e685c0a3175b90a9a6ba1d22306f284 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 5
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.954479 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/hoes-diamond-reinforced_0.png
+  importAddress: Guid(b2440f5ddbf4500438394ead5dd32163) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/hoes-diamond-reinforced_0.png using Guid(b2440f5ddbf4500438394ead5dd32163) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '1e088fa07b7abe9a5d6ff765f618f30d') in 0.0132157 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2be71fb2cf58245d6bed2f2885470f75 DependenciesID=cdb98b0ac8d582fc631db79c1943a04e StaticDependenciesID=609fcfcdccee4365761a0c7508c8593a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/hoes-diamond_2.png
+  importAddress: Guid(b77ca4c755b4e85408a21baee3f44256) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/hoes-diamond_2.png using Guid(b77ca4c755b4e85408a21baee3f44256) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'b1a6a4dd7692e3d0b9097efbfaef9710') in 0.0129374 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3898aa0eb62c3c816326c4f83b9d73bf DependenciesID=499cb55b5633fe4c591b4b0d6dcdf970 StaticDependenciesID=d69f363ee213591c660abfa495eda690 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/hoes-steel_0.png
+  importAddress: Guid(711ae8252711ed1488b89115f69b9509) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/hoes-steel_0.png using Guid(711ae8252711ed1488b89115f69b9509) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c78d02a3f4b8f88155f2a950ef7480a0') in 0.020621 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=89fb420d831ddc05e13cdda25385661c DependenciesID=7f9f28d9fcefc4f605bf494ec84c617e StaticDependenciesID=c10db231a5d6e98b5bda34e62853e21c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/manure_1.png
+  importAddress: Guid(8826feecbcffe7e419436bef8dc27f3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/manure_1.png using Guid(8826feecbcffe7e419436bef8dc27f3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'c91c95f3c60503f013d94968237b1e75') in 0.0187395 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2e37fc73ab6cf042583b4a51c90a69d5 DependenciesID=d51698c54f2d43b9dd7030dc1cde3aab StaticDependenciesID=fc53bd9233b241993866d3ccf0b8c2a4 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/hoes-steel_3.png
+  importAddress: Guid(afefedf604c043142ac4e7aa07c9ce52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/hoes-steel_3.png using Guid(afefedf604c043142ac4e7aa07c9ce52) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'a497f956b2634fb3adf8c4c139c029bd') in 0.0204024 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=dc292ce4d730199742b7ee30defb38ad DependenciesID=91c553e14b31533569077434c862324c StaticDependenciesID=8406da32abb804e22b4b3a701b887485 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 52.899212 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/pickaxe-copper_2.png
+  importAddress: Guid(a51c734f61f93b74e878e200112f9f18) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/pickaxe-copper_2.png using Guid(a51c734f61f93b74e878e200112f9f18) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ea555150c29d16af8c024f569d49ffcb') in 0.0158174 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8d72aa588a3f4f03b29e3e9373fcd96b DependenciesID=1378925e399f101561cd79dabbe1a9c8 StaticDependenciesID=2ca186df7582aa054c4b6d9347ac9e88 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/pickaxe-diamond_0.png
+  importAddress: Guid(fd432c1f2a6921a48a928c198ee0d835) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/pickaxe-diamond_0.png using Guid(fd432c1f2a6921a48a928c198ee0d835) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '56427c3a65700aba59936cf9555f0484') in 0.0147452 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b41fa8986dc850fc5532115aeb2b7ac0 DependenciesID=7058c2ab10a12c4f495bda65bd1b41d7 StaticDependenciesID=5490fc3778371b044c3bc11b4b9b1eef 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/pickaxe-diamond_3.png
+  importAddress: Guid(5f4a9f1857e06894fa89bc2d80451e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/pickaxe-diamond_3.png using Guid(5f4a9f1857e06894fa89bc2d80451e9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'f1d172f5348b0dd6d666f5cb357f202d') in 0.0154367 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9ca29f6ad43fd541620ae184862233cc DependenciesID=876d691fd817dec8dbc7406ad032ecb2 StaticDependenciesID=976d90b8e19d6bef9e9f7a8848abf194 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-diamond_0.png
+  importAddress: Guid(a85ea7db9db7bd84b897f31b33c50f6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-diamond_0.png using Guid(a85ea7db9db7bd84b897f31b33c50f6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '8756cb3e297615d332e587396e63636f') in 0.0255848 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d7c9a95f06642c53c5894fc1c7f5d1e0 DependenciesID=02313d308ec640c1f6f5664ccdab91ca StaticDependenciesID=027bc458aef6d61b5d792a6c548668ce 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/pickaxe-steel_2.png
+  importAddress: Guid(80b7c870bc6de2840a80903727398a0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/pickaxe-steel_2.png using Guid(80b7c870bc6de2840a80903727398a0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0e97e38a1d850405784b5964583ed390') in 0.0153181 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1429b19c3da4d92834ce21d3a80f0a9e DependenciesID=1c192f13003b035ccea6fc2ea61843f8 StaticDependenciesID=9343198c34e7f7d2c5038981d6789868 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/shovel-copper_0.png
+  importAddress: Guid(6e2a9e65ff1dd5d4eb088f67422067db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/shovel-copper_0.png using Guid(6e2a9e65ff1dd5d4eb088f67422067db) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '56a33f4c502861a05d0f6559e3e9caf5') in 0.0153492 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2941ff3aad736c7ffd4f178b6cfd9f69 DependenciesID=c8ad462260abf8a392906483bebfe9f8 StaticDependenciesID=c7e5c6d3e72528c977919e8397cb7cbf 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/tools as props_0.png
+  importAddress: Guid(38cb8ead7cc5c9e4fbb5337d06f0b96d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/tools as props_0.png using Guid(38cb8ead7cc5c9e4fbb5337d06f0b96d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '7f87b9d780fe474d3fdd4495d706d13a') in 0.0159014 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c4dd7e8a1f45ad5d7f7185152f978d50 DependenciesID=f0f7e98f5e0864a7de4f3f0e207fb14f StaticDependenciesID=ad7b2d5861b45e287fd15e4389440f92 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/watering can-diamond_0.png
+  importAddress: Guid(acb011bb1df5fde4e8f5347714802f9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/watering can-diamond_0.png using Guid(acb011bb1df5fde4e8f5347714802f9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '30cdce065e3b7d1180d16af7cb9a27d7') in 0.0230356 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4583d207b4220b51c88f52171d794d6f DependenciesID=2dc6f3409492dfbb82f8a97a3c53583b StaticDependenciesID=527905d9a36a3aafcf06176cee8bcd7c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/tools as props_6.png
+  importAddress: Guid(3ddf962582874cc44905fff7c95451d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/tools as props_6.png using Guid(3ddf962582874cc44905fff7c95451d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '5ef21b0c75dbee696bb468b2fd00abf0') in 0.0215267 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a5127fada8c2429cffd1b78f0857c06a DependenciesID=e34f5297874ce529fc7c17c112ebc03b StaticDependenciesID=0c535f8f8d80bfc0af4621b5f7e35077 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-steel_0.png
+  importAddress: Guid(c7bd9acf57627e640b37369557dabb98) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-steel_0.png using Guid(c7bd9acf57627e640b37369557dabb98) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '6cd234533f45437272af998bfb39ef9e') in 0.0242813 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=11da7af1b04903d2c56a1ce46effda89 DependenciesID=bfaddafee75060beba4418ff2a2eef9a StaticDependenciesID=c8fd677e6a14eed3770acbada877e05c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/pickaxe-diamond_1.png
+  importAddress: Guid(09daf486cc0139648bcccffc81414012) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/pickaxe-diamond_1.png using Guid(09daf486cc0139648bcccffc81414012) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '3c004e072973f2b4fd26ccc82878fb41') in 0.0179996 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=940111776a82cba80fa857ce70c99bb2 DependenciesID=edee39ac08f9cd2c115f055a06ecfd3f StaticDependenciesID=c98cf06cfbcfd3aa495b93e3b27bd273 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-starter_1.png
+  importAddress: Guid(dcb1c95e6beeddb4ca1d2ef0a071671b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-starter_1.png using Guid(dcb1c95e6beeddb4ca1d2ef0a071671b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '205b873f6ecdd94268bb08283b183f94') in 0.0168067 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=39e0044894685836c19c12a933a61b5d DependenciesID=7d699d081a29bd1438c29dac053ad9bc StaticDependenciesID=6acea7fa437b9cfae36ec50a000d226f 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-copper_1.png
+  importAddress: Guid(66647db0ca2f2f64ea86245f13eda657) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-copper_1.png using Guid(66647db0ca2f2f64ea86245f13eda657) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '45fa501b985d4b2bba37e285186dd1e0') in 0.0151662 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=29a7fc5d342489ada2bec3613f89d447 DependenciesID=7655c8168a5c4131bdb875f4bf5020a6 StaticDependenciesID=c2a3f9d1d19cace3dc5bab65a7d1e521 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/tools as props_2.png
+  importAddress: Guid(070da1bce5fac3f488cbebc471d775f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/tools as props_2.png using Guid(070da1bce5fac3f488cbebc471d775f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '10775ab7b5b435b1b3e265c5695e97c5') in 0.0158457 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=721a1d1ee65addde14f918acf18fa4e7 DependenciesID=611e1cfa17a6e5c506fc691e17380c51 StaticDependenciesID=489ee56ea241f7e1fa4b9d2331ed5154 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/watering can-steel_0.png
+  importAddress: Guid(b2c4b8a0f81e1a347b1134dcb0e1d566) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/watering can-steel_0.png using Guid(b2c4b8a0f81e1a347b1134dcb0e1d566) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'ea4e305fd40abdfc93dd4b72ea65c4ef') in 0.0243308 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e9cea086cebc2fbc271ad22d02c3dce9 DependenciesID=19681f4069d711cc6a0d3133e7efe9e2 StaticDependenciesID=ee754a55345a21ddea74a3d068d22a9c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 11.371727 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/shovel-diamond_0.png
+  importAddress: Guid(71604a926312fc34f9fc396efc78ca2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/shovel-diamond_0.png using Guid(71604a926312fc34f9fc396efc78ca2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '5af1ea61b44c12579d41ce9d3329dce2') in 0.0200409 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1bfda16a127f8e18dbb681730236be53 DependenciesID=8d03e3730c192ac019ccce95298ee4aa StaticDependenciesID=640df62318668175b55b2187672ae2ca 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/watering can-diamond_0.png
+  importAddress: Guid(acb011bb1df5fde4e8f5347714802f9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/watering can-diamond_0.png using Guid(acb011bb1df5fde4e8f5347714802f9a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '0c1f90f97fd7df6d7611d8c60779c907') in 0.0167129 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4583d207b4220b51c88f52171d794d6f DependenciesID=d6fc9a5ba10a0e08589c2758ad22563e StaticDependenciesID=7278b46742874b014e3b49515a48f255 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/tools as props_5.png
+  importAddress: Guid(ad59117adfd5bb54ba65308e25317240) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/tools as props_5.png using Guid(ad59117adfd5bb54ba65308e25317240) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'bb672646a61da88c865895bd9648f44c') in 0.0242253 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=33111139f3953d6096e6a077599ff9ea DependenciesID=43acadf66c6e0503e7fd9f3a4c1d44b1 StaticDependenciesID=ddf77e70ea47c29e404c9651ad91a3a9 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/shovel-diamond_1.png
+  importAddress: Guid(6401ced807de89648b0ae3b8fd39b990) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/shovel-diamond_1.png using Guid(6401ced807de89648b0ae3b8fd39b990) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: '697b1a69396144863a7e18b3eed279cc') in 0.0186417 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ce121cded48d8aac69364ec74409ff3d DependenciesID=c72f055a8cdc0a4181f793d4e0b50b9c StaticDependenciesID=618e0831885a323a9eb41b3fe94e26d3 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/tools as props_2.png
+  importAddress: Guid(070da1bce5fac3f488cbebc471d775f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/tools as props_2.png using Guid(070da1bce5fac3f488cbebc471d775f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (Import Result ID: 'd073d2855ea2eb8cf3eac7029a0f94cb') in 0.0293589 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=721a1d1ee65addde14f918acf18fa4e7 DependenciesID=386f8a0ef9e745462fe9b0a676a8b67f StaticDependenciesID=b06b68cc4e9a21fc2ffe25eaaef384d5 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.166242 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed boxes-garlic.png
+  importAddress: Guid(f4a15e9cb58897c4eb4515d4fbb31b81) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed boxes-garlic.png using Guid(f4a15e9cb58897c4eb4515d4fbb31b81) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '55b9b96483d729e8822d708d8f599394') in 0.0960821 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=36f6fbfd81c4fbd5a36c64c8e0a3181f DependenciesID=eef4b851f7be4387b657144bf8f9d741 StaticDependenciesID=0ea656b9d863ba2c37ef990a887db6fe 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-tomato_7.png
+  importAddress: Guid(b55373096874bb54a91b6bd3a45c1134) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-tomato_7.png using Guid(b55373096874bb54a91b6bd3a45c1134) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a496a34d8b7624ea52ff4e79879799a8') in 0.01501 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4eecc0db1f37e2e1e34af1003746d731 DependenciesID=83be360d0cbe18cd233503f93bf7b1c6 StaticDependenciesID=3a2efdd1bb8146c5d88b369f35753d32 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/tools as props_4.png
+  importAddress: Guid(7aa8cd99455097f46b1eae0ffac6072f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/tools as props_4.png using Guid(7aa8cd99455097f46b1eae0ffac6072f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '103538c5b07d6d1bdba9752bf858ee6f') in 0.0150808 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8b8e3db707691c1a57884f87fb400779 DependenciesID=87c91a5cd1be7f141ed17312933aa72f StaticDependenciesID=3e02dbd1edd224c43e246b73fc88b2b6 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/axe-steel_1.png
+  importAddress: Guid(df16423f01755f6498792dca9026e356) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/axe-steel_1.png using Guid(df16423f01755f6498792dca9026e356) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'dd0e92ed5f5f9acc202e90c966fa364e') in 0.0135163 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b96c844652b990a3b8dfdd948db2571f DependenciesID=2bbcfe1fc011b61c689908585d05341a StaticDependenciesID=b1aa9b4f3767a693d0a3f43122e4b5f1 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/tools as props_8.png
+  importAddress: Guid(20bb4eccb83276f46847b6a691b497d7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/tools as props_8.png using Guid(20bb4eccb83276f46847b6a691b497d7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'aeaf32d289bccd4125930cb3da100797') in 0.0138356 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=30034d67fb0fe17d6d94ef6b6350ed31 DependenciesID=6a1b7d330f5aafdad5e334e28f1dba71 StaticDependenciesID=ab8a6da877dbfa85b35bc9aa2b887c8b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-corn_5.png
+  importAddress: Guid(fb306b93e6f272846b484ad0c07f50ec) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-corn_5.png using Guid(fb306b93e6f272846b484ad0c07f50ec) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '65589b310d31cfc86d594e24b10f573c') in 0.0131949 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2ecf66cebb9a80c7e8eec7bd894872a7 DependenciesID=1ac079619c7b3812009987c8ec0f79a5 StaticDependenciesID=e564485550e1c9d69a2f4a83cc7a8c07 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-green bean.png
+  importAddress: Guid(3800d6b22ddff874cb92c97523015e80) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-green bean.png using Guid(3800d6b22ddff874cb92c97523015e80) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '560e375738e2ecfcafd9fac3061769da') in 0.013778 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7b9b7593100679646b16d9b7a55c5009 DependenciesID=13fa35d1f4c75825b8877e645bef29ed StaticDependenciesID=a810fac0395806152c1e518deb07cf56 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-eggplant_2.png
+  importAddress: Guid(5d02a011efb29324c9c380c59a6c5ae8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-eggplant_2.png using Guid(5d02a011efb29324c9c380c59a6c5ae8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'aae3bc10a6a700987a9ffa71f853ae99') in 0.0162463 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=707d0f9b9d9e62d74cd2d9bba0378b52 DependenciesID=a7fdfd5b1e964b7b04246280f52d6740 StaticDependenciesID=37fbf4576e82ec1b7c8e56252965250d 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/axe-copper_0.png
+  importAddress: Guid(f302af01ff66a6c4aa620b051caa61b7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/axe-copper_0.png using Guid(f302af01ff66a6c4aa620b051caa61b7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '0c9b1d901310bfa0849a5cb12e8d62cc') in 0.0122514 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1cdf4fb1771bd4215dab5e67de2c304a DependenciesID=368e70de18c6dde39f456b892509f0a7 StaticDependenciesID=418b24984b0247c19844cac2dd894ec0 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-bok choy.png
+  importAddress: Guid(d037ddba2d2d1284fb9777b7f5e423d5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-bok choy.png using Guid(d037ddba2d2d1284fb9777b7f5e423d5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '905f72018aff42649d5ffc494cbce768') in 0.0138099 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9299f45b24583472e95e71acccb94bd0 DependenciesID=414e96f102b5c7fcca72a534bb8b7c0f StaticDependenciesID=c787d5724121076b1f7bb50bab1acd52 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-eggplant_3.png
+  importAddress: Guid(11e9c652b72c22247b5ba7eb0a1de6f7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-eggplant_3.png using Guid(11e9c652b72c22247b5ba7eb0a1de6f7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ed0c27b511b3276013688d1b12fff00c') in 0.0140249 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ce0973a4d204249b9e1af412fc8dad95 DependenciesID=05d1981162a7a4f7291dc3dcc1a09152 StaticDependenciesID=f0d7c3ac9ce68bae64058e2eac892c7e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-blueberry.png
+  importAddress: Guid(d0eee150c4909db4ba66549a27eb5d00) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-blueberry.png using Guid(d0eee150c4909db4ba66549a27eb5d00) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a6e6b7029a504433f5d67c2125aa51ab') in 0.0131387 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5530eb86ce8426106f4820a5ea0f1777 DependenciesID=b00b8ed33ca632b9f42cac8521fc61e4 StaticDependenciesID=62446f4597488b6a84ae8bb43336a723 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-pumpkin_6.png
+  importAddress: Guid(39c97d146101bf843a6d466a7f7a83a9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-pumpkin_6.png using Guid(39c97d146101bf843a6d466a7f7a83a9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '74719d268e73cafdb742ec5ff73ca9b7') in 0.0156139 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cdadc04013b9473c7fa4fffb7520be9b DependenciesID=122b69d36708450d646c6d9ab7032790 StaticDependenciesID=5e673e1b17d23092412e9a67a6e34a4d 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-corn_1.png
+  importAddress: Guid(d731f18ccc3ccc44f8c49577734e72d3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-corn_1.png using Guid(d731f18ccc3ccc44f8c49577734e72d3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '31dfd63fa7f5d222c1a1b383365a4bf2') in 0.0143723 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7cc47bb8706896449a33fc105ee2ffcd DependenciesID=790cf782d069e63a90ef1bda248af5cb StaticDependenciesID=49d5a4bfbf8be5225c893454aaf3910f 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed boxes-green bean.png
+  importAddress: Guid(4f23176740da1684a885e0b13d50a2e6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed boxes-green bean.png using Guid(4f23176740da1684a885e0b13d50a2e6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'e570c2ef0437b69f355017e15fbb56ca') in 0.0149888 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d8a1876cdda89f04e9bccc814ef7e109 DependenciesID=2d21cdb88e22f6a733c77b0ab91d5a13 StaticDependenciesID=89f84f24170295ec60697b003d42f6da 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed boxes-coffee bean.png
+  importAddress: Guid(d9cca1401f2e54049a5534c47fc79c19) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed boxes-coffee bean.png using Guid(d9cca1401f2e54049a5534c47fc79c19) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '9712caef07d9336748784fb80e8f89d0') in 0.0130677 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2552f60fcd4158424968bd89aef130d6 DependenciesID=ee64d380a3b5b78eead3ef1efa593523 StaticDependenciesID=6aec03855096145cdf4dca6d4d48c8d5 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-coffee bean_1.png
+  importAddress: Guid(43e45ae6373c55746843ddd633978b94) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-coffee bean_1.png using Guid(43e45ae6373c55746843ddd633978b94) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '1fc04a3842d3631e36ce1ebbf9734487') in 0.0152226 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7a53190e10f335063d356c9ddf8d7819 DependenciesID=36d1a16f9a576f0c8b11d863c01dd18a StaticDependenciesID=8cae0a44ae7fe3bcdf9805cdb9d41006 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-radish_4.png
+  importAddress: Guid(f8540ed1fa8a59c44aebd4cbef2a081d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-radish_4.png using Guid(f8540ed1fa8a59c44aebd4cbef2a081d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '6cf90682f3086b819b3e35ed2006b258') in 0.0149785 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=accf4a4ebb50e59111c6121ce901878c DependenciesID=7e367a6b32d2bd11bafbea0e1b8fd155 StaticDependenciesID=16d053bcca0b3f246b58d7bb23e42f96 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/shovel-diamond_1.png
+  importAddress: Guid(6401ced807de89648b0ae3b8fd39b990) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/shovel-diamond_1.png using Guid(6401ced807de89648b0ae3b8fd39b990) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '2cc9dbf97f7e39c933892d24c046f8f7') in 0.014645 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5eabcd80ae526bf56ec3b82e917b3430 DependenciesID=f41ddfd20920e3fa896e3138d77682f5 StaticDependenciesID=66efbc85d59f1f7d70224d59f91e0e8a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-pumpkin_7.png
+  importAddress: Guid(1dcbb80a0a6951b47b9c2eba4fb62002) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-pumpkin_7.png using Guid(1dcbb80a0a6951b47b9c2eba4fb62002) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '8fc04020b0fafde95bd721d0db4fd98e') in 0.0170106 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6bd937d7a5a09b65cc6d1b423000f788 DependenciesID=4c28270e189f437eb02c4b13d04ede5f StaticDependenciesID=e28b21faffd0311fea9c802b2efa612b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/shovel-diamond-reinforced_1.png
+  importAddress: Guid(5e8ab28e44c8d1a4794eaa221d110542) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/shovel-diamond-reinforced_1.png using Guid(5e8ab28e44c8d1a4794eaa221d110542) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '2141151b145d19ba5934b0a901e1a9d9') in 0.015403 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=097c89009cc3914a43acf1420dd879f0 DependenciesID=4e07641fcd04b41d58b1a26c7885e27d StaticDependenciesID=4776d106e0275b52cbfcbdcd5dd45d3a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-blueberry_2.png
+  importAddress: Guid(0e4b990487c99fe4082634d2ad37d1ca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-blueberry_2.png using Guid(0e4b990487c99fe4082634d2ad37d1ca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '38769df85455b6f692c69049de94f403') in 0.0130781 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=89dbb3b178f50b0a0b1287d1a63c68b8 DependenciesID=8aff51da5e8046fae51c44f33b7ac0fc StaticDependenciesID=0b124d811f6527cb201e76df293eafed 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-artichoke_2.png
+  importAddress: Guid(b212d8e26edfd224f8cf29fa010d076b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-artichoke_2.png using Guid(b212d8e26edfd224f8cf29fa010d076b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '2e0eb7a0e0d09dc95ca3c75fb47d694b') in 0.0139983 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a06418ef154930643b2d19286c2c6657 DependenciesID=fbb4ac0a3b3928872b22dcc3f65b733e StaticDependenciesID=0af8eb7dfa0c75b44a724782b793421b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-melon_6.png
+  importAddress: Guid(830b4bbc9458bdc4aa4fb54a972c040c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-melon_6.png using Guid(830b4bbc9458bdc4aa4fb54a972c040c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '8196cb20dc4c85f2bf3e2f947edc4339') in 0.0132119 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5bdeaa77cac7acbae66a51c5285c6896 DependenciesID=fa9575a34b7318e4989aa64d36be7f75 StaticDependenciesID=ae019792c93718cde0aee2cecce75903 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-wheat-taller.png
+  importAddress: Guid(a82b6fd528a8c1945a530b89a4447f33) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-wheat-taller.png using Guid(a82b6fd528a8c1945a530b89a4447f33) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b9a13a2ddd94331e14fbcffa319a57de') in 0.0140694 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f040d4d14aa6936a493d6a1c4bb11135 DependenciesID=57964cc96d0a3f8db3c5b2f6e9343517 StaticDependenciesID=d9a6b8b15983549929e43ebfd396ce9f 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-bok chok_6.png
+  importAddress: Guid(2942a513146fa4e4fb8a0a87b93d7fe0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-bok chok_6.png using Guid(2942a513146fa4e4fb8a0a87b93d7fe0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '0fea42957dc947dbf5fdda957b692dd5') in 0.0139572 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3acee4a2ee3ebf03814ec6b9fab2b093 DependenciesID=754acc0e5237ba492ceb513b602d7df9 StaticDependenciesID=af208e57869512fff42ac6cbb5ac008e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-radish_0.png
+  importAddress: Guid(333882907a15ae34388b673ab920b86a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-radish_0.png using Guid(333882907a15ae34388b673ab920b86a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b3121b3489b13b3aaec674b2c4c1e8f7') in 0.0129319 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a1842063806f61fcd8fd8fce9fdd2e99 DependenciesID=1a2176415e09f8397c3b021c38ae38ba StaticDependenciesID=b04ea9075dd13486f59393fa222d60a8 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/tools as props_2.png
+  importAddress: Guid(070da1bce5fac3f488cbebc471d775f3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/tools as props_2.png using Guid(070da1bce5fac3f488cbebc471d775f3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '4ec06aeaa821f32332be84d054fdd5c5') in 0.0138362 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=1652164393f9a7ab95e9990eeba778b2 DependenciesID=df9ef502b198fe2c944e7dccf23ca26e StaticDependenciesID=eb54856423a47a3ce550b1f7cba43448 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed boxes-parsnip.png
+  importAddress: Guid(cef6413381a86a444865b38417f5014f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed boxes-parsnip.png using Guid(cef6413381a86a444865b38417f5014f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '407deebcb5b16b723dbb7c6e7e9099fd') in 0.0134529 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4e94e3cd690eaa0a808b1f8240a0b281 DependenciesID=152d02fba5dc2f0493c031c761cbd331 StaticDependenciesID=5eab284329c81f28f7c2f4cc379a61f8 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-broccoli_5.png
+  importAddress: Guid(e3a26764d95ebe84cb04563559b715c4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-broccoli_5.png using Guid(e3a26764d95ebe84cb04563559b715c4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd48c2e64f71e3539426de210c7d1a423') in 0.0135928 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d1a67212a259f63b01a2584921b2472a DependenciesID=f8da424a8e6f1dc2566e1cb88b8a830a StaticDependenciesID=f5247a3729fe01fcb7b98b66f7ead2bb 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-potato.png
+  importAddress: Guid(93b589f2792db414f89804984de2cc4b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-potato.png using Guid(93b589f2792db414f89804984de2cc4b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '70e7c3dccf24229c36d4de8c3dc0fb25') in 0.0147424 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b1e2d982591f6d33c4eef48220b2d5e4 DependenciesID=8b48039f81a2c64a0145fcddb313e3c4 StaticDependenciesID=c3e86c6428768e700e5ad2149c7e6c6a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-grape_2.png
+  importAddress: Guid(164f72d9c6835e648857acbf459edea6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-grape_2.png using Guid(164f72d9c6835e648857acbf459edea6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'bb01c12105d31f23311022891641e9fa') in 0.0127789 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d78a4e79bf2745653941b677d9c01f24 DependenciesID=ba35a16dc83bb0ee407510af0320b76f StaticDependenciesID=d6bace8b8a0a11b5a3c6a76320d79e51 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-carrot_7.png
+  importAddress: Guid(ea19370e1a502f446aeff4d616ac74af) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-carrot_7.png using Guid(ea19370e1a502f446aeff4d616ac74af) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '2403f08b26dfdd0069e8ecfdaa08a491') in 0.0191126 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=57e93472d8412875c93f9fa43471ca4e DependenciesID=029b5cc77e3fd9bb168c0698139deddf StaticDependenciesID=923125609b05460c32f6d6e07921d10c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-hot pepper_4.png
+  importAddress: Guid(ab1e5c63d1fe57049b304dfed9b7a573) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-hot pepper_4.png using Guid(ab1e5c63d1fe57049b304dfed9b7a573) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '4965e010a4f5c8bc650672177408893c') in 0.0125294 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4330f37c0eb9072ce6f350842f7718a5 DependenciesID=daec453be40750323e4cd2effcb4502b StaticDependenciesID=91adfd739cf9b44afefe997f8ae64da2 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-potato_7.png
+  importAddress: Guid(190598a317e2d8743826b9f869052008) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-potato_7.png using Guid(190598a317e2d8743826b9f869052008) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '97f5c25d7890ec554fccffe84ff068d0') in 0.0117502 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ae417604e1c913fb64d9150e37acffa4 DependenciesID=7af648749947b92636f42c3a8a653c22 StaticDependenciesID=684f1b774d7b38a78ced3896e2c197c5 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-pumpkin_0.png
+  importAddress: Guid(00e74df979b264e4aaf9874c6cea2943) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-pumpkin_0.png using Guid(00e74df979b264e4aaf9874c6cea2943) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c9311ed644b72b7873f9ecb4ab3a87a4') in 0.0178253 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5de14dc60abbede8fa9dfd1ae0d0e322 DependenciesID=3100991eee36af5a6477bfb34c01d478 StaticDependenciesID=bdf70ac5508222117fda9f3049a9f567 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 4
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/axe-starter_0.png
+  importAddress: Guid(a67f2ff57c3797a4cbf02360c21d8a6c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/axe-starter_0.png using Guid(a67f2ff57c3797a4cbf02360c21d8a6c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '3c84a058a3c00e8ceb7912af4a325800') in 0.0147841 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d6d1a2d4089c50e9037da0673a9bd881 DependenciesID=ac9b4327580b0a9c80f6b7942d8f0400 StaticDependenciesID=ccbd21055ff2658d63773be6b88b7f29 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed boxes-carrot.png
+  importAddress: Guid(ddad8a4c8ee8f7d4bb1beb43d504156b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed boxes-carrot.png using Guid(ddad8a4c8ee8f7d4bb1beb43d504156b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c5b401bccc9923c3c1f4171e4248c8f1') in 0.0135297 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=90b1633719a86221a25564dfee84a6d2 DependenciesID=23e2a25c8e6bdc30e6ea361fcaca17a1 StaticDependenciesID=1e1447e330a0d03f66eef5a11d847b6e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-steel_2.png
+  importAddress: Guid(7253fb5c136d7904bb9ce8201bb8099a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-steel_2.png using Guid(7253fb5c136d7904bb9ce8201bb8099a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '5f4aca5507b6ab1728172737360dde73') in 0.0134915 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f9e60d35203ac24b66a3fd89cfa184d5 DependenciesID=f0e8dd26ca0fc2b582b908617269ec85 StaticDependenciesID=5c15f267f2e0c1e22eb5c345fcde118b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-melon_7.png
+  importAddress: Guid(a03a3b902c5eda94da0ed40f422c93d2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-melon_7.png using Guid(a03a3b902c5eda94da0ed40f422c93d2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '7901415646bb585b33970d491b0b8952') in 0.0138796 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=045b4c3c58e6f08bc78a1e3adf0b5285 DependenciesID=02e07c1b2a3c0749d9040214eb251533 StaticDependenciesID=286df51df9497a57da8419c572476517 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/axe-copper_2.png
+  importAddress: Guid(1230aab072c1f194bb40730169c9d9d0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/axe-copper_2.png using Guid(1230aab072c1f194bb40730169c9d9d0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '70970c9770ac87acd838400106b7df1a') in 0.0140193 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=447685a94f17ba3a854d5eae201850e6 DependenciesID=8946a1deed578b4a036a98e2c92b0d7f StaticDependenciesID=aa708fdb9aeeb4f83bef484cfd4d255a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-steel_3.png
+  importAddress: Guid(22c2f6faa851ee645b8bc9c5644e2374) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-steel_3.png using Guid(22c2f6faa851ee645b8bc9c5644e2374) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b9dea2fbd5f3156a8849125d05cbf83f') in 0.0141647 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4ce2d09f31811fca158826a4488d8f04 DependenciesID=d8dfd101c12caec8400628624c28e6e9 StaticDependenciesID=1a0bcf7f599941c6268fdbb09624ed8d 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed boxes-radish.png
+  importAddress: Guid(15401642c7a9d384ca4b770f653a342a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed boxes-radish.png using Guid(15401642c7a9d384ca4b770f653a342a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '0fa48fa42902e2a588c6c196c77de68e') in 0.0140111 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=eff36c243391bacfefd2a519e3a2ce0f DependenciesID=44e8417797e2ec506580e119b5737a6d StaticDependenciesID=e649926a0fb968ffe388f1569009b4e1 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/axe-diamond-reinforced_0.png
+  importAddress: Guid(859b47abc802e43429e21e4b4408aaa8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/axe-diamond-reinforced_0.png using Guid(859b47abc802e43429e21e4b4408aaa8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '7eeb0099d13555783529f4465fc33336') in 0.0142372 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f6e70b57c4ab169d758c4d5aa8af02b5 DependenciesID=19d838355ac24775e80fa28228bd7e3f StaticDependenciesID=c5a5892528be5b65dc7cc581ef0a66dd 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/shovel-starter_1.png
+  importAddress: Guid(f2c4219ae452a3f46a1f36d667a5c395) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/shovel-starter_1.png using Guid(f2c4219ae452a3f46a1f36d667a5c395) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c3a9f0fb37e82a5bbc75fa12b9a60f4b') in 0.0135703 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8461b54b33fbe445d746a9630c7e54be DependenciesID=8f464b1974126e3091bb816575c39ae5 StaticDependenciesID=3fc7c83ffba2f97bfb8bafe80c354d11 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-pumpkin_4.png
+  importAddress: Guid(484ad0585e5683840a7a51e2ace45196) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-pumpkin_4.png using Guid(484ad0585e5683840a7a51e2ace45196) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '952c93b72ebae956a2ddf7e78d1013fb') in 0.0148927 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b7480c48a3f1b8427fa95ee3167940cb DependenciesID=9f1e2bb328ffda9d93b92e024c9baf79 StaticDependenciesID=686efdd46d7783dc5ab44cf6c935f93b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-radish_5.png
+  importAddress: Guid(60bcf47469c969e4eadf1856bfa351eb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-radish_5.png using Guid(60bcf47469c969e4eadf1856bfa351eb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '7a0e3cb4f8fc8899cee91b5105d8fbf0') in 0.0140226 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=bbc0e43801591a087e2c17d9ca9711f4 DependenciesID=564c834132c8adb82ccaea5067837770 StaticDependenciesID=7a649b44813f1e5c6a2e4872360dfbfc 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-green bean_6.png
+  importAddress: Guid(86dafce1e9153a54eb743b4d4488b2cb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-green bean_6.png using Guid(86dafce1e9153a54eb743b4d4488b2cb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '68f62a49217c18c5c2f6dfa72e76ffc3') in 0.0126846 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=2587f28952711242282656d4f8165eb8 DependenciesID=983b692eb28cdf9cacff2eb2719c65eb StaticDependenciesID=a2aa00daed40dab42f65868206b6f3ed 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-diamond-reinforced_0.png
+  importAddress: Guid(a09b58fe2743fc148823151d7a4145be) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-diamond-reinforced_0.png using Guid(a09b58fe2743fc148823151d7a4145be) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '99865b28f8f26ff1da07b4b3037a10a4') in 0.0135189 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5b82f0c93254bc1ff629daaf32656a4c DependenciesID=50dc9cae00adb9159a54dd2d8d6270ad StaticDependenciesID=f7e0cfd3dcf8c2d31b92fe3a0d6c71a7 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-copper_1.png
+  importAddress: Guid(66647db0ca2f2f64ea86245f13eda657) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-copper_1.png using Guid(66647db0ca2f2f64ea86245f13eda657) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '9296ab9fd638afdb5646d53ac9870548') in 0.0144225 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=911da94d76c369b464af9ca3dc8f85c6 DependenciesID=7de630e2cfbb8c11e4f8c9326c70f817 StaticDependenciesID=27de9c23c5ab17231107ba2c61a0c5c8 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/hoes-starter_0.png
+  importAddress: Guid(1d902675127436b418afb27a410b1733) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/hoes-starter_0.png using Guid(1d902675127436b418afb27a410b1733) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '82bbc97717f4164efc54d2789192608d') in 0.015038 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9ff691c1df3a3d78a211d8b2fe623df1 DependenciesID=619b54fbd5a701cc01696e7d790757b4 StaticDependenciesID=ba6a88727271501c3c9605f26ff5f2c6 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-eggplant_4.png
+  importAddress: Guid(fe061f8ce0393b843a9d6a98f65b030d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-eggplant_4.png using Guid(fe061f8ce0393b843a9d6a98f65b030d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '18ddd3b8826b730b331bb33d285a4041') in 0.0136298 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c4a20dce3bdf4da225ed3dabace0a861 DependenciesID=d73728445bbcee250dad7aa5d51c1186 StaticDependenciesID=2e1cbe5c343e0ade53367ac189ec582a 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-artichoke_3.png
+  importAddress: Guid(f69b4daa06bfd0345a88e2384a1f2ad4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-artichoke_3.png using Guid(f69b4daa06bfd0345a88e2384a1f2ad4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '0da29ebec769c00aa128fa1722cff74b') in 0.0135048 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=767a312b5b26462199e0fbea6642d7e1 DependenciesID=15c3404e9c8363c19be3de60c63da510 StaticDependenciesID=66918016723bc69eb2561f305175e164 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-pumpkin_5.png
+  importAddress: Guid(403a60b000d2cd342be593a231e8dd32) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-pumpkin_5.png using Guid(403a60b000d2cd342be593a231e8dd32) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '954f5e2f17854e2c25c7f1f00bb501d6') in 0.0135379 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9e5e93958e991063c18d779e153acfc9 DependenciesID=c89689617c26a76c31b0aee34c883e29 StaticDependenciesID=00b34782e402f68a6c4a6beebfd7197e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-parsnip_0.png
+  importAddress: Guid(04cd6dc06cabb474884f78ba01b413a6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-parsnip_0.png using Guid(04cd6dc06cabb474884f78ba01b413a6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '33d25629c8fb321e315ad3070d29e1f1') in 0.0146413 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f39af1796e4627fb0ab71c5845092d81 DependenciesID=bf667baff5fdd951b8f631573fd42eb2 StaticDependenciesID=c06203fc2de6708629980990d15ab438 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-green bean_1.png
+  importAddress: Guid(6ab77445d32b8bd44b5d01fe23c04003) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-green bean_1.png using Guid(6ab77445d32b8bd44b5d01fe23c04003) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '5dcb04cfefaef40f41adafafe57a5465') in 0.0125446 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3e416669ac45f7e83d8762396c3dd218 DependenciesID=5466175e127e5f9ec3e7ac3ade48b816 StaticDependenciesID=72a8cfb6874aa41fd83d177d50265e8e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/axe-diamond-reinforced_1.png
+  importAddress: Guid(97590562899410a449204c44f5d25b3e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/axe-diamond-reinforced_1.png using Guid(97590562899410a449204c44f5d25b3e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '9fb54d4c23f7bb0649c42d2579f58b9e') in 0.013138 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3e6f9312ca4560465f06b486310a4664 DependenciesID=a03a4591fdefa71868a6991f6ab6f235 StaticDependenciesID=287e798124366f54160bfefce682b017 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-potato_0.png
+  importAddress: Guid(c84dee77a38c5e949b1af2adc9db69f7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-potato_0.png using Guid(c84dee77a38c5e949b1af2adc9db69f7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '48b2f67770c72a6d922ea52a889258c9') in 0.013313 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=04590afed394385164caa55facc98af9 DependenciesID=9ff5a5c6dc854a0fb91d1d6fb3d88a86 StaticDependenciesID=7eed608a6997bf06a81abe5f75bcbaa0 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/pickaxe-steel_0.png
+  importAddress: Guid(a24282b940607014c9cb26d2887889a0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/pickaxe-steel_0.png using Guid(a24282b940607014c9cb26d2887889a0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '4ef52e43eaae6a7934919413d1960caa') in 0.0148913 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b3132d6b69bd089ec04bfdee4758c785 DependenciesID=4790140896071f9131154eab04e10f57 StaticDependenciesID=532fdb10309511171e756e7b5ce51156 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-copper_3.png
+  importAddress: Guid(39c452db3a219a0449a523fa04236e9f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-copper_3.png using Guid(39c452db3a219a0449a523fa04236e9f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '815318ffc4605967dfde7ae22c860bc6') in 0.0139449 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6effb413b49c6b16bc28970b208c17f6 DependenciesID=cbd99a16f4e16fed054204502f1f44e3 StaticDependenciesID=0aab4edc39c57dbcff18349f95245f5f 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-cauliflower_5.png
+  importAddress: Guid(66fb0ef0549c5934cbaae6d84630a1cb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-cauliflower_5.png using Guid(66fb0ef0549c5934cbaae6d84630a1cb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'da69a6c33f72f301a143a74965931071') in 0.0135164 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=41235f1e242c540facc329f8f10ff1c1 DependenciesID=04b0470876f5bdf75b79a223618c8697 StaticDependenciesID=f34a06db54f2d3213ab4a3374ad18120 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-tomato_5.png
+  importAddress: Guid(9a7b4cae8f540bd4d8cd3def10ba7257) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-tomato_5.png using Guid(9a7b4cae8f540bd4d8cd3def10ba7257) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '2a7b02481ba6c49af3ddfa0632e45ea5') in 0.0138437 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c9ae350869db2c1d4c3f5083422a5b88 DependenciesID=783e12cac65b8919e85ccb5e8af0bbb7 StaticDependenciesID=158fa4b31474d0ecbbc0d105f7499af7 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-eggplant_0.png
+  importAddress: Guid(ca19b25b7bf45914b995711ffbc6a9f2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-eggplant_0.png using Guid(ca19b25b7bf45914b995711ffbc6a9f2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ab0603d1813aa3f55b4d45c13d7f0ad4') in 0.0135906 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7961ce77cdb4c4fa117d091e34032bcf DependenciesID=8ac44b0217a7f37d190e24ef37239f4f StaticDependenciesID=337509485fadaff2c1de5c4047e16c11 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-pumpkin.png
+  importAddress: Guid(2dade678a979f1c44b2c043675aab0e7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-pumpkin.png using Guid(2dade678a979f1c44b2c043675aab0e7) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f0cab9e1a52e9e9aa54cda90e222a4f6') in 0.0158809 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b6aa365e394f8783fdbe263dc63bb5db DependenciesID=590450f1ef3c4ebcb91af2b4ec22d7a6 StaticDependenciesID=3fb056fbf355fad0a5ab60d3595ba9f3 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-broccoli_2.png
+  importAddress: Guid(342b4fcde51b6014ebf224c382e3ed52) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-broccoli_2.png using Guid(342b4fcde51b6014ebf224c382e3ed52) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '08f88bcc6b8a76e7f9d1d49edbf2ff80') in 0.0147341 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ab3a601f48cc18522f24c5184835581c DependenciesID=07d1100f3090669e3d9e95bf7102bd65 StaticDependenciesID=65b7791af57298992a0dbaff2279eed1 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-red cabagge_1.png
+  importAddress: Guid(fa07f6b7f5481bf489c5417e28e162c5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-red cabagge_1.png using Guid(fa07f6b7f5481bf489c5417e28e162c5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '85b4ac2871e505478636b87f3991ac68') in 0.0136456 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7eadc2d2e06c62b4fd9f589829b92a84 DependenciesID=b45b93cdcd7eeb6d2fb7849d4c1a9f13 StaticDependenciesID=73f0744a1910c922a76a415c1a3b3bf0 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-red cabagge_2.png
+  importAddress: Guid(1359de3ec1e40714e8fffdb6b293d6dc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-red cabagge_2.png using Guid(1359de3ec1e40714e8fffdb6b293d6dc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '22a29ab064176ef460f0b2ea404e4118') in 0.0135274 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4ffaa552cb8f9eb8487975d2c220e9a9 DependenciesID=af18d00ca7feb3507c6f99881f24e490 StaticDependenciesID=e01ccf015f97190e0d30bb77bb13607d 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/shovel-copper_0.png
+  importAddress: Guid(6e2a9e65ff1dd5d4eb088f67422067db) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/shovel-copper_0.png using Guid(6e2a9e65ff1dd5d4eb088f67422067db) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '4167b23660c52a83e6ebfdafffa74795') in 0.0135721 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=22f70e396367628b35980389bcca0d1b DependenciesID=9ad7bd0fe73661d3e1266a680bdfee4f StaticDependenciesID=e2ee82b86a68fa1ccd60f14d61195cea 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-starter_3.png
+  importAddress: Guid(8bbae1f30a381e44086d790181f7633e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-starter_3.png using Guid(8bbae1f30a381e44086d790181f7633e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '666f75d75ef8705ceffd8e00ca9879a7') in 0.0135535 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=3f9738b022d13ae911a3a7cf23305df8 DependenciesID=73b496909946bd8c9bac00662fadf7b0 StaticDependenciesID=48fd71e3ad289fc0126554aa367ff50d 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-steel_0.png
+  importAddress: Guid(c7bd9acf57627e640b37369557dabb98) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/scythe-steel_0.png using Guid(c7bd9acf57627e640b37369557dabb98) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '4f7112e2059fd3ec96b669d4fd6f36c8') in 0.0147594 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=334619ce69fc735bbfda6e5dd8a727e1 DependenciesID=b14eac48272399abf91b09004963f997 StaticDependenciesID=4f15e142eeaff857c92438984cf820f7 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-red cabagge_0.png
+  importAddress: Guid(901a874a4139ffc4ea3bbff1291f5683) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-red cabagge_0.png using Guid(901a874a4139ffc4ea3bbff1291f5683) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'e3291492887e14c43b1e369f560021f7') in 0.0132857 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4a24712cd379800436126e38bcc4eaa4 DependenciesID=076018d7f19fb184afdb4714a074a52d StaticDependenciesID=e1b90c8de06bbf67c8f3599ff3cf11a9 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-broccoli_4.png
+  importAddress: Guid(d9b1eea5b3c6edb44be5a2dda2c718a2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-broccoli_4.png using Guid(d9b1eea5b3c6edb44be5a2dda2c718a2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd7b9a7b895e68402ea666eb0669bdb0d') in 0.0137886 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=5135fffc23502cf14614838dcc8a60a8 DependenciesID=9b2eec2c2d6b17030f694dc755ef886b StaticDependenciesID=449e8f0ca32b2a69624e9b22cdb5eb19 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-tomato_6.png
+  importAddress: Guid(0454b3559970a7f429d6c079f761cca1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-tomato_6.png using Guid(0454b3559970a7f429d6c079f761cca1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '9850ada715d6e4a7a5c401bed9839323') in 0.0130203 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=83e6d8c2b23d9f3b21046372607d8761 DependenciesID=c2c1b7e70c930b5addfb76fbca6a5bd5 StaticDependenciesID=cc84e7322cad65cb8bbc7a1cf3e559f9 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/axe-starter_2.png
+  importAddress: Guid(ef7da8e440c29764bba00abceda31fb6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/axe-starter_2.png using Guid(ef7da8e440c29764bba00abceda31fb6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '22731d922ad961a0891ecb7f5336b638') in 0.0133086 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=91ecda360ee93b67d84e0f112ceed558 DependenciesID=3e01eebc0346e9d04ffef685b1d8007a StaticDependenciesID=72887f81dce940ab2e86f8c2a2591569 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/manure_0.png
+  importAddress: Guid(7269e164da15fad479ad60a27d54c31a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/manure_0.png using Guid(7269e164da15fad479ad60a27d54c31a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd8e4f6beccc28123ce8ad48fcea552c0') in 0.0130289 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=37ab4a2d8065ab8d1b13810e0691700f DependenciesID=8513383abfc497834059243ae88101ad StaticDependenciesID=f181a34b9af3d24ae1d93a0359a57cc8 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-melon_1.png
+  importAddress: Guid(581deaa5832270941a66b57da4c20087) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-melon_1.png using Guid(581deaa5832270941a66b57da4c20087) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '66c4eac4fdbff62fb3926d6834181d3f') in 0.0146539 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=4e6c183fa8b4891d57b662829b0e1e8b DependenciesID=42688374fa34506ffbe5b19395367ee4 StaticDependenciesID=f3ee5d804d38502a2acf3b1e3625c163 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/axe-steel_2.png
+  importAddress: Guid(624a9bbba28347f4bbd17d748567df64) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/axe-steel_2.png using Guid(624a9bbba28347f4bbd17d748567df64) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '612f581fee59092608c1b3941d252734') in 0.0126588 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=39d137ca55d5052a106d8643b2cdf3a8 DependenciesID=35833b16cc4b1a074f06f15dfeeb4027 StaticDependenciesID=a9d3981539d15c362a7a8794b9804159 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/pickaxe-starter_1.png
+  importAddress: Guid(ba853a1a22def42459aef882f1cedb6b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/pickaxe-starter_1.png using Guid(ba853a1a22def42459aef882f1cedb6b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f5f02ead128b67fb1534db78893edf20') in 0.0120074 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=835d4ccd6b9765a5bf7ccde9e0e12e22 DependenciesID=8ae0d269ed01686a9a2a6221a1ecd934 StaticDependenciesID=2182e67a6562bdc7ff81db19d2cad03f 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-parsnip.png
+  importAddress: Guid(3868b8c72b19ff444a28c4fb918d8fc3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Props/Static props/sheet4-sprites/crops-seed bags-parsnip.png using Guid(3868b8c72b19ff444a28c4fb918d8fc3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '29a1f00440f4c03869ad67b3840c5cb8') in 0.0128244 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c44249a69c9fb4788cf3de7bae4afbf6 DependenciesID=9a8aa730fb331a85d1327272b1b9bf2e StaticDependenciesID=67d0af1d3835a38527f0d797d8d8e157 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
