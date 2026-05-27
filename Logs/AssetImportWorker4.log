@@ -1,11 +1,11 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
 Built from '6000.4/staging' branch; Version is '6000.4.6f1 (0b051c2e5d54) revision 722204'; Using compiler version '194234433'; Build Type 'Release'
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C" at "2026-05-26T23:24:51.8292005Z"
 OS: 'Windows 11  (10.0.26200) Core' Language: 'en' Physical Memory: 16328 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C" at "2026-05-27T06:14:44.693283Z"
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-05-26T23:24:51Z
+Date: 2026-05-27T06:14:44Z
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.4.6f1\Editor\Unity.exe
@@ -19,7 +19,7 @@ C:/Users/viet_/projects/IndieGame
 -logFile
 Logs/AssetImportWorker4.log
 -srvPort
-59382
+57390
 -licensingIpc
 LicenseClient-YJ9lqjR03NSlFhmCLJW0C
 -force-d3d12
@@ -68,12 +68,12 @@ C:/Users/viet_/projects/IndieGame
     "memorysetup-job-temp-allocator-block-size=2097152"
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
-Player connection [44828]  Target information:
+Player connection [6632]  Target information:
 
-Player connection [44828]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 4038786079 [EditorId] 4038786079 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [6632]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 2072544805 [EditorId] 2072544805 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [44828] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [44828] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [6632] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [6632] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -85,7 +85,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 27.34 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 219.96 ms, found 5 plugins.
 Initialize engine version: 6000.4.6f1 (0b051c2e5d54)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/viet_/projects/IndieGame/Assets
@@ -99,33 +99,33 @@ Direct3D:
     VRAM:            7896 MB
     App VRAM Budget: 7128 MB
     Driver:          32.0.15.9186
-Initialize mono
-Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Managed'
-Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56412
-CodeReloadManager initialized
 [Licensing::Client] Error: HandshakeResponse reported an error:
 	ResponseCode: 505
 	ResponseStatus: Unsupported protocol version '1.18.1'.
 [Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C"
 [Licensing::IpcConnector] LicenseClient-YJ9lqjR03NSlFhmCLJW0C channel disconnected successfully.
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6" at "2026-05-26T23:24:53.4310851Z"
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 25668, path: "C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6" at "2026-05-27T06:14:46.2853631Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 35952, path: "C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.18.1+9fbee8e
-  Session Id:              9aafc7ef57ed47279f73374c1a6de0de
-  Correlation Id:          0afbf3e2e173868703ce129b58f29ac1
-  External correlation Id: 7845170259029453994
+  Session Id:              f7475f225b0e43fca4d887f3d4890091
+  Correlation Id:          3124c850e059685b43ab6e04f9ba4d13
+  External correlation Id: 3835170240205845025
   Machine Id:              VXbwn5JDHcloYK9lppscF5+D9fo=
 [Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-viet_-6000.4.6" (connect: 0.00s, validation: 0.00s, handshake: 0.01s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6-notifications" at "2026-05-26T23:24:53.4412908Z"
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6-notifications" at "2026-05-27T06:14:46.3043099Z"
 [Licensing::Module] Licensing Background thread has ended after 1.61s
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56896
+CodeReloadManager initialized
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.009138 seconds.
+Registered in 0.026044 seconds.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
@@ -133,23 +133,23 @@ Package Manager log level set to [2]
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.539 seconds
-Domain Reload Profiling: 1015ms
+- Finished resetting the current domain, in  0.437 seconds
+Domain Reload Profiling: 895ms
 	BeginReloadAssembly (116ms)
-	RebuildCommonClasses (32ms)
+	RebuildCommonClasses (33ms)
 	RebuildNativeTypeToScriptingClass (10ms)
 	initialDomainReloadingComplete (96ms)
-	LoadAllAssembliesAndSetupDomain (221ms)
+	LoadAllAssembliesAndSetupDomain (202ms)
 		LoadAssemblies (112ms)
-		AnalyzeDomain (214ms)
-			TypeCache.Refresh (212ms)
-				TypeCache.ScanAssembly (199ms)
-	FinalizeReload (541ms)
+		AnalyzeDomain (193ms)
+			TypeCache.Refresh (191ms)
+				TypeCache.ScanAssembly (175ms)
+	FinalizeReload (438ms)
 		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (36ms)
-			BeforeProcessingInitializeOnLoad (79ms)
-			ProcessInitializeOnLoadAttributes (117ms)
-			ProcessInitializeOnLoadMethodAttributes (228ms)
+			InitializePlatformSupportModulesInManaged (40ms)
+			BeforeProcessingInitializeOnLoad (80ms)
+			ProcessInitializeOnLoadAttributes (108ms)
+			ProcessInitializeOnLoadMethodAttributes (121ms)
 ========================================================================
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
@@ -198,51 +198,142 @@ Assembly Unity.UnifiedRayTracing.Editor.Tests.dll at Library/ScriptAssemblies/Un
 Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
 Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
 Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
-Refreshing native plugins compatible for Editor in 361.66 ms, found 5 plugins.
 Native extension for WindowsStandalone target not found
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-Refreshing native plugins compatible for Editor in 2.82 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 2.22 ms, found 5 plugins.
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.266 seconds
-Domain Reload Profiling: 2516ms
-	BeginReloadAssembly (223ms)
-		DisableScriptedObjects (10ms)
-		CreateAndSetChildDomain (41ms)
-	RebuildCommonClasses (33ms)
-	RebuildNativeTypeToScriptingClass (17ms)
-	initialDomainReloadingComplete (211ms)
-	LoadAllAssembliesAndSetupDomain (766ms)
-		LoadAssemblies (561ms)
-		AnalyzeDomain (315ms)
-			TypeCache.Refresh (205ms)
-				TypeCache.ScanAssembly (185ms)
-			BuildScriptInfoCaches (91ms)
-			ResolveRequiredComponents (16ms)
-	FinalizeReload (1266ms)
+- Finished resetting the current domain, in  3.287 seconds
+Domain Reload Profiling: 4542ms
+	BeginReloadAssembly (185ms)
+		DisableScriptedObjects (8ms)
+		CreateAndSetChildDomain (35ms)
+	RebuildCommonClasses (34ms)
+	RebuildNativeTypeToScriptingClass (12ms)
+	initialDomainReloadingComplete (285ms)
+	LoadAllAssembliesAndSetupDomain (740ms)
+		LoadAssemblies (570ms)
+		AnalyzeDomain (260ms)
+			TypeCache.Refresh (180ms)
+				TypeCache.ScanAssembly (161ms)
+			BuildScriptInfoCaches (67ms)
+			ResolveRequiredComponents (11ms)
+	FinalizeReload (3287ms)
 		SetupLoadedEditorAssemblies (0ms)
-			BeforeProcessingInitializeOnLoad (217ms)
-			ProcessInitializeOnLoadAttributes (553ms)
-			ProcessInitializeOnLoadMethodAttributes (208ms)
-			AfterProcessingInitializeOnLoad (9ms)
-		AwakeInstancesAfterBackupRestoration (8ms)
+			BeforeProcessingInitializeOnLoad (140ms)
+			ProcessInitializeOnLoadAttributes (2837ms)
+			ProcessInitializeOnLoadMethodAttributes (137ms)
+			AfterProcessingInitializeOnLoad (6ms)
+		AwakeInstancesAfterBackupRestoration (6ms)
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
-Refreshing native plugins compatible for Editor in 3.42 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 2.58 ms, found 5 plugins.
 Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7408 unused Assets / (5.4 MB). Loaded Objects now: 8249.
-Memory consumption went from 239.1 MB to 233.7 MB.
-Total: 10.749100 ms (FindLiveObjects: 1.403200 ms CreateObjectMapping: 0.461100 ms MarkObjects: 5.965800 ms  DeleteObjects: 2.917600 ms)
+Unloading 7408 unused Assets / (5.6 MB). Loaded Objects now: 8249.
+Memory consumption went from 239.3 MB to 233.7 MB.
+Total: 9.722900 ms (FindLiveObjects: 1.147700 ms CreateObjectMapping: 0.471200 ms MarkObjects: 5.238300 ms  DeleteObjects: 2.863700 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 974163.182981 seconds.
-  path: Assets/Info/StorySkeleton.txt
-  importAddress: Guid(bcec8a82e4ff17245a437154c23cd3d3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Info/StorySkeleton.txt using Guid(bcec8a82e4ff17245a437154c23cd3d3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b115aaabf9502e3d591274eb71a8e4c8') in 0.6307373 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ebffc53f98d355a8c0b3b3152260b460 DependenciesID=f23a019c11ff4cd0dffa6c6bb2e69e6c StaticDependenciesID=937322068c9ff77710b316895a8fa832 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+  Time since last request: 975455.862779 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/ERW_Grasslandv2_CORRECTED.prefab
+  importAddress: Guid(149f43c85fd8ae843bc8f6ce4be6ea2e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/ERW_Grasslandv2_CORRECTED.prefab using Guid(149f43c85fd8ae843bc8f6ce4be6ea2e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c4baa58aca09bbe0f9281c02209c5d36') in 0.4548257 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7fc9a1cc7b3dbd3e062bf0c68bea760e DependenciesID=f355a3ea66a9834e97ab39a25395eb54 StaticDependenciesID=469d225d434ef03546db77a45a4da1ff 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
 
+========================================================================
+Received Import Request.
+  Time since last request: 36.783994 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/ERW_Grasslandv2_CORRECTED.prefab
+  importAddress: Guid(149f43c85fd8ae843bc8f6ce4be6ea2e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/ERW_Grasslandv2_CORRECTED.prefab using Guid(149f43c85fd8ae843bc8f6ce4be6ea2e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'aa370f61305b770069c80adcbbf2a20e') in 0.3516082 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c152aa37c355bde6fcde9e2822a630c1 DependenciesID=e77b40cd2dd4af2bf78f48d5c5d95846 StaticDependenciesID=88ee64cdc7bd98f2b3fbdee81d58db79 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 20.749824 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/ERW_Grasslandv2_CORRECTED.prefab
+  importAddress: Guid(149f43c85fd8ae843bc8f6ce4be6ea2e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/ERW_Grasslandv2_CORRECTED.prefab using Guid(149f43c85fd8ae843bc8f6ce4be6ea2e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '04650b5f8c6b993b2e0b949ae1a89c07') in 0.3549875 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=559f061c5f5322f9693192530ed73db6 DependenciesID=1ff46c5edc7b0bb2a5a36144d529631e StaticDependenciesID=33d968057e9bb36aea23be2eb6d61886 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 22.183474 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/ERW_Grasslandv2_CORRECTED.prefab
+  importAddress: Guid(149f43c85fd8ae843bc8f6ce4be6ea2e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/ERW_Grasslandv2_CORRECTED.prefab using Guid(149f43c85fd8ae843bc8f6ce4be6ea2e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f03c3f6b6ff2e0f8a2b65dd1a63eb3f1') in 0.3589734 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b096bfd0d5e0334494218e5bbba0335c DependenciesID=81e0672b6a4a8cdfc891fe093793365a StaticDependenciesID=3dc73e1403a16363086c445846aaa956 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.676897 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Beach-transition tiles between coast platform and beach-spritesheet -grass1(flat grass)_17.asset
+  importAddress: Guid(2d5759db4e3697a41b1ebdbbecb2762c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Beach-transition tiles between coast platform and beach-spritesheet -grass1(flat grass)_17.asset using Guid(2d5759db4e3697a41b1ebdbbecb2762c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '49c2e62625c250dbd7017c005259ff94') in 0.083538 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=97b00716a50f04c2fec5d4d239a2be1b DependenciesID=f3a4756b4c69d2f2f6f921bc79f6dd8a StaticDependenciesID=91ad1dd19b37f1e91a802a8a2339f6ef 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Beach-transition tiles between coast platform and beach-spritesheet -grass1(flat grass)_8.asset
+  importAddress: Guid(a5a4a595c5f9ef84ab9e662897909dca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Beach-transition tiles between coast platform and beach-spritesheet -grass1(flat grass)_8.asset using Guid(a5a4a595c5f9ef84ab9e662897909dca) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a48d51f3a842e86a1c99f5cf7620f7af') in 0.0117502 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=7ba375ddb2e0cd7b1bf358c083700507 DependenciesID=01345c6fd370b048661a2190f04e1f99 StaticDependenciesID=20a5d0fa0ad3915a982ef03ca684cf3b 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Beach-transition tiles between coast platform and beach-spritesheet -grass1(flat grass)_11.asset
+  importAddress: Guid(c0d2e5ff2bd2e9e42951e17b4a7e4bdd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Beach-transition tiles between coast platform and beach-spritesheet -grass1(flat grass)_11.asset using Guid(c0d2e5ff2bd2e9e42951e17b4a7e4bdd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'd545b3116214e06b6a79854bcebdccdf') in 0.0160189 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=d9df7a934d9487d429453652302e429b DependenciesID=b3053bad346390b2a58b47285b047bb9 StaticDependenciesID=71b9a54dbe58694794e1cbaca0112ab2 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Beach-transition tiles between coast platform and beach-spritesheet -grass1(flat grass)_14.asset
+  importAddress: Guid(a1c9048cc5e5dd947acb3049d9d2e0d3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Beach-transition tiles between coast platform and beach-spritesheet -grass1(flat grass)_14.asset using Guid(a1c9048cc5e5dd947acb3049d9d2e0d3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '25ff4fb74709f3666ad0769fe73ec063') in 0.0161306 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=50e90aaeacdc538753b1e207cc2b233c DependenciesID=4d36f7ea468b6ac9a70f542c23be336e StaticDependenciesID=2702c477bafd5b1d0d18da58258ad3dd 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Beach-transition tiles between coast platform and beach-spritesheet -grass1(flat grass)_3.asset
+  importAddress: Guid(bf187b904d0ebb04b99299786ee50061) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Beach-transition tiles between coast platform and beach-spritesheet -grass1(flat grass)_3.asset using Guid(bf187b904d0ebb04b99299786ee50061) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '3ee9afd8079c910f980905d0ac9cd648') in 0.0139015 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=289d5e097e12c485ff63ef09a89c3be9 DependenciesID=27f084e7ee797e922806b3159e505466 StaticDependenciesID=06d469e61a381bf41f697886356ef0d4 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Beach-transition tiles between coast platform and beach-spritesheet -grass1(flat grass)_7.asset
+  importAddress: Guid(6eb579228cfcc8c46964e9b4995bda16) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Beach-transition tiles between coast platform and beach-spritesheet -grass1(flat grass)_7.asset using Guid(6eb579228cfcc8c46964e9b4995bda16) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '3dcb10746f9aa662f0c81628d73ea283') in 0.0123815 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=e6fe0c71a3832a77e83571f3f5b85693 DependenciesID=bc6307e31f2b7ed23cdbc6e3e3db2b16 StaticDependenciesID=831ab6c86d71351d970d7e853b901c8c 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/ERW_Grasslandv2_CORRECTED.prefab
+  importAddress: Guid(149f43c85fd8ae843bc8f6ce4be6ea2e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/ERW_Grasslandv2_CORRECTED.prefab using Guid(149f43c85fd8ae843bc8f6ce4be6ea2e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '1566ba76a2954ef69ebd6dae6ee10e8d') in 0.5721392 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=18b8c488ec8131afa8ef81fdc39a2a73 DependenciesID=0c9b4afc8f47d881e85aec22989f057b StaticDependenciesID=32b98772269ae54191c45d4a3278ee45 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Beach-transition tiles between coast platform and beach-spritesheet -grass1(flat grass)_1.asset
+  importAddress: Guid(e1914140c2969c84e9eebc38a06e017c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Grassland v2/ERW - Grass Land 2.0 v2.0/Tilesets/Tiles/Beach-transition tiles between coast platform and beach-spritesheet -grass1(flat grass)_1.asset using Guid(e1914140c2969c84e9eebc38a06e017c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '2c71da9d9d99e2dbfb83a7b588b299b3') in 0.014039 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f8f505aae74aa2cd7f8e594d82793216 DependenciesID=9e7d731c29e6a102532c3d10ede46040 StaticDependenciesID=1acb57f5aa0b7e0772126b3eeaf1798e 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 2
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
