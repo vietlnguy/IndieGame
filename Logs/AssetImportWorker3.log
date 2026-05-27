@@ -1,11 +1,11 @@
 [Licensing::Module] Trying to connect to existing licensing client channel...
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C" at "2026-05-25T16:25:54.5719651Z"
 Built from '6000.4/staging' branch; Version is '6000.4.6f1 (0b051c2e5d54) revision 722204'; Using compiler version '194234433'; Build Type 'Release'
 OS: 'Windows 11  (10.0.26200) Core' Language: 'en' Physical Memory: 16328 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C" at "2026-05-26T23:15:52.6367769Z"
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
 System  architecture: x64
 Process architecture: x64
-Date: 2026-05-25T16:25:54Z
+Date: 2026-05-26T23:15:52Z
 
 COMMAND LINE ARGUMENTS:
 C:\Program Files\Unity\Hub\Editor\6000.4.6f1\Editor\Unity.exe
@@ -13,13 +13,13 @@ C:\Program Files\Unity\Hub\Editor\6000.4.6f1\Editor\Unity.exe
 -batchMode
 -noUpm
 -name
-AssetImportWorker2
+AssetImportWorker3
 -projectPath
 C:/Users/viet_/projects/IndieGame
 -logFile
-Logs/AssetImportWorker2.log
+Logs/AssetImportWorker3.log
 -srvPort
-63584
+59382
 -licensingIpc
 LicenseClient-YJ9lqjR03NSlFhmCLJW0C
 -force-d3d12
@@ -68,12 +68,12 @@ C:/Users/viet_/projects/IndieGame
     "memorysetup-job-temp-allocator-block-size=2097152"
     "memorysetup-job-temp-allocator-block-size-background=1048576"
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
-Player connection [33572]  Target information:
+Player connection [20092]  Target information:
 
-Player connection [33572]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 160208754 [EditorId] 160208754 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [20092]  * "[IP] 192.168.0.173 [Port] 0 [Flags] 2 [Guid] 71832063 [EditorId] 71832063 [Version] 1048832 [Id] WindowsEditor(7,VietPC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [33572] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [33572] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [20092] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [20092] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 7
 Input System module state changed to: Initialized.
 [Physics::Module] Initialized fallback backend.
@@ -85,7 +85,7 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 35.33 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 26.91 ms, found 5 plugins.
 Initialize engine version: 6000.4.6f1 (0b051c2e5d54)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/viet_/projects/IndieGame/Assets
@@ -104,28 +104,28 @@ Direct3D:
 	ResponseStatus: Unsupported protocol version '1.18.1'.
 [Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-YJ9lqjR03NSlFhmCLJW0C"
 [Licensing::IpcConnector] LicenseClient-YJ9lqjR03NSlFhmCLJW0C channel disconnected successfully.
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6" at "2026-05-25T16:25:55.9443071Z"
-[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 36304, path: "C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6" at "2026-05-26T23:15:53.8367951Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 25668, path: "C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
 [Licensing::Module] LicensingClient has failed validation; ignoring
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.18.1+9fbee8e
-  Session Id:              447890a58a6042a988bf5b4df0b99b4d
-  Correlation Id:          ee4d75c0dba13f692d736aef0ea9bf61
-  External correlation Id: 4512356503076871209
+  Session Id:              c3097afebe9840afb383ee4b9b9d449c
+  Correlation Id:          0afbf3e2e173868703ce129b58f29ac1
+  External correlation Id: 7027691672480113776
   Machine Id:              VXbwn5JDHcloYK9lppscF5+D9fo=
 [Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-viet_-6000.4.6" (connect: 0.00s, validation: 0.00s, handshake: 0.01s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6-notifications" at "2026-05-25T16:25:55.9535363Z"
-[Licensing::Module] Licensing Background thread has ended after 1.38s
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-viet_-6000.4.6-notifications" at "2026-05-26T23:15:53.8448548Z"
+[Licensing::Module] Licensing Background thread has ended after 1.21s
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56692
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56240
 CodeReloadManager initialized
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.4.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001747 seconds.
+Registered in 0.002014 seconds.
 Native extension for WindowsStandalone target not found
 Package Manager log level set to [2]
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
@@ -133,23 +133,23 @@ Package Manager log level set to [2]
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  0.417 seconds
-Domain Reload Profiling: 987ms
-	BeginReloadAssembly (166ms)
-	RebuildCommonClasses (44ms)
-	RebuildNativeTypeToScriptingClass (13ms)
-	initialDomainReloadingComplete (72ms)
-	LoadAllAssembliesAndSetupDomain (274ms)
-		LoadAssemblies (160ms)
-		AnalyzeDomain (264ms)
-			TypeCache.Refresh (261ms)
-				TypeCache.ScanAssembly (241ms)
-	FinalizeReload (418ms)
+- Finished resetting the current domain, in  0.490 seconds
+Domain Reload Profiling: 2035ms
+	BeginReloadAssembly (1031ms)
+	RebuildCommonClasses (61ms)
+	RebuildNativeTypeToScriptingClass (11ms)
+	initialDomainReloadingComplete (192ms)
+	LoadAllAssembliesAndSetupDomain (247ms)
+		LoadAssemblies (1029ms)
+		AnalyzeDomain (238ms)
+			TypeCache.Refresh (236ms)
+				TypeCache.ScanAssembly (215ms)
+	FinalizeReload (492ms)
 		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (43ms)
-			BeforeProcessingInitializeOnLoad (92ms)
-			ProcessInitializeOnLoadAttributes (127ms)
-			ProcessInitializeOnLoadMethodAttributes (87ms)
+			InitializePlatformSupportModulesInManaged (44ms)
+			BeforeProcessingInitializeOnLoad (109ms)
+			ProcessInitializeOnLoadAttributes (140ms)
+			ProcessInitializeOnLoadMethodAttributes (125ms)
 ========================================================================
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
@@ -198,130 +198,95 @@ Assembly Unity.UnifiedRayTracing.Editor.Tests.dll at Library/ScriptAssemblies/Un
 Assembly UnityEditor.UI.Common.Tests.dll at Library/ScriptAssemblies/UnityEditor.UI.Common.Tests.dll not valid. Loading of assembly skipped.
 Assembly UnityEditor.UI.EditorTests.dll at Library/ScriptAssemblies/UnityEditor.UI.EditorTests.dll not valid. Loading of assembly skipped.
 Assembly UnityEngine.UI.Tests.dll at Library/ScriptAssemblies/UnityEngine.UI.Tests.dll not valid. Loading of assembly skipped.
-Refreshing native plugins compatible for Editor in 9.39 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 157.70 ms, found 5 plugins.
 Native extension for WindowsStandalone target not found
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
+Refreshing native plugins compatible for Editor in 2.97 ms, found 5 plugins.
 [Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Unable to send message (not connected to server process).
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  9.528 seconds
-Domain Reload Profiling: 10829ms
-	BeginReloadAssembly (196ms)
-		DisableScriptedObjects (5ms)
-		CreateAndSetChildDomain (36ms)
-	RebuildCommonClasses (36ms)
-	RebuildNativeTypeToScriptingClass (14ms)
-	initialDomainReloadingComplete (166ms)
-	LoadAllAssembliesAndSetupDomain (889ms)
-		LoadAssemblies (668ms)
-		AnalyzeDomain (327ms)
-			TypeCache.Refresh (225ms)
-				TypeCache.ScanAssembly (197ms)
-			BuildScriptInfoCaches (85ms)
-			ResolveRequiredComponents (13ms)
-	FinalizeReload (9528ms)
+- Finished resetting the current domain, in  4.865 seconds
+Domain Reload Profiling: 6692ms
+	BeginReloadAssembly (268ms)
+		DisableScriptedObjects (7ms)
+		CreateAndSetChildDomain (57ms)
+	RebuildCommonClasses (59ms)
+	RebuildNativeTypeToScriptingClass (17ms)
+	initialDomainReloadingComplete (126ms)
+	LoadAllAssembliesAndSetupDomain (1357ms)
+		LoadAssemblies (1127ms)
+		AnalyzeDomain (366ms)
+			TypeCache.Refresh (275ms)
+				TypeCache.ScanAssembly (246ms)
+			BuildScriptInfoCaches (74ms)
+			ResolveRequiredComponents (14ms)
+	FinalizeReload (4865ms)
 		SetupLoadedEditorAssemblies (0ms)
-			BeforeProcessingInitializeOnLoad (172ms)
-			ProcessInitializeOnLoadAttributes (8163ms)
-			ProcessInitializeOnLoadMethodAttributes (893ms)
-			AfterProcessingInitializeOnLoad (8ms)
-		AwakeInstancesAfterBackupRestoration (44ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 2.87 ms, found 5 plugins.
+			BeforeProcessingInitializeOnLoad (182ms)
+			ProcessInitializeOnLoadAttributes (3813ms)
+			ProcessInitializeOnLoadMethodAttributes (238ms)
+			AfterProcessingInitializeOnLoad (10ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 3.16 ms, found 5 plugins.
 Unloading 24 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 7408 unused Assets / (5.6 MB). Loaded Objects now: 8249.
-Memory consumption went from 243.1 MB to 237.5 MB.
-Total: 10.823800 ms (FindLiveObjects: 1.616200 ms CreateObjectMapping: 0.737600 ms MarkObjects: 5.505200 ms  DeleteObjects: 2.962800 ms)
+Unloading 7408 unused Assets / (5.7 MB). Loaded Objects now: 8249.
+Memory consumption went from 241.1 MB to 235.4 MB.
+Total: 12.575600 ms (FindLiveObjects: 1.432000 ms CreateObjectMapping: 0.813400 ms MarkObjects: 6.023200 ms  DeleteObjects: 4.304900 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 839316.854193 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/all.png
-  importAddress: Guid(a1a53b9269c123a49baeeb18cb5d022c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/all.png using Guid(a1a53b9269c123a49baeeb18cb5d022c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '4af74484c430996703dcc1432b026bf8') in 0.5683136 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=055e9fe1040b19dc602d112fcce551ec DependenciesID=402469271453b2257fa9776e94923fd5 StaticDependenciesID=f442eeb5795ab547827c7e0c66c4fe52 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 111
-
-========================================================================
-Received Import Request.
-  Time since last request: 54.795363 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/walk.png
-  importAddress: Guid(73ec114e1da0b79479d58b12928d9bdc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/walk.png using Guid(73ec114e1da0b79479d58b12928d9bdc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '3c450ad7291806f23556b437e132755e') in 0.0611109 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=ac800dbd9b6e8430c2100ca456d6a331 DependenciesID=2b28a5799219c41437247ee5105ee3ee StaticDependenciesID=f99592e94df2f1aeb03c031cb048491b 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.636820 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/idle.png
-  importAddress: Guid(b0ad439a314cab5438f9a8c7b341e15c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/idle.png using Guid(b0ad439a314cab5438f9a8c7b341e15c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a2d14c35502e1cb2f04edac81017472d') in 0.0253099 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=a2ddb3e76c997b19165fc48d44a17a47 DependenciesID=6030582a00d2403bcb4169df15af7557 StaticDependenciesID=04c03fb15307690eacda879beb82d161 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.241280 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/hurt2.png
-  importAddress: Guid(dbec3f2940304e54fadd0d92c504972f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/hurt2.png using Guid(dbec3f2940304e54fadd0d92c504972f) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'abda1cd6ef5262506fb47774c249f506') in 0.0298505 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=b2d9a4cd8e8aff7c7ecbae151778648a DependenciesID=847ee0e841a5ca936778a8faa372c5aa StaticDependenciesID=73ecf91ffd12ae7563eab6a8ee25b43a 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.403211 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/hurt.png
-  importAddress: Guid(6eacffb977ebd004a9367ec2a7f072f6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/hurt.png using Guid(6eacffb977ebd004a9367ec2a7f072f6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'ab3c2c39d2d55c471c326dd0d8918633') in 0.0273233 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9d80332b472461e567365d79ac63112b DependenciesID=2015c6c375b7de173dca7dd3676aa1a1 StaticDependenciesID=73fd7415460a2bbcd7657e09b75059e2 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.352015 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/death.png
-  importAddress: Guid(ca1b36e367bc86e428bbd2bf02d25d4b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/death.png using Guid(ca1b36e367bc86e428bbd2bf02d25d4b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '94162795bda623314cc62cac46965e66') in 0.0457946 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=cfd0b3e1d0d959dd7616db8996f5f24f DependenciesID=da615ad553d9c81474e0aff82b8b5ec9 StaticDependenciesID=3f3b1c1284ca9ebe1eae7cf003865fc1 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 50
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.471086 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/block2.png
-  importAddress: Guid(4ffe872e1b176e544aac27c085d140d1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/block2.png using Guid(4ffe872e1b176e544aac27c085d140d1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a1be667fe9c58d587194fc3e734c3a85') in 0.0233542 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=29f5fa3ca5fc77ab5521f54c1eaeaa7f DependenciesID=a5cd5b799c357583002ba4685b5eda2c StaticDependenciesID=9a507e47f20c408c0db7cdb90605236f 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.211568 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/block.png
-  importAddress: Guid(194d88c70bd67d34da479e3c6d9c02e8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/block.png using Guid(194d88c70bd67d34da479e3c6d9c02e8) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'b02a8106b151cdc909f42a84d4b4e8f8') in 0.0216348 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=f2c81cec726cddc67c22e6a29942927f DependenciesID=f9593229e703722a367889eb38ac0f8f StaticDependenciesID=15ca64ade57b6a8f53a3bcb95b1d57d1 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.355424 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/atk3.png
-  importAddress: Guid(f86dd6d896abd90418e4e408e3814ade) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/atk3.png using Guid(f86dd6d896abd90418e4e408e3814ade) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'c7a191ce6d207cc629552c19de36f0ec') in 0.0257681 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c17d23c956c9e990e68334790cceee2f DependenciesID=ca094557aaeb71eba7da0ab64083cf0d StaticDependenciesID=b709181ebc3c7d276d1f5a71b86ae6de 
-Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.292281 seconds.
+  Time since last request: 950313.433437 seconds.
   path: Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/atk2.png
   importAddress: Guid(2a0b43d12f9ddaf4b9c20681a952946d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/atk2.png using Guid(2a0b43d12f9ddaf4b9c20681a952946d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '05035b23fca96034f4d3b29865acf866') in 0.0213595 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c8d170a03bbdf76cba6e03308b4975fa DependenciesID=085f2b328241c0681ac3f55cb976432d StaticDependenciesID=098e6baa14f260e132579142dbfd7a0a 
+Start importing Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/atk2.png using Guid(2a0b43d12f9ddaf4b9c20681a952946d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '03aa0b352bdeb517d066781ebafc4d37') in 0.8510897 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=8433e1562b8fbef3333a5e6c0f57c43e DependenciesID=60c18496079e5718fc98f533578b328a StaticDependenciesID=d900a50f5de9a428a8fd7461d4603c92 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 9
 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.329642 seconds.
-  path: Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/atk1.png
-  importAddress: Guid(f87e70cb09c14b243a36084c63ad96f0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
-Start importing Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/atk1.png using Guid(f87e70cb09c14b243a36084c63ad96f0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '4fb8a7b8c25462dd084c33919af1cc18') in 0.023927 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=6257cef9c1568f8a423a438325fa502f DependenciesID=f41bfb32b1afafa2658ec961a1d81238 StaticDependenciesID=8602f7dfc0eb6bbf13681f3cd646af14 
+  Time since last request: 0.000023 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/idle.png
+  importAddress: Guid(b0ad439a314cab5438f9a8c7b341e15c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/idle.png using Guid(b0ad439a314cab5438f9a8c7b341e15c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a1c40b9430a01cf9017266e335d8270f') in 0.2478544 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=da1613a0bc0937bcb0d156b2b89ab63c DependenciesID=5be7404cb0ba3797cf5cd83344a4545b StaticDependenciesID=f098ecb163d4680d85897eaed4e0a69d 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/with rusty shield/hurt.png
+  importAddress: Guid(e0df66e21103f614eab9ce31e5aaf114) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/with rusty shield/hurt.png using Guid(e0df66e21103f614eab9ce31e5aaf114) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'f2065e12d7dfb62255bc6eaf3098375e') in 0.075505 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=c4d6b874ec9663b3602d444415ce01c2 DependenciesID=8385be93cde300990d422a0a68258932 StaticDependenciesID=4a6794b780a96ef621a882801936b359 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/with rusty shield/walk.png
+  importAddress: Guid(0e29e985d632c5b4f90c85593fadd098) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/with rusty shield/walk.png using Guid(0e29e985d632c5b4f90c85593fadd098) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: 'a62954a335273d47437a107d286be5ee') in 0.0592406 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=9fc6b6add25c496b63e5d0b5661cf67c DependenciesID=96c01318e72549f027813235ea0c55db StaticDependenciesID=652442bb5c1f0dc9966839f5a3ac3a21 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 10
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Scenes/Chapter 1.unity
+  importAddress: Guid(62f0487bf44feb947b6c2c590f289f64) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Scenes/Chapter 1.unity using Guid(62f0487bf44feb947b6c2c590f289f64) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '79012bbd74a4a947d7d317955b225a9f') in 0.1492069 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=803468ba8edf35c8369bd0b4b869bb01 DependenciesID=cbf34ae6b8f73ba40e815da9e6cbbc75 StaticDependenciesID=a2839f74e22fd5971ee8d8ecb7f698b1 
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/with rusty shield/atk1.png
+  importAddress: Guid(9cda940ff1ae7084e8c850ad2e59e4ff) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Environments/EpicRPGWorlds/Prison/EPIC RPG World Pack - Old Prison V1.7.1/Characters/Mage Skeleton/Mage Skeleton with shield/with rusty shield/atk1.png using Guid(9cda940ff1ae7084e8c850ad2e59e4ff) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (Import Result ID: '8d3351ab8bc6f0676f61798605e2594d') in 0.0611877 seconds [static and dynamic dependencies]. Details - ImportResultOutputID=966842a0b3c07256216dfc53039e71b1 DependenciesID=2207dfbbf9d5f0624dd6f1ee9369094c StaticDependenciesID=6d58d17c68d5fd9a509b9a15b3210808 
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 8
 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
