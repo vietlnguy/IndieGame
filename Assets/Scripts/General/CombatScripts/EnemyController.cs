@@ -48,6 +48,7 @@ public class EnemyController : MonoBehaviour
     public GameObject bossIconPrefab;
     public List<Debuff> debuffs;
     public List<Buff> buffs;
+    public bool inAttackRange = false;
 
     void Awake()
     {
@@ -111,6 +112,12 @@ public class EnemyController : MonoBehaviour
     {
         // Multiply by -100 to invert Y (lower on screen = higher order)
         spriteRenderer.sortingOrder = -(int)(transform.position.y * 100) + offset;
+        if (!inAttackRange)
+        {
+            attackRangeCircleScript.enemiesInRange.RemoveAll(x => x == gameObject);
+            unhighlight();
+        }
+        inAttackRange = false;
     }
     void OnHoverEnter()
     {
@@ -320,5 +327,10 @@ public class EnemyController : MonoBehaviour
         }
 
     }
-
+    public void InAttackRange()
+    {
+        attackRangeCircleScript.enemiesInRange.Add(gameObject);
+        highlightAttackable();
+        inAttackRange = true;
+    }
 }
