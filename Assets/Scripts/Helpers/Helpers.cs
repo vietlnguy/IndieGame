@@ -484,6 +484,20 @@ public static class Helpers
             yield return null;
         }
     }
+    public static IEnumerator FlashSpriteColor(SpriteRenderer sprite, Color endColor, float speed)
+    {
+        Color startColor = sprite.color;
+        while (true)
+        {
+            // Mathf.PingPong moves back and forth between 0 and 1
+            float t = Mathf.PingPong(Time.time * speed, 1.0f);
+            
+            sprite.color = Color.Lerp(startColor, endColor, t);
+            
+            yield return null;
+        }
+    }
+    
     public static float CalculateCrit(float skill, float moveBase)
     {
         float k = 100f;          // Skill level at which you get half the MaxBonus
