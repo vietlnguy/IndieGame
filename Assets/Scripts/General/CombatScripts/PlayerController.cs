@@ -612,7 +612,7 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     currentHp = 0;
-                    yield return StartCoroutine(attackPreviewScript.DeathSequence(gameObject));
+                    yield return StartCoroutine(attackPreviewScript.DeathSequence(gameObject, null));
                 }
             }
 

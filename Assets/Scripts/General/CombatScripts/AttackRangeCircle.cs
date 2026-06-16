@@ -125,7 +125,7 @@ public class AttackRangeCircle : MonoBehaviour
                     break; // Stop looking past this wall
                 }
                 
-                else if (hit.collider.GetComponent<EnemyController>() != null && (battleController.isPlayerTurn || battleController.isNeutralTurn))
+                else if (hit.collider.GetComponent<EnemyController>() != null && (battleController.isPlayerTurn || battleController.isNeutralTurn) && !battleController.enemySelected)
                 {
                     hit.collider.GetComponent<EnemyController>().InAttackRange();
                     vertex = transform.InverseTransformPoint(hit.point);

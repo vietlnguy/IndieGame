@@ -228,9 +228,11 @@ public class EnemyController : MonoBehaviour
     }
     public void Die(GameObject killer)
     {
+        deselectEnemy();
         GameObject[] list = { gameObject, killer };
         OnEnemyDied?.Invoke(list);
         Destroy(gameObject);
+
     }
     public void ApplyDebuffEffects()
     {
@@ -330,7 +332,7 @@ public class EnemyController : MonoBehaviour
                 else
                 {
                     currentHp = 0;
-                    yield return StartCoroutine(attackPreviewScript.DeathSequence(gameObject));
+                    yield return StartCoroutine(attackPreviewScript.DeathSequence(gameObject, null));
                 }
             }
 
@@ -356,8 +358,5 @@ public class EnemyController : MonoBehaviour
 
         inAttackRange = true;
     }
-
-
-
 
 }
