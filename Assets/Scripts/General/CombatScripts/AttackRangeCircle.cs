@@ -19,6 +19,17 @@ public class AttackRangeCircle : MonoBehaviour
     public bool enemyIsRangedAndMoving = false;
     private TilemapPathfinder pathfinder;
 
+    //FOV test
+    [SerializeField] private LayerMask obstacleLayer;
+    [SerializeField] private LayerMask enemyLayer;
+    [SerializeField] private float viewDistance = 5f;
+    [SerializeField] private int rayCount = 180; // Higher = smoother mesh, lower = better performance
+
+    private LayerMask combinedLayerMask; // Combines obstacles and enemies
+    private Mesh mesh;
+    private Vector3[] vertices;
+    private int[] triangles;
+
     void Awake()
     {
         pathfinder = FindAnyObjectByType<TilemapPathfinder>();
@@ -26,6 +37,9 @@ public class AttackRangeCircle : MonoBehaviour
         alliesInRange = new List<GameObject>();
         enemiesInRange = new List<GameObject>();
 
+        mesh = new Mesh();
+        GetComponent<MeshFilter>().mesh = mesh;
+        
         meshFilter = GetComponent<MeshFilter>();
         meshRenderer = GetComponent<MeshRenderer>();
         circleCollider = GetComponent<CircleCollider2D>();
@@ -42,10 +56,11 @@ public class AttackRangeCircle : MonoBehaviour
         meshRenderer.sortingLayerName = sortingLayerName;
         meshRenderer.sortingOrder = sortingOrder;
     }
-    void Update()
+    void LateUpdate()
     {
         if (active)
         {
+            GenerateFOVMesh();
             try
             {
                 gameObject.transform.position = battleController.characterSelected.transform.position;
@@ -60,7 +75,10 @@ public class AttackRangeCircle : MonoBehaviour
     {
         float radius;
         meshRenderer.enabled = true;
+        GenerateFOVMesh();
+/*
         circleCollider.enabled = true;
+
 
         try
         {
@@ -73,6 +91,8 @@ public class AttackRangeCircle : MonoBehaviour
 
         DrawFilledCircle(radius);
         UpdateCollider(radius);
+*/
+
         active = true;
     }
     public void disableAttackRange()
@@ -266,4 +286,64 @@ public class AttackRangeCircle : MonoBehaviour
             circleCollider.radius = radius;
         }
     }
+    void GenerateFOVMesh()
+    {
+        float angleStep = 360f / rayCount;
+        vertices = new Vector3[rayCount + 2];
+        triangles = new int[rayCount * 3];
+        vertices[0] = Vector3.zero;
+
+        int vertexIndex = 1;
+        int triangleIndex = 0;
+
+        for (int i = 0; i <= rayCount; i++)
+        {
+            float angle = i * angleStep * Mathf.Deg2Rad;
+            Vector3 rayDirection = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
+
+            // 1. Cast against BOTH obstacles and enemies
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDirection, viewDistance, combinedLayerMask);
+            
+            Vector3 vertex;
+            if (hit.collider == null)
+            {
+                vertex = Vector3.zero + rayDirection * viewDistance;
+            }
+            else
+            {
+                vertex = transform.InverseTransformPoint(hit.point);
+
+                // 2. Check if the object we hit is on the Enemy layer
+                // (1 << hit.collider.gameObject.layer) converts the layer integer to a layer mask bit
+                if ((enemyLayer.value & (1 << hit.collider.gameObject.layer)) > 0)
+                {
+                    // Try to get the helper script and highlight the enemy
+                    EnemyController enemy = hit.collider.GetComponent<EnemyController>();
+                    if (enemy != null)
+                    {
+                        enemy.InAttackRange();
+                    }
+                }
+            }
+
+            vertices[vertexIndex] = vertex;
+
+            if (i > 0)
+            {
+                triangles[triangleIndex + 0] = 0;
+                triangles[triangleIndex + 1] = vertexIndex - 1;
+                triangles[triangleIndex + 2] = vertexIndex;
+                triangleIndex += 3;
+            }
+
+            vertexIndex++;
+        }
+
+        mesh.Clear();
+        mesh.vertices = vertices;
+        mesh.triangles = triangles;
+        mesh.RecalculateBounds();
+    }
+
+
 }
