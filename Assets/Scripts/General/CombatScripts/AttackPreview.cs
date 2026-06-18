@@ -793,6 +793,7 @@ public class AttackPreview : MonoBehaviour
         {
             
         }
+        battleController.enemySelected = null;
         yield return null;
 
     }
@@ -909,7 +910,7 @@ public class AttackPreview : MonoBehaviour
 
         //Resetting 
         ResetBattleScreenInfo();
-
+    
         PlayerController playerScript = leftPerson.GetComponent<PlayerController>();
         EnemyController enemyScript = rightPerson.GetComponent<EnemyController>();
         
@@ -1106,68 +1107,72 @@ public class AttackPreview : MonoBehaviour
             if (enemyScript.currentHp <= 0)
             {   
                 //TODO: Remove sprite on battle screen
-                yield return StartCoroutine(DeathSequence(rightPerson));
+                yield return StartCoroutine(DeathSequence(rightPerson, leftPerson));
             }
            
             //********************************************************* START ENEMY ATTACK *******************************************************************
             else
             {
-                if (PlayerPrefs.GetInt("combatAnim", -1) == 0)
+                //Check if enemy can attack back
+                if ((enemyScript.ranged && playerScript.ranged) || (!enemyScript.ranged && !playerScript.ranged))
                 {
-                    //TODO Start attack animation
-                    //Example: rightPerson.GetComponent<Animator>().SetBool(attackSelected.name, true);
-                }
-
-                //Attack hits
-                if (Roll(rightArray[1]))
-                {
-                    if (Roll(rightArray[2]))
+                    if (PlayerPrefs.GetInt("combatAnim", -1) == 0)
                     {
-                        if (PlayerPrefs.GetInt("combatAnim", -1) == 0)
-                        {
-                            //Show leftside crit
-                            //yield return StartCoroutine(CritAnimation("left"));
-                            //heavy screen shake crit animation
-                            yield return StartCoroutine(AnimateHealthDamage(rightArray[0] * 2, battleScreenLeftHpBar, leftPerson, battleScreenLeftHp));
-                        }
-                        playerScript.currentHp = playerScript.currentHp - rightArray[0] * 2;
+                        //TODO Start attack animation
+                        //Example: rightPerson.GetComponent<Animator>().SetBool(attackSelected.name, true);
                     }
+
+                    //Attack hits
+                    if (Roll(rightArray[1]))
+                    {
+                        if (Roll(rightArray[2]))
+                        {
+                            if (PlayerPrefs.GetInt("combatAnim", -1) == 0)
+                            {
+                                //Show leftside crit
+                                //yield return StartCoroutine(CritAnimation("left"));
+                                //heavy screen shake crit animation
+                                yield return StartCoroutine(AnimateHealthDamage(rightArray[0] * 2, battleScreenLeftHpBar, leftPerson, battleScreenLeftHp));
+                            }
+                            playerScript.currentHp = playerScript.currentHp - rightArray[0] * 2;
+                        }
+                        else
+                        {
+                            if (PlayerPrefs.GetInt("combatAnim", -1) == 0)
+                            {
+                                //TODO: hit animation screen shake
+                                yield return StartCoroutine(AnimateHealthDamage(rightArray[0], battleScreenLeftHpBar, leftPerson, battleScreenLeftHp));
+                            }
+                            playerScript.currentHp = playerScript.currentHp - rightArray[0];
+                        }
+                        
+                        //Don't need to check buff/debuffs, because reaction attack is always a basic attack.
+                        
+                        //Remove Charged if present
+                        RemoveCharged(leftPerson);
+
+                    }
+
+                    //Attack missed
                     else
                     {
                         if (PlayerPrefs.GetInt("combatAnim", -1) == 0)
                         {
-                            //TODO: hit animation screen shake
-                            yield return StartCoroutine(AnimateHealthDamage(rightArray[0], battleScreenLeftHpBar, leftPerson, battleScreenLeftHp));
+                            //Show leftside missed
+                            //yield return StartCoroutine(MissedAnimation("left"));
                         }
-                        playerScript.currentHp = playerScript.currentHp - rightArray[0];
-                    }
-                    
-                    //Don't need to check buff/debuffs, because reaction attack is always a basic attack.
-                    
-                    //Remove Charged if present
-                    RemoveCharged(leftPerson);
 
-                }
-
-                //Attack missed
-                else
-                {
-                    if (PlayerPrefs.GetInt("combatAnim", -1) == 0)
-                    {
-                        //Show leftside missed
-                        //yield return StartCoroutine(MissedAnimation("left"));
+                        //TODO: Visual cue when missed.
                     }
 
-                    //TODO: Visual cue when missed.
-                }
+                    yield return new WaitForSeconds(2f);
 
-                yield return new WaitForSeconds(2f);
-
-                //Play enemy character dialogue if necessary
-                if (playerScript.currentHp <= 0)
-                {   
-                    //TODO: Remove sprite on battle screen
-                    yield return StartCoroutine(DeathSequence(leftPerson));
+                    //Play character dialogue if necessary
+                    if (playerScript.currentHp <= 0)
+                    {   
+                        //TODO: Remove sprite on battle screen
+                        yield return StartCoroutine(DeathSequence(leftPerson, rightPerson));
+                    }
                 }
            
             }
@@ -1347,7 +1352,7 @@ public class AttackPreview : MonoBehaviour
             if (playerScript.currentHp <= 0)
             {   
                 //TODO: Remove sprite on battle screen
-                yield return StartCoroutine(DeathSequence(leftPerson));
+                yield return StartCoroutine(DeathSequence(leftPerson, rightPerson));
             }
            
             //********************************************************* START PLAYER ATTACK *******************************************************************
@@ -1485,8 +1490,9 @@ public class AttackPreview : MonoBehaviour
                 //Play enemy death dialogue if necessary
                 if (enemyScript.currentHp <= 0)
                 {   
+                    Debug.Log("enemy died");
                     //TODO: Remove sprite on battle screen
-                    yield return StartCoroutine(DeathSequence(rightPerson));
+                    yield return StartCoroutine(DeathSequence(rightPerson, leftPerson));
                 }
             }
         
@@ -1513,6 +1519,8 @@ public class AttackPreview : MonoBehaviour
             attackPanel.GetComponent<RectTransform>().localScale = endScale; // snap to final value
         }
     
+        StartCoroutine(disablePreview());
+
         //End character turn
         if (initiator == "left")
         {
@@ -1587,11 +1595,11 @@ public class AttackPreview : MonoBehaviour
             }
             else if (person.GetComponent<PlayerController>().currentHp - damage <= 0)
             {
-                endSize = originalBattleScreenHpBarSize * 0f;
+                endSize = new Vector2(0f, originalBattleScreenHpBarSize.y);
             }
             else
             {
-                endSize = originalBattleScreenHpBarSize * temp;
+                endSize = new Vector2(originalBattleScreenHpBarSize.x * temp, originalBattleScreenHpBarSize.y);
             }
             startNumber = person.GetComponent<PlayerController>().currentHp;
             targetNumber = person.GetComponent<PlayerController>().currentHp - damage;
@@ -1611,11 +1619,11 @@ public class AttackPreview : MonoBehaviour
             }
             else if (person.GetComponent<EnemyController>().currentHp - damage <= 0)
             {
-                endSize = originalBattleScreenHpBarSize * 0f;
+                endSize = new Vector2(0f, originalBattleScreenHpBarSize.y);
             }
             else
             {
-                endSize = originalBattleScreenHpBarSize * temp;
+                endSize = new Vector2(originalBattleScreenHpBarSize.x * temp, originalBattleScreenHpBarSize.y);
             }
             
             startNumber = person.GetComponent<EnemyController>().currentHp;
@@ -1679,11 +1687,12 @@ public class AttackPreview : MonoBehaviour
             }
             else if (person.GetComponent<PlayerController>().currentMana - damage <= 0)
             {
-                endSize = originalBattleScreenManaBarSize * 0f;
+                endSize = new Vector2(0f, originalBattleScreenManaBarSize.y);
+
             }
             else
             {
-                endSize = originalBattleScreenManaBarSize * temp;
+                endSize = new Vector2(originalBattleScreenManaBarSize.x * temp, originalBattleScreenManaBarSize.y);
             }
             startNumber = person.GetComponent<PlayerController>().currentMana;
             targetNumber = person.GetComponent<PlayerController>().currentMana - damage;
@@ -1703,11 +1712,11 @@ public class AttackPreview : MonoBehaviour
             }
             else if (person.GetComponent<EnemyController>().currentMana - damage <= 0)
             {
-                endSize = originalBattleScreenManaBarSize * 0f;
+                endSize = new Vector2(0f, originalBattleScreenManaBarSize.y);
             }
             else
             {
-                endSize = originalBattleScreenManaBarSize * temp;
+                endSize = new Vector2(originalBattleScreenManaBarSize.x * temp, originalBattleScreenManaBarSize.y);
             }
             
             startNumber = person.GetComponent<EnemyController>().currentMana;
@@ -1752,7 +1761,7 @@ public class AttackPreview : MonoBehaviour
             currentPrintedNumber = targetNumber;
         }
     }
-    public IEnumerator DeathSequence(GameObject person)
+    public IEnumerator DeathSequence(GameObject person, GameObject killer)
     {
         if (person.GetComponent<PlayerController>() != null && person.GetComponent<PlayerController>().deathDialogue != "")
         {
@@ -1855,7 +1864,8 @@ public class AttackPreview : MonoBehaviour
         }
         else
         {
-            person.GetComponent<EnemyController>().Die(battleController.characterSelected);
+
+            person.GetComponent<EnemyController>().Die(killer);
             battleController.enemySelected = null;
         }
 

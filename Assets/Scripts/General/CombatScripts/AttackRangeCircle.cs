@@ -1,23 +1,30 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
-[RequireComponent(typeof(MeshFilter), typeof(MeshRenderer), typeof(CircleCollider2D))]
+[RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 public class AttackRangeCircle : MonoBehaviour
 {
     public bool active = false;
     public BattleController battleController;
-    public int segments = 64; // Smoothness of the circle
     public string sortingLayerName = "MoveRangeUI";
     public int sortingOrder = 0;
     public Color fillColor = new Color(1f, 0f, 0f, 0.25f);
     private MeshRenderer meshRenderer;
     private MeshFilter meshFilter;
-    private CircleCollider2D circleCollider;
     public List<GameObject> alliesInRange;
     public List<GameObject> enemiesInRange;
     public bool enemyIsRangedAndMoving = false;
     private TilemapPathfinder pathfinder;
+    private LayerMask obstacleLayer;
+    private LayerMask enemyLayer;
+    private float viewDistance;
+    private int rayCount = 180; // Higher = smoother mesh, lower = better performance
+    private LayerMask combinedLayerMask; // Combines obstacles and enemies
+    private Mesh mesh;
+    private Vector3[] vertices;
+    private int[] triangles;
 
     void Awake()
     {
@@ -26,13 +33,11 @@ public class AttackRangeCircle : MonoBehaviour
         alliesInRange = new List<GameObject>();
         enemiesInRange = new List<GameObject>();
 
+        mesh = new Mesh();
+        GetComponent<MeshFilter>().mesh = mesh;
         meshFilter = GetComponent<MeshFilter>();
         meshRenderer = GetComponent<MeshRenderer>();
-        circleCollider = GetComponent<CircleCollider2D>();
-
-        // Make sure the collider acts as a trigger
-        circleCollider.isTrigger = true;
-
+        
         // Assign material with sprite shader for transparency support
         Material mat = new Material(Shader.Find("Sprites/Default"));
         mat.color = fillColor;
@@ -41,11 +46,16 @@ public class AttackRangeCircle : MonoBehaviour
         // Sorting for 2D layering
         meshRenderer.sortingLayerName = sortingLayerName;
         meshRenderer.sortingOrder = sortingOrder;
+
+        obstacleLayer = LayerMask.GetMask("Obstacle");
+        enemyLayer = LayerMask.GetMask("Characters");
+        combinedLayerMask = obstacleLayer | enemyLayer;
     }
-    void Update()
+    void LateUpdate()
     {
         if (active)
         {
+            GenerateFOVMesh();
             try
             {
                 gameObject.transform.position = battleController.characterSelected.transform.position;
@@ -58,212 +68,99 @@ public class AttackRangeCircle : MonoBehaviour
     }
     public void enableAttackRange(GameObject character)
     {
-        float radius;
         meshRenderer.enabled = true;
-        circleCollider.enabled = true;
 
-        try
-        {
-            radius = character.GetComponent<PlayerController>().attackRange;
+        if (character.GetComponent<PlayerController>() != null) {
+            viewDistance = character.GetComponent<PlayerController>().attackRange;
         }
-        catch
+        else 
         {
-            radius = character.GetComponent<EnemyController>().attackRange;
+            viewDistance = character.GetComponent<EnemyController>().attackRange;
         }
+        GenerateFOVMesh();
 
-        DrawFilledCircle(radius);
-        UpdateCollider(radius);
+
         active = true;
     }
     public void disableAttackRange()
     {
         active = false;
         meshRenderer.enabled = false;
-        circleCollider.enabled = false;
         enemiesInRange.Clear();
         alliesInRange.Clear();
     }
-    void OnTriggerEnter2D(Collider2D other)
+    void GenerateFOVMesh()
     {
-        //Player's turn
-        if (!battleController.isEnemyTurn)
-        {
-            //Character is selected and others enter AttackRange
-            if (battleController.characterSelected != null)
-            {
-                if (other.CompareTag("enemy"))
-                {
-                    other.GetComponent<EnemyController>().highlightAttackable();
-                    if (!enemiesInRange.Contains(other.gameObject))
-                    {
-                        enemiesInRange.Add(other.gameObject);
-                    }
-                }
-                if (other.CompareTag("character"))
-                {
-                    if (other.gameObject != battleController.characterSelected)
-                    {
-                        other.GetComponent<PlayerController>().highlightAssistable();
-                        if (!alliesInRange.Contains(other.gameObject))
-                        {
-                            alliesInRange.Add(other.gameObject);
-                        }
-                    }
-                }
-            }
+        float angleStep = 360f / rayCount;
+        vertices = new Vector3[rayCount + 1]; 
+        triangles = new int[rayCount * 3];
 
-            //Enemy is selected and others enter AttackRange
-            if (battleController.enemySelected != null && battleController.characterSelected == null)
-            {
-                if (other.CompareTag("enemy") && other.gameObject != battleController.enemySelected)
-                {
-                    other.GetComponent<EnemyController>().highlightAssistable();
-                    if (!alliesInRange.Contains(other.gameObject))
-                    {
-                        alliesInRange.Add(other.gameObject);
-                    }
-                }
-                if (other.CompareTag("character"))
-                {
-                    if (other.gameObject != battleController.characterSelected)
-                    {
-                        other.GetComponent<PlayerController>().highlightAttackable();
-                        if (!enemiesInRange.Contains(other.gameObject))
-                        {
-                            enemiesInRange.Add(other.gameObject);
-                        }
-                    }
-                }           
-            }
+        vertices[0] = Vector3.zero;
+
+        int vertexIndex = 1;
+        int triangleIndex = 0;
+
+        for (int i = 0; i < rayCount; i++)
+        {
+            float angle = i * angleStep * Mathf.Deg2Rad;
+            Vector3 rayDirection = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0);
+
+            RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, rayDirection, viewDistance, combinedLayerMask);
             
-        }
+            // FORCE SORT: Guarantees hits are processed from closest to furthest
+            Array.Sort(hits, (x, y) => x.distance.CompareTo(y.distance));
 
-        //Enemy's turn
-        else
-        {
-            if (other.CompareTag("character"))
+            Vector3 vertex = Vector3.zero + rayDirection * viewDistance;
+
+            foreach (RaycastHit2D hit in hits)
             {
-                other.GetComponent<PlayerController>().highlightAttackable();
-                if (!enemiesInRange.Contains(other.gameObject))
+                // Ignore the player's own root collider if the ray starts inside it
+                //if (hit.collider.transform == transform.parent || hit.collider.transform == transform)
+                //    continue;
+
+                // 1. Check for Obstacle Layer first
+                if ((obstacleLayer.value & (1 << hit.collider.gameObject.layer)) > 0)
                 {
-                    enemiesInRange.Add(other.gameObject);
+                    vertex = transform.InverseTransformPoint(hit.point);
+                    break; // Stop looking past this wall
                 }
                 
-                if (enemyIsRangedAndMoving && other.gameObject == battleController.enemyTarget)
+                else if (hit.collider.GetComponent<EnemyController>() != null && (battleController.isPlayerTurn || battleController.isNeutralTurn) && !battleController.enemySelected)
                 {
-                    pathfinder.StopEnemyFollow();
+                    hit.collider.GetComponent<EnemyController>().InAttackRange();
+                    vertex = transform.InverseTransformPoint(hit.point);
+                    break; // Stop looking past this enemy
                 }
-                
+                else if (hit.collider.GetComponent<PlayerController>() != null && battleController.isEnemyTurn)
+                {
+                    hit.collider.GetComponent<PlayerController>().InAttackRange();
+                    vertex = transform.InverseTransformPoint(hit.point);
+                    break; // Stop looking past this enemy 
+                }
             }
-            else if (other.CompareTag("enemy"))
+
+            vertices[vertexIndex] = vertex;
+
+            triangles[triangleIndex + 0] = 0; 
+            triangles[triangleIndex + 1] = vertexIndex; 
+            
+            if (i == rayCount - 1)
             {
-                if (other.gameObject != battleController.enemySelected)
-                {
-                    other.GetComponent<EnemyController>().highlightAssistable();
-                    if (!alliesInRange.Contains(other.gameObject))
-                    {
-                        alliesInRange.Add(other.gameObject);
-                    }
-                    if (enemyIsRangedAndMoving && other.gameObject == battleController.enemyTarget)
-                    {
-                        pathfinder.StopEnemyFollow();
-                    }
-                }
+                triangles[triangleIndex + 2] = 1; 
             }
+            else
+            {
+                triangles[triangleIndex + 2] = vertexIndex + 1; 
+            }
+
+            triangleIndex += 3;
+            vertexIndex++;
         }
 
-    }
-    void OnTriggerExit2D(Collider2D other)
-    {
-
-        //Character is selected and others leave the AttackRange
-        if (battleController.characterSelected != null)
-        {
-            if (other.CompareTag("enemy"))
-            {
-                other.GetComponent<EnemyController>().unhighlight();
-                enemiesInRange.RemoveAll(item => item == other.gameObject);
-            }
-            if (other.CompareTag("character"))
-            {
-                if (battleController.disabledCharacters.Contains(other.gameObject))
-                {
-                    other.GetComponent<PlayerController>().graySpriteAndFreeze();
-                }
-                else
-                {
-                    other.GetComponent<PlayerController>().unhighlight();
-                }
-                alliesInRange.RemoveAll(item => item == other.gameObject);
-            }
-        }
-
-        //Enemy is selected and others leave the AttackRange
-        if (battleController.characterSelected == null && battleController.enemySelected != null)
-        {
-            if (other.CompareTag("character"))
-            {
-                if (battleController.disabledCharacters.Contains(other.gameObject))
-                {
-                    other.GetComponent<PlayerController>().graySpriteAndFreeze();
-                }
-                else
-                {
-                    other.GetComponent<PlayerController>().unhighlight();
-                }
-                enemiesInRange.RemoveAll(item => item == other.gameObject);
-            }
-            else if (other.CompareTag("enemy"))
-            {
-                if (battleController.disabledEnemies.Contains(other.gameObject))
-                {
-                    other.GetComponent<EnemyController>().graySpriteAndFreeze();
-                }
-                else
-                {
-                    other.GetComponent<EnemyController>().unhighlight();
-                }
-                enemiesInRange.RemoveAll(item => item == other.gameObject);  
-            }
-        }
-    }
-    public void DrawFilledCircle(float radius)
-    {
-        Mesh mesh = new Mesh();
-
-        Vector3[] vertices = new Vector3[segments + 1];
-        int[] triangles = new int[segments * 3];
-
-        vertices[0] = Vector3.zero; // center of circle
-
-        float angleStep = 2 * Mathf.PI / segments;
-
-        for (int i = 0; i < segments; i++)
-        {
-            float angle = i * angleStep;
-            vertices[i + 1] = new Vector3(Mathf.Cos(angle) * radius, Mathf.Sin(angle) * radius, 0f);
-        }
-
-        for (int i = 0; i < segments; i++)
-        {
-            int triStart = i * 3;
-            triangles[triStart] = 0;
-            triangles[triStart + 1] = i + 1;
-            triangles[triStart + 2] = (i + 2 > segments) ? 1 : i + 2;
-        }
-
+        mesh.Clear();
         mesh.vertices = vertices;
         mesh.triangles = triangles;
-        mesh.RecalculateNormals();
         mesh.RecalculateBounds();
+    }
 
-        meshFilter.mesh = mesh;
-    }
-    public void UpdateCollider(float radius)
-    {
-        if (circleCollider != null)
-        {
-            circleCollider.radius = radius;
-        }
-    }
 }
