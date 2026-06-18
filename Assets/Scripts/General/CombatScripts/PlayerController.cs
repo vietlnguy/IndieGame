@@ -86,6 +86,8 @@ public class PlayerController : MonoBehaviour
     public List<Debuff> debuffs;
     public List<Buff> buffs;
     public float unmodifiedMoveRange;
+    private bool inAttackRange = false;
+    private Coroutine flashingCoroutine;
 
     void Awake()
     {
@@ -149,6 +151,27 @@ public class PlayerController : MonoBehaviour
     {
         // Multiply by -100 to invert Y (lower on screen = higher order)
         spriteRenderer.sortingOrder = -(int)(transform.position.y * 100) + offset;
+        if (attackRangeCircleScript.active && !inAttackRange)
+        {
+            attackRangeCircleScript.enemiesInRange.RemoveAll(x => x == gameObject);
+            try {
+                StopCoroutine(flashingCoroutine);
+                flashingCoroutine = null;
+            }
+            catch
+            {
+                
+            }
+            unhighlight();
+        }
+        inAttackRange = false;
+
+        if (!attackRangeCircleScript.active && flashingCoroutine != null)
+        {
+            StopCoroutine(flashingCoroutine);
+            flashingCoroutine = null;
+            unhighlight();
+        }
     }
     void OnHoverEnter()
 
@@ -377,10 +400,6 @@ public class PlayerController : MonoBehaviour
         spriteRenderer.color = Color.white;
         animator.SetBool("isFrozen", false);
     }
-    public void highlightAttackable()
-    {
-        spriteRenderer.color = Color.red;
-    }
     public void handleMovement()
     {
         Vector3 direction = Vector3.zero;
@@ -593,7 +612,7 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     currentHp = 0;
-                    yield return StartCoroutine(attackPreviewScript.DeathSequence(gameObject));
+                    yield return StartCoroutine(attackPreviewScript.DeathSequence(gameObject, null));
                 }
             }
 
@@ -605,6 +624,19 @@ public class PlayerController : MonoBehaviour
 
         }
 
+    }
+    public void InAttackRange()
+    {
+        if (!attackRangeCircleScript.enemiesInRange.Contains(gameObject))
+        {
+            attackRangeCircleScript.enemiesInRange.Add(gameObject);
+        }
+        if (flashingCoroutine == null)
+        {
+           flashingCoroutine = StartCoroutine(Helpers.FlashSpriteColor(spriteRenderer, Color.red, 1.5f));
+        }
+
+        inAttackRange = true;
     }
 
 }

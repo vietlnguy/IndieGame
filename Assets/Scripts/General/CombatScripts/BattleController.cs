@@ -295,7 +295,7 @@ public class BattleController : MonoBehaviour
                 }
                 
                 yield return StartCoroutine(characterScript.endTurn());
-                //characterScript.deselectCharacter();
+                //characterScript.deselectCharacter();Okay s
                 yield return new WaitForSeconds(1.5f);
 
 
@@ -318,9 +318,11 @@ public class BattleController : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        //Execute each enemy's turn
-        foreach (Transform enemy in enemies.transform)
+        // Count down from the last child to 0
+        for (int i = enemies.transform.childCount - 1; i >= 0; i--)
         {
+            Transform enemy = enemies.transform.GetChild(i);
+
             //Center camera on enemy
             Vector3 safeDestination = enemy.position;
             safeDestination.x = Mathf.Clamp(safeDestination.x, minX, maxX);
@@ -389,8 +391,8 @@ public class BattleController : MonoBehaviour
                                 }
                             }
                         }
-    
-                        yield return StartCoroutine(attackPreviewScript.startAttackSequence(enemy.gameObject, enemyTarget, attackMove as Attack, "right"));
+
+                        yield return StartCoroutine(attackPreviewScript.startAttackSequence(enemyTarget, enemy.gameObject, attackMove as Attack, "right"));
                     }
                 }
 
@@ -458,14 +460,27 @@ public class BattleController : MonoBehaviour
                     yield return StartCoroutine(attackPreviewScript.startAttackSequence(enemy.gameObject, enemyTarget, attackMove as Attack, "right"));
                 }
             }
-
-            disabledEnemies.Add(enemy.gameObject);
-            yield return StartCoroutine(enemyScript.ApplyEndOfTurnEffects());
-            enemyScript.deselectEnemy();
-            enemy.gameObject.GetComponent<EnemyController>().graySpriteAndFreeze();
+            
+            //If character is still alive then end turn etc
+            bool enemyAlive = true;
+            try
+            {
+                disabledEnemies.Add(enemy.gameObject);
+            }
+            catch
+            {
+               enemyAlive = false; 
+            }
+            if (enemyAlive)
+            {
+                yield return StartCoroutine(enemyScript.ApplyEndOfTurnEffects());
+                enemyScript.deselectEnemy();
+                enemy.gameObject.GetComponent<EnemyController>().graySpriteAndFreeze();
+            }
 
             yield return new WaitForSeconds(1.5f);
         }
+
 
         turnOngoing = false;
     }

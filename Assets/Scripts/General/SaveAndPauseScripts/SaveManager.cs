@@ -71,7 +71,7 @@ public class SaveManager : MonoBehaviour
         mainCharacter.armorEquiped = new Equipment("Leather", "armor", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "For unexpected adventures. +2 Max HP.");
 
         Character astrid = new Character("Astrid", 11, 8, 6, 5, 3, 6, 8, 7, 3, 5, true, true);
-        astrid.knownAttacks.Add(new Attack("Bow Shot", "physical", 1.0f, 1.0f, 90, 5, 0, new List<Debuff>(){new Debuff("Crippled", 100, 1)},"Shoot an arrow at the enemy."));
+        astrid.knownAttacks.Add(new Attack("Bow Shot", "physical", 1.0f, 1.0f, 90, 5, 0, "Shoot an arrow at the enemy."));
         astrid.inventory.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
         astrid.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
         astrid.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
