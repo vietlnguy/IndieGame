@@ -414,7 +414,7 @@ public class Chapter2 : MonoBehaviour
             typingCoroutine = null;
 
             //Pan camera to church
-            yield return StartCoroutine(Helpers.MoveTransform(camera.transform, camera.transform.position, new Vector3(10.23f, -7.5f, -10f), 1.5f));
+            yield return StartCoroutine(Helpers.CameraMoveTransform(camera.transform, camera.transform.position, new Vector3(10.23f, -7.5f, -10f), 1.5f));
             
             //enter lucas, celeste, and soldier
             GameObject soldier = Instantiate(basicEnemyPrefab, new Vector3(13f, -8f, 0f), Quaternion.identity, enemies.transform);
@@ -447,7 +447,7 @@ public class Chapter2 : MonoBehaviour
             yield return StartCoroutine(pathfinder.FollowPath(celeste, new Vector3(1f, -18f, 0f)));
 
             //pan camera back
-            yield return StartCoroutine(Helpers.MoveTransform(camera.transform, camera.transform.position, new Vector3(-6.55f, -7.5f, -10f), 1.5f));
+            yield return StartCoroutine(Helpers.CameraMoveTransform(camera.transform, camera.transform.position, new Vector3(-6.55f, -7.5f, -10f), 1.5f));
 
             //small dialoue 3
             yield return StartCoroutine(PlaySmallDialogue(dialogues4));

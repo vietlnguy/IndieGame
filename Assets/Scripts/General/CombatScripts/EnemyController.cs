@@ -49,7 +49,9 @@ public class EnemyController : MonoBehaviour
     public List<Debuff> debuffs;
     public List<Buff> buffs;
     public bool inAttackRange = false;
+    public bool inSupportRange = false;
     private Coroutine flashingCoroutine;
+
 
     void Awake()
     {
@@ -113,27 +115,106 @@ public class EnemyController : MonoBehaviour
     {
         // Multiply by -100 to invert Y (lower on screen = higher order)
         spriteRenderer.sortingOrder = -(int)(transform.position.y * 100) + offset;
-        if (attackRangeCircleScript.active && !inAttackRange)
+
+        if (attackRangeCircleScript.active)
         {
-            attackRangeCircleScript.enemiesInRange.RemoveAll(x => x == gameObject);
-            try {
+            if (battleController.isEnemyTurn)
+            {
+                if (!inSupportRange)
+                {
+                    attackRangeCircleScript.alliesInRange.RemoveAll(x => x == gameObject);
+                    try {
+                        StopCoroutine(flashingCoroutine);
+                        flashingCoroutine = null;
+                    }
+                    catch
+                    {
+                        
+                    }
+                    if (battleController.disabledEnemies.Contains(gameObject))
+                    {
+                        graySpriteAndFreeze();
+                    }
+                    else
+                    {
+                        unhighlight();
+                    }
+                }
+            }
+            else
+            {
+                if (battleController.characterSelected != null)
+                {
+                    if (!inAttackRange)
+                    {
+                        attackRangeCircleScript.enemiesInRange.RemoveAll(x => x == gameObject);
+                        try {
+                            StopCoroutine(flashingCoroutine);
+                            flashingCoroutine = null;
+                        }
+                        catch
+                        {
+                            
+                        }
+                        if (battleController.disabledEnemies.Contains(gameObject))
+                        {
+                            graySpriteAndFreeze();
+                        }
+                        else
+                        {
+                            unhighlight();
+                        }
+                    }
+                }
+                else if (battleController.enemySelected != null)
+                {
+                    if (!inSupportRange)
+                    {
+                        attackRangeCircleScript.alliesInRange.RemoveAll(x => x == gameObject);
+                        try {
+                            StopCoroutine(flashingCoroutine);
+                            flashingCoroutine = null;
+                        }
+                        catch
+                        {
+                            
+                        }
+                        if (battleController.disabledEnemies.Contains(gameObject))
+                        {
+                            graySpriteAndFreeze();
+                        }
+                        else
+                        {
+                            unhighlight();
+                        }
+                    }
+                }
+
+
+            }
+    
+            inAttackRange = false;
+            inSupportRange = false;
+
+        }
+
+        else
+        {
+            if (flashingCoroutine != null)
+            {
                 StopCoroutine(flashingCoroutine);
                 flashingCoroutine = null;
+                if (battleController.disabledEnemies.Contains(gameObject))
+                {
+                    graySpriteAndFreeze();
+                }
+                else
+                {
+                    unhighlight();
+                }
             }
-            catch
-            {
-                
-            }
-            unhighlight();
         }
-        inAttackRange = false;
 
-        if (!attackRangeCircleScript.active && flashingCoroutine != null)
-        {
-            StopCoroutine(flashingCoroutine);
-            flashingCoroutine = null;
-            unhighlight();
-        }
     }
     void OnHoverEnter()
     {
@@ -357,6 +438,19 @@ public class EnemyController : MonoBehaviour
         }
 
         inAttackRange = true;
+    }
+    public void InSupportRange()
+    {
+        if (!attackRangeCircleScript.alliesInRange.Contains(gameObject))
+        {
+            attackRangeCircleScript.alliesInRange.Add(gameObject);
+        }
+        if (flashingCoroutine == null)
+        {
+           flashingCoroutine = StartCoroutine(Helpers.FlashSpriteColor(spriteRenderer, Color.green, 1.5f));
+        }
+
+        inSupportRange = true;
     }
 
 }
