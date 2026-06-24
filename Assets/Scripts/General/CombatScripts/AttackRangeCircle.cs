@@ -17,8 +17,8 @@ public class AttackRangeCircle : MonoBehaviour
     public List<GameObject> enemiesInRange;
     public bool enemyIsRangedAndMoving = false;
     private TilemapPathfinder pathfinder;
-    private LayerMask obstacleLayer;
-    private LayerMask enemyLayer;
+    private LayerMask visionObstacleLayer;
+    private LayerMask characterLayer;
     private float viewDistance;
     private int rayCount = 180; // Higher = smoother mesh, lower = better performance
     private LayerMask combinedLayerMask; // Combines obstacles and enemies
@@ -47,9 +47,9 @@ public class AttackRangeCircle : MonoBehaviour
         meshRenderer.sortingLayerName = sortingLayerName;
         meshRenderer.sortingOrder = sortingOrder;
 
-        obstacleLayer = LayerMask.GetMask("Obstacle");
-        enemyLayer = LayerMask.GetMask("Characters");
-        combinedLayerMask = obstacleLayer | enemyLayer;
+        visionObstacleLayer = LayerMask.GetMask("VisionObstacle");
+        characterLayer = LayerMask.GetMask("Characters");
+        combinedLayerMask = visionObstacleLayer | characterLayer;
     }
     void LateUpdate()
     {
@@ -114,29 +114,73 @@ public class AttackRangeCircle : MonoBehaviour
 
             foreach (RaycastHit2D hit in hits)
             {
-                // Ignore the player's own root collider if the ray starts inside it
-                //if (hit.collider.transform == transform.parent || hit.collider.transform == transform)
-                //    continue;
-
-                // 1. Check for Obstacle Layer first
-                if ((obstacleLayer.value & (1 << hit.collider.gameObject.layer)) > 0)
+                //Check if hit visionObstacle layer
+                if ((visionObstacleLayer.value & (1 << hit.collider.gameObject.layer)) > 0)
                 {
                     vertex = transform.InverseTransformPoint(hit.point);
                     break; // Stop looking past this wall
                 }
+
+                //Enemy turn logic
+                if (battleController.isEnemyTurn)
+                {
+                    //Collided with player
+                    if (hit.collider.GetComponent<PlayerController>() != null)
+                    {
+                        hit.collider.GetComponent<PlayerController>().InAttackRange();
+                        vertex = transform.InverseTransformPoint(hit.point);
+                        break; // Stop looking past this enemy 
+                    }
+                    
+                    //Collided with enemy (that is not the one casting the rays)
+                    else if (hit.collider.GetComponent<EnemyController>() != null && hit.collider.gameObject != battleController.enemySelected)
+                    {
+                        hit.collider.GetComponent<EnemyController>().InSupportRange();
+                    }
                 
-                else if (hit.collider.GetComponent<EnemyController>() != null && (battleController.isPlayerTurn || battleController.isNeutralTurn) && !battleController.enemySelected)
-                {
-                    hit.collider.GetComponent<EnemyController>().InAttackRange();
-                    vertex = transform.InverseTransformPoint(hit.point);
-                    break; // Stop looking past this enemy
                 }
-                else if (hit.collider.GetComponent<PlayerController>() != null && battleController.isEnemyTurn)
+                
+                //Player/Neutral turn logic
+                else
                 {
-                    hit.collider.GetComponent<PlayerController>().InAttackRange();
-                    vertex = transform.InverseTransformPoint(hit.point);
-                    break; // Stop looking past this enemy 
+                    if (battleController.characterSelected)
+                    {
+                        //Collided with enemy 
+                        if (hit.collider.GetComponent<EnemyController>() != null)
+                        {
+                            hit.collider.GetComponent<EnemyController>().InAttackRange();
+                            vertex = transform.InverseTransformPoint(hit.point);
+                            break; // Stop looking past this enemy 
+                        }
+
+                        //Collided with player (that is not the one casting the rays)
+                        if (hit.collider.GetComponent<PlayerController>() != null && hit.collider.gameObject != battleController.characterSelected)
+                        {
+                            hit.collider.GetComponent<PlayerController>().InSupportRange();
+                        }
+                    
+                    
+                    }
+                    
+                    else if (battleController.enemySelected)
+                    {
+                        //Collided with enemy (that is not the one casting the rays)
+                        if (hit.collider.GetComponent<EnemyController>() != null && hit.collider.gameObject != battleController.enemySelected)
+                        {
+                            hit.collider.GetComponent<EnemyController>().InSupportRange();
+                        }
+
+                        //Collided with player
+                        if (hit.collider.GetComponent<PlayerController>() != null)
+                        {
+                            hit.collider.GetComponent<PlayerController>().InAttackRange();
+                            vertex = transform.InverseTransformPoint(hit.point);
+                            break; // Stop looking past this enemy 
+                        }
+                    
+                    }
                 }
+
             }
 
             vertices[vertexIndex] = vertex;
