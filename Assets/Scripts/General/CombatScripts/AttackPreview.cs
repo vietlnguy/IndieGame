@@ -262,6 +262,11 @@ public class AttackPreview : MonoBehaviour
         float critChance= -1;
         int[] returnArray = {-1, -1, -1};
 
+        if (attackMove == null)
+        {
+            return returnArray;
+        }
+
         try
         {
             EnemyController attackerScript = attacker.GetComponent<EnemyController>();
@@ -1348,7 +1353,7 @@ public class AttackPreview : MonoBehaviour
 
             yield return new WaitForSeconds(2f);
             
-            //Play enemy death dialogue if necessary
+            //Play death dialogue if necessary
             if (playerScript.currentHp <= 0)
             {   
                 //TODO: Remove sprite on battle screen

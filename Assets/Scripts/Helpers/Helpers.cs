@@ -221,6 +221,26 @@ public static class Helpers
         // Snap exactly to target at the end
         obj.position = targetPos;
     }
+    public static IEnumerator CameraMoveTransform(Transform obj, Vector3 startPos, Vector3 targetPos, float duration)
+    {
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+
+            // Apply Ease Out: Starts fast, slows down at the end
+            float easedT = 1f - Mathf.Pow(1f - t, 3);
+
+            obj.position = Vector3.Lerp(startPos, targetPos, easedT);
+
+            yield return null;
+        }
+
+        // Snap exactly to target at the end
+        obj.position = targetPos;
+    }
     public static IEnumerator ScaleCameraSize(Camera cam, float targetSize, float duration)
     {
         float elapsed = 0f;
