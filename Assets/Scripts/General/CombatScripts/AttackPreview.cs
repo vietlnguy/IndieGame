@@ -1121,6 +1121,9 @@ public class AttackPreview : MonoBehaviour
                 //Check if enemy can attack back
                 if ((enemyScript.ranged && playerScript.ranged) || (!enemyScript.ranged && !playerScript.ranged))
                 {
+                    //Recalculate stats due to armor/abilities
+                    //enemyScript.RecalculateStats();
+
                     if (PlayerPrefs.GetInt("combatAnim", -1) == 0)
                     {
                         //TODO Start attack animation
