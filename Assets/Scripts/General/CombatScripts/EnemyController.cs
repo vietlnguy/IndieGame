@@ -48,6 +48,10 @@ public class EnemyController : MonoBehaviour
     public GameObject bossIconPrefab;
     public List<Debuff> debuffs;
     public List<Buff> buffs;
+    public bool inAttackRange = false;
+    public bool inSupportRange = false;
+    private Coroutine flashingCoroutine;
+
 
     void Awake()
     {
@@ -111,6 +115,106 @@ public class EnemyController : MonoBehaviour
     {
         // Multiply by -100 to invert Y (lower on screen = higher order)
         spriteRenderer.sortingOrder = -(int)(transform.position.y * 100) + offset;
+
+        if (attackRangeCircleScript.active)
+        {
+            if (battleController.isEnemyTurn)
+            {
+                if (!inSupportRange)
+                {
+                    attackRangeCircleScript.alliesInRange.RemoveAll(x => x == gameObject);
+                    try {
+                        StopCoroutine(flashingCoroutine);
+                        flashingCoroutine = null;
+                    }
+                    catch
+                    {
+                        
+                    }
+                    if (battleController.disabledEnemies.Contains(gameObject))
+                    {
+                        graySpriteAndFreeze();
+                    }
+                    else
+                    {
+                        unhighlight();
+                    }
+                }
+            }
+            else
+            {
+                if (battleController.characterSelected != null)
+                {
+                    if (!inAttackRange)
+                    {
+                        attackRangeCircleScript.enemiesInRange.RemoveAll(x => x == gameObject);
+                        try {
+                            StopCoroutine(flashingCoroutine);
+                            flashingCoroutine = null;
+                        }
+                        catch
+                        {
+                            
+                        }
+                        if (battleController.disabledEnemies.Contains(gameObject))
+                        {
+                            graySpriteAndFreeze();
+                        }
+                        else
+                        {
+                            unhighlight();
+                        }
+                    }
+                }
+                else if (battleController.enemySelected != null)
+                {
+                    if (!inSupportRange)
+                    {
+                        attackRangeCircleScript.alliesInRange.RemoveAll(x => x == gameObject);
+                        try {
+                            StopCoroutine(flashingCoroutine);
+                            flashingCoroutine = null;
+                        }
+                        catch
+                        {
+                            
+                        }
+                        if (battleController.disabledEnemies.Contains(gameObject))
+                        {
+                            graySpriteAndFreeze();
+                        }
+                        else
+                        {
+                            unhighlight();
+                        }
+                    }
+                }
+
+
+            }
+    
+            inAttackRange = false;
+            inSupportRange = false;
+
+        }
+
+        else
+        {
+            if (flashingCoroutine != null)
+            {
+                StopCoroutine(flashingCoroutine);
+                flashingCoroutine = null;
+                if (battleController.disabledEnemies.Contains(gameObject))
+                {
+                    graySpriteAndFreeze();
+                }
+                else
+                {
+                    unhighlight();
+                }
+            }
+        }
+
     }
     void OnHoverEnter()
     {
@@ -205,9 +309,11 @@ public class EnemyController : MonoBehaviour
     }
     public void Die(GameObject killer)
     {
+        deselectEnemy();
         GameObject[] list = { gameObject, killer };
         OnEnemyDied?.Invoke(list);
         Destroy(gameObject);
+
     }
     public void ApplyDebuffEffects()
     {
@@ -307,7 +413,7 @@ public class EnemyController : MonoBehaviour
                 else
                 {
                     currentHp = 0;
-                    yield return StartCoroutine(attackPreviewScript.DeathSequence(gameObject));
+                    yield return StartCoroutine(attackPreviewScript.DeathSequence(gameObject, null));
                 }
             }
 
@@ -319,6 +425,32 @@ public class EnemyController : MonoBehaviour
 
         }
 
+    }
+    public void InAttackRange()
+    {
+        if (!attackRangeCircleScript.enemiesInRange.Contains(gameObject))
+        {
+            attackRangeCircleScript.enemiesInRange.Add(gameObject);
+        }
+        if (flashingCoroutine == null)
+        {
+           flashingCoroutine = StartCoroutine(Helpers.FlashSpriteColor(spriteRenderer, Color.red, 1.5f));
+        }
+
+        inAttackRange = true;
+    }
+    public void InSupportRange()
+    {
+        if (!attackRangeCircleScript.alliesInRange.Contains(gameObject))
+        {
+            attackRangeCircleScript.alliesInRange.Add(gameObject);
+        }
+        if (flashingCoroutine == null)
+        {
+           flashingCoroutine = StartCoroutine(Helpers.FlashSpriteColor(spriteRenderer, Color.green, 1.5f));
+        }
+
+        inSupportRange = true;
     }
 
 }
