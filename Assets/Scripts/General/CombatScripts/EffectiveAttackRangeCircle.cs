@@ -64,29 +64,57 @@ public class EffectiveAttackRangeCircle : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        //Character is selected and others enter AttackRange
+        //Player/Neutral turn
         if (!battleController.isEnemyTurn)
         {
-            if (other.CompareTag("enemy"))
+            if (battleController.enemySelected)
             {
-                if (!enemiesInRange.Contains(other.gameObject))
-                {
-                    enemiesInRange.Add(other.gameObject);
-                }
-            }
-            if (other.CompareTag("character"))
-            {
-                if (other.gameObject != battleController.characterSelected)
+                if (other.CompareTag("enemy") && other.gameObject != battleController.enemySelected)
                 {
                     if (!alliesInRange.Contains(other.gameObject))
                     {
                         alliesInRange.Add(other.gameObject);
                     }
+
                 }
+                if (other.CompareTag("character"))
+                {
+                    if (other.gameObject != battleController.characterSelected)
+                    {
+                        if (!enemiesInRange.Contains(other.gameObject))
+                        {
+                            enemiesInRange.Add(other.gameObject);
+                        }
+                    }
+
+                }
+        
             }
+            else
+            {
+                if (other.CompareTag("enemy"))
+                {
+                    if (!enemiesInRange.Contains(other.gameObject))
+                    {
+                        enemiesInRange.Add(other.gameObject);
+                    }
+                }
+                if (other.CompareTag("character"))
+                {
+                    if (other.gameObject != battleController.characterSelected)
+                    {
+                        if (!alliesInRange.Contains(other.gameObject))
+                        {
+                            alliesInRange.Add(other.gameObject);
+                        }
+                    }
+                }
+        
+            }
+
         }
 
-        //Enemy is selected and others enter AttackRange
+        //Enemy turn
         else
         {
             if (other.CompareTag("enemy") && other.gameObject != battleController.enemySelected)
@@ -113,22 +141,39 @@ public class EffectiveAttackRangeCircle : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D other)
     {
-
-        //Character is selected and others leave the AttackRange
-        if (battleController.characterSelected != null)
+        //Player/Neutral turn
+        if (!battleController.isEnemyTurn)
         {
-            if (other.CompareTag("enemy"))
+            //Character is selected and others leave the AttackRange
+            if (battleController.characterSelected != null)
             {
-                enemiesInRange.RemoveAll(item => item == other.gameObject);
+                if (other.CompareTag("enemy"))
+                {
+                    enemiesInRange.RemoveAll(item => item == other.gameObject);
+                }
+                if (other.CompareTag("character"))
+                {
+                    alliesInRange.RemoveAll(item => item == other.gameObject);
+                }
             }
-            if (other.CompareTag("character"))
+
+            //Enemy is selected and others leave the AttackRange
+            else if (battleController.enemySelected != null)
             {
-                alliesInRange.RemoveAll(item => item == other.gameObject);
+                if (other.CompareTag("character"))
+                {
+                    enemiesInRange.RemoveAll(item => item == other.gameObject);
+                }
+                else if (other.CompareTag("enemy"))
+                {
+                    enemiesInRange.RemoveAll(item => item == other.gameObject);  
+                }
             }
+    
         }
 
-        //Enemy is selected and others leave the AttackRange
-        if (battleController.characterSelected == null && battleController.enemySelected != null)
+        //EnemyTurn
+        else
         {
             if (other.CompareTag("character"))
             {
@@ -138,7 +183,9 @@ public class EffectiveAttackRangeCircle : MonoBehaviour
             {
                 enemiesInRange.RemoveAll(item => item == other.gameObject);  
             }
+    
         }
+
     }
     public void DrawFilledCircle(float radius)
     {

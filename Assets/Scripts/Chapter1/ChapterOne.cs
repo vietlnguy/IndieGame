@@ -87,6 +87,9 @@ public class ChapterOne : MonoBehaviour {
     private List<CharacterDialogue> dialogues15;
     private List<CharacterDialogue> dialogues16;
 
+    //Subquests
+    public TextMeshProUGUI astridSubquestText;
+
     public void Awake()
     {    
     
@@ -99,11 +102,11 @@ public class ChapterOne : MonoBehaviour {
         {
             if (character.characterName == saveManager.loadedData.mainCharacterName)
             {
-                mainCharacterObject = Instantiate(mainCharacterPrefab, new Vector3(-20f, -9.35f), Quaternion.identity, characters.transform);
+                mainCharacterObject = Instantiate(mainCharacterPrefab, new Vector3(-19f, -7.9f, 0f), Quaternion.identity, characters.transform);
             }
             else if (character.characterName == "Astrid")
             {
-                astridObject = Instantiate(astridPrefab, new Vector3(-6.58f, -10.55f), Quaternion.identity, characters.transform);
+                astridObject = Instantiate(astridPrefab, new Vector3(-9.2f, -11.75f), Quaternion.identity, characters.transform);
                 StartCoroutine(Helpers.FadeSpriteToBlack(astridObject));
                 astridScript = GameObject.Find("AstridPrefab(Clone)").GetComponent<PlayerController>();
 
@@ -278,10 +281,10 @@ public class ChapterOne : MonoBehaviour {
     }
     public void CreateEnemies()
     {
-        BasicRangedEnemy(-21f, -11.25f, 0f);
-        BasicEnemy(-9f, -14.24f, 0f);
-        BasicEnemy(2.57f, -10.15f, 0f);
-        BossEnemy(10.5f, -6.36f, 0f);
+        BasicRangedEnemy(-19f, -9.75f, 0f);
+        BasicEnemy(-11.3f, -15.5f, 0f);
+        BasicEnemy(1.95f, -6.17f, 0f);
+        BossEnemy(13.33f, -10.8f, 0f);
         enemiesSpawned = true;
         CharacterDeathSubscribe(); 
         EnemyDeathSubscribe();
@@ -312,8 +315,8 @@ public class ChapterOne : MonoBehaviour {
         enemy.support = false;
         enemy.hybrid = false;
 
-        enemy.knownAttacks.Add(new Attack("Triumphant Shout", "physical", 1.5f, 1.0f, 100, 0, 0, new List<Debuff>(){new Debuff("Taunted", 100, 1)}, "Taunts the enemy. Forced to attack closest."));
-        //enemy.knownAttacks.Add(new Attack("Bash", "physical", 1.0f, 1.0f, 90, 0, 0,  new List<Debuff>(),"Bash the enemy with your weapon."));
+        //enemy.knownAttacks.Add(new Attack("Triumphant Shout", "physical", 1.5f, 1.0f, 100, 0, 0, new List<Debuff>(){new Debuff("Taunted", 100, 1)}, "Taunts the enemy. Forced to attack closest."));
+        enemy.knownAttacks.Add(new Attack("Bash", "physical", 1.0f, 1.0f, 90, 0, 0,  new List<Debuff>(),"Bash the enemy with your weapon."));
     }
     public void BasicRangedEnemy(float x, float y, float z)
     {
@@ -372,7 +375,7 @@ public class ChapterOne : MonoBehaviour {
     private IEnumerator Intro()
     {
         //REMOVE AFTER TESTING
-        saveManager.loadedData.introBattleOutro = "Battle";
+        //saveManager.loadedData.introBattleOutro = "Battle";
         
         if (saveManager.loadedData.introBattleOutro == "Intro")
         {
@@ -381,7 +384,7 @@ public class ChapterOne : MonoBehaviour {
             yield return StartCoroutine(Helpers.FadeOutImageAlpha(whiteScreen, 1f));
             yield return new WaitForSeconds(1f);
             StartCoroutine(Helpers.FadeInAudio(fluteAudio, 1f));
-            yield return StartCoroutine(pathfinder.FollowPath(mainCharacterObject, new Vector3(-6.57f, -11.28f, 0f)));
+            yield return StartCoroutine(pathfinder.FollowPath(mainCharacterObject, new Vector3(-9.2f, -11.68f, 0f)));
             yield return new WaitForSeconds(.5f);
             doorAudio.Play();
 
@@ -515,19 +518,19 @@ public class ChapterOne : MonoBehaviour {
         //Spawn all enemies
         CreateEnemies();
 
-        mainCharacterObject.transform.position = new Vector3(-6.57f, -11.28f, 0f);
+        mainCharacterObject.transform.position = new Vector3(-9.2f, -11.5f, 0f);
 
         //Fade out white screen
         yield return StartCoroutine(Helpers.FadeOutImageAlpha(whiteScreen, 0.5f));
 
         //Move characters to starting positions
         yield return StartCoroutine(Helpers.UndoFadeSpriteToBlack(mainCharacterObject));
-        yield return StartCoroutine(pathfinder.FollowPath(mainCharacterObject, new Vector3(-7.5f, -13f, 0f)));
+        yield return StartCoroutine(pathfinder.FollowPath(mainCharacterObject, new Vector3(-10.75f, -12.5f, 0f)));
         yield return new WaitForSeconds(1f);
 
-        astridObject.transform.position = new Vector3(-6.57f, -11.28f, 0f);
+        astridObject.transform.position = new Vector3(-9.2f, -11.5f, 0f);
         yield return StartCoroutine(Helpers.UndoFadeSpriteToBlack(astridObject));
-        yield return StartCoroutine(pathfinder.FollowPath(astridObject, new Vector3(-5.66f, -13f, 0f)));
+        yield return StartCoroutine(pathfinder.FollowPath(astridObject, new Vector3(-8.15f, -12.5f, 0f)));
 
         //Small dialogue
         yield return StartCoroutine(PlaySmallDialogue(dialogues15));
@@ -588,10 +591,13 @@ public class ChapterOne : MonoBehaviour {
         if (list[0].GetComponent<EnemyController>().boss && list[1].GetComponent<PlayerController>().title != "Astrid")
         {
             astridScript.subquests[0].failed = true;
+            Helpers.FailSubquestText(astridSubquestText);
         }
         else if (list[0].GetComponent<EnemyController>().boss && list[1].GetComponent<PlayerController>().title == "Astrid")
         {
             astridScript.subquests[0].completed = true;
+            Helpers.SucceedSubquestText(astridSubquestText);
+
         }
 
     }

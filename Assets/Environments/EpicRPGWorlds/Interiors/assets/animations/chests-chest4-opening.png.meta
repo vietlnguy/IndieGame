@@ -75,7 +75,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,12 +127,12 @@ TextureImporter:
       name: chests-chest4-opening_0
       rect:
         serializedVersion: 2
-        x: 72
-        y: 63
-        width: 48
-        height: 34
+        x: 0
+        y: 0
+        width: 196
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -149,12 +149,12 @@ TextureImporter:
       name: chests-chest4-opening_1
       rect:
         serializedVersion: 2
-        x: 264
-        y: 63
-        width: 48
-        height: 34
+        x: 196
+        y: 0
+        width: 196
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -171,12 +171,12 @@ TextureImporter:
       name: chests-chest4-opening_2
       rect:
         serializedVersion: 2
-        x: 456
-        y: 63
-        width: 48
-        height: 35
+        x: 392
+        y: 0
+        width: 196
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -193,12 +193,12 @@ TextureImporter:
       name: chests-chest4-opening_3
       rect:
         serializedVersion: 2
-        x: 648
-        y: 63
-        width: 48
-        height: 34
+        x: 588
+        y: 0
+        width: 196
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -215,12 +215,12 @@ TextureImporter:
       name: chests-chest4-opening_4
       rect:
         serializedVersion: 2
-        x: 838
-        y: 63
-        width: 52
-        height: 47
+        x: 784
+        y: 0
+        width: 196
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -237,12 +237,12 @@ TextureImporter:
       name: chests-chest4-opening_5
       rect:
         serializedVersion: 2
-        x: 1030
-        y: 63
-        width: 52
-        height: 49
+        x: 980
+        y: 0
+        width: 196
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -259,12 +259,12 @@ TextureImporter:
       name: chests-chest4-opening_6
       rect:
         serializedVersion: 2
-        x: 1222
-        y: 63
-        width: 52
-        height: 51
+        x: 1176
+        y: 0
+        width: 196
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -281,12 +281,12 @@ TextureImporter:
       name: chests-chest4-opening_7
       rect:
         serializedVersion: 2
-        x: 1414
-        y: 63
-        width: 52
-        height: 50
+        x: 1372
+        y: 0
+        width: 196
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -299,33 +299,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: chests-chest4-opening_8
-      rect:
-        serializedVersion: 2
-        x: 1606
-        y: 63
-        width: 52
-        height: 51
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8d90a8048290a5bb0800000000000000
-      internalID: -4946631172226938408
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e95aa4ab14f3dd3489db4d3546aa8159
     internalID: 0
     vertices: []
     indices: 
@@ -333,7 +311,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":196.0,"y":192.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       chests-chest4-opening_0: 4326190210888148402
       chests-chest4-opening_1: 6385596504121872615
@@ -343,7 +323,6 @@ TextureImporter:
       chests-chest4-opening_5: -6382488012687108754
       chests-chest4-opening_6: -4847566898229562175
       chests-chest4-opening_7: 6828207497231005221
-      chests-chest4-opening_8: -4946631172226938408
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
