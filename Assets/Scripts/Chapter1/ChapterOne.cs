@@ -87,6 +87,9 @@ public class ChapterOne : MonoBehaviour {
     private List<CharacterDialogue> dialogues15;
     private List<CharacterDialogue> dialogues16;
 
+    //Subquests
+    public TextMeshProUGUI astridSubquestText;
+
     public void Awake()
     {    
     
@@ -588,10 +591,13 @@ public class ChapterOne : MonoBehaviour {
         if (list[0].GetComponent<EnemyController>().boss && list[1].GetComponent<PlayerController>().title != "Astrid")
         {
             astridScript.subquests[0].failed = true;
+            Helpers.FailSubquestText(astridSubquestText);
         }
         else if (list[0].GetComponent<EnemyController>().boss && list[1].GetComponent<PlayerController>().title == "Astrid")
         {
             astridScript.subquests[0].completed = true;
+            Helpers.SucceedSubquestText(astridSubquestText);
+
         }
 
     }

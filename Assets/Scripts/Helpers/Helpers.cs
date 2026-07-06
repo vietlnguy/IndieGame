@@ -517,7 +517,6 @@ public static class Helpers
             yield return null;
         }
     }
-    
     public static float CalculateCrit(float skill, float moveBase)
     {
         float k = 100f;          // Skill level at which you get half the MaxBonus
@@ -531,4 +530,16 @@ public static class Helpers
         
         return Mathf.Clamp(finalChance, 0f, 100f);
     }
+    public static void FailSubquestText(TextMeshProUGUI tmp)
+    {
+        tmp.text = "<s>{tmp.text}</s>";
+        tmp.color = new Color(.86f, .07f, .23f, .8f);
+    }
+    public static void SucceedSubquestText(TextMeshProUGUI tmp)
+    {
+        tmp.color = new Color(.48f, .98f, 0f, .8f);
+    }
+
+
+
 }
