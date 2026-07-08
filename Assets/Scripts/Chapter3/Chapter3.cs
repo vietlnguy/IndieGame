@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Chapter2 : MonoBehaviour
+public class Chapter3 : MonoBehaviour
 {
 
     //Prefabs
@@ -14,6 +14,9 @@ public class Chapter2 : MonoBehaviour
     public GameObject astridPrefab;
     public GameObject celestePrefab;
     public GameObject lucasPrefab;
+    public GameObject katherinePrefab;
+    public GameObject gerardPrefab;
+    public GameObject penelopePrefab;
 
     //Bools & Trackers
     private bool enemiesSpawned = false;
@@ -25,7 +28,6 @@ public class Chapter2 : MonoBehaviour
     private Coroutine intro;
     private Coroutine typingCoroutine;
     private string lineToBeTyped = "";
-    private int lucasKills = 0;
      
     //Objects
     private GameObject characters;
@@ -35,14 +37,16 @@ public class Chapter2 : MonoBehaviour
     public GameObject camera;
     public GameObject victoryAndSubquestBox;
 
+
     //Script references
     public BattleController battleController;
     private SaveManager saveManager;
     public GameOver gameOverScript;
     public AttackPreview attackPreviewScript;
     private TilemapPathfinder pathfinder;
-    private PlayerController lucasScript;
-    private PlayerController celesteScript;
+    private PlayerController penelopeScript;
+    private PlayerController gerardScript;
+    private PlayerController katherineScript;
     private VictorySequence victorySequenceScript;
     
     //Audios
@@ -69,6 +73,8 @@ public class Chapter2 : MonoBehaviour
     private List<CharacterDialogue> dialogues2;
     private List<CharacterDialogue> dialogues3;
     private List<CharacterDialogue> dialogues4;
+    private List<CharacterDialogue> dialogues5;
+    private List<CharacterDialogue> dialogues6;
     private List<CharacterDialogue> outroDialogue1;
 
     public void Awake()
@@ -82,77 +88,102 @@ public class Chapter2 : MonoBehaviour
         victorySequenceScript = FindAnyObjectByType<VictorySequence>();
 
         dialogues = new List<CharacterDialogue>();
-        dialogues.Add(new CharacterDialogue(saveManager.loadedData.mainCharacterName, new string[] {"It's been a long time since we've been back to Maplemire.", "We should try to load up on supplies, while we can.", "It's not much further til we get to the castle."}));
-        dialogues.Add(new CharacterDialogue("Astrid", new string[] {"That sounds like a good idea.", "Doesn't town seem awfully quiet, though? Where is everybody?"}));
-        dialogues.Add(new CharacterDialogue(saveManager.loadedData.mainCharacterName, new string[] {"You're right, something's off--", "Wait a second.", "Something is going on at the church over there."}));
+        dialogues.Add(new CharacterDialogue("Lord Beesly", new string[] {"Report, Commander."}));
+        dialogues.Add(new CharacterDialogue("Soldier", new string[] {"My lord. The mercenaries we sent into town were unsuccessful in finding any relics."}));
+        dialogues.Add(new CharacterDialogue("Lord Beesly", new string[] {"Tch. We're running out of time, Commander.", "Double the men and search again.", "Do whatever it takes to find the relics."}));
+        dialogues.Add(new CharacterDialogue("Soldier", new string[] {"As you wish, my lord."}));
 
         dialogues2 = new List<CharacterDialogue>();
-        dialogues2.Add(new CharacterDialogue("Lucas", new string[] {"Back off, chump!", "We don't have any of those stinkin' relics!"}));
-        dialogues2.Add(new CharacterDialogue("Celeste", new string[]{"Oh dear.. Please forgive my brother, sir. But he speaks true.", "Our goddess, Ilvera, forbids us to lie. We do not possess any relics."}));
-        dialogues2.Add(new CharacterDialogue("Soldier", new string[] {"I understand that priestess, but I have orders.", "If you don't comply, my superiors--"}));
-        
+        dialogues2.Add(new CharacterDialogue("???", new string[] {"Lord Beesly."}));
+        dialogues2.Add(new CharacterDialogue("Lord Beesly", new string[] {"Gah-", "What are you doing here??"}));
+        dialogues2.Add(new CharacterDialogue("???", new string[] {"We had a deal, Lord Beesly."}));
+        dialogues2.Add(new CharacterDialogue("Lord Beesly", new string[] {"I'm trying. I just need a little more time. I swear it."}));
+        dialogues2.Add(new CharacterDialogue("???", new string[] {"If you do not produce any relics soon, you will have more to worry about than your precious castle.", "Speaking of which, your daughter approaches. She's quite lovely now isn't she?"}));
+        dialogues2.Add(new CharacterDialogue("Lord Beesly", new string[] {"You wretch."}));
+        dialogues2.Add(new CharacterDialogue("???", new string[] {"Tick tock, Lord Beesly."}));
+
         dialogues3 = new List<CharacterDialogue>();
-        dialogues3.Add(new CharacterDialogue("Lance", new string[] {"Well well well! Wha' do we got 'er?", "A couple of sky worshippers. What's wrong? Your \"goddess\" didn't tell you we were coming?"}));
-        dialogues3.Add(new CharacterDialogue("Celeste", new string[]{"The goddess guides us all.", "May she lead you to her warmth and understanding..."}));
-        dialogues3.Add(new CharacterDialogue("Lance", new string[] {"Pft. I don't need any phony goddess.", "The only thing I need is all of the church tithings!", "Now hand them over!"}));
-        dialogues3.Add(new CharacterDialogue("Lucas", new string[] {"We already told you and your crooks, we don't have any relics!", "So get lost, jerk!"}));
-        dialogues3.Add(new CharacterDialogue("Lance", new string[] {"Woo weeee! The mouth on this one! Tsk tsk, your god should've taught you better manners!", "Let's go boys! Turn this town upside down!", "By order of Lord Beesly, find every relic you can!"}));
-        dialogues3.Add(new CharacterDialogue("Lucas", new string[] {"Come on, sis! We gotta make a break for it!"}));
-        dialogues3.Add(new CharacterDialogue("Celeste", new string[]{"Goddess, protect us..."}));
+        dialogues3.Add(new CharacterDialogue("Penelope", new string[] {"Father!", "I demand to know what is going on!", "What are these reports I am hearing of thugs ransacking the village??"}));
+        dialogues3.Add(new CharacterDialogue("Lord Beesly", new string[] {"Penelope... please.", "You don't understand what is at stake.", "What I do, I do to protect us."}));
+        dialogues3.Add(new CharacterDialogue("Penelope", new string[] {"It doesn't justify terrorizing these people.", "What is happening to you, Father?", "The man that raised me would never sacrifice his humanity for some stupid relics!"}));
+        dialogues3.Add(new CharacterDialogue("Lord Beesly", new string[] {"..."}));
 
         dialogues4 = new List<CharacterDialogue>();
-        dialogues4.Add(new CharacterDialogue(saveManager.loadedData.mainCharacterName, new string[] {"Wait what-- Lord Beesly's orders?", "That can't be.."}));
-        dialogues4.Add(new CharacterDialogue("Astrid", new string[] {saveManager.loadedData.mainCharacterName + "!", "Those people running away from the church, they look like they are in danger!", "We can worry about Lord Beesly later, right now they need our help!"}));
-        dialogues4.Add(new CharacterDialogue(saveManager.loadedData.mainCharacterName, new string[] {"You're right. Let's go!"}));
+        dialogues4.Add(new CharacterDialogue("Soldier", new string[] {"My lord, sorry to inturrupt.", "There is a band of people that are requesting council.", "They say they have information about the relics."}));
+        dialogues4.Add(new CharacterDialogue("Lord Beesly", new string[] {"Send them in, at once!"}));
+
+        dialogues5 = new List<CharacterDialogue>();
+        dialogues5.Add(new CharacterDialogue(saveManager.loadedData.mainCharacterName, new string[] {"Beesly!"}));
+        dialogues5.Add(new CharacterDialogue("Lord Beesly", new string[] {saveManager.loadedData.mainCharacterName + "?", "What are you doing here?"}));
+        dialogues5.Add(new CharacterDialogue(saveManager.loadedData.mainCharacterName, new string[] {"I'd rather be retired on my farm, but it seems like fate has other plans.", "Would you care to explain why imperial soldiers and thugs are ambushing citizens?"}));
+        dialogues5.Add(new CharacterDialogue("Penelope", new string[] {"I want to know as well."}));
+        dialogues5.Add(new CharacterDialogue("Lord Beesly", new string[] {"Sigh...", "I guess you deserve to know...", "The relics are more than just historical artifacts.", "They possess tremendous power.", "Rumors have spread of people doing unimaginable feats.", "Moving boulders and leaping mountains.", "King Reiss has charged me and the other state governors with collecting any and all relics."}));
+        dialogues5.Add(new CharacterDialogue("Astrid", new string[] {"That would explain why those imperial soldiers arrived at our farm.", "And the tremendous power I felt."}));
+        dialogues5.Add(new CharacterDialogue("Lord Beesly", new string[] {"You possess a relic??", "Please, give it here! You don't understand what is at stake!"}));
+        dialogues5.Add(new CharacterDialogue("Astrid", new string[] {"But--"}));
+        dialogues5.Add(new CharacterDialogue(saveManager.loadedData.mainCharacterName, new string[] {"No.", "Beesly, it doesn't matter what the King has threatened you with.", "This is not the way. Let us help you."}));
+        dialogues5.Add(new CharacterDialogue("Lord Beesly", new string[] {"No! For your own sake, give me the relic.", "NOW!"}));
+        dialogues5.Add(new CharacterDialogue("Penelope", new string[] {"Father, please!"}));
+        dialogues5.Add(new CharacterDialogue("Lord Beesly", new string[] {"Stay back, Penelope!", "Guards, seize them!", "Do not let them leave with that relic!"}));
+
+        dialogues6 = new List<CharacterDialogue>();
+        dialogues6.Add(new CharacterDialogue(saveManager.loadedData.mainCharacterName, new string[] {"Shit..."}));
+        dialogues6.Add(new CharacterDialogue("Lucas", new string[] {"Nice going. What's the plan, now?"}));
+        dialogues6.Add(new CharacterDialogue(saveManager.loadedData.mainCharacterName, new string[] {"Escape!"}));
+        dialogues6.Add(new CharacterDialogue("Penelope", new string[] {"Follow me! I know the way!", "Katherine! Gerard! With me, we're leaving!"}));
+        dialogues6.Add(new CharacterDialogue("Gerard", new string[] {"Princess, but the Lord--"}));
+        dialogues6.Add(new CharacterDialogue("Katherine", new string[] {"Penny..."}));
+        dialogues6.Add(new CharacterDialogue("Penelope", new string[] {"You're both sworn to me. Help me fix this madness!"}));
+
 
         outroDialogue1 = new List<CharacterDialogue>();
         outroDialogue1.Add(new CharacterDialogue(saveManager.loadedData.mainCharacterName, new string[] {"Looks like we managed to scare them off for now.", "Is everybody alright?"}));
-        outroDialogue1.Add(new CharacterDialogue("Celeste", new string[] { "Yes... thank you for saving us..."}));
-        outroDialogue1.Add(new CharacterDialogue("Lucas",  new string[] {"I could've taken them, but thanks for the backup."}));
-        outroDialogue1.Add(new CharacterDialogue("Astrid",  new string[] {"First home, and now this... what in the world is going on?"}));
-        outroDialogue1.Add(new CharacterDialogue(saveManager.loadedData.mainCharacterName,  new string[] {"Lord Beesly would've never allowed this.", "This must be a rogue group of soldiers."}));
-        outroDialogue1.Add(new CharacterDialogue("Celeste", new string[] { "I'm afraid you're mistaken... Lord Beesly has not been himself of late..."}));
-        outroDialogue1.Add(new CharacterDialogue("Lucas",  new string[] {"Yeah, where have you been?? Living out in the woods or somethin'?", "Lord Beesly has been anything but kind.", "He's been sending out his cronies to do random searches all over town.", "This is just another one of his shakedowns."}));
-        outroDialogue1.Add(new CharacterDialogue("Celeste", new string[] { "But to attack the church...", "I fear this may only be the beginning..."}));
-        outroDialogue1.Add(new CharacterDialogue("Astrid",  new string[] {"Come with us!", "It's not safe here anymore."}));
-        outroDialogue1.Add(new CharacterDialogue(saveManager.loadedData.mainCharacterName, new string[] {"She's right.", "We're headed to the castle now to get to the bottom of this.", "We'll have more power in numbers."}));
-        outroDialogue1.Add(new CharacterDialogue("Celeste", new string[] { "Thank you...", "May Ilvera bless you..."}));
-        outroDialogue1.Add(new CharacterDialogue("Lucas",  new string[] {"Hmph.."}));
 
-
-
-
-        bool hasNewCharacters = saveManager.loadedData.characters.Exists(c => c.characterName == "Celeste" || c.characterName == "Lucas");
+        bool hasNewCharacters = saveManager.loadedData.characters.Exists(c => c.characterName == "Penelope" || c.characterName == "Gerard" || c.characterName == "Katherine");
 
         if (!hasNewCharacters)
         {
-            Character celeste = new Character("Celeste", 9, 11, 4, 7, 4, 6, 6, 5, 3, 4, false, true);
-            celeste.knownAttacks.Add(new SupportMove("Heal", 3, "hp", 5, null, null, "Heal an ally. (Scales with INT)"));
-            celeste.inventory.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
-            celeste.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
-            celeste.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
-            celeste.accessoryEquiped = new Equipment("Mana Band", "accessory", 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Stores mana! +2 max Mana.");
-            celeste.subquests.Add(new Subquest("Celeste1", "Don't let Celeste take any damage.", "Ask to learn more about the goddess."));
-            celeste.subquests.Add(new Subquest("Celeste2", "Placeholder.", "Placeholder description."));
-            celeste.subquests.Add(new Subquest("Celeste3", "Placeholder", "Placeholder description."));
-            //TODO: Add more celeste subquests
-            
-            saveManager.loadedData.characters.Add(celeste);
+            Character penelope = new Character("Penelope", 9, 11, 4, 7, 4, 6, 6, 5, 3, 4, false, true);
+            penelope.knownAttacks.Add(new SupportMove("Heal", 3, "hp", 5, null, null, "Heal an ally. (Scales with INT)"));
+            penelope.inventory.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
+            penelope.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
+            penelope.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
+            penelope.accessoryEquiped = new Equipment("Mana Band", "accessory", 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Stores mana! +2 max Mana.");
+            penelope.subquests.Add(new Subquest("Penelope1", "Don't let Penelope take any damage.", "Ask to learn more about the goddess."));
+            penelope.subquests.Add(new Subquest("Penelope2", "Placeholder.", "Placeholder description."));
+            penelope.subquests.Add(new Subquest("Penelope3", "Placeholder", "Placeholder description."));
 
-            Character lucas = new Character("Lucas", 11, 7, 5, 3, 5, 5, 6, 6, 1, 5, false, false);
-            lucas.knownAttacks.Add(new Attack("Rapid Punch", "physical", 1.0f, 1.0f, 95, 0, 0, new List<Debuff>(), "Strike the enemy with a quick punch.")); 
-            lucas.inventory.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
-            lucas.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
-            lucas.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
-            lucas.accessoryEquiped = new Equipment("Gauntlets", "accessory", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary");
-            lucas.subquests.Add(new Subquest("Lucas1", "Lucas slays at least 2 enemies.", "Ask about his relationship to Celeste."));
-            lucas.subquests.Add(new Subquest("Lucas2", "Placeholder.", "Placeholder description."));
-            lucas.subquests.Add(new Subquest("Lucas3", "PLaceholder.", "Placeholder description."));
+            
+            saveManager.loadedData.characters.Add(penelope);
+
+            Character gerard = new Character("Gerard", 11, 7, 5, 3, 5, 5, 6, 6, 1, 5, false, false);
+            gerard.knownAttacks.Add(new Attack("Rapid Punch", "physical", 1.0f, 1.0f, 95, 0, 0, new List<Debuff>(), "Strike the enemy with a quick punch.")); 
+            gerard.inventory.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
+            gerard.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
+            gerard.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
+            gerard.accessoryEquiped = new Equipment("Gauntlets", "accessory", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary");
+            gerard.subquests.Add(new Subquest("Gerard1", "Lucas slays at least 2 enemies.", "Ask about his relationship to Celeste."));
+            gerard.subquests.Add(new Subquest("Gerard2", "Placeholder.", "Placeholder description."));
+            gerard.subquests.Add(new Subquest("Gerard3", "Placeholder.", "Placeholder description."));
+
+
+            saveManager.loadedData.characters.Add(gerard);
+
+            Character katherine = new Character("Katherine", 11, 7, 5, 3, 5, 5, 6, 6, 1, 5, false, false);
+            katherine.knownAttacks.Add(new Attack("Rapid Punch", "physical", 1.0f, 1.0f, 95, 0, 0, new List<Debuff>(), "Strike the enemy with a quick punch.")); 
+            katherine.inventory.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
+            katherine.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
+            katherine.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
+            katherine.accessoryEquiped = new Equipment("Gauntlets", "accessory", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary");
+            katherine.subquests.Add(new Subquest("Katherine1", "Lucas slays at least 2 enemies.", "Ask about his relationship to Celeste."));
+            katherine.subquests.Add(new Subquest("Katherine2", "Placeholder.", "Placeholder description."));
+            katherine.subquests.Add(new Subquest("Katherine3", "Placeholder.", "Placeholder description."));
             //TODO: Add more lucas subquests
 
-            saveManager.loadedData.characters.Add(lucas);
+            saveManager.loadedData.characters.Add(katherine);
 
         }
+        
         //Load characters
         foreach (Character character in saveManager.loadedData.characters)
         {
@@ -167,19 +198,34 @@ public class Chapter2 : MonoBehaviour
             else if (character.characterName == "Celeste")
             {
                 GameObject temp = Instantiate(celestePrefab, new Vector3(13f, -8f, 0f), Quaternion.identity, characters.transform);
-                celesteScript = temp.GetComponent<PlayerController>();
             }
             else if (character.characterName == "Lucas")
             {
                 GameObject temp = Instantiate(lucasPrefab, new Vector3(13f, -8f, 0f), Quaternion.identity, characters.transform);
-                lucasScript = temp.GetComponent<PlayerController>();
             }
+            else if (character.characterName == "Penelope")
+            {
+                GameObject temp = Instantiate(penelopePrefab, new Vector3(13f, -8f, 0f), Quaternion.identity, characters.transform);
+                penelopeScript = temp.GetComponent<PlayerController>();
+            }
+            else if (character.characterName == "Gerard")
+            {
+                GameObject temp = Instantiate(gerardPrefab, new Vector3(13f, -8f, 0f), Quaternion.identity, characters.transform);
+                gerardScript = temp.GetComponent<PlayerController>();
+            }
+            else if (character.characterName == "Katherine")
+            {
+                GameObject temp = Instantiate(katherinePrefab, new Vector3(13f, -8f, 0f), Quaternion.identity, characters.transform);
+                katherineScript = temp.GetComponent<PlayerController>();
+            }
+        
         }
 
         //Give victory sequence script a list of all subquests
         List<Subquest> quests = new List<Subquest>();
-        quests.Add(lucasScript.subquests[0]);
-        quests.Add(celesteScript.subquests[0]);
+        quests.Add(penelopeScript.subquests[0]);
+        quests.Add(gerardScript.subquests[0]);
+        quests.Add(katherineScript.subquests[0]);
         victorySequenceScript.subquests = quests;
 
     }
@@ -228,24 +274,24 @@ public class Chapter2 : MonoBehaviour
         else 
         {
             //Check subquests
-            if (celesteScript.currentHp < celesteScript.maxHp) 
-            {
-                celesteScript.subquests[0].failed = true;
-                //subquest1X.color = new Color(1f, 1f, 1f, 1f);
-            }
+            //if (celesteScript.currentHp < celesteScript.maxHp) 
+            //{
+            //    celesteScript.subquests[0].failed = true;
+            //    subquest1X.color = new Color(1f, 1f, 1f, 1f);
+            //}
 
             //Win condition
             if (battleController.enemies.transform.childCount == 0 && enemiesSpawned && !victorySequenceStarted && !attackPreviewScript.coroutineRunning)
             {
-                if (celesteScript.subquests[0].failed == false) {
-                    celesteScript.subquests[0].completed = true;
-                    //subquest1Check.color = new Color(1f, 1f, 1f, 1f);
-                }
-                
-                if (lucasScript.subquests[0].completed == false) {
-                    lucasScript.subquests[0].failed = true;
-                    //subquest2X.color = new Color(1f, 1f, 1f, 1f);
-                }
+                //if (celesteScript.subquests[0].failed == false) {
+                //    celesteScript.subquests[0].completed = true;
+                //    subquest1Check.color = new Color(1f, 1f, 1f, 1f);
+                //}
+                //
+                //if (lucasScript.subquests[0].completed == false) {
+                //    lucasScript.subquests[0].failed = true;
+                //    subquest2X.color = new Color(1f, 1f, 1f, 1f);
+                //}
 
                 //Start outro scene
                 battleController.CancelEveryting();
@@ -371,17 +417,7 @@ public class Chapter2 : MonoBehaviour
     {
         Debug.Log("Heard that " + list[0].GetComponent<EnemyController>().title + " was killed by " + list[1].GetComponent<PlayerController>().title);
 
-        if (list[1].GetComponent<PlayerController>().title == "Lucas")
-        {
-            lucasKills++;
 
-            if (lucasKills >= 2)
-            {
-                lucasScript.subquests[0].completed = true;
-                //subquest2Check.color = new Color(1f, 1f, 1f, 1f);
-            }
-
-        }
 
     }
     private IEnumerator Intro()
@@ -390,10 +426,52 @@ public class Chapter2 : MonoBehaviour
         GameObject astrid = GameObject.Find("AstridPrefab(Clone)");
         GameObject celeste = GameObject.Find("CelestePrefab(Clone)");
         GameObject lucas = GameObject.Find("LucasPrefab(Clone)");
-
+        GameObject penelope = GameObject.Find("PenelopePrefab(Clone)");
+        GameObject gerard = GameObject.Find("GerardPrefab(Clone)");
+        GameObject katherine = GameObject.Find("KatherinePrefab(Clone)");
+        
         //Intro sequence
         if (saveManager.loadedData.introBattleOutro == "Intro") 
         {
+            //Fade Out blackwhite screen
+            yield return StartCoroutine(Helpers.FadeOutImageAlpha(blackScreen, 1f));
+
+            yield return new WaitForSeconds(2f);
+
+            //Move characters to front gate
+            yield return StartCoroutine(pathfinder.FollowPath(mainChar, new Vector3(-18.5f, -11f, 0f)));
+            yield return StartCoroutine(pathfinder.FollowPath(astrid, new Vector3(-20.5f, -12.7f, 0f)));
+            yield return StartCoroutine(pathfinder.FollowPath(lucas, new Vector3(-18.5f, -11f, 0f)));
+            yield return StartCoroutine(pathfinder.FollowPath(celeste, new Vector3(-20.5f, -12.7f, 0f)));
+
+            //Small dialogue
+            yield return StartCoroutine(PlaySmallDialogue(dialogues));
+            typingCoroutine = null;
+
+            //Dialogue about entering the castle
+
+            //Fade to black then reappear inside castle throne room
+
+            //Mysterious figure appears confronting Lord Beesly
+
+            //Dialogue about collecting relics etc
+
+            //Mysterious figure disappears
+
+            //Enter Penelope, Gerard, and Katherine
+
+            //Dialogue about confrontation
+
+            //Soldier enters to introduce party
+
+            //Party enters
+
+            //Dialogue
+
+            //Party escape
+
+
+
             lucas.GetComponent<SpriteRenderer>().enabled = false;
             celeste.GetComponent<SpriteRenderer>().enabled = false;
 
@@ -462,6 +540,9 @@ public class Chapter2 : MonoBehaviour
         GameObject astrid = GameObject.Find("AstridPrefab(Clone)");
         GameObject celeste = GameObject.Find("CelestePrefab(Clone)");
         GameObject lucas = GameObject.Find("LucasPrefab(Clone)");
+        GameObject penelope = GameObject.Find("PenelopePrefab(Clone)");
+        GameObject gerard = GameObject.Find("GerardPrefab(Clone)");
+        GameObject katherine = GameObject.Find("KatherinePrefab(Clone)");
 
         astrid.transform.position = new Vector3(-20.5f, -12.7f, 0f);
         mainChar.transform.position = new Vector3(-18.5f, -11f, 0f);
