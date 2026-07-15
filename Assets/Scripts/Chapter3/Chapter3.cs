@@ -166,7 +166,6 @@ public class Chapter3 : MonoBehaviour
             gerard.subquests.Add(new Subquest("Gerard2", "Placeholder.", "Placeholder description."));
             gerard.subquests.Add(new Subquest("Gerard3", "Placeholder.", "Placeholder description."));
 
-
             saveManager.loadedData.characters.Add(gerard);
 
             Character katherine = new Character("Katherine", 11, 7, 5, 3, 5, 5, 6, 6, 1, 5, false, false);
