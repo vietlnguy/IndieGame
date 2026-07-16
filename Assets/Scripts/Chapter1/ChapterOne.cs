@@ -282,9 +282,9 @@ public class ChapterOne : MonoBehaviour {
     public void CreateEnemies()
     {
         BasicRangedEnemy(-19f, -9.75f, 0f);
-        BasicEnemy(-11.3f, -15.5f, 0f);
+        BasicEnemy(-11.3f, -14.1f, 0f);
         BasicEnemy(1.95f, -6.17f, 0f);
-        BossEnemy(13.33f, -10.8f, 0f);
+        BossEnemy(14.5f, -13.8f, 0f);
         enemiesSpawned = true;
         CharacterDeathSubscribe(); 
         EnemyDeathSubscribe();
