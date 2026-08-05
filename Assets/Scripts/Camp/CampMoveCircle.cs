@@ -76,6 +76,7 @@ public class CampMoveCircle : MonoBehaviour
             //Do nothing
         }
         else if (other.tag == "character") {
+            Debug.Log("got here");
             other.gameObject.GetComponent<CampPlayerController>().unhighlight();
             alliesInRange.RemoveAll(item => item == other.gameObject);
         }
