@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using System;
 using System.IO;
+using UnityEngine.UI;
 
 public class DialogueController : MonoBehaviour
 {
@@ -18,13 +19,14 @@ public class DialogueController : MonoBehaviour
     
     //TextBox GameObjects
     public AudioSource typingAudio;
-    public GameObject textBox;
+    public GameObject dialoguePanel;
     public TextMeshProUGUI textBoxText;
     public GameObject nameBox;
     public TextMeshProUGUI nameBoxText;
 
     //Character Portraits
     public GameObject allLargePortraits;
+    public GameObject allSmallPortraits;
     public GameObject mainCharacterLargePortrait;
     public GameObject astridLargePortrait;
     public GameObject hegsethLargePortrait;
@@ -69,10 +71,22 @@ public class DialogueController : MonoBehaviour
         }
         
     }
-    public void PlayNextDialogue()
+    public void PlayNextDialogue(bool useLargePortraits)
     {
         active = true;
-        StartCoroutine(PlayDialogue());
+        if (useLargePortraits)
+        {
+            allLargePortraits.SetActive(true);
+            allSmallPortraits.SetActive(false);
+            SetDialogueBoxPosition(true);
+        }
+        else
+        {
+            allLargePortraits.SetActive(false);
+            allSmallPortraits.SetActive(true);
+            SetDialogueBoxPosition(false);
+        }
+        StartCoroutine(PlayDialogue(useLargePortraits));
     }
     public void HideLargePortraits()
     {
@@ -82,7 +96,7 @@ public class DialogueController : MonoBehaviour
     {
         allLargePortraits.SetActive(true);
     }
-    private IEnumerator PlayDialogue()
+    private IEnumerator PlayDialogue(bool useLargePortraits)
     {
         for (int index = dialogueIndex; index < allDialogues.dialogueEntries.Count; index++)
         {
@@ -96,15 +110,23 @@ public class DialogueController : MonoBehaviour
                 nameBoxText.text = allDialogues.dialogueEntries[index].name;
             }
 
-            //Grayout all large portraits
-            StartCoroutine(Helpers.GrayAllLargePortraits());
+            if (useLargePortraits)
+            {
+                //Grayout all large portraits
+                StartCoroutine(Helpers.GrayAllLargePortraits());
 
-            //Light talking portrait
-            StartCoroutine(Helpers.HighlightLargePortrait(allDialogues.dialogueEntries[index].name));
+                //Light talking portrait
+                StartCoroutine(Helpers.HighlightLargePortrait(allDialogues.dialogueEntries[index].name));
+            }
+            else
+            {
+                DisableAllSmallPortraits();
+                EnableSmallPortrait(allDialogues.dialogueEntries[index].name);
+            }
 
             //Fade in text box
-            StartCoroutine(Helpers.MoveRectTransform(textBox, textBox.GetComponent<RectTransform>().anchoredPosition, textBox.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, 10f), .25f));
-            StartCoroutine(Helpers.FadeInCanvasGroup(textBox.GetComponent<CanvasGroup>(), 0.25f));
+            StartCoroutine(Helpers.MoveRectTransform(dialoguePanel, dialoguePanel.GetComponent<RectTransform>().anchoredPosition, dialoguePanel.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, 10f), .25f));
+            StartCoroutine(Helpers.FadeInCanvasGroup(dialoguePanel.GetComponent<CanvasGroup>(), 0.25f));
 
             yield return new WaitForSeconds(.25f);
             
@@ -112,8 +134,8 @@ public class DialogueController : MonoBehaviour
             for (int index2 = 0; index2 < allDialogues.dialogueEntries[index].lines.Count; index2++)
             {
                 nextLine = false;
-                typingCoroutine = StartCoroutine(TypeLine(allDialogues.dialogueEntries[index].lines[index2], allDialogues.dialogueEntries[index].name));
-                lineToBeTyped = allDialogues.dialogueEntries[index].lines[index2];
+                typingCoroutine = StartCoroutine(TypeLine(allDialogues.dialogueEntries[index].lines[index2].line, allDialogues.dialogueEntries[index].name));
+                lineToBeTyped = allDialogues.dialogueEntries[index].lines[index2].line;
 
                 Coroutine blinking = null;
                 while (isTyping || !nextLine)
@@ -140,8 +162,22 @@ public class DialogueController : MonoBehaviour
             }
 
             //Fade out text box
-            StartCoroutine(Helpers.MoveRectTransform(textBox, textBox.GetComponent<RectTransform>().anchoredPosition, textBox.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, -10f), .25f));
-            StartCoroutine(Helpers.FadeOutCanvasGroup(textBox.GetComponent<CanvasGroup>(), 0.25f));
+            StartCoroutine(Helpers.MoveRectTransform(dialoguePanel, dialoguePanel.GetComponent<RectTransform>().anchoredPosition, dialoguePanel.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, -10f), .25f));
+            StartCoroutine(Helpers.FadeOutCanvasGroup(dialoguePanel.GetComponent<CanvasGroup>(), 0.25f));
+
+            if (!useLargePortraits)
+            {
+                foreach (Transform child in allSmallPortraits.transform)
+                {
+                    if (child.gameObject.name == allDialogues.dialogueEntries[index].name)
+                    {
+                        //Fade out image
+                        StartCoroutine(Helpers.MoveRectTransform(child.gameObject, child.gameObject.GetComponent<RectTransform>().anchoredPosition, child.gameObject.GetComponent<RectTransform>().anchoredPosition + new Vector2(-10f, 0f), .25f));
+                        StartCoroutine(Helpers.FadeOutImageAlpha(child.gameObject.GetComponent<Image>(), 0.25f));
+                        break;
+                    }
+                } 
+            }
 
             yield return new WaitForSeconds(0.25f);
 
@@ -164,12 +200,10 @@ public class DialogueController : MonoBehaviour
         if (speaker == "Astrid")
         {
             typingAudio.pitch = 1.2f;
-            textBoxText.color = new Color(1f, .75f, .79f, 1f);
         }
         else
         {
             typingAudio.pitch = 1.0f;
-            textBoxText.color = Color.white;
         }
         isTyping = true;
         typingAudio.Play();
@@ -180,9 +214,41 @@ public class DialogueController : MonoBehaviour
         typingAudio.Stop();
         isTyping = false;
     }
+    private void SetDialogueBoxPosition(bool useLargePortraits)
+    {
+        if (useLargePortraits)
+        {
+            dialoguePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(-72f, 0f);
+        }
+        else
+        {
+            dialoguePanel.GetComponent<RectTransform>().anchoredPosition = new Vector2(0f, 0f);
+        }
+    }
+    private void DisableAllSmallPortraits()
+    {
+        foreach (Transform child in allSmallPortraits.transform)
+        {
+            child.gameObject.SetActive(false);
+        }
+    }
+    private void EnableSmallPortrait(string name)
+    {
+        foreach (Transform child in allSmallPortraits.transform)
+        {
+            if (child.gameObject.name == name)
+            {
+                child.gameObject.SetActive(true);
+                child.gameObject.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0f);
 
+                //Fade in image
+                StartCoroutine(Helpers.MoveRectTransform(child.gameObject, child.gameObject.GetComponent<RectTransform>().anchoredPosition, child.gameObject.GetComponent<RectTransform>().anchoredPosition + new Vector2(10f, 0f), .25f));
+                StartCoroutine(Helpers.FadeInImageAlpha(child.gameObject.GetComponent<Image>(), 0.25f));
 
-
+                break;
+            }
+        }
+    }
 
 
 

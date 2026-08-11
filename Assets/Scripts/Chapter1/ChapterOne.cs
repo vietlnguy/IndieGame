@@ -241,14 +241,14 @@ public class ChapterOne : MonoBehaviour {
             yield return new WaitForSeconds(.5f);
             doorAudio.Play();
             yield return StartCoroutine(Helpers.FadeSpriteToBlack(mainCharacterObject));
-            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript);
+            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript, false);
             yield return StartCoroutine(Helpers.FadeInImageAlpha(blackScreen, 1f));
 
             //NSFW scene
             yield return StartCoroutine(Helpers.FadeInImageAlpha(blackScreen, 1f));
             sexScreen.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
             yield return StartCoroutine(Helpers.FadeOutImageAlpha(blackScreen, 1f));
-            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript);
+            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript, true);
 
             //In house dialogue
             yield return StartCoroutine(Helpers.FadeInImageAlpha(blackScreen, 1f));
@@ -265,13 +265,13 @@ public class ChapterOne : MonoBehaviour {
             StartCoroutine(Helpers.UndoFadeToBlackTransparent(mainCharacterLargePortrait, 0.5f));
             yield return StartCoroutine(Helpers.UndoFadeToBlackTransparent(astridLargePortrait, 0.5f));
             yield return new WaitForSeconds(.5f);
-            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript);
+            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript, true);
 
             //Door knock
             fluteAudio.Stop();
             doorKnockAudio.Play();
             yield return new WaitForSeconds(1.5f);
-            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript);
+            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript, true);
 
             //Move main char
             yield return StartCoroutine(Helpers.FadeToBlackTransparent(mainCharacterLargePortrait, .5f));
@@ -285,14 +285,14 @@ public class ChapterOne : MonoBehaviour {
             hegsethLargePortrait.GetComponent<RectTransform>().anchoredPosition = new Vector2(-202f, -208f);
             yield return StartCoroutine(Helpers.UndoFadeToBlackTransparent(hegsethLargePortrait, .5f));
             hegsethThemeAudio.Play();
-            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript);
+            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript, true);
 
 
             //Enter soldier
             soldierLargePortrait.GetComponent<Image>().color = new Color(0f, 0f, 0f, 0f);
             soldierLargePortrait.GetComponent<RectTransform>().anchoredPosition = new Vector2(-366f, -208f);
             yield return StartCoroutine(Helpers.UndoFadeToBlackTransparent(soldierLargePortrait, .5f));
-            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript);
+            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript, true);
 
 
             //Exit soldier and search
@@ -300,20 +300,20 @@ public class ChapterOne : MonoBehaviour {
             rummagingAudio.Play();
             yield return new WaitForSeconds(7f);
             yield return StartCoroutine(Helpers.UndoFadeToBlackTransparent(soldierLargePortrait, 0.5f));
-            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript);
+            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript, true);
 
             //Move hegseth towards astrid
             yield return StartCoroutine(Helpers.MoveRectTransform(hegsethLargePortrait, hegsethLargePortrait.GetComponent<RectTransform>().anchoredPosition, new Vector2(hegsethLargePortrait.GetComponent<RectTransform>().anchoredPosition.x + 100f, hegsethLargePortrait.GetComponent<RectTransform>().anchoredPosition.y), 0.5f));
             yield return StartCoroutine(Helpers.MoveRectTransform(mainCharacterLargePortrait, mainCharacterLargePortrait.GetComponent<RectTransform>().anchoredPosition, new Vector2(mainCharacterLargePortrait.GetComponent<RectTransform>().anchoredPosition.x - 25f, mainCharacterLargePortrait.GetComponent<RectTransform>().anchoredPosition.y), 0.5f));
-            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript);
+            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript, true);
 
             //Move hegseth back
             yield return StartCoroutine(Helpers.MoveRectTransform(hegsethLargePortrait, hegsethLargePortrait.GetComponent<RectTransform>().anchoredPosition, new Vector2(hegsethLargePortrait.GetComponent<RectTransform>().anchoredPosition.x - 75f, hegsethLargePortrait.GetComponent<RectTransform>().anchoredPosition.y), 0.5f));
-            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript);
+            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript, true);
 
             //Move soldier towards astrid
             yield return StartCoroutine(Helpers.MoveRectTransform(soldierLargePortrait, soldierLargePortrait.GetComponent<RectTransform>().anchoredPosition, new Vector2(181f, soldierLargePortrait.GetComponent<RectTransform>().anchoredPosition.y), 0.25f));
-            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript);
+            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript, true);
 
             //Fade screen to black and play shine audio
             StartCoroutine(Helpers.FadeOutAudio(hegsethThemeAudio, 1f));
@@ -323,7 +323,7 @@ public class ChapterOne : MonoBehaviour {
             yield return StartCoroutine(Helpers.FadeOutImageAlpha(blackScreen, 1.5f));
             shineAudio.Play();
             yield return new WaitForSeconds(1.5f);
-            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript);
+            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript, false);
 
             //Back to house and push away soldier
             yield return StartCoroutine(Helpers.FadeInImageAlpha(blackScreen, 1.5f));
@@ -332,20 +332,20 @@ public class ChapterOne : MonoBehaviour {
             yield return StartCoroutine(Helpers.FadeOutImageAlpha(blackScreen, 1.5f));
             knockbackAudio.Play();
             yield return StartCoroutine(Helpers.MoveRectTransform(soldierLargePortrait, soldierLargePortrait.GetComponent<RectTransform>().anchoredPosition, new Vector2(-366f, -208f), 0.25f));
-            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript);
+            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript, true);
 
             //Move soldier towards astrid
             yield return StartCoroutine(Helpers.MoveRectTransform(soldierLargePortrait, soldierLargePortrait.GetComponent<RectTransform>().anchoredPosition, new Vector2(181f, soldierLargePortrait.GetComponent<RectTransform>().anchoredPosition.y), 0.25f));
             knockbackAudio.Play();
             yield return StartCoroutine(Helpers.MoveRectTransform(soldierLargePortrait, soldierLargePortrait.GetComponent<RectTransform>().anchoredPosition, new Vector2(-366f, -208f), 0.25f));
-            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript);
+            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript, true);
 
             //Exit hegseth and soldier
             StartCoroutine(Helpers.FadeToBlackTransparent(hegsethLargePortrait, 0.5f));
             yield return StartCoroutine(Helpers.FadeToBlackTransparent(soldierLargePortrait, 0.5f));
             hegsethLargePortrait.GetComponent<Image>().enabled = false;
             soldierLargePortrait.GetComponent<Image>().enabled = false;
-            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript);
+            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript, true);
 
             //Exit house scene
             yield return StartCoroutine(Helpers.FadeInImageAlpha(whiteScreen, 2f));
@@ -374,7 +374,7 @@ public class ChapterOne : MonoBehaviour {
         yield return StartCoroutine(pathfinder.FollowPath(astridObject, new Vector3(-8.15f, -12.5f, 0f)));
 
         //Small dialogue
-        yield return Helpers.PlayDialogueAndWait(dialogueControllerScript);
+        yield return Helpers.PlayDialogueAndWait(dialogueControllerScript, false);
 
         //EnableTutorial
         battleMusicAudio.Play();
@@ -405,7 +405,7 @@ public class ChapterOne : MonoBehaviour {
 
         yield return new WaitForSeconds(1f);
 
-        yield return Helpers.PlayDialogueAndWait(dialogueControllerScript);
+        yield return Helpers.PlayDialogueAndWait(dialogueControllerScript, true);
 
         yield return StartCoroutine(saveManager.SceneTransition(true));
         saveManager.loadedData.currentChapter = "Chapter 2";
@@ -440,14 +440,6 @@ public class ChapterOne : MonoBehaviour {
         }
 
     }
-
-    
-    //Should rarely have to update
-    private void Outro()
-    {
-        victoryAndSubquestBox.SetActive(false);
-        intro = StartCoroutine(OutroHelper());
-    }
     private void VictorySubscribe()
     {
         VictoryContinueButton.OnStartOutro += Outro;
@@ -468,5 +460,9 @@ public class ChapterOne : MonoBehaviour {
     {
         PlayerController.OnCharacterDied -= HandleDeath;
     }
-
+    private void Outro()
+    {
+        victoryAndSubquestBox.SetActive(false);
+        intro = StartCoroutine(OutroHelper());
+    }
 }

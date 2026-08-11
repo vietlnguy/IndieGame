@@ -6,6 +6,6 @@ using UnityEngine;
 public class DialogueEntry
 {
     public string name;
-    public List<string> lines;
+    public List<Line> lines;
     public bool pauseExecution = false;
 }

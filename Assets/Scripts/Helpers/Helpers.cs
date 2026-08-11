@@ -540,7 +540,7 @@ public static class Helpers
     {
         tmp.color = new Color(.48f, .98f, 0f, .8f);
     }
-    public static IEnumerator PlayDialogueAndWait(DialogueController dialogueControllerScript)
+    public static IEnumerator PlayDialogueAndWait(DialogueController dialogueControllerScript, bool useLargePortraits)
     {
         bool dialogueFinished = false;
         Action handler = () => dialogueFinished = true;
@@ -548,7 +548,7 @@ public static class Helpers
         dialogueControllerScript.OnDialogueFinished += handler;
         try
         {
-            dialogueControllerScript.PlayNextDialogue();
+            dialogueControllerScript.PlayNextDialogue(useLargePortraits);
             yield return new WaitUntil(() => dialogueFinished);
         }
         finally
@@ -556,5 +556,6 @@ public static class Helpers
             dialogueControllerScript.OnDialogueFinished -= handler;
         }
 }
+
 
 }
