@@ -5,12 +5,14 @@ using TMPro;
 using System;
 using System.IO;
 using UnityEngine.UI;
+using Febucci.TextAnimatorForUnity;
 
 public class DialogueController : MonoBehaviour
 {
     public bool active = false;   
     private bool isTyping = false;
     private bool nextLine = false;
+    private bool isTypingComplete;
     private int dialogueIndex = 0;
     private Coroutine typingCoroutine;
     private string lineToBeTyped = "";
@@ -21,6 +23,7 @@ public class DialogueController : MonoBehaviour
     public AudioSource typingAudio;
     public GameObject dialoguePanel;
     public TextMeshProUGUI textBoxText;
+    [SerializeField] TypewriterComponent typewriter;
     public GameObject nameBox;
     public TextMeshProUGUI nameBoxText;
 
@@ -50,25 +53,6 @@ public class DialogueController : MonoBehaviour
     }
     public void Update()
     {
-        if (active)
-        {
-            //Intro typing control
-            if (Input.GetMouseButtonDown(0))
-            {
-                if (isTyping)
-                {
-                    StopCoroutine(typingCoroutine);
-                    typingCoroutine = null;
-                    textBoxText.text = lineToBeTyped;
-                    typingAudio.Stop();
-                    isTyping = false;
-                }
-                else
-                {
-                    nextLine = true;
-                }
-            }
-        }
         
     }
     public void PlayNextDialogue(bool useLargePortraits)
@@ -100,6 +84,8 @@ public class DialogueController : MonoBehaviour
     {
         for (int index = dialogueIndex; index < allDialogues.dialogueEntries.Count; index++)
         {
+            textBoxText.text = "";
+            
             //Update name text
             if (allDialogues.dialogueEntries[index].name == "MainCharacter")
             {
@@ -130,36 +116,27 @@ public class DialogueController : MonoBehaviour
 
             yield return new WaitForSeconds(.25f);
             
-            //Type each line
             for (int index2 = 0; index2 < allDialogues.dialogueEntries[index].lines.Count; index2++)
             {
-                nextLine = false;
-                typingCoroutine = StartCoroutine(TypeLine(allDialogues.dialogueEntries[index].lines[index2].line, allDialogues.dialogueEntries[index].name));
-                lineToBeTyped = allDialogues.dialogueEntries[index].lines[index2].line;
+                isTypingComplete = false;
 
-                Coroutine blinking = null;
-                while (isTyping || !nextLine)
-                {
-                    yield return new WaitForSeconds(.25f);
-                    if (!isTyping && !nextLine && blinking == null)
-                    {
-                        blinking = StartCoroutine(Helpers.DialogueBlinker("large"));
-                    }
+                typewriter.ShowText(allDialogues.dialogueEntries[index].lines[index2].line);
 
-                }
-                try
+                // 1. Wait until text finishes typing NATURALLY OR the user CLICKS
+                yield return new WaitUntil(() => isTypingComplete || Input.GetMouseButtonDown(0));
+
+                // 2. If the user clicked while still typing, instantly show full text
+                if (!isTypingComplete)
                 {
-                    StopCoroutine(blinking);
+                    typewriter.SkipTypewriter();
+                    yield return null; // Wait 1 frame so the skip click isn't registered for the next line
                 }
-                catch
-                {
-                    
-                }
-                blinking = null;
-                Helpers.DisableBlinker("large");
-                textBoxText.text = "";
-            
+
+                // 3. Now wait for the NEXT click to advance to the next line
+                yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+                yield return null; // Wait 1 frame before starting the next loop iteration
             }
+
 
             //Fade out text box
             StartCoroutine(Helpers.MoveRectTransform(dialoguePanel, dialoguePanel.GetComponent<RectTransform>().anchoredPosition, dialoguePanel.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, -10f), .25f));
@@ -248,6 +225,18 @@ public class DialogueController : MonoBehaviour
                 break;
             }
         }
+    }
+    private void OnEnable()
+    {
+        typewriter.onTextShowed.AddListener(OnTypingFinished);
+    }
+    private void OnDisable()
+    {
+        typewriter.onTextShowed.RemoveListener(OnTypingFinished);
+    }
+    private void OnTypingFinished()
+    {
+        isTypingComplete = true;
     }
 
 
