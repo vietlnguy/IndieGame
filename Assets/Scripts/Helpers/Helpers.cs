@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public static class Helpers
 {
@@ -539,7 +540,22 @@ public static class Helpers
     {
         tmp.color = new Color(.48f, .98f, 0f, .8f);
     }
+    public static IEnumerator PlayDialogueAndWait(DialogueController dialogueControllerScript, bool useLargePortraits)
+    {
+        bool dialogueFinished = false;
+        Action handler = () => dialogueFinished = true;
 
+        dialogueControllerScript.OnDialogueFinished += handler;
+        try
+        {
+            dialogueControllerScript.PlayNextDialogue(useLargePortraits);
+            yield return new WaitUntil(() => dialogueFinished);
+        }
+        finally
+        {
+            dialogueControllerScript.OnDialogueFinished -= handler;
+        }
+}
 
 
 }
