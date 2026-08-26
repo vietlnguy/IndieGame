@@ -37,6 +37,7 @@ public class Chapter2 : MonoBehaviour
 
     //Script references
     public BattleController battleController;
+    public DialogueController dialogueControllerScript;
     private SaveManager saveManager;
     public GameOver gameOverScript;
     public AttackPreview attackPreviewScript;
@@ -55,21 +56,10 @@ public class Chapter2 : MonoBehaviour
     public Image outroScreen;
     
     //Dialogue
-    public GameObject smallDialogueTextBox;
-    public TextMeshProUGUI smallDialogueNameBox;
-    public GameObject largeDialogue;
-    public GameObject largeDialogueTextBox;
-    public TextMeshProUGUI largeDialogueNameBox;
     public GameObject mainCharacterLargePortrait;
     public GameObject astridLargePortrait;
     public GameObject lucasLargePortrait;
     public GameObject celesteLargePortrait;
-
-    private List<CharacterDialogue> dialogues;
-    private List<CharacterDialogue> dialogues2;
-    private List<CharacterDialogue> dialogues3;
-    private List<CharacterDialogue> dialogues4;
-    private List<CharacterDialogue> outroDialogue1;
 
     public void Awake()
     {    
@@ -80,47 +70,7 @@ public class Chapter2 : MonoBehaviour
         enemies = GameObject.Find("Enemies");
         pathfinder = FindAnyObjectByType<TilemapPathfinder>();
         victorySequenceScript = FindAnyObjectByType<VictorySequence>();
-
-        dialogues = new List<CharacterDialogue>();
-        dialogues.Add(new CharacterDialogue(saveManager.loadedData.mainCharacterName, new string[] {"It's been a long time since we've been back to Maplemire.", "We should try to load up on supplies, while we can.", "It's not much further til we get to the castle."}));
-        dialogues.Add(new CharacterDialogue("Astrid", new string[] {"That sounds like a good idea.", "Doesn't town seem awfully quiet, though? Where is everybody?"}));
-        dialogues.Add(new CharacterDialogue(saveManager.loadedData.mainCharacterName, new string[] {"You're right, something's off--", "Wait a second.", "Something is going on at the church over there."}));
-
-        dialogues2 = new List<CharacterDialogue>();
-        dialogues2.Add(new CharacterDialogue("Lucas", new string[] {"Back off, chump!", "We don't have any of those stinkin' relics!"}));
-        dialogues2.Add(new CharacterDialogue("Celeste", new string[]{"Oh dear.. Please forgive my brother, sir. But he speaks true.", "Our goddess, Ilvera, forbids us to lie. We do not possess any relics."}));
-        dialogues2.Add(new CharacterDialogue("Soldier", new string[] {"I understand that priestess, but I have orders.", "If you don't comply, my superiors--"}));
-        
-        dialogues3 = new List<CharacterDialogue>();
-        dialogues3.Add(new CharacterDialogue("Lance", new string[] {"Well well well! Wha' do we got 'er?", "A couple of sky worshippers. What's wrong? Your \"goddess\" didn't tell you we were coming?"}));
-        dialogues3.Add(new CharacterDialogue("Celeste", new string[]{"The goddess guides us all.", "May she lead you to her warmth and understanding..."}));
-        dialogues3.Add(new CharacterDialogue("Lance", new string[] {"Pft. I don't need any phony goddess.", "The only thing I need is all of the church tithings!", "Now hand them over!"}));
-        dialogues3.Add(new CharacterDialogue("Lucas", new string[] {"We already told you and your crooks, we don't have any relics!", "So get lost, jerk!"}));
-        dialogues3.Add(new CharacterDialogue("Lance", new string[] {"Woo weeee! The mouth on this one! Tsk tsk, your god should've taught you better manners!", "Let's go boys! Turn this town upside down!", "By order of Lord Beesly, find every relic you can!"}));
-        dialogues3.Add(new CharacterDialogue("Lucas", new string[] {"Come on, sis! We gotta make a break for it!"}));
-        dialogues3.Add(new CharacterDialogue("Celeste", new string[]{"Goddess, protect us..."}));
-
-        dialogues4 = new List<CharacterDialogue>();
-        dialogues4.Add(new CharacterDialogue(saveManager.loadedData.mainCharacterName, new string[] {"Wait what-- Lord Beesly's orders?", "That can't be.."}));
-        dialogues4.Add(new CharacterDialogue("Astrid", new string[] {saveManager.loadedData.mainCharacterName + "!", "Those people running away from the church, they look like they are in danger!", "We can worry about Lord Beesly later, right now they need our help!"}));
-        dialogues4.Add(new CharacterDialogue(saveManager.loadedData.mainCharacterName, new string[] {"You're right. Let's go!"}));
-
-        outroDialogue1 = new List<CharacterDialogue>();
-        outroDialogue1.Add(new CharacterDialogue(saveManager.loadedData.mainCharacterName, new string[] {"Looks like we managed to scare them off for now.", "Is everybody alright?"}));
-        outroDialogue1.Add(new CharacterDialogue("Celeste", new string[] { "Yes... thank you for saving us..."}));
-        outroDialogue1.Add(new CharacterDialogue("Lucas",  new string[] {"I could've taken them, but thanks for the backup."}));
-        outroDialogue1.Add(new CharacterDialogue("Astrid",  new string[] {"First home, and now this... what in the world is going on?"}));
-        outroDialogue1.Add(new CharacterDialogue(saveManager.loadedData.mainCharacterName,  new string[] {"Lord Beesly would've never allowed this.", "This must be a rogue group of soldiers."}));
-        outroDialogue1.Add(new CharacterDialogue("Celeste", new string[] { "I'm afraid you're mistaken... Lord Beesly has not been himself of late..."}));
-        outroDialogue1.Add(new CharacterDialogue("Lucas",  new string[] {"Yeah, where have you been?? Living out in the woods or somethin'?", "Lord Beesly has been anything but kind.", "He's been sending out his cronies to do random searches all over town.", "This is just another one of his shakedowns."}));
-        outroDialogue1.Add(new CharacterDialogue("Celeste", new string[] { "But to attack the church...", "I fear this may only be the beginning..."}));
-        outroDialogue1.Add(new CharacterDialogue("Astrid",  new string[] {"Come with us!", "It's not safe here anymore."}));
-        outroDialogue1.Add(new CharacterDialogue(saveManager.loadedData.mainCharacterName, new string[] {"She's right.", "We're headed to the castle now to get to the bottom of this.", "We'll have more power in numbers."}));
-        outroDialogue1.Add(new CharacterDialogue("Celeste", new string[] { "Thank you...", "May Ilvera bless you..."}));
-        outroDialogue1.Add(new CharacterDialogue("Lucas",  new string[] {"Hmph.."}));
-
-
-
+        dialogueControllerScript = FindAnyObjectByType<DialogueController>();
 
         bool hasNewCharacters = saveManager.loadedData.characters.Exists(c => c.characterName == "Celeste" || c.characterName == "Lucas");
 
@@ -203,68 +153,45 @@ public class Chapter2 : MonoBehaviour
         //Can script reinforcements, mid combat dialogues, etc.
         //Battle controller should be abstract enough to apply to all chapters
         //Chapter specific script events happen here, and win/lose conditions
-        
-        //Intro typing control
-        if (intro != null)
+    
+        //Check subquests
+        if (celesteScript.currentHp < celesteScript.maxHp) 
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                if (isTyping)
-                {
-                    StopCoroutine(typingCoroutine);
-                    typingCoroutine = null;
-                    smallDialogueTextBox.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = lineToBeTyped;
-                    largeDialogueTextBox.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = lineToBeTyped;
-                    typingAudio.Stop();
-                    isTyping = false;
-                }
-                else
-                {
-                    nextLine = true;
-                }
-            }
+            celesteScript.subquests[0].failed = true;
+            //subquest1X.color = new Color(1f, 1f, 1f, 1f);
         }
 
-        else 
+        //Win condition
+        if (battleController.enemies.transform.childCount == 0 && enemiesSpawned && !victorySequenceStarted && !attackPreviewScript.coroutineRunning)
         {
-            //Check subquests
-            if (celesteScript.currentHp < celesteScript.maxHp) 
-            {
-                celesteScript.subquests[0].failed = true;
-                //subquest1X.color = new Color(1f, 1f, 1f, 1f);
-            }
-
-            //Win condition
-            if (battleController.enemies.transform.childCount == 0 && enemiesSpawned && !victorySequenceStarted && !attackPreviewScript.coroutineRunning)
-            {
-                if (celesteScript.subquests[0].failed == false) {
-                    celesteScript.subquests[0].completed = true;
-                    //subquest1Check.color = new Color(1f, 1f, 1f, 1f);
-                }
-                
-                if (lucasScript.subquests[0].completed == false) {
-                    lucasScript.subquests[0].failed = true;
-                    //subquest2X.color = new Color(1f, 1f, 1f, 1f);
-                }
-
-                //Start outro scene
-                battleController.CancelEveryting();
-                StartCoroutine(Helpers.FadeOutAudio(dangerIntroAudio, .5f));
-                StartCoroutine(victorySequenceScript.Victory());
-                enemiesSpawned = false; //remove later
-                victorySequenceStarted = true;
+            if (celesteScript.subquests[0].failed == false) {
+                celesteScript.subquests[0].completed = true;
+                //subquest1Check.color = new Color(1f, 1f, 1f, 1f);
             }
             
-            //Lose condition
-            if (shouldLose && !gameOver && !attackPreviewScript.coroutineRunning)
-            {
-                battleController.CancelEveryting();
-                gameOver = true;
-                StartCoroutine(gameOverScript.GameOverSequence());
-
+            if (lucasScript.subquests[0].completed == false) {
+                lucasScript.subquests[0].failed = true;
+                //subquest2X.color = new Color(1f, 1f, 1f, 1f);
             }
 
+            //Start outro scene
+            battleController.CancelEveryting();
+            StartCoroutine(Helpers.FadeOutAudio(dangerIntroAudio, .5f));
+            StartCoroutine(victorySequenceScript.Victory());
+            enemiesSpawned = false; //remove later
+            victorySequenceStarted = true;
         }
+        
+        //Lose condition
+        if (shouldLose && !gameOver && !attackPreviewScript.coroutineRunning)
+        {
+            battleController.CancelEveryting();
+            gameOver = true;
+            StartCoroutine(gameOverScript.GameOverSequence());
+
+        }
+
+    
 
     }
     public void CreateEnemies()
@@ -406,7 +333,7 @@ public class Chapter2 : MonoBehaviour
             yield return StartCoroutine(pathfinder.FollowPath(astrid, new Vector3(-20.5f, -12.7f, 0f)));
 
             //Small dialogue
-            yield return StartCoroutine(PlaySmallDialogue(dialogues));
+            yield return StartCoroutine(Helpers.PlayDialogueAndWait(dialogueControllerScript, false) );
             typingCoroutine = null;
 
             //Pan camera to church
@@ -425,7 +352,7 @@ public class Chapter2 : MonoBehaviour
             yield return StartCoroutine(pathfinder.FollowPath(soldier, new Vector3(15f, -10.5f, 0f)));
             
             //small dialoue 2
-            yield return StartCoroutine(PlaySmallDialogue(dialogues2));
+            yield return StartCoroutine(Helpers.PlayDialogueAndWait(dialogueControllerScript, false));
             typingCoroutine = null;
 
             //enter boss
@@ -435,7 +362,7 @@ public class Chapter2 : MonoBehaviour
             yield return StartCoroutine(pathfinder.FollowPath(boss, new Vector3(15f, -12.5f, 0f)));
 
             //small dialoue 3
-            yield return StartCoroutine(PlaySmallDialogue(dialogues3));
+            yield return StartCoroutine(Helpers.PlayDialogueAndWait(dialogueControllerScript, false));
             typingCoroutine = null;
 
             pathfinder.moveSpeed = 5f;
@@ -446,7 +373,7 @@ public class Chapter2 : MonoBehaviour
             yield return StartCoroutine(Helpers.CameraMoveTransform(camera.transform, camera.transform.position, new Vector3(-6.55f, -7.5f, -10f), 1.5f));
 
             //small dialoue 3
-            yield return StartCoroutine(PlaySmallDialogue(dialogues4));
+            yield return StartCoroutine(Helpers.PlayDialogueAndWait(dialogueControllerScript, false));
             typingCoroutine = null;
 
             //fade to black
@@ -508,7 +435,7 @@ public class Chapter2 : MonoBehaviour
         StartCoroutine(Helpers.UndoFadeToBlackTransparent(lucasLargePortrait, 0.5f));
         yield return StartCoroutine(Helpers.UndoFadeToBlackTransparent(celesteLargePortrait, 0.5f));
 
-        yield return StartCoroutine(PlayLargeDialogue(outroDialogue1));
+        yield return StartCoroutine(Helpers.PlayDialogueAndWait(dialogueControllerScript, true));
         typingCoroutine = null;
 
         yield return new WaitForSeconds(1f);
@@ -545,149 +472,6 @@ public class Chapter2 : MonoBehaviour
     private void CharacterDeathUnsubscribe()
     {
         PlayerController.OnCharacterDied -= HandleDeath;
-    }
-    private IEnumerator TypeLine(string line, string speaker, AudioSource audioSource, TextMeshProUGUI textBox, float textSpeed) {
-        if (speaker == "Astrid")
-        {
-            audioSource.pitch = 1.2f;
-            textBox.color = new Color(1f, .75f, .79f, 1f);
-        }
-        else
-        {
-            audioSource.pitch = 1.0f;
-            textBox.color = Color.white;
-        }
-        isTyping = true;
-        audioSource.Play();
-        foreach (char c in line.ToCharArray()) {
-            textBox.text += c;
-            yield return new WaitForSeconds(textSpeed);
-        }
-        audioSource.Stop();
-        isTyping = false;
-    }
-    private IEnumerator PlaySmallDialogue(List<CharacterDialogue> dialogues)
-    {
-        smallDialogueTextBox.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = "";
-
-        //Small dialogue
-        for (int index = 0; index < dialogues.Count; index++)
-        {
-            //Update name text
-            smallDialogueNameBox.text = dialogues[index].name;
-
-            Helpers.DisableAllSmallPortraits();
-
-            GameObject temp = GameObject.Find(dialogues[index].name + "SmallPortrait");
-            if (temp == null)
-            {
-                temp = GameObject.Find("MainCharacterSmallPortrait");
-            }
-            temp.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
-            
-            //Fade in text box
-            StartCoroutine(Helpers.MoveRectTransform(smallDialogueTextBox, smallDialogueTextBox.GetComponent<RectTransform>().anchoredPosition, smallDialogueTextBox.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, 10f), .25f));
-            StartCoroutine(Helpers.FadeInCanvasGroup(smallDialogueTextBox.GetComponent<CanvasGroup>(), 0.25f));
-
-            yield return new WaitForSeconds(.25f);
-            //Type each line
-            for (int index2 = 0; index2 < dialogues[index].lines.Length; index2++)
-            {
-                nextLine = false;
-                typingCoroutine = StartCoroutine(TypeLine(dialogues[index].lines[index2], dialogues[index].name, typingAudio, smallDialogueTextBox.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>(), .05f));
-                lineToBeTyped = dialogues[index].lines[index2];
-
-                Coroutine blinking = null;
-                while (isTyping || !nextLine)
-                {
-                    yield return new WaitForSeconds(.25f);
-                    if (!isTyping && !nextLine && blinking == null)
-                    {
-                        blinking = StartCoroutine(Helpers.DialogueBlinker("small"));
-                    }
-
-                }
-                try
-                {
-                    StopCoroutine(blinking);
-                }
-                catch
-                {
-                    
-                }
-                blinking = null;
-                Helpers.DisableBlinker("small");
-                smallDialogueTextBox.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = "";
-            
-            }
-
-            //Fade out text box
-            StartCoroutine(Helpers.MoveRectTransform(smallDialogueTextBox, smallDialogueTextBox.GetComponent<RectTransform>().anchoredPosition, smallDialogueTextBox.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, -10f), .25f));
-            StartCoroutine(Helpers.FadeOutCanvasGroup(smallDialogueTextBox.GetComponent<CanvasGroup>(), 0.25f));
-
-            yield return new WaitForSeconds(0.25f);
-
-        }
-    }
-    private IEnumerator PlayLargeDialogue(List<CharacterDialogue> dialogues)
-    {
-        largeDialogueTextBox.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = "";
-
-        //Small dialogue
-        for (int index = 0; index < dialogues.Count; index++)
-        {
-            //Update name text
-            largeDialogueNameBox.text = dialogues[index].name;
-
-            //Grayout all large portraits
-            StartCoroutine(Helpers.GrayAllLargePortraits());
-
-            //Light talking portrait
-            StartCoroutine(Helpers.HighlightLargePortrait(dialogues[index].name));
-
-            //Fade in text box
-            StartCoroutine(Helpers.MoveRectTransform(largeDialogueTextBox, largeDialogueTextBox.GetComponent<RectTransform>().anchoredPosition, largeDialogueTextBox.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, 10f), .25f));
-            StartCoroutine(Helpers.FadeInCanvasGroup(largeDialogueTextBox.GetComponent<CanvasGroup>(), 0.25f));
-
-            yield return new WaitForSeconds(.25f);
-            //Type each line
-            for (int index2 = 0; index2 < dialogues[index].lines.Length; index2++)
-            {
-                nextLine = false;
-                typingCoroutine = StartCoroutine(TypeLine(dialogues[index].lines[index2], dialogues[index].name, typingAudio, largeDialogueTextBox.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>(), .05f));
-                lineToBeTyped = dialogues[index].lines[index2];
-
-                Coroutine blinking = null;
-                while (isTyping || !nextLine)
-                {
-                    yield return new WaitForSeconds(.25f);
-                    if (!isTyping && !nextLine && blinking == null)
-                    {
-                        blinking = StartCoroutine(Helpers.DialogueBlinker("large"));
-                    }
-
-                }
-                try
-                {
-                    StopCoroutine(blinking);
-                }
-                catch
-                {
-                    
-                }
-                blinking = null;
-                Helpers.DisableBlinker("large");
-                largeDialogueTextBox.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = "";
-            
-            }
-
-            //Fade out text box
-            StartCoroutine(Helpers.MoveRectTransform(largeDialogueTextBox, largeDialogueTextBox.GetComponent<RectTransform>().anchoredPosition, largeDialogueTextBox.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, -10f), .25f));
-            StartCoroutine(Helpers.FadeOutCanvasGroup(largeDialogueTextBox.GetComponent<CanvasGroup>(), 0.25f));
-
-            yield return new WaitForSeconds(0.25f);
-
-        }
     }
 
 }
