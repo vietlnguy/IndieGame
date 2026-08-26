@@ -238,7 +238,9 @@ public class DialogueController : MonoBehaviour
     {
         isTypingComplete = true;
     }
+    public void SelectCampDialogue(string character) {
 
+    }
 
 
 }

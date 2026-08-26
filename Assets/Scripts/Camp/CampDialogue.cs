@@ -290,16 +290,7 @@ public class CampDialogue : MonoBehaviour
             {
                 if (!characterScript.spokenToAlready)
                 {
-                    dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"Even though we had to leave our home, it's nice to be out in the countryside again.", "I wonder how long we'll be gone.", "Ooo when we get to Maplemire do you think we can get turkey pies??", "It's been so long since I've had one.", "No, we shouldn't we should stay focused..."}));
-                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"*laughs*"}));
-                    dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"What's so funny??"}));
-                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"You, you're very cute.", "We can get turkey pies, dear. I think it would do us some good to take our mind off of everything that's happened.", "I miss this life sometimes.", "Travelling the king's road, sword by my side, no plan. Just living life.",}));
-                    dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"*coyly* You mean the life before you met me?"}));
-                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"Of course not!", "I would much rather live in the forest in isolation shoveling dirt and breaking my back.", "...rather than spend my time at the tavern, drinking good ale, and knee deep in pus--"}));
-                    dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"*bonk*", "Oh hush, you."}));
-                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"*chuckles*"}));
-                    dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"Is there anything else you need, dear?"}));
-
+                    //Get appropriate dialogue file
                 }
                 else
                 {
@@ -311,14 +302,7 @@ public class CampDialogue : MonoBehaviour
             {
                 if (!characterScript.spokenToAlready)
                 {
-                    dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"I'm glad Lucas and Celeste are staying with us, despite the circumstances."}));
-                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"Can't stand to look at me anymore?"}));
-                    dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"I'm serious!"}));
-                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"Sorry.."}));
-                    dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"Its okay.", "And yes now I can finally have another lady to talk to."}));
-                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"Hey!"}));
-                    dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"Did you need anything else?"}));
-
+                    //Get appropriate dialogue file
                 }
                 else
                 {
@@ -332,14 +316,7 @@ public class CampDialogue : MonoBehaviour
             {
                 if (!characterScript.spokenToAlready)
                 {
-                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"Hey Lucas, are you busy?", "You fought with a lot of courage back there."}));
-                    dialogues.Add(new CharacterDialogue(lucasImage, characterScript.title, new string[] {"Thanks.", "..."}));
-                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"...", "Look, I know you don't know me, and we're going to be traveling together now.", "But I promise I will do everything I can to keep you and your sister safe."}));
-                    dialogues.Add(new CharacterDialogue(lucasImage, characterScript.title, new string[] {"I appreciate it, but we won't be staying long.", "Once we talk to Lord Beesly and get this straightened out, we're going back home."}));
-                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"I understand.", "I just want you to know that you don't have to fight alone.", "I know what it's like to care deeply for someone.", "... and to lose someone you love."}));
-                    dialogues.Add(new CharacterDialogue(lucasImage, characterScript.title, new string[] {"...", "Did you need anything else?"}));
-
-
+                    //Get dialogue file
                 }
                 else
                 {
@@ -358,12 +335,7 @@ public class CampDialogue : MonoBehaviour
             {
                 if (!characterScript.spokenToAlready)
                 {
-                    dialogues.Add(new CharacterDialogue(celesteImage, characterScript.title, new string[] {"We follow your word.., let your light guide us toward salvation..."}));
-                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"Sorry to inturrept, priestess.", "I brought you some food. I thought you might be hungry after that unexpected skirmish."}));
-                    dialogues.Add(new CharacterDialogue(celesteImage, characterScript.title, new string[] {"Ah- thank you, " + scm.loadedData.mainCharacterName + "...", "Ilvera's light shines through you. I can sense it..."}));
-                    dialogues.Add(new CharacterDialogue(mainCharacterImage, scm.loadedData.mainCharacterName, new string[] {"Haha, I don't know about that.", "I've done alot of bad in my life, I guess this is my way of making amends."}));
-                    dialogues.Add(new CharacterDialogue(celesteImage, characterScript.title, new string[] {"Through Ilvera, all can be redeemed..."}));
-
+                    //Get appropriate file
                 }
                 else
                 {
@@ -414,26 +386,6 @@ public class CampDialogue : MonoBehaviour
     private void resetSelectorPosition()
     {
         selector.GetComponent<RectTransform>().anchoredPosition = new Vector2(-469f, 37f);
-    }
-    private IEnumerator TypeLine(string line, string speaker, AudioSource audioSource, TextMeshProUGUI textBox, float textSpeed) {
-        if (speaker == "Astrid")
-        {
-            audioSource.pitch = 1.2f;
-            textBox.color = new Color(1f, .75f, .79f, 1f);
-        }
-        else
-        {
-            audioSource.pitch = 1.0f;
-            textBox.color = Color.white;
-        }
-        isTyping = true;
-        audioSource.Play();
-        foreach (char c in line.ToCharArray()) {
-            textBox.text += c;
-            yield return new WaitForSeconds(textSpeed);
-        }
-        audioSource.Stop();
-        isTyping = false;
     }
     private IEnumerator PlayCutscene()
     {
@@ -691,17 +643,6 @@ public class CampDialogue : MonoBehaviour
         campAssistMenuScript.trainText.color = Color.white;
         active = true;
 
-    }
-    public struct CharacterDialogue {
-        public string[] lines;
-        public string name;
-        public GameObject characterImage;
-        public CharacterDialogue(GameObject characterImage, string name,string[] lines)
-        {
-            this.lines = lines;
-            this.name = name;
-            this.characterImage = characterImage;
-        }
     }
 
 }
