@@ -159,43 +159,6 @@ public class CampDialogue : MonoBehaviour
 
         yield return StartCoroutine(Helpers.FadeOutImageAlpha(blackScreen, 1f));
 
-        //Go through each dialogue
-        active = true;
-        for (int index = 0; index < dialogues.Count; index++)
-        {
-            //Update name text
-            nameBox.transform.GetChild(0).gameObject.GetComponent<TextMeshProUGUI>().text = dialogues[index].name;
-
-            //Update nameBox position
-            nameBox.GetComponent<RectTransform>().anchoredPosition = new Vector2(dialogues[index].characterImage.GetComponent<RectTransform>().anchoredPosition.x, nameBox.GetComponent<RectTransform>().anchoredPosition.y);
-
-            //Fade in text box
-            StartCoroutine(Helpers.MoveRectTransform(textBox, textBox.GetComponent<RectTransform>().anchoredPosition, textBox.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, 10f), .25f));
-            StartCoroutine(Helpers.FadeInCanvasGroup(textBox.GetComponent<CanvasGroup>(), 0.25f));
-
-            yield return new WaitForSeconds(.25f);
-            //Type each line
-            for (int index2 = 0; index2 < dialogues[index].lines.Length; index2++)
-            {
-                nextLine = false;
-                typingCoroutine = StartCoroutine(TypeLine(dialogues[index].lines[index2], dialogues[index].name, typingAudio, textBox.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>(), .05f));
-                lineToBeTyped = dialogues[index].lines[index2];
-
-                while (isTyping || !nextLine)
-                {
-                    yield return new WaitForSeconds(.25f);
-                }
-                textBox.transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>().text = "";
-            
-            }
-
-            //Fade out text box
-            StartCoroutine(Helpers.MoveRectTransform(textBox, textBox.GetComponent<RectTransform>().anchoredPosition, textBox.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, -10f), .25f));
-            StartCoroutine(Helpers.FadeOutCanvasGroup(textBox.GetComponent<CanvasGroup>(), 0.25f));
-
-            yield return new WaitForSeconds(0.25f);
-
-        }
  
         scrollView.SetActive(true);
         nameBox.SetActive(false);
@@ -294,7 +257,7 @@ public class CampDialogue : MonoBehaviour
                 }
                 else
                 {
-                    dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"Hi, dear. Did you need something?"}));
+                    //dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"Hi, dear. Did you need something?"}));
                 }
             
             }
@@ -306,7 +269,7 @@ public class CampDialogue : MonoBehaviour
                 }
                 else
                 {
-                    dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"Hi, dear. Did you need something?"}));
+                    //dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"Hi, dear. Did you need something?"}));
                 }  
             }
         }
@@ -320,7 +283,7 @@ public class CampDialogue : MonoBehaviour
                 }
                 else
                 {
-                    dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"Did you need something?"}));
+                    //dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"Did you need something?"}));
                 }
             
             }
@@ -339,7 +302,7 @@ public class CampDialogue : MonoBehaviour
                 }
                 else
                 {
-                    dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"May Ilvera guide you..."}));
+                    //dialogues.Add(new CharacterDialogue(astridImage, characterScript.title, new string[] {"May Ilvera guide you..."}));
                 }
             
             }
