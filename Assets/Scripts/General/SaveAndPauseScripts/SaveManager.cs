@@ -8,9 +8,8 @@ using UnityEngine.UI;
 using System.Linq;
 using TMPro;
 
-public class SaveManager : MonoBehaviour
+public class SaveManager : SingletonMonoBehaviour<SaveManager>
 {
-    public static SaveManager Instance;
     public GameSaveData loadedData;
     public GameObject saveSelected;
     public GameObject saveEntryPrefab;
@@ -19,19 +18,10 @@ public class SaveManager : MonoBehaviour
     public GameObject sceneTransitionText;
     public AudioSource savedConfirmedAudio;
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-            SceneManager.sceneLoaded += OnSceneLoaded;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
+        base.Awake();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
     void Start()
     {
@@ -67,20 +57,25 @@ public class SaveManager : MonoBehaviour
 
 
         mainCharacter.inventory.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
-        mainCharacter.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
-        mainCharacter.armorEquiped = new Equipment("Leather", "armor", 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "For unexpected adventures. +2 Max HP.");
+        mainCharacter.weaponEquiped = EquipmentManager.Create("Basic");
+        mainCharacter.armorEquiped = EquipmentManager.Create("Leather");
 
         Character astrid = new Character("Astrid", 11, 8, 6, 5, 3, 6, 8, 7, 3, 5, true, true);
         astrid.knownAttacks.Add(new Attack("Bow Shot", "physical", 1.0f, 1.0f, 90, 5, 0, "Shoot an arrow at the enemy."));
         astrid.inventory.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
-        astrid.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
-        astrid.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
-        astrid.accessoryEquiped = new Equipment("Power Bracelet", "accessory", 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Tingles with power. +1 ATK.");
+        astrid.weaponEquiped = EquipmentManager.Create("Basic");
+        astrid.armorEquiped = EquipmentManager.Create("Cloth");
+        astrid.accessoryEquiped = EquipmentManager.Create("Power Bracelet");
         astrid.subquests.Add(new Subquest("Astrid1", "Astrid lands the killing blow on the boss.", "Discuss the power of the bracelets."));
         astrid.subquests.Add(new Subquest("Astrid2", "Placeholder.", "Placeholder description."));
         astrid.subquests.Add(new Subquest("Astrid3", "Placeholder.", "Placeholder description."));
         dataToSave.characters.Add(mainCharacter);
         dataToSave.characters.Add(astrid);
+
+        Equipment flameSword = EquipmentManager.Create("Flame Sword");
+        Equipment thornMail = EquipmentManager.Create("Thorn Mail");
+        if (flameSword != null) { dataToSave.supplyEquipment.Add(flameSword); }
+        if (thornMail != null) { dataToSave.supplyEquipment.Add(thornMail); }
 
         //Create save file name
         string time = DateTime.Now.ToString("F");
@@ -224,8 +219,9 @@ public class SaveManager : MonoBehaviour
             //Some scenes like chapter bridge and prologue do not have a save menu
         }
     }
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
+        base.OnDestroy();
         // Always unsubscribe to avoid memory leaks
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }

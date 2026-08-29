@@ -129,9 +129,9 @@ public class Chapter2 : MonoBehaviour
             Character celeste = new Character("Celeste", 9, 11, 4, 7, 4, 6, 6, 5, 3, 4, false, true);
             celeste.knownAttacks.Add(new SupportMove("Heal", 3, "hp", 5, null, null, "Heal an ally. (Scales with INT)"));
             celeste.inventory.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
-            celeste.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
-            celeste.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
-            celeste.accessoryEquiped = new Equipment("Mana Band", "accessory", 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Stores mana! +2 max Mana.");
+            celeste.weaponEquiped = EquipmentManager.Create("Basic");
+            celeste.armorEquiped = EquipmentManager.Create("Cloth");
+            celeste.accessoryEquiped = EquipmentManager.Create("Mana Band");
             celeste.subquests.Add(new Subquest("Celeste1", "Don't let Celeste take any damage.", "Ask to learn more about the goddess."));
             celeste.subquests.Add(new Subquest("Celeste2", "Placeholder.", "Placeholder description."));
             celeste.subquests.Add(new Subquest("Celeste3", "Placeholder", "Placeholder description."));
@@ -142,9 +142,9 @@ public class Chapter2 : MonoBehaviour
             Character lucas = new Character("Lucas", 11, 7, 5, 3, 5, 5, 6, 6, 1, 5, false, false);
             lucas.knownAttacks.Add(new Attack("Rapid Punch", "physical", 1.0f, 1.0f, 95, 0, 0, new List<Debuff>(), "Strike the enemy with a quick punch.")); 
             lucas.inventory.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
-            lucas.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
-            lucas.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
-            lucas.accessoryEquiped = new Equipment("Gauntlets", "accessory", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary");
+            lucas.weaponEquiped = EquipmentManager.Create("Basic");
+            lucas.armorEquiped = EquipmentManager.Create("Cloth");
+            lucas.accessoryEquiped = EquipmentManager.Create("Gauntlets");
             lucas.subquests.Add(new Subquest("Lucas1", "Lucas slays at least 2 enemies.", "Ask about his relationship to Celeste."));
             lucas.subquests.Add(new Subquest("Lucas2", "Placeholder.", "Placeholder description."));
             lucas.subquests.Add(new Subquest("Lucas3", "PLaceholder.", "Placeholder description."));

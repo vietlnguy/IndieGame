@@ -470,13 +470,21 @@ public class BattleController : MonoBehaviour
             
             //If character is still alive then end turn etc
             bool enemyAlive = true;
-            try
+            //HP check first: a same-frame death (e.g. thorns with animations skipped) hasn't destroyed the object yet, so the catch below would miss it
+            if (enemyScript.currentHp <= 0)
             {
-                disabledEnemies.Add(enemy.gameObject);
+                enemyAlive = false;
             }
-            catch
+            else
             {
-               enemyAlive = false; 
+                try
+                {
+                    disabledEnemies.Add(enemy.gameObject);
+                }
+                catch
+                {
+                   enemyAlive = false;
+                }
             }
             if (enemyAlive)
             {

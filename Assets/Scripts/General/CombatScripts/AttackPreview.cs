@@ -998,6 +998,7 @@ public class AttackPreview : MonoBehaviour
                         yield return StartCoroutine(AnimateHealthDamage(leftArray[0] * 2, battleScreenRightHpBar, rightPerson, battleScreenRightHp));
                     }
                     enemyScript.currentHp = enemyScript.currentHp - leftArray[0] * 2;
+                    EquipmentEffects.DamageDealt(leftPerson, rightPerson, leftArray[0] * 2, true);
                 }
                 else
                 {
@@ -1008,6 +1009,7 @@ public class AttackPreview : MonoBehaviour
                         yield return StartCoroutine(AnimateHealthDamage(leftArray[0], battleScreenRightHpBar, rightPerson, battleScreenRightHp));
                     }
                     enemyScript.currentHp = enemyScript.currentHp - leftArray[0];
+                    EquipmentEffects.DamageDealt(leftPerson, rightPerson, leftArray[0], false);
                 }
                 
                 //Try apply debuffs to enemy
@@ -1143,6 +1145,7 @@ public class AttackPreview : MonoBehaviour
                                 yield return StartCoroutine(AnimateHealthDamage(rightArray[0] * 2, battleScreenLeftHpBar, leftPerson, battleScreenLeftHp));
                             }
                             playerScript.currentHp = playerScript.currentHp - rightArray[0] * 2;
+                            EquipmentEffects.TakeHit(leftPerson, rightPerson, rightArray[0] * 2, true);
                         }
                         else
                         {
@@ -1152,6 +1155,7 @@ public class AttackPreview : MonoBehaviour
                                 yield return StartCoroutine(AnimateHealthDamage(rightArray[0], battleScreenLeftHpBar, leftPerson, battleScreenLeftHp));
                             }
                             playerScript.currentHp = playerScript.currentHp - rightArray[0];
+                            EquipmentEffects.TakeHit(leftPerson, rightPerson, rightArray[0], false);
                         }
                         
                         //Don't need to check buff/debuffs, because reaction attack is always a basic attack.
@@ -1177,9 +1181,13 @@ public class AttackPreview : MonoBehaviour
 
                     //Play character dialogue if necessary
                     if (playerScript.currentHp <= 0)
-                    {   
+                    {
                         //TODO: Remove sprite on battle screen
                         yield return StartCoroutine(DeathSequence(leftPerson, rightPerson));
+                    }
+                    if (enemyScript.currentHp <= 0)
+                    {
+                        yield return StartCoroutine(DeathSequence(rightPerson, leftPerson));
                     }
                 }
            
@@ -1246,6 +1254,7 @@ public class AttackPreview : MonoBehaviour
                         yield return StartCoroutine(AnimateHealthDamage(rightArray[0] * 2, battleScreenLeftHpBar, leftPerson, battleScreenLeftHp));
                     }
                     playerScript.currentHp = playerScript.currentHp - rightArray[0] * 2;
+                    EquipmentEffects.TakeHit(leftPerson, rightPerson, rightArray[0] * 2, true);
                 }
                 else
                 {
@@ -1256,6 +1265,7 @@ public class AttackPreview : MonoBehaviour
                         yield return StartCoroutine(AnimateHealthDamage(rightArray[0], battleScreenLeftHpBar, leftPerson, battleScreenLeftHp));
                     }
                     playerScript.currentHp = playerScript.currentHp - rightArray[0];
+                    EquipmentEffects.TakeHit(leftPerson, rightPerson, rightArray[0], false);
                 }
                 
                 //Try apply debuffs to enemy
@@ -1358,11 +1368,19 @@ public class AttackPreview : MonoBehaviour
             
             //Play death dialogue if necessary
             if (playerScript.currentHp <= 0)
-            {   
+            {
                 //TODO: Remove sprite on battle screen
                 yield return StartCoroutine(DeathSequence(leftPerson, rightPerson));
+                if (enemyScript.currentHp <= 0)
+                {
+                    yield return StartCoroutine(DeathSequence(rightPerson, leftPerson));
+                }
             }
-           
+            else if (enemyScript.currentHp <= 0)
+            {
+                yield return StartCoroutine(DeathSequence(rightPerson, leftPerson));
+            }
+
             //********************************************************* START PLAYER ATTACK *******************************************************************
             else
             {
@@ -1385,6 +1403,7 @@ public class AttackPreview : MonoBehaviour
                             yield return StartCoroutine(AnimateHealthDamage(leftArray[0] * 2, battleScreenRightHpBar, rightPerson, battleScreenRightHp));
                         }
                         enemyScript.currentHp = enemyScript.currentHp - leftArray[0] * 2;
+                        EquipmentEffects.DamageDealt(leftPerson, rightPerson, leftArray[0] * 2, true);
                     }
                     else
                     {
@@ -1395,6 +1414,7 @@ public class AttackPreview : MonoBehaviour
                             yield return StartCoroutine(AnimateHealthDamage(leftArray[0], battleScreenRightHpBar, rightPerson, battleScreenRightHp));
                         }
                         enemyScript.currentHp = enemyScript.currentHp - leftArray[0];
+                        EquipmentEffects.DamageDealt(leftPerson, rightPerson, leftArray[0], false);
                     }
                     
                     //Try apply debuffs to enemy

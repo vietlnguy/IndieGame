@@ -146,9 +146,9 @@ public class Chapter3 : MonoBehaviour
             Character penelope = new Character("Penelope", 9, 11, 4, 7, 4, 6, 6, 5, 3, 4, false, true);
             penelope.knownAttacks.Add(new SupportMove("Heal", 3, "hp", 5, null, null, "Heal an ally. (Scales with INT)"));
             penelope.inventory.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
-            penelope.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
-            penelope.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
-            penelope.accessoryEquiped = new Equipment("Mana Band", "accessory", 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Stores mana! +2 max Mana.");
+            penelope.weaponEquiped = EquipmentManager.Create("Basic");
+            penelope.armorEquiped = EquipmentManager.Create("Cloth");
+            penelope.accessoryEquiped = EquipmentManager.Create("Mana Band");
             penelope.subquests.Add(new Subquest("Penelope1", "Don't let Penelope take any damage.", "Ask to learn more about the goddess."));
             penelope.subquests.Add(new Subquest("Penelope2", "Placeholder.", "Placeholder description."));
             penelope.subquests.Add(new Subquest("Penelope3", "Placeholder", "Placeholder description."));
@@ -159,9 +159,9 @@ public class Chapter3 : MonoBehaviour
             Character gerard = new Character("Gerard", 11, 7, 5, 3, 5, 5, 6, 6, 1, 5, false, false);
             gerard.knownAttacks.Add(new Attack("Rapid Punch", "physical", 1.0f, 1.0f, 95, 0, 0, new List<Debuff>(), "Strike the enemy with a quick punch.")); 
             gerard.inventory.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
-            gerard.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
-            gerard.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
-            gerard.accessoryEquiped = new Equipment("Gauntlets", "accessory", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary");
+            gerard.weaponEquiped = EquipmentManager.Create("Basic");
+            gerard.armorEquiped = EquipmentManager.Create("Cloth");
+            gerard.accessoryEquiped = EquipmentManager.Create("Gauntlets");
             gerard.subquests.Add(new Subquest("Gerard1", "Lucas slays at least 2 enemies.", "Ask about his relationship to Celeste."));
             gerard.subquests.Add(new Subquest("Gerard2", "Placeholder.", "Placeholder description."));
             gerard.subquests.Add(new Subquest("Gerard3", "Placeholder.", "Placeholder description."));
@@ -171,9 +171,9 @@ public class Chapter3 : MonoBehaviour
             Character katherine = new Character("Katherine", 11, 7, 5, 3, 5, 5, 6, 6, 1, 5, false, false);
             katherine.knownAttacks.Add(new Attack("Rapid Punch", "physical", 1.0f, 1.0f, 95, 0, 0, new List<Debuff>(), "Strike the enemy with a quick punch.")); 
             katherine.inventory.Add(new Item("Potion", 5, "hp", 10, "Restores 10 HP.", false, false, false));
-            katherine.weaponEquiped = new Equipment("Basic", "weapon", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary.");
-            katherine.armorEquiped = new Equipment("Cloth", "armor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary."); 
-            katherine.accessoryEquiped = new Equipment("Gauntlets", "accessory", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, "Completely ordinary");
+            katherine.weaponEquiped = EquipmentManager.Create("Basic");
+            katherine.armorEquiped = EquipmentManager.Create("Cloth");
+            katherine.accessoryEquiped = EquipmentManager.Create("Gauntlets");
             katherine.subquests.Add(new Subquest("Katherine1", "Lucas slays at least 2 enemies.", "Ask about his relationship to Celeste."));
             katherine.subquests.Add(new Subquest("Katherine2", "Placeholder.", "Placeholder description."));
             katherine.subquests.Add(new Subquest("Katherine3", "Placeholder.", "Placeholder description."));
