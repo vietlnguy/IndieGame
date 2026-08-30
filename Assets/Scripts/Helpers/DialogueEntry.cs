@@ -8,4 +8,5 @@ public class DialogueEntry
     public string name;
     public List<Line> lines;
     public bool pauseExecution = false;
+    public string introBattleOutro = "";
 }

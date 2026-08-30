@@ -6,25 +6,21 @@ using System;
 using System.IO;
 using UnityEngine.UI;
 using Febucci.TextAnimatorForUnity;
+using Febucci.TextAnimatorCore.Text;
 
 public class DialogueController : MonoBehaviour
 {
     public bool active = false;   
-    private bool isTyping = false;
-    private bool nextLine = false;
     private bool isTypingComplete;
     private int dialogueIndex = 0;
-    private Coroutine typingCoroutine;
-    private string lineToBeTyped = "";
     private SaveManager saveManager;
     public event Action OnDialogueFinished;
     
     //TextBox GameObjects
-    public AudioSource typingAudio;
+
     public GameObject dialoguePanel;
     public TextMeshProUGUI textBoxText;
     [SerializeField] TypewriterComponent typewriter;
-    public GameObject nameBox;
     public TextMeshProUGUI nameBoxText;
 
     //Character Portraits
@@ -37,19 +33,22 @@ public class DialogueController : MonoBehaviour
 
     //Lines
     public DialogueWrapper allDialogues;
+    
+    //Audios
+    public AudioSource audioSource;
+    public AudioClip lowBubbleAudio;
+    public AudioClip highBubbleAudio;
+    public AudioClip mediumBubbleAudio;
+    public AudioClip sineHighAudio;
+    public AudioClip sineLowAudio;
+    public AudioClip triangularHighAudio;
+    public AudioClip triangularLowAudio;
+    
 
     public void Start()
     {
         saveManager = FindAnyObjectByType<SaveManager>();
-
-        string chapter = saveManager.loadedData.currentChapter;
-        string language = PlayerPrefs.GetString("language", "english").ToLower();
-        string filePath = Path.Combine(Application.streamingAssetsPath, chapter, $"{language}.json");
-
-        string jsonString = File.ReadAllText(filePath);
-
-        allDialogues = JsonUtility.FromJson<DialogueWrapper>(jsonString);
-
+        SetChapterDialogue();
     }
     public void Update()
     {
@@ -119,6 +118,7 @@ public class DialogueController : MonoBehaviour
             for (int index2 = 0; index2 < allDialogues.dialogueEntries[index].lines.Count; index2++)
             {
                 isTypingComplete = false;
+                SetSpeaker(allDialogues.dialogueEntries[index].name);
 
                 typewriter.ShowText(allDialogues.dialogueEntries[index].lines[index2].line);
 
@@ -136,7 +136,6 @@ public class DialogueController : MonoBehaviour
                 yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
                 yield return null; // Wait 1 frame before starting the next loop iteration
             }
-
 
             //Fade out text box
             StartCoroutine(Helpers.MoveRectTransform(dialoguePanel, dialoguePanel.GetComponent<RectTransform>().anchoredPosition, dialoguePanel.GetComponent<RectTransform>().anchoredPosition + new Vector2(0, -10f), .25f));
@@ -170,26 +169,6 @@ public class DialogueController : MonoBehaviour
         }
 
         active = false;
-    }
-    private IEnumerator TypeLine(string line, string speaker) {
-        float textSpeed = .05f;
-        
-        if (speaker == "Astrid")
-        {
-            typingAudio.pitch = 1.2f;
-        }
-        else
-        {
-            typingAudio.pitch = 1.0f;
-        }
-        isTyping = true;
-        typingAudio.Play();
-        foreach (char c in line.ToCharArray()) {
-            textBoxText.text += c;
-            yield return new WaitForSeconds(textSpeed);
-        }
-        typingAudio.Stop();
-        isTyping = false;
     }
     private void SetDialogueBoxPosition(bool useLargePortraits)
     {
@@ -229,18 +208,120 @@ public class DialogueController : MonoBehaviour
     private void OnEnable()
     {
         typewriter.onTextShowed.AddListener(OnTypingFinished);
+        typewriter.onCharacterVisible.AddListener(PlayTypingSound);
     }
     private void OnDisable()
     {
         typewriter.onTextShowed.RemoveListener(OnTypingFinished);
+        typewriter.onCharacterVisible.RemoveListener(PlayTypingSound);
+    }
+    private void PlayTypingSound(CharacterData character)
+    {
+        // Convert character to lowercase to cover both uppercase and lowercase vowels
+        char c = char.ToLower(character.info.character);
+
+        // Only proceed if the character is a vowel
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+        {
+
+
+        }
+    }
+    private void SetSpeaker(string name)
+    {
+        if (name == "MainCharacter")
+        {
+            audioSource.PlayOneShot(lowBubbleAudio);
+        }
+        else if (name == "Astrid")
+        {
+            
+        }
+        else if (name == "Celeste")
+        {
+            
+        }
+        else if (name == "Lucas")
+        {
+            
+        }
+        else if (name == "Penelope")
+        {
+            
+        }
+        else if (name == "Gerard")
+        {
+            
+        }
+        else if (name == "Katherine")
+        {
+            
+        }
+        else if (name == "Ivy")
+        {
+            
+        }
+        else if (name == "Maeve")
+        {
+            
+        }
+
+
     }
     private void OnTypingFinished()
     {
         isTypingComplete = true;
     }
-    public void SelectCampDialogue(string character) {
+    public void SetCampDialogue(CampPlayerController characterScript) {
+        
+        if (!characterScript.spokenToAlready)
+        {
+            string chapter = saveManager.loadedData.currentChapter;
+            string language = PlayerPrefs.GetString("language", "english").ToLower();
+            string filePath = Path.Combine(Application.streamingAssetsPath, "Camp", chapter, characterScript.title, $"{language}.json");
+            string jsonString = File.ReadAllText(filePath);
+            allDialogues = JsonUtility.FromJson<DialogueWrapper>(jsonString);
+            characterScript.spokenToAlready = true;
+        }
+        else
+        {
+            string language = PlayerPrefs.GetString("language", "english").ToLower();
+            string filePath = Path.Combine(Application.streamingAssetsPath, "Camp", "SpokenToAlready", characterScript.title, $"{language}.json");
+            string jsonString = File.ReadAllText(filePath);
+            allDialogues = JsonUtility.FromJson<DialogueWrapper>(jsonString);
+        }
 
     }
+    public void SetChapterDialogue()
+    {
+        string chapter = saveManager.loadedData.currentChapter;
+        string language = PlayerPrefs.GetString("language", "english").ToLower();
+        string filePath = Path.Combine(Application.streamingAssetsPath, chapter, $"{language}.json");
+        string jsonString = File.ReadAllText(filePath);
 
+        allDialogues = JsonUtility.FromJson<DialogueWrapper>(jsonString);
+
+        if (saveManager.loadedData.introBattleOutro == "Battle")
+        {
+            for (int i = 0; i < allDialogues.dialogueEntries.Count; i++)
+            {
+                if (allDialogues.dialogueEntries[i].introBattleOutro == "Battle")
+                {
+                    dialogueIndex = i;
+                }
+            }
+        }
+        else if (saveManager.loadedData.introBattleOutro == "Outro")
+        {
+            for (int i = 0; i < allDialogues.dialogueEntries.Count; i++)
+            {
+                if (allDialogues.dialogueEntries[i].introBattleOutro == "Outro")
+                {
+                    dialogueIndex = i;
+                }
+            }
+        }
+
+    }
 
 }
