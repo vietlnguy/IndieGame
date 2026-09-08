@@ -63,3 +63,118 @@ Generic Sets (Unlocked at certain milestones):
         - Mana Ring (+MANA)
         - Range Ring (+RANGE)
         - Move Ring (+MOVE)
+
+SPECIAL EFFECTS TRIGGERS:
+
+During Attacking Combat Sequence:
+    - Determine Who Initiated Attack
+        - OnAttacking()
+    - Target Type Determination
+        - OnMeleeTarget()
+        - OnRangedTarget()
+        - OnSupportTarget()
+    - Attacker Type Determination
+        - OnRangedAttack()
+        - OnMeleeAttack()
+    - AttackMove Type Determination
+        - OnMagicAttack()
+        - OnPhysicalAttack()
+    - AttackMove Mana Cost
+        - OnManaSpent()
+    - Is attacker buffed?
+        - OnBuffedDuringAttack()
+    - Is target debuffed?
+        - OnTargetDebuffed()
+    
+    - Roll Attack
+        - OnHit()
+        - OnMiss()
+    - Roll Crit
+        - OnCrit()
+    - What type damage dealt?
+        - OnMagicDamageDealt()
+        - OnPhysicalDamageDealt()
+    - Does attack have chance to debuff?
+        - OnAttemptDebuff()
+        - OnSuccessfulAttemptDebuff()
+        - OnFailedAttemptDebuff()
+    
+During Defending Combat Sequnce Triggers:
+    - Initiated combat
+        - OnDefending()
+    - What type of attack is being defended?
+        - OnDefendingRangedAttack()
+        - OnDefendingMeleeAttack()
+        - OnDefendingPhysicalAttack()
+        - OnDefendingMagicAttack()
+    - Does attack miss?
+        - OnDodged()
+    - What type of damage taken?
+        - OnMagicDamageTaken()
+        - OnPhysicalDamageTaken()
+        - OnCombatDamageTaken()
+    - Is there chance to be debuffed?
+        - OnDefendingAttemptDebuff()
+        - OnDefendingDebuffApplied()
+    
+End of Turn damage:
+    - Trigger OnHpChanged()
+
+When Equipment is equipped:
+    - OnMeleeType()
+    - OnRangedType()
+    - OnSupportType()
+
+Attack Selection Calculation
+- Get player stats
+    - Copy base stat
+    - Copy base modifier
+    - Copy base multiplier
+- Factor in any pre-battle special effect triggers
+    - Attacker
+        - OnAttacking() i.e. "+10% base ATK/DEF if initiating combat",
+        - OnRangedTarget() i.e. "+50% base ATK/INT if attacking ranged unit.
+        - OnMeleeAttack() i.e "+0.25 Mult if initiated melee attack.
+        - OnPhysicalAttack() i.e. "+0.5 attackMove multiplier if attackMove deals physical damage"
+        - OnManaCost() i.e. "If attackMove costs mana, double it, but increase power (power of heal or damage)
+        - OnBuffedDuringAttack() i.e. "Double the strength of buffs. 2X increase from buff
+        - OnDebuffedDuringAttack() i.e. "Reduce the strength of negative debuffs"
+    - Defender
+        - OnDefending()
+        - OnDefendingRangedAttack()
+        - OnDefendingMeleeAttack()
+        - OnDefendingPhysicalAttack()
+        - OnDefendingMagicAttack()
+
+- Factor in any buffs/debuffs
+    - Apply buffs/debuffs to totalStat, i.e. Dazed reduces totalATK by .67
+
+
+- Populate UI with calculated stats
+
+Attack Sequence Calculation (After selecting an AttackMove)
+    - Roll to Hit
+        - If hit:
+            - Roll crit:
+                - OnCrit() i.e. "Increase Crit multiplier by .25"
+                - Enemy OnGettingCrit()
+            - OnHit() i.e "Take recoil damage"
+            - OnMagicDamageDealt()
+            - OnPhysicalDamageDealt()
+            - Roll Debuff:
+                - OnAttemptDebuff()
+                - If OnSuccessfulAttemptDebuff()
+                - Else OnFailedAttemptDebuff()
+            Enemy:
+                - OnMagicDamageTaken()
+                - OnPhysicalDamageTaken()
+                - OnCombatDamageTaken()
+                - OnDefendingAttemptDebuff()
+                - OnDefendingDebuffApplied()
+        - If miss:
+            - OnMiss() i.e. "Refund attackMove mana cost", "Gain Charged"
+            - Enemy OnDodged()
+    
+    - Recalculate enemy stats
+        - 
+        
