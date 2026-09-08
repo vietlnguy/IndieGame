@@ -440,6 +440,12 @@ public class ChapterOne : MonoBehaviour {
         }
 
     }
+    
+    private void Outro()
+    {
+        victoryAndSubquestBox.SetActive(false);
+        intro = StartCoroutine(OutroHelper());
+    }
     private void VictorySubscribe()
     {
         VictoryContinueButton.OnStartOutro += Outro;
@@ -460,9 +466,5 @@ public class ChapterOne : MonoBehaviour {
     {
         PlayerController.OnCharacterDied -= HandleDeath;
     }
-    private void Outro()
-    {
-        victoryAndSubquestBox.SetActive(false);
-        intro = StartCoroutine(OutroHelper());
-    }
+
 }

@@ -125,7 +125,7 @@ public class Celeste1 : MonoBehaviour
     }
     private void EndCutscene()
     {
-        FindAnyObjectByType<CampDialogue>().Resume();
+        //FindAnyObjectByType<CampDialogue>().Resume();
     }
     private IEnumerator TypeLine(string line, string speaker, AudioSource audioSource, TextMeshProUGUI textBox, float textSpeed) {
         if (speaker == "Celeste")
