@@ -1,0 +1,65 @@
+Attack Sequence Info
+
+**************************** STEP 1: Player selects enemy *********************************************
+
+1. AttackPreview.enablePreview() is called. This is the preview window where the Player can select an AttackMove
+    and see DMG, HIT, CRIT it will do against the Enemy. AttackPreview.calculateDamage() is the function that calculates this
+    and will probably be where a majority of the Special Effects will trigger.
+
+2. The preview info should account for SPECIAL EFFECTS on Equipment for both the Player and the Enemy. For example, if Silver Sword increases ATK 
+    when initiating combat then the preview DMG/HIT/CRIT should reflect that.
+
+3. This is a list of Special Effects that should be considered during the preview info calculation:
+    - Attacker
+        - OnAttacking()             Example: "+10% base ATK/DEF if initiating combat",
+        - OnRangedTarget()          Example: "+50% base ATK/INT if attacking ranged unit.
+        - OnMeleeAttack()           Example: "+0.25 Mult if initiated melee attack.
+        - OnPhysicalAttack()        Example: "+0.5 attackMove multiplier if attackMove deals physical damage"
+        - OnManaCost()              Example: "If attackMove costs mana, double it, but increase power (power of heal or damage)
+    - Defender
+        - OnDefending()                 Example: "+10% base ATK/DEF if did not initiate combat"
+        - OnDefendingRangedAttack()     Example: "+10% base DEF against ranged units"
+        - OnDefendingMeleeAttack()      Example: "+10% base DEF against melee units"
+        - OnDefendingPhysicalAttack()   Example: "+10% base DEF against physical attacks"
+        - OnDefendingMagicAttack()      Example: "+10% base RES against magic attacks"
+
+4. Factor in any buffs/debuffs that affect stats.
+
+5. Populate UI with result stats.
+
+
+*************************** STEP 2: Player confirms Attack********************************************
+
+1. After the Player selects and AttackMove and clicks Confirm, the battle sequence begins.
+
+2. A number is rolled and compared against the HIT percent.
+    a. If successful:
+        i. A number is rolled and compared against the CRIT percent.
+            - If succssful crit:
+                - OnCrit()
+                - Enemy OnGettingCrit()
+            - If unsuccessful crit:
+                - OnFailedCrit()
+        ii. OnHit()
+            - OnMagicDamageDealt()
+            - OnPhysicalDamageDealt()
+            - OnMagicDamageTaken()
+            - OnPhysicalDamageTaken()
+            - OnCombatDamageTaken()
+
+        iii. If AttackMove has secondary effects like Debuffs or buffs
+            - Roll for secondary effect:
+                - OnAttemptDebuff()
+                - OnSuccessfulAttemptDebuff()
+                - OnFailedAttemptDebuff()
+            Enemy:
+                - OnDefendingAttemptDebuff()
+                - OnDefendingDebuffApplied()
+
+    b. If unsuccesful:
+        i. OnMiss() special effect triggered.
+
+
+3. After a successful hit. If enemy gets buffed/debuffed then recalculate enemy stats.
+        
+        
