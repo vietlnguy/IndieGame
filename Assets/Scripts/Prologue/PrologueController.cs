@@ -23,6 +23,7 @@ public class PrologueController : MonoBehaviour
     private bool pressedOnce = false;
     public GameObject skipTextBox;
     private Coroutine coroutineRunning;
+    public GameObject environmentImage;
 
     void Awake(){
         AudioListener.volume = PlayerPrefs.GetFloat("volume", 0.5f);
@@ -88,7 +89,8 @@ public class PrologueController : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
         StartCoroutine(FadeIn(backgroundImage, 2f));
-        StartCoroutine(PanCamera(cameraObject.transform));
+        //StartCoroutine(PanCamera(cameraObject.transform));
+        StartCoroutine(PanImage(environmentImage.GetComponent<RectTransform>()));
 
         yield return new WaitForSeconds(1f);
 
@@ -163,21 +165,47 @@ public class PrologueController : MonoBehaviour
         source.volume = 0;
         source.Stop();
     }
-    private IEnumerator PanCamera(Transform transform)
+    private IEnumerator PanCamera(Transform cameraTransform)
     {
-        Vector3 startPos = transform.position;
-        Vector3 targetPos = new Vector3(0, -146f, -10f);
+        Vector3 startPos = cameraTransform.position;
+        Vector3 targetPos = new Vector3(0f, 153f, -10f);
         float duration = 88f;
         float elapsed = 0f;
 
         while (elapsed < duration)
         {
-            transform.position = Vector3.Lerp(startPos, targetPos, elapsed / duration);
+            // Use deltaTime to update progress continuously across frames
             elapsed += Time.deltaTime;
-            yield return null;
+            float t = Mathf.Clamp01(elapsed / duration);
+
+            // Sub-pixel position calculation
+            cameraTransform.position = Vector3.Lerp(startPos, targetPos, t);
+
+            yield return null; // Executes every frame in sub-pixel floating increments
         }
 
-        transform.position = targetPos;
+        cameraTransform.position = targetPos;
+    }
+    private IEnumerator PanImage(RectTransform cameraTransform)
+    {
+        Vector3 startPos = cameraTransform.anchoredPosition;
+        Vector3 targetPos = new Vector3(4f, 84f, 0f);
+        float duration = 88f;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            // Use deltaTime to update progress continuously across frames
+            elapsed += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+
+            // Sub-pixel position calculation
+            cameraTransform.anchoredPosition = Vector3.Lerp(startPos, targetPos, t);
+
+            yield return null; // Executes every frame in sub-pixel floating increments
+        }
+
+        cameraTransform.anchoredPosition = targetPos;
     }
     private void EnableSkip()
     {
