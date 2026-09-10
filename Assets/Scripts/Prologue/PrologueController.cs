@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System;
+using System.IO;
 
 public class PrologueController : MonoBehaviour
 {
@@ -28,6 +30,14 @@ public class PrologueController : MonoBehaviour
     void Awake(){
         AudioListener.volume = PlayerPrefs.GetFloat("volume", 0.5f);
         scm = GameObject.Find("SaveManager").GetComponent<SaveManager>();
+
+        string chapter = scm.loadedData.currentChapter;
+        string language = PlayerPrefs.GetString("language", "english").ToLower();
+        string filePath = Path.Combine(Application.streamingAssetsPath, chapter, $"{language}.json");
+        string jsonString = File.ReadAllText(filePath);
+
+        allDialogues = JsonUtility.FromJson<DialogueWrapper>(jsonString);
+
     }
     void Start()
     {
