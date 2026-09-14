@@ -15,6 +15,7 @@ public class DialogueController : MonoBehaviour
     private int dialogueIndex = 0;
     private SaveManager saveManager;
     public event Action OnDialogueFinished;
+    private string speakerName = "";
     
     //TextBox GameObjects
 
@@ -84,11 +85,13 @@ public class DialogueController : MonoBehaviour
         for (int index = dialogueIndex; index < allDialogues.dialogueEntries.Count; index++)
         {
             textBoxText.text = "";
+            SetSpeaker(allDialogues.dialogueEntries[index].name);
             
             //Update name text
             if (allDialogues.dialogueEntries[index].name == "MainCharacter")
             {
                 nameBoxText.text = saveManager.loadedData.mainCharacterName;
+
             }
             else
             {
@@ -118,7 +121,6 @@ public class DialogueController : MonoBehaviour
             for (int index2 = 0; index2 < allDialogues.dialogueEntries[index].lines.Count; index2++)
             {
                 isTypingComplete = false;
-                SetSpeaker(allDialogues.dialogueEntries[index].name);
 
                 typewriter.ShowText(allDialogues.dialogueEntries[index].lines[index2].line);
 
@@ -223,15 +225,46 @@ public class DialogueController : MonoBehaviour
         // Only proceed if the character is a vowel
         if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
         {
-
+            if (speakerName == "MainCharacter")
+            {
+                audioSource.PlayOneShot(lowBubbleAudio);
+            }
+            else if (speakerName == "Astrid")
+            {
+                audioSource.PlayOneShot(highBubbleAudio);
+            }
+            else if (speakerName == "Celeste")
+            {
+                audioSource.PlayOneShot(mediumBubbleAudio);
+            }
+            else if (speakerName == "Lucas")
+            {
+                audioSource.PlayOneShot(sineHighAudio);
+            }
+            else if (speakerName == "Penelope")
+            {
+                audioSource.PlayOneShot(sineLowAudio);
+            }
+            else if (speakerName == "Gerard")
+            {
+                audioSource.PlayOneShot(triangularHighAudio);
+            }
+            else if (speakerName == "Katherine")
+            {
+                audioSource.PlayOneShot(triangularLowAudio);
+                
+            }
 
         }
     }
     private void SetSpeaker(string name)
     {
+        speakerName = name;
+
+        //Customize character audio pitch etc.
         if (name == "MainCharacter")
         {
-            audioSource.PlayOneShot(lowBubbleAudio);
+            
         }
         else if (name == "Astrid")
         {

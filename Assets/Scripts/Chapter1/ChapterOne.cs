@@ -234,9 +234,12 @@ public class ChapterOne : MonoBehaviour {
         {
 
             //Overworld movement and dialogue
-            yield return StartCoroutine(Helpers.FadeOutImageAlpha(whiteScreen, 1f));
-            yield return new WaitForSeconds(1f);
+            StartCoroutine(Helpers.FadeOutImageAlpha(whiteScreen, 1.5f));
+            StartCoroutine(Helpers.MoveTransform(Camera.main.transform, new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 3f, Camera.main.transform.position.z), Camera.main.transform.position, 3f));
             StartCoroutine(Helpers.FadeInAudio(fluteAudio, 1f));
+            yield return new WaitForSeconds(4f);
+            yield return Helpers.PlayDialogueAndWait(dialogueControllerScript, false);
+
             yield return StartCoroutine(pathfinder.FollowPath(mainCharacterObject, new Vector3(-9.2f, -11.68f, 0f)));
             yield return new WaitForSeconds(.5f);
             doorAudio.Play();
