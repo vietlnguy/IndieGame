@@ -23,6 +23,7 @@ public class DialogueController : MonoBehaviour
     public TextMeshProUGUI textBoxText;
     [SerializeField] TypewriterComponent typewriter;
     public TextMeshProUGUI nameBoxText;
+    public GameObject dialogueArrow;
 
     //Character Portraits
     public GameObject allLargePortraits;
@@ -133,9 +134,12 @@ public class DialogueController : MonoBehaviour
                     typewriter.SkipTypewriter();
                     yield return null; // Wait 1 frame so the skip click isn't registered for the next line
                 }
+                dialogueArrow.GetComponent<Image>().color = new Color(1f, 1f, 1f, 1f);
 
                 // 3. Now wait for the NEXT click to advance to the next line
                 yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+
+                dialogueArrow.GetComponent<Image>().color = new Color(1f, 1f, 1f, 0f);
                 yield return null; // Wait 1 frame before starting the next loop iteration
             }
 

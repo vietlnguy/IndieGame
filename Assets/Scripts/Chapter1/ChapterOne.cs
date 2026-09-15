@@ -83,7 +83,7 @@ public class ChapterOne : MonoBehaviour {
         {
             if (character.characterName == saveManager.loadedData.mainCharacterName)
             {
-                mainCharacterObject = Instantiate(mainCharacterPrefab, new Vector3(-19f, -7.9f, 0f), Quaternion.identity, characters.transform);
+                mainCharacterObject = Instantiate(mainCharacterPrefab, new Vector3(-20.5f, -8f, 0f), Quaternion.identity, characters.transform);
             }
             else if (character.characterName == "Astrid")
             {
@@ -240,7 +240,7 @@ public class ChapterOne : MonoBehaviour {
             yield return new WaitForSeconds(4f);
             yield return Helpers.PlayDialogueAndWait(dialogueControllerScript, false);
 
-            yield return StartCoroutine(pathfinder.FollowPath(mainCharacterObject, new Vector3(-9.2f, -11.68f, 0f)));
+            yield return StartCoroutine(pathfinder.FollowPath(mainCharacterObject, new Vector3(-9f, -11.68f, 0f)));
             yield return new WaitForSeconds(.5f);
             doorAudio.Play();
             yield return StartCoroutine(Helpers.FadeSpriteToBlack(mainCharacterObject));
