@@ -240,7 +240,7 @@ public class ChapterOne : MonoBehaviour {
             yield return new WaitForSeconds(4f);
             yield return Helpers.PlayDialogueAndWait(dialogueControllerScript, false);
 
-            yield return StartCoroutine(pathfinder.FollowPath(mainCharacterObject, new Vector3(-9f, -11.68f, 0f)));
+            yield return StartCoroutine(pathfinder.FollowPath(mainCharacterObject, new Vector3(-9.1f, -11.68f, 0f)));
             yield return new WaitForSeconds(.5f);
             doorAudio.Play();
             yield return StartCoroutine(Helpers.FadeSpriteToBlack(mainCharacterObject));
